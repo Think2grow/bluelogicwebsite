@@ -10,6 +10,10 @@ export interface OpenGraphMetadata {
   title?: string;
   description?: string;
   image?: string;
+  imageWidth?: string;
+  imageHeight?: string;
+  imageAlt?: string;
+  imageType?: string;
   type?: string;
   url?: string;
 }
@@ -19,8 +23,13 @@ export interface OpenGraphMetadata {
  */
 export const DEFAULT_OG_METADATA: OpenGraphMetadata = {
   title: "Blue Logic Water - Professional RO Systems",
-  description: "Premium reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+  description:
+    "Premium reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
   image: "/Blue%20Logic%20Logo%20FINAL-02.png",
+  imageWidth: "1200",
+  imageHeight: "630",
+  imageAlt: "Blue Logic Water Logo",
+  imageType: "image/png",
   type: "website",
 };
 

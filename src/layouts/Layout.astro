@@ -1,5 +1,9 @@
 ---
-import { getBaseOrganizationSchema, DEFAULT_OG_METADATA, type OpenGraphMetadata } from "../utils/schema";
+import {
+  getBaseOrganizationSchema,
+  DEFAULT_OG_METADATA,
+  type OpenGraphMetadata,
+} from "../utils/schema";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -33,8 +37,8 @@ const ogMetadata: OpenGraphMetadata = {
 };
 
 // Convert image to absolute URL if it's relative
-const ogImageUrl = ogMetadata.image?.startsWith('http') 
-  ? ogMetadata.image 
+const ogImageUrl = ogMetadata.image?.startsWith("http")
+  ? ogMetadata.image
   : new URL(ogMetadata.image || DEFAULT_OG_METADATA.image!, siteUrl).toString();
 
 // Combine base schema with page-specific schema
@@ -59,10 +63,14 @@ const allSchemas = schema
     <meta property="og:title" content={ogMetadata.title} />
     <meta property="og:description" content={ogMetadata.description} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content={ogMetadata.imageWidth} />
+    <meta property="og:image:height" content={ogMetadata.imageHeight} />
+    <meta property="og:image:alt" content={ogMetadata.imageAlt} />
+    <meta property="og:image:type" content={ogMetadata.imageType} />
     <meta property="og:url" content={ogMetadata.url} />
     <meta property="og:type" content={ogMetadata.type} />
     <meta property="og:site_name" content="Blue Logic Water" />
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={ogMetadata.title} />
