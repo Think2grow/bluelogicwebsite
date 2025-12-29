@@ -3,7 +3,7 @@ name: Deploy Astro to Cloudflare Workers
 on:
   push:
     branches:
-      - main  # Only triggers on pushes to the main branch
+      - main # Only triggers on pushes to the main branch
 
 jobs:
   deploy:
@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
