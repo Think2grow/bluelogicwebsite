@@ -1,3 +1,15 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Blue Logic Water - Professional RO Systems",
+  description = "Premium reverse osmosis water filtration systems for Salt Lake City homes. Half the cost, half the footprint, 10x quieter.",
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,18 +17,188 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <header class="header">
+      <nav class="nav">
+        <a href="/" class="logo">Blue Logic Water</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/the-system">The System</a></li>
+          <li><a href="/the-value">Why Us</a></li>
+          <li><a href="/our-team">Our Team</a></li>
+          <li><a href="/common-questions">FAQ</a></li>
+          <li><a href="/salt-lake-city">Salt Lake City</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <h2>Ready for Purer Water?</h2>
+        <p>Schedule your water purity audit today</p>
+        <a href="/#contact" class="cta-button">Get Started</a>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/the-system">The System</a>
+          <a href="/the-value">Why Us</a>
+          <a href="/our-team">Our Team</a>
+          <a href="/common-questions">FAQ</a>
+        </div>
+        <p class="copyright">© 2025 Blue Logic Water. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
 
 <style>
-  html,
+  :root {
+    --color-obsidian: oklch(0.2 0.02 270);
+    --color-glacier: oklch(0.7 0.1 220);
+    --color-quartz: oklch(0.95 0.01 90);
+    --color-white: oklch(1 0 0);
+  }
+
+  html {
+    font-family: "Inter", system-ui, sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-obsidian);
+  }
+
   body {
     margin: 0;
-    width: 100%;
-    height: 100%;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  .header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-quartz);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-obsidian);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--color-obsidian);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-glacier);
+  }
+
+  .footer {
+    background-color: var(--color-obsidian);
+    color: var(--color-white);
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+
+  .footer-links a:hover {
+    opacity: 1;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--color-glacier);
+    color: var(--color-white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+    margin: 1rem 0;
+  }
+
+  .cta-button:hover {
+    opacity: 0.9;
+  }
+
+  .copyright {
+    margin-top: 2rem;
+    opacity: 0.6;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .footer-content h2 {
+      font-size: 1.75rem;
+    }
   }
 </style>

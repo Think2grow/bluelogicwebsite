@@ -1,0 +1,356 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Our Team - Blue Logic Water"
+  description="Meet the local team behind Blue Logic Water. Wasatch-born, professionally certified, dedicated to bringing pure water to Salt Lake City homes."
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Our Team</h1>
+      <p class="subtitle">Wasatch-born water purification experts</p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="container">
+      <h2>The Wasatch-Born Story</h2>
+      <p class="story-text">
+        Blue Logic Water was founded by a team of engineers and water quality
+        specialists who grew up in the Salt Lake Valley. We experienced
+        firsthand the challenges of Utah's hard water and the frustration of
+        seeing families pay inflated prices for basic water purification.
+      </p>
+      <p class="story-text">
+        Our mission is simple: bring commercial-grade reverse osmosis technology
+        to homes at a fair price. No marketing gimmicks, no unnecessary
+        upsells—just pure water and honest service.
+      </p>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet the Team</h2>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="placeholder-photo">Photo</div>
+          </div>
+          <h3>Lead Installer & Technician</h3>
+          <p class="role">Professional Installation Specialist</p>
+          <p>
+            Licensed and certified with over a decade of experience in water
+            purification systems. Ensures every installation meets
+            commercial-grade standards.
+          </p>
+        </div>
+
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="placeholder-photo">Photo</div>
+          </div>
+          <h3>Water Quality Engineer</h3>
+          <p class="role">System Design & Optimization</p>
+          <p>
+            Specializes in RO system engineering and water chemistry. Designs
+            custom solutions for Utah's unique water profile and mineral
+            content.
+          </p>
+        </div>
+
+        <div class="team-member">
+          <div class="member-photo">
+            <div class="placeholder-photo">Photo</div>
+          </div>
+          <h3>Customer Success Lead</h3>
+          <p class="role">Client Relations & Support</p>
+          <p>
+            Dedicated to ensuring every client receives exceptional service from
+            first contact through installation and beyond. Local Salt Lake City
+            resident.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="guarantee">
+    <div class="container">
+      <h2>The Purity Guarantee</h2>
+      <p class="guarantee-intro">
+        When we enter your home, we follow the Blue Logic code of conduct:
+      </p>
+
+      <div class="guarantee-grid">
+        <div class="guarantee-item">
+          <h3>Professional Excellence</h3>
+          <p>
+            Every installation is performed to commercial standards with
+            meticulous attention to detail.
+          </p>
+        </div>
+
+        <div class="guarantee-item">
+          <h3>Respect Your Home</h3>
+          <p>
+            We treat your home as our own—clean workspace, protective equipment,
+            and thorough cleanup.
+          </p>
+        </div>
+
+        <div class="guarantee-item">
+          <h3>Transparent Communication</h3>
+          <p>
+            Clear explanations of the work, no hidden fees, and honest timelines
+            from start to finish.
+          </p>
+        </div>
+
+        <div class="guarantee-item">
+          <h3>Local Accountability</h3>
+          <p>
+            We're your neighbors. Our reputation is built on trust and we stand
+            behind every installation.
+          </p>
+        </div>
+
+        <div class="guarantee-item">
+          <h3>Ongoing Support</h3>
+          <p>
+            We don't disappear after installation. Local service and maintenance
+            support when you need it.
+          </p>
+        </div>
+
+        <div class="guarantee-item">
+          <h3>Fair Pricing Always</h3>
+          <p>
+            No upsells, no pressure tactics. Just honest pricing for honest
+            work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="local">
+    <div class="container center">
+      <h2>Proudly Serving the Wasatch Front</h2>
+      <p>
+        From Park City to Draper, we serve families throughout the Salt Lake
+        Valley with professional-grade water purification solutions.
+      </p>
+      <p>
+        <strong>Service Areas:</strong> Salt Lake City • Park City • Draper • Sandy
+        • Cottonwood Heights • Holladay • Murray • Millcreek
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container center">
+      <h2>Work With a Local Team</h2>
+      <p>Schedule a free consultation with our water quality experts</p>
+      <a href="/#contact" class="cta-button">Get Started</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.95 0.01 90) 0%,
+      oklch(0.85 0.05 220) 100%
+    );
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .container.center {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Instrument Serif", Georgia, serif;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    color: oklch(0.4 0.02 270);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .story {
+    background-color: white;
+  }
+
+  .story-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    text-align: center;
+    color: oklch(0.4 0.02 270);
+  }
+
+  .team-section {
+    background-color: oklch(0.98 0.01 90);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-member {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  .member-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background-color: oklch(0.9 0.01 90);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholder-photo {
+    color: oklch(0.6 0.02 270);
+    font-size: 0.875rem;
+  }
+
+  .team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .role {
+    color: oklch(0.7 0.1 220);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .team-member p:not(.role) {
+    color: oklch(0.4 0.02 270);
+    line-height: 1.6;
+  }
+
+  .guarantee {
+    background-color: white;
+  }
+
+  .guarantee-intro {
+    font-size: 1.25rem;
+    text-align: center;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 3rem;
+  }
+
+  .guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .guarantee-item {
+    background-color: oklch(0.98 0.01 90);
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .guarantee-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: oklch(0.2 0.02 270);
+  }
+
+  .guarantee-item p {
+    color: oklch(0.4 0.02 270);
+    line-height: 1.6;
+  }
+
+  .local {
+    background-color: oklch(0.98 0.01 90);
+  }
+
+  .local p {
+    font-size: 1.125rem;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-section {
+    background-color: white;
+  }
+
+  .cta-section h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.25rem;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: oklch(0.7 0.1 220);
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: opacity 0.2s;
+  }
+
+  .cta-button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero {
+      padding: 4rem 1rem 3rem;
+    }
+
+    .team-grid,
+    .guarantee-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

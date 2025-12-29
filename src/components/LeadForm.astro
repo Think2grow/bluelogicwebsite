@@ -1,0 +1,188 @@
+---
+// Basic lead capture form component
+---
+
+<div class="lead-form-container" id="contact">
+  <h2>Get Your Free Water Purity Audit</h2>
+  <p>Schedule a consultation with our team</p>
+
+  <form id="leadForm" class="lead-form">
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="phone" required />
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" />
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" value="Salt Lake City" />
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="submit-button">Schedule Audit</button>
+
+    <div id="formStatus" class="form-status"></div>
+  </form>
+</div>
+
+<style>
+  .lead-form-container {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: oklch(0.98 0.01 90);
+    border-radius: 1rem;
+  }
+
+  .lead-form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .lead-form-container > p {
+    text-align: center;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 2rem;
+  }
+
+  .lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 2px solid oklch(0.85 0.01 90);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: oklch(0.7 0.1 220);
+  }
+
+  .submit-button {
+    background-color: oklch(0.7 0.1 220);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .submit-button:hover {
+    opacity: 0.9;
+  }
+
+  .submit-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: none;
+  }
+
+  .form-status.success {
+    display: block;
+    background-color: oklch(0.9 0.1 140);
+    color: oklch(0.3 0.1 140);
+  }
+
+  .form-status.error {
+    display: block;
+    background-color: oklch(0.9 0.1 30);
+    color: oklch(0.3 0.1 30);
+  }
+</style>
+
+<script>
+  const form = document.getElementById("leadForm") as HTMLFormElement;
+  const status = document.getElementById("formStatus") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitButton = form.querySelector(
+      'button[type="submit"]',
+    ) as HTMLButtonElement;
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        status.className = "form-status success";
+        status.textContent =
+          "Thank you! We'll contact you shortly to schedule your water audit.";
+        form.reset();
+      } else {
+        throw new Error(result.error || "Submission failed");
+      }
+    } catch (error) {
+      status.className = "form-status error";
+      status.textContent =
+        "Something went wrong. Please try again or call us directly.";
+      console.error("Form submission error:", error);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Schedule Audit";
+    }
+  });
+</script>

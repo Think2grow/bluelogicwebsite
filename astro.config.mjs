@@ -7,6 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.bluelogicwater.com",
+  output: "server",
   adapter: cloudflare(),
   integrations: [sitemap()],
   vite: {

@@ -1,0 +1,396 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const city = "Salt Lake City";
+const tdsLevel = "350-500 ppm";
+---
+
+<Layout
+  title="Water Filtration Salt Lake City - Blue Logic Water"
+  description="Professional reverse osmosis systems for Salt Lake City homes. Combat Utah's hard water with commercial-grade filtration at half the cost."
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Water Purification for {city}</h1>
+      <p class="subtitle">
+        Professional RO systems designed for Utah's unique water challenges
+      </p>
+    </div>
+  </section>
+
+  <section class="water-quality">
+    <div class="container">
+      <h2>Understanding {city}'s Water</h2>
+
+      <div class="water-stats">
+        <div class="stat-card">
+          <div class="stat-number">{tdsLevel}</div>
+          <div class="stat-label">Total Dissolved Solids (TDS)</div>
+          <p>
+            Salt Lake City water typically contains high mineral content due to
+            mountain runoff and geological factors.
+          </p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number">Very Hard</div>
+          <div class="stat-label">Water Hardness Rating</div>
+          <p>
+            Utah consistently ranks among the hardest water states in the
+            nation.
+          </p>
+        </div>
+      </div>
+
+      <div class="water-info">
+        <h3>What's in Your Water?</h3>
+        <p>
+          Salt Lake City's water supply comes from mountain watersheds and
+          underground sources. While generally safe to drink, it contains high
+          levels of:
+        </p>
+        <ul>
+          <li>
+            <strong>Calcium and Magnesium:</strong> The minerals that make water "hard"
+          </li>
+          <li>
+            <strong>Chlorine:</strong> Added for disinfection, can affect taste
+          </li>
+          <li>
+            <strong>Trace minerals:</strong> Iron, manganese, and other naturally
+            occurring elements
+          </li>
+          <li>
+            <strong>Potential contaminants:</strong> Varying levels of PFAS, lead
+            from old pipes, and agricultural runoff
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-ro">
+    <div class="container">
+      <h2>Why Reverse Osmosis for Utah Homes?</h2>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <h3>Eliminates Hard Water</h3>
+          <p>
+            RO removes 99%+ of dissolved minerals, eliminating scale buildup on
+            fixtures, appliances, and plumbing. No more spotty dishes or clogged
+            showerheads.
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <h3>Removes Contaminants</h3>
+          <p>
+            Beyond minerals, RO removes chlorine, PFAS, heavy metals, and other
+            potential contaminants that simple filters can't touch.
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <h3>Better for Your Health</h3>
+          <p>
+            Pure water means fewer skin irritations, better hydration, and peace
+            of mind knowing what's NOT in your water.
+          </p>
+        </div>
+
+        <div class="reason-card">
+          <h3>Protects Your Home</h3>
+          <p>
+            Prevent costly damage to water heaters, dishwashers, and plumbing
+            systems caused by mineral buildup.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="local-service">
+    <div class="container">
+      <h2>Local Service for Local Challenges</h2>
+      <p class="service-text">
+        We live and work in the Wasatch Front. We understand Utah's water
+        because it's our water too. Every Blue Logic system is optimized for the
+        specific challenges of Salt Lake Valley water quality.
+      </p>
+
+      <div class="service-areas">
+        <h3>Serving the Entire Wasatch Front</h3>
+        <div class="area-grid">
+          <span>Salt Lake City</span>
+          <span>Park City</span>
+          <span>Draper</span>
+          <span>Sandy</span>
+          <span>Cottonwood Heights</span>
+          <span>Holladay</span>
+          <span>Murray</span>
+          <span>Millcreek</span>
+          <span>South Jordan</span>
+          <span>West Jordan</span>
+          <span>Taylorsville</span>
+          <span>West Valley City</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="local-proof">
+    <div class="container center">
+      <h2>Trusted by 500+ Wasatch Front Families</h2>
+      <p>
+        From downtown Salt Lake to the foothills, local families trust Blue
+        Logic for professional water purification at a fair price.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container center">
+      <h2>Get Your Free {city} Water Quality Assessment</h2>
+      <p>See exactly what's in your water and how we can help</p>
+      <a href="/#contact" class="cta-button">Schedule Free Audit</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.95 0.01 90) 0%,
+      oklch(0.85 0.05 220) 100%
+    );
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .container.center {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Instrument Serif", Georgia, serif;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    color: oklch(0.4 0.02 270);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .water-quality {
+    background-color: white;
+  }
+
+  .water-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .stat-card {
+    background-color: oklch(0.98 0.01 90);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: oklch(0.7 0.1 220);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    color: oklch(0.2 0.02 270);
+  }
+
+  .stat-card p {
+    color: oklch(0.4 0.02 270);
+    line-height: 1.6;
+  }
+
+  .water-info {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .water-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .water-info p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 1.5rem;
+  }
+
+  .water-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .water-info li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid oklch(0.9 0.01 90);
+    color: oklch(0.4 0.02 270);
+    line-height: 1.6;
+  }
+
+  .water-info li:last-child {
+    border-bottom: none;
+  }
+
+  .why-ro {
+    background-color: oklch(0.98 0.01 90);
+  }
+
+  .reason-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .reason-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .reason-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: oklch(0.7 0.1 220);
+  }
+
+  .reason-card p {
+    color: oklch(0.4 0.02 270);
+    line-height: 1.7;
+  }
+
+  .local-service {
+    background-color: white;
+  }
+
+  .service-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: oklch(0.4 0.02 270);
+  }
+
+  .service-areas {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .service-areas h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .area-grid span {
+    padding: 0.75rem;
+    background-color: oklch(0.98 0.01 90);
+    border-radius: 0.5rem;
+    color: oklch(0.3 0.02 270);
+    font-weight: 500;
+  }
+
+  .local-proof {
+    background-color: oklch(0.98 0.01 90);
+  }
+
+  .local-proof p {
+    font-size: 1.125rem;
+    color: oklch(0.4 0.02 270);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-section {
+    background-color: white;
+  }
+
+  .cta-section h2 {
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.25rem;
+    color: oklch(0.4 0.02 270);
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: oklch(0.7 0.1 220);
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: opacity 0.2s;
+  }
+
+  .cta-button:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero {
+      padding: 4rem 1rem 3rem;
+    }
+
+    .water-stats,
+    .reason-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .area-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
