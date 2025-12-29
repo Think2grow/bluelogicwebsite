@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 
 const faqs = [
   {
@@ -63,11 +64,23 @@ const faqs = [
       "While technically possible, we strongly recommend professional installation. RO systems require precise plumbing connections, pressure adjustments, and proper drainage setup. Improper installation can lead to leaks, poor performance, or system damage. Our installation is included in the price and ensures everything works perfectly from day one.",
   },
 ];
+
+// Generate FAQ page-specific schema
+const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "FAQ", url: "/common-questions" }
+  ])
+];
 ---
 
 <Layout
   title="FAQ - Blue Logic Water Common Questions"
   description="Common questions about reverse osmosis systems, installation, cost, maintenance, and water quality in Salt Lake City."
+  schema={schemas}
 >
   <section class="hero">
     <div class="container">

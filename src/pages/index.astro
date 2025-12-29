@@ -1,9 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
+import { getBreadcrumbSchema } from "../utils/schema";
+
+// Generate homepage-specific schema
+const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+
+const schemas = [
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" }
+  ])
+];
 ---
 
-<Layout title="Blue Logic Water - Premium RO Systems for Salt Lake City">
+<Layout 
+  title="Blue Logic Water - Premium RO Systems for Salt Lake City"
+  schema={schemas}
+>
   <section class="hero">
     <div class="hero-content">
       <h1>Your Family, Unfiltered.</h1>

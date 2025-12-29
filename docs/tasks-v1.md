@@ -31,12 +31,12 @@ _Critical for the "Speed as a Trust Signal" requirement._
 
 _The primary functionality: driving leads without compromising UX._
 
-- [ ] **2.1 GHL Server-Side Proxy**
+- [~] **2.1 GHL Server-Side Proxy**
 - **Description:** Create an Astro API route (`src/pages/api/lead.ts`) to receive form data and POST to GoHighLevel via fetch. This hides API keys and prevents iFrame lag.
 - **Deliverable:** Secure endpoint for lead submission.
 - **Complexity:** Medium
 
-- [ ] **2.2 Custom Lead Form Component**
+- [x] **2.2 Custom Lead Form Component**
 - **Description:** Build a multi-step or high-end single-step Tailwind form. No standard iFrames. Must include validation and "Success" state.
 - **Deliverable:** `LeadForm.astro` (or React/Preact island).
 - **Complexity:** Medium
@@ -69,17 +69,29 @@ _Creating the elevated feel for affluent clientele._
 
 _Capturing "Reverse Osmosis Salt Lake City" intent._
 
-- [ ] **4.1 Programmatic City Routing**
+- [x] **4.1 Programmatic City Routing**
 - **Description:** Create `src/pages/locations/[city].astro` to generate pages for Salt Lake, Park City, Draper, etc.
 - **Deliverable:** Dynamic routes generating static-looking local pages.
 - **Complexity:** Medium
+- **Implementation:**
+  - Created `src/data/cities.ts` with comprehensive water quality data for 10 cities
+  - Built dynamic route template at `src/pages/locations/[city].astro`
+  - Generates unique pages for each city with local water data, TDS levels, and common issues
+  - Includes LocalBusiness JSON-LD schema for each location
 
-- [ ] **4.2 Structured Data (JSON-LD) Generator**
+- [x] **4.2 Structured Data (JSON-LD) Generator**
 - **Description:** Build a helper function to inject `LocalBusiness`, `Product`, and `FAQ` schema based on the current page context.
 - **Deliverable:** `Schema.astro` component in the `<head>`.
 - **Complexity:** Medium
+- **Implementation:**
+  - Created `src/utils/schema.ts` with modular schema functions
+  - Base Organization schema auto-injected on all pages via Layout.astro
+  - Pages can augment with additional schemas via `schema` prop
+  - Uses Astro's `set:html` directive with `JSON.stringify()`
+  - Schema types: Organization, LocalBusiness, Product, FAQ, Breadcrumb
+  - Updated pages: index.astro, common-questions.astro, the-system.astro, [city].astro
 
-- [ ] **4.3 Trust "Comparison" Module**
+- [x] **4.3 Trust "Comparison" Module**
 - **Description:** A clean, high-contrast table/graphic showing Blue Logic vs. Competitors ($15k vs $30k).
 - **Deliverable:** `TrustTable.astro`.
 - **Complexity:** Low

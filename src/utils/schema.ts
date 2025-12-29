@@ -1,0 +1,169 @@
+/**
+ * Base JSON-LD schema definitions for Blue Logic Water
+ * Uses schema.org types for SEO and structured data
+ */
+
+interface BaseOrganizationSchema {
+  "@context": string;
+  "@type": string;
+  name: string;
+  url: string;
+  logo: string;
+  description: string;
+  telephone: string;
+  address: {
+    "@type": string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  sameAs: string[];
+}
+
+interface LocalBusinessSchema extends BaseOrganizationSchema {
+  "@type": "LocalBusiness";
+  priceRange: string;
+  areaServed: Array<{
+    "@type": string;
+    name: string;
+  }>;
+}
+
+interface ProductSchema {
+  "@context": string;
+  "@type": string;
+  name: string;
+  description: string;
+  brand: {
+    "@type": string;
+    name: string;
+  };
+  offers: {
+    "@type": string;
+    price: string;
+    priceCurrency: string;
+    availability: string;
+    url: string;
+  };
+}
+
+/**
+ * Base organization schema that appears on all pages
+ */
+export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Blue Logic Water",
+    url: url,
+    logo: `${url}/logo.png`,
+    description:
+      "Professional reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+    telephone: "+1-801-XXX-XXXX", // TODO: Add real phone number
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Salt Lake City",
+      addressRegion: "UT",
+      postalCode: "84101",
+      addressCountry: "US",
+    },
+    sameAs: [
+      // TODO: Add social media links
+      // "https://www.facebook.com/bluelogicwater",
+      // "https://www.instagram.com/bluelogicwater",
+    ],
+  };
+}
+
+/**
+ * Local business schema for location pages
+ */
+export function getLocalBusinessSchema(
+  url: string,
+  city: string,
+  state: string = "UT"
+): LocalBusinessSchema {
+  const base = getBaseOrganizationSchema(url);
+  return {
+    ...base,
+    "@type": "LocalBusiness",
+    priceRange: "$$$",
+    areaServed: [
+      {
+        "@type": "City",
+        name: city,
+      },
+    ],
+  } as LocalBusinessSchema;
+}
+
+/**
+ * Product schema for system/product pages
+ */
+export function getProductSchema(url: string): ProductSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Blue Logic Professional RO System",
+    description:
+      "Commercial-grade reverse osmosis water filtration system. 50% smaller footprint, 10x quieter operation, and half the cost of traditional systems.",
+    brand: {
+      "@type": "Brand",
+      name: "Blue Logic Water",
+    },
+    offers: {
+      "@type": "Offer",
+      price: "15000",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: url,
+    },
+  };
+}
+
+/**
+ * FAQ schema for question pages
+ */
+export function getFAQSchema(
+  faqs: Array<{ question: string; answer: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+/**
+ * Breadcrumb schema for navigation
+ */
+export function getBreadcrumbSchema(
+  url: string,
+  items: Array<{ name: string; url: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${url}${item.url}`,
+    })),
+  };
+}
+
+/**
+ * Merge multiple schemas into a single array for multi-type pages
+ */
+export function mergeSchemas(...schemas: any[]): any[] {
+  return schemas.filter(Boolean);
+}

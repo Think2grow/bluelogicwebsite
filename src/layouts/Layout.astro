@@ -1,13 +1,31 @@
 ---
+import { getBaseOrganizationSchema } from "../utils/schema";
+
 interface Props {
   title?: string;
   description?: string;
+  schema?: any | any[]; // Allow pages to pass additional schema
 }
 
 const {
   title = "Blue Logic Water - Professional RO Systems",
   description = "Premium reverse osmosis water filtration systems for Salt Lake City homes. Half the cost, half the footprint, 10x quieter.",
+  schema = null,
 } = Astro.props;
+
+// Get the current URL
+const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
+
+// Base organization schema for all pages
+const baseSchema = getBaseOrganizationSchema(siteUrl);
+
+// Combine base schema with page-specific schema
+const allSchemas = schema 
+  ? Array.isArray(schema) 
+    ? [baseSchema, ...schema] 
+    : [baseSchema, schema]
+  : [baseSchema];
 ---
 
 <!doctype html>
@@ -19,6 +37,14 @@ const {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- JSON-LD Structured Data -->
+    {allSchemas.map((schemaItem) => (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(schemaItem)}
+      />
+    ))}
   </head>
   <body>
     <header class="header">

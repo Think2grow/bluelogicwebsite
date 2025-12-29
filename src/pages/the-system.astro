@@ -1,10 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getProductSchema, getBreadcrumbSchema } from "../utils/schema";
+
+// Generate product page-specific schema
+const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+
+const schemas = [
+  getProductSchema(`${siteUrl}/the-system`),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "The System", url: "/the-system" }
+  ])
+];
 ---
 
 <Layout
   title="The System - Blue Logic Water"
   description="Advanced reverse osmosis technology. Half the footprint, 10x quieter, professional-grade water purification."
+  schema={schemas}
 >
   <section class="hero">
     <div class="container">
