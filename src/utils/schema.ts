@@ -85,7 +85,7 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
 export function getLocalBusinessSchema(
   url: string,
   city: string,
-  state: string = "UT"
+  state: string = "UT",
 ): LocalBusinessSchema {
   const base = getBaseOrganizationSchema(url);
   return {
@@ -129,7 +129,7 @@ export function getProductSchema(url: string): ProductSchema {
  * FAQ schema for question pages
  */
 export function getFAQSchema(
-  faqs: Array<{ question: string; answer: string }>
+  faqs: Array<{ question: string; answer: string }>,
 ) {
   return {
     "@context": "https://schema.org",
@@ -150,7 +150,7 @@ export function getFAQSchema(
  */
 export function getBreadcrumbSchema(
   url: string,
-  items: Array<{ name: string; url: string }>
+  items: Array<{ name: string; url: string }>,
 ) {
   return {
     "@context": "https://schema.org",

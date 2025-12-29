@@ -197,7 +197,7 @@ _Purpose: Remove friction and objections for SEO "Long-Tail" keywords._
 
 _Purpose: The primary SEO landing page for local search queries._
 
-- [ ] **7.6 The "SLC Water Report" Landing Page**
+- [x] **7.6 The "SLC Water Report" Landing Page**
 - **Description:** A dedicated page (`/locations/salt-lake-city`) that talks specifically about Utah's hard water, high TDS levels, and local mineral profile.
 - **Deliverable:** Dynamic localized template with a map embed.
 - **Complexity:** Medium

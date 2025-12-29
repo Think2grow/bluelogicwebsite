@@ -1,7 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getCityPaths, type CityData } from "../../data/cities";
-import { getLocalBusinessSchema, getBreadcrumbSchema } from "../../utils/schema";
+import {
+  getLocalBusinessSchema,
+  getBreadcrumbSchema,
+} from "../../utils/schema";
 
 export const prerender = true;
 
@@ -22,8 +25,8 @@ const schemas = [
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
     { name: "Locations", url: "/locations" },
-    { name: cityData.name, url: `/locations/${cityData.slug}` }
-  ])
+    { name: cityData.name, url: `/locations/${cityData.slug}` },
+  ]),
 ];
 ---
 
@@ -36,7 +39,8 @@ const schemas = [
     <div class="container">
       <h1>Water Purification for {cityData.name}</h1>
       <p class="subtitle">
-        Professional RO systems designed for {cityData.region}'s unique water challenges
+        Professional RO systems designed for {cityData.region}'s unique water
+        challenges
       </p>
     </div>
   </section>
@@ -56,30 +60,34 @@ const schemas = [
           <div class="stat-number">{cityData.hardnessLevel}</div>
           <div class="stat-label">Water Hardness Rating</div>
           <p>
-            {cityData.name} consistently experiences {cityData.hardnessLevel.toLowerCase()} water conditions.
+            {cityData.name} consistently experiences {
+              cityData.hardnessLevel.toLowerCase()
+            } water conditions.
           </p>
         </div>
 
-        {cityData.population && (
-          <div class="stat-card">
-            <div class="stat-number">{cityData.population}</div>
-            <div class="stat-label">Residents Served</div>
-            <p>
-              Serving the {cityData.name} community with professional water solutions.
-            </p>
-          </div>
-        )}
+        {
+          cityData.population && (
+            <div class="stat-card">
+              <div class="stat-number">{cityData.population}</div>
+              <div class="stat-label">Residents Served</div>
+              <p>
+                Serving the {cityData.name} community with professional water
+                solutions.
+              </p>
+            </div>
+          )
+        }
       </div>
 
       <div class="water-info">
         <h3>Water Source: {cityData.waterSource}</h3>
         <p>
-          {cityData.name}'s water supply presents unique challenges for homeowners:
+          {cityData.name}'s water supply presents unique challenges for
+          homeowners:
         </p>
         <ul>
-          {cityData.commonIssues.map((issue) => (
-            <li>{issue}</li>
-          ))}
+          {cityData.commonIssues.map((issue) => <li>{issue}</li>)}
         </ul>
       </div>
     </div>
@@ -169,7 +177,11 @@ const schemas = [
 
 <style>
   .hero {
-    background: linear-gradient(135deg, oklch(0.7 0.1 220) 0%, oklch(0.85 0.05 220) 100%);
+    background: linear-gradient(
+      135deg,
+      oklch(0.7 0.1 220) 0%,
+      oklch(0.85 0.05 220) 100%
+    );
     color: white;
     padding: 6rem 2rem 4rem;
     text-align: center;

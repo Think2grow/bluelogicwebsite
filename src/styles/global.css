@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-obsidian: oklch(0.2 0.02 270);
+  --color-glacier: oklch(0.7 0.1 220);
+  --color-quartz: oklch(0.95 0.01 90);
+}

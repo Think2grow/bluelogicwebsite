@@ -6,7 +6,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.NODE_ENV === "development" ? "http://localhost:4321" : "https://www.bluelogicwater.com",
+  site:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4321"
+      : "https://www.bluelogicwater.com",
   output: "server",
   adapter: cloudflare(),
   integrations: [sitemap()],

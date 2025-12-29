@@ -6,14 +6,10 @@ import { getBreadcrumbSchema } from "../utils/schema";
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 
-const schemas = [
-  getBreadcrumbSchema(siteUrl, [
-    { name: "Home", url: "/" }
-  ])
-];
+const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
 ---
 
-<Layout 
+<Layout
   title="Blue Logic Water - Premium RO Systems for Salt Lake City"
   schema={schemas}
 >
