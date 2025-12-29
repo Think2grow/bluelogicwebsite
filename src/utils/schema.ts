@@ -9,7 +9,9 @@ interface BaseOrganizationSchema {
   name: string;
   url: string;
   logo: string;
+  image: string;
   description: string;
+  email: string;
   telephone: string;
   address: {
     "@type": string;
@@ -57,10 +59,12 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     "@type": "Organization",
     name: "Blue Logic Water",
     url: url,
-    logo: `${url}/logo.png`,
+    logo: `${url}favicon.ico`,
+    image: `${url}Blue%20Logic%20Logo%20FINAL-02.png`,
     description:
       "Professional reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
-    telephone: "+1-801-XXX-XXXX", // TODO: Add real phone number
+    email: "info@bluelogicwater.com",
+    telephone: "+1-838-232-2583",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Salt Lake City",
@@ -69,9 +73,8 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
       addressCountry: "US",
     },
     sameAs: [
-      // TODO: Add social media links
-      // "https://www.facebook.com/bluelogicwater",
-      // "https://www.instagram.com/bluelogicwater",
+      "https://www.facebook.com/BlueLogicWater",
+      "https://www.instagram.com/bluelogicwater/",
     ],
   };
 }
