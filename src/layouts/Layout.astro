@@ -1,5 +1,5 @@
 ---
-import { getBaseOrganizationSchema } from "../utils/schema";
+import { getBaseOrganizationSchema, DEFAULT_OG_METADATA, type OpenGraphMetadata } from "../utils/schema";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -8,12 +8,14 @@ interface Props {
   title?: string;
   description?: string;
   schema?: any | any[]; // Allow pages to pass additional schema
+  og?: Partial<OpenGraphMetadata>; // Allow pages to customize Open Graph metadata
 }
 
 const {
   title = "Blue Logic Water - Professional RO Systems",
   description = "Premium reverse osmosis water filtration systems for Salt Lake City homes. Half the cost, half the footprint, 10x quieter.",
   schema = null,
+  og = {},
 } = Astro.props;
 
 // Get the current URL
@@ -22,6 +24,18 @@ const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // Base organization schema for all pages
 const baseSchema = getBaseOrganizationSchema(siteUrl);
+
+// Merge default OG metadata with page-specific overrides
+const ogMetadata: OpenGraphMetadata = {
+  ...DEFAULT_OG_METADATA,
+  ...og,
+  url: og.url || currentUrl,
+};
+
+// Convert image to absolute URL if it's relative
+const ogImageUrl = ogMetadata.image?.startsWith('http') 
+  ? ogMetadata.image 
+  : new URL(ogMetadata.image || DEFAULT_OG_METADATA.image!, siteUrl).toString();
 
 // Combine base schema with page-specific schema
 const allSchemas = schema
@@ -40,6 +54,20 @@ const allSchemas = schema
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={ogMetadata.title} />
+    <meta property="og:description" content={ogMetadata.description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={ogMetadata.url} />
+    <meta property="og:type" content={ogMetadata.type} />
+    <meta property="og:site_name" content="Blue Logic Water" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogMetadata.title} />
+    <meta name="twitter:description" content={ogMetadata.description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <!-- JSON-LD Structured Data -->
     {

@@ -3,6 +3,27 @@
  * Uses schema.org types for SEO and structured data
  */
 
+/**
+ * Open Graph metadata for social sharing
+ */
+export interface OpenGraphMetadata {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  url?: string;
+}
+
+/**
+ * Default Open Graph values
+ */
+export const DEFAULT_OG_METADATA: OpenGraphMetadata = {
+  title: "Blue Logic Water - Professional RO Systems",
+  description: "Premium reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+  image: "/Blue%20Logic%20Logo%20FINAL-02.png",
+  type: "website",
+};
+
 interface BaseOrganizationSchema {
   "@context": string;
   "@type": string;
@@ -59,8 +80,8 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     "@type": "Organization",
     name: "Blue Logic Water",
     url: url,
-    logo: `${url}favicon.ico`,
-    image: `${url}Blue%20Logic%20Logo%20FINAL-02.png`,
+    logo: new URL("favicon.ico", url).toString(),
+    image: new URL("Blue%20Logic%20Logo%20FINAL-02.png", url).toString(),
     description:
       "Professional reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
     email: "info@bluelogicwater.com",
