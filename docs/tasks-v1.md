@@ -60,7 +60,7 @@ _Creating the elevated feel for affluent clientele._
 - **Deliverable:** Hero section with LCP optimization (preload images).
 - **Complexity:** Medium
 
-- [ ] **3.3 Smooth State Transitions**
+- [x] **3.3 Smooth State Transitions**
 - **Description:** Implement Astro View Transitions for "SPA-like" feel between pages (Home -> Why Us).
 - **Deliverable:** Seamless page transitions enabled in `Layout.astro`.
 - **Complexity:** Low
@@ -96,6 +96,11 @@ _Capturing "Reverse Osmosis Salt Lake City" intent._
 - **Deliverable:** `TrustTable.astro`.
 - **Complexity:** Low
 
+- [ ] **4.4 Add Site to search.google.com indexing**
+- **Description:** Requires a TXT DNS record to link to the google account for measuring of indexing
+- **Deliverable:** Can index website on search.google.com
+- **Complexity:** Low
+
 ## 5. Content & Messaging
 
 _Focusing on the mission and the "Why."_
@@ -119,6 +124,23 @@ _Tasks for long-term growth and SEO dominance._
 
 - [ ] **6.2 [FUTURE] Dynamic Water Quality API Integration**
 - **Description:** Pull real-time TDS (Total Dissolved Solids) data for Utah zip codes to display on location pages.
+
+- [ ] **6.2a Gather Live Water Quality Data (One-Time)**
+- **Description:** One-time manual data collection from EWG.org for each location. Search each city's zip code at https://www.ewg.org/tapwater/search-results.php?zip5={zipcode}, find the utility provider, then navigate to that provider's report page. Extract vital stats and capture the source URL. Store in `src/data/cities.ts` as static data.
+- **Key Stats to Extract per Location:**
+  1. Number of contaminants exceeding EWG health guidelines (e.g., "14 Contaminants Exceed Guidelines")
+  2. Top 1-3 high-risk contaminants with multipliers (e.g., "Arsenic: 450x over guideline")
+  3. Total contaminants detected (e.g., "27 Total Contaminants")
+  4. Regulatory compliance status (e.g., "Currently in federal compliance, but legal limits are outdated")
+  5. EWG utility provider URL for source link
+- **Process:**
+  - Search zip code on EWG → Get utility provider link
+  - Extract the 5 key stats from provider report
+  - Save provider URL and data points to each city object in `src/data/cities.ts`
+- **Deliverable:**
+  - Updated `src/data/cities.ts` with `waterDataUrl` and extracted fields (`contaminantsExceedingGuidelines`, `topContaminants`, `totalContaminants`, `complianceStatus`)
+  - Location pages render this data with source link to EWG provider report
+- **Complexity:** Low (manual data gathering, no coding required once structure is in place)
 
 - [ ] **6.3 [FUTURE] Video Testimonial Carousel**
 - **Description:** "Netflix-style" slider of high-end clients talking about their installation experience.
