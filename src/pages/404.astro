@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div
+    class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-quartz to-white px-4"
+  >
+    <div class="text-center max-w-md">
+      <h1 class="text-6xl font-bold text-obsidian mb-4">404</h1>
+      <p class="text-xl text-obsidian mb-2">Page Not Found</p>
+      <p class="text-gray-600 mb-8">
+        Sorry, we couldn't find the page you're looking for.
+      </p>
+
+      <div class="flex gap-4 justify-center flex-col sm:flex-row">
+        <button
+          onclick="window.history.back()"
+          class="px-6 py-3 bg-obsidian text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+        >
+          Go Back
+        </button>
+        <a
+          href="/"
+          class="px-6 py-3 bg-glacier text-obsidian rounded-lg font-medium hover:bg-opacity-90 transition-all text-center"
+        >
+          Home
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  :global(html) {
+    --color-obsidian: oklch(0.2 0.02 270);
+    --color-glacier: oklch(0.7 0.1 220);
+    --color-quartz: oklch(0.95 0.01 90);
+  }
+
+  :global(body) {
+    margin: 0;
+    padding: 0;
+  }
+</style>
