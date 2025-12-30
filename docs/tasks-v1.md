@@ -125,7 +125,7 @@ _Tasks for long-term growth and SEO dominance._
 - [ ] **6.2 [FUTURE] Dynamic Water Quality API Integration**
 - **Description:** Pull real-time TDS (Total Dissolved Solids) data for Utah zip codes to display on location pages.
 
-- [ ] **6.2a Gather Live Water Quality Data (One-Time)**
+- [x] **6.2a Gather Live Water Quality Data (One-Time)**
 - **Description:** One-time manual data collection from EWG.org for each location. Search each city's zip code at https://www.ewg.org/tapwater/search-results.php?zip5={zipcode}, find the utility provider, then navigate to that provider's report page. Extract vital stats and capture the source URL. Store in `src/data/cities.ts` as static data.
 - **Key Stats to Extract per Location:**
   1. Number of contaminants exceeding EWG health guidelines (e.g., "14 Contaminants Exceed Guidelines")

@@ -184,8 +184,7 @@ const schemas = [
   }
 
   .faq-answer.open {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+    transition: max-height 0.3s ease-in;
   }
 </style>
 
@@ -206,13 +205,22 @@ const schemas = [
             otherButton.setAttribute("aria-expanded", "false");
             const otherAnswerId = otherButton.getAttribute("aria-controls");
             const otherAnswer = document.getElementById(otherAnswerId!);
-            otherAnswer?.classList.remove("open");
+            if (otherAnswer) {
+              otherAnswer.style.maxHeight = "0";
+              otherAnswer.classList.remove("open");
+            }
           }
         });
 
         // Toggle current answer
+        if (!isExpanded && answer) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          answer.classList.add("open");
+        } else if (answer) {
+          answer.style.maxHeight = "0";
+          answer.classList.remove("open");
+        }
         button.setAttribute("aria-expanded", String(!isExpanded));
-        answer?.classList.toggle("open");
       });
     });
   });
