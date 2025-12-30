@@ -90,6 +90,73 @@ const schemas = [
           {cityData.commonIssues.map((issue) => <li>{issue}</li>)}
         </ul>
       </div>
+
+      {
+        cityData.contaminantsExceedingGuidelines && (
+          <div class="ewg-report">
+            <div class="ewg-header">
+              <h3>Environmental Working Group (EWG) Water Quality Report</h3>
+              <p class="ewg-subtitle">
+                Based on official utility testing data provided to EWG
+              </p>
+            </div>
+
+            <div class="ewg-stats-row">
+              <div class="ewg-stat-box alert">
+                <div class="ewg-stat-value">
+                  {cityData.contaminantsExceedingGuidelines}
+                </div>
+                <div class="ewg-stat-text">
+                  Contaminants Exceed EWG Health Guidelines
+                </div>
+              </div>
+
+              <div class="ewg-stat-box info">
+                <div class="ewg-stat-value">{cityData.totalContaminants}</div>
+                <div class="ewg-stat-text">Total Contaminants Detected</div>
+              </div>
+
+              <div class="ewg-stat-box">
+                <div class="ewg-stat-value">✓</div>
+                <div class="ewg-stat-text">{cityData.complianceStatus}</div>
+              </div>
+            </div>
+
+            {cityData.topContaminants && (
+              <div class="top-contaminants">
+                <h4>Most Concerning Contaminants in {cityData.name}:</h4>
+                <div class="contaminant-list">
+                  {cityData.topContaminants.map((contaminant) => (
+                    <div class="contaminant-item">
+                      <span class="contaminant-alert">⚠</span>
+                      <span class="contaminant-name">{contaminant}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div class="ewg-note">
+              <p>
+                <strong>What This Means:</strong> While {cityData.name}'s water
+                meets federal drinking water standards, it contains contaminants
+                at levels that exceed EWG's stricter health guidelines. Federal
+                limits haven't been updated in nearly 20 years. Reverse osmosis
+                filters remove virtually all these contaminants, providing an
+                extra layer of protection for your family.
+              </p>
+            </div>
+
+            {cityData.ewgTapwaterDatabaseUrl && (
+              <div class="ewg-source">
+                <a href={cityData.ewgTapwaterDatabaseUrl} target="_blank">
+                  View Full EWG Report →
+                </a>
+              </div>
+            )}
+          </div>
+        )
+      }
     </div>
   </section>
 
@@ -269,6 +336,177 @@ const schemas = [
     margin-bottom: 0.75rem;
   }
 
+  /* EWG Report Styles */
+  .ewg-report {
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.005 220),
+      oklch(0.995 0.001 90)
+    );
+    border: 2px solid oklch(0.7 0.1 220);
+    border-radius: 1.25rem;
+    padding: 3rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .ewg-header {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid oklch(0.85 0.05 220);
+    padding-bottom: 1.5rem;
+  }
+
+  .ewg-header h3 {
+    margin: 0 0 0.5rem;
+    color: oklch(0.2 0.02 270);
+    font-size: 1.5rem;
+  }
+
+  .ewg-subtitle {
+    font-size: 0.95rem;
+    color: oklch(0.5 0.05 270);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .ewg-stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .ewg-stat-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.875rem;
+    text-align: center;
+    border: 2px solid oklch(0.9 0.01 90);
+    transition: all 0.3s ease;
+  }
+
+  .ewg-stat-box:hover {
+    border-color: oklch(0.7 0.1 220);
+    box-shadow: 0 2px 12px rgba(97, 137, 184, 0.15);
+  }
+
+  .ewg-stat-box.alert {
+    border-color: oklch(0.65 0.15 25);
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.005 25),
+      oklch(0.995 0.001 25)
+    );
+  }
+
+  .ewg-stat-box.info {
+    border-color: oklch(0.7 0.1 220);
+    background: linear-gradient(
+      135deg,
+      oklch(0.98 0.005 220),
+      oklch(0.995 0.001 220)
+    );
+  }
+
+  .ewg-stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: oklch(0.2 0.02 270);
+    margin-bottom: 0.5rem;
+  }
+
+  .ewg-stat-box.alert .ewg-stat-value {
+    color: oklch(0.6 0.15 25);
+  }
+
+  .ewg-stat-box.info .ewg-stat-value {
+    color: oklch(0.6 0.12 220);
+  }
+
+  .ewg-stat-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: oklch(0.4 0.05 270);
+    line-height: 1.4;
+  }
+
+  .top-contaminants {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.875rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid oklch(0.65 0.15 25);
+  }
+
+  .top-contaminants h4 {
+    margin: 0 0 1.25rem;
+    color: oklch(0.2 0.02 270);
+    font-family: "Instrument Serif", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .contaminant-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .contaminant-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: oklch(0.98 0.005 25);
+    border-radius: 0.5rem;
+    border: 1px solid oklch(0.9 0.01 25);
+  }
+
+  .contaminant-alert {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .contaminant-name {
+    font-size: 1rem;
+    color: oklch(0.2 0.02 270);
+    font-weight: 500;
+  }
+
+  .ewg-note {
+    background: oklch(0.96 0.01 60);
+    padding: 1.75rem;
+    border-radius: 0.875rem;
+    border-left: 4px solid oklch(0.7 0.12 60);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: oklch(0.25 0.02 90);
+  }
+
+  .ewg-note p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .ewg-source {
+    text-align: center;
+  }
+
+  .ewg-source a {
+    display: inline-block;
+    color: oklch(0.6 0.12 220);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid oklch(0.7 0.1 220);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .ewg-source a:hover {
+    background: oklch(0.7 0.1 220);
+    color: white;
+  }
+
   .reason-grid,
   .difference-grid {
     display: grid;
@@ -347,6 +585,42 @@ const schemas = [
     .reason-grid,
     .difference-grid {
       grid-template-columns: 1fr;
+    }
+
+    .ewg-report {
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .ewg-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .ewg-stats-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .ewg-stat-value {
+      font-size: 2rem;
+    }
+
+    .top-contaminants {
+      padding: 1.5rem;
+    }
+
+    .top-contaminants h4 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .contaminant-item {
+      padding: 0.75rem;
+    }
+
+    .ewg-note {
+      padding: 1.25rem;
+      font-size: 0.9rem;
     }
   }
 </style>
