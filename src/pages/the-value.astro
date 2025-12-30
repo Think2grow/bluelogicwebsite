@@ -118,6 +118,75 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
+  <section class="protection">
+    <div class="container">
+      <h2>What You're Protecting Against</h2>
+      <p class="intro">
+        Clean water isn't just about taste. It's about removing invisible
+        threats that affect your family's health, your home's longevity, and
+        your peace of mind.
+      </p>
+
+      <div class="threat-cards">
+        <div class="threat-card">
+          <div class="threat-icon">⚗️</div>
+          <h3>PFAS & Forever Chemicals</h3>
+          <p>
+            Industrial chemicals that persist in the environment and accumulate
+            in your body. Linked to cancer, hormone disruption, and immune
+            system damage—found in water supplies across Utah.
+          </p>
+        </div>
+
+        <div class="threat-card">
+          <div class="threat-icon">🧬</div>
+          <h3>Microplastics</h3>
+          <p>
+            Microscopic plastic fragments detected in tap water, bottled water,
+            and even human blood. These particles carry toxins and accumulate
+            over time with unknown long-term effects.
+          </p>
+        </div>
+
+        <div class="threat-card">
+          <div class="threat-icon">🚿</div>
+          <h3>Transdermal Absorption</h3>
+          <p>
+            Toxins don't just enter through drinking. During showers and baths,
+            your skin absorbs chemicals, and your lungs inhale vaporized
+            contaminants—whole-home filtration stops them at every tap.
+          </p>
+        </div>
+
+        <div class="threat-card">
+          <div class="threat-icon">🔧</div>
+          <h3>Hard Water & Scale Damage</h3>
+          <p>
+            Calcium and magnesium minerals create scale buildup that reduces
+            appliance lifespan, clogs pipes, and wastes money on soap and
+            repairs. Utah's hard water is among the hardest in the nation.
+          </p>
+        </div>
+
+        <div class="threat-card">
+          <div class="threat-icon">☣️</div>
+          <h3>Chlorine & Byproducts</h3>
+          <p>
+            Municipal water treatment chemicals and their disinfection
+            byproducts can irritate skin, exacerbate respiratory conditions, and
+            have been associated with increased cancer risk.
+          </p>
+        </div>
+      </div>
+
+      <p class="protection-summary">
+        Our whole-home RO system addresses all five of these threats—not just at
+        your kitchen sink, but at every faucet, shower, and appliance in your
+        home.
+      </p>
+    </div>
+  </section>
+
   <section class="guarantee">
     <div class="container">
       <h2>The Blue Logic Guarantee</h2>
@@ -272,6 +341,55 @@ import Layout from "../layouts/Layout.astro";
   .value-card p {
     line-height: 1.7;
     color: oklch(0.4 0.02 270);
+  }
+
+  .protection {
+    background-color: white;
+  }
+
+  .threat-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .threat-card {
+    background-color: oklch(0.98 0.01 90);
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 4px solid oklch(0.7 0.1 220);
+  }
+
+  .threat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .threat-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    color: oklch(0.2 0.02 270);
+    font-weight: 700;
+  }
+
+  .threat-card p {
+    line-height: 1.7;
+    color: oklch(0.4 0.02 270);
+    font-size: 0.95rem;
+  }
+
+  .protection-summary {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: oklch(0.3 0.02 270);
+    font-weight: 500;
+    padding: 2rem;
+    background-color: oklch(0.95 0.05 220);
+    border-radius: 1rem;
   }
 
   .guarantee {
