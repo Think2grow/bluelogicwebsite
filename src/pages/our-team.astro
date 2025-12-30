@@ -6,23 +6,35 @@ import Layout from "../layouts/Layout.astro";
   title="Our Team - Blue Logic Water"
   description="Meet the local team behind Blue Logic Water. Wasatch-born, professionally certified, dedicated to bringing pure water to Salt Lake City homes."
 >
-  <section class="hero">
-    <div class="container">
-      <h1>Our Team</h1>
-      <p class="subtitle">Wasatch-born water purification experts</p>
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-foreground">
+        Our Team
+      </h1>
+      <p class="text-xl md:text-2xl text-muted-foreground">
+        Wasatch-born water purification experts
+      </p>
     </div>
   </section>
 
-  <section class="story">
-    <div class="container">
-      <h2>The Wasatch-Born Story</h2>
-      <p class="story-text">
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-8 text-foreground"
+      >
+        The Wasatch-Born Story
+      </h2>
+      <p
+        class="text-lg leading-relaxed max-w-3xl mx-auto text-center text-muted-foreground mb-6"
+      >
         Blue Logic Water was founded by a team of engineers and water quality
         specialists who grew up in the Salt Lake Valley. We experienced
         firsthand the challenges of Utah's hard water and the frustration of
         seeing families pay inflated prices for basic water purification.
       </p>
-      <p class="story-text">
+      <p
+        class="text-lg leading-relaxed max-w-3xl mx-auto text-center text-muted-foreground"
+      >
         Our mission is simple: bring commercial-grade reverse osmosis technology
         to homes at a fair price. No marketing gimmicks, no unnecessary
         upsells—just pure water and honest service.
@@ -30,18 +42,28 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="team-section">
-    <div class="container">
-      <h2>Meet the Team</h2>
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        Meet the Team
+      </h2>
 
-      <div class="team-grid">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="team-member">
           <div class="member-photo">
-            <div class="placeholder-photo">Photo</div>
+            <span class="text-muted-foreground text-sm">Photo</span>
           </div>
-          <h3>Lead Installer & Technician</h3>
-          <p class="role">Professional Installation Specialist</p>
-          <p>
+          <h3 class="text-xl font-semibold mb-2 text-foreground">
+            Lead Installer & Technician
+          </h3>
+          <p
+            class="text-primary font-semibold text-sm uppercase tracking-wider mb-4"
+          >
+            Professional Installation Specialist
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Licensed and certified with over a decade of experience in water
             purification systems. Ensures every installation meets
             commercial-grade standards.
@@ -50,11 +72,17 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="team-member">
           <div class="member-photo">
-            <div class="placeholder-photo">Photo</div>
+            <span class="text-muted-foreground text-sm">Photo</span>
           </div>
-          <h3>Water Quality Engineer</h3>
-          <p class="role">System Design & Optimization</p>
-          <p>
+          <h3 class="text-xl font-semibold mb-2 text-foreground">
+            Water Quality Engineer
+          </h3>
+          <p
+            class="text-primary font-semibold text-sm uppercase tracking-wider mb-4"
+          >
+            System Design & Optimization
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Specializes in RO system engineering and water chemistry. Designs
             custom solutions for Utah's unique water profile and mineral
             content.
@@ -63,11 +91,17 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="team-member">
           <div class="member-photo">
-            <div class="placeholder-photo">Photo</div>
+            <span class="text-muted-foreground text-sm">Photo</span>
           </div>
-          <h3>Customer Success Lead</h3>
-          <p class="role">Client Relations & Support</p>
-          <p>
+          <h3 class="text-xl font-semibold mb-2 text-foreground">
+            Customer Success Lead
+          </h3>
+          <p
+            class="text-primary font-semibold text-sm uppercase tracking-wider mb-4"
+          >
+            Client Relations & Support
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Dedicated to ensuring every client receives exceptional service from
             first contact through installation and beyond. Local Salt Lake City
             resident.
@@ -77,57 +111,73 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="guarantee">
-    <div class="container">
-      <h2>The Purity Guarantee</h2>
-      <p class="guarantee-intro">
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground"
+      >
+        The Purity Guarantee
+      </h2>
+      <p class="text-lg text-center text-muted-foreground mb-12">
         When we enter your home, we follow the Blue Logic code of conduct:
       </p>
 
-      <div class="guarantee-grid">
-        <div class="guarantee-item">
-          <h3>Professional Excellence</h3>
-          <p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Professional Excellence
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Every installation is performed to commercial standards with
             meticulous attention to detail.
           </p>
         </div>
 
-        <div class="guarantee-item">
-          <h3>Respect Your Home</h3>
-          <p>
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Respect Your Home
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             We treat your home as our own—clean workspace, protective equipment,
             and thorough cleanup.
           </p>
         </div>
 
-        <div class="guarantee-item">
-          <h3>Transparent Communication</h3>
-          <p>
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Transparent Communication
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Clear explanations of the work, no hidden fees, and honest timelines
             from start to finish.
           </p>
         </div>
 
-        <div class="guarantee-item">
-          <h3>Local Accountability</h3>
-          <p>
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Local Accountability
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             We're your neighbors. Our reputation is built on trust and we stand
             behind every installation.
           </p>
         </div>
 
-        <div class="guarantee-item">
-          <h3>Ongoing Support</h3>
-          <p>
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Ongoing Support
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             We don't disappear after installation. Local service and maintenance
             support when you need it.
           </p>
         </div>
 
-        <div class="guarantee-item">
-          <h3>Fair Pricing Always</h3>
-          <p>
+        <div class="bg-card p-8 rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            Fair Pricing Always
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             No upsells, no pressure tactics. Just honest pricing for honest
             work.
           </p>
@@ -136,221 +186,42 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="local">
-    <div class="container center">
-      <h2>Proudly Serving the Wasatch Front</h2>
-      <p>
+  <section class="bg-card py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+        Proudly Serving the Wasatch Front
+      </h2>
+      <p class="text-lg text-muted-foreground mb-4 max-w-3xl mx-auto">
         From Park City to Draper, we serve families throughout the Salt Lake
         Valley with professional-grade water purification solutions.
       </p>
-      <p>
-        <strong>Service Areas:</strong> Salt Lake City • Park City • Draper • Sandy
-        • Cottonwood Heights • Holladay • Murray • Millcreek
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        <strong class="text-foreground">Service Areas:</strong> Salt Lake City • Park
+        City • Draper • Sandy • Cottonwood Heights • Holladay • Murray • Millcreek
       </p>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container center">
-      <h2>Work With a Local Team</h2>
-      <p>Schedule a free consultation with our water quality experts</p>
-      <a href="/#contact" class="cta-button">Get Started</a>
+  <section class="bg-background py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+        Work With a Local Team
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Schedule a free consultation with our water quality experts
+      </p>
+      <a href="/#contact" class="btn btn-primary btn-lg">Get Started</a>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.95 0.01 90) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .container.center {
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-family: "Instrument Serif", Georgia, serif;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .story {
-    background-color: white;
-  }
-
-  .story-text {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-    text-align: center;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .team-section {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
+  @reference "../styles/global.css";
   .team-member {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
+    @apply bg-background p-8 rounded-2xl text-center;
   }
 
   .member-photo {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    background-color: oklch(0.9 0.01 90);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .placeholder-photo {
-    color: oklch(0.6 0.02 270);
-    font-size: 0.875rem;
-  }
-
-  .team-member h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .role {
-    color: oklch(0.7 0.1 220);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .team-member p:not(.role) {
-    color: oklch(0.4 0.02 270);
-    line-height: 1.6;
-  }
-
-  .guarantee {
-    background-color: white;
-  }
-
-  .guarantee-intro {
-    font-size: 1.25rem;
-    text-align: center;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 3rem;
-  }
-
-  .guarantee-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .guarantee-item {
-    background-color: oklch(0.98 0.01 90);
-    padding: 2rem;
-    border-radius: 1rem;
-  }
-
-  .guarantee-item h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    color: oklch(0.2 0.02 270);
-  }
-
-  .guarantee-item p {
-    color: oklch(0.4 0.02 270);
-    line-height: 1.6;
-  }
-
-  .local {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .local p {
-    font-size: 1.125rem;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 1rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-section {
-    background-color: white;
-  }
-
-  .cta-section h2 {
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.25rem;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: opacity 0.2s;
-  }
-
-  .cta-button:hover {
-    opacity: 0.9;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero {
-      padding: 4rem 1rem 3rem;
-    }
-
-    .team-grid,
-    .guarantee-grid {
-      grid-template-columns: 1fr;
-    }
+    @apply w-36 h-36 mx-auto mb-6 rounded-full bg-muted flex items-center justify-center;
   }
 </style>

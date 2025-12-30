@@ -19,144 +19,234 @@ const schemas = [
   description="Advanced reverse osmosis technology. Half the footprint, 10x quieter, professional-grade water purification."
   schema={schemas}
 >
-  <section class="hero">
-    <div class="container">
-      <h1>The Blue Logic System</h1>
-      <p class="subtitle">
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-foreground">
+        The Blue Logic System
+      </h1>
+      <p class="text-xl md:text-2xl text-muted-foreground">
         Professional-grade water purification, engineered for your home
       </p>
     </div>
   </section>
 
-  <section class="comparison">
-    <div class="container">
-      <h2>Three Approaches to Water Treatment</h2>
-      <p class="intro">
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
+      >
+        Three Approaches to Water Treatment
+      </h2>
+      <p
+        class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
+      >
         Not all water treatment is created equal. Here's how softeners,
         filtration, and purification stack up.
       </p>
 
-      <div class="approach-cards">
-        <div class="approach-card basic">
-          <div class="approach-header">
-            <h3>Water Softener</h3>
-            <p class="approach-level">≈30% Solution</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="approach-card approach-basic">
+          <div class="mb-4">
+            <h3 class="text-2xl font-semibold mb-2 text-foreground">
+              Water Softener
+            </h3>
+            <p
+              class="text-sm font-bold uppercase tracking-wider text-muted-foreground"
+            >
+              ≈30% Solution
+            </p>
           </div>
-          <p class="approach-subtitle">The Illusion of Clean Water</p>
-          <p class="approach-description">
+          <p class="text-lg font-semibold mb-4 text-foreground/80">
+            The Illusion of Clean Water
+          </p>
+          <p class="text-muted-foreground leading-relaxed mb-6">
             Softeners remove calcium and magnesium to prevent scale buildup and
             extend appliance life. They make water feel better—but don't improve
             safety or purity.
           </p>
-          <div class="approach-pros">
-            <h4>What it does:</h4>
-            <ul>
-              <li>Prevents mineral scale in pipes and appliances</li>
-              <li>Makes soap and detergents more effective</li>
-              <li>Reduces water spots on dishes and fixtures</li>
+          <div class="mb-6">
+            <h4
+              class="text-sm font-bold uppercase tracking-wider mb-3 text-foreground/80"
+            >
+              What it does:
+            </h4>
+            <ul class="space-y-2">
+              <li class="approach-list-item">
+                Prevents mineral scale in pipes and appliances
+              </li>
+              <li class="approach-list-item">
+                Makes soap and detergents more effective
+              </li>
+              <li class="approach-list-item">
+                Reduces water spots on dishes and fixtures
+              </li>
             </ul>
           </div>
-          <div class="approach-verdict">
-            <strong>Verdict:</strong> Does not remove chemicals, toxins, or contaminants.
-            Does not improve taste, odor, or drinking safety.
+          <div
+            class="pt-4 border-t border-border text-sm text-muted-foreground"
+          >
+            <strong class="text-foreground">Verdict:</strong> Does not remove chemicals,
+            toxins, or contaminants. Does not improve taste, odor, or drinking safety.
           </div>
         </div>
 
-        <div class="approach-card better">
-          <div class="approach-header">
-            <h3>Whole-Home Filtration</h3>
-            <p class="approach-level">≈85% Solution</p>
+        <div class="approach-card approach-better">
+          <div class="mb-4">
+            <h3 class="text-2xl font-semibold mb-2 text-foreground">
+              Whole-Home Filtration
+            </h3>
+            <p class="text-sm font-bold uppercase tracking-wider text-primary">
+              ≈85% Solution
+            </p>
           </div>
-          <p class="approach-subtitle">Real Protection for Your Home</p>
-          <p class="approach-description">
+          <p class="text-lg font-semibold mb-4 text-foreground/80">
+            Real Protection for Your Home
+          </p>
+          <p class="text-muted-foreground leading-relaxed mb-6">
             Blue Logic's proprietary 7-layer media system targets the full
             spectrum of contaminants—from chlorine and PFAS to heavy metals and
             hardness minerals.
           </p>
-          <div class="approach-pros">
-            <h4>What it does:</h4>
-            <ul>
-              <li>Full-spectrum contaminant reduction</li>
-              <li>Softened water with 4x less salt than standard softeners</li>
-              <li>Cleaner, fresher taste at every tap</li>
-              <li>Low maintenance and long lifespan</li>
+          <div class="mb-6">
+            <h4
+              class="text-sm font-bold uppercase tracking-wider mb-3 text-foreground/80"
+            >
+              What it does:
+            </h4>
+            <ul class="space-y-2">
+              <li class="approach-list-item">
+                Full-spectrum contaminant reduction
+              </li>
+              <li class="approach-list-item">
+                Softened water with 4x less salt than standard softeners
+              </li>
+              <li class="approach-list-item">
+                Cleaner, fresher taste at every tap
+              </li>
+              <li class="approach-list-item">
+                Low maintenance and long lifespan
+              </li>
             </ul>
           </div>
-          <div class="approach-verdict">
-            <strong>Verdict:</strong> The best whole-home filtration on the market—smart,
-            balanced, and built to last.
+          <div
+            class="pt-4 border-t border-border text-sm text-muted-foreground"
+          >
+            <strong class="text-foreground">Verdict:</strong> The best whole-home
+            filtration on the market—smart, balanced, and built to last.
           </div>
         </div>
 
-        <div class="approach-card best">
-          <div class="approach-header">
-            <h3>Whole-Home Purification</h3>
-            <p class="approach-level">≈99% Solution</p>
+        <div class="approach-card approach-best">
+          <div class="mb-4">
+            <h3 class="text-2xl font-semibold mb-2 text-foreground">
+              Whole-Home Purification
+            </h3>
+            <p class="text-sm font-bold uppercase tracking-wider text-success">
+              ≈99% Solution
+            </p>
           </div>
-          <p class="approach-subtitle">The Ultimate in Clean Water</p>
-          <p class="approach-description">
+          <p class="text-lg font-semibold mb-4 text-foreground/80">
+            The Ultimate in Clean Water
+          </p>
+          <p class="text-muted-foreground leading-relaxed mb-6">
             Our reverse osmosis system removes contaminants at the molecular
             level—delivering bottled-water quality from every tap in your home.
           </p>
-          <div class="approach-pros">
-            <h4>What it does:</h4>
-            <ul>
-              <li>Up to 99.8% contaminant removal</li>
-              <li>Eliminates PFAS, arsenic, pharmaceuticals, microplastics</li>
-              <li>Pure water for every sink, shower, and appliance</li>
-              <li>Engineered for reliability and simplicity</li>
+          <div class="mb-6">
+            <h4
+              class="text-sm font-bold uppercase tracking-wider mb-3 text-foreground/80"
+            >
+              What it does:
+            </h4>
+            <ul class="space-y-2">
+              <li class="approach-list-item">
+                Up to 99.8% contaminant removal
+              </li>
+              <li class="approach-list-item">
+                Eliminates PFAS, arsenic, pharmaceuticals, microplastics
+              </li>
+              <li class="approach-list-item">
+                Pure water for every sink, shower, and appliance
+              </li>
+              <li class="approach-list-item">
+                Engineered for reliability and simplicity
+              </li>
             </ul>
           </div>
-          <div class="approach-verdict">
-            <strong>Verdict:</strong> The only true purification solution—better than
-            bottled water at every tap.
+          <div
+            class="pt-4 border-t border-border text-sm text-muted-foreground"
+          >
+            <strong class="text-foreground">Verdict:</strong> The only true purification
+            solution—better than bottled water at every tap.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="specs">
-    <div class="container">
-      <h2>Whole-Home Purification</h2>
-      <p class="intro">
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
+      >
+        Whole-Home Purification
+      </h2>
+      <p
+        class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
+      >
         Our reverse osmosis system isn't just smaller and quieter—it's
         fundamentally better engineered. 99.8% pure water at every tap in your
         home.
       </p>
 
-      <div class="spec-grid">
-        <div class="spec-card">
-          <h3>Molecular-Level Purification</h3>
-          <p><strong>99.8% contaminant removal</strong></p>
-          <p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 bg-card rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-primary">
+            Molecular-Level Purification
+          </h3>
+          <p class="font-semibold mb-2 text-foreground">
+            99.8% contaminant removal
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Removes dissolved solids, heavy metals, PFAS, pharmaceuticals, and
             microplastics at the molecular level.
           </p>
         </div>
 
-        <div class="spec-card">
-          <h3>Compact Design</h3>
-          <p><strong>50% smaller</strong> than traditional RO systems</p>
-          <p>
+        <div class="p-8 bg-card rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-primary">
+            Compact Design
+          </h3>
+          <p class="font-semibold mb-2 text-foreground">
+            50% smaller than traditional RO systems
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Fits seamlessly in modern utility spaces without the massive
             footprint of competitor systems.
           </p>
         </div>
 
-        <div class="spec-card">
-          <h3>Silent Operation</h3>
-          <p><strong>10x quieter</strong> than standard units</p>
-          <p>
+        <div class="p-8 bg-card rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-primary">
+            Silent Operation
+          </h3>
+          <p class="font-semibold mb-2 text-foreground">
+            10x quieter than standard units
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Advanced sound-dampening technology means you'll forget it's even
             running.
           </p>
         </div>
 
-        <div class="spec-card">
-          <h3>Premium Build Quality</h3>
-          <p><strong>Commercial-grade components</strong></p>
-          <p>
+        <div class="p-8 bg-card rounded-2xl">
+          <h3 class="text-xl font-semibold mb-4 text-primary">
+            Premium Build Quality
+          </h3>
+          <p class="font-semibold mb-2 text-foreground">
+            Commercial-grade components
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
             Engineered for long-term reliability with NSF-certified materials
             throughout.
           </p>
@@ -165,48 +255,61 @@ const schemas = [
     </div>
   </section>
 
-  <section class="filtration-system">
-    <div class="container">
-      <h2>7-Layer Whole-Home Filtration</h2>
-      <p class="intro">
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
+      >
+        7-Layer Whole-Home Filtration
+      </h2>
+      <p
+        class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
+      >
         For those seeking advanced filtration without full purification, our
         proprietary 7-layer system delivers exceptional protection and softened
         water throughout your home.
       </p>
 
-      <div class="filtration-features">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="filtration-card">
-          <h3>🧪 Advanced Multi-Media Technology</h3>
-          <p>
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            🧪 Advanced Multi-Media Technology
+          </h3>
+          <p class="text-muted-foreground leading-relaxed mb-4">
             Seven distinct filtration layers work in concert to target
             everything from heavy metals and chlorine to microplastics and
             hardness minerals.
           </p>
-          <ul>
-            <li>
-              <strong>Zinc & Copper-Infused Carbon</strong> — Removes chlorine and
-              reduces bacteria
+          <ul class="space-y-3">
+            <li class="text-muted-foreground text-sm leading-relaxed">
+              <strong class="text-foreground"
+                >Zinc & Copper-Infused Carbon</strong
+              > — Removes chlorine and reduces bacteria
             </li>
-            <li>
-              <strong>Catalytic Carbon</strong> — Eliminates chloramines and organic
-              compounds
+            <li class="text-muted-foreground text-sm leading-relaxed">
+              <strong class="text-foreground">Catalytic Carbon</strong> — Eliminates
+              chloramines and organic compounds
             </li>
-            <li>
-              <strong>EvoResin</strong> — Targets hardness without excessive salt
+            <li class="text-muted-foreground text-sm leading-relaxed">
+              <strong class="text-foreground">EvoResin</strong> — Targets hardness
+              without excessive salt
             </li>
-            <li>
-              <strong>Katalox</strong> — Removes iron, manganese, and hydrogen sulfide
+            <li class="text-muted-foreground text-sm leading-relaxed">
+              <strong class="text-foreground">Katalox</strong> — Removes iron, manganese,
+              and hydrogen sulfide
             </li>
-            <li>
-              <strong>Aluminosilicate & Garnet</strong> — Final polishing and sediment
-              removal
+            <li class="text-muted-foreground text-sm leading-relaxed">
+              <strong class="text-foreground">Aluminosilicate & Garnet</strong> —
+              Final polishing and sediment removal
             </li>
           </ul>
         </div>
 
         <div class="filtration-card">
-          <h3>💧 Softened Without the Slick</h3>
-          <p>
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            💧 Softened Without the Slick
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Enjoy water that feels smooth and fresh without the slippery residue
             of traditional salt-based softeners. Uses 75% less salt while
             delivering superior results.
@@ -214,16 +317,20 @@ const schemas = [
         </div>
 
         <div class="filtration-card">
-          <h3>🏡 Whole-Home Coverage</h3>
-          <p>
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            🏡 Whole-Home Coverage
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Clean, healthy water flows to every tap, shower, and appliance.
             Protects your investment and your family simultaneously.
           </p>
         </div>
 
         <div class="filtration-card">
-          <h3>⚙️ Built to Last</h3>
-          <p>
+          <h3 class="text-xl font-semibold mb-4 text-foreground">
+            ⚙️ Built to Last
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Designed for high-flow homes with minimal maintenance requirements.
             Engineered for longevity, not planned obsolescence.
           </p>
@@ -232,419 +339,160 @@ const schemas = [
     </div>
   </section>
 
-  <section class="technology">
-    <div class="container">
-      <h2>How It Works</h2>
-      <p class="intro">
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
+      >
+        How It Works
+      </h2>
+      <p
+        class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
+      >
         Our whole-home purification system delivers commercial-grade water
         quality through an engineered four-stage process.
       </p>
-      <div class="process-steps">
-        <div class="step">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="step-card">
           <div class="step-number">1</div>
-          <h3>Pretreatment Filtration</h3>
-          <p>Multi-layer protection prepares water for purification</p>
-          <ul class="step-details">
-            <li>
-              <strong>Sediment Filter</strong> — Removes particles and debris
+          <h3 class="text-lg font-semibold mb-3 text-foreground">
+            Pretreatment Filtration
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4">
+            Multi-layer protection prepares water for purification
+          </p>
+          <ul class="space-y-2 text-left">
+            <li class="text-sm text-muted-foreground">
+              <strong class="text-foreground">Sediment Filter</strong> — Removes particles
+              and debris
             </li>
-            <li>
-              <strong>Carbon Block Filter</strong> — Eliminates chlorine and organics
+            <li class="text-sm text-muted-foreground">
+              <strong class="text-foreground">Carbon Block Filter</strong> — Eliminates
+              chlorine and organics
             </li>
-            <li>
-              <strong>Phosphate Additive</strong> — Protects the RO membrane from
-              scale buildup
+            <li class="text-sm text-muted-foreground">
+              <strong class="text-foreground">Phosphate Additive</strong> — Protects
+              the RO membrane from scale buildup
             </li>
           </ul>
         </div>
 
-        <div class="step">
+        <div class="step-card">
           <div class="step-number">2</div>
-          <h3>Reverse Osmosis Unit</h3>
-          <p>Commercial-grade purification for your entire home</p>
-          <ul class="step-details">
-            <li>Semi-permeable membrane technology</li>
-            <li>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">
+            Reverse Osmosis Unit
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4">
+            Commercial-grade purification for your entire home
+          </p>
+          <ul class="space-y-2 text-left">
+            <li class="text-sm text-muted-foreground">
+              Semi-permeable membrane technology
+            </li>
+            <li class="text-sm text-muted-foreground">
               Removes 99%+ of contaminants including heavy metals, PFAS, and
               dissolved solids
             </li>
-            <li>Designed for continuous whole-home capacity</li>
+            <li class="text-sm text-muted-foreground">
+              Designed for continuous whole-home capacity
+            </li>
           </ul>
         </div>
 
-        <div class="step">
+        <div class="step-card">
           <div class="step-number">3</div>
-          <h3>165-Gallon Holding Tank</h3>
-          <p>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">
+            165-Gallon Holding Tank
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4">
             High-capacity storage maintains consistent flow throughout your home
           </p>
-          <ul class="step-details">
-            <li>Ensures purified water is always ready on demand</li>
-            <li>Prevents pressure drops during peak usage</li>
-            <li>NSF-certified food-grade materials</li>
+          <ul class="space-y-2 text-left">
+            <li class="text-sm text-muted-foreground">
+              Ensures purified water is always ready on demand
+            </li>
+            <li class="text-sm text-muted-foreground">
+              Prevents pressure drops during peak usage
+            </li>
+            <li class="text-sm text-muted-foreground">
+              NSF-certified food-grade materials
+            </li>
           </ul>
         </div>
 
-        <div class="step">
+        <div class="step-card">
           <div class="step-number">4</div>
-          <h3>Delivery Pump</h3>
-          <p>Restores—and often improves—your home's water pressure</p>
-          <ul class="step-details">
-            <li>Maintains optimal pressure to every fixture</li>
-            <li>Quiet, efficient operation</li>
-            <li>Automatic pressure regulation</li>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">
+            Delivery Pump
+          </h3>
+          <p class="text-sm text-muted-foreground mb-4">
+            Restores—and often improves—your home's water pressure
+          </p>
+          <ul class="space-y-2 text-left">
+            <li class="text-sm text-muted-foreground">
+              Maintains optimal pressure to every fixture
+            </li>
+            <li class="text-sm text-muted-foreground">
+              Quiet, efficient operation
+            </li>
+            <li class="text-sm text-muted-foreground">
+              Automatic pressure regulation
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container center">
-      <h2>Ready to Experience the Difference?</h2>
-      <p>Schedule a free water quality assessment</p>
-      <a href="/#contact" class="cta-button">Get Started</a>
+  <section class="bg-background py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+        Ready to Experience the Difference?
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Schedule a free water quality assessment
+      </p>
+      <a href="/#contact" class="btn btn-primary btn-lg">Get Started</a>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.95 0.01 90) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .container.center {
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-family: "Instrument Serif", Georgia, serif;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .intro {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .comparison {
-    background-color: white;
-  }
-
-  .approach-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-  }
-
+  @reference "../styles/global.css";
   .approach-card {
-    background-color: oklch(0.98 0.01 90);
-    padding: 2rem;
-    border-radius: 1rem;
-    border-top: 4px solid oklch(0.7 0.1 220);
+    @apply bg-card p-8 rounded-2xl border-t-4 border-primary;
   }
 
-  .approach-card.basic {
-    border-top-color: oklch(0.6 0.05 30);
+  .approach-basic {
+    @apply border-t-error;
   }
 
-  .approach-card.better {
-    border-top-color: oklch(0.7 0.1 220);
+  .approach-better {
+    @apply border-t-primary;
   }
 
-  .approach-card.best {
-    border-top-color: oklch(0.5 0.15 150);
-    background: linear-gradient(
-      135deg,
-      oklch(0.98 0.01 90) 0%,
-      oklch(0.96 0.03 220) 100%
-    );
+  .approach-best {
+    @apply border-t-success bg-linear-to-br from-card to-accent;
   }
 
-  .approach-header {
-    margin-bottom: 1rem;
+  .approach-list-item {
+    @apply pl-6 relative text-muted-foreground text-sm leading-relaxed;
   }
 
-  .approach-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: oklch(0.2 0.02 270);
-  }
-
-  .approach-level {
-    font-size: 0.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: oklch(0.5 0.05 220);
-  }
-
-  .approach-subtitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: oklch(0.3 0.02 270);
-  }
-
-  .approach-description {
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .approach-pros h4 {
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-    color: oklch(0.3 0.02 270);
-  }
-
-  .approach-pros ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .approach-pros li {
-    padding-left: 1.5rem;
-    position: relative;
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-    color: oklch(0.35 0.02 270);
-    font-size: 0.95rem;
-  }
-
-  .approach-pros li::before {
+  .approach-list-item::before {
     content: "✓";
-    position: absolute;
-    left: 0;
-    color: oklch(0.7 0.1 220);
-    font-weight: 700;
-  }
-
-  .approach-verdict {
-    padding-top: 1rem;
-    border-top: 1px solid oklch(0.9 0.01 90);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: oklch(0.35 0.02 270);
-  }
-
-  .approach-verdict strong {
-    color: oklch(0.2 0.02 270);
-  }
-
-  .specs {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .spec-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .spec-card {
-    background-color: oklch(0.98 0.01 90);
-    padding: 2rem;
-    border-radius: 1rem;
-  }
-
-  .spec-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: oklch(0.7 0.1 220);
-  }
-
-  .spec-card p {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-  }
-
-  .spec-card strong {
-    color: oklch(0.2 0.02 270);
-  }
-
-  .filtration-system {
-    background-color: white;
-  }
-
-  .filtration-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    @apply absolute left-0 text-primary font-bold;
   }
 
   .filtration-card {
-    background-color: oklch(0.98 0.01 90);
-    padding: 2rem;
-    border-radius: 1rem;
-    border-left: 4px solid oklch(0.7 0.1 220);
+    @apply bg-card p-8 rounded-2xl border-l-4 border-primary;
   }
 
-  .filtration-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: oklch(0.2 0.02 270);
-  }
-
-  .filtration-card p {
-    line-height: 1.7;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 1rem;
-  }
-
-  .filtration-card ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 1rem;
-  }
-
-  .filtration-card li {
-    margin-bottom: 0.75rem;
-    line-height: 1.6;
-    color: oklch(0.35 0.02 270);
-    font-size: 0.95rem;
-  }
-
-  .filtration-card strong {
-    color: oklch(0.2 0.02 270);
-    font-weight: 600;
-  }
-
-  .technology {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .step {
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 1rem;
+  .step-card {
+    @apply text-center p-8 bg-background rounded-2xl;
   }
 
   .step-number {
-    width: 60px;
-    height: 60px;
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 auto 1rem;
-  }
-
-  .step h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .step p {
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 1rem;
-  }
-
-  .step-details {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 300px;
-  }
-
-  .step-details li {
-    color: oklch(0.35 0.02 270);
-    margin-bottom: 0.5rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .step-details strong {
-    color: oklch(0.2 0.02 270);
-    font-weight: 600;
-  }
-
-  .cta-section {
-    background-color: white;
-  }
-
-  .cta-section h2 {
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.25rem;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: opacity 0.2s;
-  }
-
-  .cta-button:hover {
-    opacity: 0.9;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero {
-      padding: 4rem 1rem 3rem;
-    }
-
-    .spec-grid,
-    .process-steps {
-      grid-template-columns: 1fr;
-    }
+    @apply w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4;
   }
 </style>

@@ -25,20 +25,22 @@ const schemas = [
   description="Find Blue Logic Water reverse osmosis systems in Salt Lake City, Park City, Provo, and other Utah cities. Professional water filtration for every location."
   schema={schemas}
 >
-  <section class="hero">
-    <div class="container">
-      <h1>Utah Water Solutions by Location</h1>
-      <p class="subtitle">
+  <section class="hero-gradient-dark py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-white">
+        Utah Water Solutions by Location
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90">
         Professional reverse osmosis systems serving Utah's most demanding
         neighborhoods
       </p>
     </div>
   </section>
 
-  <section class="locations-directory">
-    <div class="container">
-      <div class="intro-text">
-        <p>
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <p class="text-lg leading-relaxed text-muted-foreground">
           Utah's water challenges vary by location. From Salt Lake City's PFAS
           contamination to Lehi's extreme arsenic levels, each region has unique
           water quality concerns. Blue Logic Water delivers location-specific
@@ -46,13 +48,17 @@ const schemas = [
         </p>
       </div>
 
-      <div class="locations-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         {
           sortedCities.map((city) => (
             <a href={`/locations/${city.slug}`} class="location-card">
               <div class="card-header">
-                <h2 class="city-name">{city.name}</h2>
-                <p class="region">{city.region}</p>
+                <h2 class="text-2xl font-serif text-foreground mb-2">
+                  {city.name}
+                </h2>
+                <p class="text-sm font-medium text-muted-foreground">
+                  {city.region}
+                </p>
               </div>
 
               <div class="card-content">
@@ -67,19 +73,21 @@ const schemas = [
                 </div>
 
                 {city.contaminantsExceedingGuidelines && (
-                  <div class="stat-row risk-alert">
+                  <div class="stat-row-alert">
                     <span class="stat-label">EWG Concerns:</span>
-                    <span class="stat-value alert">
+                    <span class="text-destructive font-bold">
                       {city.contaminantsExceedingGuidelines} contaminants
                     </span>
                   </div>
                 )}
 
-                <p class="card-description">{city.description}</p>
+                <p class="text-sm text-muted-foreground leading-relaxed mt-4">
+                  {city.description}
+                </p>
               </div>
 
               <div class="card-footer">
-                <span class="cta-text">View Details →</span>
+                <span class="text-primary font-semibold">View Details →</span>
               </div>
             </a>
           ))
@@ -88,15 +96,21 @@ const schemas = [
     </div>
   </section>
 
-  <section class="why-location-matters">
-    <div class="container">
-      <h2>Why Location Matters</h2>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        Why Location Matters
+      </h2>
 
-      <div class="reasons-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="reason-card">
-          <div class="icon">🗺️</div>
-          <h3>Different Water Sources</h3>
-          <p>
+          <div class="text-5xl mb-4">🗺️</div>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Different Water Sources
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Each Utah city draws from different water sources—mountain
             watersheds, valley aquifers, or purchased surface water—each with
             distinct mineral and contaminant profiles.
@@ -104,9 +118,11 @@ const schemas = [
         </div>
 
         <div class="reason-card">
-          <div class="icon">⚡</div>
-          <h3>Unique Contaminants</h3>
-          <p>
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Unique Contaminants
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             From arsenic in southern valleys to PFAS in northern supplies, your
             location determines which contaminants pose the greatest health
             risk.
@@ -114,9 +130,11 @@ const schemas = [
         </div>
 
         <div class="reason-card">
-          <div class="icon">💰</div>
-          <h3>Tailored Solutions</h3>
-          <p>
+          <div class="text-5xl mb-4">💰</div>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Tailored Solutions
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Blue Logic designs systems specifically for your location's water
             profile, ensuring maximum contaminant removal without
             overengineering.
@@ -124,9 +142,11 @@ const schemas = [
         </div>
 
         <div class="reason-card">
-          <div class="icon">🏘️</div>
-          <h3>Local Expertise</h3>
-          <p>
+          <div class="text-5xl mb-4">🏘️</div>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Local Expertise
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Our team knows Utah water. We understand the seasonal variations,
             the infrastructure quirks, and the exact challenges your
             neighborhood faces.
@@ -136,319 +156,80 @@ const schemas = [
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container">
-      <h2>Don't See Your Location?</h2>
-      <p>
+  <section class="bg-obsidian py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-white">
+        Don't See Your Location?
+      </h2>
+      <p class="text-lg text-white/90 mb-8">
         Blue Logic Water serves the greater Salt Lake Valley and surrounding
         regions. If your city isn't listed, we still serve your area.
       </p>
-      <a href="/#contact" class="cta-button">Contact Us to Serve Your Area</a>
+      <a href="/#contact" class="btn btn-primary btn-lg"
+        >Contact Us to Serve Your Area</a
+      >
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.7 0.1 220) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    color: white;
-    padding: 6rem 2rem 4rem;
-    text-align: center;
+  @reference "../../styles/global.css";
+  .hero-gradient-dark {
+    @apply bg-linear-to-br from-primary to-primary/70;
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-family: "Instrument Serif", serif;
-    font-size: 3.5rem;
-    margin: 0 0 1rem;
-    font-weight: 400;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    opacity: 0.95;
-    margin: 0;
-  }
-
-  section {
-    padding: 4rem 2rem;
-  }
-
-  h2 {
-    font-family: "Instrument Serif", serif;
-    font-size: 2.5rem;
-    margin: 0 0 2rem;
-    text-align: center;
-    font-weight: 400;
-  }
-
-  h3 {
-    font-family: "Instrument Serif", serif;
-    font-size: 1.75rem;
-    margin: 0 0 1rem;
-    font-weight: 400;
-  }
-
-  .locations-directory {
-    background: oklch(0.98 0.005 220);
-  }
-
-  .intro-text {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: oklch(0.3 0.02 270);
-  }
-
-  .locations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+  .bg-obsidian {
+    background-color: var(--color-obsidian);
   }
 
   .location-card {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    border: 2px solid oklch(0.95 0.01 90);
-    transition: all 0.3s ease;
+    @apply flex flex-col bg-background rounded-2xl overflow-hidden no-underline border-2 border-border transition-all duration-300;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .location-card:hover {
-    border-color: oklch(0.7 0.1 220);
+    @apply border-primary -translate-y-1;
     box-shadow: 0 12px 32px rgba(97, 137, 184, 0.12);
-    transform: translateY(-4px);
   }
 
   .card-header {
-    background: linear-gradient(
-      135deg,
-      oklch(0.95 0.01 220),
-      oklch(0.98 0.005 220)
-    );
-    padding: 2rem 1.5rem 1.5rem;
-    border-bottom: 1px solid oklch(0.9 0.01 220);
-  }
-
-  .city-name {
-    font-size: 1.75rem;
-    margin: 0 0 0.5rem;
-    color: oklch(0.2 0.02 270);
-    font-family: "Instrument Serif", serif;
-    font-weight: 400;
-  }
-
-  .region {
-    font-size: 0.95rem;
-    color: oklch(0.5 0.05 270);
-    margin: 0;
-    font-weight: 500;
+    @apply p-6 pb-4 border-b border-border bg-card;
   }
 
   .card-content {
-    padding: 1.75rem 1.5rem;
-    flex-grow: 1;
+    @apply p-6 flex-1;
   }
 
   .stat-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid oklch(0.95 0.01 90);
-    font-size: 0.95rem;
+    @apply flex justify-between items-center py-3 border-b border-border text-sm;
   }
 
   .stat-row:last-of-type {
-    border-bottom: none;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    @apply border-b-0 pb-0 mb-0;
   }
 
   .stat-label {
-    font-weight: 600;
-    color: oklch(0.5 0.05 270);
+    @apply font-semibold text-muted-foreground;
   }
 
   .stat-value {
-    color: oklch(0.3 0.02 270);
-    font-weight: 500;
+    @apply text-foreground font-medium;
   }
 
-  .stat-row.risk-alert {
-    background: oklch(0.98 0.005 25);
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    border: none;
-    margin: 0.5rem 0;
-  }
-
-  .stat-value.alert {
-    color: oklch(0.6 0.15 25);
-    font-weight: 700;
-  }
-
-  .card-description {
-    font-size: 0.9rem;
-    color: oklch(0.45 0.02 270);
-    line-height: 1.6;
-    margin: 0;
+  .stat-row-alert {
+    @apply flex justify-between items-center p-3 rounded-lg bg-destructive/10 my-2;
   }
 
   .card-footer {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid oklch(0.95 0.01 90);
-    background: oklch(0.99 0.001 90);
-  }
-
-  .cta-text {
-    color: oklch(0.6 0.12 220);
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-
-  .location-card:hover .cta-text {
-    color: oklch(0.65 0.15 220);
-  }
-
-  .why-location-matters {
-    background: white;
-  }
-
-  .reasons-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    @apply p-4 border-t border-border bg-card/50;
   }
 
   .reason-card {
-    background: oklch(0.98 0.005 220);
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    border: 1px solid oklch(0.95 0.01 90);
-    transition: all 0.3s ease;
+    @apply bg-card p-8 rounded-2xl text-center border border-border transition-all duration-300;
   }
 
   .reason-card:hover {
-    border-color: oklch(0.7 0.1 220);
+    @apply border-primary;
     box-shadow: 0 8px 24px rgba(97, 137, 184, 0.1);
-  }
-
-  .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .reason-card h3 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-  }
-
-  .reason-card p {
-    margin: 0;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: oklch(0.45 0.02 270);
-  }
-
-  .cta-section {
-    background: oklch(0.2 0.02 270);
-    color: white;
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-
-  .cta-section h2 {
-    color: white;
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1.25rem 3rem;
-    text-decoration: none;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: all 0.2s;
-  }
-
-  .cta-button:hover {
-    background: oklch(0.75 0.12 220);
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.125rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    section {
-      padding: 3rem 1rem;
-    }
-
-    .locations-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .card-header {
-      padding: 1.5rem 1.25rem 1.25rem;
-    }
-
-    .city-name {
-      font-size: 1.5rem;
-    }
-
-    .card-content {
-      padding: 1.25rem 1.25rem;
-    }
-
-    .reasons-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .reason-card h3 {
-      font-size: 1.125rem;
-    }
-
-    .cta-button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-    }
   }
 </style>

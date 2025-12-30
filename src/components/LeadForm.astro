@@ -2,141 +2,99 @@
 // Basic lead capture form component
 ---
 
-<div class="lead-form-container" id="contact">
-  <h2>Get Your Free Water Purity Audit</h2>
-  <p>Schedule a consultation with our team</p>
+<div class="max-w-xl mx-auto my-16 px-6 py-10 bg-card rounded-2xl" id="contact">
+  <h2 class="text-3xl font-serif text-center mb-2">
+    Get Your Free Water Purity Audit
+  </h2>
+  <p class="text-center text-muted-foreground mb-8">
+    Schedule a consultation with our team
+  </p>
 
-  <form id="leadForm" class="lead-form">
-    <div class="form-group">
-      <label for="name">Full Name *</label>
-      <input type="text" id="name" name="name" required />
+  <form id="leadForm" class="flex flex-col gap-6">
+    <div class="flex flex-col gap-2">
+      <label for="name" class="font-semibold text-sm uppercase tracking-wider"
+        >Full Name *</label
+      >
+      <input type="text" id="name" name="name" required class="input-field" />
     </div>
 
-    <div class="form-group">
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="email" required />
+    <div class="flex flex-col gap-2">
+      <label for="email" class="font-semibold text-sm uppercase tracking-wider"
+        >Email *</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="input-field"
+      />
     </div>
 
-    <div class="form-group">
-      <label for="phone">Phone *</label>
-      <input type="tel" id="phone" name="phone" required />
+    <div class="flex flex-col gap-2">
+      <label for="phone" class="font-semibold text-sm uppercase tracking-wider"
+        >Phone *</label
+      >
+      <input type="tel" id="phone" name="phone" required class="input-field" />
     </div>
 
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input type="text" id="address" name="address" />
+    <div class="flex flex-col gap-2">
+      <label
+        for="address"
+        class="font-semibold text-sm uppercase tracking-wider">Address</label
+      >
+      <input type="text" id="address" name="address" class="input-field" />
     </div>
 
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" id="city" name="city" value="Salt Lake City" />
+    <div class="flex flex-col gap-2">
+      <label for="city" class="font-semibold text-sm uppercase tracking-wider"
+        >City</label
+      >
+      <input
+        type="text"
+        id="city"
+        name="city"
+        value="Salt Lake City"
+        class="input-field"
+      />
     </div>
 
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+    <div class="flex flex-col gap-2">
+      <label
+        for="message"
+        class="font-semibold text-sm uppercase tracking-wider">Message</label
+      >
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        class="input-field resize-y"></textarea>
     </div>
 
-    <button type="submit" class="submit-button">Schedule Audit</button>
+    <button type="submit" class="btn btn-primary btn-lg mt-2"
+      >Schedule Audit</button
+    >
 
     <div id="formStatus" class="form-status"></div>
   </form>
 </div>
 
 <style>
-  .lead-form-container {
-    max-width: 600px;
-    margin: 4rem auto;
-    padding: 2rem;
-    background-color: oklch(0.98 0.01 90);
-    border-radius: 1rem;
-  }
-
-  .lead-form-container h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .lead-form-container > p {
-    text-align: center;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 2rem;
-  }
-
-  .lead-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .form-group label {
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 0.75rem;
-    border: 2px solid oklch(0.85 0.01 90);
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.2s;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: oklch(0.7 0.1 220);
-  }
-
-  .submit-button {
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: opacity 0.2s;
-  }
-
-  .submit-button:hover {
-    opacity: 0.9;
-  }
-
-  .submit-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  @reference "../styles/global.css";
+  .input-field {
+    @apply px-4 py-3 border-2 border-border rounded-lg text-base font-sans bg-background transition-colors focus:outline-none focus:border-ring;
   }
 
   .form-status {
-    text-align: center;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: none;
+    @apply text-center p-4 rounded-lg hidden;
   }
 
   .form-status.success {
-    display: block;
-    background-color: oklch(0.9 0.1 140);
-    color: oklch(0.3 0.1 140);
+    @apply block bg-success-light text-success;
   }
 
   .form-status.error {
-    display: block;
-    background-color: oklch(0.9 0.1 30);
-    color: oklch(0.3 0.1 30);
+    @apply block bg-error-light text-error;
   }
 </style>
 

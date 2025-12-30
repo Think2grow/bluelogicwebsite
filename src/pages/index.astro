@@ -13,28 +13,40 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
   title="Blue Logic Water - Premium RO Systems for Salt Lake City"
   schema={schemas}
 >
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Your Family, Unfiltered.</h1>
-      <p class="hero-subtitle">
+  <section class="hero-gradient py-24 md:py-32 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1
+        class="text-5xl md:text-7xl font-serif mb-4 leading-tight text-foreground"
+      >
+        Your Family, Unfiltered.
+      </h1>
+      <p class="text-xl md:text-2xl mb-4 text-muted-foreground">
         Professional reverse osmosis systems for the health-conscious home
       </p>
-      <p class="hero-description">
+      <p class="text-lg md:text-xl mb-8 text-muted-foreground/80">
         Half the cost. Half the footprint. 10x quieter.
       </p>
-      <a href="#contact" class="cta-button">Schedule Free Water Audit</a>
+      <a href="#contact" class="btn btn-primary btn-lg"
+        >Schedule Free Water Audit</a
+      >
     </div>
   </section>
 
-  <section class="mission">
-    <div class="container">
-      <h2>Purity Without the Premium</h2>
-      <p>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-serif mb-8 text-foreground">
+        Purity Without the Premium
+      </h2>
+      <p
+        class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto"
+      >
         We believe every family deserves access to the purest water without the
         inflated price tag. Blue Logic Water delivers professional-grade reverse
         osmosis systems at half the industry cost—$15k instead of $30k.
       </p>
-      <p>
+      <p
+        class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto"
+      >
         Our mission is simple: provide Salt Lake City homes with the same
         advanced water purification technology used in commercial facilities,
         without the unnecessary markup.
@@ -42,31 +54,54 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
     </div>
   </section>
 
-  <section class="value-snapshot">
-    <div class="container">
-      <h2>The Blue Logic Difference</h2>
-      <div class="value-grid">
-        <div class="value-item">
-          <h3>1/2 the Cost</h3>
-          <p>$15,000 vs $30,000+ from competitors</p>
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        The Blue Logic Difference
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center p-8 bg-background rounded-2xl">
+          <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
+            1/2 the Cost
+          </h3>
+          <p class="text-muted-foreground">
+            $15,000 vs $30,000+ from competitors
+          </p>
         </div>
-        <div class="value-item">
-          <h3>1/2 the Footprint</h3>
-          <p>Sleek, compact design for modern homes</p>
+        <div class="text-center p-8 bg-background rounded-2xl">
+          <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
+            1/2 the Footprint
+          </h3>
+          <p class="text-muted-foreground">
+            Sleek, compact design for modern homes
+          </p>
         </div>
-        <div class="value-item">
-          <h3>10x Quieter</h3>
-          <p>Advanced sound-dampening technology</p>
+        <div class="text-center p-8 bg-background rounded-2xl">
+          <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
+            10x Quieter
+          </h3>
+          <p class="text-muted-foreground">
+            Advanced sound-dampening technology
+          </p>
         </div>
       </div>
-      <a href="/the-system" class="link-button">Explore The System →</a>
+      <a
+        href="/the-system"
+        class="block text-center text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+      >
+        Explore The System →
+      </a>
     </div>
   </section>
 
-  <section class="trust">
-    <div class="container">
-      <h2>Trusted by 500+ Homes in the Wasatch Front</h2>
-      <p>
+  <section class="bg-background py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-serif mb-4 text-foreground">
+        Trusted by 500+ Homes in the Wasatch Front
+      </h2>
+      <p class="text-lg text-muted-foreground">
         From Park City to Draper, families throughout the Salt Lake Valley trust
         Blue Logic for their water purification needs.
       </p>
@@ -75,161 +110,3 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
 
   <LeadForm />
 </Layout>
-
-<style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.95 0.01 90) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    padding: 8rem 2rem 6rem;
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .hero h1 {
-    font-size: 4rem;
-    font-family: "Instrument Serif", Georgia, serif;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .hero-description {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    color: oklch(0.5 0.02 270);
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: opacity 0.2s;
-  }
-
-  .cta-button:hover {
-    opacity: 0.9;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .mission {
-    background-color: white;
-  }
-
-  .mission h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-
-  .mission p {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto 1.5rem;
-    text-align: center;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .value-snapshot {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .value-snapshot h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .value-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-
-  .value-item {
-    text-align: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 1rem;
-  }
-
-  .value-item h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-    color: oklch(0.7 0.1 220);
-  }
-
-  .value-item p {
-    color: oklch(0.4 0.02 270);
-  }
-
-  .link-button {
-    display: block;
-    text-align: center;
-    color: oklch(0.7 0.1 220);
-    font-weight: 600;
-    font-size: 1.125rem;
-    text-decoration: none;
-    transition: opacity 0.2s;
-  }
-
-  .link-button:hover {
-    opacity: 0.7;
-  }
-
-  .trust {
-    background-color: white;
-    text-align: center;
-  }
-
-  .trust h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .trust p {
-    font-size: 1.125rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.25rem;
-    }
-
-    .hero {
-      padding: 4rem 1rem 3rem;
-    }
-
-    .value-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>

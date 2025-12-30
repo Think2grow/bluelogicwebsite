@@ -98,25 +98,29 @@ const schemas = [
   description="Common questions about reverse osmosis systems, installation, cost, maintenance, and water quality in Salt Lake City."
   schema={schemas}
 >
-  <section class="hero">
-    <div class="container">
-      <h1>Common Questions</h1>
-      <p class="subtitle">
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-foreground">
+        Common Questions
+      </h1>
+      <p class="text-xl md:text-2xl text-muted-foreground">
         Everything you need to know about Blue Logic Water systems
       </p>
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="container">
-      <div class="faq-intro">
-        <p>
-          Have a question not answered here? <a href="/#contact">Contact us</a> and
-          we'll be happy to help.
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <p class="text-lg text-muted-foreground">
+          Have a question not answered here? <a
+            href="/#contact"
+            class="text-primary font-semibold hover:underline">Contact us</a
+          > and we'll be happy to help.
         </p>
       </div>
 
-      <div class="faq-list">
+      <div class="max-w-4xl mx-auto">
         {
           faqs.map((faq, index) => (
             <div class="faq-item">
@@ -129,7 +133,9 @@ const schemas = [
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer" id={`answer-${index}`}>
-                <p>{faq.answer}</p>
+                <p class="pb-6 text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             </div>
           ))
@@ -138,173 +144,48 @@ const schemas = [
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container center">
-      <h2>Still Have Questions?</h2>
-      <p>Schedule a free consultation with our team</p>
-      <a href="/#contact" class="cta-button">Get in Touch</a>
+  <section class="bg-card py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+        Still Have Questions?
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Schedule a free consultation with our team
+      </p>
+      <a href="/#contact" class="btn btn-primary btn-lg">Get in Touch</a>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.95 0.01 90) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .container.center {
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-family: "Instrument Serif", Georgia, serif;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .faq-section {
-    background-color: white;
-  }
-
-  .faq-intro {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-
-  .faq-intro p {
-    font-size: 1.125rem;
-    color: oklch(0.4 0.02 270);
-  }
-
-  .faq-intro a {
-    color: oklch(0.7 0.1 220);
-    font-weight: 600;
-  }
-
-  .faq-list {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
+  @reference "../styles/global.css";
   .faq-item {
-    border-bottom: 1px solid oklch(0.9 0.01 90);
+    @apply border-b border-border;
   }
 
   .faq-question {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: oklch(0.2 0.02 270);
-    transition: color 0.2s;
+    @apply w-full flex justify-between items-center py-6 bg-transparent border-none cursor-pointer text-left text-lg md:text-xl font-semibold text-foreground transition-colors duration-200;
   }
 
   .faq-question:hover {
-    color: oklch(0.7 0.1 220);
+    @apply text-primary;
   }
 
   .faq-icon {
-    font-size: 1.5rem;
-    color: oklch(0.7 0.1 220);
-    font-weight: 300;
-    transition: transform 0.3s;
-    flex-shrink: 0;
-    margin-left: 1rem;
+    @apply text-2xl text-primary font-light transition-transform duration-300 shrink-0 ml-4;
   }
 
   .faq-question[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg);
+    @apply rotate-45;
   }
 
   .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    @apply max-h-0 overflow-hidden transition-[max-height] duration-300 ease-out;
   }
 
   .faq-answer.open {
     max-height: 500px;
     transition: max-height 0.5s ease-in;
-  }
-
-  .faq-answer p {
-    padding-bottom: 1.5rem;
-    color: oklch(0.4 0.02 270);
-    line-height: 1.7;
-    font-size: 1.0625rem;
-  }
-
-  .cta-section {
-    background-color: oklch(0.98 0.01 90);
-  }
-
-  .cta-section h2 {
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.25rem;
-    color: oklch(0.4 0.02 270);
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background-color: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: opacity 0.2s;
-  }
-
-  .cta-button:hover {
-    opacity: 0.9;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .hero {
-      padding: 4rem 1rem 3rem;
-    }
-
-    .faq-question {
-      font-size: 1.125rem;
-    }
   }
 </style>
 

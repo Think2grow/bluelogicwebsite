@@ -2,23 +2,69 @@
 // Header component with responsive navigation
 ---
 
-<header class="header">
-  <nav class="nav" aria-label="Main navigation">
-    <a href="/" class="logo">Blue Logic Water</a>
+<header
+  class="bg-background border-b border-border sticky top-0 z-50 px-4 py-4 md:px-8"
+>
+  <nav
+    class="max-w-7xl mx-auto flex justify-between items-center gap-8"
+    aria-label="Main navigation"
+  >
+    <a
+      href="/"
+      class="text-2xl font-bold text-foreground no-underline hover:text-primary transition-colors"
+    >
+      Blue Logic Water
+    </a>
 
     <!-- Desktop Navigation -->
-    <ul class="nav-links desktop-nav">
-      <li><a href="/">Home</a></li>
-      <li><a href="/the-system">The System</a></li>
-      <li><a href="/the-value">Why Us</a></li>
-      <li><a href="/our-team">Our Team</a></li>
-      <li><a href="/common-questions">FAQ</a></li>
-      <li><a href="/salt-lake-city">Salt Lake City</a></li>
+    <ul class="hidden md:flex gap-8 list-none m-0 p-0">
+      <li>
+        <a
+          href="/"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/the-system"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >The System</a
+        >
+      </li>
+      <li>
+        <a
+          href="/the-value"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >Why Us</a
+        >
+      </li>
+      <li>
+        <a
+          href="/our-team"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >Our Team</a
+        >
+      </li>
+      <li>
+        <a
+          href="/common-questions"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >FAQ</a
+        >
+      </li>
+      <li>
+        <a
+          href="/salt-lake-city"
+          class="text-foreground no-underline hover:text-primary transition-colors"
+          >Salt Lake City</a
+        >
+      </li>
     </ul>
 
     <!-- Mobile Menu Button -->
     <button
-      class="mobile-menu-btn"
+      class="mobile-menu-btn md:hidden flex flex-col justify-center gap-[5px] w-11 h-11 p-2.5 bg-transparent border-none cursor-pointer z-[101]"
       aria-label="Open menu"
       aria-expanded="false"
       aria-controls="mobile-sidebar"
@@ -41,7 +87,7 @@
   aria-hidden="true"
 >
   <div class="sidebar-header">
-    <span class="sidebar-logo">Blue Logic Water</span>
+    <span class="text-xl font-bold text-foreground">Blue Logic Water</span>
     <button class="sidebar-close-btn" aria-label="Close menu">
       <svg
         width="24"
@@ -80,186 +126,67 @@
 </aside>
 
 <style>
-  .header {
-    background-color: var(--color-white);
-    border-bottom: 1px solid var(--color-quartz);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+  @reference "../styles/global.css";
 
-  .nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-obsidian);
-    text-decoration: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-links a {
-    color: var(--color-obsidian);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover {
-    color: var(--color-glacier);
-  }
-
-  /* Mobile Menu Button */
-  .mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 44px;
-    height: 44px;
-    padding: 10px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 101;
-  }
-
+  /* Mobile Menu Button - hamburger lines */
   .hamburger-line {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: var(--color-obsidian);
-    border-radius: 2px;
-    transition:
-      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-origin: center;
+    @apply block w-6 h-0.5 bg-foreground rounded-sm transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] origin-center;
   }
 
   /* Hamburger to X animation */
   .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+    @apply translate-y-[7px] rotate-45;
   }
 
   .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
+    @apply opacity-0 scale-x-0;
   }
 
   .mobile-menu-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+    @apply -translate-y-[7px] -rotate-45;
   }
 
   /* Sidebar Overlay */
   .sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px);
-    z-index: 199;
-    pointer-events: none;
-    transition:
-      background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      backdrop-filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply fixed inset-0 bg-black/0 backdrop-blur-none z-[199] pointer-events-none transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)];
   }
 
   .sidebar-overlay.active {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    pointer-events: auto;
+    @apply bg-black/40 backdrop-blur-sm pointer-events-auto;
   }
 
   /* Mobile Sidebar */
   .mobile-sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(320px, 85vw);
-    height: 100vh;
-    height: 100dvh;
-    background-color: var(--color-white);
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -8px 0 32px rgba(0, 0, 0, 0);
+    @apply fixed top-0 right-0 w-[min(320px,85vw)] h-dvh bg-background z-[200] flex flex-col translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-none;
   }
 
   .mobile-sidebar.active {
-    transform: translateX(0);
+    @apply translate-x-0;
     box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
   }
 
   .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid var(--color-quartz);
-  }
-
-  .sidebar-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-obsidian);
+    @apply flex justify-between items-center px-6 py-5 border-b border-border;
   }
 
   .sidebar-close-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--color-obsidian);
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
-  }
-
-  .sidebar-close-btn:hover {
-    background-color: var(--color-quartz);
+    @apply flex items-center justify-center w-11 h-11 bg-transparent border-none cursor-pointer text-foreground rounded-full transition-colors hover:bg-muted;
   }
 
   .sidebar-nav {
-    flex: 1;
-    padding: 1.5rem 0;
-    overflow-y: auto;
+    @apply flex-1 py-6 overflow-y-auto;
   }
 
   .sidebar-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    @apply list-none m-0 p-0;
   }
 
   .sidebar-links li {
-    opacity: 0;
-    transform: translateX(20px);
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+    @apply opacity-0 translate-x-5 transition-all duration-300 ease-out;
   }
 
   .mobile-sidebar.active .sidebar-links li {
-    opacity: 1;
-    transform: translateX(0);
+    @apply opacity-100 translate-x-0;
   }
 
   /* Stagger animation for menu items */
@@ -283,91 +210,34 @@
   }
 
   .sidebar-links a {
-    display: block;
-    padding: 1rem 1.5rem;
-    color: var(--color-obsidian);
-    text-decoration: none;
-    font-size: 1.125rem;
-    font-weight: 500;
-    transition:
-      background-color 0.2s ease,
-      color 0.2s ease;
-  }
-
-  .sidebar-links a:hover {
-    background-color: var(--color-quartz);
-    color: var(--color-glacier);
+    @apply block px-6 py-4 text-foreground no-underline text-lg font-medium transition-all duration-200 hover:bg-muted hover:text-primary;
   }
 
   .sidebar-footer {
-    padding: 1.5rem;
-    border-top: 1px solid var(--color-quartz);
-    opacity: 0;
-    transform: translateY(10px);
-    transition:
-      opacity 0.3s ease 0.3s,
-      transform 0.3s ease 0.3s;
+    @apply px-6 py-6 border-t border-border opacity-0 translate-y-2.5 transition-all duration-300 ease-out;
+    transition-delay: 0.3s;
   }
 
   .mobile-sidebar.active .sidebar-footer {
-    opacity: 1;
-    transform: translateY(0);
+    @apply opacity-100 translate-y-0;
   }
 
   .sidebar-cta {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background-color: var(--color-glacier);
-    color: var(--color-white);
-    text-decoration: none;
-    text-align: center;
-    font-weight: 600;
-    border-radius: 0.5rem;
-    transition:
-      opacity 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .sidebar-cta:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
+    @apply block w-full py-4 bg-primary text-primary-foreground no-underline text-center font-semibold rounded-lg transition-all duration-200 hover:opacity-90 hover:scale-[1.02];
   }
 
   .sidebar-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    text-align: center;
+    @apply flex flex-col gap-2 mt-4 text-center;
   }
 
   .sidebar-contact a {
-    color: var(--color-obsidian);
-    text-decoration: none;
-    font-size: 0.875rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-  }
-
-  .sidebar-contact a:hover {
-    opacity: 1;
-  }
-
-  @media (max-width: 768px) {
-    .desktop-nav {
-      display: none;
-    }
-
-    .mobile-menu-btn {
-      display: flex;
-    }
+    @apply text-foreground no-underline text-sm opacity-70 transition-opacity duration-200 hover:opacity-100;
   }
 
   @media (min-width: 769px) {
     .mobile-sidebar,
     .sidebar-overlay {
-      display: none;
+      @apply hidden;
     }
   }
 </style>

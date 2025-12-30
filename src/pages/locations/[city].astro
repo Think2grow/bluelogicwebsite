@@ -35,31 +35,45 @@ const schemas = [
   description={`Professional reverse osmosis systems for ${cityData.name} homes. Combat Utah's hard water with commercial-grade filtration at half the cost.`}
   schema={schemas}
 >
-  <section class="hero">
-    <div class="container">
-      <h1>Water Purification for {cityData.name}</h1>
-      <p class="subtitle">
+  <section class="hero-gradient-dark py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-white">
+        Water Purification for {cityData.name}
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90">
         Professional RO systems designed for {cityData.region}'s unique water
         challenges
       </p>
     </div>
   </section>
 
-  <section class="water-quality">
-    <div class="container">
-      <h2>Understanding {cityData.name}'s Water</h2>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        Understanding {cityData.name}'s Water
+      </h2>
 
-      <div class="water-stats">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div class="stat-card">
-          <div class="stat-number">{cityData.tdsRange}</div>
-          <div class="stat-label">Total Dissolved Solids (TDS)</div>
-          <p>{cityData.description}</p>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+            {cityData.tdsRange}
+          </div>
+          <div class="text-lg font-semibold mb-4 text-foreground">
+            Total Dissolved Solids (TDS)
+          </div>
+          <p class="text-muted-foreground">{cityData.description}</p>
         </div>
 
         <div class="stat-card">
-          <div class="stat-number">{cityData.hardnessLevel}</div>
-          <div class="stat-label">Water Hardness Rating</div>
-          <p>
+          <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+            {cityData.hardnessLevel}
+          </div>
+          <div class="text-lg font-semibold mb-4 text-foreground">
+            Water Hardness Rating
+          </div>
+          <p class="text-muted-foreground">
             {cityData.name} consistently experiences {
               cityData.hardnessLevel.toLowerCase()
             } water conditions.
@@ -69,9 +83,13 @@ const schemas = [
         {
           cityData.population && (
             <div class="stat-card">
-              <div class="stat-number">{cityData.population}</div>
-              <div class="stat-label">Residents Served</div>
-              <p>
+              <div class="text-4xl md:text-5xl font-bold text-primary mb-2">
+                {cityData.population}
+              </div>
+              <div class="text-lg font-semibold mb-4 text-foreground">
+                Residents Served
+              </div>
+              <p class="text-muted-foreground">
                 Serving the {cityData.name} community with professional water
                 solutions.
               </p>
@@ -81,12 +99,14 @@ const schemas = [
       </div>
 
       <div class="water-info">
-        <h3>Water Source: {cityData.waterSource}</h3>
-        <p>
+        <h3 class="text-2xl font-serif mb-4 text-foreground">
+          Water Source: {cityData.waterSource}
+        </h3>
+        <p class="text-muted-foreground mb-4">
           {cityData.name}'s water supply presents unique challenges for
           homeowners:
         </p>
-        <ul>
+        <ul class="list-disc pl-6 text-muted-foreground space-y-3">
           {cityData.commonIssues.map((issue) => <li>{issue}</li>)}
         </ul>
       </div>
@@ -95,41 +115,53 @@ const schemas = [
         cityData.contaminantsExceedingGuidelines && (
           <div class="ewg-report">
             <div class="ewg-header">
-              <h3>Environmental Working Group (EWG) Water Quality Report</h3>
-              <p class="ewg-subtitle">
+              <h3 class="text-xl md:text-2xl font-serif text-foreground mb-2">
+                Environmental Working Group (EWG) Water Quality Report
+              </h3>
+              <p class="text-muted-foreground italic">
                 Based on official utility testing data provided to EWG
               </p>
             </div>
 
-            <div class="ewg-stats-row">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div class="ewg-stat-box alert">
-                <div class="ewg-stat-value">
+                <div class="text-4xl font-bold text-destructive mb-2">
                   {cityData.contaminantsExceedingGuidelines}
                 </div>
-                <div class="ewg-stat-text">
+                <div class="text-sm font-semibold text-muted-foreground">
                   Contaminants Exceed EWG Health Guidelines
                 </div>
               </div>
 
               <div class="ewg-stat-box info">
-                <div class="ewg-stat-value">{cityData.totalContaminants}</div>
-                <div class="ewg-stat-text">Total Contaminants Detected</div>
+                <div class="text-4xl font-bold text-primary mb-2">
+                  {cityData.totalContaminants}
+                </div>
+                <div class="text-sm font-semibold text-muted-foreground">
+                  Total Contaminants Detected
+                </div>
               </div>
 
               <div class="ewg-stat-box">
-                <div class="ewg-stat-value">✓</div>
-                <div class="ewg-stat-text">{cityData.complianceStatus}</div>
+                <div class="text-4xl font-bold text-foreground mb-2">✓</div>
+                <div class="text-sm font-semibold text-muted-foreground">
+                  {cityData.complianceStatus}
+                </div>
               </div>
             </div>
 
             {cityData.topContaminants && (
               <div class="top-contaminants">
-                <h4>Most Concerning Contaminants in {cityData.name}:</h4>
-                <div class="contaminant-list">
+                <h4 class="text-xl font-serif text-foreground mb-4">
+                  Most Concerning Contaminants in {cityData.name}:
+                </h4>
+                <div class="space-y-3">
                   {cityData.topContaminants.map((contaminant) => (
                     <div class="contaminant-item">
-                      <span class="contaminant-alert">⚠</span>
-                      <span class="contaminant-name">{contaminant}</span>
+                      <span class="text-2xl">⚠</span>
+                      <span class="font-medium text-foreground">
+                        {contaminant}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -148,8 +180,12 @@ const schemas = [
             </div>
 
             {cityData.ewgTapwaterDatabaseUrl && (
-              <div class="ewg-source">
-                <a href={cityData.ewgTapwaterDatabaseUrl} target="_blank">
+              <div class="text-center">
+                <a
+                  href={cityData.ewgTapwaterDatabaseUrl}
+                  target="_blank"
+                  class="inline-block text-primary font-semibold py-3 px-6 border-2 border-primary rounded-lg transition-all hover:bg-primary hover:text-white"
+                >
                   View Full EWG Report →
                 </a>
               </div>
@@ -160,14 +196,20 @@ const schemas = [
     </div>
   </section>
 
-  <section class="why-ro">
-    <div class="container">
-      <h2>Why Reverse Osmosis for {cityData.name} Homes?</h2>
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        Why Reverse Osmosis for {cityData.name} Homes?
+      </h2>
 
-      <div class="reason-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="reason-card">
-          <h3>Eliminates Hard Water</h3>
-          <p>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Eliminates Hard Water
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             RO removes 99%+ of dissolved minerals, eliminating scale buildup on
             fixtures, appliances, and plumbing. No more spotty dishes or clogged
             showerheads.
@@ -175,24 +217,30 @@ const schemas = [
         </div>
 
         <div class="reason-card">
-          <h3>Removes Contaminants</h3>
-          <p>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Removes Contaminants
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Beyond minerals, RO removes chlorine, PFAS, heavy metals, and other
             potential contaminants that simple filters can't touch.
           </p>
         </div>
 
         <div class="reason-card">
-          <h3>Better for Your Health</h3>
-          <p>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Better for Your Health
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Pure water means fewer skin irritations, better hydration, and peace
             of mind knowing what's NOT in your water.
           </p>
         </div>
 
         <div class="reason-card">
-          <h3>Protects Your Investment</h3>
-          <p>
+          <h3 class="text-xl font-serif mb-4 text-foreground">
+            Protects Your Investment
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
             Extend the life of your appliances, water heaters, and plumbing by
             preventing mineral buildup and corrosion.
           </p>
@@ -201,426 +249,130 @@ const schemas = [
     </div>
   </section>
 
-  <section class="blue-logic-difference">
-    <div class="container">
-      <h2>The Blue Logic Difference in {cityData.name}</h2>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
+      >
+        The Blue Logic Difference in {cityData.name}
+      </h2>
 
-      <div class="difference-grid">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="difference-card">
-          <div class="icon">💰</div>
-          <h3>Half the Cost</h3>
-          <p>$15,000 vs $30,000+ competitors</p>
+          <div class="text-5xl mb-4">💰</div>
+          <h3 class="text-lg font-semibold mb-2 text-foreground">
+            Half the Cost
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            $15,000 vs $30,000+ competitors
+          </p>
         </div>
 
         <div class="difference-card">
-          <div class="icon">📐</div>
-          <h3>Half the Footprint</h3>
-          <p>Compact design perfect for modern homes</p>
+          <div class="text-5xl mb-4">📐</div>
+          <h3 class="text-lg font-semibold mb-2 text-foreground">
+            Half the Footprint
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            Compact design perfect for modern homes
+          </p>
         </div>
 
         <div class="difference-card">
-          <div class="icon">🔇</div>
-          <h3>10x Quieter</h3>
-          <p>Whisper-quiet operation</p>
+          <div class="text-5xl mb-4">🔇</div>
+          <h3 class="text-lg font-semibold mb-2 text-foreground">
+            10x Quieter
+          </h3>
+          <p class="text-muted-foreground text-sm">Whisper-quiet operation</p>
         </div>
 
         <div class="difference-card">
-          <div class="icon">🏔️</div>
-          <h3>Local Expertise</h3>
-          <p>Built for Utah water, by Utah professionals</p>
+          <div class="text-5xl mb-4">🏔️</div>
+          <h3 class="text-lg font-semibold mb-2 text-foreground">
+            Local Expertise
+          </h3>
+          <p class="text-muted-foreground text-sm">
+            Built for Utah water, by Utah professionals
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready for Pure Water in {cityData.name}?</h2>
-      <p>Schedule your free water purity audit today</p>
-      <a href="/#contact" class="cta-button">Get Started</a>
+  <section class="bg-obsidian py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-white">
+        Ready for Pure Water in {cityData.name}?
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Schedule your free water purity audit today
+      </p>
+      <a href="/#contact" class="btn btn-primary btn-lg">Get Started</a>
     </div>
   </section>
 </Layout>
 
 <style>
-  .hero {
-    background: linear-gradient(
-      135deg,
-      oklch(0.7 0.1 220) 0%,
-      oklch(0.85 0.05 220) 100%
-    );
-    color: white;
-    padding: 6rem 2rem 4rem;
-    text-align: center;
+  @reference "../../styles/global.css";
+  .hero-gradient-dark {
+    @apply bg-linear-to-br from-primary to-primary/70;
   }
 
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  h1 {
-    font-family: "Instrument Serif", serif;
-    font-size: 3.5rem;
-    margin: 0 0 1rem;
-    font-weight: 400;
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    opacity: 0.95;
-    margin: 0;
-  }
-
-  section {
-    padding: 4rem 2rem;
-  }
-
-  h2 {
-    font-family: "Instrument Serif", serif;
-    font-size: 2.5rem;
-    margin: 0 0 2rem;
-    text-align: center;
-    font-weight: 400;
-  }
-
-  h3 {
-    font-family: "Instrument Serif", serif;
-    font-size: 1.75rem;
-    margin: 0 0 1rem;
-    font-weight: 400;
-  }
-
-  .water-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+  .bg-obsidian {
+    background-color: var(--color-obsidian);
   }
 
   .stat-card {
-    background: oklch(0.98 0.005 220);
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-  }
-
-  .stat-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: oklch(0.7 0.1 220);
-    margin-bottom: 0.5rem;
-  }
-
-  .stat-label {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: oklch(0.3 0.02 270);
+    @apply bg-card p-8 rounded-2xl text-center;
   }
 
   .water-info {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid oklch(0.95 0.01 90);
+    @apply bg-card p-8 rounded-2xl border border-border;
   }
 
-  .water-info ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    line-height: 1.8;
-  }
-
-  .water-info li {
-    margin-bottom: 0.75rem;
-  }
-
-  /* EWG Report Styles */
   .ewg-report {
-    background: linear-gradient(
-      135deg,
-      oklch(0.98 0.005 220),
-      oklch(0.995 0.001 90)
-    );
-    border: 2px solid oklch(0.7 0.1 220);
-    border-radius: 1.25rem;
-    padding: 3rem;
-    margin-top: 3rem;
+    @apply bg-linear-to-br from-card to-background border-2 border-primary rounded-2xl p-8 md:p-12 mt-12;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 
   .ewg-header {
-    margin-bottom: 2rem;
-    border-bottom: 2px solid oklch(0.85 0.05 220);
-    padding-bottom: 1.5rem;
-  }
-
-  .ewg-header h3 {
-    margin: 0 0 0.5rem;
-    color: oklch(0.2 0.02 270);
-    font-size: 1.5rem;
-  }
-
-  .ewg-subtitle {
-    font-size: 0.95rem;
-    color: oklch(0.5 0.05 270);
-    margin: 0;
-    font-style: italic;
-  }
-
-  .ewg-stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    @apply mb-8 border-b-2 border-primary/30 pb-6;
   }
 
   .ewg-stat-box {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 0.875rem;
-    text-align: center;
-    border: 2px solid oklch(0.9 0.01 90);
-    transition: all 0.3s ease;
+    @apply bg-background p-6 rounded-xl text-center border-2 border-border transition-all duration-300;
   }
 
   .ewg-stat-box:hover {
-    border-color: oklch(0.7 0.1 220);
+    @apply border-primary;
     box-shadow: 0 2px 12px rgba(97, 137, 184, 0.15);
   }
 
   .ewg-stat-box.alert {
-    border-color: oklch(0.65 0.15 25);
-    background: linear-gradient(
-      135deg,
-      oklch(0.98 0.005 25),
-      oklch(0.995 0.001 25)
-    );
+    @apply border-destructive bg-destructive/5;
   }
 
   .ewg-stat-box.info {
-    border-color: oklch(0.7 0.1 220);
-    background: linear-gradient(
-      135deg,
-      oklch(0.98 0.005 220),
-      oklch(0.995 0.001 220)
-    );
-  }
-
-  .ewg-stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: oklch(0.2 0.02 270);
-    margin-bottom: 0.5rem;
-  }
-
-  .ewg-stat-box.alert .ewg-stat-value {
-    color: oklch(0.6 0.15 25);
-  }
-
-  .ewg-stat-box.info .ewg-stat-value {
-    color: oklch(0.6 0.12 220);
-  }
-
-  .ewg-stat-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: oklch(0.4 0.05 270);
-    line-height: 1.4;
+    @apply border-primary bg-primary/5;
   }
 
   .top-contaminants {
-    background: white;
-    padding: 2rem;
-    border-radius: 0.875rem;
-    margin-bottom: 2rem;
-    border-left: 4px solid oklch(0.65 0.15 25);
-  }
-
-  .top-contaminants h4 {
-    margin: 0 0 1.25rem;
-    color: oklch(0.2 0.02 270);
-    font-family: "Instrument Serif", serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-  }
-
-  .contaminant-list {
-    display: grid;
-    gap: 1rem;
+    @apply bg-background p-6 rounded-xl mb-8 border-l-4 border-destructive;
   }
 
   .contaminant-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: oklch(0.98 0.005 25);
-    border-radius: 0.5rem;
-    border: 1px solid oklch(0.9 0.01 25);
-  }
-
-  .contaminant-alert {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .contaminant-name {
-    font-size: 1rem;
-    color: oklch(0.2 0.02 270);
-    font-weight: 500;
+    @apply flex items-center gap-4 p-4 bg-destructive/5 rounded-lg border border-destructive/20;
   }
 
   .ewg-note {
-    background: oklch(0.96 0.01 60);
-    padding: 1.75rem;
-    border-radius: 0.875rem;
-    border-left: 4px solid oklch(0.7 0.12 60);
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-    color: oklch(0.25 0.02 90);
+    @apply bg-accent p-6 rounded-xl border-l-4 border-accent-foreground mb-6 leading-relaxed text-accent-foreground;
   }
 
-  .ewg-note p {
-    margin: 0;
-    font-size: 0.95rem;
+  .reason-card {
+    @apply bg-background p-8 rounded-2xl border border-border;
   }
 
-  .ewg-source {
-    text-align: center;
-  }
-
-  .ewg-source a {
-    display: inline-block;
-    color: oklch(0.6 0.12 220);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid oklch(0.7 0.1 220);
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .ewg-source a:hover {
-    background: oklch(0.7 0.1 220);
-    color: white;
-  }
-
-  .reason-grid,
-  .difference-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-
-  .reason-card,
   .difference-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid oklch(0.95 0.01 90);
-  }
-
-  .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .blue-logic-difference {
-    background: oklch(0.98 0.005 220);
-  }
-
-  .cta-section {
-    background: oklch(0.2 0.02 270);
-    color: white;
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-
-  .cta-section h2 {
-    color: white;
-    margin-bottom: 1rem;
-  }
-
-  .cta-section p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
-  .cta-button {
-    display: inline-block;
-    background: oklch(0.7 0.1 220);
-    color: white;
-    padding: 1.25rem 3rem;
-    text-decoration: none;
-    border-radius: 0.75rem;
-    font-weight: 600;
-    font-size: 1.125rem;
-    transition: all 0.2s;
-  }
-
-  .cta-button:hover {
-    background: oklch(0.75 0.12 220);
-    transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .subtitle {
-      font-size: 1.125rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-    }
-
-    .stat-number {
-      font-size: 2.25rem;
-    }
-
-    .reason-grid,
-    .difference-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .ewg-report {
-      padding: 2rem;
-      margin-top: 2rem;
-    }
-
-    .ewg-header h3 {
-      font-size: 1.25rem;
-    }
-
-    .ewg-stats-row {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .ewg-stat-value {
-      font-size: 2rem;
-    }
-
-    .top-contaminants {
-      padding: 1.5rem;
-    }
-
-    .top-contaminants h4 {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-    }
-
-    .contaminant-item {
-      padding: 0.75rem;
-    }
-
-    .ewg-note {
-      padding: 1.25rem;
-      font-size: 0.9rem;
-    }
+    @apply bg-card p-6 rounded-2xl text-center border border-border;
   }
 </style>
