@@ -137,8 +137,8 @@ This generates pages for:
 
 To add a new city, simply add it to the `cities` array in `src/data/cities.ts`:
 
-```typescript
-{
+```ts
+const data = {
   slug: "new-city",
   name: "New City",
   region: "Some County",
@@ -147,11 +147,8 @@ To add a new city, simply add it to the `cities` array in `src/data/cities.ts`:
   hardnessLevel: "Very Hard",
   description: "Description of water challenges",
   waterSource: "Water source information",
-  commonIssues: [
-    "Issue 1",
-    "Issue 2"
-  ]
-}
+  commonIssues: ["Issue 1", "Issue 2"],
+};
 ```
 
 The page will be automatically generated on next build.
