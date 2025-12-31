@@ -1,0 +1,323 @@
+---
+// ProcessStepper component - Interactive Installation Roadmap
+// Shows the white-glove service process in a clean, premium layout
+
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+  duration: string;
+  icon: string;
+}
+
+const steps: Step[] = [
+  {
+    number: 1,
+    title: "Free Water Audit",
+    description: "We test your water quality, measure TDS levels, and assess your home's plumbing to design the perfect system configuration.",
+    duration: "30-45 min",
+    icon: "test-tube"
+  },
+  {
+    number: 2,
+    title: "Custom Design",
+    description: "Our engineers create a tailored solution based on your water profile, family size, and space constraints. No cookie-cutter installs.",
+    duration: "1-2 days",
+    icon: "blueprint"
+  },
+  {
+    number: 3,
+    title: "White-Glove Installation",
+    description: "Professional installation with protective equipment, clean workspace practices, and meticulous attention to detail. Zero disruption to your routine.",
+    duration: "4-6 hours",
+    icon: "wrench"
+  },
+  {
+    number: 4,
+    title: "Quality Verification",
+    description: "We test system pressure, verify flow rates, and measure final water purity. You see the TDS readings before we leave.",
+    duration: "30 min",
+    icon: "check-circle"
+  },
+  {
+    number: 5,
+    title: "Ongoing Support",
+    description: "Local maintenance support, filter replacement reminders, and lifetime consultation. We're here long after installation day.",
+    duration: "Lifetime",
+    icon: "support"
+  }
+];
+---
+
+<section class="process-stepper">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">The Blue Logic Process</h2>
+      <p class="section-subtitle">
+        From first contact to pure water flowing—your journey to health
+      </p>
+    </div>
+
+    <!-- Desktop: Horizontal Layout -->
+    <div class="steps-desktop">
+      <div class="timeline-track"></div>
+      {steps.map((step, index) => (
+        <div class="step-wrapper" data-step={step.number}>
+          <div class="step-card">
+            <div class="step-icon" data-icon={step.icon}>
+              {step.icon === "test-tube" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.5 2v18a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V2" />
+                  <path d="M10 9h4" />
+                  <path d="M10 13h4" />
+                </svg>
+              )}
+              {step.icon === "blueprint" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M7 7h10" />
+                  <path d="M7 12h10" />
+                  <path d="M7 17h6" />
+                </svg>
+              )}
+              {step.icon === "wrench" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              )}
+              {step.icon === "check-circle" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {step.icon === "support" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z" />
+                </svg>
+              )}
+            </div>
+            <div class="step-number">{step.number}</div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-duration">{step.duration}</p>
+            <p class="step-description">{step.description}</p>
+          </div>
+          {index < steps.length - 1 && (
+            <div class="step-connector">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M5 12h14m-7-7 7 7-7 7" />
+              </svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Mobile: Vertical Layout -->
+    <div class="steps-mobile">
+      {steps.map((step) => (
+        <div class="step-card-mobile" data-step={step.number}>
+          <div class="step-header-mobile">
+            <div class="step-icon-mobile" data-icon={step.icon}>
+              {step.icon === "test-tube" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.5 2v18a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V2" />
+                  <path d="M10 9h4" />
+                  <path d="M10 13h4" />
+                </svg>
+              )}
+              {step.icon === "blueprint" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M7 7h10" />
+                  <path d="M7 12h10" />
+                  <path d="M7 17h6" />
+                </svg>
+              )}
+              {step.icon === "wrench" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              )}
+              {step.icon === "check-circle" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+              )}
+              {step.icon === "support" && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z" />
+                </svg>
+              )}
+            </div>
+            <div class="step-number-mobile">{step.number}</div>
+          </div>
+          <div class="step-content-mobile">
+            <h3 class="step-title-mobile">{step.title}</h3>
+            <p class="step-duration-mobile">{step.duration}</p>
+            <p class="step-description-mobile">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @reference "../styles/global.css";
+
+  .process-stepper {
+    @apply bg-background py-16 md:py-24 px-4;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-header {
+    @apply text-center mb-12 md:mb-20;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-serif mb-4 text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto;
+  }
+
+  /* Desktop Layout (hidden on mobile) */
+  .steps-desktop {
+    @apply hidden lg:flex items-start justify-between gap-4 relative;
+  }
+
+  .timeline-track {
+    @apply absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-muted via-primary to-muted;
+    z-index: 0;
+  }
+
+  .step-wrapper {
+    @apply flex-1 relative z-10 flex flex-col items-center;
+  }
+
+  .step-card {
+    @apply bg-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply border-2 border-transparent hover:border-primary/20;
+    @apply transform hover:-translate-y-1;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-icon {
+    @apply w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center;
+    @apply text-primary transition-all duration-300;
+  }
+
+  .step-card:hover .step-icon {
+    @apply bg-primary text-white scale-110;
+  }
+
+  .step-icon svg {
+    @apply w-8 h-8;
+  }
+
+  .step-number {
+    @apply text-6xl font-serif font-bold text-primary/20 mb-2;
+  }
+
+  .step-title {
+    @apply text-xl font-semibold mb-2 text-foreground;
+  }
+
+  .step-duration {
+    @apply text-sm font-medium text-primary uppercase tracking-wider mb-4;
+  }
+
+  .step-description {
+    @apply text-muted-foreground leading-relaxed text-sm;
+    flex-grow: 1;
+  }
+
+  .step-connector {
+    @apply absolute -right-8 top-24 text-primary/30;
+    width: 64px;
+  }
+
+  .step-connector svg {
+    @apply w-8 h-8;
+  }
+
+  /* Mobile Layout (hidden on desktop) */
+  .steps-mobile {
+    @apply lg:hidden space-y-6;
+  }
+
+  .step-card-mobile {
+    @apply bg-card rounded-2xl p-6 shadow-md;
+    @apply border-l-4 border-primary;
+  }
+
+  .step-header-mobile {
+    @apply flex items-center gap-4 mb-4;
+  }
+
+  .step-icon-mobile {
+    @apply w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0;
+    @apply text-primary;
+  }
+
+  .step-icon-mobile svg {
+    @apply w-7 h-7;
+  }
+
+  .step-number-mobile {
+    @apply text-5xl font-serif font-bold text-primary/20;
+  }
+
+  .step-content-mobile {
+    @apply pl-0;
+  }
+
+  .step-title-mobile {
+    @apply text-xl font-semibold mb-2 text-foreground;
+  }
+
+  .step-duration-mobile {
+    @apply text-sm font-medium text-primary uppercase tracking-wider mb-3;
+  }
+
+  .step-description-mobile {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  /* Animation on scroll */
+  @media (prefers-reduced-motion: no-preference) {
+    .step-card,
+    .step-card-mobile {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .step-card:nth-child(1) { animation-delay: 0.1s; }
+    .step-card:nth-child(2) { animation-delay: 0.2s; }
+    .step-card:nth-child(3) { animation-delay: 0.3s; }
+    .step-card:nth-child(4) { animation-delay: 0.4s; }
+    .step-card:nth-child(5) { animation-delay: 0.5s; }
+
+    .step-card-mobile:nth-child(1) { animation-delay: 0.1s; }
+    .step-card-mobile:nth-child(2) { animation-delay: 0.2s; }
+    .step-card-mobile:nth-child(3) { animation-delay: 0.3s; }
+    .step-card-mobile:nth-child(4) { animation-delay: 0.4s; }
+    .step-card-mobile:nth-child(5) { animation-delay: 0.5s; }
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

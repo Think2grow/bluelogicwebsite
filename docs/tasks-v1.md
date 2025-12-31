@@ -128,7 +128,7 @@ _Focusing on the mission and the "Why."_
   - Social proof section with location-specific installation counts
   - Links to location pages for local SEO
 
-- [ ] **5.2 Interactive Installation Roadmap**
+- [x] **5.2 Interactive Installation Roadmap**
 - **Description:** A horizontal or vertical "Process" stepper showing the white-glove service.
 - **Deliverable:** `ProcessStepper.astro`.
 - **Complexity:** Medium
@@ -140,10 +140,7 @@ _Tasks for long-term growth and SEO dominance._
 - [ ] **6.1 [FUTURE] Resource Center (Blog) Engine**
 - **Description:** Setup Astro Content Collections for MDX-based articles targeting "Hard water skin effects," etc.
 
-- [ ] **6.2 [FUTURE] Dynamic Water Quality API Integration**
-- **Description:** Pull real-time TDS (Total Dissolved Solids) data for Utah zip codes to display on location pages.
-
-- [x] **6.2a Gather Live Water Quality Data (One-Time)**
+- [x] **6.2 Gather Live Water Quality Data (One-Time)**
 - **Description:** One-time manual data collection from EWG.org for each location. Search each city's zip code at https://www.ewg.org/tapwater/search-results.php?zip5={zipcode}, find the utility provider, then navigate to that provider's report page. Extract vital stats and capture the source URL. Store in `src/data/cities.ts` as static data.
 - **Key Stats to Extract per Location:**
   1. Number of contaminants exceeding EWG health guidelines (e.g., "14 Contaminants Exceed Guidelines")
@@ -187,7 +184,7 @@ _Purpose: Establish the mission and immediate "Apple-level" brand authority._
 _Purpose: Sell the engineering. Focus on: 1/2 Cost, 1/2 Footprint, 10x Quieter._
 
 - [ ] **7.2 The "Silent Power" Interactive Module**
-- **Description:** A visual comparison of the "10x Quieter" claim—perhaps a decibel slider or an animation showing the sound-dampening tech.
+- **Description:** A visual comparison of the "10x Quieter" claim—perhaps a decibel slider or an animation showing the sound-dampening tech. We use better, higher quality pumps and motors.
 - **Deliverable:** `ProductSpecs.astro`.
 - **Complexity:** Medium
 

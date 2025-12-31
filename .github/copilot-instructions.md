@@ -219,6 +219,7 @@ Place CTAs:
 
 ### Interactive Components (Islands)
 - Minimize JavaScript hydration
+- Use react components for complex interactivity, fancy animations, framer motion, etc.
 - Use `client:load` only for above-fold interactivity
 - Use `client:visible` for below-fold components
 - Prefer `client:idle` for non-critical interactions
