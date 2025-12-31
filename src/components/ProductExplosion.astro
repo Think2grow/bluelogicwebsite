@@ -1,0 +1,38 @@
+---
+/**
+ * ProductExplosion Component
+ * A scroll-linked "exploded view" animation showing the RO system components.
+ * Uses React + Framer Motion for smooth, performant animations.
+ *
+ * This creates an Apple-style product reveal that demonstrates the
+ * sophistication of the filtration technology.
+ */
+import { getImage } from "astro:assets";
+import ProductExplosionReact from "./ProductExplosionReact";
+import systemImage from "../assets/installation_diagrams/BL Install Diagrams WH-Pure.jpg";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Engineering Excellence",
+  subtitle = "Premium components working in perfect harmony",
+} = Astro.props;
+
+// Optimize the image at build time
+const optimizedImage = await getImage({
+  src: systemImage,
+  width: 800,
+  quality: 90,
+  format: "webp",
+});
+---
+
+<ProductExplosionReact
+  client:visible
+  title={title}
+  subtitle={subtitle}
+  imageSrc={optimizedImage.src}
+/>

@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
+import ParallaxHero from "../components/ParallaxHero.astro";
+import ProductExplosion from "../components/ProductExplosion.astro";
 import { getBreadcrumbSchema } from "../utils/schema";
 
 // Generate homepage-specific schema
@@ -13,24 +15,14 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
   title="Blue Logic Water - Premium RO Systems for Salt Lake City"
   schema={schemas}
 >
-  <section class="hero-gradient py-24 md:py-32 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1
-        class="text-5xl md:text-7xl font-serif mb-4 leading-tight text-foreground"
-      >
-        Your Family, Unfiltered.
-      </h1>
-      <p class="text-xl md:text-2xl mb-4 text-muted-foreground">
-        Professional reverse osmosis systems for the health-conscious home
-      </p>
-      <p class="text-lg md:text-xl mb-8 text-muted-foreground/80">
-        Half the cost. Half the footprint. 10x quieter.
-      </p>
-      <a href="#contact" class="btn btn-primary btn-lg"
-        >Schedule Free Water Audit</a
-      >
-    </div>
-  </section>
+  <!-- Localized Parallax Hero (Task 3.2) -->
+  <ParallaxHero
+    title="Your Family, Unfiltered."
+    subtitle="Professional reverse osmosis systems for the health-conscious home"
+    tagline="Half the cost. Half the footprint. 10x quieter."
+    ctaText="Schedule Free Water Audit"
+    ctaHref="#contact"
+  />
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto text-center">
@@ -96,15 +88,81 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
     </div>
   </section>
 
-  <section class="bg-background py-16 md:py-20 px-4 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-serif mb-4 text-foreground">
-        Trusted by 500+ Homes in the Wasatch Front
-      </h2>
-      <p class="text-lg text-muted-foreground">
-        From Park City to Draper, families throughout the Salt Lake Valley trust
-        Blue Logic for their water purification needs.
-      </p>
+  <!-- Product Explosion Animation (Task 3.1) -->
+  <ProductExplosion
+    title="Engineering Excellence"
+    subtitle="Premium components working in perfect harmony to deliver the purest water for your family"
+  />
+
+  <!-- Social Proof Section -->
+  <section class="bg-background py-16 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+          Trusted by 500+ Homes in the Wasatch Front
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          From Park City to Draper, families throughout the Salt Lake Valley
+          trust Blue Logic for their water purification needs.
+        </p>
+      </div>
+
+      <!-- Location Trust Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <a
+          href="/locations/salt-lake-city"
+          class="group p-4 md:p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md"
+        >
+          <div class="text-sm text-muted-foreground mb-1">Salt Lake City</div>
+          <div
+            class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
+          >
+            200+ Installations
+          </div>
+        </a>
+        <a
+          href="/locations/draper"
+          class="group p-4 md:p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md"
+        >
+          <div class="text-sm text-muted-foreground mb-1">Draper</div>
+          <div
+            class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
+          >
+            85+ Installations
+          </div>
+        </a>
+        <a
+          href="/locations/park-city"
+          class="group p-4 md:p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md"
+        >
+          <div class="text-sm text-muted-foreground mb-1">Park City</div>
+          <div
+            class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
+          >
+            120+ Installations
+          </div>
+        </a>
+        <a
+          href="/locations/sandy"
+          class="group p-4 md:p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md"
+        >
+          <div class="text-sm text-muted-foreground mb-1">Sandy</div>
+          <div
+            class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
+          >
+            95+ Installations
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center mt-8">
+        <a
+          href="/locations"
+          class="text-primary hover:text-primary/80 font-medium transition-colors"
+        >
+          View All Service Areas →
+        </a>
+      </div>
     </div>
   </section>
 

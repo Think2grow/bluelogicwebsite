@@ -1,0 +1,46 @@
+---
+/**
+ * ParallaxHero Component
+ * A premium, localized parallax hero section featuring Wasatch-style imagery
+ * with smooth Framer Motion animations and parallax effects.
+ *
+ * Uses React + Framer Motion for buttery-smooth scroll animations.
+ */
+import { Image, getImage } from "astro:assets";
+import ParallaxHeroReact from "./ParallaxHeroReact";
+import heroImageSrc from "../assets/water_art/AdobeStock_684626411.jpeg";
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  title = "Your Family, Unfiltered.",
+  subtitle = "Professional reverse osmosis systems for the health-conscious home",
+  tagline = "Half the cost. Half the footprint. 10x quieter.",
+  ctaText = "Schedule Free Water Audit",
+  ctaHref = "#contact",
+} = Astro.props;
+
+// Optimize the image at build time
+const optimizedImage = await getImage({
+  src: heroImageSrc,
+  width: 1920,
+  quality: 85,
+  format: "webp",
+});
+---
+
+<ParallaxHeroReact
+  client:load
+  title={title}
+  subtitle={subtitle}
+  tagline={tagline}
+  ctaText={ctaText}
+  ctaHref={ctaHref}
+  imageSrc={optimizedImage.src}
+/>

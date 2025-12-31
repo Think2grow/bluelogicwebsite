@@ -4,6 +4,8 @@ import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site:
@@ -12,8 +14,8 @@ export default defineConfig({
       : "https://www.bluelogicwater.com",
   output: "server",
   adapter: cloudflare(),
-  integrations: [sitemap()],
+  integrations: [sitemap(), react()],
   vite: {
     plugins: [tailwindcss()],
-  }
+  },
 });

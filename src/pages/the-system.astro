@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getProductSchema, getBreadcrumbSchema } from "../utils/schema";
+import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 
 // Generate product page-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
@@ -183,6 +184,9 @@ const schemas = [
       </div>
     </div>
   </section>
+
+  <!-- Interactive Filter Flow Visualization -->
+  <FilterFlowParallax />
 
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
