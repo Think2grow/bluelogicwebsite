@@ -246,78 +246,115 @@
   }
 </style>
 
-<script is:inline>
-  // Mobile sidebar functionality
+<script>
+  // Mobile sidebar functionality - using module script for proper lifecycle
   function initMobileSidebar() {
-    const menuBtn = document.querySelector(".mobile-menu-btn");
-    const sidebar = document.querySelector(".mobile-sidebar");
-    const overlay = document.querySelector(".sidebar-overlay");
-    const closeBtn = document.querySelector(".sidebar-close-btn");
-    const sidebarLinks = document.querySelectorAll(
-      ".sidebar-links a, .sidebar-cta",
-    );
+    const menuBtn = document.querySelector(".mobile-menu-btn") as HTMLButtonElement | null;
+    const sidebar = document.querySelector(".mobile-sidebar") as HTMLElement | null;
+    const overlay = document.querySelector(".sidebar-overlay") as HTMLElement | null;
+    const closeBtn = document.querySelector(".sidebar-close-btn") as HTMLButtonElement | null;
+    const sidebarLinks = document.querySelectorAll(".sidebar-links a, .sidebar-cta");
 
-    if (!menuBtn || !sidebar || !overlay || !closeBtn) return;
+    if (!menuBtn || !sidebar || !overlay || !closeBtn) {
+      console.warn("Mobile sidebar elements not found");
+      return;
+    }
+
+    // Remove any existing listeners by cloning elements
+    const newMenuBtn = menuBtn.cloneNode(true) as HTMLButtonElement;
+    const newCloseBtn = closeBtn.cloneNode(true) as HTMLButtonElement;
+    const newOverlay = overlay.cloneNode(true) as HTMLElement;
+    
+    menuBtn.parentNode?.replaceChild(newMenuBtn, menuBtn);
+    closeBtn.parentNode?.replaceChild(newCloseBtn, closeBtn);
+    overlay.parentNode?.replaceChild(newOverlay, overlay);
 
     function openSidebar() {
-      menuBtn.setAttribute("aria-expanded", "true");
-      sidebar.classList.add("active");
-      sidebar.setAttribute("aria-hidden", "false");
-      overlay.classList.add("active");
-      overlay.setAttribute("aria-hidden", "false");
+      newMenuBtn.setAttribute("aria-expanded", "true");
+      sidebar!.classList.add("active");
+      sidebar!.setAttribute("aria-hidden", "false");
+      newOverlay.classList.add("active");
+      newOverlay.setAttribute("aria-hidden", "false");
       document.body.classList.add("sidebar-open");
 
       // Focus the close button for accessibility
-      closeBtn.focus();
+      setTimeout(() => newCloseBtn.focus(), 100);
     }
 
     function closeSidebar() {
-      menuBtn.setAttribute("aria-expanded", "false");
-      sidebar.classList.remove("active");
-      sidebar.setAttribute("aria-hidden", "true");
-      overlay.classList.remove("active");
-      overlay.setAttribute("aria-hidden", "true");
+      newMenuBtn.setAttribute("aria-expanded", "false");
+      sidebar!.classList.remove("active");
+      sidebar!.setAttribute("aria-hidden", "true");
+      newOverlay.classList.remove("active");
+      newOverlay.setAttribute("aria-hidden", "true");
       document.body.classList.remove("sidebar-open");
 
       // Return focus to menu button
-      menuBtn.focus();
+      newMenuBtn.focus();
     }
 
-    menuBtn.addEventListener("click", function () {
-      const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+    // Use touchend for mobile to avoid 300ms delay, with click fallback
+    function handleMenuToggle(e: Event) {
+      e.preventDefault();
+      e.stopPropagation();
+      const isExpanded = newMenuBtn.getAttribute("aria-expanded") === "true";
       if (isExpanded) {
         closeSidebar();
       } else {
         openSidebar();
       }
-    });
+    }
 
-    closeBtn.addEventListener("click", closeSidebar);
-    overlay.addEventListener("click", closeSidebar);
+    // Add both touch and click handlers for better mobile support
+    newMenuBtn.addEventListener("click", handleMenuToggle);
+    newMenuBtn.addEventListener("touchend", handleMenuToggle, { passive: false });
+
+    newCloseBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      closeSidebar();
+    });
+    newCloseBtn.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      closeSidebar();
+    }, { passive: false });
+
+    newOverlay.addEventListener("click", closeSidebar);
+    newOverlay.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      closeSidebar();
+    }, { passive: false });
 
     // Close on link click
-    sidebarLinks.forEach(function (link) {
+    sidebarLinks.forEach((link) => {
       link.addEventListener("click", closeSidebar);
     });
 
     // Close on escape key
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && sidebar.classList.contains("active")) {
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === "Escape" && sidebar!.classList.contains("active")) {
         closeSidebar();
       }
-    });
+    }
+    document.removeEventListener("keydown", handleEscape);
+    document.addEventListener("keydown", handleEscape);
 
     // Handle resize - close sidebar if window becomes large
-    window.addEventListener("resize", function () {
-      if (window.innerWidth > 768 && sidebar.classList.contains("active")) {
+    function handleResize() {
+      if (window.innerWidth > 768 && sidebar!.classList.contains("active")) {
         closeSidebar();
       }
-    });
+    }
+    window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
   }
 
-  // Initialize on page load
-  initMobileSidebar();
+  // Initialize when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMobileSidebar);
+  } else {
+    initMobileSidebar();
+  }
 
-  // Re-initialize after Astro page transitions
+  // Re-initialize after Astro View Transitions
   document.addEventListener("astro:page-load", initMobileSidebar);
 </script>
