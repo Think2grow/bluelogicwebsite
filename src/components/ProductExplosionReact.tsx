@@ -115,105 +115,70 @@ export default function ProductExplosionReact({
           <p className="text-xl text-white/70 max-w-2xl mx-auto">{subtitle}</p>
         </motion.div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12 items-center mb-16 md:mb-24">
-          {/* Left Column - Stages 1 & 2 */}
-          <div className="flex flex-col gap-6 order-2 lg:order-1">
-            {stages.slice(0, 2).map((stage, index) => (
+        {/* Main Content Grid - Mobile: vertical list with image in middle, Desktop: stages left, sticky image right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16 md:mb-24">
+          {/* Left Column - All 5 stages (desktop), sequential on mobile */}
+          <div className="order-2 lg:order-1 flex flex-col gap-6">
+            {/* All 5 stages */}
+            {stages.map((stage, index) => (
               <StageCard
                 key={stage.id}
                 stage={stage}
                 index={index}
                 isInView={isInView}
-                align="right"
                 prefersReducedMotion={prefersReducedMotion}
               />
             ))}
-          </div>
 
-          {/* Center - System Image */}
-          <motion.div
-            className="relative order-1 lg:order-2 flex justify-center"
-            style={{
-              y: prefersReducedMotion ? 0 : imageY,
-              scale: prefersReducedMotion ? 1 : imageScale,
-            }}
-          >
+            {/* Image container - mobile only, positioned after all stages */}
             <motion.div
-              className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 max-w-md lg:max-w-lg"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="lg:hidden relative"
               style={{
-                boxShadow: "0 0 60px oklch(0.7 0.1 220 / 0.2)",
+                y: prefersReducedMotion ? 0 : imageY,
+                scale: prefersReducedMotion ? 1 : imageScale,
               }}
             >
-              <img
-                src={imageSrc}
-                alt="Blue Logic RO System - Complete Installation Diagram"
-                className="w-full h-auto"
-              />
-              {/* Glow overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
+              <motion.div
+                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                style={{
+                  boxShadow: "0 0 60px oklch(0.7 0.1 220 / 0.2)",
+                }}
+              >
+                <img
+                  src={imageSrc}
+                  alt="Blue Logic RO System - Complete Installation Diagram"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
+              </motion.div>
             </motion.div>
-
-            {/* Center Stage Card (RO Membrane) - positioned below image on mobile, absolute on desktop */}
-            <motion.div
-              className="hidden lg:block absolute -bottom-8 left-1/2 -translate-x-1/2 z-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            >
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-4 text-center">
-                <div className="w-8 h-8 rounded-full bg-[oklch(0.7_0.1_220)] text-white flex items-center justify-center font-bold text-sm mx-auto mb-2">
-                  3
-                </div>
-                <h3 className="font-semibold text-white text-sm">
-                  {stages[2].name}
-                </h3>
-                <p className="text-xs text-white/60 mt-1 max-w-[200px]">
-                  {stages[2].description}
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Stages 4 & 5 */}
-          <div className="flex flex-col gap-6 order-3">
-            {stages.slice(3, 5).map((stage, index) => (
-              <StageCard
-                key={stage.id}
-                stage={stage}
-                index={index + 3}
-                isInView={isInView}
-                align="left"
-                prefersReducedMotion={prefersReducedMotion}
-              />
-            ))}
           </div>
-        </div>
 
-        {/* Mobile-only: Stage 3 card */}
-        <motion.div
-          className="lg:hidden mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-        >
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 max-w-sm mx-auto">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-[oklch(0.7_0.1_220)] text-white flex items-center justify-center font-bold shrink-0">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">
-                  {stages[2].name}
-                </h3>
-                <p className="text-sm text-white/60">{stages[2].description}</p>
-              </div>
+          {/* Right Column - Sticky image (desktop only) */}
+          <div className="hidden lg:block order-2 relative">
+            <div className="sticky top-24 h-fit">
+              <motion.div
+                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                style={{
+                  boxShadow: "0 0 60px oklch(0.7 0.1 220 / 0.2)",
+                }}
+              >
+                <img
+                  src={imageSrc}
+                  alt="Blue Logic RO System - Complete Installation Diagram"
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
+              </motion.div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Stats Row */}
         <motion.div
@@ -279,34 +244,25 @@ function StageCard({
   stage,
   index,
   isInView,
-  align,
   prefersReducedMotion,
+  className = "",
 }: {
   stage: ComponentStage;
   index: number;
   isInView: boolean;
-  align: "left" | "right";
   prefersReducedMotion: boolean | null;
+  className?: string;
 }) {
-  const initialX = prefersReducedMotion ? 0 : align === "right" ? -50 : 50;
+  const initialX = prefersReducedMotion ? 0 : -50;
 
   return (
     <motion.div
-      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 md:p-6 ${
-        align === "right" ? "lg:text-right" : "lg:text-left"
-      }`}
+      className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 md:p-6 ${className}`}
       initial={{ opacity: 0, x: initialX }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.6, delay: 0.3 + index * 0.15, ease: "easeOut" }}
-      whileHover={{
-        backgroundColor: "oklch(1 0 0 / 0.08)",
-        borderColor: "oklch(0.7 0.1 220 / 0.3)",
-        transition: { duration: 0.2 },
-      }}
     >
-      <div
-        className={`flex items-start gap-4 ${align === "right" ? "lg:flex-row-reverse" : ""}`}
-      >
+      <div className="flex items-start gap-4">
         <div className="w-10 h-10 rounded-full bg-[oklch(0.7_0.1_220_/_0.2)] text-[oklch(0.7_0.1_220)] flex items-center justify-center font-bold shrink-0">
           {stage.number}
         </div>
