@@ -1,5 +1,6 @@
 ---
-// Footer component
+import { Picture } from 'astro:assets';
+import logo from '../assets/Blue Logic Logo FINAL-02.png';
 ---
 
 <footer class="bg-obsidian text-white">
@@ -10,10 +11,12 @@
     >
       <!-- Company Logo -->
       <a href="/" class="block">
-        <img
-          src="/Blue Logic Logo FINAL-02.png"
+        <Picture
+          src={logo}
+          formats={['avif', 'webp', 'png']}
           alt="Blue Logic Water"
           class="h-12 md:h-14 w-auto brightness-0 invert"
+          quality={75}
         />
       </a>
 

@@ -1,5 +1,7 @@
 ---
 // Header component with responsive navigation
+import logo from "../assets/Blue Logic Logo FINAL-03.png"
+import { Picture } from "astro:assets";
 ---
 
 <header
@@ -13,10 +15,12 @@
       href="/"
       class="text-2xl font-bold text-foreground no-underline hover:text-primary transition-colors"
     >
-      <img
-        src="/Blue Logic Logo FINAL-03.png"
+      <Picture
+        src={logo}
+        formats={['avif', 'webp', 'png']}
         alt="Blue Logic Water"
-        class="h-10 inline-block mr-2"
+        class="h-10 w-18 inline-block mr-2"
+        quality={75}
       />
     </a>
 
