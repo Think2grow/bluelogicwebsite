@@ -4,6 +4,9 @@ import LeadForm from "../components/LeadForm.astro";
 import ParallaxHero from "../components/ParallaxHero.astro";
 import ProductExplosion from "../components/ProductExplosion.astro";
 import { getBreadcrumbSchema } from "../utils/schema";
+import { Image } from "astro:assets";
+import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
+import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
 
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
@@ -43,6 +46,51 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
         advanced water purification technology used in commercial facilities,
         without the unnecessary markup.
       </p>
+    </div>
+  </section>
+
+  <!-- Family Trust Section with Image -->
+  <section class="bg-card py-16 md:py-24 px-4 overflow-hidden">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Pure Water for Your Family
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Every glass, every bath, every meal—your family deserves water you
+            can trust completely. Our whole-home systems ensure pure water flows
+            from every tap.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+            No more worrying about what's in your water. From your newborn's
+            first bath to your morning coffee, experience the peace of mind that
+            comes with 99.8% contaminant removal.
+          </p>
+          <a
+            href="/the-system"
+            class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+          >
+            Learn How It Works →
+          </a>
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="relative">
+            <Image
+              src={fatherDaughterImg}
+              alt="Father and daughter enjoying pure water together at the kitchen sink"
+              class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div
+              class="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold shadow-lg"
+            >
+              Water You Can Trust
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -97,6 +145,32 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
   <!-- Social Proof Section -->
   <section class="bg-background py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <Image
+            src={babyBathImg}
+            alt="Happy baby enjoying a gentle bubble bath in pure, filtered water"
+            class="rounded-2xl shadow-xl w-full object-cover aspect-square"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+            Safe from the First Bath
+          </h2>
+          <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
+            A baby's skin absorbs what's in the water. Our whole-home systems
+            remove chlorine, PFAS, and contaminants from every faucet—so bath
+            time is pure, gentle, and worry-free.
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
+            Because protecting your family means pure water everywhere, not just
+            at the kitchen sink.
+          </p>
+        </div>
+      </div>
+
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
           Trusted by 500+ Homes in the Wasatch Front

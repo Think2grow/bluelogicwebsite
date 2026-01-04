@@ -41,11 +41,6 @@ _The primary functionality: driving leads without compromising UX._
 - **Deliverable:** `LeadForm.astro` (or React/Preact island).
 - **Complexity:** Medium
 
-- [ ] **2.3 Conversion Tracking (Server-Side)**
-- **Description:** Integrate Cloudflare Zaraz or a custom worker to fire events to Google/Meta upon successful API response from 2.1.
-- **Deliverable:** Tracking verification in dev console.
-- **Complexity:** Medium
-
 ## 3. The "Apple-Grade" UI & Motion
 
 _Creating the elevated feel for affluent clientele._
@@ -137,10 +132,15 @@ _Focusing on the mission and the "Why."_
 
 _Tasks for long-term growth and SEO dominance._
 
-- [ ] **6.1 [FUTURE] Resource Center (Blog) Engine**
+- [ ] **6.1 Conversion Tracking (Server-Side)**
+- **Description:** Integrate Cloudflare Zaraz or a custom worker to fire events to Google/Meta upon successful API response from lead form submission.
+- **Deliverable:** Tracking verification in dev console.
+- **Complexity:** Medium
+
+- [ ] **6.2 [FUTURE] Resource Center (Blog) Engine**
 - **Description:** Setup Astro Content Collections for MDX-based articles targeting "Hard water skin effects," etc.
 
-- [x] **6.2 Gather Live Water Quality Data (One-Time)**
+- [x] **6.3 Gather Live Water Quality Data (One-Time)**
 - **Description:** One-time manual data collection from EWG.org for each location. Search each city's zip code at https://www.ewg.org/tapwater/search-results.php?zip5={zipcode}, find the utility provider, then navigate to that provider's report page. Extract vital stats and capture the source URL. Store in `src/data/cities.ts` as static data.
 - **Key Stats to Extract per Location:**
   1. Number of contaminants exceeding EWG health guidelines (e.g., "14 Contaminants Exceed Guidelines")
@@ -157,10 +157,10 @@ _Tasks for long-term growth and SEO dominance._
   - Location pages render this data with source link to EWG provider report
 - **Complexity:** Low (manual data gathering, no coding required once structure is in place)
 
-- [ ] **6.3 [FUTURE] Video Testimonial Carousel**
+- [ ] **6.4 [FUTURE] Video Testimonial Carousel**
 - **Description:** "Netflix-style" slider of high-end clients talking about their installation experience.
 
-- [ ] **6.4 [FUTURE] A/B Testing GHL Forms**
+- [ ] **6.5 [FUTURE] A/B Testing GHL Forms**
 - **Description:** Test "Free Water Audit" vs. "Get Pricing Now" as the primary CTA.
 
 ## 7. Core Page Development (V1)

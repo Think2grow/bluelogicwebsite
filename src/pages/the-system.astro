@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { getProductSchema, getBreadcrumbSchema } from "../utils/schema";
 import FilterFlowParallax from "../components/FilterFlowParallax.astro";
+import { Image } from "astro:assets";
+import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
+import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
 
 // Generate product page-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
@@ -28,6 +31,38 @@ const schemas = [
       <p class="text-xl md:text-2xl text-muted-foreground">
         Professional-grade water purification, engineered for your home
       </p>
+    </div>
+  </section>
+
+  <!-- Visual Impact: Before/After -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Image
+            src={dirtyCleanGlassesImg}
+            alt="Comparison of contaminated water versus pure filtered water in glasses"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            See the Difference
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Utah's water carries invisible contaminants—heavy metals, PFAS,
+            chlorine byproducts, and dissolved solids that affect taste, health,
+            and your home's infrastructure.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            Our systems transform municipal water into crystal-clear,
+            great-tasting water that's purer than bottled—at every tap in your
+            home.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -203,56 +238,70 @@ const schemas = [
         home.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-8 bg-card rounded-2xl">
-          <h3 class="text-xl font-semibold mb-4 text-primary">
-            Molecular-Level Purification
-          </h3>
-          <p class="font-semibold mb-2 text-foreground">
-            99.8% contaminant removal
-          </p>
-          <p class="text-muted-foreground leading-relaxed">
-            Removes dissolved solids, heavy metals, PFAS, pharmaceuticals, and
-            microplastics at the molecular level.
-          </p>
-        </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-8 bg-card rounded-2xl">
+            <h3 class="text-xl font-semibold mb-4 text-primary">
+              Molecular-Level Purification
+            </h3>
+            <p class="font-semibold mb-2 text-foreground">
+              99.8% contaminant removal
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+              Removes dissolved solids, heavy metals, PFAS, pharmaceuticals, and
+              microplastics at the molecular level.
+            </p>
+          </div>
 
-        <div class="p-8 bg-card rounded-2xl">
-          <h3 class="text-xl font-semibold mb-4 text-primary">
-            Compact Design
-          </h3>
-          <p class="font-semibold mb-2 text-foreground">
-            50% smaller than traditional RO systems
-          </p>
-          <p class="text-muted-foreground leading-relaxed">
-            Fits seamlessly in modern utility spaces without the massive
-            footprint of competitor systems.
-          </p>
-        </div>
+          <div class="p-8 bg-card rounded-2xl">
+            <h3 class="text-xl font-semibold mb-4 text-primary">
+              Compact Design
+            </h3>
+            <p class="font-semibold mb-2 text-foreground">
+              50% smaller than traditional RO systems
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+              Fits seamlessly in modern utility spaces without the massive
+              footprint of competitor systems.
+            </p>
+          </div>
 
-        <div class="p-8 bg-card rounded-2xl">
-          <h3 class="text-xl font-semibold mb-4 text-primary">
-            Silent Operation
-          </h3>
-          <p class="font-semibold mb-2 text-foreground">
-            10x quieter than standard units
-          </p>
-          <p class="text-muted-foreground leading-relaxed">
-            Advanced sound-dampening technology means you'll forget it's even
-            running.
-          </p>
-        </div>
+          <div class="p-8 bg-card rounded-2xl">
+            <h3 class="text-xl font-semibold mb-4 text-primary">
+              Silent Operation
+            </h3>
+            <p class="font-semibold mb-2 text-foreground">
+              10x quieter than standard units
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+              Advanced sound-dampening technology means you'll forget it's even
+              running.
+            </p>
+          </div>
 
-        <div class="p-8 bg-card rounded-2xl">
-          <h3 class="text-xl font-semibold mb-4 text-primary">
-            Premium Build Quality
-          </h3>
-          <p class="font-semibold mb-2 text-foreground">
-            Commercial-grade components
-          </p>
-          <p class="text-muted-foreground leading-relaxed">
-            Engineered for long-term reliability with NSF-certified materials
-            throughout.
+          <div class="p-8 bg-card rounded-2xl">
+            <h3 class="text-xl font-semibold mb-4 text-primary">
+              Premium Build Quality
+            </h3>
+            <p class="font-semibold mb-2 text-foreground">
+              Commercial-grade components
+            </p>
+            <p class="text-muted-foreground leading-relaxed">
+              Engineered for long-term reliability with NSF-certified materials
+              throughout.
+            </p>
+          </div>
+        </div>
+        <div>
+          <Image
+            src={filtersInHandsImg}
+            alt="Professional technician carefully handling precision water filtration components"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4]"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            Precision engineering in every component
           </p>
         </div>
       </div>

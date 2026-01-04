@@ -2,6 +2,9 @@
 import Layout from "../../layouts/Layout.astro";
 import { cities } from "../../data/cities";
 import { getBreadcrumbSchema } from "../../utils/schema";
+import { Image } from "astro:assets";
+import hardWaterBuildup from "../../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
+import spaFacialImg from "../../assets/water_art/engin-akyurt-g-m8EDc4X6Q-unsplash_spa_facial.jpg";
 
 export const prerender = true;
 
@@ -46,6 +49,38 @@ const schemas = [
           water quality concerns. Blue Logic Water delivers location-specific
           solutions that address your community's exact water profile.
         </p>
+      </div>
+
+      <!-- The Problem: Hard Water Visual -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <Image
+            src={hardWaterBuildup}
+            alt="Severe mineral and scale buildup on a showerhead caused by Utah's hard water"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            Hard water damage: A common sight in Utah homes
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Utah's Water Challenge
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Utah has some of the hardest water in the nation. The minerals that
+            make our mountains beautiful also leave scale buildup on your
+            fixtures, shorten appliance lifespans, and affect your family's
+            health.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            Every city faces unique challenges—from PFAS in northern Utah to
+            arsenic in the south. That's why Blue Logic designs location-specific
+            solutions.
+          </p>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -151,6 +186,44 @@ const schemas = [
             the infrastructure quirks, and the exact challenges your
             neighborhood faces.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Solution: Premium Results -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            The Blue Logic Difference
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Experience what pure water feels like. Softer skin, shinier hair,
+            and that spa-like sensation—every single day. No more worrying about
+            what's in your water.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+            Our whole-home systems are engineered specifically for Utah's unique
+            water challenges, delivering premium results regardless of your
+            location.
+          </p>
+          <a
+            href="/#contact"
+            class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+          >
+            Find Your Location's Solution →
+          </a>
+        </div>
+        <div class="order-1 lg:order-2">
+          <Image
+            src={spaFacialImg}
+            alt="Woman enjoying spa-quality water treatment, glowing healthy skin"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </div>
     </div>

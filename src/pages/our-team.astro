@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProcessStepper from "../components/ProcessStepper.astro";
+import { Image } from "astro:assets";
+import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
+import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_showing_off_sink.jpeg";
 ---
 
 <Layout
@@ -20,26 +23,42 @@ import ProcessStepper from "../components/ProcessStepper.astro";
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-serif text-center mb-8 text-foreground"
-      >
-        The Wasatch-Born Story
-      </h2>
-      <p
-        class="text-lg leading-relaxed max-w-3xl mx-auto text-center text-muted-foreground mb-6"
-      >
-        Blue Logic Water was founded by a team of engineers and water quality
-        specialists who grew up in the Salt Lake Valley. We experienced
-        firsthand the challenges of Utah's hard water and the frustration of
-        seeing families pay inflated prices for basic water purification.
-      </p>
-      <p
-        class="text-lg leading-relaxed max-w-3xl mx-auto text-center text-muted-foreground"
-      >
-        Our mission is simple: bring commercial-grade reverse osmosis technology
-        to homes at a fair price. No marketing gimmicks, no unnecessary
-        upsells—just pure water and honest service.
-      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2
+            class="text-3xl md:text-4xl font-serif mb-8 text-foreground"
+          >
+            The Wasatch-Born Story
+          </h2>
+          <p
+            class="text-lg leading-relaxed text-muted-foreground mb-6"
+          >
+            Blue Logic Water was founded by a team of engineers and water quality
+            specialists who grew up in the Salt Lake Valley. We experienced
+            firsthand the challenges of Utah's hard water and the frustration of
+            seeing families pay inflated prices for basic water purification.
+          </p>
+          <p
+            class="text-lg leading-relaxed text-muted-foreground"
+          >
+            Our mission is simple: bring commercial-grade reverse osmosis technology
+            to homes at a fair price. No marketing gimmicks, no unnecessary
+            upsells—just pure water and honest service.
+          </p>
+        </div>
+        <div>
+          <Image
+            src={handInWaterImg}
+            alt="Hand gently touching crystal clear purified water, feeling its purity"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            Feel the difference of truly pure water
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -206,7 +225,44 @@ import ProcessStepper from "../components/ProcessStepper.astro";
     </div>
   </section>
 
-  <section class="bg-background py-16 md:py-20 px-4 text-center">
+  <!-- Professional Service Image Section -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Professional Installation, Premium Results
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Every Blue Logic installation is performed by certified technicians
+            who treat your home with respect. Clean workspace, careful
+            craftsmanship, and meticulous attention to detail.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+            The result? A system that integrates seamlessly into your home and
+            delivers pure water for years to come.
+          </p>
+          <a
+            href="/#contact"
+            class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+          >
+            Schedule Your Consultation →
+          </a>
+        </div>
+        <div class="order-1 lg:order-2">
+          <Image
+            src={realtorSinkImg}
+            alt="Professional showing a modern kitchen with premium water fixtures and purification system"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
         Work With a Local Team

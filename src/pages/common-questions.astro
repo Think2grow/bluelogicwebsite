@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+import { Image } from "astro:assets";
+import cleanWaterSinkImg from "../assets/water_art/AdobeStock_706544309_clean_water_in_sink.jpeg";
+import toddlerWaterImg from "../assets/water_art/AdobeStock_689029947_toddler_with_water.jpeg";
 
 interface FAQ {
   question: string;
@@ -114,6 +117,37 @@ const schemas = [
     </div>
   </section>
 
+  <!-- Trust-building Image Section -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Image
+            src={cleanWaterSinkImg}
+            alt="Crystal clear purified water flowing into a modern kitchen sink"
+            class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Your Questions, Answered
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Investing in a water purification system is a big decision. We've
+            compiled the most common questions from Utah homeowners to help you
+            make an informed choice.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            Still have questions? Our team of local water experts is here to
+            help—with honest answers, not sales pressure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
@@ -149,7 +183,38 @@ const schemas = [
     </div>
   </section>
 
-  <section class="bg-card py-16 md:py-20 px-4 text-center">
+  <!-- Family Safety Image Section -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Pure Water at Every Stage
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            From a baby's first sip to daily hydration, your family's water
+            matters at every age. Our whole-home systems ensure every drop is
+            pure—whether it's for drinking, cooking, or bathing.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            That's the Blue Logic difference: complete peace of mind, not just
+            at one tap.
+          </p>
+        </div>
+        <div class="order-1 lg:order-2">
+          <Image
+            src={toddlerWaterImg}
+            alt="Happy toddler safely drinking pure filtered water"
+            class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
         Still Have Questions?

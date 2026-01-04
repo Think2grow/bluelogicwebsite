@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import boyExaminesGlassImg from "../assets/water_art/AdobeStock_549367021_boy_examines_glass.jpeg";
+import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_shower.jpeg";
 ---
 
 <Layout
@@ -153,63 +156,78 @@ import Layout from "../layouts/Layout.astro";
         your peace of mind.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-        <div class="threat-card">
-          <div class="text-4xl mb-4">⚗️</div>
-          <h3 class="text-xl font-bold mb-4 text-foreground">
-            PFAS & Forever Chemicals
-          </h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">
-            Industrial chemicals that persist in the environment and accumulate
-            in your body. Linked to cancer, hormone disruption, and immune
-            system damage—found in water supplies across Utah.
+      <!-- Image + Content Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
+        <div class="lg:col-span-2">
+          <Image
+            src={boyExaminesGlassImg}
+            alt="Young boy thoughtfully examining a glass of water, curious about what's inside"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4] sticky top-8"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 40vw"
+          />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            What's really in your family's water?
           </p>
         </div>
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="threat-card">
+            <div class="text-4xl mb-4">⚗️</div>
+            <h3 class="text-xl font-bold mb-4 text-foreground">
+              PFAS & Forever Chemicals
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Industrial chemicals that persist in the environment and accumulate
+              in your body. Linked to cancer, hormone disruption, and immune
+              system damage—found in water supplies across Utah.
+            </p>
+          </div>
 
-        <div class="threat-card">
-          <div class="text-4xl mb-4">🧬</div>
-          <h3 class="text-xl font-bold mb-4 text-foreground">Microplastics</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">
-            Microscopic plastic fragments detected in tap water, bottled water,
-            and even human blood. These particles carry toxins and accumulate
-            over time with unknown long-term effects.
-          </p>
-        </div>
+          <div class="threat-card">
+            <div class="text-4xl mb-4">🧬</div>
+            <h3 class="text-xl font-bold mb-4 text-foreground">Microplastics</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Microscopic plastic fragments detected in tap water, bottled water,
+              and even human blood. These particles carry toxins and accumulate
+              over time with unknown long-term effects.
+            </p>
+          </div>
 
-        <div class="threat-card">
-          <div class="text-4xl mb-4">🚿</div>
-          <h3 class="text-xl font-bold mb-4 text-foreground">
-            Transdermal Absorption
-          </h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">
-            Toxins don't just enter through drinking. During showers and baths,
-            your skin absorbs chemicals, and your lungs inhale vaporized
-            contaminants—whole-home filtration stops them at every tap.
-          </p>
-        </div>
+          <div class="threat-card">
+            <div class="text-4xl mb-4">🚿</div>
+            <h3 class="text-xl font-bold mb-4 text-foreground">
+              Transdermal Absorption
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Toxins don't just enter through drinking. During showers and baths,
+              your skin absorbs chemicals, and your lungs inhale vaporized
+              contaminants—whole-home filtration stops them at every tap.
+            </p>
+          </div>
 
-        <div class="threat-card">
-          <div class="text-4xl mb-4">🔧</div>
-          <h3 class="text-xl font-bold mb-4 text-foreground">
-            Hard Water & Scale Damage
-          </h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">
-            Calcium and magnesium minerals create scale buildup that reduces
-            appliance lifespan, clogs pipes, and wastes money on soap and
-            repairs. Utah's hard water is among the hardest in the nation.
-          </p>
-        </div>
+          <div class="threat-card">
+            <div class="text-4xl mb-4">🔧</div>
+            <h3 class="text-xl font-bold mb-4 text-foreground">
+              Hard Water & Scale Damage
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Calcium and magnesium minerals create scale buildup that reduces
+              appliance lifespan, clogs pipes, and wastes money on soap and
+              repairs. Utah's hard water is among the hardest in the nation.
+            </p>
+          </div>
 
-        <div class="threat-card">
-          <div class="text-4xl mb-4">☣️</div>
-          <h3 class="text-xl font-bold mb-4 text-foreground">
-            Chlorine & Byproducts
-          </h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">
-            Municipal water treatment chemicals and their disinfection
-            byproducts can irritate skin, exacerbate respiratory conditions, and
-            have been associated with increased cancer risk.
-          </p>
+          <div class="threat-card md:col-span-2">
+            <div class="text-4xl mb-4">☣️</div>
+            <h3 class="text-xl font-bold mb-4 text-foreground">
+              Chlorine & Byproducts
+            </h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Municipal water treatment chemicals and their disinfection
+              byproducts can irritate skin, exacerbate respiratory conditions, and
+              have been associated with increased cancer risk.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -220,6 +238,43 @@ import Layout from "../layouts/Layout.astro";
         your kitchen sink, but at every faucet, shower, and appliance in your
         home.
       </p>
+    </div>
+  </section>
+
+  <!-- Premium Lifestyle Section -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Experience the Premium Difference
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            Pure water transforms your daily rituals. Softer skin, shinier hair,
+            and that spa-like feeling—every single day. No more mineral buildup
+            on fixtures or spots on glassware.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+            This is the invisible luxury that elevates your home. Not flashy,
+            just fundamentally better.
+          </p>
+          <a
+            href="/#contact"
+            class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
+          >
+            Schedule Your Water Audit →
+          </a>
+        </div>
+        <div>
+          <Image
+            src={fancyShowerImg}
+            alt="Modern luxury shower with pristine water flowing through premium fixtures"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      </div>
     </div>
   </section>
 
