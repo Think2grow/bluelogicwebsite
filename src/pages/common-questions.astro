@@ -2,7 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 
-const faqs = [
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQ[] = [
   {
     question:
       "How is the Blue Logic Whole-Home Purification System different from a regular filter or softener?",
@@ -123,7 +128,7 @@ const schemas = [
       <div class="max-w-4xl mx-auto">
         {
           faqs.map((faq, index) => (
-            <div class="faq-item">
+            <div class="faq-item" id={`faq-${faq.answer.replace(/\s+/g, '-').toLowerCase()}`}>
               <button
                 class="faq-question"
                 aria-expanded="false"
@@ -189,22 +194,25 @@ const schemas = [
 </style>
 
 <script>
-  // FAQ accordion functionality
-  document.addEventListener("DOMContentLoaded", () => {
+  function setupAccordion() {
     const faqButtons = document.querySelectorAll(".faq-question");
 
     faqButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const isExpanded = button.getAttribute("aria-expanded") === "true";
-        const answerId = button.getAttribute("aria-controls");
-        const answer = document.getElementById(answerId!);
+      // Remove existing listeners to prevent duplicates
+      const newButton = button.cloneNode(true) as HTMLButtonElement;
+      button.replaceWith(newButton);
+      
+      newButton.addEventListener("click", () => {
+        const isExpanded = newButton.getAttribute("aria-expanded") === "true";
+        const answerId = newButton.getAttribute("aria-controls");
+        const answer = answerId ? document.getElementById(answerId) : null;
 
         // Close all other answers
-        faqButtons.forEach((otherButton) => {
-          if (otherButton !== button) {
+        document.querySelectorAll(".faq-question").forEach((otherButton) => {
+          if (otherButton !== newButton) {
             otherButton.setAttribute("aria-expanded", "false");
             const otherAnswerId = otherButton.getAttribute("aria-controls");
-            const otherAnswer = document.getElementById(otherAnswerId!);
+            const otherAnswer = otherAnswerId ? document.getElementById(otherAnswerId) : null;
             if (otherAnswer) {
               otherAnswer.style.maxHeight = "0";
               otherAnswer.classList.remove("open");
@@ -220,8 +228,14 @@ const schemas = [
           answer.style.maxHeight = "0";
           answer.classList.remove("open");
         }
-        button.setAttribute("aria-expanded", String(!isExpanded));
+        newButton.setAttribute("aria-expanded", String(!isExpanded));
       });
     });
-  });
+  }
+
+  // Run on initial load
+  setupAccordion();
+
+  // Run on every View Transition navigation
+  document.addEventListener("astro:page-load", setupAccordion);
 </script>
