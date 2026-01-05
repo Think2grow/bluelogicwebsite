@@ -8,6 +8,8 @@ import { Image } from "astro:assets";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
 import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
 
+export const prerender = true;
+
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 
