@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import boyExaminesGlassImg from "../assets/water_art/AdobeStock_549367021_boy_examines_glass.jpeg";
 import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_shower.jpeg";
+
+export const prerender = true;
 ---
 
 <Layout
@@ -282,7 +284,7 @@ import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_show
         <Image
           src={fancyShowerImg}
           alt="Modern luxury shower with pristine water flowing through premium fixtures"
-          class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+          class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
           widths={[400, 600, 800]}
           sizes="(max-width: 768px) 100vw, 50vw"
           quality={50}

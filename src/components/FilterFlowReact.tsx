@@ -290,7 +290,7 @@ function StageCard({
         transition-all duration-300
         ${
           isActive
-            ? "bg-white/10 border-glacier shadow-lg shadow-[oklch(0.7_0.1_220_/_0.2)]"
+            ? "bg-white/10 border-glacier shadow-lg shadow-[oklch(0.7_0.1_220/0.2)]"
             : isPast
               ? "bg-white/5 border-white/20"
               : "bg-white/5 border-white/10"

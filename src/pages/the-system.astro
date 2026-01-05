@@ -6,6 +6,8 @@ import { Image } from "astro:assets";
 import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
 import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
 
+export const prerender = true;
+
 // Generate product page-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 

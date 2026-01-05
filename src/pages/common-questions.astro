@@ -5,6 +5,8 @@ import { Image } from "astro:assets";
 import cleanWaterSinkImg from "../assets/water_art/AdobeStock_706544309_clean_water_in_sink.jpeg";
 import toddlerWaterImg from "../assets/water_art/AdobeStock_689029947_toddler_with_water.jpeg";
 
+export const prerender = true;
+
 interface FAQ {
   question: string;
   answer: string;
@@ -125,7 +127,7 @@ const schemas = [
           <Image
             src={cleanWaterSinkImg}
             alt="Crystal clear purified water flowing into a modern kitchen sink"
-            class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+            class="rounded-2xl shadow-xl w-full object-cover aspect-4/3"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={50}
@@ -209,7 +211,7 @@ const schemas = [
           <Image
             src={toddlerWaterImg}
             alt="Happy toddler safely drinking pure filtered water"
-            class="rounded-2xl shadow-xl w-full object-cover aspect-[4/3]"
+            class="rounded-2xl shadow-xl w-full object-cover aspect-4/3"
             widths={[400, 600]}
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={50}

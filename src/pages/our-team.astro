@@ -4,6 +4,8 @@ import ProcessStepper from "../components/ProcessStepper.astro";
 import { Image } from "astro:assets";
 import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
 import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_showing_off_sink.jpeg";
+
+export const prerender = true;
 ---
 
 <Layout
@@ -52,7 +54,7 @@ import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_sho
           <Image
             src={handInWaterImg}
             alt="Hand gently touching crystal clear purified water, feeling its purity"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={50}
@@ -262,7 +264,7 @@ import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_sho
           <Image
             src={realtorSinkImg}
             alt="Professional showing a modern kitchen with premium water fixtures and purification system"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 50vw"
             quality={50}

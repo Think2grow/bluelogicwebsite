@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { getBreadcrumbSchema } from "../utils/schema";
 
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+export const prerender = true;
 
 const schemas = [
   getBreadcrumbSchema(siteUrl, [
