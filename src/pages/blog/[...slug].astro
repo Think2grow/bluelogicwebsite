@@ -50,6 +50,9 @@ const { Content } = await render(post);
             src={post.data.image}
             alt={`Cover image for ${post.data.title}`}
             class="w-full h-auto rounded-md mb-8"
+            widths={[600, 900, 1200]}
+            sizes="(max-width: 768px) 100vw, 75vw"
+            quality={80}
           />
         )
       }
