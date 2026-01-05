@@ -143,7 +143,7 @@ export default function ParallaxHeroReact({
           <motion.div variants={itemVariants}>
             <motion.a
               href={ctaHref}
-              className="group relative inline-flex items-center gap-3 bg-[oklch(0.7_0.1_220)] text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg"
+              className="group relative inline-flex items-center gap-3 bg-glacier text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: "oklch(0.55 0.12 220)",

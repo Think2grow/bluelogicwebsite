@@ -106,7 +106,7 @@ export default function ProductExplosionReact({
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block text-[oklch(0.7_0.1_220)] text-sm font-semibold tracking-wider uppercase mb-4">
+          <span className="inline-block text-glacier text-sm font-semibold tracking-wider uppercase mb-4">
             The Technology
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">
@@ -174,7 +174,7 @@ export default function ProductExplosionReact({
                   alt="Blue Logic RO System - Complete Installation Diagram"
                   className="w-full h-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
               </motion.div>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function ProductExplosionReact({
                 ease: "easeOut",
               }}
             >
-              <div className="text-3xl md:text-4xl font-bold text-[oklch(0.7_0.1_220)] mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-glacier mb-2">
                 {stat.value}
               </div>
               <div className="text-sm text-white/60">{stat.label}</div>
@@ -216,7 +216,7 @@ export default function ProductExplosionReact({
         >
           <motion.a
             href="/the-system"
-            className="inline-flex items-center gap-2 text-[oklch(0.7_0.1_220)] font-semibold text-lg transition-colors"
+            className="inline-flex items-center gap-2 text-glacier font-semibold text-lg transition-colors"
             whileHover={{ x: 5 }}
           >
             <span>Explore Technical Specs</span>
@@ -263,7 +263,7 @@ function StageCard({
       transition={{ duration: 0.6, delay: 0.3 + index * 0.15, ease: "easeOut" }}
     >
       <div className="flex items-start gap-4">
-        <div className="w-10 h-10 rounded-full bg-[oklch(0.7_0.1_220_/_0.2)] text-[oklch(0.7_0.1_220)] flex items-center justify-center font-bold shrink-0">
+        <div className="w-10 h-10 rounded-full bg-[oklch(0.7_0.1_220_/_0.2)] text-glacier flex items-center justify-center font-bold shrink-0">
           {stage.number}
         </div>
         <div>
