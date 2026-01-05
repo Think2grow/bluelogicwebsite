@@ -37,7 +37,7 @@ const stages: ComponentStage[] = [
     id: "membrane",
     number: 3,
     name: "RO Membrane",
-    description: "99.9% contaminant removal at 0.0001 microns",
+    description: "99.8% contaminant removal at 0.0001 microns",
   },
   {
     id: "polishing",
@@ -55,7 +55,7 @@ const stages: ComponentStage[] = [
 
 const stats = [
   { value: "5", label: "Filtration Stages" },
-  { value: "99.9%", label: "Contaminant Removal" },
+  { value: "99.8%", label: "Contaminant Removal" },
   { value: "10x", label: "Quieter Operation" },
   { value: "50%", label: "Smaller Footprint" },
 ];
