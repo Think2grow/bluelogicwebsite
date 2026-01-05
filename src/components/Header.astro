@@ -5,7 +5,7 @@ import { Picture } from "astro:assets";
 ---
 
 <header
-  class="bg-background border-b border-border sticky top-0 z-50 px-4 py-4 md:px-8"
+  class="header-ghost bg-background/70 backdrop-blur-lg border-b border-border/50 sticky top-0 z-50 px-4 py-4 md:px-8 transition-transform duration-300 ease-in-out"
 >
   <nav
     class="max-w-7xl mx-auto flex justify-between items-center gap-8"
@@ -382,4 +382,84 @@ import { Picture } from "astro:assets";
 
   // Re-initialize after Astro View Transitions
   document.addEventListener("astro:page-load", initMobileSidebar);
+
+  // Ghost Header - Hide on scroll down, show on scroll up (Apple style)
+  let ghostHeaderCleanup: (() => void) | null = null;
+  
+  function initGhostHeader() {
+    // Clean up previous instance
+    if (ghostHeaderCleanup) {
+      ghostHeaderCleanup();
+      ghostHeaderCleanup = null;
+    }
+
+    const header = document.querySelector(".header-ghost") as HTMLElement | null;
+    if (!header) return;
+
+    // Reset header visibility on navigation
+    header.style.transform = "translateY(0)";
+
+    let lastScrollTop = 0;
+    let scrollThreshold = 5; // Minimum scroll to trigger hide/show
+    let isHeaderVisible = true;
+
+    function handleScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Don't hide header if we're at the very top
+      if (scrollTop <= 100) {
+        if (!isHeaderVisible) {
+          header!.style.transform = "translateY(0)";
+          isHeaderVisible = true;
+        }
+        return;
+      }
+
+      // Check scroll direction
+      if (Math.abs(scrollTop - lastScrollTop) < scrollThreshold) {
+        return; // Ignore small scroll movements
+      }
+
+      if (scrollTop > lastScrollTop && isHeaderVisible) {
+        // Scrolling down - hide header
+        header!.style.transform = "translateY(-100%)";
+        isHeaderVisible = false;
+      } else if (scrollTop < lastScrollTop && !isHeaderVisible) {
+        // Scrolling up - show header
+        header!.style.transform = "translateY(0)";
+        isHeaderVisible = true;
+      }
+
+      lastScrollTop = scrollTop;
+    }
+
+    // Throttle scroll events for better performance
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Return cleanup function
+    ghostHeaderCleanup = () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }
+
+  // Initialize ghost header behavior
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGhostHeader);
+  } else {
+    initGhostHeader();
+  }
+
+  // Re-initialize after Astro View Transitions
+  document.addEventListener("astro:page-load", initGhostHeader);
 </script>

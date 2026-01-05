@@ -211,7 +211,7 @@ _Purpose: Rationalize the $15k price point and dismantle the $30k status quo._
 
 _Purpose: Localize the brand. Affluent buyers want to know who is entering their home._
 
-- [ ] **7.4 The "Wasatch-Born" Story**
+- [x] **7.4 The "Wasatch-Born" Story**
 - **Description:** Highlight the team's local roots. Use professional, high-end photography of the founders/lead installers in a Salt Lake setting.
 - **Deliverable:** `AboutTeam.astro`.
 - **Complexity:** Low
@@ -240,15 +240,10 @@ _Purpose: The primary SEO landing page for local search queries._
 
 ## 8. Navigation & Architecture
 
-- [ ] **8.1 The "Ghost" Header**
+- [x] **8.1 The "Ghost" Header**
 - **Description:** A sticky, glassmorphism (backdrop-blur) header that disappears on scroll-down and reappears on scroll-up (Apple style).
 - **Deliverable:** `Header.astro`.
 - **Complexity:** Medium
-
-- [ ] **8.1 Footer Lead Magnet**
-- **Description:** A massive, high-contrast footer that acts as a final CTA: "Ready for Purer Water?"
-- **Deliverable:** `Footer.astro`.
-- **Complexity:** Low
 
 ## Summary
 
