@@ -10,4 +10,71 @@
 import FilterFlowReact from "./FilterFlowReact";
 ---
 
-<FilterFlowReact client:visible />
+<!--
+  Reserve height to prevent layout shift during hydration.
+  The React component renders at 400vh, so we match that here.
+  This eliminates CLS (Cumulative Layout Shift) when client:visible triggers.
+-->
+<div class="filter-flow-wrapper" style="height: 400vh; position: relative;">
+  <!-- SSR placeholder shown before React hydrates -->
+  <div class="filter-flow-placeholder" aria-hidden="true">
+    <div class="placeholder-content">
+      <span class="placeholder-label">The Purification Journey</span>
+      <h2 class="placeholder-title">Every Drop, Transformed</h2>
+      <p class="placeholder-subtitle">
+        Watch your water travel through four stages of purification
+      </p>
+    </div>
+  </div>
+  <FilterFlowReact client:visible />
+</div>
+
+<style>
+  .filter-flow-wrapper {
+    background: oklch(0.15 0.02 270);
+  }
+
+  .filter-flow-placeholder {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .placeholder-content {
+    opacity: 0.6;
+  }
+
+  .placeholder-label {
+    display: block;
+    color: oklch(0.7 0.1 220);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .placeholder-title {
+    font-family: var(--font-serif, serif);
+    font-size: clamp(1.875rem, 5vw, 3rem);
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+
+  .placeholder-subtitle {
+    font-size: 1.125rem;
+    color: oklch(1 0 0 / 0.6);
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  /* Hide placeholder once React component mounts */
+  .filter-flow-wrapper:has([data-react-root]) .filter-flow-placeholder {
+    display: none;
+  }
+</style>

@@ -232,15 +232,15 @@ _These enhance the user experience but aren't critical for V1 launch._
 
 ## 📋 Reference: Page Structure & SEO
 
-| Page           | Path                | Status     | SEO Target                            |
-| -------------- | ------------------- | ---------- | ------------------------------------- |
-| **Home**       | `/`                 | ✅ Done    | Brand awareness, general "RO Systems" |
-| **System**     | `/the-system`       | ✅ Done    | "Reverse Osmosis Specs"               |
-| **Value**      | `/the-value`        | ✅ Done    | "Reverse Osmosis Cost Utah"           |
-| **Team**       | `/our-team`         | ✅ Done    | E-E-A-T (Expertise & Trust)           |
-| **Salt Lake**  | `/salt-lake-city`   | ✅ Done    | "RO Systems Salt Lake City"           |
-| **FAQ**        | `/common-questions` | ✅ Done    | Featured Snippets & long-tail         |
-| **Locations**  | `/locations/*`      | ✅ Done    | Local intent keywords (10+ cities)    |
+| Page          | Path                | Status  | SEO Target                            |
+| ------------- | ------------------- | ------- | ------------------------------------- |
+| **Home**      | `/`                 | ✅ Done | Brand awareness, general "RO Systems" |
+| **System**    | `/the-system`       | ✅ Done | "Reverse Osmosis Specs"               |
+| **Value**     | `/the-value`        | ✅ Done | "Reverse Osmosis Cost Utah"           |
+| **Team**      | `/our-team`         | ✅ Done | E-E-A-T (Expertise & Trust)           |
+| **Salt Lake** | `/salt-lake-city`   | ✅ Done | "RO Systems Salt Lake City"           |
+| **FAQ**       | `/common-questions` | ✅ Done | Featured Snippets & long-tail         |
+| **Locations** | `/locations/*`      | ✅ Done | Local intent keywords (10+ cities)    |
 
 ---
 
@@ -249,6 +249,6 @@ _These enhance the user experience but aren't critical for V1 launch._
 **Completed Tasks:** 19 out of ~24 core items  
 **In Progress:** GHL Server Proxy  
 **Ready to Start:** 5 priority items  
-**Future Enhancements:** 5 nice-to-have items  
+**Future Enhancements:** 5 nice-to-have items
 
 **V1 Launch Readiness:** ~82% (after completing priority items, ready for soft launch)

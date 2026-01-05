@@ -127,8 +127,8 @@ export default function FilterFlowReact() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-[oklch(0.15_0.02_270)]"
-      style={{ height: "400vh" }}
+      data-react-root
+      className="absolute inset-0 bg-[oklch(0.15_0.02_270)]"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 overflow-hidden">
