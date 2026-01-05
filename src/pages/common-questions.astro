@@ -178,7 +178,10 @@ const schemas = [
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer" id={`answer-${index}`}>
-                <p class="pb-6 text-muted-foreground leading-relaxed" set:html={faq.answer} />
+                <p
+                  class="pb-6 text-muted-foreground leading-relaxed"
+                  set:html={faq.answer}
+                />
               </div>
             </div>
           ))

@@ -385,7 +385,7 @@ import { Picture } from "astro:assets";
 
   // Ghost Header - Hide on scroll down, show on scroll up (Apple style)
   let ghostHeaderCleanup: (() => void) | null = null;
-  
+
   function initGhostHeader() {
     // Clean up previous instance
     if (ghostHeaderCleanup) {
@@ -393,7 +393,9 @@ import { Picture } from "astro:assets";
       ghostHeaderCleanup = null;
     }
 
-    const header = document.querySelector(".header-ghost") as HTMLElement | null;
+    const header = document.querySelector(
+      ".header-ghost",
+    ) as HTMLElement | null;
     if (!header) return;
 
     // Reset header visibility on navigation
@@ -404,8 +406,9 @@ import { Picture } from "astro:assets";
     let isHeaderVisible = true;
 
     function handleScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
       // Don't hide header if we're at the very top
       if (scrollTop <= 100) {
         if (!isHeaderVisible) {
