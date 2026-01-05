@@ -197,12 +197,12 @@ _Purpose: Sell the engineering. Focus on: 1/2 Cost, 1/2 Footprint, 10x Quieter._
 
 _Purpose: Rationalize the $15k price point and dismantle the $30k status quo._
 
-- [ ] **7.3 The Transparency Matrix**
+- [x] **7.3 The Transparency Matrix**
 - **Description:** A beautifully designed comparison table (no generic checkmarks—think high-end design) showing Blue Logic vs. "Big Box" vs. "Overpriced Competitors."
 - **Deliverable:** `ComparisonMatrix.astro`.
 - **Complexity:** Low
 
-- [ ] **7.4 The $15k Value Narrative**
+- [x] **7.4 The $15k Value Narrative**
 - **Description:** Text-heavy but well-spaced section explaining how the business model allows for half the cost without sacrificing grade-A components.
 - **Deliverable:** Narrative copy block with trust badges.
 - **Complexity:** Low
@@ -225,13 +225,12 @@ _Purpose: Localize the brand. Affluent buyers want to know who is entering their
 
 _Purpose: Remove friction and objections for SEO "Long-Tail" keywords._
 
-- [ ] **7.5 The Intelligent FAQ Accordion**
+- [x] **7.5 The SEO Intelligent FAQ Accordion**
 - **Description:** Semantic FAQ section driven by MDX content collections. Must include "Maintenance costs," "Installation time," and "Water waste" answers.
-- **Deliverable:** `FaqAccordion.astro` with JSON-LD Schema wrapper.
+- **Deliverable:** JSON-LD Schema for common questions.
 - **Complexity:** Low
 
 ### 7.6 The "Local Engine" (Salt Lake City / Regional Page)
-
 _Purpose: The primary SEO landing page for local search queries._
 
 - [x] **7.6 The "SLC Water Report" Landing Page**

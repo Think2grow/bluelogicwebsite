@@ -157,6 +157,7 @@ export function getProductSchema(url: string): ProductSchema {
 
 /**
  * FAQ schema for question pages
+ * Strips HTML tags from answers for clean structured data
  */
 export function getFAQSchema(
   faqs: Array<{ question: string; answer: string }>,
@@ -169,7 +170,7 @@ export function getFAQSchema(
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer,
+        text: faq.answer.replace(/<[^>]*>/g, ''),
       },
     })),
   };
