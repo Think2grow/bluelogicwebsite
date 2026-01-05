@@ -1,6 +1,6 @@
 ---
 // Header component with responsive navigation
-import logo from "../assets/Blue Logic Logo FINAL-03.png"
+import logo from "../assets/Blue Logic Logo FINAL-03.png";
 import { Picture } from "astro:assets";
 ---
 
@@ -17,7 +17,7 @@ import { Picture } from "astro:assets";
     >
       <Picture
         src={logo}
-        formats={['avif', 'webp', 'png']}
+        formats={["avif", "webp", "png"]}
         alt="Blue Logic Water"
         class="h-10 w-18 inline-block mr-2"
         quality={75}
@@ -254,11 +254,21 @@ import { Picture } from "astro:assets";
 <script>
   // Mobile sidebar functionality - using module script for proper lifecycle
   function initMobileSidebar() {
-    const menuBtn = document.querySelector(".mobile-menu-btn") as HTMLButtonElement | null;
-    const sidebar = document.querySelector(".mobile-sidebar") as HTMLElement | null;
-    const overlay = document.querySelector(".sidebar-overlay") as HTMLElement | null;
-    const closeBtn = document.querySelector(".sidebar-close-btn") as HTMLButtonElement | null;
-    const sidebarLinks = document.querySelectorAll(".sidebar-links a, .sidebar-cta");
+    const menuBtn = document.querySelector(
+      ".mobile-menu-btn",
+    ) as HTMLButtonElement | null;
+    const sidebar = document.querySelector(
+      ".mobile-sidebar",
+    ) as HTMLElement | null;
+    const overlay = document.querySelector(
+      ".sidebar-overlay",
+    ) as HTMLElement | null;
+    const closeBtn = document.querySelector(
+      ".sidebar-close-btn",
+    ) as HTMLButtonElement | null;
+    const sidebarLinks = document.querySelectorAll(
+      ".sidebar-links a, .sidebar-cta",
+    );
 
     if (!menuBtn || !sidebar || !overlay || !closeBtn) {
       console.warn("Mobile sidebar elements not found");
@@ -269,7 +279,7 @@ import { Picture } from "astro:assets";
     const newMenuBtn = menuBtn.cloneNode(true) as HTMLButtonElement;
     const newCloseBtn = closeBtn.cloneNode(true) as HTMLButtonElement;
     const newOverlay = overlay.cloneNode(true) as HTMLElement;
-    
+
     menuBtn.parentNode?.replaceChild(newMenuBtn, menuBtn);
     closeBtn.parentNode?.replaceChild(newCloseBtn, closeBtn);
     overlay.parentNode?.replaceChild(newOverlay, overlay);
@@ -312,22 +322,32 @@ import { Picture } from "astro:assets";
 
     // Add both touch and click handlers for better mobile support
     newMenuBtn.addEventListener("click", handleMenuToggle);
-    newMenuBtn.addEventListener("touchend", handleMenuToggle, { passive: false });
+    newMenuBtn.addEventListener("touchend", handleMenuToggle, {
+      passive: false,
+    });
 
     newCloseBtn.addEventListener("click", (e) => {
       e.preventDefault();
       closeSidebar();
     });
-    newCloseBtn.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      closeSidebar();
-    }, { passive: false });
+    newCloseBtn.addEventListener(
+      "touchend",
+      (e) => {
+        e.preventDefault();
+        closeSidebar();
+      },
+      { passive: false },
+    );
 
     newOverlay.addEventListener("click", closeSidebar);
-    newOverlay.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      closeSidebar();
-    }, { passive: false });
+    newOverlay.addEventListener(
+      "touchend",
+      (e) => {
+        e.preventDefault();
+        closeSidebar();
+      },
+      { passive: false },
+    );
 
     // Close on link click
     sidebarLinks.forEach((link) => {

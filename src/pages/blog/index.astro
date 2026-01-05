@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+const posts = await getCollection("blog");
+const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout>
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <header class="mb-12">
+      <h1 class="text-5xl font-bold text-foreground mb-4">Blog</h1>
+      <p class="text-xl text-muted-foreground">Insights on water quality, filtration, and wellness in Utah</p>
+    </header>
+
+    <div class="space-y-8">
+      {sortedPosts.map((post) => (
+        <article class="border-b border-border pb-8 last:border-0">
+          <a href={`/blog/${post.id}/`} class="group">
+            <h2 class="text-2xl font-bold text-foreground group-hover:text-glacier transition-colors mb-2">
+              {post.data.title}
+            </h2>
+          </a>
+          {post.data.description && (
+            <p class="text-muted-foreground mb-4">{post.data.description}</p>
+          )}
+          <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <span>{post.data.author}</span>
+            <span>•</span>
+            <time datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>

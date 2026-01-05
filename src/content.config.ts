@@ -1,10 +1,10 @@
 import { defineCollection } from "astro:content";
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 // 4. Define your collection(s)
 const blog = defineCollection({
-  loader: glob({ base: "blog_posts/", pattern: "**/*.md" }),
+  loader: glob({ base: "./src/content/blog", pattern: "**/*.md" }),
   schema: z.object({
     slug: z.string().regex(/^[a-zA-Z0-9\-\_]+$/, {
       message:
@@ -13,9 +13,8 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     author: z.string(),
-    date: z.string().refine((date) => !isNaN(Date.parse(date)), {
-      message: "Invalid date format",
-    }),
+    date: z.coerce.date(),
+    image: z.string().optional()
   }),
 });
 

@@ -36,15 +36,20 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
         class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto"
       >
         We believe every family deserves access to the purest water without the
-        inflated price tag. Blue Logic Water delivers professional-grade reverse
-        osmosis systems at half the industry cost—$15k instead of $30k.
+        inflated price tag. Blue Logic Water delivers professional-grade <a
+          href="/the-system"
+          class="text-primary hover:underline font-semibold"
+          >reverse osmosis systems</a
+        > at half the industry cost—$15k instead of $30k.
       </p>
       <p
         class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto"
       >
-        Our mission is simple: provide Salt Lake City homes with the same
-        advanced water purification technology used in commercial facilities,
-        without the unnecessary markup.
+        Our mission is simple: provide <a
+          href="/locations/salt-lake-city"
+          class="text-primary hover:underline font-semibold">Salt Lake City</a
+        > homes with the same advanced water purification technology used in commercial
+        facilities, without the unnecessary markup.
       </p>
     </div>
   </section>
@@ -65,7 +70,11 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
             No more worrying about what's in your water. From your newborn's
             first bath to your morning coffee, experience the peace of mind that
-            comes with 99.8% contaminant removal.
+            comes with <a
+              href="/the-system"
+              class="text-primary hover:underline font-semibold"
+              >99.8% contaminant removal</a
+            >.
           </p>
           <a
             href="/the-system"
@@ -234,7 +243,17 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
           href="/locations"
           class="text-primary hover:text-primary/80 font-medium transition-colors"
         >
-          View All Service Areas →
+          Vi
+
+          <div class="text-center mt-6">
+            <p class="text-muted-foreground">
+              Want to know more? Check out <a
+                href="/the-value"
+                class="text-primary hover:underline font-semibold"
+                >why Blue Logic is half the cost</a
+              > of competitors.
+            </p>
+          </div>ew All Service Areas →
         </a>
       </div>
     </div>

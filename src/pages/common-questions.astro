@@ -15,12 +15,12 @@ const faqs: FAQ[] = [
     question:
       "How is the Blue Logic Whole-Home Purification System different from a regular filter or softener?",
     answer:
-      "Most systems filter some contaminants - but Blue Logic purifies at the molecular level. Our Whole-Home Purification System combines advanced pretreatment with reverse osmosis technology to deliver 99.8% pure water to every tap, not just one faucet.",
+      "Most systems filter some contaminants - but Blue Logic purifies at the molecular level. Our <a href='/the-system' class='text-primary hover:underline font-semibold'>Whole-Home Purification System</a> combines advanced pretreatment with reverse osmosis technology to deliver 99.8% pure water to every tap, not just one faucet.",
   },
   {
     question: "What does the Whole-Home Filtration System actually remove?",
     answer:
-      "Our 7-layer filtration media targets chlorine, chloramines, PFAS, pesticides, pharmaceuticals, heavy metals, and hard water minerals. It’s a full-spectrum reduction system - designed to make your home’s water cleaner, healthier, and better-tasting.",
+      "Our 7-layer filtration media targets chlorine, chloramines, PFAS, pesticides, pharmaceuticals, heavy metals, and hard water minerals. It's a full-spectrum reduction system - designed to make your home's water cleaner, healthier, and better-tasting. <a href='/the-system' class='text-primary hover:underline font-semibold'>Learn how it works</a>.",
   },
   {
     question: "Will this replace my water softener?",
@@ -35,7 +35,7 @@ const faqs: FAQ[] = [
   {
     question: "How much does a Blue Logic RO system cost?",
     answer:
-      "Our professional whole-home reverse osmosis systems are $15,000 installed. This is roughly half the cost of competitors while using the same commercial-grade components. No hidden fees, no upsells—just transparent, fair pricing.",
+      "Our professional whole-home reverse osmosis systems are $15,000 installed. This is roughly half the cost of competitors while using the same commercial-grade components. <a href='/the-value' class='text-primary hover:underline font-semibold'>No hidden fees, no upsells—just transparent, fair pricing</a>.",
   },
   {
     question: "How long does installation take?",
@@ -55,7 +55,7 @@ const faqs: FAQ[] = [
   {
     question: "Do you serve my area?",
     answer:
-      "We serve the entire Wasatch Front including Salt Lake City, Park City, Draper, Sandy, Cottonwood Heights, Holladay, Murray, Millcreek, and surrounding areas. Contact us to confirm service availability for your specific location.",
+      "We serve the entire <a href='/locations' class='text-primary hover:underline font-semibold'>Wasatch Front including Salt Lake City, Park City, Draper, Sandy, Cottonwood Heights, Holladay, Murray, Millcreek, and surrounding areas</a>. Contact us to confirm service availability for your specific location.",
   },
   {
     question: "What contaminants does RO remove?",
@@ -75,7 +75,7 @@ const faqs: FAQ[] = [
   {
     question: "How does Utah's hard water affect RO systems?",
     answer:
-      "Utah has some of the hardest water in the country with high TDS levels (300-500+ ppm in many areas). This is actually where RO systems shine—they're specifically designed to handle hard water and reduce TDS to near-zero levels. The high mineral content in Utah water makes RO the most effective purification method available.",
+      "Utah has some of the hardest water in the country with high TDS levels (300-500+ ppm in many areas). This is actually where RO systems shine—they're specifically designed to handle hard water and reduce TDS to near-zero levels. <a href='/the-system' class='text-primary hover:underline font-semibold'>The high mineral content in Utah water makes RO the most effective purification method available</a>.",
   },
   {
     question: "What warranty do you offer?",
@@ -162,7 +162,10 @@ const schemas = [
       <div class="max-w-4xl mx-auto">
         {
           faqs.map((faq, index) => (
-            <div class="faq-item" id={`faq-${faq.answer.replace(/\s+/g, '-').toLowerCase()}`}>
+            <div
+              class="faq-item"
+              id={`faq-${faq.answer.replace(/\s+/g, "-").toLowerCase()}`}
+            >
               <button
                 class="faq-question"
                 aria-expanded="false"
@@ -266,7 +269,7 @@ const schemas = [
       // Remove existing listeners to prevent duplicates
       const newButton = button.cloneNode(true) as HTMLButtonElement;
       button.replaceWith(newButton);
-      
+
       newButton.addEventListener("click", () => {
         const isExpanded = newButton.getAttribute("aria-expanded") === "true";
         const answerId = newButton.getAttribute("aria-controls");
@@ -277,7 +280,9 @@ const schemas = [
           if (otherButton !== newButton) {
             otherButton.setAttribute("aria-expanded", "false");
             const otherAnswerId = otherButton.getAttribute("aria-controls");
-            const otherAnswer = otherAnswerId ? document.getElementById(otherAnswerId) : null;
+            const otherAnswer = otherAnswerId
+              ? document.getElementById(otherAnswerId)
+              : null;
             if (otherAnswer) {
               otherAnswer.style.maxHeight = "0";
               otherAnswer.classList.remove("open");
