@@ -4,7 +4,7 @@ title: "Pure Water, Pure Health: Understanding Reverse Osmosis"
 description: "Learn how reverse osmosis works and why it's the gold standard for home water filtration."
 author: "Blue Logic Water"
 date: 2024-01-15
-image: "/src/assets/water_art/water_swirl.png"
+image: "./water_swirl.png"
 ---
 
 ## What is Reverse Osmosis?

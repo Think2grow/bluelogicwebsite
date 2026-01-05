@@ -310,6 +310,7 @@ pnpm lint         # Lint with ESLint
 - [ ] Image alt text descriptive
 - [ ] H1 tag includes target keyword
 - [ ] Internal links to related pages
+- [ ] Always link to internal pages in blog posts
 
 ---
 
