@@ -7,6 +7,7 @@ import { getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
 import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
+import BrochureDownload from "../components/BrochureDownload.astro";
 
 export const prerender = true;
 
@@ -47,7 +48,8 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
       <p
         class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto"
       >
-        Our mission is simple: protect your health, home, and peace of mind with clean water everywhere it matters. We serve <a
+        Our mission is simple: protect your health, home, and peace of mind with
+        clean water everywhere it matters. We serve <a
           href="/locations/salt-lake-city"
           class="text-primary hover:underline font-semibold">Salt Lake City</a
         > and beyond with advanced purification technology at a fair price.
@@ -249,17 +251,19 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
       </div>
 
       <div class="text-center mt-6">
-            <p class="text-muted-foreground">
-              Want to know more? Check out <a
-                href="/the-value"
-                class="text-primary hover:underline font-semibold"
-                >why Blue Logic is half the cost</a
-              > of competitors.
-            </p>
-          </div>ew All Service Areas →
-        </a>
+        <p class="text-muted-foreground">
+          Want to know more? Check out <a
+            href="/the-value"
+            class="text-primary hover:underline font-semibold"
+            >why Blue Logic is half the cost</a
+          > of competitors.
+        </p>
       </div>
     </div>
+  </section>View All Service Areas →
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <BrochureDownload />
   </section>
 
   <LeadForm />

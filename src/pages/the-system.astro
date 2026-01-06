@@ -5,6 +5,7 @@ import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 import { Image } from "astro:assets";
 import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
 import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
+import BrochureDownload from "../components/BrochureDownload.astro";
 
 export const prerender = true;
 
@@ -190,7 +191,21 @@ const schemas = [
           <p class="text-lg font-semibold mb-4 text-foreground/80">
             The Ultimate in Clean Water
           </p>
-          <p class="text-muted-foreground leading-relaxed mb-6">\n            Our reverse osmosis system removes contaminants at the molecular\n            level—delivering better-than-bottled water quality from every tap in your home.\n          </p>\n          <div class="mb-6">\n            <h4\n              class="text-sm font-bold uppercase tracking-wider mb-3 text-foreground/80"\n            >\n              What it does:\n            </h4>\n            <ul class="space-y-2">\n              <li class="approach-list-item">\n                Removes up to 99% of contaminants\n              </li>
+          <p class="text-muted-foreground leading-relaxed mb-6">
+            Our reverse osmosis system removes contaminants at the molecular
+            level—delivering better-than-bottled water quality from every tap in
+            your home.
+          </p>
+          <div class="mb-6">
+            <h4
+              class="text-sm font-bold uppercase tracking-wider mb-3 text-foreground/80"
+            >
+              What it does:
+            </h4>
+            <ul class="space-y-2">
+              <li class="approach-list-item">
+                Removes up to 99% of contaminants
+              </li>
               <li class="approach-list-item">
                 Eliminates PFAS, arsenic, pharmaceuticals, microplastics
               </li>
@@ -227,8 +242,8 @@ const schemas = [
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
         Our reverse osmosis system isn't just smaller and quieter—it's
-        fundamentally better engineered. Removes up to 99% of contaminants to deliver pure water at every tap in your
-        home.
+        fundamentally better engineered. Removes up to 99% of contaminants to
+        deliver pure water at every tap in your home.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -329,9 +344,8 @@ const schemas = [
           </p>
           <ul class="space-y-3">
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground"
-                >Zinc-Infused Carbon</strong
-              > — Reduces bacteria and removes chlorine
+              <strong class="text-foreground">Zinc-Infused Carbon</strong> — Reduces
+              bacteria and removes chlorine
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
               <strong class="text-foreground">Copper-Infused Carbon</strong> — Additional
@@ -350,8 +364,8 @@ const schemas = [
               and hydrogen sulfide
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Aluminosilicate</strong> —
-              Polishes water clarity
+              <strong class="text-foreground">Aluminosilicate</strong> — Polishes
+              water clarity
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
               <strong class="text-foreground">Garnet</strong> — Final sediment filtration
@@ -444,8 +458,8 @@ const schemas = [
               0.0001 micron membrane filtration
             </li>
             <li class="text-sm text-muted-foreground">
-              Removes up to 99% of contaminants including heavy metals, PFAS, and
-              dissolved solids
+              Removes up to 99% of contaminants including heavy metals, PFAS,
+              and dissolved solids
             </li>
             <li class="text-sm text-muted-foreground">
               Designed for continuous whole-home capacity
@@ -507,6 +521,7 @@ const schemas = [
         Schedule a free water quality assessment
       </p>
       <a href="/#contact" class="btn btn-primary btn-lg">Get Started</a>
+      <BrochureDownload />
       <p class="text-muted-foreground mt-8">
         Want to understand the cost benefits? See <a
           href="/the-value"

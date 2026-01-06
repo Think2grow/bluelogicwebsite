@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import boyExaminesGlassImg from "../assets/water_art/AdobeStock_549367021_boy_examines_glass.jpeg";
 import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_shower.jpeg";
+import BrochureDownload from "../components/BrochureDownload.astro";
 
 export const prerender = true;
 ---
@@ -282,8 +283,9 @@ export const prerender = true;
             Have Questions? Check Our FAQs →
           </a>
         </div>
-        <div>
-          <Image
+      </div>
+      <div>
+        <Image
           src={fancyShowerImg}
           alt="Modern luxury shower with pristine water flowing through premium fixtures"
           class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
@@ -294,54 +296,56 @@ export const prerender = true;
       </div>
     </div>
   </section>
-</Layout>
 
-<section class="bg-background py-16 md:py-20 px-4 text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-serif mb-8 text-foreground">
-      The Blue Logic Guarantee
-    </h2>
-    <p
-      class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
-    >
-      We use the exact same commercial-grade components as competitors. We
-      provide the same professional installation. We offer the same
-      comprehensive warranties. The only difference? We don't believe in
-      charging twice what's fair.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-      <div class="p-8 bg-card rounded-2xl">
-        <strong class="block text-lg mb-2 text-foreground"
-          >Professional Installation</strong
-        >
-        <p class="text-muted-foreground">Licensed & certified technicians</p>
-      </div>
-      <div class="p-8 bg-card rounded-2xl">
-        <strong class="block text-lg mb-2 text-foreground"
-          >Grade-A Components</strong
-        >
-        <p class="text-muted-foreground">Commercial-quality materials</p>
-      </div>
-      <div class="p-8 bg-card rounded-2xl">
-        <strong class="block text-lg mb-2 text-foreground">Full Warranty</strong
-        >
-        <p class="text-muted-foreground">Comprehensive coverage included</p>
+  <section class="bg-background py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-8 text-foreground">
+        The Blue Logic Guarantee
+      </h2>
+      <p
+        class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+      >
+        We use the exact same commercial-grade components as competitors. We
+        provide the same professional installation. We offer the same
+        comprehensive warranties. The only difference? We don't believe in
+        charging twice what's fair.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="p-8 bg-card rounded-2xl">
+          <strong class="block text-lg mb-2 text-foreground"
+            >Professional Installation</strong
+          >
+          <p class="text-muted-foreground">Licensed & certified technicians</p>
+        </div>
+        <div class="p-8 bg-card rounded-2xl">
+          <strong class="block text-lg mb-2 text-foreground"
+            >Grade-A Components</strong
+          >
+          <p class="text-muted-foreground">Commercial-quality materials</p>
+        </div>
+        <div class="p-8 bg-card rounded-2xl">
+          <strong class="block text-lg mb-2 text-foreground"
+            >Full Warranty</strong
+          >
+          <p class="text-muted-foreground">Comprehensive coverage included</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bg-card py-16 md:py-20 px-4 text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
-      Ready to Experience the Value?
-    </h2>
-    <p class="text-xl text-muted-foreground mb-8">
-      Get a free consultation and water quality assessment
-    </p>
-    <a href="/#contact" class="btn btn-primary btn-lg">Schedule Your Consultation</a>
-  </div>
-</section>
+  <section class="bg-card py-16 md:py-20 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
+        Ready to Experience the Value?
+      </h2>
+      <p class="text-xl text-muted-foreground mb-8">
+        Get a free consultation and water quality assessment
+      </p>
+      <a href="/#contact" class="btn btn-primary btn-lg">Schedule Your Audit</a>
+      <BrochureDownload />
+    </div>
+  </section>
+</Layout>
 
 <style>
   @reference "../styles/global.css";
