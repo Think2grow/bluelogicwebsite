@@ -15,9 +15,9 @@ Reverse osmosis is a water purification technology that uses a semi-permeable me
 
 The RO process works by applying pressure to force water molecules through a membrane, leaving contaminants behind. This results in:
 
-- **99% reduction** of dissolved solids
+- **Up to 99% reduction** of dissolved solids
 - **Superior taste and purity**
-- **Mineral balance** without the junk
+- **Healthier water** without the contaminants
 
 ### Benefits for Utah Homes
 
