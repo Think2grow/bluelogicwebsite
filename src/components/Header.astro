@@ -2,6 +2,27 @@
 // Header component with responsive navigation
 import logo from "../assets/Blue Logic Logo FINAL-03.png";
 import { Picture } from "astro:assets";
+
+// Get current path for active state
+const currentPath = Astro.url.pathname;
+
+// Helper function to check if link is active
+function isActive(href: string): boolean {
+  if (href === "/") {
+    return currentPath === "/";
+  }
+  return currentPath.startsWith(href);
+}
+
+// Navigation links configuration
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "The System", href: "/the-system" },
+  { name: "Why Us", href: "/the-value" },
+  { name: "Our Team", href: "/our-team" },
+  { name: "FAQ", href: "/common-questions" },
+  { name: "Salt Lake City", href: "/salt-lake-city" },
+];
 ---
 
 <header
@@ -30,42 +51,66 @@ import { Picture } from "astro:assets";
       <li>
         <a
           href="/"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/") },
+          ]}
+          aria-current={isActive("/") ? "page" : undefined}
           >Home</a
         >
       </li>
       <li>
         <a
           href="/the-system"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/the-system") },
+          ]}
+          aria-current={isActive("/the-system") ? "page" : undefined}
           >The System</a
         >
       </li>
       <li>
         <a
           href="/the-value"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/the-value") },
+          ]}
+          aria-current={isActive("/the-value") ? "page" : undefined}
           >Why Us</a
         >
       </li>
       <li>
         <a
           href="/our-team"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/our-team") },
+          ]}
+          aria-current={isActive("/our-team") ? "page" : undefined}
           >Our Team</a
         >
       </li>
       <li>
         <a
           href="/common-questions"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/common-questions") },
+          ]}
+          aria-current={isActive("/common-questions") ? "page" : undefined}
           >FAQ</a
         >
       </li>
       <li>
         <a
           href="/salt-lake-city"
-          class="text-foreground no-underline hover:text-primary transition-colors"
+          class:list={[
+            "nav-link",
+            { "nav-link-active": isActive("/salt-lake-city") },
+          ]}
+          aria-current={isActive("/salt-lake-city") ? "page" : undefined}
           >Salt Lake City</a
         >
       </li>
@@ -116,12 +161,72 @@ import { Picture } from "astro:assets";
 
   <nav class="sidebar-nav">
     <ul class="sidebar-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/the-system">The System</a></li>
-      <li><a href="/the-value">Why Us</a></li>
-      <li><a href="/our-team">Our Team</a></li>
-      <li><a href="/common-questions">FAQ</a></li>
-      <li><a href="/salt-lake-city">Salt Lake City</a></li>
+      <li>
+        <a
+          href="/"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/") },
+          ]}
+          aria-current={isActive("/") ? "page" : undefined}
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/the-system"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/the-system") },
+          ]}
+          aria-current={isActive("/the-system") ? "page" : undefined}
+          >The System</a
+        >
+      </li>
+      <li>
+        <a
+          href="/the-value"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/the-value") },
+          ]}
+          aria-current={isActive("/the-value") ? "page" : undefined}
+          >Why Us</a
+        >
+      </li>
+      <li>
+        <a
+          href="/our-team"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/our-team") },
+          ]}
+          aria-current={isActive("/our-team") ? "page" : undefined}
+          >Our Team</a
+        >
+      </li>
+      <li>
+        <a
+          href="/common-questions"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/common-questions") },
+          ]}
+          aria-current={isActive("/common-questions") ? "page" : undefined}
+          >FAQ</a
+        >
+      </li>
+      <li>
+        <a
+          href="/salt-lake-city"
+          class:list={[
+            "sidebar-link",
+            { "sidebar-link-active": isActive("/salt-lake-city") },
+          ]}
+          aria-current={isActive("/salt-lake-city") ? "page" : undefined}
+          >Salt Lake City</a
+        >
+      </li>
     </ul>
   </nav>
 
@@ -136,6 +241,20 @@ import { Picture } from "astro:assets";
 
 <style>
   @reference "../styles/global.css";
+
+  /* Desktop Navigation Links */
+  .nav-link {
+    @apply text-foreground no-underline hover:text-primary transition-all duration-200 relative pb-1;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-semibold;
+  }
+
+  .nav-link-active::after {
+    content: "";
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full;
+  }
 
   /* Mobile Menu Button - hamburger lines */
   .hamburger-line {
@@ -220,6 +339,10 @@ import { Picture } from "astro:assets";
 
   .sidebar-links a {
     @apply block px-6 py-4 text-foreground no-underline text-lg font-medium transition-all duration-200 hover:bg-muted hover:text-primary;
+  }
+
+  .sidebar-link-active {
+    @apply bg-primary/10 text-primary font-semibold border-l-4 border-primary;
   }
 
   .sidebar-footer {
