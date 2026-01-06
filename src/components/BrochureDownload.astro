@@ -1,28 +1,66 @@
 ---
-import brochurePure from "/print_material/BL Brochure WH-Pure v3.1 FINAL.pdf";
-import brochureFiltration from "/print_material/Filtration Brochure v1 FINAL.pdf";
+import brochurePure from "../assets/print_material/BL Brochure WH-Pure v3.1 FINAL-1.png";
+import brochureFiltration from "../assets/print_material/Filtration Brochure v1 FINAL-2.png";
+import { Image } from "astro:assets";
 ---
 
 <div class="mt-12">
-  <h3 class="text-2xl font-serif mb-4 text-foreground text-center">
-    Download Our Brochures
+  <h3 class="text-2xl font-serif mb-6 text-foreground text-center">
+    View Our Brochures
   </h3>
-  <div class="flex flex-col sm:flex-row justify-center gap-4">
-    <a
-      href={brochurePure}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-secondary"
-    >
-      Whole-Home Purification Brochure
-    </a>
-    <a
-      href={brochureFiltration}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn btn-secondary"
-    >
-      7-Layer Filtration Brochure
-    </a>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+    <!-- Whole-Home Purification Brochure -->
+    <div class="flex flex-col gap-3">
+      <h4 class="text-lg font-semibold text-center text-foreground">
+        Whole-Home Purification
+      </h4>
+      <a
+        href={brochurePure.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-glacier/20"
+      >
+        <Image
+          src={brochurePure}
+          alt="Blue Logic Whole-Home Purification Brochure"
+          class="w-full h-auto"
+          loading="lazy"
+        />
+      </a>
+      <a
+        href={brochurePure.src}
+        download="Blue-Logic-Whole-Home-Purification.png"
+        class="btn btn-secondary text-center"
+      >
+        Download Image
+      </a>
+    </div>
+
+    <!-- 7-Layer Filtration Brochure -->
+    <div class="flex flex-col gap-3">
+      <h4 class="text-lg font-semibold text-center text-foreground">
+        7-Layer Filtration System
+      </h4>
+      <a
+        href={brochureFiltration.src}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow border border-glacier/20"
+      >
+        <Image
+          src={brochureFiltration}
+          alt="Blue Logic 7-Layer Filtration Brochure"
+          class="w-full h-auto"
+          loading="lazy"
+        />
+      </a>
+      <a
+        href={brochureFiltration.src}
+        download="Blue-Logic-7-Layer-Filtration.png"
+        class="btn btn-secondary text-center"
+      >
+        Download Image
+      </a>
+    </div>
   </div>
 </div>
