@@ -5,7 +5,7 @@
 This is a **premium reverse osmosis water filtration website** for Blue Logic Water, serving the Salt Lake City, Utah market. The project is built with **Astro (SSR)** on **Cloudflare Pages**, focused on three core objectives:
 
 1. **SEO Dominance** - Rank #1 for "reverse osmosis Salt Lake City" and related local queries
-2. **Lead Generation** - Drive high-quality leads through strategic CTAs and GoHighLevel integration
+2. **Lead Generation** - Drive high-quality leads through strategic CTAs and GoHighLevel iframe integration
 3. **Premium Positioning** - Convey trust, technology, and value for a $15k product
 
 ### Target Audience
@@ -24,7 +24,7 @@ We are **NOT** a traditional plumbing company. Think **Apple meets clean water s
 ### Core Stack
 - **Framework**: Astro 5+ with SSR (`output: "server"`)
 - **Adapter**: `@astrojs/cloudflare` for edge deployment
-- **Styling**: Tailwind CSS 4+ (via `@tailwindcss/vite`)
+- **Styling**: Tailwind CSS 4+ (via `@tailwindcss/vite`) and shadcn css classes (in global.css). 
 - **Runtime**: Cloudflare Pages with edge functions
 - **Package Manager**: pnpm
 
@@ -33,7 +33,7 @@ We are **NOT** a traditional plumbing company. Think **Apple meets clean water s
 - **Content Strategy**: Static pages for speed; dynamic routing for city pages
 - **Type Safety**: TypeScript throughout
 - **SEO**: JSON-LD structured data, sitemap, RSS
-- **CRM Integration**: GoHighLevel via server-side API proxy
+- **CRM Integration**: GoHighLevel iframe embedded in pages
 
 ### Performance Requirements
 - **LCP < 1.2s** (Largest Contentful Paint)
@@ -51,6 +51,11 @@ We are **NOT** a traditional plumbing company. Think **Apple meets clean water s
 --color-glacier: oklch(0.7 0.1 220);     /* Accent blue */
 --color-quartz: oklch(0.95 0.01 90);     /* Soft background */
 ```
+
+Three ways to apply css:
+1. Inline classes with Tailwind (e.g., `bg-quartz text-obsidian`)
+2. scoped `<style>` blocks in .astro components. Must add `@reference "../styles/global.css";` to the top of the block and then you can use `@apply` directive to use tailwind classes or other custom classes defined in global.css in the block.
+3. Global styles in `src/styles/global.css`
 
 **Always use OKLCH** instead of hex values for color definitions.
 
@@ -73,26 +78,50 @@ We are **NOT** a traditional plumbing company. Think **Apple meets clean water s
 ### Directory Organization
 ```
 src/
-├── components/         # Reusable Astro components
-│   ├── Header.astro   # Site navigation
-│   ├── Footer.astro   # Site footer with contact info
-│   ├── LeadForm.astro # Custom GHL form (no iframes)
-│   └── Welcome.astro  # Hero sections
-├── data/              # Static data files
-│   └── cities.ts      # City-specific water quality data
+├── assets/                      # Images and media files
+│   ├── staff/                   # Team photos
+│   ├── print_material/          # Brochures and marketing materials
+│   ├── water_art/               # Water-related imagery
+│   └── *.png                    # Product and logo images
+├── components/                  # Reusable Astro components
+│   ├── Header.astro             # Site navigation
+│   ├── Footer.astro             # Site footer with contact info
+│   ├── LeadForm.astro           # GoHighLevel embed component
+│   ├── ParallaxHero.astro       # Hero section with parallax
+│   ├── ParallaxHeroReact.tsx    # React parallax hero component
+│   ├── FilterFlowParallax.astro # Filter flow animation
+│   ├── FilterFlowReact.tsx      # React filter flow component
+│   ├── ProductExplosion.astro   # Product explosion view
+│   ├── ProductExplosionReact.tsx # React product explosion component
+│   ├── ProcessStepper.astro     # Installation process steps
+│   └── BrochureDownload.astro   # Brochure download component
+├── content/                     # Content Collections (MDX/Markdown)
+│   └── blog/                    # Blog posts
+│       ├── *.md                 # Blog articles
+│       └── *.png                # Blog images
+├── data/                        # Static data files
+│   └── cities.ts                # City-specific water quality data
 ├── layouts/
-│   └── Layout.astro   # Base layout with schema injection
-├── pages/             # File-based routing
-│   ├── index.astro    # Homepage
-│   ├── api/           # Server endpoints
-│   │   └── lead.ts    # GHL proxy endpoint
-│   └── locations/     # Dynamic city pages
-│       ├── index.astro      # City directory
-│       └── [city].astro     # Dynamic city routes
+│   └── Layout.astro             # Base layout with schema injection
+├── pages/                       # File-based routing
+│   ├── index.astro              # Homepage
+│   ├── the-system.astro         # Product/system page
+│   ├── the-value.astro          # Value proposition page
+│   ├── our-team.astro           # Team page
+│   ├── common-questions.astro   # FAQ page
+│   ├── privacy.astro            # Privacy policy
+│   ├── salt-lake-city.astro     # Salt Lake City location page
+│   ├── 404.astro                # 404 error page
+│   ├── blog/                    # Blog routing
+│   │   ├── index.astro          # Blog home page
+│   │   └── [...slug].astro      # Dynamic blog post routes
+│   └── locations/               # Dynamic city pages
+│       ├── index.astro          # City directory/index
+│       └── [city].astro         # Dynamic city routes
 ├── styles/
-│   └── global.css     # Tailwind + custom styles
+│   └── global.css               # Tailwind config + custom OKLCH styles
 └── utils/
-    └── schema.ts      # JSON-LD schema generators
+    └── schema.ts                # JSON-LD schema generators
 ```
 
 ### Naming Conventions
@@ -147,20 +176,15 @@ Every page should have OG metadata for social sharing. Use the `og` prop in `Lay
 
 ## Lead Capture & Conversion
 
-### GoHighLevel Integration (Critical)
-**Never use GHL iframes** - they break the Apple-esque flow.
-
+### GoHighLevel Integration
 **Implementation:**
-1. **Custom Form**: `src/components/LeadForm.astro`
-   - Tailwind-styled, validation included
-   - Multi-step optional (for higher engagement)
-2. **Server Proxy**: `src/pages/api/lead.ts`
-   - POST data to GHL via server-side fetch
-   - Hides API keys from client
-   - Returns success/error for UX feedback
-3. **Success State**: Show animated confirmation (no page redirect)
+- **GHL Iframe**: Embedded directly in pages via `LeadForm.astro`
+  - Provided iframe code from GoHighLevel
+  - Handles all form processing and lead capture
+  - No custom server-side proxy needed
 
 ### Conversion Tracking
+Unimplemented but planned:
 - **Zaraz/GTM**: Server-side event tracking to bypass ad-blockers
 - **Meta/Google Conversion API**: Fire events on successful API response
 
@@ -226,7 +250,7 @@ Place CTAs:
 
 ### Animation Guidelines
 When implementing animations:
-- **Framer Motion** or **GSAP** for complex scroll animations
+- **Framer Motion** for complex scroll animations
 - Use `prefers-reduced-motion` media query for accessibility
 - Keep animations subtle and purposeful (not decorative)
 - Target 60fps performance
@@ -300,7 +324,6 @@ pnpm lint         # Lint with ESLint
 - [ ] Check accessibility (aXe DevTools)
 - [ ] Validate JSON-LD (Google Rich Results Test)
 - [ ] Run `pnpm format` and `pnpm lint`
-- [ ] Test form submission to GHL endpoint
 
 ### SEO Checklist
 - [ ] Unique `<title>` per page (50-60 chars)
@@ -401,8 +424,7 @@ export const POST: APIRoute = async ({ request }) => {
 - [x] Tailwind 4 design system with OKLCH colors
 - [x] Asset optimization pipeline
 - [x] CI/CD with GitHub Actions → Cloudflare Pages
-- [x] Custom lead form (LeadForm.astro)
-- [x] GHL server-side proxy (partially complete)
+- [x] LeadForm component with GoHighLevel iframe
 - [x] Programmatic city routing with 10+ cities
 - [x] JSON-LD schema system (Organization, LocalBusiness, Product, FAQ, Breadcrumb)
 - [x] Homepage with mission section
@@ -457,7 +479,6 @@ export const POST: APIRoute = async ({ request }) => {
 | `src/utils/schema.ts` | JSON-LD schema generators |
 | `src/data/cities.ts` | City water quality data for dynamic pages |
 | `src/components/LeadForm.astro` | Main conversion form |
-| `src/pages/api/lead.ts` | GHL API proxy endpoint |
 | `src/styles/global.css` | Tailwind config + custom OKLCH colors |
 | `docs/design-document.md` | Visual identity, UX strategy, technical specs |
 | `docs/tasks-v1.md` | Implementation roadmap and task tracking |
@@ -468,7 +489,7 @@ export const POST: APIRoute = async ({ request }) => {
 
 We measure success by:
 1. **Organic traffic** to target keywords (Google Search Console)
-2. **Lead volume** via form submissions (GHL CRM)
+2. **Lead volume** via form submissions
 3. **Page performance** (Core Web Vitals, LCP < 1.2s)
 4. **Conversion rate** (% of visitors who submit lead form)
 5. **Local rankings** (position for "reverse osmosis [city] utah")
