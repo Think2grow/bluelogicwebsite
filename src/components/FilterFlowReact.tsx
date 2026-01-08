@@ -18,37 +18,45 @@ interface FilterStage {
 
 const stages: FilterStage[] = [
   {
-    id: "sediment",
-    name: "Sediment Pre-Filter",
-    description: "Captures particles, rust, and debris down to 5 microns",
-    icon: "🪨",
-    removal: "Particles & Sediment",
-    purity: 25,
-  },
-  {
-    id: "carbon",
-    name: "Carbon Block Filter",
-    description: "Eliminates chlorine, VOCs, and organic compounds",
-    icon: "⬛",
-    removal: "Chlorine & Organics",
-    purity: 50,
-  },
-  {
-    id: "ro-membrane",
-    name: "RO Membrane",
-    description: "Molecular-level filtration at 0.0001 microns",
-    icon: "🔬",
-    removal: "99.8% Contaminants",
-    purity: 85,
-  },
-  {
-    id: "remineralize",
-    name: "Remineralization",
-    description: "Adds beneficial minerals for optimal taste and pH",
-    icon: "💎",
-    removal: "Minerals Added",
-    purity: 99.8,
-  },
+  id: "standard-filter",
+  name: "Standard Store-Bought Filter",
+  description: "Basic off-the-shelf filter commonly found at local retailers. Reduces only the largest visible particles and offers minimal overall purification.",
+  icon: "🧻",
+  removal: "Large Sediment ~19.6%",
+  purity: 19.6,
+},
+{
+  id: "water-softener",
+  name: "Water Softener",
+  description: "Targets hardness minerals like calcium and magnesium to reduce scale buildup, but does not remove most contaminants.",
+  icon: "🧂",
+  removal: "Hardness Minerals ~29.7%",
+  purity: 29.7,
+},
+{
+  id: "carbon-filter",
+  name: "Carbon Filter",
+  description: "Improves taste and odor by reducing chlorine and some organic compounds. A common mid-level filtration step.",
+  icon: "🧱",
+  removal: "Chlorine & VOCs ~41.2%",
+  purity: 41.2,
+},
+{
+  id: "bl-filtration",
+  name: "Blue Logic Whole Home Filtration System",
+  description: "Advanced multi-stage filtration designed to protect the entire home by removing a broad range of contaminants before water reaches any tap.",
+  icon: "🏠",
+  removal: "Broad-Spectrum Contaminants ~85.7%",
+  purity: 85.7,
+},
+{
+  id: "bl-ro",
+  name: "Blue Logic Whole Home Purification RO System",
+  description: "Medical-grade reverse osmosis purification operating at the molecular level to remove nearly all remaining contaminants.",
+  icon: "🔬",
+  removal: "99.8% of Contaminants ~99.8%",
+  purity: 99.8,
+},
 ];
 
 export default function FilterFlowReact() {
@@ -62,27 +70,29 @@ export default function FilterFlowReact() {
   });
 
   // Transform scroll progress to purity percentage
+  // The scroll positions below should correspond to the center of each card
+  // and the purity values should match the 'purity' field of each stage
   const purity = useTransform(
     scrollYProgress,
-    [0, 0.25, 0.4, 0.55, 0.7, 0.9],
-    [0, 25, 50, 85, 99.8, 99.8],
+    [0, 0.22, 0.36, 0.51, 0.66, 0.81],
+    [0, 19.6, 29.7, 41.2, 85.7, 99.8],
   );
 
   // Update displayed purity value and active stage on scroll
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Determine which stage is active based on scroll
-    if (latest < 0.2) {
+    // Align activeStage with the center points of each card (same as purity transform)
+    if (latest < 0.16) {
       setActiveStage(-1); // No stage active yet
-    } else if (latest < 0.35) {
-      setActiveStage(0);
-    } else if (latest < 0.5) {
-      setActiveStage(1);
-    } else if (latest < 0.65) {
-      setActiveStage(2);
-    } else if (latest < 0.8) {
-      setActiveStage(3);
+    } else if (latest < 0.29) {
+      setActiveStage(0); // Standard Filter
+    } else if (latest < 0.435) {
+      setActiveStage(1); // Water Softener
+    } else if (latest < 0.585) {
+      setActiveStage(2); // Carbon Filter
+    } else if (latest < 0.735) {
+      setActiveStage(3); // Blue Logic Whole Home Filtration System
     } else {
-      setActiveStage(4); // All complete
+      setActiveStage(4); // Blue Logic RO
     }
   });
 
