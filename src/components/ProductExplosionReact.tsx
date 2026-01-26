@@ -237,31 +237,7 @@ export default function ProductExplosionReact({
               />
             ))}
 
-            {/* Mobile image (unchanged) */}
-            <motion.div
-              className="lg:hidden relative"
-              style={{
-                y: prefersReducedMotion ? 0 : imageY,
-                scale: prefersReducedMotion ? 1 : imageScale,
-              }}
-            >
-              <motion.div
-                className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                style={{
-                  boxShadow: "0 0 60px oklch(0.7 0.1 220 / 0.2)",
-                }}
-              >
-                <img
-                  src={imageSrc}
-                  alt="Blue Logic RO System - Complete Installation Diagram"
-                  className="w-full h-auto"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[oklch(0.7_0.1_220_/_0.1)] via-transparent to-[oklch(0.7_0.1_220_/_0.05)] pointer-events-none" />
-              </motion.div>
-            </motion.div>
+            {/* Mobile image removed per request */}
           </div>
 
           {/* Right column: sticky viewport window that lasts through all cards */}
@@ -311,8 +287,8 @@ export default function ProductExplosionReact({
         >
           <motion.a
             href="/the-system"
-            className="inline-flex items-center gap-2 text-glacier font-semibold text-lg transition-colors"
-            whileHover={{ x: 5 }}
+            className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 rounded-full bg-[oklch(0.7_0.1_220)] text-[oklch(0.15_0.02_270)] font-semibold text-lg shadow-[0_12px_30px_oklch(0.7_0.1_220_/_0.3)] border border-white/10 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.7_0.1_220)] md:w-auto md:px-0 md:py-0 md:rounded-none md:bg-transparent md:text-glacier md:shadow-none md:border-0"
+            whileHover={{ x: 3 }}
           >
             <span>Explore Technical Specs</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
