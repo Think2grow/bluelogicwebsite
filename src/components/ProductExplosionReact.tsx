@@ -208,18 +208,13 @@ export default function ProductExplosionReact({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4">
-        <motion.div
-          className="text-center mb-16 md:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+        <div className="text-center mb-16 md:mb-20">
           <span className="inline-block text-glacier text-sm font-semibold tracking-wider uppercase mb-4">
             The Technology
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif mb-6">{title}</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">{subtitle}</p>
-        </motion.div>
+        </div>
 
         <div
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16 md:mb-24"
