@@ -129,10 +129,8 @@
       });
 
       if (response.ok || response.status === 200) {
-        status.className = "form-status success";
-        status.textContent =
-          "Thank you! We'll contact you shortly to schedule your water audit.";
-        form.reset();
+        // Redirect to thank you page
+        window.location.href = "/thank-you";
       } else {
         throw new Error("Submission failed");
       }
