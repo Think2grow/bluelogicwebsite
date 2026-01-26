@@ -3,8 +3,9 @@ import type { APIRoute } from 'astro';
 export const prerender = false; // This must be server-rendered
 
 export const GET: APIRoute = async () => {
-  const apiKey = import.meta.env.GOOGLE_PLACES_API_KEY;
-  const placeId = import.meta.env.GOOGLE_PLACE_ID;
+  // Prefer runtime bindings (process.env in nodejs_compat) with build-time fallback
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY || import.meta.env.GOOGLE_PLACES_API_KEY;
+  const placeId = process.env.GOOGLE_PLACE_ID || import.meta.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
     return new Response(JSON.stringify({
