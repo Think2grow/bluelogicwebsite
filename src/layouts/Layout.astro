@@ -92,6 +92,16 @@ const allSchemas = schema
         />
       ))
     }
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCNVMD4Z7R"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GCNVMD4Z7R');
+    </script>
+    
     <!-- astro view transitions -->
     <ClientRouter />
   </head>
