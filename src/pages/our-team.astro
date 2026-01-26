@@ -72,32 +72,34 @@ export const prerender = true;
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
       >
-        Meet the Team
+        Expert Roles & Expertise
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="team-member">
-          <div class="member-photo">
-            <span class="text-muted-foreground text-sm">Photo</span>
+          <div class="member-icon">
+            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2 text-foreground">
-            Lead Installer & Technician
+            Water Quality Specialist
           </h3>
           <p
             class="text-primary font-semibold text-sm uppercase tracking-wider mb-4"
           >
-            Professional Installation Specialist
+            Testing & Analysis Expert
           </p>
           <p class="text-muted-foreground leading-relaxed">
-            Licensed and certified with over a decade of experience in water
-            purification systems. Ensures every installation meets
-            commercial-grade standards.
+            Conducts comprehensive water quality testing and analysis to design the optimal system for your home. Works with our certified installation partners to ensure proper setup.
           </p>
         </div>
 
         <div class="team-member">
-          <div class="member-photo">
-            <span class="text-muted-foreground text-sm">Photo</span>
+          <div class="member-icon">
+            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM19 19c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14zM9 7h6v2H9V7zm7 0h2v2h-2V7zM9 10h6v2H9v-2zm7 0h2v2h-2v-2z"/>
+            </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2 text-foreground">
             Water Quality Engineer
@@ -115,8 +117,10 @@ export const prerender = true;
         </div>
 
         <div class="team-member">
-          <div class="member-photo">
-            <span class="text-muted-foreground text-sm">Photo</span>
+          <div class="member-icon">
+            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
           </div>
           <h3 class="text-xl font-semibold mb-2 text-foreground">
             Customer Success Lead
@@ -156,7 +160,7 @@ export const prerender = true;
             Professional Excellence
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Every installation is performed to commercial standards with
+            Our certified installation partners perform every installation to commercial standards with
             meticulous attention to detail.
           </p>
         </div>
@@ -187,7 +191,7 @@ export const prerender = true;
           </h3>
           <p class="text-muted-foreground leading-relaxed">
             We're your neighbors. Our reputation is built on trust and we stand
-            behind every installation.
+            behind every system we provide.
           </p>
         </div>
 
@@ -243,7 +247,7 @@ export const prerender = true;
             Professional Installation, Premium Results
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            Every Blue Logic installation is performed by certified technicians
+            Every Blue Logic system is installed by our certified partner technicians
             who treat your home with respect. Clean workspace, careful
             craftsmanship, and meticulous attention to detail.
           </p>
@@ -294,7 +298,7 @@ export const prerender = true;
     @apply bg-background p-8 rounded-2xl text-center;
   }
 
-  .member-photo {
-    @apply w-36 h-36 mx-auto mb-6 rounded-full bg-muted flex items-center justify-center;
+  .member-icon {
+    @apply w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 text-primary flex items-center justify-center;
   }
 </style>
