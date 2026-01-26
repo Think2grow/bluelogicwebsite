@@ -5,9 +5,13 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist",
+    "directory": "./dist"
   },
   "observability": {
-    "enabled": true,
+    "enabled": true
   },
+  "vars": {
+    "GOOGLE_PLACES_API_KEY": "AIzaSyDseZBL5O95O8WkN5By6mJWR2whSqGsx3g",
+    "GOOGLE_PLACE_ID": "ChIJbSx1-MiOhmwRvSZZre9ztww"
+  }
 }
