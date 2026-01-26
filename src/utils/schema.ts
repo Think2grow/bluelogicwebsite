@@ -92,7 +92,7 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     logo: new URL("favicon.ico", url).toString(),
     image: new URL("Blue%20Logic%20Logo%20FINAL-02.png", url).toString(),
     description:
-      "Professional reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+      "Professional whole home reverse osmosis water purification systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
     email: "info@bluelogicwater.com",
     telephone: "+1-838-232-2583",
     address: {
@@ -138,9 +138,9 @@ export function getProductSchema(url: string): ProductSchema {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Blue Logic Professional RO System",
+    name: "Blue Logic Whole Home Reverse Osmosis System",
     description:
-      "Commercial-grade reverse osmosis water filtration system. 50% smaller footprint, 10x quieter operation, and half the cost of traditional systems.",
+      "Professional whole home reverse osmosis water purification system. 50% smaller footprint, 10x quieter operation, and half the cost of traditional systems. Removes 99% of contaminants from every tap.",
     brand: {
       "@type": "Brand",
       name: "Blue Logic Water",
