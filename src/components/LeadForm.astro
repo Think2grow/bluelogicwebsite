@@ -1,8 +1,36 @@
 ---
 // Basic lead capture form component
+
+interface Props {
+  compact?: boolean;
+  variant?: "default" | "premium";
+}
+
+const { compact = false, variant = "default" } = Astro.props;
 ---
 
-<div class="max-w-xl mx-auto my-16 px-6 py-10 bg-card rounded-2xl" id="contact">
+<div
+  class:list={[
+    variant === "premium"
+      ? compact
+        ? "relative w-full px-7 py-9 rounded-3xl border border-primary/20 bg-card/80 shadow-2xl backdrop-blur"
+        : "relative max-w-xl mx-auto my-16 px-7 py-10 rounded-3xl border border-primary/20 bg-card/80 shadow-2xl backdrop-blur"
+      : compact
+        ? "w-full px-6 py-8 bg-card rounded-2xl border border-border shadow-sm"
+        : "max-w-xl mx-auto my-16 px-6 py-10 bg-card rounded-2xl",
+  ]}
+  id="contact"
+>
+  {
+    variant === "premium" && (
+      <>
+        <div class="pointer-events-none absolute -inset-px rounded-3xl bg-linear-to-b from-primary/25 via-primary/10 to-transparent" />
+        <div class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/60" />
+      </>
+    )
+  }
+
+  <div class={variant === "premium" ? "relative" : undefined}>
   <h2 class="text-3xl font-serif text-center mb-2">
     Know Your Water. Protect Your Home.
   </h2>
@@ -75,13 +103,20 @@
 
     <button
       type="submit"
-      class="w-full bg-glacier hover:bg-glacier/90 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200"
+      class:list={[
+        "w-full font-semibold py-4 px-6 transition-all duration-300",
+        variant === "premium"
+          ? "rounded-xl font-serif tracking-wide text-white bg-linear-to-r from-glacier to-glacier-dark hover:from-glacier-dark hover:to-glacier shadow-lg hover:shadow-xl transform hover:scale-[1.01] active:scale-[0.99]"
+          : "rounded-lg bg-glacier hover:bg-glacier/90 text-white transition-colors duration-200",
+      ]}
     >
       Schedule Audit
     </button>
 
     <div id="formStatus" class="form-status"></div>
   </form>
+
+  </div>
 </div>
 
 <style>

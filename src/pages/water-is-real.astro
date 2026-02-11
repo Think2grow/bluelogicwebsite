@@ -1,0 +1,353 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getBreadcrumbSchema } from "../utils/schema";
+import LeadForm from "../components/LeadForm.astro";
+import { Image } from "astro:assets";
+
+import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+const schemas = [
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "The Problem In The Water Is Real", url: "/water-is-real" },
+  ]),
+];
+---
+
+<Layout
+  title="The Problem In The Water Is Real | Blue Logic Water"
+  description="Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real, and meet the team that helps families solve it with modern purification."
+  schema={schemas}
+  og={{
+    title: "The Problem In The Water Is Real | Blue Logic Water",
+    description:
+      "Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real — and meet the team behind Blue Logic Water.",
+    image: handInWaterImg.src,
+    imageAlt: "Hand touching clean water — purity and transparency",
+  }}
+>
+  <section class="relative bg-linear-to-b from-quartz via-white to-quartz px-4 py-16 md:py-24">
+    <div class="w-full">
+      <header class="max-w-5xl mx-auto text-center">
+        <p class="inline-flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-obsidian-muted">
+          <span class="h-2 w-2 rounded-full bg-glacier"></span>
+          Utah water reality check
+        </p>
+
+        <h1 class="mt-5 font-serif text-4xl md:text-6xl font-bold text-obsidian leading-[1.05] tracking-tight">
+          The problem in the water
+          <span class="text-glacier"> is real</span>.
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-obsidian-muted leading-relaxed mx-auto max-w-2xl">
+          Water can look crystal clear and still carry contaminants you can’t see, smell, or taste.
+          If you’re in Utah, it’s worth knowing what’s actually coming through your pipes.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center">
+          <a
+            href="#contact"
+            class="inline-flex justify-center rounded-full bg-glacier text-white px-6 py-3 font-semibold shadow-md hover:bg-glacier/90 transition-colors"
+          >
+            Schedule a free consultation
+          </a>
+          <a
+            href="tel:8382322583"
+            class="inline-flex justify-center rounded-full border border-border bg-white px-6 py-3 font-semibold text-obsidian hover:bg-quartz transition-colors"
+          >
+            Call or text: (838) 232-2583
+          </a>
+        </div>
+
+        <p class="mt-4 text-sm text-obsidian-muted">
+          Want details for your city? Browse the full <a href="/locations" class="text-primary hover:underline font-semibold">Utah water reports</a>.
+        </p>
+      </header>
+
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+        <!-- Left: Problem proof -->
+        <div class="flex flex-col gap-8 order-2 lg:order-1 self-stretch lg:col-span-4">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a
+              href="/locations/draper"
+              class="group rounded-2xl border border-border bg-white/70 p-5 transition-all hover:shadow-md hover:border-primary/30"
+            >
+              <div class="text-sm text-obsidian-muted">Draper</div>
+              <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
+                Arsenic — 450× the health guideline
+              </div>
+              <div class="mt-3 text-sm text-obsidian-muted">
+                View the local report →
+              </div>
+            </a>
+
+            <a
+              href="/locations/sandy"
+              class="group rounded-2xl border border-border bg-white/70 p-5 transition-all hover:shadow-md hover:border-primary/30"
+            >
+              <div class="text-sm text-obsidian-muted">Sandy</div>
+              <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
+                HAA9 — 409× the health guideline
+              </div>
+              <div class="mt-3 text-sm text-obsidian-muted">
+                View the local report →
+              </div>
+            </a>
+
+            <a
+              href="/locations/salt-lake-city"
+              class="group rounded-2xl border border-border bg-white/70 p-5 transition-all hover:shadow-md hover:border-primary/30"
+            >
+              <div class="text-sm text-obsidian-muted">Salt Lake City</div>
+              <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
+                Arsenic — 135× the health guideline
+              </div>
+              <div class="mt-3 text-sm text-obsidian-muted">
+                View the local report →
+              </div>
+            </a>
+
+            <a
+              href="/locations/park-city"
+              class="group rounded-2xl border border-border bg-white/70 p-5 transition-all hover:shadow-md hover:border-primary/30"
+            >
+              <div class="text-sm text-obsidian-muted">Park City</div>
+              <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
+                Arsenic — 343× the health guideline
+              </div>
+              <div class="mt-3 text-sm text-obsidian-muted">
+                View the local report →
+              </div>
+            </a>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-card p-6">
+            <h2 class="font-serif text-2xl text-foreground mb-3">What this means for your family</h2>
+            <ul class="space-y-3 text-obsidian-muted">
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Most municipal treatment focuses on microbes, not modern chemical byproducts.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Water softeners help with hardness — they don’t address what’s dissolved in the water.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Reverse osmosis is one of the only processes that truly purifies water at the molecular level.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-card p-6">
+            <h2 class="font-serif text-2xl text-foreground mb-3">Proof you can understand</h2>
+            <ul class="space-y-3 text-obsidian-muted">
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span><strong class="text-foreground">Up to 99%</strong> contaminant reduction with RO-based purification.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Membrane filtration down to <strong class="text-foreground">0.0001 microns</strong>.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Designed to address metals, byproducts, and modern chemical contaminants.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-border bg-card p-6">
+            <h2 class="font-serif text-2xl text-foreground mb-4">Our process (simple + proven)</h2>
+            <div class="grid grid-cols-1 gap-4">
+              <div class="rounded-2xl bg-white border border-border p-5">
+                <div class="text-sm font-semibold text-primary">Step 1</div>
+                <div class="mt-1 font-semibold text-foreground">Free consultation</div>
+                <p class="mt-2 text-sm text-obsidian-muted leading-relaxed">
+                  We help you understand what’s in your water and what matters most for your home.
+                </p>
+              </div>
+              <div class="rounded-2xl bg-white border border-border p-5">
+                <div class="text-sm font-semibold text-primary">Step 2</div>
+                <div class="mt-1 font-semibold text-foreground">Video walkthrough</div>
+                <p class="mt-2 text-sm text-obsidian-muted leading-relaxed">
+                  We verify fit, function, and expectations so there are no surprises.
+                </p>
+              </div>
+              <div class="rounded-2xl bg-white border border-border p-5">
+                <div class="text-sm font-semibold text-primary">Step 3</div>
+                <div class="mt-1 font-semibold text-foreground">Coordinated install</div>
+                <p class="mt-2 text-sm text-obsidian-muted leading-relaxed">
+                  We coordinate installation details so the system is installed right the first time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-auto rounded-2xl border border-border bg-card p-6">
+            <h2 class="font-serif text-2xl text-foreground mb-3">Common questions (fast answers)</h2>
+            <ul class="space-y-3 text-obsidian-muted">
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span><strong class="text-foreground">"Is my water safe?"</strong> It can meet regulations and still contain byproducts and trace contaminants.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span><strong class="text-foreground">"I have a softener."</strong> Great for hardness. It doesn’t remove chemicals or dissolved contaminants.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span><strong class="text-foreground">"Will this be pushy?"</strong> No upsells. We explain options and you decide.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Center: Sticky form -->
+        <div class="order-1 lg:order-2 lg:col-span-4 self-stretch">
+          <div class="lg:sticky lg:top-24">
+            <LeadForm compact variant="premium" />
+          </div>
+        </div>
+
+        <!-- Right: Trust / About -->
+        <div class="flex flex-col gap-6 order-3 self-stretch lg:col-span-4">
+          <aside class="rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
+            <h2 class="font-serif text-2xl text-foreground">What you get (no guesswork)</h2>
+            <p class="mt-3 text-obsidian-muted leading-relaxed">
+              Water quality is complicated — we make it simple. You’ll get clear next steps and a solution tailored to your home.
+            </p>
+            <ul class="mt-5 space-y-3 text-obsidian-muted">
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Plain-English explanation of your results and local report data</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>System recommendation based on your goals (health, appliances, taste)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <span>Coordination so the install is done right the first time</span>
+              </li>
+            </ul>
+          </aside>
+
+          <aside class="rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
+          <div class="flex items-center gap-4">
+            <div>
+              <div class="text-sm text-obsidian-muted">About us</div>
+              <h2 class="font-serif text-2xl text-foreground">Blue Logic Water</h2>
+            </div>
+          </div>
+
+          <div class="mt-6 space-y-4 text-obsidian-muted leading-relaxed">
+            <p>
+              Blue Logic is a nationwide team of water experts dedicated to solving real water
+              problems, not selling gimmicks. We combine science, experience, and a proven
+              process to deliver whole-home purification systems tailored to each customer’s
+              needs.
+            </p>
+            <p>
+              Our mission is simple: protect your health, home, and peace of mind with clean water
+              everywhere it matters.
+            </p>
+          </div>
+
+          <div class="mt-6 grid gap-3">
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+              <div>
+                <div class="font-semibold text-foreground">Transparent recommendations</div>
+                <div class="text-sm text-obsidian-muted">Clear options, clear tradeoffs, no pressure tactics.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+              <div>
+                <div class="font-semibold text-foreground">Designed for Utah realities</div>
+                <div class="text-sm text-obsidian-muted">Hard water, mineral content, and local contaminant profiles.</div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+              <div>
+                <div class="font-semibold text-foreground">A proven 3-step process</div>
+                <div class="text-sm text-obsidian-muted">Consultation → walkthrough → coordinated installation.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 rounded-2xl border border-border bg-white p-5">
+            <div class="font-semibold text-foreground">Prefer to learn first?</div>
+            <p class="mt-1 text-sm text-obsidian-muted">
+              See how whole-home reverse osmosis works, what it removes, and what it costs.
+            </p>
+            <div class="mt-4 flex flex-col sm:flex-row gap-3">
+              <a
+                href="/the-system"
+                class="inline-flex justify-center rounded-full bg-obsidian text-white px-5 py-2.5 font-semibold hover:bg-obsidian/90 transition-colors"
+              >
+                The system
+              </a>
+              <a
+                href="/the-value"
+                class="inline-flex justify-center rounded-full border border-border bg-quartz px-5 py-2.5 font-semibold text-obsidian hover:bg-quartz/70 transition-colors"
+              >
+                The value
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <Image
+              src={handInWaterImg}
+              alt="Hand touching purified water"
+              class="rounded-2xl w-full object-cover aspect-4/3 border border-border"
+              widths={[480, 768]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={55}
+            />
+          </div>
+
+          <p class="mt-4 text-xs text-obsidian-muted">
+            Note: city “health guideline” comparisons are shown on each city page.
+          </p>
+          </aside>
+
+          <aside class="mt-auto rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
+            <h2 class="font-serif text-2xl text-foreground">Trust signals that matter</h2>
+            <div class="mt-4 grid gap-3">
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <div>
+                  <div class="font-semibold text-foreground">Real problems, not fear</div>
+                  <div class="text-sm text-obsidian-muted">We use local reports and practical guidance — not hype.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <div>
+                  <div class="font-semibold text-foreground">Commercial-grade purification</div>
+                  <div class="text-sm text-obsidian-muted">Engineered to perform across the whole home, not just a single faucet.</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
+                <div>
+                  <div class="font-semibold text-foreground">Ongoing support</div>
+                  <div class="text-sm text-obsidian-muted">We don’t disappear after install — we stay accountable.</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
