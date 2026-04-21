@@ -11,7 +11,7 @@ This is a collection of facts and phrases that have been checked and can be used
 | Field            | Value                                          |
 | ---------------- | ---------------------------------------------- |
 | **Company Name** | Blue Logic / Blue Logic Water                  |
-| **Phone**        | (838) 232-2583                                 |
+| **Phone**        | (801) 980-2583                                 |
 | **Website**      | bluelogicwater.com                             |
 | **Service Area** | Nationwide, Utah Origin and Focused for Growth |
 | **Tagline**      | "The Logic Behind Purity"                      |

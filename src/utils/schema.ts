@@ -94,7 +94,7 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     description:
       "Professional whole home reverse osmosis water purification systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
     email: "info@bluelogicwater.com",
-    telephone: "+1-838-232-2583",
+    telephone: "+1-801-980-2583",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Salt Lake City",
