@@ -105,6 +105,20 @@ const allSchemas = schema
     <!-- ContentDSP Tracking -->
     <script is:inline>!function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://contentdsp.com/events.js');saq('ts', 'pTI-0oKJkHPME2lozyEL0Q');</script>
 
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1641361533784272');
+      fbq('track', 'PageView');
+    </script>
+
     <script
       src="https://widgets.leadconnectorhq.com/loader.js"
       data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
@@ -117,6 +131,16 @@ const allSchemas = schema
   <body
     class="min-h-screen flex flex-col bg-background text-foreground font-sans m-0 p-0"
   >
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1641361533784272&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+
     <Header />
 
     <main class="flex-1">
