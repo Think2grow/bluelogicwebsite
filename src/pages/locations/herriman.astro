@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What is in Herriman's tap water?",
+    answer: "Herriman is served by the Jordan Valley Water Conservancy District (JVWCD) — the same water supply as West Jordan, Sandy, and South Jordan. The water profile includes arsenic above EWG health guidelines, haloacetic acid disinfection byproducts from chlorination of mountain surface water, and hard water at approximately 18 GPG. All levels are within federal legal limits. EWG guidelines are stricter than federal law.",
+  },
+  {
+    question: "Is Herriman's water hard?",
+    answer: "Yes — Herriman water is very hard at approximately 18 grains per gallon, the same as most southern Salt Lake County communities served by JVWCD. At 18 GPG, scale accumulates rapidly on fixtures, showerheads, and inside appliances. For Herriman's newer homes with premium appliances, scale damage is a real and ongoing concern without treatment.",
+  },
+  {
+    question: "Herriman is fast-growing with a lot of new construction. Does new construction mean better water?",
+    answer: "No. New construction doesn't change the source water. Whether your home was built in 2022 or 2005, it connects to the same JVWCD municipal supply with the same arsenic, disinfection byproduct, and hardness profile as every other home on the system. The advantage of new construction is that you don't have legacy scale buildup in your pipes yet — the best time to install a whole-home system is at move-in, before any accumulation begins.",
+  },
+  {
+    question: "How does Blue Logic compare to competitors for Herriman homeowners?",
+    answer: "Blue Logic's systems are priced at $5,995–$19,999 using NSF-certified components. The system is designed to fit in standard Utah utility rooms and operates quietly. Blue Logic offers a written price-match guarantee — bring any competing quote and we'll match or beat it.",
+  },
+  {
+    question: "Does Blue Logic serve all of Herriman, including areas near Bluffdale and the Herriman/West Jordan border?",
+    answer: "Yes. Blue Logic serves all of Herriman including the communities along Herriman Parkway, near Butterfield Canyon, and the newer developments in the southern city area. We also serve Bluffdale, Riverton, and the broader south Salt Lake County corridor.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Herriman"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Herriman", url: "/locations/herriman/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Herriman Utah | Blue Logic Water"
+  description="Herriman receives JVWCD water with arsenic and disinfection byproduct concerns plus 18 GPG hardness. Blue Logic serves Herriman's fast-growing market. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · JVWCD · Butterfield Canyon · Herriman Hills
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Herriman, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        One of Utah's fastest-growing cities, Herriman receives JVWCD water with hard water
+        at 18 GPG, arsenic above EWG guidelines, and disinfection byproducts. Blue Logic
+        serves Herriman homeowners with compact, quiet whole-home filtration and RO systems.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Herriman's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Herriman receives water from JVWCD — the same supply system as West Jordan, Sandy, and South Jordan.
+        Data from the EWG Tap Water Database. All levels meet federal legal standards.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">13</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, haloacetic acids, and chloroform. Federally compliant.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard — same as West Jordan and Sandy on the same JVWCD supply.</p>
+        </div>
+        <div class="stat-box">
+          <div class="text-3xl font-bold text-foreground mb-2">JVWCD</div>
+          <div class="font-semibold text-foreground mb-1">Water Source</div>
+          <p class="text-xs text-muted-foreground">Purchased treated surface water from Jordan Valley Water Conservancy District.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Key Water Quality Concerns</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA)</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chloroform (disinfection byproduct)</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness</span>
+            <span class="badge badge-primary">~18 GPG — Very Hard</span>
+          </div>
+        </div>
+        <p class="text-xs text-muted-foreground mt-5 pt-5 border-t border-border">
+          EWG health guidelines are stricter than federal legal limits. Herriman's water is federally compliant.
+        </p>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Why Herriman's Growth Market Matters</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          Herriman has grown from a small rural community to one of Utah's fastest-growing cities —
+          with significant new construction in the northern, central, and southern sections. Most
+          Herriman homebuyers are encountering Utah municipal water for the first time or moving
+          from areas with different water profiles.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          The new-construction advantage: no legacy scale buildup in pipes or appliances. Installing
+          a Blue Logic system at move-in protects new fixtures and premium appliances from day one
+          rather than treating accumulated damage. Blue Logic's compact system design fits in
+          Herriman's modern utility room layouts without modification.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-12 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Herriman and Surrounding Areas Served</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        {["Herriman Hills", "Butterfield Canyon area", "Rosecrest-adjacent", "Bluffdale",
+          "Riverton", "South West Jordan border"].map((area) => (
+          <span class="px-3 py-1.5 bg-background border border-border rounded-full text-sm text-muted-foreground">{area}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving West Jordan · South Jordan · Sandy and all of Salt Lake County.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Herriman Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"West Jordan",slug:"west-jordan"},{name:"South Jordan",slug:"south-jordan"},{name:"Sandy",slug:"sandy"},{name:"Draper",slug:"draper"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Herriman Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Herriman and all of Salt Lake County. A specialist tests your water
+        on-site — no cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

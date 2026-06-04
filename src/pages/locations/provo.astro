@@ -1,0 +1,295 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What is in Provo's tap water?",
+    answer: "Provo City water comes primarily from the Provo River watershed and purchased surface water sources. The EWG Tap Water Database identifies 12 contaminants detected above EWG health guidelines in the Provo City system, including arsenic (at 100x the EWG guideline), haloacetic acid disinfection byproducts, and chloroform. Water hardness in Provo typically ranges from approximately 9 to 15 grains per gallon depending on active sources and season. All levels are within federal legal limits.",
+  },
+  {
+    question: "Is Provo water hard?",
+    answer: "Provo water is in the moderate-to-hard range — typically 9 to 15 GPG depending on which sources are active. Provo River snowmelt-fed surface water is naturally lower in minerals than deep groundwater. However, during summer and fall when surface flows decrease and groundwater use increases, hardness can spike. Scale buildup on fixtures, especially in hot water systems, is common for Provo homeowners.",
+  },
+  {
+    question: "Does Blue Logic serve Orem and surrounding Utah County cities?",
+    answer: "Yes. Blue Logic serves Provo, Orem, American Fork, Pleasant Grove, Lindon, Springville, Spanish Fork, and all of Utah County. Many of these communities draw from overlapping or related water sources through the Central Utah Water Conservancy District and JVWCD systems, creating similar water quality profiles.",
+  },
+  {
+    question: "What water treatment system does Blue Logic recommend for Provo?",
+    answer: "Provo's arsenic level — 100x the EWG health guideline — is the primary contaminant concern beyond hard water. A standard water softener addresses hardness only. Whole-home filtration addresses hardness, chlorine, and taste/odor concerns. Whole-home reverse osmosis addresses all of the above plus arsenic at the molecular level. Your free water test will confirm which contaminants are most relevant for your specific home.",
+  },
+  {
+    question: "How long does a Blue Logic installation take in Provo?",
+    answer: "Most Provo installations are completed in a single day — typically 4 to 8 hours depending on your home's layout. Blue Logic's compact system design is well-suited to both Provo's older established neighborhoods and newer Utah County developments. The system requires access to a utility room, garage, or basement space.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Provo"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Provo", url: "/locations/provo/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Provo Utah | Blue Logic Water"
+  description="Blue Logic serves Provo with whole-home RO and filtration. Provo water has arsenic at 100x the EWG guideline and hard water concerns. Free in-home water test — no obligation."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · Provo River Watershed · BYU · Downtown Provo
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Provo, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Provo's water supply has arsenic detected at 100 times the EWG health guideline,
+        alongside disinfection byproducts and seasonal hard water fluctuations.
+        Blue Logic installs whole-home filtration and RO systems throughout Provo and Utah County.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Quality Data -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Provo's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database and Provo City consumer confidence reports.
+        All levels meet federal legal standards. EWG guidelines are stricter than federal law.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">100x</div>
+          <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring; federally compliant. EWG guideline is 0.004 ppb vs. EPA legal limit of 10 ppb.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">12</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, haloacetic acids, and chloroform disinfection byproducts.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">9–15 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness (seasonal)</div>
+          <p class="text-xs text-muted-foreground">Moderate to hard; increases seasonally as groundwater sources are used more heavily.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">100x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA9)</span>
+            <span class="badge badge-alert">66x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chloroform (disinfection byproduct)</span>
+            <span class="badge badge-alert">4.9x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness (seasonal)</span>
+            <span class="badge badge-primary">9–15 GPG — Moderate to Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH25006" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Provo City Water →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Provo's Water Source</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          Provo City draws its water primarily from the Provo River watershed — snowmelt-fed surface water from
+          the Wasatch mountains. This surface water is relatively lower in hardness than deep groundwater sources,
+          but it carries organic compounds that react with chlorination treatment to produce haloacetic acid
+          disinfection byproducts. During dry seasons, Provo supplements with groundwater that has higher
+          mineral content and arsenic levels.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Provo also purchases water from the Central Utah Water Conservancy District (CUWCD). The blend ratio
+          between surface water and purchased water varies by season, which is why Provo homeowners notice
+          variability in water taste, hardness, and appearance throughout the year.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Provo Homeowner Context -->
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        Water Treatment Concerns Specific to Provo
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Seasonal Variation</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Provo water changes meaningfully between spring (lower hardness, higher organic content,
+            more disinfection byproducts) and fall/winter (higher hardness, higher arsenic from
+            groundwater sources). A whole-home system addresses the water year-round regardless of
+            which blend is active.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">BYU Area and Student Housing</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Provo's large student population means significant turnover in rental properties. Blue
+            Logic focuses on owner-occupied homes where the homeowner controls the utility setup.
+            Provo homeowners in established neighborhoods like Joaquin, South Provo, and East Provo
+            are the ideal fit.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">New Construction in Provo</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            South Provo and the areas adjacent to South Jordan Avenue have seen new residential
+            development. New construction in Provo still receives the same municipal water supply
+            — new plumbing doesn't change the source water profile.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Appliance Protection</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Hard water — even in Provo's moderate range of 9–15 GPG — causes scale buildup in
+            water heaters, dishwashers, and washing machines over time. The Blue Logic integrated
+            softening system prevents new scale formation and protects your appliance investment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Served -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Provo Neighborhoods and Communities Served</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        {["Downtown Provo", "Joaquin", "Maeser", "Franklin", "Dixon", "Timp", "Riverbottoms",
+          "South Provo", "Rock Canyon", "Sunset", "Edgemont", "East Provo"].map((n) => (
+          <span class="px-3 py-1.5 bg-card border border-border rounded-full text-sm text-muted-foreground">{n}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving Orem · American Fork · Pleasant Grove · Lindon · Springville · Spanish Fork and all of Utah County.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Provo Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Cities -->
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          { name: "Orem", slug: "orem" },
+          { name: "Lehi", slug: "lehi" },
+          { name: "American Fork", slug: "american-fork" },
+          { name: "Springville", slug: "springville" },
+        ].map((city) => (
+          <a href={`/locations/${city.slug}/`} class="related-link">{city.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Provo Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        A Blue Logic specialist will come to your Provo home, test your water on-site,
+        and recommend the right system. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+
+  .scenario-card { @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary; }
+
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

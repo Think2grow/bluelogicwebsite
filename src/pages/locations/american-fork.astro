@@ -1,0 +1,159 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What contaminants are in American Fork's water?",
+    answer: "American Fork receives water from the Central Utah Water Conservancy District and JVWCD systems. The EWG Tap Water Database flags approximately 11 contaminants above EWG health guidelines, including arsenic, hexavalent chromium (chromium-6), and haloacetic acid disinfection byproducts. Water hardness is approximately 15 GPG — in the hard category. All levels are within federal legal limits.",
+  },
+  {
+    question: "Is American Fork water hard?",
+    answer: "Yes — approximately 15 GPG, which is classified as hard by WQA standards. At 15 GPG, scale accumulates steadily on fixtures and inside hot water systems. Appliances in untreated American Fork homes experience measurable efficiency loss over time.",
+  },
+  {
+    question: "How does American Fork's water compare to neighboring Lehi?",
+    answer: "Both cities draw from overlapping Utah County source water systems and share similar contaminant profiles — arsenic and chromium-6 are concerns in both. Lehi's arsenic levels are significantly higher (484x EWG guideline), but American Fork homeowners face the same core contaminant categories. A free in-home water test gives you the exact reading for your specific address.",
+  },
+  {
+    question: "Does Blue Logic serve American Fork and nearby Pleasant Grove and Lindon?",
+    answer: "Yes. Blue Logic serves American Fork, Pleasant Grove, Lindon, and all of northern Utah County. The CUWCD and JVWCD water profile is common across these communities, making them natural fits for Blue Logic's integrated filtration and RO systems.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "American Fork"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "American Fork", url: "/locations/american-fork/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment American Fork Utah | Blue Logic Water"
+  description="American Fork water has arsenic, chromium-6, and 15 GPG hardness above EWG guidelines. Blue Logic serves American Fork and northern Utah County. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · CUWCD / JVWCD · Pleasant Grove · Lindon
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for American Fork Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        American Fork receives water with arsenic, chromium-6, and haloacetic acids above EWG
+        health guidelines — alongside 15 GPG hard water. Blue Logic serves American Fork and
+        surrounding northern Utah County communities.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Water Quality Profile</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">11</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, chromium-6, and haloacetic acids. Federally compliant.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Chromium-6</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Same concern as neighboring Orem and West Jordan. RO membrane addresses it.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~15 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Hard — ongoing scale on fixtures and inside appliances.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Key Concerns for American Fork Homeowners</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
+          <div><strong class="text-foreground">Hard water scale:</strong> 15 GPG causes steady scale accumulation in hot water systems and on fixtures. Appliance efficiency decreases without softening.</div>
+          <div><strong class="text-foreground">Arsenic:</strong> Detected above EWG health guidelines via Utah County geology. Standard softeners and basic filtration do not reduce arsenic.</div>
+          <div><strong class="text-foreground">Chromium-6:</strong> Flagged above EWG guidelines — same concern as neighboring Orem. RO membrane is the most effective residential approach.</div>
+          <div><strong class="text-foreground">Chlorine / HAA:</strong> Surface water chlorination produces disinfection byproducts above EWG thresholds. Catalytic carbon filtration addresses this.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Lehi",slug:"lehi"},{name:"Orem",slug:"orem"},{name:"Provo",slug:"provo"},{name:"Saratoga Springs",slug:"saratoga-springs"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test — American Fork</h2>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves American Fork and northern Utah County. No cost, no obligation.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

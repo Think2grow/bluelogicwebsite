@@ -1,0 +1,397 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What water hardness level requires treatment?",
+    answer: "Any water above 7 GPG (120 mg/L) is considered moderately hard and can benefit from softening. Most Wasatch Front cities deliver water in the 10–25 GPG range — firmly in the 'hard' to 'very hard' category. At these levels, scale accumulation in appliances and pipes is measurable and ongoing. Treatment is advisable above 10 GPG; at 18–25 GPG (common in Sandy, Orem, Draper, Layton), it is strongly recommended.",
+  },
+  {
+    question: "My water test shows high TDS. Does that mean my water is bad?",
+    answer: "Not necessarily. Total Dissolved Solids measures the combined weight of all dissolved particles in water — including benign minerals like calcium and magnesium as well as potentially harmful contaminants. High TDS from calcium in Utah water is common and is the cause of scale and hard water, but is not itself a health hazard. High TDS does indicate that your water has significant dissolved mineral content that a filtration or RO system would address. The more important question is what the specific dissolved solids are — which a comprehensive water test or your utility's consumer confidence report can tell you.",
+  },
+  {
+    question: "What does a free Blue Logic water test measure vs. a comprehensive lab test?",
+    answer: "Blue Logic's free in-home water test measures hardness (GPG), chlorine/chloramine residual, and general water quality indicators on-site using calibrated field meters. This identifies your home's hardness level and disinfectant residual accurately and immediately. A certified lab test (sent to an accredited laboratory) can test for specific contaminants including arsenic, lead, PFAS, nitrates, bacteria, and hundreds of other parameters. The in-home test is the right starting point for most Utah homeowners — it confirms whether hard water and chlorine are issues, and your specialist will discuss whether a lab test is warranted based on your city's EWG profile.",
+  },
+  {
+    question: "Can I trust my utility's water quality report?",
+    answer: "Yes — utilities are legally required to report accurate data. Consumer confidence reports reflect real utility testing data. However, there are important caveats: the report represents the utility's supply at the point of treatment, not at your tap. Old pipes, local distribution infrastructure, and seasonal blending can affect what actually comes out of your faucet. The EWG Tap Water Database processes this utility data but applies stricter health guidelines — which is why EWG numbers can look alarming compared to the utility's self-reported compliance status.",
+  },
+];
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "How to Read a Water Test", url: "/how-to-read-a-water-test/" },
+  ]),
+];
+
+// Water hardness classification table data
+const hardnessLevels = [
+  { classification: "Soft", gpg: "0–3", mgL: "0–51", what: "Ideal — no treatment needed for scale", utah: "Rare on Wasatch Front" },
+  { classification: "Slightly Hard", gpg: "3–7", mgL: "51–120", what: "Minor spotting; most people prefer softening above 5 GPG", utah: "Below average for Utah" },
+  { classification: "Moderately Hard", gpg: "7–10", mgL: "120–180", what: "Noticeable scale in hot water systems; softening recommended", utah: "Lower end of Utah range" },
+  { classification: "Hard", gpg: "10–14", mgL: "180–250", what: "Visible deposits; appliance efficiency loss begins", utah: "Salt Lake City, Provo (seasonal)" },
+  { classification: "Very Hard", gpg: "14+", mgL: "250+", what: "Heavy scale; shortened appliance life; dry skin from bathing", utah: "Sandy, Orem, Draper, Layton, Bountiful, Spanish Fork, Springville" },
+];
+
+const parameters = [
+  {
+    name: "Water Hardness",
+    unit: "GPG or mg/L",
+    whatItMeasures: "Concentration of calcium and magnesium — the minerals that cause scale and interfere with soap lathering",
+    goodRange: "0–7 GPG (soft to slightly hard)",
+    typicalUtah: "10–25+ GPG depending on city",
+    whatHighMeans: "Scale on fixtures and appliances, dry skin, hard-to-lather soap, spotty dishes. Addressed by softening.",
+    concern: "Hardness is not a health concern — it is a water quality and home protection concern.",
+  },
+  {
+    name: "Chlorine / Chloramine",
+    unit: "ppm (mg/L)",
+    whatItMeasures: "Disinfectant residual added by the utility to prevent bacterial regrowth in distribution pipes",
+    goodRange: "EPA allows up to 4 ppm; most utilities target 0.2–1.0 ppm at the tap",
+    typicalUtah: "0.5–2.0 ppm typical at the tap",
+    whatHighMeans: "Chlorine taste and odor, chlorine absorbed through skin during bathing, contributes to HAA formation",
+    concern: "Chlorine itself is not typically a health concern at normal tap levels. Chloramine (used in many Utah utilities) can irritate sensitive populations and is harder to remove than chlorine.",
+  },
+  {
+    name: "pH",
+    unit: "pH scale (0–14)",
+    whatItMeasures: "Acidity or alkalinity of the water. 7 is neutral; below 7 is acidic; above 7 is alkaline",
+    goodRange: "6.5–8.5 (EPA secondary standard)",
+    typicalUtah: "7.5–8.2 (slightly alkaline — common with hard water)",
+    whatHighMeans: "High pH can accelerate scale formation; low pH can corrode pipes and leach metals",
+    concern: "Slightly alkaline water (common in Utah) is not a health concern but can contribute to scale.",
+  },
+  {
+    name: "Total Dissolved Solids (TDS)",
+    unit: "ppm (mg/L)",
+    whatItMeasures: "Combined weight of all dissolved particles — minerals, salts, metals, organic compounds. Includes both benign and concerning substances.",
+    goodRange: "0–500 ppm (EPA secondary standard); most prefer under 300 ppm for taste",
+    typicalUtah: "200–500+ ppm depending on city and season",
+    whatHighMeans: "High TDS often correlates with hardness in Utah. TDS alone does not indicate safety — the composition matters more than the total number.",
+    concern: "Do not use TDS as a standalone safety indicator. A water softener adds sodium (raising TDS slightly). RO reduces TDS significantly. What matters is what the dissolved solids are, not just how many there are.",
+  },
+  {
+    name: "Iron / Manganese",
+    unit: "ppm (mg/L)",
+    whatItMeasures: "Dissolved iron and manganese — naturally occurring metals common in Utah groundwater",
+    goodRange: "Iron: under 0.3 ppm · Manganese: under 0.05 ppm (EPA secondary standards)",
+    typicalUtah: "Variable — more common in Ogden and Weber County groundwater-influenced supplies",
+    whatHighMeans: "Rust-colored staining on fixtures and laundry; metallic taste; clogged aerators",
+    concern: "Iron and manganese at typical tap levels are primarily an aesthetic concern, not a health risk. Addressed by the Katalox stage in Blue Logic's filtration system.",
+  },
+];
+---
+
+<Layout
+  title="How to Read a Water Test | Utah Homeowner's Guide | Blue Logic"
+  description="What do water hardness, TDS, chlorine, and contaminant levels actually mean? A plain-English guide to understanding your Utah water test results — and what to do next."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Educational Guide · Utah Homeowners
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        How to Read a Water Test — A Plain-English Guide
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Water test results are full of numbers, units, and abbreviations that mean nothing
+        without context. Here's what the key measurements actually mean for a Utah home —
+        and when they cross into territory worth acting on.
+      </p>
+    </div>
+  </section>
+
+  <!-- What a Water Test Measures -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        The Key Parameters — What They Measure and What They Mean
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+        Most basic in-home water tests cover hardness and chlorine. Comprehensive lab tests
+        go much deeper. Here is what each measurement tells you.
+      </p>
+
+      <div class="space-y-6">
+        {parameters.map((p) => (
+          <div class="parameter-card">
+            <div class="parameter-header">
+              <h3 class="text-xl font-semibold text-foreground">{p.name}</h3>
+              <span class="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-full">Measured in: {p.unit}</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-sm">
+              <div>
+                <div class="font-semibold text-foreground mb-1">What it measures:</div>
+                <p class="text-muted-foreground">{p.whatItMeasures}</p>
+              </div>
+              <div>
+                <div class="font-semibold text-foreground mb-1">What high levels mean:</div>
+                <p class="text-muted-foreground">{p.whatHighMeans}</p>
+              </div>
+              <div>
+                <div class="font-semibold text-foreground mb-1">Acceptable range:</div>
+                <p class="text-muted-foreground">{p.goodRange}</p>
+              </div>
+              <div>
+                <div class="font-semibold text-foreground mb-1">Typical Utah range:</div>
+                <p class="text-muted-foreground">{p.typicalUtah}</p>
+              </div>
+            </div>
+            {p.concern && (
+              <div class="mt-4 bg-primary/5 border-l-4 border-primary rounded-r-lg px-4 py-3">
+                <p class="text-sm text-foreground"><strong>Utah context:</strong> {p.concern}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardness Scale Table -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        The Hardness Scale — Where Utah Cities Land
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        If your water test shows a hardness number, here is what it means in context.
+      </p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-primary">
+              <th class="text-left py-3 px-4 text-foreground font-semibold">Classification</th>
+              <th class="py-3 px-4 text-center text-foreground font-semibold">GPG</th>
+              <th class="py-3 px-4 text-center text-foreground font-semibold">mg/L</th>
+              <th class="py-3 px-4 text-left text-foreground font-semibold hidden md:table-cell">What it means</th>
+              <th class="py-3 px-4 text-left text-foreground font-semibold hidden lg:table-cell">Utah cities</th>
+            </tr>
+          </thead>
+          <tbody>
+            {hardnessLevels.map((row, i) => (
+              <tr class={`border-b border-border ${i % 2 === 1 ? "bg-background" : ""}`}>
+                <td class="py-3 px-4 font-semibold text-foreground">{row.classification}</td>
+                <td class="py-3 px-4 text-center text-muted-foreground">{row.gpg}</td>
+                <td class="py-3 px-4 text-center text-muted-foreground">{row.mgL}</td>
+                <td class="py-3 px-4 text-muted-foreground text-sm hidden md:table-cell">{row.what}</td>
+                <td class="py-3 px-4 text-muted-foreground text-xs hidden lg:table-cell">{row.utah}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Get Your Utility Report -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Three Ways to Learn About Your Water
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        From fastest to most comprehensive.
+      </p>
+      <div class="space-y-5">
+        <div class="method-card">
+          <div class="method-number">1</div>
+          <div>
+            <h3 class="text-xl font-semibold text-foreground mb-2">Free Blue Logic In-Home Water Test</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
+              A Blue Logic specialist comes to your home and tests hardness and chlorine on the spot
+              using calibrated field meters. Results are immediate. You get a plain-English explanation
+              of what they mean for your specific home and a transparent system recommendation — all
+              at no cost and with no obligation.
+            </p>
+            <p class="text-xs text-muted-foreground italic">
+              Best for: Understanding whether hard water and chlorine are affecting your home.
+              Fastest path from question to answer.
+            </p>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">2</div>
+          <div>
+            <h3 class="text-xl font-semibold text-foreground mb-2">Your Utility's Consumer Confidence Report (CCR)</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
+              Every Utah water utility is required to publish an annual Consumer Confidence Report — a
+              document listing all detected contaminants, their levels, and how they compare to federal
+              limits. Search "[your city] water quality report [current year]" or check your utility's
+              website. Also available at the EWG Tap Water Database (ewg.org/tapwater) where utility
+              data is displayed against EWG's stricter health guidelines.
+            </p>
+            <p class="text-xs text-muted-foreground italic">
+              Best for: Understanding your city's overall water profile. Reflects utility supply — not
+              necessarily what comes out of your specific tap.
+            </p>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-number">3</div>
+          <div>
+            <h3 class="text-xl font-semibold text-foreground mb-2">Certified Laboratory Water Test</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-3">
+              For specific contaminant concerns — arsenic, lead, PFAS, bacteria, nitrates — a certified
+              lab test is the most comprehensive option. You collect a water sample from your tap and
+              mail it to an accredited laboratory. Results take 1–2 weeks and cost $100–$500+
+              depending on the scope of testing. Utah's Division of Water Quality maintains a list of
+              certified labs.
+            </p>
+            <p class="text-xs text-muted-foreground italic">
+              Best for: Confirming specific contaminant concerns, especially in homes with older plumbing,
+              well water, or in cities with elevated EWG contaminant flags.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Mid -->
+  <section class="bg-primary/5 border-y border-primary/20 py-12 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-serif mb-4 text-foreground">
+        Skip the Research — Let Your Water Tell You
+      </h2>
+      <p class="text-muted-foreground mb-6">
+        The fastest way to understand your Utah home's water is a free in-home test.
+        Blue Logic comes to you, tests on the spot, and explains the results in plain English.
+      </p>
+      <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">
+        Schedule Free Water Test →
+      </a>
+    </div>
+  </section>
+
+  <!-- Common Mistakes -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        Common Misunderstandings About Water Test Results
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {[
+          {
+            myth: "High TDS means dangerous water",
+            reality: "TDS measures all dissolved particles — including benign calcium and magnesium that make Utah water hard. High TDS from hard water minerals is common and is not a health risk by itself. What matters is what the dissolved solids are, not just the total.",
+          },
+          {
+            myth: "If it passes federal standards, it's completely safe",
+            reality: "Federal maximum contaminant levels haven't been comprehensively updated in nearly 20 years. The EWG applies stricter guidelines based on more recent research. Federally compliant does not mean risk-free by more current standards.",
+          },
+          {
+            myth: "A water softener makes my water safe to drink",
+            reality: "A softener removes hardness minerals only. It does not reduce arsenic, PFAS, haloacetic acids, chlorine byproducts, or other contaminants. A water softener improves water performance; it does not improve water safety.",
+          },
+          {
+            myth: "My water looks and tastes fine, so it's fine",
+            reality: "Arsenic has no taste, smell, or color at the levels found in Utah water. PFAS is similarly invisible. The contaminants of greatest concern in Utah water are not detectable by the senses — only by testing.",
+          },
+        ].map((item) => (
+          <div class="bg-card p-5 rounded-xl border border-border">
+            <div class="flex gap-3 mb-3">
+              <span class="text-error font-bold text-sm shrink-0 mt-0.5">✗ Myth:</span>
+              <span class="font-medium text-foreground text-sm">{item.myth}</span>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-success font-bold text-sm shrink-0 mt-0.5">✓ Reality:</span>
+              <span class="text-muted-foreground text-sm leading-relaxed">{item.reality}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/utah-water-quality/" class="related-link">Utah Water Quality Guide</a>
+        <a href="/utah-hard-water/" class="related-link">Utah Hard Water Guide</a>
+        <a href="/how-to-choose-water-treatment-system/" class="related-link">How to Choose a System</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Ready to Test Your Water?
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic's free in-home water test is the fastest way to go from
+        questions to answers about your Utah home's water. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .parameter-card {
+    @apply bg-card p-6 md:p-8 rounded-2xl border border-border border-l-4 border-l-primary;
+  }
+
+  .parameter-header {
+    @apply flex justify-between items-start gap-4 flex-wrap;
+  }
+
+  .method-card {
+    @apply flex gap-5 items-start bg-card p-6 md:p-8 rounded-2xl border border-border;
+  }
+
+  .method-number {
+    @apply w-10 h-10 shrink-0 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

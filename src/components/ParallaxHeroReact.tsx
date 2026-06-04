@@ -19,8 +19,8 @@ export default function ParallaxHeroReact({
   title = "Your Family, Unfiltered.",
   subtitle = "Professional reverse osmosis systems for the health-conscious home",
   tagline = "Half the cost. Half the footprint. 10x quieter.",
-  ctaText = "Schedule Free Water Audit",
-  ctaHref = "#contact",
+  ctaText = "Schedule Free Water Test",
+  ctaHref = "/free-water-test/",
   imageSrc,
 }: ParallaxHeroProps) {
   const containerRef = useRef<HTMLElement>(null);

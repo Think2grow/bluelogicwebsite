@@ -1,0 +1,329 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Why does Lehi have the highest arsenic levels on the Wasatch Front?",
+    answer: "Lehi's water supply draws from sources influenced by Utah County's natural geology — volcanic and mineral-rich formations that have elevated naturally occurring arsenic levels. Lehi's EWG data shows arsenic at 484 times EWG's health guideline, making it one of the highest arsenic levels detected in the region. The arsenic is naturally occurring, not industrial contamination, and Lehi's water meets all federal legal standards. EWG's guideline is far stricter than the EPA's legal limit.",
+  },
+  {
+    question: "I just moved into a new Lehi home. Should I test the water?",
+    answer: "Yes — and the sooner the better. New construction doesn't change the municipal water source, and new plumbing can actually introduce additional variables during the first year. Lehi's fast growth has brought thousands of new homes online in areas including Saratoga Springs, the Silicon Slopes corridor, and the city's eastern developments. Your Blue Logic water test is free, takes less than an hour, and tells you exactly what's in your home's specific tap water — not just the city average.",
+  },
+  {
+    question: "Does Blue Logic serve Lehi and surrounding communities like Saratoga Springs and Eagle Mountain?",
+    answer: "Yes. Blue Logic serves Lehi and the surrounding Utah County communities including Saratoga Springs, Eagle Mountain, American Fork, Pleasant Grove, and Lindon. Many of these communities draw from the same JVWCD surface water system that serves Lehi, with similar water quality profiles.",
+  },
+  {
+    question: "What system does Blue Logic recommend for Lehi's water?",
+    answer: "Given Lehi's arsenic levels and the presence of hexavalent chromium and haloacetic acids, whole-home reverse osmosis is the most comprehensive solution. The RO membrane works at the molecular level to address contaminants that standard filtration doesn't fully reach. That said, the recommendation is always based on your specific water test results — some Lehi homes may be better served by the whole-home filtration system depending on which contaminants are most relevant to their specific source.",
+  },
+  {
+    question: "How much does a whole-home water system cost in Lehi?",
+    answer: "Blue Logic systems range from $5,995 to $19,999 depending on the system selected and your home's configuration. Lehi's newer homes are generally well-suited for installation — utility rooms are typically appropriately sized and plumbing is modern. Blue Logic offers in-house financing with half down and flexible repayment terms. We also offer a price-match guarantee on any written competing quote.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Lehi"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Lehi", url: "/locations/lehi/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Lehi Utah | Blue Logic Water"
+  description="Lehi has the highest arsenic levels on the Wasatch Front — 484x the EWG health guideline. Blue Logic installs whole-home RO and filtration in Lehi and Silicon Slopes. Free water test."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · Silicon Slopes · Saratoga Springs · Eagle Mountain
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Lehi, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Lehi's water supply has the highest arsenic levels detected on the Wasatch Front —
+        484 times EWG's health guideline — while remaining federally compliant.
+        If you've moved into a new home or are planning to, this is the first thing to know.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all"
+        >
+          Schedule Free Water Test →
+        </a>
+        <a
+          href="tel:+18019802583"
+          class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+        >
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Data -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Lehi's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database. All levels are within federal legal standards.
+        EWG health guidelines are stricter than federal law and reflect more recent research.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">484x</div>
+          <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Highest arsenic level on the Wasatch Front. Naturally occurring; federally compliant.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">12</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, chromium-6, and haloacetic acids. Source: EWG Tap Water Database.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~11–16 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Hard to very hard — varies by area and season as JVWCD blend changes.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">484x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chromium (hexavalent / chromium-6)</span>
+            <span class="badge badge-alert">29x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA5)</span>
+            <span class="badge badge-alert">41x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Hardness minerals</span>
+            <span class="badge badge-primary">~11–16 GPG — Hard to Very Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH25015" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Lehi City Water →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Lehi's Water Source</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Lehi receives treated surface water purchased from the Jordan Valley Water Conservancy District (JVWCD),
+          which sources water from mountain watersheds including the Provo River system, Utah Lake, and the
+          Central Utah Project. The arsenic and chromium-6 levels are characteristic of Utah County's
+          geological baseline — naturally occurring minerals in the source geology, not industrial contamination.
+          Lehi's rapid growth (from roughly 30,000 to 80,000+ residents in two decades) has placed this water
+          quality issue in front of tens of thousands of new homeowners.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Silicon Slopes Context -->
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        New Homes in Lehi, Saratoga Springs, and Eagle Mountain
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-muted-foreground leading-relaxed mb-4">
+            Lehi and its neighboring Silicon Slopes communities have grown faster than almost any
+            market in the western US. New construction doesn't mean new water — homes built last
+            year in Saratoga Springs receive the same municipal water supply as homes built a
+            decade ago. The arsenic and contaminant profile doesn't change with the home's age.
+          </p>
+          <p class="text-muted-foreground leading-relaxed mb-4">
+            Many new Lehi homeowners discover their water concerns during the first year —
+            when they notice scale on their new fixtures, a chlorine smell in a hot shower,
+            or just want to understand what the water report says. A Blue Logic water test
+            is the clearest way to see your specific home's picture.
+          </p>
+          <p class="text-muted-foreground leading-relaxed">
+            Blue Logic's compact system design (roughly half the footprint of traditional
+            whole-home RO units) fits well in Lehi's modern utility rooms. Most installations
+            in new Lehi construction are completed in 4–6 hours.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          {["Lehi", "Saratoga Springs", "Eagle Mountain", "American Fork", "Cedar Hills", "Pleasant Grove"].map((community) => (
+            <div class="community-chip">{community}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why RO for Lehi -->
+  <section class="bg-background py-12 md:py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        Why Lehi's Water Profile Points Toward RO
+      </h2>
+      <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-6">
+        <p class="text-muted-foreground leading-relaxed mb-4">
+          Lehi's arsenic and chromium-6 levels are the key distinction. A standard water softener
+          addresses hardness only — it does not meaningfully reduce arsenic or chromium-6. A
+          whole-home filtration system (7-layer media) addresses chlorine, chloramines, iron,
+          manganese, and hardness, but does not fully address arsenic or chromium-6 on its own.
+        </p>
+        <p class="text-muted-foreground leading-relaxed">
+          Reverse osmosis works at the molecular level. The 0.0001-micron RO membrane is
+          specifically designed to address dissolved inorganic contaminants like arsenic and
+          chromium-6 — the contaminants that Lehi's water profile shows at elevated levels.
+          This is why whole-home RO is the most complete solution for most Lehi households
+          concerned about their water quality.
+        </p>
+      </div>
+      <div class="text-center">
+        <a href="/whole-home-reverse-osmosis-utah/" class="text-primary font-semibold hover:opacity-80 transition-opacity">
+          Learn how whole-home RO works →
+        </a>
+        <span class="mx-4 text-muted-foreground">·</span>
+        <a href="/water-softener-vs-whole-home-filtration/" class="text-primary font-semibold hover:opacity-80 transition-opacity">
+          Compare all options →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Lehi Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Cities -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          { name: "American Fork", slug: "american-fork" },
+          { name: "Orem", slug: "orem" },
+          { name: "Provo", slug: "provo" },
+          { name: "Sandy", slug: "sandy" },
+        ].map((city) => (
+          <a href={`/locations/${city.slug}/`} class="related-link">{city.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Lehi Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Lehi and all of Silicon Slopes. A specialist will test your water
+        on-site and recommend the right system for your home. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .hero-gradient-dark {
+    @apply bg-linear-to-br from-primary to-primary/70;
+  }
+
+  .stat-box {
+    @apply bg-card p-6 rounded-xl border-2 border-border text-center;
+  }
+
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+
+  .contaminant-row {
+    @apply flex justify-between items-center py-2 border-b border-border;
+  }
+
+  .badge {
+    @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4;
+  }
+
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+
+  .community-chip {
+    @apply text-center py-3 px-4 bg-background border border-border rounded-xl text-sm font-medium text-muted-foreground;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

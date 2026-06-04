@@ -28,8 +28,8 @@ const {
   og = {},
 } = Astro.props;
 
-// Get the current URL
-const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+// Normalize site URL — always use www canonical
+const siteUrl = "https://www.bluelogicwater.com";
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
 // Base organization schema for all pages
@@ -63,6 +63,7 @@ const allSchemas = schema
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={currentUrl} />
     <title>{title}</title>
 
     <!-- Open Graph Meta Tags -->
@@ -119,12 +120,6 @@ const allSchemas = schema
       fbq('track', 'PageView');
     </script>
 
-    <script
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="69e6e0281024ff50c0585ab1"
-    ></script>
-    
     <!-- astro view transitions -->
     <ClientRouter />
   </head>
@@ -148,5 +143,14 @@ const allSchemas = schema
     </main>
 
     <Footer />
+
+    <!-- LeadConnector chat widget — deferred to end of body to protect LCP -->
+    <script
+      is:inline
+      src="https://widgets.leadconnectorhq.com/loader.js"
+      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+      data-widget-id="69e6e0281024ff50c0585ab1"
+      defer
+    ></script>
   </body>
 </html>

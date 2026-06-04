@@ -1,0 +1,344 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import Reviews from "../components/Reviews.astro";
+import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
+import { Image } from "astro:assets";
+import hardWaterBuildup from "../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Does Blue Logic install traditional salt-based water softeners?",
+    answer: "Blue Logic's approach to water softening is integrated rather than standalone. Our whole-home filtration and purification systems include a water softening stage (using EvoResin ion-exchange media) that conditions water using approximately 75% less salt than a traditional softener — delivering softened water throughout your home without the slippery feel or excessive salt consumption of conventional units. A free water test will confirm whether a standalone softener or an integrated system is the right fit for your home.",
+  },
+  {
+    question: "What is the water hardness in Utah, and why does it matter?",
+    answer: "Utah has some of the hardest water in the country. Most Wasatch Front communities receive water at 15–25+ grains per gallon (GPG), compared to the 0–3 GPG range considered 'soft.' At those hardness levels, mineral scale builds up rapidly on fixtures and inside appliances. Water heaters operating in hard water lose significant efficiency over time, and appliance lifespans are meaningfully shorter than in soft-water regions.",
+  },
+  {
+    question: "What does a water softener NOT remove?",
+    answer: "A standard water softener removes calcium and magnesium (the minerals that cause hardness) through ion exchange. It does not meaningfully reduce chlorine, chloramine byproducts, PFAS, arsenic, dissolved organic compounds, nitrates, or most other contaminants. If you are concerned about what you drink and cook with — not just scale on your fixtures — a whole-home filtration or reverse osmosis system addresses a much broader range of water quality concerns.",
+  },
+  {
+    question: "How much salt does the Blue Logic system use?",
+    answer: "Blue Logic's integrated softening media (EvoResin) is engineered for efficiency — using approximately 75% less salt than conventional salt-based softeners. For a typical Utah family of four, this translates to approximately one salt refill every two to three months rather than monthly or more frequent refills with a traditional softener.",
+  },
+  {
+    question: "Will a water softener fix the white spots on my dishes and shower doors?",
+    answer: "Yes — water softening removes the calcium and magnesium that cause those white, chalky spots. If spotting persists after softening, it may indicate that other dissolved solids are contributing to the residue, which a whole-home filtration or RO system would address more completely.",
+  },
+  {
+    question: "How is the Blue Logic integrated softener different from a standalone water softener?",
+    answer: "A standalone water softener addresses hardness minerals only. Blue Logic's softening is one stage of a multi-layer system that also removes chlorine, chloramines, iron, manganese, and other contaminants. You get softened water plus meaningfully cleaner water in one installation — priced at $5,995–$19,999 with a written price-match guarantee on any competing quote.",
+  },
+];
+
+const schemas = [
+  getServiceSchema(
+    `${siteUrl}/water-softener-utah/`,
+    "Water Softener Installation Utah — Blue Logic Water",
+    "Blue Logic installs integrated water softening systems across Utah's Wasatch Front. Our whole-home filtration and purification systems include advanced water softening using 75% less salt than traditional softeners — addressing hardness, scale, and a broad range of water quality concerns in one system.",
+  ),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Water Softener Utah", url: "/water-softener-utah/" },
+  ]),
+  getAggregateRatingSchema(`${siteUrl}/water-softener-utah/`, 5.0, 10),
+];
+---
+
+<Layout
+  title="Water Softener Utah | Blue Logic Water — Wasatch Front"
+  description="Utah's hard water destroys appliances and dries skin. Blue Logic installs integrated water softening systems using 75% less salt. Free in-home water test. Wasatch Front."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Salt Lake · Utah · Davis · Weber Counties
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Water Softener Installation for Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+        Utah has some of the hardest water in the US. Blue Logic installs integrated water
+        softening systems that address hardness and a full spectrum of water quality concerns —
+        using 75% less salt than traditional softeners.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-primary/90 transition-all"
+        >
+          Schedule Free Water Test →
+        </a>
+        <a
+          href="tel:+18019802583"
+          class="inline-block border-2 border-primary text-primary font-semibold text-lg px-8 py-4 rounded-full hover:bg-primary/5 transition-all"
+        >
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Hard Is Utah's Water -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <Image
+            src={hardWaterBuildup}
+            alt="Severe mineral and scale buildup on a showerhead from Utah hard water"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={60}
+          />
+          <p class="text-sm text-muted-foreground text-center mt-3 italic">
+            Mineral scale buildup from Utah hard water — a common sight on showerheads and fixtures.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Why Utah Water Is So Hard
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-4">
+            The Wasatch Front sits above a geology rich in limestone and carbonate rock. As water
+            moves through these formations on its way to reservoirs and aquifers, it dissolves
+            calcium and magnesium — the minerals that cause hardness. By the time it reaches your
+            tap, most Utah communities are dealing with water in the 15 to 25+ grains-per-gallon
+            (GPG) range, placing it firmly in the "very hard" category.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+            For context, water above 10.5 GPG is classified as very hard. Most of the US averages
+            around 7–10 GPG. Much of the Wasatch Front runs significantly above that.
+          </p>
+          <a href="/utah-hard-water/" class="text-primary font-semibold hover:opacity-80 transition-opacity">
+            Learn more about Utah hard water →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Hard Water Does -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        What Hard Water Does to Your Home and Family
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Hard water is more than an inconvenience — it has measurable costs for Utah homeowners.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="impact-card">
+          <h3 class="text-xl font-semibold mb-3 text-foreground">Appliance Damage</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Mineral scale builds up inside water heaters, dishwashers, and washing machines.
+            Research from the Water Quality Association indicates hard water can reduce water heater
+            efficiency by up to 24–48% and meaningfully shorten appliance lifespans. In Utah's very
+            hard water regions, scale accumulation is accelerated.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3 class="text-xl font-semibold mb-3 text-foreground">Pipe and Fixture Scale</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Calcium deposits gradually narrow pipes and clog showerheads, faucet aerators, and
+            fixture valves. The white residue on your shower doors and around your faucets is the
+            visible evidence of minerals depositing every time water evaporates.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3 class="text-xl font-semibold mb-3 text-foreground">Skin and Hair</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Hard water minerals can interfere with soap lathering and leave a residue on skin and
+            hair after bathing. Many people notice drier skin and duller, less manageable hair in
+            hard water areas. Softer water typically produces a noticeably different — and for most
+            people, better — bathing experience.
+          </p>
+        </div>
+        <div class="impact-card">
+          <h3 class="text-xl font-semibold mb-3 text-foreground">Dishes and Laundry</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Hard water reduces the effectiveness of detergents and soaps, requiring more product
+            to achieve the same cleaning result. Dishes emerge from the dishwasher with a white
+            film; fabrics washed in hard water can feel stiff and may show accelerated wear.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Softener Alone vs. Integrated System -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Is a Standalone Softener Enough for Utah Water?
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        An honest breakdown of what a softener addresses — and what it doesn't.
+      </p>
+
+      <div class="overflow-x-auto mb-8">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-primary">
+              <th class="text-left py-3 px-4 text-foreground font-semibold">Water Quality Concern</th>
+              <th class="py-3 px-4 text-center text-muted-foreground font-semibold">Standalone Softener</th>
+              <th class="py-3 px-4 text-center text-primary font-semibold">Blue Logic Integrated System</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground">Hard water / scale / spots</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground">Chlorine smell and taste</td>
+              <td class="py-3 px-4 text-center text-error">✗ No</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground">Iron / manganese (rust staining)</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Limited</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes (Katalox stage)</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground">Total dissolved solids (TDS)</td>
+              <td class="py-3 px-4 text-center text-error">✗ No</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes (with RO upgrade)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground">PFAS / heavy metals / contaminants</td>
+              <td class="py-3 px-4 text-center text-error">✗ No</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Addressed (with RO upgrade)</td>
+            </tr>
+            <tr>
+              <td class="py-3 px-4 text-foreground">Drinking water taste improvement</td>
+              <td class="py-3 px-4 text-center text-error">✗ No</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8">
+        <h3 class="font-semibold text-foreground mb-3">Blue Logic's honest recommendation:</h3>
+        <p class="text-muted-foreground leading-relaxed">
+          If your only concern is scale on fixtures and in appliances, a water softener may be
+          sufficient. If you're also concerned about what your family drinks and cooks with, or if
+          your water has chlorine odor, visible discoloration, or a mineral taste, a whole-home
+          filtration or purification system addresses all of those concerns in one installation.
+          Your free water test will show you exactly what's in your water so you can make an
+          informed decision — not a sales-driven one.
+        </p>
+      </div>
+
+      <div class="text-center mt-8">
+        <a
+          href="/water-softener-vs-whole-home-filtration/"
+          class="text-primary font-semibold hover:opacity-80 transition-opacity"
+        >
+          Full comparison: Softener vs. Filtration vs. RO →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews max={6} />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related + Service Area -->
+  <section class="bg-background py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-serif mb-6 text-foreground">Related Pages</h2>
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a href="/whole-home-reverse-osmosis-utah/" class="related-link">Whole-Home Reverse Osmosis</a>
+        <a href="/whole-home-water-filtration/" class="related-link">Whole-Home Filtration</a>
+        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare Options</a>
+        <a href="/utah-hard-water/" class="related-link">Utah Hard Water Guide</a>
+      </div>
+      <p class="text-muted-foreground text-sm">
+        Serving: Salt Lake City · Provo · Orem · Lehi · Sandy · Draper · Ogden · Layton · Bountiful · American Fork · Spanish Fork · Springville and surrounding Wasatch Front communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Water Test
+      </h2>
+      <p class="text-lg text-muted-foreground text-center mb-10">
+        A Blue Logic specialist will test your home's water on-site and recommend whether
+        softening alone or an integrated system is the right solution. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .impact-card {
+    @apply bg-background p-6 rounded-2xl border border-border border-l-4 border-l-primary;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

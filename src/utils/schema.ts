@@ -25,11 +25,11 @@ export const DEFAULT_OG_METADATA: OpenGraphMetadata = {
   title: "Blue Logic Water - Professional RO Systems",
   description:
     "Premium reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
-  image: "/Blue%20Logic%20Logo%20FINAL-02.png",
+  image: "/3%20Blue%20Logic%20Water%20Logo-13.jpg",
   imageWidth: "1200",
   imageHeight: "630",
-  imageAlt: "Blue Logic Water Logo",
-  imageType: "image/png",
+  imageAlt: "Blue Logic Water — Whole-Home Reverse Osmosis Systems",
+  imageType: "image/jpeg",
   type: "website",
 };
 
@@ -89,8 +89,8 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     "@type": "Organization",
     name: "Blue Logic Water",
     url: url,
-    logo: new URL("favicon.ico", url).toString(),
-    image: new URL("Blue%20Logic%20Logo%20FINAL-02.png", url).toString(),
+    logo: new URL("3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
+    image: new URL("3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     description:
       "Professional whole home reverse osmosis water purification systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
     email: "info@bluelogicwater.com",
@@ -109,8 +109,17 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
   };
 }
 
+const WASATCH_FRONT_CITIES = [
+  "Salt Lake City", "Provo", "Orem", "Lehi", "Sandy", "Draper",
+  "Ogden", "Layton", "Bountiful", "American Fork", "Spanish Fork",
+  "Springville", "Murray", "Millcreek", "Cottonwood Heights", "Holladay",
+  "West Jordan", "South Jordan", "Herriman", "Saratoga Springs",
+  "Eagle Mountain", "Pleasant Grove", "Lindon", "Payson", "Park City",
+];
+
 /**
- * Local business schema for location pages
+ * Local business schema for location pages.
+ * Includes full Wasatch Front areaServed plus the specific city.
  */
 export function getLocalBusinessSchema(
   url: string,
@@ -118,16 +127,21 @@ export function getLocalBusinessSchema(
   state: string = "UT",
 ): LocalBusinessSchema {
   const base = getBaseOrganizationSchema(url);
+  const cities = WASATCH_FRONT_CITIES.includes(city)
+    ? WASATCH_FRONT_CITIES
+    : [city, ...WASATCH_FRONT_CITIES];
   return {
     ...base,
     "@type": "LocalBusiness",
-    priceRange: "$$$",
-    areaServed: [
-      {
-        "@type": "City",
-        name: city,
-      },
-    ],
+    priceRange: "$$",
+    areaServed: cities.map((c) => ({ "@type": "City", name: c })),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: "10",
+    },
   } as LocalBusinessSchema;
 }
 
@@ -140,14 +154,15 @@ export function getProductSchema(url: string): ProductSchema {
     "@type": "Product",
     name: "Blue Logic Whole Home Reverse Osmosis System",
     description:
-      "Professional whole home reverse osmosis water purification system. 50% smaller footprint, 10x quieter operation, and half the cost of traditional systems. Removes 99% of contaminants from every tap.",
+      "Professional whole home reverse osmosis water purification system. NSF-certified components. $5,995–$19,999 installed. Written price-match guarantee on any competing quote. Serving Utah's Wasatch Front.",
     brand: {
       "@type": "Brand",
       name: "Blue Logic Water",
     },
     offers: {
-      "@type": "Offer",
-      price: "15000",
+      "@type": "AggregateOffer",
+      lowPrice: "5995",
+      highPrice: "19999",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       url: url,
@@ -192,6 +207,67 @@ export function getBreadcrumbSchema(
       name: item.name,
       item: `${url}${item.url}`,
     })),
+  };
+}
+
+/**
+ * Service schema for service landing pages (RO, filtration, softener, etc.)
+ */
+export function getServiceSchema(
+  url: string,
+  serviceName: string,
+  serviceDescription: string,
+  offerName: string = "Free In-Home Water Test",
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: serviceName,
+    description: serviceDescription,
+    url: url,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "Blue Logic Water",
+      url: "https://www.bluelogicwater.com",
+      telephone: "+1-801-980-2583",
+    },
+    areaServed: {
+      "@type": "State",
+      name: "Utah",
+    },
+    serviceType: "Water Treatment",
+    offers: {
+      "@type": "Offer",
+      name: offerName,
+      price: "0",
+      priceCurrency: "USD",
+      description: "Free in-home water test with no cost or obligation. Blue Logic specialist tests your water on-site and recommends the right system.",
+      url: "https://www.bluelogicwater.com/free-water-test/",
+    },
+  };
+}
+
+/**
+ * AggregateRating schema — only use on pages where reviews are visibly displayed.
+ * reviewCount and ratingValue must match what is actually shown on the page.
+ */
+export function getAggregateRatingSchema(
+  url: string,
+  ratingValue: number = 5.0,
+  reviewCount: number = 10,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Blue Logic Water",
+    url: url,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: ratingValue.toFixed(1),
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: reviewCount,
+    },
   };
 }
 

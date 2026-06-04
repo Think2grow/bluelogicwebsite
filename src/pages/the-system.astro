@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { getProductSchema, getBreadcrumbSchema } from "../utils/schema";
+import { getProductSchema, getBreadcrumbSchema, getServiceSchema } from "../utils/schema";
 import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 import { Image } from "astro:assets";
 import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
@@ -9,30 +9,34 @@ import BrochureDownload from "../components/BrochureDownload.astro";
 
 export const prerender = true;
 
-// Generate product page-specific schema
-const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+const siteUrl = "https://www.bluelogicwater.com";
 
 const schemas = [
-  getProductSchema(`${siteUrl}/the-system`),
+  getProductSchema(`${siteUrl}/the-system/`),
+  getServiceSchema(
+    `${siteUrl}/the-system/`,
+    "Blue Logic Water Treatment Systems — Utah",
+    "Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softener systems across Utah's Wasatch Front. NSF-certified components. Written price-match guarantee on any competing quote.",
+  ),
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
-    { name: "The System", url: "/the-system" },
+    { name: "Our Systems", url: "/the-system/" },
   ]),
 ];
 ---
 
 <Layout
-  title="Whole Home Reverse Osmosis System | Blue Logic Water"
-  description="Professional whole home reverse osmosis system. Remove 99% of contaminants from every tap. Advanced 5-stage purification technology."
+  title="Water Treatment Systems Utah | Blue Logic Water"
+  description="Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softeners across Utah's Wasatch Front. NSF-certified. Written price-match guarantee. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl md:text-6xl font-serif mb-4 text-foreground">
-        Whole Home Reverse Osmosis System
+        Blue Logic Water Treatment Systems
       </h1>
       <p class="text-xl md:text-2xl text-muted-foreground">
-        Professional-grade water purification at every tap in your home
+        Whole-home reverse osmosis, filtration, and water softening for Utah homes
       </p>
     </div>
   </section>
@@ -125,12 +129,13 @@ const schemas = [
               </li>
             </ul>
           </div>
-          <div
-            class="pt-4 border-t border-border text-sm text-muted-foreground"
-          >
+          <div class="pt-4 border-t border-border text-sm text-muted-foreground">
             <strong class="text-foreground">Verdict:</strong> Does not remove chemicals,
             toxins, or contaminants. Does not improve taste, odor, or drinking safety.
           </div>
+          <a href="/water-softener-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
+            Water Softener Utah →
+          </a>
         </div>
 
         <div class="approach-card approach-better">
@@ -171,12 +176,13 @@ const schemas = [
               </li>
             </ul>
           </div>
-          <div
-            class="pt-4 border-t border-border text-sm text-muted-foreground"
-          >
+          <div class="pt-4 border-t border-border text-sm text-muted-foreground">
             <strong class="text-foreground">Verdict:</strong> The best whole-home
             filtration on the market—smart, balanced, and built to last.
           </div>
+          <a href="/whole-home-water-filtration/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
+            Whole-Home Filtration Details →
+          </a>
         </div>
 
         <div class="approach-card approach-best">
@@ -217,12 +223,13 @@ const schemas = [
               </li>
             </ul>
           </div>
-          <div
-            class="pt-4 border-t border-border text-sm text-muted-foreground"
-          >
+          <div class="pt-4 border-t border-border text-sm text-muted-foreground">
             <strong class="text-foreground">Verdict:</strong> The only true purification
             solution—better than bottled water at every tap.
           </div>
+          <a href="/whole-home-reverse-osmosis-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
+            Whole-Home RO Details →
+          </a>
         </div>
       </div>
 
@@ -601,7 +608,7 @@ const schemas = [
       <p class="text-xl text-muted-foreground mb-6">
         Schedule a free water quality assessment
       </p>
-      <a href="/#contact" class="btn btn-primary btn-lg w-full md:w-auto">Get Started</a>
+      <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Get Started</a>
       <BrochureDownload />
       <p class="text-muted-foreground mt-8">
         Want to understand the cost benefits? See <a

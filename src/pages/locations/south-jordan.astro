@@ -1,0 +1,216 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Why does South Jordan have such high disinfection byproduct levels?",
+    answer: "South Jordan receives treated surface water from the Jordan Valley Water Conservancy District, sourced from Wasatch mountain watersheds. Mountain snowmelt and watershed runoff carry naturally high concentrations of organic compounds. When utilities chlorinate this organic-rich water to make it safe for distribution, the chlorine reacts with the organic material to form haloacetic acids (HAAs), total trihalomethanes (THMs), and chloroform — collectively called disinfection byproducts. South Jordan's HAA9 at 525x the EWG health guideline and chloroform at 62x reflect this chemistry in an area that draws heavily from surface water.",
+  },
+  {
+    question: "Is South Jordan water hard?",
+    answer: "Yes. South Jordan water is very hard — typically around 18 grains per gallon (approximately 345–475 mg/L). This is in the 'very hard' category. Scale accumulation on fixtures, appliances, and hot water systems is ongoing and measurable for South Jordan homeowners on untreated water. The newer construction in South Jordan's master-planned communities often uses premium fixtures and appliances that are especially visible victims of hard water.",
+  },
+  {
+    question: "Do the master-planned communities in South Jordan (Daybreak, Rosecrest) have the same water?",
+    answer: "Yes. Daybreak, Rosecrest, and other South Jordan master-planned communities all receive water from the JVWCD system with the same general water quality profile as the rest of South Jordan. New construction and premium home finishes do not change the source water — a newly installed fixture in a Daybreak home is exposed to the same hard water and disinfection byproducts as an older South Jordan neighborhood.",
+  },
+  {
+    question: "What is the best system for South Jordan's water?",
+    answer: "South Jordan's primary concerns are disinfection byproducts (HAA9, chloroform, THMs) and very hard water. The whole-home filtration system's catalytic carbon stage specifically addresses chloramine and HAA precursors, while the softening stage handles the 18 GPG hardness. For homeowners who also want to address all dissolved contaminants at the molecular level, the whole-home RO upgrade is the most complete option. Your free water test confirms which system configuration is right for your home.",
+  },
+  {
+    question: "What's included in Blue Logic's offer for South Jordan homeowners?",
+    answer: "Blue Logic's current offers include a free in-home water test (no cost, no obligation), a free under-sink RO system ($1,000 value) with any whole-home filtration purchase, and a free upgrade to a 250-gallon storage tank with whole-home purification purchase. We also offer in-house financing with half down and a written price-match guarantee on any competing quote from a licensed water treatment company.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "South Jordan"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "South Jordan", url: "/locations/south-jordan/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment South Jordan Utah | Blue Logic Water"
+  description="South Jordan has HAA9 disinfection byproducts at 525x the EWG guideline — the highest in the Salt Lake Valley. Blue Logic installs whole-home filtration and RO in South Jordan. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · JVWCD · Daybreak · Rosecrest · Mountain Point
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for South Jordan, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        South Jordan's water contains haloacetic acid disinfection byproducts at 525 times the
+        EWG health guideline — the highest HAA9 level in the Salt Lake Valley — while remaining
+        federally compliant. Blue Logic addresses this and South Jordan's hard water in one system.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        South Jordan's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database. All levels meet federal legal standards.
+        EWG guidelines reflect stricter, more recently researched thresholds.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">525x</div>
+          <div class="font-semibold text-foreground mb-1">HAA9 vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Highest haloacetic acid level in the Salt Lake Valley. Result of chlorinating organic-rich mountain surface water.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">245x</div>
+          <div class="font-semibold text-foreground mb-1">THMs vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Total trihalomethanes — another class of disinfection byproducts from the same chlorination chemistry.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard — rapid scale on premium fixtures and appliances common in South Jordan's master-planned communities.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA9)</span>
+            <span class="badge badge-alert">525x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Total trihalomethanes (THMs)</span>
+            <span class="badge badge-alert">245x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chloroform</span>
+            <span class="badge badge-alert">62x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness</span>
+            <span class="badge badge-primary">~18 GPG — Very Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border flex items-center justify-between flex-wrap gap-3">
+          <p class="text-xs text-muted-foreground">15 total contaminants above EWG health guidelines. Source:</p>
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18023" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for South Jordan →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Premium Homes, Premium Water Concerns</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          South Jordan is home to some of the most thoughtfully designed master-planned communities
+          in the Salt Lake Valley — Daybreak, Rosecrest, and Mountain Point feature premium construction
+          with high-end finishes. Hard water is particularly visible in these homes: glass shower
+          doors, natural stone counters, and premium fixtures accumulate mineral deposits and etch
+          irreversibly over time without treatment.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          And the water quality profile — HAA9 at 525x the EWG guideline — means the disinfection
+          byproduct concern is real for families who drink and cook with South Jordan tap water.
+          Blue Logic's system addresses both the scale problem and the water quality concern in one
+          whole-home installation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        South Jordan Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"West Jordan",slug:"west-jordan"},{name:"Sandy",slug:"sandy"},{name:"Draper",slug:"draper"},{name:"Salt Lake City",slug:"salt-lake-city"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free South Jordan Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves all of South Jordan including Daybreak, Rosecrest, and Mountain Point.
+        A specialist will test your water on-site — no cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

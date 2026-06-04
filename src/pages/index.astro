@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import ParallaxHero from "../components/ParallaxHero.astro";
 import ProductExplosion from "../components/ProductExplosion.astro";
-import { getBreadcrumbSchema } from "../utils/schema";
+import Reviews from "../components/Reviews.astro";
+import { getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
 import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
@@ -14,21 +15,24 @@ export const prerender = true;
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 
-const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
+const schemas = [
+  getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }]),
+  getAggregateRatingSchema(`${siteUrl}/`, 5.0, 10),
+];
 ---
 
 <Layout
-  title="Whole Home Reverse Osmosis Systems | Blue Logic Water - Salt Lake City"
-  description="Professional whole home reverse osmosis systems for Salt Lake City. Remove 99% of contaminants at every tap. Half the cost of competitors."
+  title="Water Treatment Utah | Blue Logic Water — Wasatch Front"
+  description="Whole-home reverse osmosis and filtration systems for Utah's Wasatch Front. Competitively priced with a written price-match guarantee. Free in-home water test. Serving Ogden to Springville."
   schema={schemas}
 >
   <!-- Localized Parallax Hero (Task 3.2) -->
   <ParallaxHero
     title="Your Family, Unfiltered."
     subtitle="Whole home reverse osmosis systems for the health-conscious home"
-    tagline="The Logic Behind Purity"
-    ctaText="Schedule Free Consultation"
-    ctaHref="#contact"
+    tagline="Half the cost. Half the footprint. 10x quieter."
+    ctaText="Schedule Free Water Test"
+    ctaHref="/free-water-test/"
   />
 
   <section class="bg-background py-16 md:py-20 px-4">
@@ -36,25 +40,50 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
       <h2 class="text-3xl md:text-4xl font-serif mb-8 text-foreground">
         Purity Without the Premium
       </h2>
-      <p
-        class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto"
-      >
-        We believe every family deserves access to the purest water without the
-        inflated price tag. Blue Logic Water delivers professional-grade <a
-          href="/the-system"
-          class="text-primary hover:underline font-semibold"
-          >whole home reverse osmosis systems</a
-        > at roughly half the industry cost.
+      <p class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto">
+        Blue Logic installs professional-grade <a href="/whole-home-reverse-osmosis-utah/" class="text-primary hover:underline font-semibold">whole-home reverse osmosis systems</a>, <a href="/whole-home-water-filtration/" class="text-primary hover:underline font-semibold">whole-home filtration</a>, and <a href="/water-softener-utah/" class="text-primary hover:underline font-semibold">water softeners</a> across Utah's Wasatch Front — backed by a written price-match guarantee on any competing quote.
       </p>
-      <p
-        class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto"
-      >
-        Our mission is simple: protect your health, home, and peace of mind with
-        clean water everywhere it matters. We serve <a
-          href="/locations/salt-lake-city"
-          class="text-primary hover:underline font-semibold">Salt Lake City</a
-        > and beyond with advanced purification technology at a fair price.
+      <p class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
+        Every system starts with a <a href="/free-water-test/" class="text-primary hover:underline font-semibold">free in-home water test</a>. We serve <a href="/locations/salt-lake-city/" class="text-primary hover:underline font-semibold">Salt Lake City</a>, <a href="/locations/provo/" class="text-primary hover:underline font-semibold">Provo</a>, <a href="/locations/lehi/" class="text-primary hover:underline font-semibold">Lehi</a>, <a href="/locations/draper/" class="text-primary hover:underline font-semibold">Draper</a>, and the full Wasatch Front.
       </p>
+    </div>
+  </section>
+
+  <!-- Services Hub -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Water Treatment Systems for Utah Homes
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Three levels of water treatment — each starting with an integrated water softener and building from there.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <a href="/water-softener-utah/" class="service-card group">
+          <div class="service-icon">💧</div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Water Softener</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Addresses hard water, scale, and appliance damage. Integrated softening using 75% less salt than traditional units.</p>
+          <span class="text-primary text-sm font-semibold">Learn more →</span>
+        </a>
+        <a href="/whole-home-water-filtration/" class="service-card group border-primary/30">
+          <div class="service-icon">🔵</div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Whole-Home Filtration</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Softening plus 7-layer media filtration for chlorine, chloramines, iron, manganese, and taste. Includes free under-sink RO.</p>
+          <span class="text-primary text-sm font-semibold">Learn more →</span>
+        </a>
+        <a href="/whole-home-reverse-osmosis-utah/" class="service-card group bg-primary/5 border-primary/40">
+          <div class="service-icon">✨</div>
+          <div class="text-xs font-bold uppercase tracking-wide text-primary mb-2">Most Complete</div>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Whole-Home RO</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Everything in filtration plus a commercial-grade RO membrane. Pure water at every tap. Addresses arsenic, PFAS, and heavy metals.</p>
+          <span class="text-primary text-sm font-semibold">Learn more →</span>
+        </a>
+      </div>
+      <div class="text-center">
+        <a href="/water-softener-vs-whole-home-filtration/" class="text-primary font-semibold text-sm hover:opacity-80 transition-opacity">
+          Not sure which is right for your home? Compare all options →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -252,9 +281,36 @@ const schemas = [getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }])];
     </div>
   </section>
 
+  <!-- Reviews -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews max={6} />
+      <div class="text-center mt-10">
+        <a
+          href="https://maps.app.goo.gl/SRHLVoVec7bkQx566"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary font-semibold hover:opacity-80 transition-opacity text-sm"
+        >
+          See all reviews on Google →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-card justify-center py-16 md:py-20 px-4">
     <BrochureDownload />
   </section>
 
   <LeadForm />
 </Layout>
+
+<style>
+  @reference "../styles/global.css";
+  .service-card {
+    @apply flex flex-col bg-background border-2 border-border rounded-2xl p-6 no-underline hover:border-primary hover:-translate-y-1 transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  .service-icon {
+    @apply text-3xl mb-3;
+  }
+</style>

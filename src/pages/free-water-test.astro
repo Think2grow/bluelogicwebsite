@@ -1,0 +1,320 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import Reviews from "../components/Reviews.astro";
+import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What does the free water test actually measure?",
+    answer: "Your Blue Logic specialist will test your water on-site for total dissolved solids (TDS), water hardness, and chlorine levels using professional-grade meters. These three measurements reveal the core water quality concerns most relevant to Utah homes. For additional contaminant concerns — such as arsenic, PFAS, or lead — we can recommend a certified lab test.",
+  },
+  {
+    question: "Is there any obligation to purchase after the water test?",
+    answer: "None. The water test is completely free with no sales pressure. We show you your results, explain what they mean in plain English, and let you decide what — if anything — you want to do. Many homeowners find the test itself valuable as a standalone service.",
+  },
+  {
+    question: "How long does the in-home water test appointment take?",
+    answer: "Most water test appointments take 45 to 60 minutes. We test your water, walk you through the results, and answer your questions. If you're interested in a system, we'll also walk you through your options and provide a transparent quote — no hidden fees.",
+  },
+  {
+    question: "Do I need to do anything to prepare for the appointment?",
+    answer: "No preparation is needed. Just make sure someone 18 or older is home during the appointment. We'll need access to a water faucet — typically in the kitchen or utility room — and ideally to the location where a system would be installed (usually the utility room, garage, or basement).",
+  },
+  {
+    question: "What happens if I decide to move forward with a system?",
+    answer: "If you choose to move forward, most installations are completed in a single day — typically 4 to 8 hours depending on your home's layout. We'll schedule the installation at a time that works for you. The free under-sink RO system ($1,000 value) is included with a filtration purchase, and the free 250-gallon tank upgrade is included with a whole-home purification package.",
+  },
+  {
+    question: "Do you serve my area?",
+    answer: "Blue Logic serves the full Wasatch Front from Ogden to Springville, including Salt Lake City, Provo, Orem, Lehi, Sandy, Draper, Layton, Bountiful, American Fork, Spanish Fork, and surrounding communities across Weber, Davis, Salt Lake, and Utah Counties. Enter your zip code when you schedule and we'll confirm your area.",
+  },
+];
+
+const schemas = [
+  getServiceSchema(
+    `${siteUrl}/free-water-test/`,
+    "Free In-Home Water Test — Blue Logic Water",
+    "A Blue Logic water treatment specialist visits your home, tests your water on-site for hardness and chlorine, and recommends the right system for your specific water profile. No cost, no obligation.",
+    "Free In-Home Water Test"
+  ),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Free Water Test", url: "/free-water-test/" },
+  ]),
+  getAggregateRatingSchema(`${siteUrl}/free-water-test/`, 5.0, 10),
+];
+---
+
+<Layout
+  title="Free In-Home Water Test Utah | Blue Logic Water"
+  description="Schedule a free in-home water test with Blue Logic. A specialist visits your Utah home, tests your water on-site, and recommends the right system — no cost, no obligation."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-28 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        No cost · No obligation · Wasatch Front
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Free In-Home Water Test for Utah Homeowners
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+        A Blue Logic specialist comes to your home, tests your water on-site, and walks you through
+        exactly what's in it — then recommends the right system for your home, at no cost and with
+        zero pressure.
+      </p>
+      <a
+        href="#schedule"
+        class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-primary/90 transition-all"
+      >
+        Schedule My Free Water Test →
+      </a>
+    </div>
+  </section>
+
+  <!-- Offer Banner -->
+  <section class="bg-primary/10 border-y border-primary/20 py-8 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+      <div class="p-4">
+        <div class="text-2xl font-bold text-primary mb-1">Free</div>
+        <div class="font-semibold text-foreground mb-1">In-Home Water Test</div>
+        <div class="text-sm text-muted-foreground">On-site TDS, hardness, and chlorine testing. No cost, no obligation.</div>
+      </div>
+      <div class="p-4 border-y md:border-y-0 md:border-x border-primary/20">
+        <div class="text-2xl font-bold text-primary mb-1">$1,000 Value</div>
+        <div class="font-semibold text-foreground mb-1">Free Under-Sink RO System</div>
+        <div class="text-sm text-muted-foreground">Included with any whole-home filtration purchase.</div>
+      </div>
+      <div class="p-4">
+        <div class="text-2xl font-bold text-primary mb-1">Free Upgrade</div>
+        <div class="font-semibold text-foreground mb-1">250-Gallon Storage Tank</div>
+        <div class="text-sm text-muted-foreground">Upgrade from 165-gallon standard tank with whole-home purification purchase.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Happens During Your Test -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        What Happens During Your Free Water Test
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+        Here's exactly what to expect from start to finish — no surprises.
+      </p>
+
+      <div class="space-y-6">
+        <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
+          <div class="step-number shrink-0">1</div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">Schedule — Takes 2 Minutes</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Fill out the form below or call <a href="tel:+18019802583" class="text-primary font-semibold">(801) 980-2583</a>.
+              We'll confirm a time that works for you — typically within a few days.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
+          <div class="step-number shrink-0">2</div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">A Blue Logic Specialist Comes to Your Home</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              A trained technician arrives at your scheduled time with professional testing equipment.
+              No call center reps — someone who actually installs and services water systems.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
+          <div class="step-number shrink-0">3</div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">On-Site Water Testing</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              We test your home's water directly from your tap using calibrated meters and field-testing equipment. The on-site test focuses on the concerns most relevant to Utah homes:
+            </p>
+            <ul class="mt-3 space-y-2 text-muted-foreground">
+              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Water Hardness</strong> — measures calcium and magnesium concentration in grains per gallon. Most Wasatch Front cities have very hard water (15–25+ GPG), which causes scale, appliance damage, and dry skin.</span></li>
+              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Chlorine and Chloramine</strong> — measures the disinfectant residual from your municipal utility. High levels affect taste, odor, and are absorbed through skin during bathing.</span></li>
+              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Contaminant context for your area</strong> — your specialist will walk you through EWG data specific to your city's utility, including arsenic, haloacetic acids, and PFAS where relevant to your area.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
+          <div class="step-number shrink-0">4</div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">Results Explained in Plain English</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Your specialist will walk you through exactly what the numbers mean for your home —
+              what's causing scale on your fixtures, what's affecting taste, and what your water is
+              doing to your appliances. No jargon, no scare tactics.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
+          <div class="step-number shrink-0">5</div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">System Recommendation — No Pressure</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Based on your water profile and your home, we'll recommend the best system — whether
+              that's a whole-home filtration system, a full reverse osmosis purification system, or
+              something in between. You decide what happens next. There is no high-pressure sales
+              process and no obligation to purchase.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why In-Home vs Mail-In Kit -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Why an In-Home Test Beats a Mail-In Kit
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Mail-in kits are a reasonable starting point — but they can't tell the full story of your home's water.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-background rounded-2xl p-6 border border-border">
+          <h3 class="font-semibold text-lg mb-3 text-foreground">Mail-In Water Test</h3>
+          <ul class="space-y-2 text-muted-foreground text-sm">
+            <li class="flex gap-2"><span class="text-error">✗</span> Results in 1–2 weeks</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> No context for what the numbers mean</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> Doesn't account for your home's plumbing</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> Costs $30–$150 depending on scope</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> Can't show you where to install a system</li>
+          </ul>
+        </div>
+        <div class="bg-primary/5 rounded-2xl p-6 border-2 border-primary">
+          <h3 class="font-semibold text-lg mb-3 text-foreground">Blue Logic Free In-Home Test</h3>
+          <ul class="space-y-2 text-muted-foreground text-sm">
+            <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Results on the spot — same appointment</li>
+            <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Expert explains what the numbers mean for your home</li>
+            <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Tests your actual tap — not a shipped sample</li>
+            <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Completely free, no obligation</li>
+            <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Includes site assessment for system placement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <section class="bg-background py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="p-6">
+          <div class="text-3xl font-bold text-primary mb-2">1/2</div>
+          <div class="font-semibold text-foreground mb-1">The Cost of Competitors</div>
+          <div class="text-sm text-muted-foreground">Written price-match guarantee on any competing quote from a licensed Utah water treatment company.</div>
+        </div>
+        <div class="p-6 border-y md:border-y-0 md:border-x border-border">
+          <div class="text-3xl font-bold text-primary mb-2">1-Day</div>
+          <div class="font-semibold text-foreground mb-1">Installation</div>
+          <div class="text-sm text-muted-foreground">Most whole-home system installations are completed in 4–8 hours.</div>
+        </div>
+        <div class="p-6">
+          <div class="text-3xl font-bold text-primary mb-2">Price Match</div>
+          <div class="font-semibold text-foreground mb-1">Guarantee</div>
+          <div class="text-sm text-muted-foreground">Show us any written quote from a licensed competitor and we'll match or beat it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section id="schedule" class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Water Test
+      </h2>
+      <p class="text-lg text-muted-foreground text-center mb-10">
+        Serving the Wasatch Front from Ogden to Springville. Most appointments available within a few days.
+      </p>
+      <LeadForm variant="premium" />
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews max={6} />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer" set:html={faq.answer} />
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-primary py-16 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif mb-4 text-primary-foreground">
+        Ready to Know What's in Your Water?
+      </h2>
+      <p class="text-primary-foreground/90 mb-8 text-lg">
+        Call or text us directly — or fill out the form above and we'll reach out to schedule.
+      </p>
+      <a
+        href="tel:+18019802583"
+        class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow hover:bg-white/90 transition-all"
+      >
+        Call (801) 980-2583
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+  .step-number {
+    @apply w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

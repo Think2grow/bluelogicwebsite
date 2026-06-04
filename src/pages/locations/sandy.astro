@@ -1,0 +1,289 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What are haloacetic acids and why are they so high in Sandy's water?",
+    answer: "Haloacetic acids (HAAs) are disinfection byproducts — they form when chlorine used to treat drinking water reacts with naturally occurring organic compounds in the source water. Sandy receives treated surface water purchased from the Jordan Valley Water Conservancy District (JVWCD), which sources water from mountain watersheds. That mountain snowmelt carries organic material that reacts with chlorination, producing haloacetic acid compounds. Sandy's HAA5 level at 306x the EWG health guideline places it among the highest disinfection byproduct concentrations on the Wasatch Front. The water is federally compliant; EWG's guideline is stricter than current federal law.",
+  },
+  {
+    question: "Is Sandy water hard?",
+    answer: "Yes. Sandy water typically measures around 18 grains per gallon (approximately 308 mg/L) — in the 'very hard' category. At 18 GPG, scale accumulates rapidly on shower doors, faucet aerators, and inside appliances. Water heater efficiency is measurably reduced. Many Sandy homeowners in older neighborhoods notice significant scale buildup within months on untreated water.",
+  },
+  {
+    question: "Does Sandy water have arsenic?",
+    answer: "Sandy's primary EWG concern is disinfection byproducts (HAA5 and dichloroacetic acid) rather than arsenic, which distinguishes it from communities like Lehi and Draper where arsenic is the dominant issue. Sandy does have other contaminants above EWG thresholds, including chloroform. Your free water test confirms your specific home's profile.",
+  },
+  {
+    question: "How does Blue Logic's system address Sandy's HAA levels?",
+    answer: "The catalytic carbon stage in Blue Logic's 7-layer filtration system is specifically designed to reduce haloacetic acid precursors (chloramines and dissolved organic compounds that react with chlorine). The whole-home filtration system addresses HAAs meaningfully. For the most complete HAA reduction, the whole-home RO system's membrane provides an additional molecular-level barrier. Your free water test will help determine which system is right for your home.",
+  },
+  {
+    question: "What neighborhoods in Sandy does Blue Logic serve?",
+    answer: "Blue Logic serves all of Sandy including Alta Canyon, Crescent Park, Hidden Valley, Dimple Dell, Bell Canyon, Dimple Dell Regional Park area, the South Jordan border communities, and all Sandy zip codes. We also serve surrounding communities including Draper, South Jordan, and Cottonwood Heights.",
+  },
+  {
+    question: "How does Blue Logic compare to other water treatment companies in Sandy?",
+    answer: "Blue Logic's whole-home systems are priced at $5,995–$19,999 using NSF-certified components. We offer in-house financing (half down, flexible terms), a written price-match guarantee on any competing quote from a licensed Utah water treatment company, and a free in-home water test with no obligation.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Sandy"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Sandy", url: "/locations/sandy/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Sandy Utah | Blue Logic Water"
+  description="Sandy water has haloacetic acids at 306x the EWG health guideline — the highest disinfection byproduct level in the Salt Lake Valley. Blue Logic serves Sandy with whole-home RO and filtration. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · JVWCD Surface Water · Alta Canyon · Hidden Valley
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Sandy, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Sandy's water supply contains haloacetic acid disinfection byproducts at 306 times the EWG
+        health guideline — among the highest levels in the Salt Lake Valley. Blue Logic installs
+        whole-home filtration and reverse osmosis systems that address what compliance doesn't.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Sandy's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database for Sandy City water. All levels meet federal legal standards.
+        EWG guidelines reflect stricter, more recently researched thresholds.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">306x</div>
+          <div class="font-semibold text-foreground mb-1">HAA5 vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Haloacetic acid disinfection byproducts — among the highest in Salt Lake Valley.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">14</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including HAA5, dichloroacetic acid, and chloroform. Source: EWG Tap Water Database.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard — rapid scale on fixtures, appliance efficiency loss, dry skin from bathing.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA5)</span>
+            <span class="badge badge-alert">306x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Dichloroacetic acid</span>
+            <span class="badge badge-alert">104x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chloroform</span>
+            <span class="badge badge-alert">43x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness</span>
+            <span class="badge badge-primary">~18 GPG — Very Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border flex items-center justify-between flex-wrap gap-3">
+          <p class="text-xs text-muted-foreground">Source: EWG Tap Water Database</p>
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18028" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Sandy →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Why Sandy Has High Disinfection Byproducts</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          Sandy purchases treated surface water from the Jordan Valley Water Conservancy District (JVWCD),
+          which sources water from Wasatch mountain watersheds. Mountain snowmelt carries naturally high levels
+          of organic compounds — leaves, soil particles, and dissolved organic matter. When utilities treat this
+          water with chlorine to make it safe, the chlorine reacts with those organic compounds to form
+          haloacetic acids and other disinfection byproducts.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          This is not a failure of the water treatment process — it is an inherent challenge of treating
+          organic-rich surface water at scale. The resulting HAA levels are within federal legal limits,
+          but EWG's research suggests lower exposure thresholds for long-term health protection.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        What Sandy Homeowners Deal With
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Chlorine Taste and Odor</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Sandy's high HAA levels are the downstream result of aggressive chlorination of
+            organic-rich source water. That chlorination is also what Sandy homeowners often
+            notice as a strong chlorine smell — particularly when running a hot shower or
+            filling a bathtub. Blue Logic's catalytic carbon filtration stage specifically
+            targets chlorine and chloramine residuals throughout the home.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Scale in a Maturing Home Stock</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Sandy's established neighborhoods — many built in the 1980s and 1990s — have
+            years of scale accumulation in pipes, water heaters, and appliances from untreated
+            hard water. At 18 GPG, each year of use without softening adds to the mineral
+            buildup that reduces appliance efficiency and increases energy costs.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Alta Canyon and Hidden Valley Premium Homes</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Sandy's upper bench neighborhoods are home to larger, premium properties with
+            high-end finishes that are particularly visible victims of hard water — glass
+            shower enclosures, stainless fixtures, and natural stone counters all show
+            mineral deposits quickly. These homeowners also tend to prioritize the most
+            complete water quality solution.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Skin and Hair from Bathing Water</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Sandy's combination of hard water minerals and elevated chlorine residual
+            affects the bathing experience in two ways: hardness minerals leave a coating
+            on skin and hair, and chlorine is absorbed through skin during bathing. A
+            whole-home system addresses both from every shower and faucet in the house.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Sandy Neighborhoods Served</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        {["Alta Canyon", "Hidden Valley", "Crescent Park", "Bell Canyon area", "Dimple Dell",
+          "South Sandy", "Granite Park", "Pepperwood", "The Cove"].map((n) => (
+          <span class="px-3 py-1.5 bg-card border border-border rounded-full text-sm text-muted-foreground">{n}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving Draper · South Jordan · Cottonwood Heights · Murray and surrounding communities.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Sandy Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          { name: "Salt Lake City", slug: "salt-lake-city" },
+          { name: "Draper", slug: "draper" },
+          { name: "South Jordan", slug: "south-jordan" },
+        ].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Sandy Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves all of Sandy and surrounding Salt Lake County communities.
+        A specialist will test your water on-site and recommend the right system.
+        No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+  .scenario-card { @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

@@ -1,0 +1,368 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
+import { Image } from "astro:assets";
+import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What does the Blue Logic 7-layer filtration system actually remove?",
+    answer: "The 7-layer media stack is designed to address a broad range of water quality concerns in sequence: chlorine and chloramine removal (zinc-infused and catalytic carbon), antimicrobial protection (copper-infused carbon), hardness minerals (EvoResin ion-exchange), iron and manganese reduction (Katalox), water clarity (aluminosilicate), and final sediment polish (garnet). Each layer targets a specific set of contaminants. Your free water test will identify which concerns are most relevant to your home's water.",
+  },
+  {
+    question: "Is the whole-home filtration system NSF-certified?",
+    answer: "Yes. Blue Logic uses NSF-certified components throughout the filtration system. Ask your specialist for specific certification documentation at your free water test appointment.",
+  },
+  {
+    question: "How is whole-home filtration different from a regular water softener?",
+    answer: "A traditional water softener addresses only hardness minerals (calcium and magnesium) through salt-based ion exchange. Blue Logic's 7-layer filtration system addresses hardness as one of seven distinct treatment stages — also reducing chlorine, chloramines, iron, manganese, and other contaminants that a softener never touches. You also get meaningfully improved water taste and odor, which a softener does not provide.",
+  },
+  {
+    question: "How is whole-home filtration different from whole-home reverse osmosis?",
+    answer: "The filtration system (7-layer media) is the foundation — Stages 1 and 2 of Blue Logic's purification architecture. It handles the full spectrum of common water quality concerns and is the right choice for most Utah homes on its own. Whole-home reverse osmosis adds an RO membrane, pressurized storage tank, and delivery pump (Stages 3–4), taking purification to an even higher level — especially for homes with higher-level contamination concerns or those wanting the cleanest water possible from every tap. Both systems include integrated water softening.",
+  },
+  {
+    question: "What maintenance does the filtration system require?",
+    answer: "The primary ongoing maintenance is periodic salt refills for the softening stage (approximately every 2–3 months for a typical Utah family, using 75% less salt than a traditional softener). Annual service includes a media check and system inspection. With proper maintenance, the media and components are designed to perform reliably for 8–10 years.",
+  },
+  {
+    question: "What is the warranty on the whole-home filtration system?",
+    answer: "Blue Logic offers a 1-year limited warranty covering parts. With regular maintenance, system components are designed and built to last 8–10 years. We're a local Utah company — we're here for the long term, not just the sale.",
+  },
+  {
+    question: "Do you offer financing for the filtration system?",
+    answer: "Yes. Blue Logic offers in-house financing with half down at the time of installation. Financing terms vary based on the total amount and your preferred repayment timeline. Ask your specialist about current financing options during your free water test appointment.",
+  },
+  {
+    question: "What does the free under-sink RO include with a filtration purchase?",
+    answer: "With any whole-home filtration system purchase, Blue Logic includes a free under-sink reverse osmosis unit for your kitchen sink — a system with a retail value of approximately $1,000. This gives you purified drinking water at the kitchen tap without upgrading to full whole-home RO purification.",
+  },
+];
+
+const schemas = [
+  getServiceSchema(
+    `${siteUrl}/whole-home-water-filtration/`,
+    "Whole-Home Water Filtration System Installation — Utah",
+    "Blue Logic's 7-layer whole-home water filtration system addresses chlorine, chloramines, iron, manganese, hardness, and a broad spectrum of common Utah water quality concerns — with integrated water softening using 75% less salt than traditional softeners. NSF-certified components. Serving the Wasatch Front.",
+  ),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Whole-Home Water Filtration", url: "/whole-home-water-filtration/" },
+  ]),
+  getAggregateRatingSchema(`${siteUrl}/whole-home-water-filtration/`, 5.0, 10),
+];
+---
+
+<Layout
+  title="Whole Home Water Filtration Utah | Blue Logic Water"
+  description="Blue Logic's 7-layer whole-home filtration removes chlorine, hardness, iron, and more. NSF-certified. Free under-sink RO included with purchase. Free water test — Wasatch Front."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        NSF-Certified · Wasatch Front · Includes Free Under-Sink RO
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Whole-Home Water Filtration for Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+        Blue Logic's 7-layer filtration system addresses the full spectrum of Utah water quality
+        concerns in a single whole-home installation — including chlorine, chloramines, iron,
+        manganese, and hard water minerals. Includes integrated water softening using 75% less
+        salt than a traditional softener.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-primary/90 transition-all"
+        >
+          Schedule Free Water Test →
+        </a>
+        <a
+          href="tel:+18019802583"
+          class="inline-block border-2 border-primary text-primary font-semibold text-lg px-8 py-4 rounded-full hover:bg-primary/5 transition-all"
+        >
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offer Banner -->
+  <section class="bg-primary/10 border-y border-primary/20 py-6 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <p class="font-semibold text-foreground">
+        Current offer: <span class="text-primary">Free under-sink reverse osmosis system ($1,000 value)</span> with any whole-home filtration purchase ·
+        <a href="/free-water-test/" class="text-primary underline hover:no-underline">Schedule free water test</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 7-Layer System Explained -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+            Seven Layers. One Installation. Full-Home Coverage.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-4">
+            Utah's water presents multiple distinct challenges — hardness, chlorine from municipal
+            treatment, iron and manganese from geology, and sediment. No single filtration medium
+            addresses all of these effectively on its own.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed mb-4">
+            Blue Logic's proprietary 7-layer media system stacks complementary filtration
+            technologies in sequence, so each layer targets what the previous one doesn't catch.
+            The result is whole-home coverage — cleaner, better-performing water from every tap,
+            shower, and appliance in your home.
+          </p>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            The system is also the pre-treatment foundation for Blue Logic's whole-home purification
+            (reverse osmosis) upgrade — so if you start with filtration and want to add RO later,
+            the foundation is already in place.
+          </p>
+        </div>
+        <div>
+          <Image
+            src={filtersInHandsImg}
+            alt="Blue Logic water filtration media components — NSF-certified materials used in the 7-layer system"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-3/4"
+            widths={[400, 600]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={60}
+          />
+        </div>
+      </div>
+
+      <!-- The 7 Layers -->
+      <h3 class="text-2xl font-serif text-center mb-8 text-foreground">The 7 Filtration Layers</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+        <div class="layer-card">
+          <div class="layer-number">1</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">Zinc-Infused Carbon</h4>
+            <p class="text-sm text-muted-foreground">Targets chlorine and provides broad antimicrobial protection through the zinc's natural properties.</p>
+          </div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-number">2</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">Copper-Infused Carbon</h4>
+            <p class="text-sm text-muted-foreground">Additional antimicrobial layer working in concert with the zinc-carbon stage for enhanced protection.</p>
+          </div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-number">3</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">Catalytic Carbon</h4>
+            <p class="text-sm text-muted-foreground">Specifically engineered to reduce chloramines — the disinfectant compound common in Utah municipal water supplies — and organic compounds that standard carbon misses.</p>
+          </div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-number">4</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">EvoResin</h4>
+            <p class="text-sm text-muted-foreground">High-efficiency ion-exchange resin that removes calcium and magnesium (the minerals that cause hardness) using approximately 75% less salt than conventional water softener resin.</p>
+          </div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-number">5</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">Katalox</h4>
+            <p class="text-sm text-muted-foreground">Removes iron, manganese, and hydrogen sulfide — the contaminants that cause rust staining, black deposits on fixtures, and "rotten egg" odor in some Utah water supplies.</p>
+          </div>
+        </div>
+        <div class="layer-card">
+          <div class="layer-number">6</div>
+          <div>
+            <h4 class="font-semibold text-foreground mb-1">Aluminosilicate</h4>
+            <p class="text-sm text-muted-foreground">Polishes water clarity and removes fine particulates that earlier stages may have loosened from the media bed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="layer-card max-w-sm mx-auto">
+        <div class="layer-number">7</div>
+        <div>
+          <h4 class="font-semibold text-foreground mb-1">Garnet</h4>
+          <p class="text-sm text-muted-foreground">Final sediment filtration stage — captures any remaining fine particulates before water enters your home's distribution system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Notice -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        What Utah Homeowners Notice After Installation
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        The changes are practical and immediate — not abstract.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">No more chlorine smell or taste</h3>
+          <p class="text-sm text-muted-foreground">The catalytic and activated carbon stages remove chlorine and chloramine from all water entering your home — including shower and bath water where you absorb it through your skin.</p>
+        </div>
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">Scale stops building up</h3>
+          <p class="text-sm text-muted-foreground">Softened water means no new mineral deposits on showerheads, faucets, glass shower doors, or inside your appliances. Existing scale on fixtures may gradually dissolve with continued use of softened water.</p>
+        </div>
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">Better-tasting water everywhere</h3>
+          <p class="text-sm text-muted-foreground">Many Utah homeowners notice the taste improvement immediately — water that tastes clean and neutral rather than minerally or chemical. Coffee, tea, and cooking water are all noticeably different.</p>
+        </div>
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">Skin and hair feel different</h3>
+          <p class="text-sm text-muted-foreground">Softened water and reduced chlorine in shower water changes how water interacts with skin and hair. Most people notice their skin feels less dry and their hair more manageable after bathing.</p>
+        </div>
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">Appliances last longer</h3>
+          <p class="text-sm text-muted-foreground">Water heaters, dishwashers, and washing machines all benefit from softened, chlorine-reduced water. Scale buildup inside appliances is one of the primary causes of early failure in Utah homes.</p>
+        </div>
+        <div class="notice-card">
+          <h3 class="font-semibold text-foreground mb-2">Dishes come out clean</h3>
+          <p class="text-sm text-muted-foreground">Softened water dramatically reduces the white film on dishwasher-cleaned dishes and glassware — and requires less detergent to do it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing and Financing -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Transparent Pricing and Financing
+      </h2>
+      <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Blue Logic systems range from $5,995 to $19,999 depending on the system selected and your
+        home's configuration — confirmed at your free water test with no hidden fees.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="pricing-card">
+          <h3 class="font-semibold text-foreground mb-2">Transparent Quotes</h3>
+          <p class="text-sm text-muted-foreground">Your exact price is confirmed at your free water test — including installation. No surprise fees after the fact.</p>
+        </div>
+        <div class="pricing-card border-primary bg-primary/5">
+          <h3 class="font-semibold text-foreground mb-2">In-House Financing</h3>
+          <p class="text-sm text-muted-foreground">Half down at installation. Flexible repayment terms based on your preferred timeline. No third-party lender required.</p>
+        </div>
+        <div class="pricing-card">
+          <h3 class="font-semibold text-foreground mb-2">Price Match Guarantee</h3>
+          <p class="text-sm text-muted-foreground">Show us any written quote from a licensed water treatment company and Blue Logic will match or beat it.</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all"
+        >
+          Get Your Free Quote →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related + Service Area -->
+  <section class="bg-background py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <a href="/whole-home-reverse-osmosis-utah/" class="related-link">Upgrade to Whole-Home RO</a>
+        <a href="/water-softener-utah/" class="related-link">Water Softener Utah</a>
+        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare Options</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+      <p class="text-muted-foreground text-sm">
+        Serving: Salt Lake City · Provo · Orem · Lehi · Sandy · Draper · Ogden · Layton · Bountiful · American Fork · Spanish Fork · Springville and surrounding communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Water Test
+      </h2>
+      <p class="text-lg text-muted-foreground text-center mb-10">
+        A Blue Logic specialist will assess your home's water and walk you through whether the
+        7-layer filtration system, a whole-home purification upgrade, or something else is right
+        for your home. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .layer-card {
+    @apply flex gap-4 items-start bg-card p-5 rounded-xl border border-border;
+  }
+
+  .layer-number {
+    @apply w-9 h-9 shrink-0 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold;
+  }
+
+  .notice-card {
+    @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary;
+  }
+
+  .pricing-card {
+    @apply bg-card p-6 rounded-xl border border-border text-center;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

@@ -1,0 +1,375 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What is in Salt Lake City's tap water?",
+    answer: "Salt Lake City's water comes from multiple sources including mountain watersheds managed by the SLC Department of Public Utilities and water purchased from Jordan Valley Water Conservancy District. The EWG Tap Water Database identifies 16 contaminants detected above EWG health guidelines in SLC's supply, including arsenic (flagged at 135x the EWG guideline), perfluorohexane sulfonate (a PFAS compound at 404x the guideline), and dichloroacetic acid (a disinfection byproduct at 101x the guideline). All detected levels are within federal legal limits.",
+  },
+  {
+    question: "Is Salt Lake City tap water hard?",
+    answer: "Yes. SLC water is classified as hard, typically measuring around 10–12 grains per gallon (approximately 170–210 mg/L) depending on which sources are active and the time of year. This is in the 'hard' category by WQA standards — enough to cause noticeable scale on fixtures, reduce appliance efficiency, and affect the bathing experience. Salt Lake City uses a blend of surface water and purchased water, so hardness can vary more than in single-source communities.",
+  },
+  {
+    question: "Does Salt Lake City water have PFAS?",
+    answer: "Yes. The Salt Lake City Department of Public Utilities announced in 2024 that PFAS was detected in its water supply at approximately 7.1–7.8 parts per trillion. This is below the new EPA maximum contaminant level (MCL) finalized in 2024 for some PFAS compounds, but it does represent a detection. The specific compound detected is PFOS/PFOA — two of the most studied PFAS. Reverse osmosis is among the most effective residential technologies for PFAS reduction.",
+  },
+  {
+    question: "How long does a Blue Logic installation take in a Salt Lake City home?",
+    answer: "Most whole-home system installations in Salt Lake City are completed in a single day — typically 4 to 8 hours depending on your home's layout, utility room access, and the system selected. Blue Logic's compact system design (roughly half the footprint of traditional whole-home RO units) is well-suited to SLC's mix of newer construction and older craftsman-style homes with smaller utility spaces.",
+  },
+  {
+    question: "What neighborhoods in Salt Lake City does Blue Logic serve?",
+    answer: "Blue Logic serves all of Salt Lake City, including Sugar House, the Avenues, East Bench, Millcreek, Holladay, Cottonwood Heights, Murray, and all other SLC neighborhoods and surrounding communities. We also serve the broader Salt Lake County area including Sandy, Draper, West Jordan, and South Jordan.",
+  },
+  {
+    question: "Do I need a permit to install a water treatment system in Salt Lake City?",
+    answer: "In most cases, a whole-home water treatment system installation in Salt Lake City does not require a separate permit if it connects to your existing plumbing without major modifications. Your Blue Logic specialist will confirm permit requirements during the free water test visit based on your home's specific configuration.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Salt Lake City"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Salt Lake City", url: "/locations/salt-lake-city/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Salt Lake City | Blue Logic Water"
+  description="Blue Logic serves Salt Lake City with whole-home RO and filtration systems. SLC water has PFAS, arsenic, and hard water concerns. Free in-home water test — no obligation."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · Jordan Valley Water · SLC Dept. of Public Utilities
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Salt Lake City Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Salt Lake City's water contains PFAS, elevated arsenic, and disinfection byproducts
+        — all while being classified as federally compliant. Blue Logic installs whole-home
+        filtration and reverse osmosis systems that address what compliance doesn't.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all"
+        >
+          Schedule Free Water Test →
+        </a>
+        <a
+          href="tel:+18019802583"
+          class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+        >
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Quality Data -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        What's in Salt Lake City's Water
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-12 text-sm">
+        Data from the EWG Tap Water Database and Salt Lake City Department of Public Utilities.
+        All levels are within federal legal standards. EWG guidelines are stricter than federal law.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">16</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Guidelines</div>
+          <p class="text-xs text-muted-foreground">Per EWG Tap Water Database for the SLC water system. Federal standards not violated.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~12 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Classified as "hard" — causes scale on fixtures, reduces appliance efficiency.</p>
+        </div>
+        <div class="stat-box">
+          <div class="text-4xl font-bold text-foreground mb-2">PFAS</div>
+          <div class="font-semibold text-foreground mb-1">Detected in 2024 Testing</div>
+          <p class="text-xs text-muted-foreground">~7.1–7.8 parts per trillion detected. Below new EPA MCL but present in supply.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-8">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">135x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Perfluorohexane sulfonate (PFAS)</span>
+            <span class="badge badge-alert">404x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Dichloroacetic acid (HAA)</span>
+            <span class="badge badge-alert">101x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness (calcium/magnesium)</span>
+            <span class="badge badge-primary">~10–12 GPG — classified Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <p class="text-xs text-muted-foreground leading-relaxed">
+            EWG health guidelines are more stringent than federal legal limits, which have not been comprehensively updated
+            since the 1990s. Salt Lake City's water is federally compliant. For the full EWG report:
+            <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18026" target="_blank" rel="noopener" class="text-primary underline">
+              EWG Tap Water Database — SLC →
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6">
+        <h3 class="text-xl font-semibold mb-3 text-foreground">Salt Lake City's Water Sources</h3>
+        <p class="text-muted-foreground text-sm leading-relaxed mb-3">
+          Salt Lake City draws water from two primary sources: its own direct mountain watershed
+          system (Big Cottonwood, Little Cottonwood, and City Creek canyons) managed by the
+          SLC Department of Public Utilities, and purchased treated surface water from the
+          Jordan Valley Water Conservancy District (JVWCD). The blend of these sources varies
+          by season and demand.
+        </p>
+        <p class="text-muted-foreground text-sm leading-relaxed">
+          Mountain surface water is naturally lower in hardness than deep groundwater but carries
+          higher organic content — which produces more disinfection byproducts (like haloacetic acids)
+          during chlorination treatment. The JVWCD water averages around 10–12 GPG hardness.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Served -->
+  <section class="bg-card py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-6 text-foreground">
+        Neighborhoods and Communities Served in Salt Lake City
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {[
+          "The Avenues", "Sugar House", "East Bench", "Millcreek",
+          "Holladay", "Cottonwood Heights", "Murray", "Taylorsville",
+          "West SLC", "Glendale", "Central City", "Marmalade",
+          "Rose Park", "Liberty Wells", "Riverside", "Granary District"
+        ].map((neighborhood) => (
+          <div class="text-center py-2 px-3 bg-background rounded-lg border border-border text-sm text-muted-foreground">
+            {neighborhood}
+          </div>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground text-center mt-4">
+        Also serving Sandy · Draper · West Jordan · South Jordan · Cottonwood Heights · Holladay and surrounding Salt Lake County communities.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Homeowner Scenarios -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-12 text-foreground">
+        Common Water Concerns for SLC Homeowners
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">The Sugar House Craftsman</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Older SLC homes — particularly in the Avenues and Sugar House — often have aging
+            copper or galvanized steel plumbing that can interact with the water supply.
+            Existing scale from years of hard water in the pipes can flake off during pressure
+            changes. A whole-home filtration system addresses both the incoming mineral load
+            and helps flush legacy scale gently over time.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">The East Bench New Build</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Newer construction in the East Bench and foothill neighborhoods often has premium
+            appliances — tankless water heaters, steam showers, high-efficiency dishwashers —
+            that are especially vulnerable to scale. Hard water at 10–12 GPG will meaningfully
+            shorten the lifespan of a tankless heater without treatment.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">The Family With Young Children</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            PFAS detection in SLC's water supply concerns many families with young children.
+            A whole-home RO system addresses PFAS at the molecular level via the RO membrane —
+            providing purified water at every tap, including bath water where chlorine and other
+            compounds are absorbed through skin. The free under-sink RO included with filtration
+            purchase gives kitchen drinking water coverage without a full RO upgrade.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">The Bottled Water Dependent</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Many SLC households spend $50–$150 per month on bottled water due to taste and
+            quality concerns. A Blue Logic whole-home RO system produces water that is
+            comparable in purity to premium bottled water at a fraction of the ongoing cost —
+            from every tap in the house, not just a filter pitcher.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Blue Logic -->
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        Why Salt Lake City Homeowners Choose Blue Logic
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="p-6">
+          <div class="text-3xl font-bold text-primary mb-2">~Half</div>
+          <div class="font-semibold text-foreground mb-1">The Cost of Competitors</div>
+          <div class="text-sm text-muted-foreground">Written price-match guarantee on any competing quote from a licensed Utah water treatment company.</div>
+        </div>
+        <div class="p-6 border-y md:border-y-0 md:border-x border-border">
+          <div class="text-3xl font-bold text-primary mb-2">1 Day</div>
+          <div class="font-semibold text-foreground mb-1">Installation</div>
+          <div class="text-sm text-muted-foreground">Most SLC installations completed in 4–8 hours. Compact system fits in older utility rooms that traditional systems won't.</div>
+        </div>
+        <div class="p-6">
+          <div class="text-3xl font-bold text-primary mb-2">Price Match</div>
+          <div class="font-semibold text-foreground mb-1">Guarantee</div>
+          <div class="text-sm text-muted-foreground">Bring any written competing quote from a licensed SLC water treatment company — we'll match or beat it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Salt Lake City Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Cities -->
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          { name: "Sandy", slug: "sandy" },
+          { name: "Draper", slug: "draper" },
+          { name: "Murray", slug: "murray" },
+          { name: "West Jordan", slug: "west-jordan" },
+          { name: "South Jordan", slug: "south-jordan" },
+        ].map((city) => (
+          <a href={`/locations/${city.slug}/`} class="related-link">{city.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Salt Lake City Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        A Blue Logic specialist will come to your SLC home, test your water on-site,
+        and recommend the right system based on what they find. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .hero-gradient-dark {
+    @apply bg-linear-to-br from-primary to-primary/70;
+  }
+
+  .stat-box {
+    @apply bg-card p-6 rounded-xl border-2 border-border text-center;
+  }
+
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+
+  .contaminant-row {
+    @apply flex justify-between items-center py-2 border-b border-border;
+  }
+
+  .badge {
+    @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4;
+  }
+
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+
+  .scenario-card {
+    @apply bg-card p-6 rounded-xl border border-border border-l-4 border-l-primary;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

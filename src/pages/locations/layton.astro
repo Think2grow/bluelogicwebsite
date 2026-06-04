@@ -1,0 +1,260 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "How hard is Layton's water?",
+    answer: "Layton water is very hard — typically around 21 grains per gallon (approximately 352 mg/L). This is in the upper range of 'very hard' by WQA classification. At 21 GPG, scale accumulates rapidly on fixtures, showerheads, and inside hot water systems. Appliances in untreated Layton homes experience measurably faster mineral buildup than average US communities.",
+  },
+  {
+    question: "Does Layton water have arsenic or other contaminant concerns?",
+    answer: "Yes. The EWG Tap Water Database flags approximately 10 contaminants in Layton's water supply above EWG health guidelines, including arsenic, haloacetic acids, and chloroform disinfection byproducts. All levels are within federal legal limits. Layton receives water through the Davis County/North Davis water system, which sources primarily from surface water treated with chlorination — the source of the disinfection byproduct levels.",
+  },
+  {
+    question: "Does Blue Logic serve the Hill Air Force Base area and military families in Layton?",
+    answer: "Yes. Blue Logic serves all of Layton including neighborhoods near Hill AFB, and we serve both military families and civilian homeowners throughout Davis County. The free water test offer and all pricing is available to everyone in our service area regardless of residency status.",
+  },
+  {
+    question: "How does Layton's water compare to other Davis County cities?",
+    answer: "Layton and Bountiful are both very hard water communities in Davis County, though Bountiful can reach even higher hardness levels (18–38 GPG) due to its well-water sources. Layton's primary concerns are consistent hardness from surface water supply and disinfection byproducts from chlorination. The Davis County water system delivers consistent but very hard water throughout the year.",
+  },
+  {
+    question: "What Blue Logic system is recommended for Layton?",
+    answer: "For most Layton homeowners, the whole-home filtration system is an excellent fit — it handles the 21 GPG hardness through integrated softening and addresses chlorine, chloramines, and the disinfection byproduct precursors through the catalytic carbon stage. For homeowners with additional contaminant concerns (arsenic, PFAS), the whole-home RO upgrade provides the most complete coverage. Your free water test confirms which is right for your home.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Layton"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Layton", url: "/locations/layton/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Layton Utah | Blue Logic Water"
+  description="Layton water is very hard at ~21 GPG with disinfection byproduct concerns. Blue Logic serves Layton and Davis County with whole-home filtration and RO. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Davis County · North Davis Water · Hill AFB Area
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Layton, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Layton delivers very hard water at ~21 GPG through the Davis County water system,
+        alongside disinfection byproduct and arsenic concerns flagged by the EWG.
+        Blue Logic serves all of Layton and northern Davis County.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Layton's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database and Davis County consumer confidence reports.
+        All levels meet federal legal standards. EWG guidelines are stricter than federal law.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-primary">
+          <div class="text-5xl font-bold text-primary mb-2">~21 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard — rapid scale buildup on fixtures, appliances, and hot water systems.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">10</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, haloacetic acids, and chloroform. Federally compliant.</p>
+        </div>
+        <div class="stat-box">
+          <div class="text-4xl font-bold text-foreground mb-2">Davis Co.</div>
+          <div class="font-semibold text-foreground mb-1">Water System</div>
+          <p class="text-xs text-muted-foreground">Surface water supply — consistent hardness year-round with disinfection byproduct formation from chlorination.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Key Water Quality Concerns</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness</span>
+            <span class="badge badge-primary">~21 GPG — Very Hard</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA)</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Chloroform (disinfection byproduct)</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+        </div>
+        <p class="text-xs text-muted-foreground mt-5 pt-5 border-t border-border">
+          EWG health guidelines are stricter than federal legal limits. Layton water is federally compliant.
+          Your free Blue Logic water test gives you the exact hardness and chlorine reading for your specific home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        What Layton Homeowners Typically Deal With
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Scale on Fixtures and Appliances</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            At 21 GPG, Layton's water deposits mineral scale rapidly. Showerheads, faucet aerators,
+            and glass shower doors show white deposits within weeks of installation. Inside appliances,
+            scale accumulates on heating elements, reducing efficiency and shortening lifespan.
+            A whole-home softening system stops this cycle at the source.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Chlorine Odor in Hot Showers</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Davis County's surface water is chlorinated during treatment. Many Layton homeowners
+            notice the chlorine smell when running hot water — particularly in a hot shower where
+            steam intensifies the chemical odor. Blue Logic's catalytic carbon filtration stage
+            reduces chlorine and chloramine from all water entering the home.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Military Families and Frequent Movers</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            The Hill AFB community brings many households who have lived in different water quality
+            environments. Families relocating from areas with softer water often notice Layton's
+            hardness immediately. Blue Logic's in-house financing and no-contract model makes sense
+            for homeowners who may eventually relocate — the system adds home value and the
+            financing terms are flexible.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Newer Construction in East Layton</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Layton's eastern bench has seen significant new construction. New homes receive the same
+            municipal water as established neighborhoods — new plumbing doesn't change the hardness
+            or contaminant profile. Installing a whole-home system at move-in protects new fixtures
+            and appliances from day one rather than treating water damage after it accumulates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Layton and Davis County Areas Served</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        {["North Layton", "East Layton", "Layton Hills", "Sunset", "Clearfield", "Clinton", "Syracuse"].map((area) => (
+          <span class="px-3 py-1.5 bg-card border border-border rounded-full text-sm text-muted-foreground">{area}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving Bountiful · Ogden · Salt Lake City and the full Wasatch Front.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Layton Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Ogden",slug:"ogden"},{name:"Bountiful",slug:"bountiful"},{name:"Salt Lake City",slug:"salt-lake-city"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Layton Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves all of Layton and Davis County. A specialist tests your water
+        on-site and recommends the right system — no cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+  .scenario-card { @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

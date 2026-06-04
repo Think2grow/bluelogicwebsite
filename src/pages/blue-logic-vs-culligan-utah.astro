@@ -1,0 +1,222 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import Reviews from "../components/Reviews.astro";
+import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Should I get a Blue Logic quote if I'm already talking to Culligan?",
+    answer: "Yes — and Blue Logic's price-match guarantee makes it low-risk. If you have a written Culligan quote, bring it to your free Blue Logic water test. Blue Logic will match or beat any written competing quote from a licensed Utah water treatment company. You get both quotes, compare them directly, and choose based on the full picture.",
+  },
+  {
+    question: "How do I know Blue Logic's system quality is comparable?",
+    answer: "Blue Logic uses NSF-certified components throughout — NSF/ANSI-rated RO membranes and NSF-certified food-grade storage tanks. The 1-year limited warranty covers parts, and with proper maintenance the components are designed for an 8–10 year service life. Ask for component documentation at your free water test appointment.",
+  },
+  {
+    question: "Does Blue Logic require a long-term service contract?",
+    answer: "No. Blue Logic does not require an ongoing service contract. Jared schedules an annual check-up at the time of installation, and ongoing service is available per visit — but there is no contractual obligation beyond the installation itself.",
+  },
+  {
+    question: "What financing does Blue Logic offer?",
+    answer: "Blue Logic offers in-house financing with half down at installation. Repayment terms are flexible and arranged directly — no third-party lender required. Ask about current financing options at your free water test.",
+  },
+  {
+    question: "What should I ask Culligan so I can compare fairly?",
+    answer: "Before committing to any water treatment provider, ask: What is the total installed cost including all components and labor? Is a service contract required, and what does it cost? What is the warranty and what does it cover? Are the components NSF-certified and can you provide documentation? How long will installation take? Getting written answers to these questions from both providers gives you a genuine basis for comparison.",
+  },
+];
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Blue Logic vs. Culligan Utah", url: "/blue-logic-vs-culligan-utah/" },
+  ]),
+];
+---
+
+<Layout
+  title="Blue Logic vs. Culligan Utah | Get Both Quotes and Compare"
+  description="Considering Culligan for whole-home water treatment in Utah? Here's what Blue Logic offers — with a written price-match guarantee on any competing quote. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Utah Water Treatment · Comparison Guide
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Considering Culligan? Here's What Blue Logic Offers.
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        If Culligan is on your shortlist for whole-home water treatment in Utah, the most useful
+        thing you can do is get both quotes and compare them directly. Blue Logic offers a written
+        price-match guarantee on any competing quote — so there's no risk in getting a second opinion.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm text-muted-foreground text-center leading-relaxed">
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's own verified system specs, offers, and how to use our price-match guarantee to compare fairly.
+        We make no claims about Culligan's pricing, system specifications, or service terms — those vary by dealer and configuration.
+        Get a written Culligan quote, then bring it here.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blue Logic's verified specs -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        What Blue Logic Offers — Our Verified System Specs
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        These are Blue Logic's own specifications and terms — not competitor comparisons.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+        {[
+          { label: "System price range", value: "$5,995 – $19,999", note: "Confirmed at free water test based on your home's configuration. No hidden fees." },
+          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated RO membranes and food-grade storage tanks. Documentation available at your water test." },
+          { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year lifespan with annual maintenance." },
+          { label: "Service contract required", value: "No", note: "Annual check-up is scheduled and included. No ongoing contractual obligation." },
+          { label: "Financing", value: "In-house, half down", note: "Flexible repayment terms. No third-party lender required." },
+          { label: "Price match", value: "Written guarantee", note: "Blue Logic will match or beat any written competing quote from a licensed Utah water treatment company." },
+          { label: "Free in-home water test", value: "Yes — no obligation", note: "On-site testing, results explained in plain English, system recommendation with no sales pressure." },
+          { label: "Installation time", value: "4–8 hours (one day)", note: "Most whole-home systems completed in a single day by Jared and his team." },
+        ].map((item) => (
+          <div class="spec-card">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <span class="font-semibold text-foreground">{item.label}</span>
+              <span class="text-primary font-bold shrink-0">{item.value}</span>
+            </div>
+            <p class="text-xs text-muted-foreground">{item.note}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-card rounded-2xl border-2 border-primary p-6 md:p-8 text-center">
+        <h3 class="text-xl font-semibold text-foreground mb-3">The Price-Match Guarantee</h3>
+        <p class="text-muted-foreground mb-4">
+          If you have a written Culligan quote for a comparable whole-home water treatment system,
+          bring it to your Blue Logic free water test. Blue Logic will match or beat it in writing.
+          This is the most direct way to compare — let the actual quotes do the work.
+        </p>
+        <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">
+          Schedule Free Water Test — Bring Your Quote →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Offers -->
+  <section class="bg-card py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">Current Blue Logic Offers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { icon: "🔬", title: "Free In-Home Water Test", body: "On-site water quality assessment. No cost, no obligation." },
+          { icon: "💧", title: "Free Under-Sink RO ($1,000 value)", body: "Included with any whole-home filtration purchase." },
+          { icon: "🏆", title: "Free 250-Gallon Tank Upgrade", body: "With whole-home purification package purchase." },
+        ].map((offer) => (
+          <div class="offer-card">
+            <div class="text-3xl mb-3">{offer.icon}</div>
+            <div class="font-semibold text-foreground mb-2">{offer.title}</div>
+            <p class="text-sm text-muted-foreground">{offer.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What to ask any provider -->
+  <section class="bg-background py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-6 text-foreground">
+        Questions to Ask Any Utah Water Treatment Provider
+      </h2>
+      <p class="text-muted-foreground text-center mb-8 max-w-2xl mx-auto">
+        Whether you're talking to Culligan, Blue Logic, or any other company, these questions get you a fair basis for comparison.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          "What is the total installed cost — all components and labor included?",
+          "Is an ongoing service contract required, and what does it cost annually?",
+          "What does the warranty cover, for how long, and what are the exclusions?",
+          "Are the components NSF-certified? Which certification and for which standards?",
+          "Who performs the installation, and how long does it typically take?",
+          "Can I see documentation on the specific components being installed?",
+          "What does annual maintenance include and who performs it?",
+          "Do you offer a price-match guarantee against competing quotes?",
+        ].map((q) => (
+          <div class="flex gap-3 p-4 bg-card rounded-xl border border-border">
+            <span class="text-primary font-bold shrink-0">?</span>
+            <span class="text-sm text-muted-foreground">{q}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews max={4} compact={true} />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/blue-logic-vs-kinetico-utah/" class="related-link">vs. Kinetico</a>
+        <a href="/blue-logic-vs-aj-softeners-utah/" class="related-link">vs. AJ Softeners</a>
+        <a href="/blue-logic-vs-alta-water-utah/" class="related-link">vs. Alta Water</a>
+        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare All Systems</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Get a Second Quote — Free</h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Have a Culligan quote? Bring it. Blue Logic will match or beat any written competing
+        offer from a licensed Utah water treatment company. No cost, no obligation to proceed.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+  .spec-card { @apply bg-card p-5 rounded-xl border border-border; }
+  .offer-card { @apply bg-background p-6 rounded-xl border border-border text-center; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

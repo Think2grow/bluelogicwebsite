@@ -173,7 +173,14 @@ const { compact = false, variant = "default" } = Astro.props;
       });
 
       if (response.ok || response.status === 200) {
-        // Redirect to thank you page
+        // Fire GA4 conversion event
+        if (typeof (window as any).gtag !== 'undefined') {
+          (window as any).gtag('event', 'generate_lead', { currency: 'USD', value: 0 });
+        }
+        // Fire Meta Pixel lead event
+        if (typeof (window as any).fbq !== 'undefined') {
+          (window as any).fbq('track', 'Lead');
+        }
         window.location.href = "/thank-you";
       } else {
         throw new Error("Submission failed");

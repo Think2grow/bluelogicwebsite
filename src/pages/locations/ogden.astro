@@ -1,0 +1,287 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What makes Ogden's water different from the rest of the Wasatch Front?",
+    answer: "Ogden is served by Ogden City Public Utilities rather than the Jordan Valley Water Conservancy District that serves much of Salt Lake County. Ogden draws from a blend of surface water (the Ogden River and Weber River watersheds) and groundwater sources including artesian wells. This multi-source blend creates high variability in water hardness — Ogden can range from 10 to 28 GPG depending on which sources are active. The groundwater-influenced supply also tends to have elevated manganese and iron compared to purely surface-water communities.",
+  },
+  {
+    question: "Does Ogden water have a manganese or iron problem?",
+    answer: "Manganese and iron are naturally occurring elements found in Ogden's groundwater sources. The EWG Tap Water Database flags manganese for Ogden above EWG health guidelines. At elevated levels, manganese can cause dark staining on fixtures and laundry, and a metallic taste in water. Blue Logic's 7-layer filtration system includes a Katalox stage specifically designed to reduce iron and manganese. A free water test will confirm whether iron or manganese is a meaningful concern for your specific address.",
+  },
+  {
+    question: "How hard is Ogden's water?",
+    answer: "Ogden's water hardness is highly variable — typically in the 10–28 GPG range depending on which sources are active and the time of year. During periods when artesian well sources are heavily used, hardness spikes significantly. During snowmelt season when surface water is dominant, hardness is lower but organic content (and disinfection byproduct potential) increases. This variability makes a whole-home system particularly valuable in Ogden — it handles your water year-round regardless of the active blend.",
+  },
+  {
+    question: "Does Blue Logic serve North Ogden, South Ogden, and surrounding Weber County communities?",
+    answer: "Yes. Blue Logic serves Ogden, North Ogden, South Ogden, Harrisville, Pleasant View, and surrounding Weber County communities. We also serve the broader northern Wasatch Front including Layton, Clearfield, and Clinton in Davis County.",
+  },
+  {
+    question: "What system does Blue Logic recommend for Ogden?",
+    answer: "Given Ogden's variable hardness, manganese and iron concerns, and the elevated arsenic flagged in the EWG database, the whole-home filtration system is a strong fit for most Ogden households. The Katalox stage addresses iron and manganese specifically, and the integrated softening handles the wide hardness range. For homeowners with more specific contaminant concerns, the RO purification upgrade provides the most complete coverage. Your free water test confirms which approach is right for your home.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Ogden"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Ogden", url: "/locations/ogden/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Ogden Utah | Blue Logic Water"
+  description="Ogden water has variable hardness (10–28 GPG), manganese concerns, and arsenic above EWG guidelines. Blue Logic serves Ogden and Weber County. Free in-home water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Weber County · Ogden City Public Utilities · North Ogden · South Ogden
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Ogden, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Ogden draws water from a unique blend of river sources and artesian wells — creating
+        high variability in hardness and elevated manganese and iron concerns. Blue Logic
+        installs whole-home filtration and RO systems built for Ogden's specific water profile.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Ogden's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database for Ogden City Water System. All levels meet federal legal standards.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">9</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, manganese, and molybdenum. Federally compliant.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Variable</div>
+          <div class="font-semibold text-foreground mb-1">Manganese &amp; Iron</div>
+          <p class="text-xs text-muted-foreground">From groundwater and artesian well sources — causes staining and metallic taste.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">10–28 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness (variable)</div>
+          <p class="text-xs text-muted-foreground">Highly variable by season and active source — among the most variable on the Wasatch Front.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Key Water Quality Concerns</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Manganese</span>
+            <span class="badge badge-alert">Above EWG health guideline — causes staining</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Molybdenum</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness (variable)</span>
+            <span class="badge badge-primary">10–28 GPG — Hard to Very Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH29011" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Ogden City Water →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Why Ogden's Water Is Different</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          Most Wasatch Front communities rely primarily on surface water from the JVWCD system.
+          Ogden City Public Utilities operates its own infrastructure drawing from the Ogden River
+          and Weber River watersheds as well as a network of groundwater wells — including artesian
+          wells that produce naturally mineral-rich water. When artesian or groundwater sources are
+          active (typically in late summer and fall), Ogden water hardness and mineral content
+          spikes significantly.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          This multi-source blending also contributes to the manganese and iron levels that
+          distinguish Ogden from its Wasatch Front neighbors. Manganese and iron are common in
+          groundwater throughout northern Utah, and Ogden's groundwater-influenced supply shows
+          measurable levels of both.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ogden-Specific Scenarios -->
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        What Ogden Homeowners Experience
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Rust Staining and Discoloration</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            The iron and manganese in Ogden's groundwater-influenced supply causes orange-brown
+            rust staining on toilets, bathtubs, and sinks, and dark staining on laundry. This
+            staining is aesthetic — not a health risk at typical levels — but it's difficult to
+            remove and re-forms continuously in untreated water. Blue Logic's Katalox filtration
+            stage specifically addresses iron and manganese removal.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Seasonal Water Variability</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Ogden homeowners often notice that their water tastes, smells, and performs differently
+            at different times of year as the utility adjusts its source blend. Springtime
+            snowmelt brings softer water with higher organic content; late summer and fall
+            shifts toward groundwater sources with harder, minerally water. A whole-home system
+            addresses your water regardless of which blend is active.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Older Ogden Home Plumbing</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Ogden's established neighborhoods — many with homes built in the 1940s through 1970s —
+            have decades of mineral scale in their plumbing. Older galvanized steel pipes in
+            particular accumulate scale and can leach metals into tap water. A whole-home
+            filtration system addresses incoming water quality, while the softening stage helps
+            prevent new scale formation.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Weber County Value</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+            Blue Logic serves Ogden and Weber County at the same pricing as Salt Lake and Utah
+            County — backed by a written price-match guarantee on any competing quote.
+            The price-match guarantee applies to any licensed competitor quote, including Weber
+            County dealers. In-house financing is available with half down and flexible terms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas served -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Ogden and Weber County Areas Served</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-4">
+        {["North Ogden", "South Ogden", "Harrisville", "Pleasant View", "Riverdale",
+          "Washington Terrace", "Roy", "Clearfield", "Clinton"].map((area) => (
+          <span class="px-3 py-1.5 bg-card border border-border rounded-full text-sm text-muted-foreground">{area}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving Layton · Bountiful · Davis County and the northern Wasatch Front.
+        <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Ogden Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby -->
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Layton",slug:"layton"},{name:"Bountiful",slug:"bountiful"},{name:"Salt Lake City",slug:"salt-lake-city"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Ogden Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Ogden and all of Weber County. A specialist will test your water
+        on-site and recommend the right system. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+  .scenario-card { @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

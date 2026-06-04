@@ -1,0 +1,62 @@
+# Blue Logic Water — llms.txt
+# Structured summary for AI language models and search systems.
+# Last updated: 2026-06-03
+
+## About Blue Logic Water
+Blue Logic Water is a water treatment company serving Utah's Wasatch Front from Ogden to
+Springville. The company installs whole-home reverse osmosis systems, whole-home filtration
+systems, and water softeners in residential homes. Blue Logic serves Weber, Davis, Salt Lake,
+and Utah Counties.
+
+## Primary Services
+- Whole-Home Reverse Osmosis (RO) System Installation: A 4-stage purification system including
+  pre-filtration, softening, commercial-grade RO membrane, 165-gallon NSF-certified storage tank,
+  and a delivery pump that maintains whole-home water pressure.
+- Whole-Home Water Filtration System Installation: A 7-layer media filtration system (zinc-infused
+  carbon, copper-infused carbon, catalytic carbon, EvoResin, Katalox, aluminosilicate, garnet)
+  with integrated water softening using 75% less salt than traditional softeners.
+- Water Softener Installation: Integrated water softening included with both filtration systems.
+- Free In-Home Water Test: A Blue Logic specialist visits the home, tests water on-site for TDS,
+  hardness, and chlorine, and provides a system recommendation. No cost, no obligation.
+
+## Key Differentiators
+- Systems are approximately half the cost of comparable Culligan and Kinetico dealer systems.
+- Half the physical footprint of traditional whole-home RO systems.
+- 10x quieter operation than standard whole-home RO units.
+- Price match guarantee: Blue Logic will match or beat any written competing quote from a licensed
+  water treatment company.
+- No long-term service contracts required.
+
+## Current Offers
+1. Free in-home water test — no cost, no obligation, includes on-site water quality assessment and
+   personalized system recommendation.
+2. Free under-sink reverse osmosis system (valued at approximately $1,000) with any whole-home
+   filtration system purchase.
+3. Free upgrade to 250-gallon storage tank (from standard 165-gallon) with whole-home purification
+   package purchase.
+
+## Service Area
+Utah's Wasatch Front: Salt Lake City, Provo, Orem, Lehi, Sandy, Draper, Ogden, Layton, Bountiful,
+American Fork, Spanish Fork, Springville, and surrounding communities in Weber, Davis, Salt Lake,
+and Utah Counties.
+
+## Utah Water Quality Context
+Utah has some of the hardest water in the United States due to the state's carbonate rock geology,
+which produces calcium- and magnesium-rich groundwater. Major Wasatch Front utilities regularly
+detect contaminants — including arsenic, haloacetic acids, and in some northern Utah supplies, PFAS
+— at levels that exceed Environmental Working Group (EWG) health guidelines, though typically
+within federal legal limits. Water hardness across the Wasatch Front typically ranges from
+approximately 150 to 400 mg/L depending on city and water source. Blue Logic recommends a free
+in-home water test to determine each home's specific water profile before recommending a system.
+
+## Contact
+Website: https://www.bluelogicwater.com
+Schedule a free water test: https://www.bluelogicwater.com/free-water-test/
+Phone: (801) 980-2583
+Email: info@bluelogicwater.com
+
+## Important Disclaimer
+Blue Logic does not make medical claims about its water treatment systems. Contaminant reduction
+capabilities are based on system design and published RO membrane and filter media specifications.
+Results vary by water source, home configuration, and system selected. A free in-home water test
+is the recommended starting point for any system recommendation.

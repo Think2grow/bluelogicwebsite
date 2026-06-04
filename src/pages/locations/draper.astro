@@ -1,0 +1,302 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Why does Draper water have such high arsenic levels?",
+    answer: "Draper's arsenic stems from multiple factors: the natural geology of Salt Lake County's southern valley, the blend of water sources used by the local utility (including well sources with naturally elevated arsenic), and the characteristics of water purchased from JVWCD. At 450x the EWG health guideline, Draper's arsenic is among the highest on the Wasatch Front. The water meets all federal legal standards — the EPA's legal limit is 10 ppb, and EWG's guideline is 0.004 ppb, making the multiplier large even when absolute levels are low.",
+  },
+  {
+    question: "What are haloacetic acids and why is Draper's level so high?",
+    answer: "Haloacetic acids (HAAs) form when chlorine used to disinfect water reacts with naturally occurring organic material in the source water. Draper's water supply — a blend of mountain surface water and JVWCD-purchased water — contains organic compounds that react with disinfection treatment to produce HAAs at levels significantly above EWG's health guidelines. Draper's HAA9 reading of 802x the EWG guideline places it among the most elevated disinfection byproduct levels on the Wasatch Front.",
+  },
+  {
+    question: "Does Draper's water have uranium?",
+    answer: "Yes, uranium has been detected in Draper's water at levels that exceed EWG's health guideline — at 26x the EWG threshold per database records. Uranium in drinking water is primarily a concern from long-term kidney health research. Like arsenic, uranium in Utah water is naturally occurring — a result of the region's geological mineral content. Reverse osmosis is effective at reducing uranium alongside arsenic and other dissolved inorganic contaminants.",
+  },
+  {
+    question: "Is Draper's water hard?",
+    answer: "Yes — Draper water typically measures around 21 grains per gallon (approximately 357 mg/L), placing it firmly in the 'very hard' category. Scale buildup on fixtures, showerheads, and inside appliances is a common problem for Draper homeowners. Tankless water heaters — common in Draper's newer, premium homes — are particularly vulnerable to scale damage from very hard water.",
+  },
+  {
+    question: "What system does Blue Logic recommend for Draper?",
+    answer: "Given Draper's combination of high arsenic, HAA disinfection byproducts, uranium, and very hard water, whole-home reverse osmosis is the most comprehensive option. The RO membrane addresses all of these at the molecular level. However, the filtration system alone (which addresses hardness, chlorine, and iron) is also a meaningful upgrade over untreated Draper water. Your free water test confirms which configuration is right for your specific home.",
+  },
+  {
+    question: "How does Blue Logic compare to other Draper water treatment companies?",
+    answer: "Blue Logic's systems are priced at $5,995–$19,999 using NSF-certified components, with a written price-match guarantee on any competing quote from a licensed Utah water treatment company. If you've received a quote from any local provider, bring it to your free water test and Blue Logic will match or beat it.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Draper"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Draper", url: "/locations/draper/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Draper Utah | Blue Logic Water"
+  description="Draper water has arsenic at 450x the EWG guideline, HAA9 at 802x, and uranium detected. Blue Logic installs whole-home RO systems in Draper. Free in-home water test."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · South Valley · Suncrest · Corner Canyon
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Draper, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Draper's water supply has arsenic at 450x the EWG health guideline, HAA9 disinfection
+        byproducts at 802x, and detected uranium — while remaining federally compliant.
+        Blue Logic installs whole-home RO systems that address all three.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/free-water-test/"
+          class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all"
+        >
+          Schedule Free Water Test →
+        </a>
+        <a
+          href="tel:+18019802583"
+          class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all"
+        >
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Water Data -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Draper's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database. All levels are within federal legal limits.
+        EWG health guidelines reflect stricter, more recently researched thresholds.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">450x</div>
+          <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring; among highest on Wasatch Front. Federally compliant.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">802x</div>
+          <div class="font-semibold text-foreground mb-1">HAA9 vs. EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Disinfection byproducts from chlorine treatment of organic-rich surface water.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~21 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard — causes rapid scale on fixtures and in appliances.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Top Contaminants Per EWG Data</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">450x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids (HAA9)</span>
+            <span class="badge badge-alert">802x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Uranium</span>
+            <span class="badge badge-alert">26x EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness</span>
+            <span class="badge badge-primary">~21 GPG — Very Hard</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <p class="text-xs text-muted-foreground mb-2">
+            14 total contaminants above EWG health guidelines per database. Source:
+          </p>
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18006" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Draper →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Draper Homeowner Context -->
+  <section class="bg-card py-12 md:py-16 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        What This Means for Draper Homeowners
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">Premium Homes, Premium Concern</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Draper is one of Salt Lake County's most affluent communities — Suncrest, Corner Canyon,
+            and the south valley foothills are home to high-end construction with premium appliances.
+            Very hard water at 21 GPG is particularly damaging to tankless water heaters, high-end
+            dishwashers, and steam features. And for families that have invested in quality homes,
+            the water quality profile — arsenic, HAAs, uranium — often motivates the most complete
+            solution rather than the minimum.
+          </p>
+        </div>
+        <div class="scenario-card">
+          <h3 class="font-semibold text-foreground mb-2">A System That Fits the Home</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">
+            Blue Logic's whole-home RO system is designed to fit in standard Utah utility rooms
+            and operates quietly enough that most homeowners forget it's running. In Draper's homes —
+            where utility rooms are often shared with fitness equipment, wine cellars, or media
+            storage — the compact, quiet design matters. Most Draper installations are complete in 4–8 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas Served -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-xl font-semibold mb-6 text-foreground">Areas Served in and Around Draper</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        {["Suncrest", "Corner Canyon", "South Mountain", "Highland Drive", "Traverse Ridge", "Draper Hills"].map((area) => (
+          <span class="px-4 py-2 bg-card border border-border rounded-full text-sm text-muted-foreground">{area}</span>
+        ))}
+      </div>
+      <p class="text-sm text-muted-foreground">
+        Also serving Sandy · South Jordan · Riverton · Bluffdale and surrounding south Salt Lake County communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Draper Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby cities -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[
+          { name: "Salt Lake City", slug: "salt-lake-city" },
+          { name: "Sandy", slug: "sandy" },
+          { name: "South Jordan", slug: "south-jordan" },
+          { name: "West Jordan", slug: "west-jordan" },
+        ].map((city) => (
+          <a href={`/locations/${city.slug}/`} class="related-link">{city.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Draper Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Draper with full Wasatch Front coverage. A specialist will test
+        your water on-site and recommend the right system. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+
+  .hero-gradient-dark {
+    @apply bg-linear-to-br from-primary to-primary/70;
+  }
+
+  .stat-box {
+    @apply bg-card p-6 rounded-xl border-2 border-border text-center;
+  }
+
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+
+  .contaminant-row {
+    @apply flex justify-between items-center py-2 border-b border-border;
+  }
+
+  .badge {
+    @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4;
+  }
+
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .badge-primary { @apply bg-primary/10 text-primary; }
+
+  .scenario-card {
+    @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

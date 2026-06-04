@@ -1,0 +1,213 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Why does Bountiful's water hardness vary so dramatically?",
+    answer: "Bountiful City operates a blended water system drawing from both surface water (mountain watershed sources via the Davis County system) and groundwater wells. Surface water is softer — typically in the 14–18 GPG range. Groundwater and well sources can be dramatically harder — 30–38 GPG in some cases. When the utility shifts its source blend seasonally or due to demand, Bountiful homeowners experience significant swings in water hardness. This variability means water that felt fine last month can suddenly deposit visible scale within days.",
+  },
+  {
+    question: "Does Bountiful have arsenic or radium in the water?",
+    answer: "Yes. The EWG Tap Water Database identifies both arsenic and radium above EWG health guidelines in Bountiful's water supply. Radium is a naturally occurring radioactive element found in some Utah groundwater sources — it's more common in well-influenced supplies, which aligns with Bountiful's blended source model. Both arsenic and radium are colorless, odorless, and undetectable without testing. Reverse osmosis is effective at addressing both.",
+  },
+  {
+    question: "What does 38 GPG water hardness actually mean for my home?",
+    answer: "38 GPG is among the hardest water found anywhere in the US. For context, water above 14 GPG is classified 'very hard.' At 38 GPG, scale accumulates at an accelerated rate — showerheads can lose significant flow within months, tankless water heaters are at serious risk of scale damage, and dishwashers leave heavy mineral film on every load. Even a brief period at 38 GPG hardness causes more scale damage than months at typical US hardness levels.",
+  },
+  {
+    question: "Is a whole-home filtration system enough for Bountiful, or do I need RO?",
+    answer: "Given Bountiful's arsenic and radium concerns alongside its extreme hardness, whole-home RO is the most complete solution for homeowners who want comprehensive protection. The filtration system addresses hardness, chlorine, and taste — but arsenic and radium require the RO membrane for effective reduction. Your free water test will measure your current hardness and give your specialist context on which contaminants are most relevant to your specific address.",
+  },
+  {
+    question: "How does Blue Logic handle Bountiful's extreme hardness variability?",
+    answer: "Blue Logic's integrated water softening uses EvoResin ion-exchange media designed to handle the full range of Bountiful's hardness profile — from 14 GPG surface water periods to 38 GPG well-water periods. The system adjusts automatically as incoming water hardness changes. Your specialist will configure the system based on the harder end of your local water range to ensure consistent performance year-round.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Bountiful"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Bountiful", url: "/locations/bountiful/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Bountiful Utah | Blue Logic Water"
+  description="Bountiful water hardness ranges from 18–38 GPG — the most variable on the Wasatch Front — with arsenic and radium above EWG guidelines. Free in-home water test. Blue Logic."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Davis County · Bountiful City Water · Mueller Park · Val Verda
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Bountiful, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Bountiful's water hardness swings from 18 to 38 GPG — the most extreme variability
+        on the Wasatch Front — with arsenic and radium detected above EWG health guidelines.
+        Blue Logic installs systems built for Bountiful's unique water challenge.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Bountiful's Water Quality Profile
+      </h2>
+      <p class="text-xs text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Data from the EWG Tap Water Database and Bountiful City consumer confidence reports.
+        All levels meet federal legal standards. EWG guidelines are stricter than federal law.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">18–38 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness (variable)</div>
+          <p class="text-xs text-muted-foreground">Most variable hardness on the Wasatch Front — surface water vs. well water swings dramatically by season.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic + Radium</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guidelines</div>
+          <p class="text-xs text-muted-foreground">Both detected in Bountiful's well-influenced supply. Colorless, odorless — undetectable without testing.</p>
+        </div>
+        <div class="stat-box">
+          <div class="text-4xl font-bold text-foreground mb-2">8</div>
+          <div class="font-semibold text-foreground mb-1">Contaminants Above EWG Thresholds</div>
+          <p class="text-xs text-muted-foreground">Including arsenic, radium, and haloacetic acids. Source: EWG Tap Water Database.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-2xl border border-border p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-semibold mb-4 text-foreground">Key Water Quality Concerns</h3>
+        <div class="space-y-3">
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Water hardness (variable)</span>
+            <span class="badge badge-alert">18–38 GPG — most extreme range on Wasatch Front</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Arsenic</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Radium</span>
+            <span class="badge badge-alert">Above EWG health guideline (naturally occurring)</span>
+          </div>
+          <div class="contaminant-row">
+            <span class="font-medium text-foreground">Haloacetic acids</span>
+            <span class="badge badge-alert">Above EWG health guideline</span>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-border">
+          <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH06015" target="_blank" rel="noopener" class="text-primary text-sm underline">
+            Full EWG Report for Bountiful City Water →
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">Why Bountiful's Water Swings So Dramatically</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3">
+          Bountiful City blends two fundamentally different water sources. Surface water from mountain
+          watersheds arrives relatively soft (14–18 GPG) with higher organic content and lower mineral
+          concentration. Groundwater from wells tapping into deep calcium-rich aquifers can measure
+          30–38 GPG — among the hardest found anywhere on the Wasatch Front.
+        </p>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          The utility adjusts this blend based on availability and seasonal demand. When summer heat
+          and drought reduce surface flow, well sources carry more of the load — and Bountiful
+          homeowners on untreated water notice the difference immediately. Scale that was manageable
+          in spring becomes a serious problem in late summer and fall.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Bountiful Water Treatment — Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Layton",slug:"layton"},{name:"Ogden",slug:"ogden"},{name:"Salt Lake City",slug:"salt-lake-city"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Schedule Your Free Bountiful Water Test
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Bountiful and all of Davis County. A specialist will test your water
+        on-site and give you the exact hardness reading for your home. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .contaminant-row { @apply flex justify-between items-center py-2 border-b border-border; }
+  .badge { @apply text-xs font-semibold px-3 py-1 rounded-full shrink-0 ml-4; }
+  .badge-alert { @apply bg-destructive/10 text-destructive; }
+  .scenario-card { @apply bg-background p-6 rounded-xl border border-border border-l-4 border-l-primary; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

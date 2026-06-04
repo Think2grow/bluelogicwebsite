@@ -1,0 +1,324 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "How do I know which water treatment system is right for my Utah home?",
+    answer: "The most reliable way is a free in-home water test. Hardness, chlorine, and contaminant levels vary between cities, neighborhoods, and even homes on the same street depending on plumbing age and which sources the utility is actively using. A Blue Logic specialist tests your specific tap water, explains what the results mean, and recommends a system based on what they find — not based on a one-size-fits-all city profile.",
+  },
+  {
+    question: "If I just bought a new home, do I need to test the water?",
+    answer: "Yes — new construction doesn't change the municipal source. If you moved to Lehi, Draper, Sandy, or another Wasatch Front community with elevated arsenic or disinfection byproduct concerns, your new home has the same water as every other home on your utility. New plumbing also introduces its own variables during the first year. Testing on move-in is the clearest baseline you can establish.",
+  },
+  {
+    question: "Should I get a whole-house filter or just a point-of-use filter at the sink?",
+    answer: "It depends on your concern. If your primary concern is drinking and cooking water quality, a point-of-use filter (such as an under-sink RO) addresses that specific tap. If you're also concerned about chlorine in shower water, scale damage to appliances, or hard water on skin and hair, a whole-home system addresses every point of use simultaneously. Blue Logic's free under-sink RO system (included with a filtration purchase) gives you drinking water coverage without a full whole-home upgrade.",
+  },
+  {
+    question: "What is the difference between filtration and purification?",
+    answer: "Filtration refers to mechanical and media-based removal of contaminants — Blue Logic's 7-layer system filters chlorine, chloramines, iron, manganese, and hardness. Purification refers to a more complete process that works at the molecular level — reverse osmosis pushes water through a membrane with 0.0001-micron pores, addressing dissolved inorganic contaminants that filtration media alone cannot reach, including arsenic, heavy metals, and PFAS.",
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Know what's in your water",
+    description: "The starting point for any water treatment decision is understanding your specific water. Check your utility's annual Consumer Confidence Report (search '[your city] water quality report'), review the EWG Tap Water Database at ewg.org/tapwater, or schedule a free Blue Logic in-home water test that measures hardness and chlorine on the spot.",
+    tip: "EWG health guidelines are stricter than federal legal limits. Contaminants above EWG guidelines are not necessarily illegal — they're detected above EWG's recommended protective thresholds.",
+  },
+  {
+    number: "02",
+    title: "Identify your primary concerns",
+    description: "Most Utah homeowners are dealing with a combination of concerns: scale and mineral buildup (hard water), taste and odor (chlorine/chloramines), and in some communities, specific contaminant concerns like arsenic or PFAS. Ranking these helps match the right system to the right problem.",
+    tip: "Hard water problems (scale, spots, dry skin, appliance damage) call for softening. Chemical or contaminant concerns call for filtration or RO. Both? An integrated system addresses all of it.",
+  },
+  {
+    number: "03",
+    title: "Match the system to the problem",
+    description: "Water softener: addresses hardness only. Whole-home filtration: addresses hardness, chlorine, iron, manganese, and taste/odor. Whole-home RO: addresses all of filtration plus arsenic, heavy metals, PFAS, and dissolved inorganic contaminants at the molecular level. Your city's water profile is a strong guide: Lehi, Draper, and Orem homeowners concerned about arsenic benefit most from the RO upgrade; Sandy homeowners concerned about disinfection byproducts benefit from carbon-based filtration.",
+    tip: "Not sure? Start with a free water test. The specialist's recommendation is based on your specific water, not a sales script.",
+  },
+  {
+    number: "04",
+    title: "Consider whole-home vs. point-of-use",
+    description: "A whole-home system treats every tap, shower, appliance, and fixture. A point-of-use system (under-sink RO or countertop filter) treats one faucet. If you drink tap water and want to replace bottled water, a point-of-use under-sink RO is often sufficient for drinking. If you also want softer shower water, cleaner laundry, and protected appliances, a whole-home system is the right scope.",
+    tip: "Blue Logic's filtration system includes a free under-sink RO system with purchase — giving you whole-home filtration plus purified drinking water in one installation.",
+  },
+  {
+    number: "05",
+    title: "Evaluate cost honestly",
+    description: "Water treatment system costs vary widely. Blue Logic systems range from $5,995 to $19,999 depending on the system and home configuration. Ask for a transparent written quote — no hidden fees after the installation. Blue Logic's price-match guarantee applies to any written competing quote from a licensed Utah provider.",
+    tip: "Factor in the ongoing cost: salt refills every 2–3 months (Blue Logic uses ~75% less salt than traditional softeners), annual service, and filter media — not just the upfront installation.",
+  },
+  {
+    number: "06",
+    title: "Check what fits in your home",
+    description: "Whole-home water systems install in your utility room, garage, or basement. Older SLC homes may have limited utility space; newer construction in Lehi or South Jordan typically has more room. Blue Logic's system is roughly half the footprint of traditional whole-home RO units — an important consideration for homes where space is limited. Your specialist assesses the installation space during the free water test.",
+    tip: "Blue Logic's system is also 10x quieter than standard whole-home RO units — a meaningful factor if your utility room is near a bedroom or living space.",
+  },
+];
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "How to Choose a Water Treatment System", url: "/how-to-choose-water-treatment-system/" },
+  ]),
+];
+---
+
+<Layout
+  title="How to Choose a Water Treatment System for Utah Homes | Blue Logic"
+  description="A practical guide for Utah homeowners choosing between a water softener, whole-home filtration, and reverse osmosis. What to check, what questions to ask, and how to avoid overpaying."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Decision Guide · Utah Homeowners
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        How to Choose a Water Treatment System for Your Utah Home
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Not a sales pitch. A practical framework for deciding whether you need a softener,
+        a filtration system, or a full reverse osmosis setup — and how to avoid buying
+        more (or less) than your water actually requires.
+      </p>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-12 text-foreground">
+        Six Steps to the Right Decision
+      </h2>
+      <div class="space-y-8">
+        {steps.map((step) => (
+          <div class="step-card">
+            <div class="step-number-badge">{step.number}</div>
+            <div class="step-content">
+              <h3 class="text-xl font-semibold text-foreground mb-3">{step.title}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed mb-4">{step.description}</p>
+              <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg px-4 py-3">
+                <p class="text-sm text-foreground"><strong>Tip:</strong> {step.tip}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Decision Tool -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Quick Decision Guide
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Match your main concern to the right starting point.
+      </p>
+      <div class="space-y-4">
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">Scale on fixtures, appliance damage, spotty dishes</div>
+            <div class="text-sm text-muted-foreground">Hard water problem — hardness minerals are the cause</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-primary">Whole-Home Filtration</div>
+            <div class="text-xs text-muted-foreground">Includes integrated softening + filtration</div>
+          </div>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">Chlorine smell or taste, chemical odor in shower</div>
+            <div class="text-sm text-muted-foreground">Disinfectant residual — chlorine or chloramine in supply</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-primary">Whole-Home Filtration</div>
+            <div class="text-xs text-muted-foreground">Carbon stages specifically address chlorine/chloramines</div>
+          </div>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">Arsenic, PFAS, or heavy metal concerns (Lehi, Draper, SLC)</div>
+            <div class="text-sm text-muted-foreground">Inorganic dissolved contaminants — filtration alone is insufficient</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-success">Whole-Home RO</div>
+            <div class="text-xs text-muted-foreground">RO membrane addresses dissolved inorganics at molecular level</div>
+          </div>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">Replace bottled water, better drinking water at the kitchen tap</div>
+            <div class="text-sm text-muted-foreground">Drinking water quality — point-of-use focus</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-primary">Filtration + Free Under-Sink RO</div>
+            <div class="text-xs text-muted-foreground">Under-sink RO included free with filtration purchase</div>
+          </div>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">New home, young children, want the most complete protection</div>
+            <div class="text-sm text-muted-foreground">Comprehensive concern across all water uses</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-success">Whole-Home RO</div>
+            <div class="text-xs text-muted-foreground">Addresses hardness, disinfection, and dissolved contaminants</div>
+          </div>
+        </div>
+
+        <div class="decision-row">
+          <div class="decision-concern">
+            <div class="font-semibold text-foreground">Not sure — want to know what's actually in my water first</div>
+            <div class="text-sm text-muted-foreground">The right starting point for most homeowners</div>
+          </div>
+          <div class="decision-arrow">→</div>
+          <div class="decision-answer">
+            <div class="font-semibold text-primary">Free Water Test</div>
+            <div class="text-xs text-muted-foreground">No cost, no obligation — test first, decide after</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to Ask Any Provider -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">
+        What to Ask Any Water Treatment Company
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          "Are the components NSF-certified? Which certification and for which contaminants?",
+          "What is the total installed cost — including all components and labor?",
+          "What is the annual maintenance cost — salt, filter replacements, service?",
+          "What does the warranty cover and for how long?",
+          "Do you offer a price match if I get a competing quote?",
+          "Can you show me the specific contaminant removal documentation for my city's water concerns?",
+          "Will the system affect my water pressure? How is pressure restored?",
+          "How long does installation take and what does it involve?",
+        ].map((question) => (
+          <div class="flex gap-3 p-4 bg-card rounded-xl border border-border">
+            <span class="text-primary font-bold shrink-0 mt-0.5">?</span>
+            <span class="text-sm text-muted-foreground">{question}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Full System Comparison</a>
+        <a href="/utah-water-quality/" class="related-link">Utah Water Quality Guide</a>
+        <a href="/utah-hard-water/" class="related-link">Utah Hard Water Guide</a>
+        <a href="/whole-home-reverse-osmosis-utah/" class="related-link">Whole-Home RO</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Skip the Research — Let Your Water Decide
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        The fastest path to the right system is a free in-home water test.
+        Blue Logic tests your water on-site and gives you a transparent recommendation.
+        No pressure, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .step-card {
+    @apply flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border;
+  }
+
+  .step-number-badge {
+    @apply w-12 h-12 shrink-0 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm;
+  }
+
+  .step-content { @apply flex-1; }
+
+  .decision-row {
+    @apply grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-4 items-center bg-card p-5 rounded-xl border border-border;
+  }
+
+  .decision-concern { @apply md:text-left; }
+  .decision-arrow { @apply text-2xl text-primary font-bold text-center; }
+  .decision-answer { @apply md:text-right; }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>

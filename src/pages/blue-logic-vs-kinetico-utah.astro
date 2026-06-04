@@ -1,0 +1,163 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import Reviews from "../components/Reviews.astro";
+import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Should I get a Blue Logic quote if I'm already talking to Kinetico?",
+    answer: "Yes. Blue Logic's written price-match guarantee means there's no risk in getting a second opinion. If you have a written Kinetico quote, bring it to your free Blue Logic water test and Blue Logic will match or beat it. Compare both quotes with full information before deciding.",
+  },
+  {
+    question: "How do I verify Blue Logic's system quality independently?",
+    answer: "Ask Blue Logic for NSF certification documentation on all components at your water test. Blue Logic uses NSF/ANSI-rated RO membranes and food-grade storage tanks. The 1-year limited warranty covers parts; components are designed for 8–10 year lifespan with proper annual maintenance.",
+  },
+  {
+    question: "Does Blue Logic require a service contract?",
+    answer: "No. Blue Logic does not require an ongoing service contract. An annual check-up is scheduled at installation by Jared — but there is no contractual ongoing obligation. Service visits are available per request.",
+  },
+  {
+    question: "What questions should I ask Kinetico so I can compare fairly?",
+    answer: "Ask any provider: What is the total installed cost including all components and labor? Is a service contract required, and what are the annual costs? What does the warranty cover and for how long? Are components NSF-certified — which standards and which parts? Who installs the system? Getting written answers lets you compare apples to apples.",
+  },
+];
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Blue Logic vs. Kinetico Utah", url: "/blue-logic-vs-kinetico-utah/" },
+  ]),
+];
+---
+
+<Layout
+  title="Blue Logic vs. Kinetico Utah | Get Both Quotes and Compare"
+  description="Considering Kinetico for Utah whole-home water treatment? Here's what Blue Logic offers — with a written price-match guarantee on any competing quote. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">Utah Water Treatment · Comparison Guide</p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Considering Kinetico? Here's What Blue Logic Offers.
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Kinetico has a strong reputation in the Utah water treatment market. If you're evaluating both,
+        the most useful step is to get written quotes from each and compare directly.
+        Blue Logic's price-match guarantee makes that comparison straightforward.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm text-muted-foreground text-center">
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's own verified specs and offers.
+        We make no claims about Kinetico's pricing, system dimensions, or service terms — those vary by dealer.
+        Bring a written Kinetico quote and Blue Logic will match or beat it.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">Blue Logic's own specifications — not competitor comparisons.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
+        {[
+          { label: "System price range", value: "$5,995 – $19,999", note: "Confirmed at free water test. No hidden fees after installation." },
+          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and food-grade tanks. Documentation provided." },
+          { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year lifespan with annual maintenance." },
+          { label: "Service contract required", value: "No", note: "Annual check-up included. No ongoing contractual obligation." },
+          { label: "Financing", value: "In-house, half down", note: "Flexible terms. No third-party lender." },
+          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
+          { label: "Free in-home water test", value: "Yes — no obligation", note: "On-site testing, plain-English results, no sales pressure." },
+          { label: "Installation", value: "4–8 hours, one day", note: "Compact system fits standard Utah utility rooms." },
+        ].map((item) => (
+          <div class="spec-card">
+            <div class="flex justify-between items-start gap-4 mb-2">
+              <span class="font-semibold text-foreground">{item.label}</span>
+              <span class="text-primary font-bold shrink-0">{item.value}</span>
+            </div>
+            <p class="text-xs text-muted-foreground">{item.note}</p>
+          </div>
+        ))}
+      </div>
+      <div class="bg-card rounded-2xl border-2 border-primary p-6 md:p-8 text-center">
+        <h3 class="text-xl font-semibold text-foreground mb-3">The Price-Match Guarantee</h3>
+        <p class="text-muted-foreground mb-4">Bring your written Kinetico quote. Blue Logic will match or beat it for a comparable system — in writing.</p>
+        <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">Schedule Free Water Test — Bring Your Quote →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-serif text-center mb-8 text-foreground">Current Blue Logic Offers</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { icon: "🔬", title: "Free In-Home Water Test", body: "On-site water quality assessment. No cost, no obligation." },
+          { icon: "💧", title: "Free Under-Sink RO ($1,000 value)", body: "Included with any whole-home filtration purchase." },
+          { icon: "🏆", title: "Free 250-Gallon Tank Upgrade", body: "With whole-home purification package purchase." },
+        ].map((o) => (
+          <div class="offer-card"><div class="text-3xl mb-3">{o.icon}</div><div class="font-semibold text-foreground mb-2">{o.title}</div><p class="text-sm text-muted-foreground">{o.body}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto"><Reviews max={4} compact={true} /></div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/blue-logic-vs-culligan-utah/" class="related-link">vs. Culligan</a>
+        <a href="/blue-logic-vs-aj-softeners-utah/" class="related-link">vs. AJ Softeners</a>
+        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare All Systems</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Get a Second Quote — Free</h2>
+      <p class="text-muted-foreground text-center mb-10">Have a Kinetico quote? Bring it. Blue Logic will match or beat any written competing offer from a licensed Utah water treatment company.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+  .spec-card { @apply bg-card p-5 rounded-xl border border-border; }
+  .offer-card { @apply bg-background p-6 rounded-xl border border-border text-center; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

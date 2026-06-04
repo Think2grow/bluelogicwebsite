@@ -1,0 +1,151 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Does Blue Logic serve Payson?",
+    answer: "Yes. Payson is at the southernmost edge of Blue Logic's regular Wasatch Front service area, alongside Spanish Fork and Springville. Most Payson installations are completed in a single day. Contact us to confirm scheduling availability for your specific address.",
+  },
+  {
+    question: "Is Payson water hard?",
+    answer: "Yes — Payson water is very hard, typically in the 20–26 GPG range from local well and surface water sources. Southern Utah County geology produces naturally hard groundwater, and Payson's municipal supply reflects that. At these levels, scale accumulation is rapid and appliance damage is measurable without softening.",
+  },
+  {
+    question: "What contaminants are in Payson's water?",
+    answer: "Payson draws from local surface and groundwater sources with the same arsenic and disinfection byproduct profile common to southern Utah County utilities. The EWG Tap Water Database flags contaminants above EWG health guidelines including arsenic and haloacetic acids. All are within federal legal limits. A free water test gives you the actual reading for your specific home.",
+  },
+  {
+    question: "What system does Blue Logic recommend for Payson?",
+    answer: "Given Payson's high hardness and arsenic concerns, whole-home filtration addresses the immediate scale and chlorine issues, while the whole-home RO upgrade provides the most complete coverage including arsenic reduction. Your free in-home water test confirms which system is the right fit for your specific water and home.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Payson"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Payson", url: "/locations/payson/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Payson Utah | Blue Logic Water"
+  description="Payson water is very hard at 20–26 GPG with arsenic above EWG guidelines. Blue Logic serves Payson and south Utah County. Free in-home water test — no obligation."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        South Utah County · Near Spanish Fork · Salem
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Payson, Utah Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Payson delivers very hard water at 20–26 GPG with arsenic and haloacetic acid
+        concerns above EWG health guidelines. Blue Logic serves Payson at the southern
+        boundary of our Wasatch Front service area.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Water Quality Profile</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">20–26 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard. Southern Utah County geology produces some of the hardest water on the Wasatch Front.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring from local geology. Not addressed by softeners or basic filtration.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">HAA</div>
+          <div class="font-semibold text-foreground mb-1">Disinfection Byproducts</div>
+          <p class="text-xs text-muted-foreground">Haloacetic acids from surface water chlorination above EWG health guidelines.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Payson's location at the convergence of southern Utah County geology and local surface water sources produces one of the harder water profiles in Blue Logic's service area. The combination of very hard water (20–26 GPG), arsenic, and disinfection byproducts makes a whole-home system both a practical appliance-protection investment and a meaningful water quality improvement. Blue Logic's free in-home test gives you the exact reading for your home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Spanish Fork",slug:"spanish-fork"},{name:"Springville",slug:"springville"},{name:"Provo",slug:"provo"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test — Payson</h2>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Payson and south Utah County. No cost, no obligation.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

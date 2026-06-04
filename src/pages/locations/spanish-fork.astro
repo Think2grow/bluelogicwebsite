@@ -1,0 +1,148 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "How hard is Spanish Fork's water?",
+    answer: "Spanish Fork water is very hard — approximately 25 grains per gallon (around 427 mg/L). This places it among the harder communities on the Wasatch Front, comparable to southern Utah County geology and Springville. At 25 GPG, scale accumulation is rapid and visible: showerheads lose flow within months, glassware fogs quickly in the dishwasher, and water heaters lose efficiency at an accelerated rate.",
+  },
+  {
+    question: "What contaminants are in Spanish Fork water?",
+    answer: "The EWG Tap Water Database flags approximately 9 contaminants above EWG health guidelines in Spanish Fork's water supply, including arsenic, haloacetic acid disinfection byproducts, and nitrates. Spanish Fork's water is influenced by agricultural history in the area, which contributes to nitrate levels that aren't typical in urban Wasatch Front communities. All levels are within federal legal limits.",
+  },
+  {
+    question: "What is driving the hard water in Spanish Fork?",
+    answer: "Spanish Fork draws from surface water and local well sources influenced by Utah County's limestone and carbonate rock geology — the same geology that makes hard water a Wasatch Front-wide issue. At 25 GPG, Spanish Fork is in the upper range for the region. The Spanish Fork River and local aquifer sources both carry high mineral content.",
+  },
+  {
+    question: "Does Blue Logic serve Spanish Fork and surrounding south Utah County communities?",
+    answer: "Yes. Blue Logic serves Spanish Fork, Mapleton, Salem, and the broader south Utah County area. We are Blue Logic's southernmost regular service area on the Wasatch Front. Most installations in Spanish Fork are completed in a single day.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Spanish Fork"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Spanish Fork", url: "/locations/spanish-fork/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Spanish Fork Utah | Blue Logic Water"
+  description="Spanish Fork water is very hard at ~25 GPG with arsenic and nitrate concerns above EWG guidelines. Blue Logic serves south Utah County. Free in-home water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · Spanish Fork River · Mapleton · Salem
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Spanish Fork Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Spanish Fork delivers some of the hardest water in Utah County — approximately 25 GPG —
+        with arsenic and nitrate concerns above EWG health guidelines. Blue Logic serves Spanish
+        Fork and south Utah County.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">Schedule Free Water Test →</a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">Call (801) 980-2583</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Water Quality Profile</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">~25 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Upper end of the Wasatch Front range. Rapid scale on all fixtures and appliances.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring from Utah County geology. RO membrane is the most effective reduction approach.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Nitrates</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Agricultural area influence on groundwater nitrate levels. Addressed by RO membrane.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">What 25 GPG Looks Like at Home</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          At 25 GPG, scale damage is visible and fast. Showerheads clog within months. Glass shower doors cloud within weeks. Water heaters accumulate scale that reduces efficiency by 30–50% within a few years. Soap lathers poorly and laundry comes out stiff. For Spanish Fork homeowners, a whole-home system isn't optional maintenance — it's the difference between appliances that last 10 years and appliances that last 5.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Springville",slug:"springville"},{name:"Provo",slug:"provo"},{name:"Orem",slug:"orem"},{name:"Payson",slug:"payson"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test — Spanish Fork</h2>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Spanish Fork and south Utah County. No cost, no obligation.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

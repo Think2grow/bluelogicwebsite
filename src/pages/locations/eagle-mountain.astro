@@ -1,0 +1,164 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What is in Eagle Mountain's water?",
+    answer: "Eagle Mountain receives water from both the Jordan Valley Water Conservancy District (JVWCD) and the Central Utah Water Conservancy District (CUWCD). The Utah County source water profile includes arsenic above EWG health guidelines, haloacetic acid disinfection byproducts, and very hard water at approximately 14–18 GPG. Eagle Mountain is one of the fastest-growing cities in the state — most homeowners are moving into new construction that connects to the same municipal supply as every other home on the system.",
+  },
+  {
+    question: "Eagle Mountain is remote. Does Blue Logic serve this area?",
+    answer: "Yes. Blue Logic serves Eagle Mountain and surrounding Utah County communities including Cedar Fort and Fairfield areas. Installation logistics for Eagle Mountain are straightforward — most homes have standard utility rooms and modern plumbing that Blue Logic's compact system fits without modification. Most Eagle Mountain installations are completed in a single day.",
+  },
+  {
+    question: "Does Eagle Mountain have a different water source than Lehi and Saratoga Springs?",
+    answer: "Eagle Mountain draws from both JVWCD and CUWCD, while Lehi and Saratoga Springs draw primarily from JVWCD. The contaminant profile is similar — arsenic above EWG health guidelines and hard water are common to both source systems in this part of Utah County. Your specific home's reading depends on the active blend at the time of testing, which is why an in-home test that measures your actual tap is more useful than a city-wide average.",
+  },
+  {
+    question: "My home in Eagle Mountain is brand new. Do I still need a water treatment system?",
+    answer: "New construction doesn't change the source water. Your beautiful new Eagle Mountain home connects to the same municipal water supply with the same arsenic and hardness profile as every other home in the city. The advantage of installing at move-in: your plumbing and appliances are pristine. A Blue Logic system at move-in protects them from day one rather than treating accumulated scale and damage after the fact.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Eagle Mountain"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Eagle Mountain", url: "/locations/eagle-mountain/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Eagle Mountain Utah | Blue Logic Water"
+  description="Eagle Mountain water has arsenic above EWG guidelines and very hard water from JVWCD/CUWCD supply. Blue Logic serves Eagle Mountain's fast-growing community. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · JVWCD / CUWCD · One of Utah's Fastest-Growing Cities
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Eagle Mountain Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Eagle Mountain's rapid growth means thousands of families moving into new homes
+        that connect to Utah County municipal water with arsenic concerns and very hard water.
+        Blue Logic installs whole-home filtration and RO systems built for this market.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
+          Schedule Free Water Test →
+        </a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">
+          Call (801) 980-2583
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Water Quality Profile</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Utah County geology produces naturally occurring arsenic in both JVWCD and CUWCD source water.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">HAA</div>
+          <div class="font-semibold text-foreground mb-1">Disinfection Byproducts</div>
+          <p class="text-xs text-muted-foreground">Haloacetic acids from chlorination of organic-rich mountain surface water.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">14–18 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard. Immediate scale risk on new appliances without treatment.</p>
+        </div>
+      </div>
+
+      <div class="bg-card rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-3 text-foreground">The New Construction Opportunity</h3>
+        <p class="text-sm text-muted-foreground leading-relaxed">
+          Eagle Mountain's housing stock is almost entirely new construction. This is the ideal scenario
+          for water treatment — no old scale in the pipes, no mineral deposits in the water heater, no
+          clouded glass on the shower doors yet. Installing at move-in is significantly cheaper than
+          treating the aftermath of years of hard water. And for contaminants like arsenic, there's no
+          benefit to waiting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Saratoga Springs",slug:"saratoga-springs"},{name:"Lehi",slug:"lehi"},{name:"American Fork",slug:"american-fork"},{name:"Provo",slug:"provo"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Free Water Test — Eagle Mountain
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic serves Eagle Mountain and all of Utah County. No cost, no obligation.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

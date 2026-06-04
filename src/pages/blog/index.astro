@@ -1,48 +1,83 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
+import { getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
 
 const posts = await getCollection("blog");
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
+
+const schemas = [
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog/" },
+  ]),
+];
 ---
 
-<Layout>
-  <section class="max-w-4xl mx-auto px-4 py-12">
-    <header class="mb-12">
-      <h1 class="text-5xl font-bold text-foreground mb-4">Blog</h1>
-      <p class="text-xl text-muted-foreground">
-        Insights on water quality, filtration, and wellness in Utah
+<Layout
+  title="Water Treatment Blog | Blue Logic Water — Utah Resources"
+  description="Utah water quality guides, water treatment education, and homeowner resources from Blue Logic Water — covering hard water, arsenic, PFAS, RO systems, and more."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-16 md:py-20 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-serif mb-4 text-foreground">
+        Utah Water Quality Resources
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        Practical guides for Wasatch Front homeowners — hard water, contaminants, system comparisons, and what to do about them.
       </p>
-    </header>
+    </div>
+  </section>
 
+  <section class="max-w-4xl mx-auto px-4 py-12">
     <div class="space-y-8">
       {
         sortedPosts.map((post) => (
           <article class="border-b border-border pb-8 last:border-0">
             <a href={`/blog/${post.id}/`} class="group">
-              <h2 class="text-2xl font-bold text-foreground group-hover:text-glacier transition-colors mb-2">
+              <h2 class="text-2xl font-serif font-semibold text-foreground group-hover:text-primary transition-colors mb-3">
                 {post.data.title}
               </h2>
             </a>
             {post.data.description && (
-              <p class="text-muted-foreground mb-4">{post.data.description}</p>
+              <p class="text-muted-foreground mb-4 leading-relaxed">{post.data.description}</p>
             )}
-            <div class="flex items-center gap-4 text-sm text-muted-foreground">
-              <span>{post.data.author}</span>
-              <span>•</span>
-              <time datetime={post.data.date.toISOString()}>
-                {post.data.date.toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
+            <div class="flex items-center justify-between flex-wrap gap-4">
+              <div class="flex items-center gap-4 text-sm text-muted-foreground">
+                <span>{post.data.author}</span>
+                <span>·</span>
+                <time datetime={post.data.date.toISOString()}>
+                  {post.data.date.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </div>
+              <a href={`/blog/${post.id}/`} class="text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
+                Read article →
+              </a>
             </div>
           </article>
         ))
       }
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-serif mb-3 text-foreground">Ready to Test Your Water?</h2>
+      <p class="text-muted-foreground mb-6">Every article points to the same starting point — knowing what's actually in your home's water. Blue Logic's free in-home water test does that in one visit.</p>
+      <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">
+        Schedule Free Water Test →
+      </a>
     </div>
   </section>
 </Layout>

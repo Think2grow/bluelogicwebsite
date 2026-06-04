@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "What is in Riverton's water?",
+    answer: "Riverton receives JVWCD water with approximately 18 GPG hardness, haloacetic acid disinfection byproducts, and arsenic above EWG health guidelines — the same profile as neighboring Herriman, South Jordan, and West Jordan on the south valley JVWCD supply. All levels are within federal legal limits.",
+  },
+  {
+    question: "Riverton is growing fast with lots of new construction. Does that affect the water?",
+    answer: "New construction doesn't change the source water. Riverton's rapid growth brings new homes with pristine plumbing connecting to the same JVWCD municipal supply as every other home in the city. The hardness and contaminant profile is the same regardless of when your home was built — installing at move-in protects new fixtures and appliances from day one.",
+  },
+  {
+    question: "Does Blue Logic serve Riverton and the South Jordan border area?",
+    answer: "Yes. Blue Logic serves all of Riverton including the newer developments near the Herriman and South Jordan borders, Oquirrh Mountain area communities, and nearby Bluffdale. Most Riverton installations are completed in a single day.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Riverton"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Riverton", url: "/locations/riverton/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Riverton Utah | Blue Logic Water"
+  description="Riverton water is very hard at 18 GPG with haloacetic acids and arsenic above EWG guidelines. Blue Logic serves fast-growing Riverton. Free in-home water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Salt Lake County · JVWCD · Near South Jordan and Herriman
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Riverton Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Riverton receives hard JVWCD water with the same haloacetic acid and arsenic concerns
+        as neighboring South Jordan, Herriman, and West Jordan. Blue Logic serves Riverton's
+        growing community with compact, quiet whole-home systems.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">Schedule Free Water Test →</a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">Call (801) 980-2583</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">HAA</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Same JVWCD supply as South Jordan (HAA9 525x) and Herriman. Chlorination of mountain surface water.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring. Not removed by softeners — requires RO membrane for reduction.</p>
+        </div>
+        <div class="stat-box stat-box-primary">
+          <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard. New construction in Riverton benefits most from move-in installation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"South Jordan",slug:"south-jordan"},{name:"Herriman",slug:"herriman"},{name:"West Jordan",slug:"west-jordan"},{name:"Draper",slug:"draper"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test — Riverton</h2>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Riverton and all of Salt Lake County. No cost, no obligation.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .stat-box-primary { @apply border-primary/30 bg-primary/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

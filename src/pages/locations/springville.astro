@@ -1,0 +1,152 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import LeadForm from "../../components/LeadForm.astro";
+import Reviews from "../../components/Reviews.astro";
+import { getLocalBusinessSchema, getFAQSchema, getBreadcrumbSchema } from "../../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Is Springville water hard?",
+    answer: "Yes — approximately 23 grains per gallon (around 393 mg/L), which places Springville in the 'very hard' category. This is typical for southern Utah County communities where carbonate rock geology produces calcium-rich groundwater and surface water. At 23 GPG, scale builds rapidly on fixtures, inside water heaters, and in dishwashers.",
+  },
+  {
+    question: "What contaminants are in Springville's water?",
+    answer: "The EWG database flags approximately 9 contaminants above EWG health guidelines for Springville City water, including arsenic, haloacetic acid disinfection byproducts, and bromodichloromethane (a chlorination byproduct). All levels are within federal legal limits. The profile is similar to Spanish Fork and other southern Utah County communities.",
+  },
+  {
+    question: "Springville is known as Art City — what do residents typically notice about the water?",
+    answer: "Springville residents commonly notice the classic signs of very hard water: white deposits on shower fixtures, mineral film on dishes despite dishwasher detergent, stiff laundry, and gradual reduction in showerhead flow. Chlorine taste and odor is also common from the surface water treatment process. These are aesthetic concerns that a whole-home filtration system addresses directly.",
+  },
+  {
+    question: "Does Blue Logic serve Springville and the surrounding Mapleton area?",
+    answer: "Yes. Blue Logic serves Springville, Mapleton, Salem, and south Utah County — our southernmost regular service area on the Wasatch Front. Distance doesn't affect pricing or installation scope. Most Springville installations are completed in a single day.",
+  },
+];
+
+const schemas = [
+  getLocalBusinessSchema(siteUrl, "Springville"),
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Locations", url: "/locations/" },
+    { name: "Springville", url: "/locations/springville/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Treatment Springville Utah | Blue Logic Water"
+  description="Springville water is very hard at ~23 GPG with arsenic and haloacetic acids above EWG guidelines. Blue Logic serves Springville and south Utah County. Free water test."
+  schema={schemas}
+>
+  <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-white/70 mb-4">
+        Utah County · Art City · Mapleton · Salem
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
+        Water Treatment for Springville Homes
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
+        Springville delivers very hard water at approximately 23 GPG with arsenic and
+        haloacetic acid concerns. Blue Logic serves Springville and south Utah County —
+        the southernmost point of our Wasatch Front service area.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">Schedule Free Water Test →</a>
+        <a href="tel:+18019802583" class="inline-block border-2 border-white/50 text-white font-semibold text-lg px-8 py-4 rounded-full hover:bg-white/10 transition-all">Call (801) 980-2583</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Water Quality Profile</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+        <div class="stat-box stat-box-alert">
+          <div class="text-5xl font-bold text-destructive mb-2">~23 GPG</div>
+          <div class="font-semibold text-foreground mb-1">Water Hardness</div>
+          <p class="text-xs text-muted-foreground">Very hard. Visible scale within weeks on untreated fixtures.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
+          <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
+          <p class="text-xs text-muted-foreground">Naturally occurring from southern Utah County geology.</p>
+        </div>
+        <div class="stat-box stat-box-alert">
+          <div class="text-4xl font-bold text-destructive mb-2">HAA + BDC</div>
+          <div class="font-semibold text-foreground mb-1">Disinfection Byproducts</div>
+          <p class="text-xs text-muted-foreground">Haloacetic acids and bromodichloromethane from surface water chlorination.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-card rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-foreground mb-2">What hard water does to a Springville home</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">At 23 GPG, scale accumulates in water heaters, reducing efficiency by 25–45% within a few years. Showerhead flow drops. Glass shower enclosures develop a permanent mineral haze without acid cleaning. Dishwashers leave mineral residue on every load.</p>
+        </div>
+        <div class="bg-card rounded-xl border border-border p-5">
+          <h3 class="font-semibold text-foreground mb-2">What a Blue Logic system addresses</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">The whole-home filtration system stops new scale formation, removes chlorine and chloramines, and dramatically improves taste and odor. For arsenic and disinfection byproduct concerns, the whole-home RO upgrade adds molecular-level purification at every tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-card py-10 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {[{name:"Spanish Fork",slug:"spanish-fork"},{name:"Provo",slug:"provo"},{name:"Orem",slug:"orem"}].map((c) => (
+          <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
+        ))}
+        <a href="/locations/" class="related-link">All Locations →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test — Springville</h2>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Springville and south Utah County. No cost, no obligation.</p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../../styles/global.css";
+  .hero-gradient-dark { @apply bg-linear-to-br from-primary to-primary/70; }
+  .stat-box { @apply bg-card p-6 rounded-xl border-2 border-border text-center; }
+  .stat-box-alert { @apply border-destructive/30 bg-destructive/5; }
+  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
+  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
+  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
+  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+</style>

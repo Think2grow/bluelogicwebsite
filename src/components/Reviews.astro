@@ -1,0 +1,192 @@
+---
+/**
+ * Reviews component — real Blue Logic Water Google reviews.
+ * Shows a responsive grid of customer cards with star ratings.
+ *
+ * Props:
+ *   heading  — optional section heading override
+ *   max      — max number of reviews to show (default: all)
+ *   compact  — if true, 2-column layout instead of 3
+ */
+
+interface Props {
+  heading?: string;
+  max?: number;
+  compact?: boolean;
+}
+
+const {
+  heading = "What Utah Homeowners Say About Blue Logic",
+  max = 10,
+  compact = false,
+} = Astro.props;
+
+const reviews = [
+  {
+    name: "Sharon Hartline",
+    badge: "Local Guide",
+    stars: 5,
+    weeks: "11 weeks ago",
+    text: "We recently had Jared and his team install the Blue Logic whole-home RO system. The install was seamless and Jared and the team were meticulous and professional throughout. We are thrilled with the results.",
+    system: "Whole-Home RO System",
+  },
+  {
+    name: "Nate Affleck",
+    badge: "Local Guide",
+    stars: 5,
+    weeks: "7 weeks ago",
+    text: "Amazing follow up, super available, came in, did what he said he would do, charged me less than the other guy, and scheduled me for a service call in one year from now to remind me. It was beautiful — in and out, nice and smooth.",
+    system: "Water Treatment Installation",
+  },
+  {
+    name: "Travis Gibson",
+    badge: "Local Guide",
+    stars: 5,
+    weeks: "12 weeks ago",
+    text: "We recently had a Blue Logic whole-home filtration system installed in our home. The difference is amazing! Our water tastes better, feels better, and the install was professional start to finish.",
+    system: "Whole-Home Filtration System",
+  },
+  {
+    name: "A Hensley",
+    badge: "Local Guide",
+    stars: 5,
+    weeks: "8 weeks ago",
+    text: "Talking with the Blue Logic team, you can tell immediately they know their stuff. There is a deeper understanding of water and the science behind treatment here than anywhere I've spoken with. Their expertise made a real difference in our decision and our results.",
+    system: "Water Treatment Consultation",
+  },
+  {
+    name: "Meri Jones",
+    badge: null,
+    stars: 5,
+    weeks: "14 weeks ago",
+    text: "I am very impressed with Blue Logic. The specialist really knows their stuff — explained the science behind the system in terms I could actually understand, and followed through on everything they promised. Highly recommend.",
+    system: "Water Purification System",
+  },
+  {
+    name: "Marinda Lloyd",
+    badge: null,
+    stars: 5,
+    weeks: "8 weeks ago",
+    text: "Highly recommend. The difference is unbelievable. The best filter we've ever had, and you can tell immediately in the taste and the way water feels. Worth every penny.",
+    system: "Whole-Home Filtration",
+  },
+  {
+    name: "Brady Brammer",
+    badge: null,
+    stars: 5,
+    weeks: "3 weeks ago",
+    text: "Blue Logic installed a purification and filtration system in our home. The results have been outstanding — the water quality is noticeably different and the installation was done right.",
+    system: "Purification & Filtration System",
+  },
+  {
+    name: "Austin Kirsch",
+    badge: null,
+    stars: 5,
+    weeks: "13 weeks ago",
+    text: "This system works better than anything I've had before. I have a bidet and I can literally feel the difference — the water is so much gentler. My tap water also tastes noticeably better. Really impressed.",
+    system: "Whole-Home Water System",
+  },
+  {
+    name: "Bucky Berlin",
+    badge: null,
+    stars: 5,
+    weeks: "14 weeks ago",
+    text: "We moved into our house with an existing reverse osmosis and whole-home filtration system and didn't know where to start. Jared quickly assessed everything, replaced what was needed, and got it all running perfectly. Great experience.",
+    system: "RO + Filtration Service",
+  },
+  {
+    name: "ONE CALL AUTO",
+    badge: null,
+    stars: 5,
+    weeks: "5 weeks ago",
+    text: "Super impressed with the service. The team came out, tested and calibrated our water softener, and were professional and efficient throughout. Would absolutely recommend.",
+    system: "Water Softener Service",
+  },
+];
+
+const shown = reviews.slice(0, max);
+---
+
+<div class="reviews-section">
+  {heading && (
+    <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+      {heading}
+    </h2>
+  )}
+  <div class="flex items-center justify-center gap-2 mb-10">
+    <div class="flex gap-0.5">
+      {[1,2,3,4,5].map(() => (
+        <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+      ))}
+    </div>
+    <span class="font-semibold text-foreground">5.0</span>
+    <span class="text-muted-foreground text-sm">· {shown.length} reviews · Google</span>
+  </div>
+
+  <div class:list={[
+    "grid gap-5",
+    compact ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+  ]}>
+    {shown.map((review) => (
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar">
+            {review.name[0].toUpperCase()}
+          </div>
+          <div>
+            <div class="font-semibold text-foreground text-sm leading-tight">{review.name}</div>
+            <div class="flex items-center gap-2 mt-0.5">
+              {review.badge && (
+                <span class="text-xs text-primary font-medium">{review.badge}</span>
+              )}
+              <span class="text-xs text-muted-foreground">{review.weeks}</span>
+            </div>
+          </div>
+          <div class="ml-auto">
+            <svg class="w-5 h-5 text-muted-foreground/40" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.35 11.1H12.18V13.83H18.69C18.36 17.64 15.19 19.27 12.19 19.27C8.36 19.27 5 16.25 5 12C5 7.9 8.2 4.73 12.2 4.73C15.29 4.73 17.1 6.7 17.1 6.7L19 4.72C19 4.72 16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12C2.03 17.05 6.16 22 12.25 22C17.6 22 21.5 18.33 21.5 12.91C21.5 11.76 21.35 11.1 21.35 11.1Z"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex gap-0.5 mb-3">
+          {[1,2,3,4,5].map(() => (
+            <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          ))}
+        </div>
+
+        <p class="text-sm text-muted-foreground leading-relaxed mb-3 flex-1">
+          "{review.text}"
+        </p>
+
+        <div class="text-xs text-primary font-medium border-t border-border pt-3 mt-auto">
+          {review.system}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @reference "../styles/global.css";
+
+  .reviews-section {
+    @apply w-full;
+  }
+
+  .review-card {
+    @apply flex flex-col bg-card border border-border rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .review-header {
+    @apply flex items-start gap-3 mb-4;
+  }
+
+  .reviewer-avatar {
+    @apply w-9 h-9 shrink-0 rounded-full bg-primary/20 text-primary font-bold text-sm flex items-center justify-center;
+  }
+</style>

@@ -1,0 +1,422 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LeadForm from "../components/LeadForm.astro";
+import { getFAQSchema, getBreadcrumbSchema, getBreadcrumbSchema as getSchema } from "../utils/schema";
+
+export const prerender = true;
+
+const siteUrl = "https://www.bluelogicwater.com";
+
+const faqs = [
+  {
+    question: "Can a water softener replace a whole-home filtration system?",
+    answer: "No. A water softener addresses only hardness minerals (calcium and magnesium) through ion exchange. It does not reduce chlorine, chloramines, PFAS, iron, manganese, or other dissolved contaminants. A whole-home filtration system addresses all of those concerns in addition to softening. For Utah homeowners concerned about both scale and water quality, a whole-home filtration or purification system is the more complete solution.",
+  },
+  {
+    question: "Which system is right for a new construction home in Lehi or Saratoga Springs?",
+    answer: "New construction homes in fast-growing Utah County communities often have fresh plumbing but are still fed by municipal water with Utah's characteristic hardness, chlorine treatment, and in some areas, arsenic or PFAS concerns. Most new homeowners find that a whole-home filtration system — or the full purification upgrade — addresses everything at once rather than adding a softener now and upgrading later.",
+  },
+  {
+    question: "I already have a water softener. Do I still need a filtration system?",
+    answer: "Possibly. A water softener handles scale and spots — it improves your fixtures, appliances, and bathing experience. But if your water has a chlorine smell, a chemical taste, or if your city's water utility has contaminants detected above EWG health guidelines (as many Utah utilities do), a softener isn't addressing those concerns. A whole-home filtration system can be added alongside an existing softener, or Blue Logic's integrated system can replace both.",
+  },
+  {
+    question: "What is the difference in cost between a softener, filtration system, and RO system?",
+    answer: "Blue Logic systems range from $5,995 to $19,999 depending on the system type and home configuration. Standalone softeners (not Blue Logic's integrated approach) typically run $800–$3,000 installed for basic units, but address only one dimension of water quality. The value comparison changes when you account for what's actually left in your water after each option. Your free water test includes a transparent, no-obligation quote.",
+  },
+  {
+    question: "Which option removes the most contaminants?",
+    answer: "Whole-home reverse osmosis (purification) addresses the broadest range of contaminants — including heavy metals, PFAS, arsenic, pharmaceuticals, and dissolved solids — at the molecular level via the RO membrane. Whole-home filtration (7-layer media) addresses chlorine, chloramines, iron, manganese, hardness, and other common Utah water concerns without RO-level purification. A standalone softener addresses only hardness.",
+  },
+];
+
+const schemas = [
+  getFAQSchema(faqs),
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Water Softener vs. Filtration vs. RO", url: "/water-softener-vs-whole-home-filtration/" },
+  ]),
+];
+---
+
+<Layout
+  title="Water Softener vs Whole-Home Filtration vs RO | Blue Logic"
+  description="Honest comparison: water softener vs whole-home filtration vs reverse osmosis for Utah homes. What each system does, what it doesn't, and how to choose. Free water test."
+  schema={schemas}
+>
+  <!-- Hero -->
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Comparison Guide · Utah Homeowners
+      </p>
+      <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
+        Water Softener vs. Whole-Home Filtration vs. Reverse Osmosis
+      </h1>
+      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        The honest breakdown — what each system actually does for a Utah home,
+        what it leaves behind, and how to decide which option fits your water and your life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Answer -->
+  <section class="bg-primary/5 border-y border-primary/20 py-10 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-semibold text-foreground mb-4 text-center">The Short Answer</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="bg-background rounded-xl p-5 border border-border text-center">
+          <div class="font-bold text-foreground mb-2">Water Softener</div>
+          <div class="text-muted-foreground">Fixes scale, spots, and appliance damage. Does not improve drinking water or address chlorine, PFAS, arsenic, or other contaminants.</div>
+        </div>
+        <div class="bg-background rounded-xl p-5 border border-primary text-center">
+          <div class="font-bold text-primary mb-2">Whole-Home Filtration</div>
+          <div class="text-muted-foreground">Fixes scale AND addresses chlorine, chloramines, iron, manganese, and taste/odor concerns. A meaningful upgrade for most Utah homes.</div>
+        </div>
+        <div class="bg-background rounded-xl p-5 border border-border text-center">
+          <div class="font-bold text-foreground mb-2">Whole-Home RO</div>
+          <div class="text-muted-foreground">Fixes everything filtration does, plus removes PFAS, arsenic, heavy metals, and dissolved solids at the molecular level. Pure water everywhere.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Comparison Table -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        Side-by-Side Comparison
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        What each system actually does — and does not do — for a Utah home on municipal water.
+      </p>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b-2 border-primary">
+              <th class="text-left py-4 px-4 text-foreground font-semibold min-w-[180px]">Feature</th>
+              <th class="py-4 px-4 text-muted-foreground font-semibold text-center min-w-[130px]">Softener Only</th>
+              <th class="py-4 px-4 text-primary font-semibold text-center min-w-[160px]">Whole-Home Filtration</th>
+              <th class="py-4 px-4 text-success font-semibold text-center min-w-[160px]">Whole-Home RO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">Removes hardness / scale</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Reduces chlorine / chloramines</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">Removes iron / manganese</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Limited</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ (Katalox stage)</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Improves taste and odor</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">Addresses PFAS concerns</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Partial (carbon stages)</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ (RO membrane)</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Reduces arsenic</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ (RO membrane)</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">Removes heavy metals</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Partial</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ (RO membrane)</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Pure drinking water at every tap</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-error">✗</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">Reduces salt usage vs. traditional softener</td>
+              <td class="py-3 px-4 text-center text-error">No savings</td>
+              <td class="py-3 px-4 text-center text-success font-bold">~75% less salt</td>
+              <td class="py-3 px-4 text-center text-success font-bold">~75% less salt</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Free under-sink RO included</td>
+              <td class="py-3 px-4 text-center text-error">N/A</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓ ($1,000 value)</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Included in system</td>
+            </tr>
+            <tr class="border-b border-border">
+              <td class="py-3 px-4 text-foreground font-medium">NSF-certified components</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Varies</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+              <td class="py-3 px-4 text-center text-success font-bold">✓</td>
+            </tr>
+            <tr class="border-b border-border bg-card">
+              <td class="py-3 px-4 text-foreground font-medium">Blue Logic price range</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Part of integrated system</td>
+              <td class="py-3 px-4 text-center text-foreground font-semibold">$5,995–$12,000</td>
+              <td class="py-3 px-4 text-center text-foreground font-semibold">$12,000–$19,999</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-muted-foreground mt-4 italic text-center">
+        Contaminant reduction capabilities reflect system design and NSF specifications. Results depend on your specific water profile, confirmed at your free in-home water test. PFAS, arsenic, and heavy metal claims apply to the RO membrane stage.
+      </p>
+    </div>
+  </section>
+
+  <!-- When Each Makes Sense -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground">
+        Which System Makes Sense for Your Situation?
+      </h2>
+
+      <div class="space-y-8">
+        <!-- Scenario 1 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">🏠</div>
+            <h3 class="text-xl font-semibold text-foreground">
+              "I just want to fix the scale buildup and spots on my fixtures."
+            </h3>
+          </div>
+          <div class="scenario-body">
+            <p class="text-muted-foreground mb-3">
+              If scale, spots on dishes, and appliance protection are your only concerns — and you're
+              satisfied with the taste and odor of your tap water — a water softening solution
+              addresses the root cause (hardness minerals). Blue Logic's integrated softening is
+              included in both the filtration and purification systems.
+            </p>
+            <p class="font-semibold text-primary">
+              Recommended starting point: Whole-Home Filtration (includes softening + filtration, starting at $5,995)
+            </p>
+          </div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">👨‍👩‍👧</div>
+            <h3 class="text-xl font-semibold text-foreground">
+              "I have young kids. I want better water throughout the whole house."
+            </h3>
+          </div>
+          <div class="scenario-body">
+            <p class="text-muted-foreground mb-3">
+              Families with young children often want to address both what's in the bath water and
+              the drinking water. The whole-home filtration system removes chlorine (absorbed through
+              skin during bathing), addresses hardness, and dramatically improves taste at every tap.
+              If your city's water has elevated contaminant concerns per EWG data, the RO upgrade
+              provides the most complete protection.
+            </p>
+            <p class="font-semibold text-primary">
+              Recommended: Whole-Home Filtration with free under-sink RO, or Whole-Home Purification
+            </p>
+          </div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">🆕</div>
+            <h3 class="text-xl font-semibold text-foreground">
+              "We're moving into a new home and want to start with the best setup."
+            </h3>
+          </div>
+          <div class="scenario-body">
+            <p class="text-muted-foreground mb-3">
+              New homeowners in Lehi, Saratoga Springs, Herriman, Eagle Mountain, and other
+              fast-growing Wasatch Front communities are in the ideal position — no legacy water
+              treatment equipment to work around, a fresh install, and a home that benefits from
+              water protection from day one. A Blue Logic free water test confirms your specific
+              city's water profile, then you get an exact recommendation.
+            </p>
+            <p class="font-semibold text-primary">
+              Recommended: Free water test first — system recommendation based on your actual water
+            </p>
+          </div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">💧</div>
+            <h3 class="text-xl font-semibold text-foreground">
+              "I've seen reports about arsenic or PFAS in Utah water. I want the safest possible option."
+            </h3>
+          </div>
+          <div class="scenario-body">
+            <p class="text-muted-foreground mb-3">
+              The EWG Tap Water Database has flagged contaminants — including arsenic and haloacetic
+              acids — at levels exceeding their health guidelines in several Wasatch Front utilities.
+              These contaminants are not effectively addressed by a softener or by standard filtration
+              alone. The RO membrane in the whole-home purification system is specifically designed
+              to address contaminants at the molecular level that other technologies miss.
+            </p>
+            <p class="text-xs text-muted-foreground italic mt-2">
+              Note: EWG health guidelines are more stringent than federal legal limits. Wasatch Front
+              utilities provide water that meets federal standards. We recommend discussing your
+              specific water test results with your Blue Logic specialist before making any health
+              determinations.
+            </p>
+            <p class="font-semibold text-primary mt-3">
+              Recommended: Whole-Home Purification (RO system)
+            </p>
+          </div>
+        </div>
+
+        <!-- Scenario 5 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">💰</div>
+            <h3 class="text-xl font-semibold text-foreground">
+              "I got a quote that seemed expensive. Can Blue Logic beat it?"
+            </h3>
+          </div>
+          <div class="scenario-body">
+            <p class="text-muted-foreground mb-3">
+              Blue Logic's systems are priced at $5,995–$19,999 with a written price-match guarantee —
+              dealer systems, using commercial-grade components. If you have a written quote from a
+              licensed competitor, Blue Logic will match or beat it. In-house financing is available
+              with half down and flexible repayment terms.
+            </p>
+            <p class="font-semibold text-primary">
+              Bring the competing quote to your free water test — price match guaranteed
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Decide -->
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+        The Best Way to Decide Is a Free Water Test
+      </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+        Every comparison chart in the world can't tell you what's actually in your water.
+        A Blue Logic specialist will test your water on-site — hardness, chlorine, and your
+        city's specific contaminant context — and give you a transparent, no-pressure recommendation
+        based on what they find.
+      </p>
+      <a
+        href="/free-water-test/"
+        class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all"
+      >
+        Schedule Your Free Water Test →
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
+        Common Questions
+      </h2>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="faq-item group">
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <div class="faq-answer">{faq.answer}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related links -->
+  <section class="bg-background py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <a href="/whole-home-reverse-osmosis-utah/" class="related-link">Whole-Home RO Systems</a>
+        <a href="/whole-home-water-filtration/" class="related-link">Whole-Home Filtration</a>
+        <a href="/water-softener-utah/" class="related-link">Water Softener Utah</a>
+        <a href="/utah-water-quality/" class="related-link">Utah Water Quality Guide</a>
+        <a href="/free-water-test/" class="related-link">Free Water Test</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="bg-primary/5 py-16 md:py-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Still Not Sure? Talk to a Specialist.
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Fill out the form and a Blue Logic water specialist will reach out —
+        no sales pitch, just answers based on your specific home and water.
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+
+  .scenario-card {
+    @apply bg-card rounded-2xl border border-border overflow-hidden;
+  }
+
+  .scenario-header {
+    @apply flex items-start gap-4 p-6 bg-background border-b border-border;
+  }
+
+  .scenario-icon {
+    @apply text-2xl shrink-0 mt-0.5;
+  }
+
+  .scenario-body {
+    @apply p-6;
+  }
+
+  .related-link {
+    @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
+</style>
