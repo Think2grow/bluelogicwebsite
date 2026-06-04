@@ -14,7 +14,15 @@ export default defineConfig({
       : "https://www.bluelogicwater.com",
   output: "server",
   adapter: cloudflare(),
-  integrations: [sitemap(), react()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.includes("/book/") &&
+        !page.includes("/thank-you/") &&
+        !page.includes("/whole-home-reverse-osmosis/"),
+    }),
+    react(),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
