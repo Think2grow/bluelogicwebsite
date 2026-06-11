@@ -19,6 +19,7 @@ interface Props {
   description?: string;
   schema?: any | any[]; // Allow pages to pass additional schema
   og?: Partial<OpenGraphMetadata>; // Allow pages to customize Open Graph metadata
+  noindex?: boolean;
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   description = "Premium reverse osmosis water filtration systems for Salt Lake City homes. Half the cost, half the footprint, 10x quieter.",
   schema = null,
   og = {},
+  noindex = false,
 } = Astro.props;
 
 // Normalize site URL — always use www canonical
@@ -65,6 +67,7 @@ const allSchemas = schema
     <!-- SEO build verified -->
     <meta name="description" content={description} />
     <link rel="canonical" href={currentUrl} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <title>{title}</title>
 
     <!-- Open Graph Meta Tags -->

@@ -10,15 +10,23 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "How do I fairly compare Blue Logic and Element Water?",
-    answer: "Get written quotes from both, then compare them on: total installed cost (all components and labor), warranty terms, service contract requirements, component certifications, and financing options. Blue Logic's price-match guarantee means if Element Water offers a lower price for a comparable system, Blue Logic will match or beat it.",
+    answer: "Get written quotes from both, then compare them on the same terms: total installed cost including all components and labor, component NSF certification documentation (ask for specific standard numbers and which parts are certified), warranty terms and what's actually covered, service contract requirements and annual costs, and who physically performs the installation. Blue Logic will provide all of this at your free water test, in writing.",
   },
   {
-    question: "Does Blue Logic require a long-term service contract?",
-    answer: "No. Blue Logic schedules an annual check-up at installation, but there is no contractual obligation for ongoing service. Service visits after the first year are available per request.",
+    question: "What NSF certifications should I ask any water treatment company about?",
+    answer: "For a whole-home RO system, the most important certifications are NSF/ANSI 58 (for the RO membrane — tests for contaminant reduction and materials safety) and NSF/ANSI 61 (for the storage tank — ensures it's food-grade safe). Ask the company to show you the specific certification documentation for the actual components going in your home, not just a general claim. Blue Logic uses NSF/ANSI-rated membranes and NSF food-grade storage tanks.",
   },
   {
-    question: "What NSF certifications do Blue Logic systems carry?",
-    answer: "Blue Logic uses NSF/ANSI-rated RO membranes and NSF-certified food-grade storage tanks. Ask for specific component documentation at your free water test appointment.",
+    question: "Does Blue Logic require a service contract?",
+    answer: "No. Blue Logic does not require an ongoing service contract. An annual check-up is scheduled at installation. After the first year, service visits are available per request — no contractual obligation. Ask any local provider what their ongoing service terms look like, including what triggers mandatory service calls.",
+  },
+  {
+    question: "Can Blue Logic match a written Element Water quote?",
+    answer: "Yes. Blue Logic's written price-match guarantee applies to any licensed Utah water treatment company. Bring a written Element Water quote to your free Blue Logic water test and we'll match or beat it.",
+  },
+  {
+    question: "What does Blue Logic's free water test actually measure?",
+    answer: "A Blue Logic water test measures hardness (grains per gallon), total dissolved solids (TDS in ppm), and key contaminants relevant to your city's water source. Results are shared on the spot. The test is the basis for which system Blue Logic recommends — we don't sell a one-size-fits-all solution. It's no-obligation and takes about an hour at your home.",
   },
 ];
 
@@ -32,20 +40,22 @@ const schemas = [
 ---
 
 <Layout
-  title="Blue Logic vs. Element Water Utah | Get Both Quotes and Compare"
-  description="Considering Element Water for Utah water treatment? See Blue Logic's verified specs and use our written price-match guarantee to compare directly. Free water test."
+  title="Blue Logic vs. Element Water Utah | 5 Questions to Ask Before You Sign"
+  description="Comparing local Utah water treatment companies? Here are the questions that separate transparent providers from ones who make it hard to compare. Free water test. Written price-match guarantee."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">Utah Water Treatment · Comparison Guide</p>
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Utah Water Treatment · Comparison Guide
+      </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        Considering Element Water? Here's What Blue Logic Offers.
+        Comparing Local Utah Water Treatment Companies:<br />What to Ask Before You Sign
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        The most useful thing you can do when evaluating water treatment providers is get written quotes
-        from each and compare them on the same terms. Blue Logic's price-match guarantee makes
-        that comparison straightforward.
+        If Element Water is on your list alongside Blue Logic, the right move is to get
+        written quotes from both and compare them on the same terms. These are the five
+        questions that actually separate one provider from another.
       </p>
     </div>
   </section>
@@ -53,23 +63,77 @@ const schemas = [
   <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
-        <strong class="text-foreground">What this page covers:</strong> Blue Logic's own verified specs.
-        We make no claims about Element Water's pricing or terms — those vary by installation.
-        Bring a written Element Water quote and Blue Logic will match or beat it.
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and the specific questions to ask any local water treatment company before committing.
+        We make no claims about Element Water's pricing or terms. Bring any written quote and Blue Logic will match or beat it.
       </p>
     </div>
   </section>
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-serif text-center mb-8 text-foreground">
+          5 Questions to Ask Any Local Water Treatment Company
+        </h2>
+        <div class="space-y-4">
+          {[
+            {
+              number: "1",
+              question: "Are your RO membranes NSF-certified, and to which standard?",
+              why: "NSF/ANSI 58 is the specific standard for RO membrane performance and materials safety. A general claim of 'NSF certified' without a standard number is hard to verify. Ask for the documentation.",
+              blueLogic: "NSF/ANSI-rated RO membranes. Documentation available at your free water test.",
+            },
+            {
+              number: "2",
+              question: "Is the storage tank NSF food-grade certified?",
+              why: "Your purified water sits in the storage tank. NSF/ANSI 61 certification confirms the tank materials won't leach contaminants into your water. This is the detail most homeowners don't think to ask.",
+              blueLogic: "NSF food-grade certified storage tanks. 165-gallon or optional 250-gallon capacity.",
+            },
+            {
+              number: "3",
+              question: "What is the full installed price in writing, including all components and labor?",
+              why: "Some quotes separate equipment cost from installation cost, or exclude components like the delivery pump, storage tank, or under-sink RO. Always compare total installed cost.",
+              blueLogic: "$5,995–$19,999 full installed price, confirmed in writing at your free water test. No hidden fees.",
+            },
+            {
+              number: "4",
+              question: "Is a service contract required, and what does it cost per year?",
+              why: "Mandatory service contracts add to the true cost of ownership. Ask what's required, what's included, and what happens if you miss a scheduled service.",
+              blueLogic: "No service contract required. Annual check-up scheduled at installation. Service after year one is per request.",
+            },
+            {
+              number: "5",
+              question: "Who physically performs the installation — an employee or a subcontractor?",
+              why: "Accountability for the installation quality depends on who's actually doing the work. A company that subcontracts installations has less direct control over the outcome.",
+              blueLogic: "Jared leads installations personally. Owner-operated — no subcontractors.",
+            },
+          ].map((item) => (
+            <div class="question-card">
+              <div class="flex gap-4">
+                <span class="question-number">{item.number}</span>
+                <div class="flex-1">
+                  <h3 class="font-semibold text-foreground mb-2">{item.question}</h3>
+                  <p class="text-muted-foreground text-sm mb-3 leading-relaxed">{item.why}</p>
+                  <div class="blue-logic-answer">
+                    <span class="text-xs font-semibold text-primary uppercase tracking-wide">Blue Logic: </span>
+                    <span class="text-sm text-muted-foreground">{item.blueLogic}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "System price range", value: "$5,995 – $19,999", note: "Confirmed at free water test. No hidden fees." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and food-grade tanks." },
+          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price confirmed at free water test." },
+          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and food-grade storage tanks." },
           { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year lifespan." },
           { label: "Service contract", value: "Not required", note: "Annual check-up included. No ongoing obligation." },
-          { label: "Financing", value: "In-house, half down", note: "Flexible repayment terms. No third-party lender." },
+          { label: "Financing", value: "In-house, half down", note: "Flexible repayment. No third-party lender." },
           { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
         ].map((item) => (
           <div class="spec-card">
@@ -81,25 +145,19 @@ const schemas = [
           </div>
         ))}
       </div>
-      <div class="bg-card rounded-2xl border-2 border-primary p-6 text-center">
-        <h3 class="text-xl font-semibold text-foreground mb-3">Price-Match Guarantee</h3>
-        <p class="text-muted-foreground mb-4">Bring your written Element Water quote. Blue Logic will match or beat it in writing for a comparable system.</p>
-        <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">Schedule Free Water Test →</a>
-      </div>
     </div>
   </section>
 
   <section class="bg-card py-16 md:py-20 px-4">
-    <div class="max-w-6xl mx-auto"><Reviews max={4} compact={true} /></div>
-  </section>
-
-  <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="faq-item group">
-            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
             <div class="faq-answer">{faq.answer}</div>
           </details>
         ))}
@@ -107,21 +165,22 @@ const schemas = [
     </div>
   </section>
 
-  <section class="bg-card py-10 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/blue-logic-vs-culligan-utah/" class="related-link">vs. Culligan</a>
-        <a href="/blue-logic-vs-kinetico-utah/" class="related-link">vs. Kinetico</a>
-        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare All Systems</a>
-        <a href="/free-water-test/" class="related-link">Free Water Test</a>
-      </div>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
     </div>
   </section>
 
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Get a Second Quote — Free</h2>
-      <p class="text-muted-foreground text-center mb-10">Have an Element Water quote? Bring it. Blue Logic will match or beat any written offer from a licensed Utah water treatment company.</p>
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Get a Transparent Second Quote
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic's free water test gives you real measurements of your water and a written
+        quote with full component details. If you have an Element Water quote, bring it —
+        we'll match or beat it in writing. Take both quotes home and make the call yourself.
+      </p>
       <LeadForm />
     </div>
   </section>
@@ -129,11 +188,42 @@ const schemas = [
 
 <style>
   @reference "../styles/global.css";
-  .spec-card { @apply bg-card p-5 rounded-xl border border-border; }
-  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
-  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
-  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+
+  .hero-gradient {
+    @apply bg-linear-to-br from-background to-card;
+  }
+
+  .question-card {
+    @apply bg-card rounded-2xl border border-border p-6;
+  }
+
+  .question-number {
+    @apply w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center shrink-0 mt-0.5;
+  }
+
+  .blue-logic-answer {
+    @apply bg-primary/5 border border-primary/20 rounded-lg px-4 py-2;
+  }
+
+  .spec-card {
+    @apply bg-card p-5 rounded-xl border border-border;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
   .faq-question::-webkit-details-marker { display: none; }
-  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
-  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
 </style>

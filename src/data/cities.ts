@@ -112,35 +112,6 @@ export const cities: CityData[] = [
     ],
   },
   {
-    slug: "park-city",
-    name: "Park City",
-    region: "Summit County",
-    zipCodes: ["84060", "84098"],
-    ewgTapwaterDatabaseUrl:
-      "https://www.ewg.org/tapwater/system.php?pws=UTAH22011",
-    contaminantsExceedingGuidelines: 17,
-    totalContaminants: 31,
-    topContaminants: [
-      "Arsenic (343x guideline)",
-      "Perfluorooctanoic acid/PFOA (16x guideline)",
-      "Perfluorooctane sulfonate/PFOS (4.4x guideline)",
-    ],
-    complianceStatus: "Federally compliant but exceeds EWG health guidelines",
-    tdsRange: "300-450 ppm",
-    hardnessLevel: "Very Hard",
-    population: "8,500",
-    description:
-      "Mountain resort community with high PFAS contamination and elevated arsenic levels requiring advanced filtration.",
-    waterSource: "Surface water from high-altitude mountain sources",
-    commonIssues: [
-      "High PFAS contamination (emerging contaminant)",
-      "Extremely hard water from mountain sources",
-      "Arsenic detection above EWG guidelines",
-      "Seasonal water quality variations",
-      "High-end appliance protection needs",
-    ],
-  },
-  {
     slug: "draper",
     name: "Draper",
     region: "Salt Lake County",

@@ -1,9 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
+
+export const prerender = true;
 ---
 
-<Layout og={{ title: "Your Water Shouldn't Be a Mystery | Blue Logic Water", image: fatherDaughterImg.src }}>
+<Layout
+  title="Free In-Home Water Test Utah | Blue Logic Water"
+  description="Book a free in-home water test for your Utah home. We measure hardness, TDS, and key contaminants on-site and show you the results. No obligation. Serving the Wasatch Front."
+  og={{ title: "Your Water Shouldn't Be a Mystery | Blue Logic Water", image: fatherDaughterImg.src }}
+>
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-b from-quartz via-white to-quartz min-h-screen flex items-center justify-center px-4 py-20">
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">

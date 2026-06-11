@@ -9,16 +9,24 @@ const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "How do I compare Blue Logic and Alta Water fairly?",
-    answer: "Get written quotes from both, then compare on: total installed cost, warranty terms and coverage, whether a service contract is required, NSF certifications on components, and financing options. Blue Logic's written price-match guarantee means if Alta Water quotes a lower price for a comparable system, Blue Logic will match or beat it.",
+    question: "Alta Water is also a local Utah company. What makes Blue Logic different?",
+    answer: "Both being local Utah companies is a real advantage over national franchises. The key differences to compare are: Who physically performs your installation — an owner, an employee, or a subcontractor? What is the full installed cost in writing? Are service contracts required? What are the NSF certification details on specific components? Blue Logic is owner-operated — Jared conducts your water test, designs your system, leads the installation, and handles annual check-ups personally.",
   },
   {
-    question: "What makes Blue Logic worth considering alongside Alta Water?",
-    answer: "Blue Logic's system starts at $5,995, uses NSF-certified components, includes a 1-year limited warranty, requires no ongoing service contract, and offers in-house financing with half down. The price-match guarantee ensures you're not overpaying relative to any licensed competing offer. Your free water test gives you a transparent quote with no obligation.",
+    question: "Who do I call if something needs service three years after installation?",
+    answer: "With Blue Logic, you call Jared directly — the same person who installed your system. There's no call center, no dispatch to an unknown technician, no franchise structure. Blue Logic is small enough that you have direct accountability. Ask any local water treatment provider: who do you call for service after the first year, and is it the same person who did the installation?",
   },
   {
-    question: "Is Blue Logic a local Utah company?",
-    answer: "Yes. Blue Logic is a Utah water treatment company serving the Wasatch Front. Jared leads installations directly. There is no national call center or franchise structure — you work with the same team from water test through installation and annual check-up.",
+    question: "How do I verify the quality of Blue Logic's installation?",
+    answer: "Ask for NSF certification documentation on all components at your free water test — Blue Logic uses NSF/ANSI-rated RO membranes and NSF food-grade storage tanks. Check Blue Logic's Google Business Profile reviews, which are publicly visible and include verified customers. The installation itself is performed by Jared directly, not subcontracted.",
+  },
+  {
+    question: "Can Blue Logic match a written Alta Water quote?",
+    answer: "Yes. Blue Logic's written price-match guarantee applies to any licensed Utah water treatment company. Bring a written Alta Water quote to your free Blue Logic water test and we'll match or beat it.",
+  },
+  {
+    question: "Does Blue Logic offer financing?",
+    answer: "Yes. Blue Logic offers in-house financing with half down at installation. Repayment terms are flexible and arranged directly — no third-party lender required. Ask about current financing options at your free water test.",
   },
 ];
 
@@ -32,20 +40,22 @@ const schemas = [
 ---
 
 <Layout
-  title="Blue Logic vs. Alta Water Utah | Get Both Quotes and Compare"
-  description="Considering Alta Water for Utah water treatment? See Blue Logic's verified specs and use our written price-match guarantee to compare directly. Free water test."
+  title="Blue Logic vs. Alta Water Utah | Who Does the Work Matters"
+  description="Both Blue Logic and Alta Water serve Utah homeowners. Here's what to ask about who installs your system, who services it long-term, and what you actually own. Free water test. Written price-match."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">Utah Water Treatment · Comparison Guide</p>
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Utah Water Treatment · Comparison Guide
+      </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        Considering Alta Water? Here's What Blue Logic Offers.
+        The Company Behind the Quote Matters as Much as the Quote Itself
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        When evaluating water treatment providers in Utah, getting written quotes from each company
-        and comparing them directly is the most informed approach.
-        Blue Logic's price-match guarantee makes that comparison risk-free.
+        When comparing Alta Water and Blue Logic, both are Utah-based alternatives to national
+        franchises. The comparison comes down to who physically does the work, what they stand
+        behind, and who you call when you need them three years from now.
       </p>
     </div>
   </section>
@@ -53,7 +63,7 @@ const schemas = [
   <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
-        <strong class="text-foreground">What this page covers:</strong> Blue Logic's own verified specs.
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and what to ask any local provider about accountability, installation, and long-term service.
         We make no claims about Alta Water's pricing or terms. Bring any written quote and Blue Logic will match or beat it.
       </p>
     </div>
@@ -61,14 +71,75 @@ const schemas = [
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-serif text-center mb-8 text-foreground">
+          Questions About Accountability That Most Homeowners Don't Think to Ask
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              q: "Who physically installs your system?",
+              context: "Some companies use subcontractors for installations. The person who sold you the system and the person who installs it may be different. Ask directly.",
+              blueLogic: "Jared leads all installations personally.",
+            },
+            {
+              q: "Who do you call for service after year one?",
+              context: "Small companies sometimes change staffing, or the original installer may no longer be available. Know your service chain before you need it.",
+              blueLogic: "Jared directly. Same person from water test through long-term service.",
+            },
+            {
+              q: "Is the company licensed in Utah for water treatment?",
+              context: "Utah requires licensing for water treatment system installation. Verify any provider is properly licensed — this is a baseline, not a differentiator.",
+              blueLogic: "Yes. Licensed Utah water treatment company.",
+            },
+            {
+              q: "What is the installed price in writing, all-in?",
+              context: "Quotes sometimes separate equipment from labor or exclude components like tanks and pumps. Always ask for a total installed price, in writing, before comparing.",
+              blueLogic: "$5,995–$19,999 total installed. Confirmed in writing at the water test.",
+            },
+          ].map((item) => (
+            <div class="accountability-card">
+              <h3 class="font-semibold text-foreground mb-2">{item.q}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed mb-3">{item.context}</p>
+              <div class="blue-logic-note">
+                <span class="text-xs font-semibold text-primary uppercase tracking-wide">Blue Logic: </span>
+                <span class="text-sm text-muted-foreground">{item.blueLogic}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="how-it-works bg-card rounded-2xl border border-border p-6 md:p-8 mb-12">
+        <h2 class="text-2xl font-serif mb-6 text-foreground">How Blue Logic Works — From First Call to Long-Term Service</h2>
+        <div class="space-y-4">
+          {[
+            { step: "1", title: "Free in-home water test", desc: "Jared visits your home, tests your water for hardness, TDS, and key contaminants, and shows you the results on the spot." },
+            { step: "2", title: "Custom system recommendation", desc: "Based on your specific water profile and home layout, Jared recommends the right system — not a one-size-fits-all package." },
+            { step: "3", title: "Written quote", desc: "You receive a full written quote covering all components and labor. Take it home and compare it to any other quote you have." },
+            { step: "4", title: "Installation day", desc: "Jared leads the installation personally. Most installs complete in 4–8 hours." },
+            { step: "5", title: "Annual check-up", desc: "Scheduled at installation. Jared returns to inspect the system, replace pre-filters as needed, and confirm everything is performing." },
+          ].map((item) => (
+            <div class="flex gap-4">
+              <span class="step-number">{item.step}</span>
+              <div>
+                <div class="font-semibold text-foreground">{item.title}</div>
+                <div class="text-sm text-muted-foreground">{item.desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "System price range", value: "$5,995 – $19,999", note: "Confirmed at free water test. No hidden fees." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated RO membranes and food-grade tanks." },
-          { label: "Warranty", value: "1-year limited (parts)", note: "8–10 year component lifespan with proper maintenance." },
-          { label: "Service contract", value: "Not required", note: "Annual check-up included. No contractual obligation." },
-          { label: "Financing", value: "In-house, half down", note: "Flexible repayment. No third-party lender." },
+          { label: "Who installs", value: "Jared directly", note: "Owner-operated. No subcontractors." },
+          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price in writing. No hidden fees." },
+          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and NSF food-grade storage tanks." },
+          { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year lifespan." },
+          { label: "Service contract required", value: "No", note: "Annual check-up included. No contractual ongoing obligation." },
           { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
         ].map((item) => (
           <div class="spec-card">
@@ -80,25 +151,19 @@ const schemas = [
           </div>
         ))}
       </div>
-      <div class="bg-card rounded-2xl border-2 border-primary p-6 text-center">
-        <h3 class="text-xl font-semibold text-foreground mb-3">Price-Match Guarantee</h3>
-        <p class="text-muted-foreground mb-4">Bring your Alta Water quote. Blue Logic will match or beat it in writing for a comparable system.</p>
-        <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">Schedule Free Water Test →</a>
-      </div>
     </div>
   </section>
 
   <section class="bg-card py-16 md:py-20 px-4">
-    <div class="max-w-6xl mx-auto"><Reviews max={4} compact={true} /></div>
-  </section>
-
-  <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="faq-item group">
-            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
             <div class="faq-answer">{faq.answer}</div>
           </details>
         ))}
@@ -106,21 +171,23 @@ const schemas = [
     </div>
   </section>
 
-  <section class="bg-card py-10 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/blue-logic-vs-culligan-utah/" class="related-link">vs. Culligan</a>
-        <a href="/blue-logic-vs-kinetico-utah/" class="related-link">vs. Kinetico</a>
-        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare All Systems</a>
-        <a href="/free-water-test/" class="related-link">Free Water Test</a>
-      </div>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
     </div>
   </section>
 
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Get a Second Quote — Free</h2>
-      <p class="text-muted-foreground text-center mb-10">Have an Alta Water quote? Bring it. Blue Logic will match or beat any written offer from a licensed Utah water treatment company.</p>
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Meet Jared. Get a Quote. Compare.
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        Blue Logic's free water test is how the process starts — Jared visits your home,
+        tests your water on-site, and gives you a transparent written quote. If you have
+        an Alta Water quote, bring it. We'll match or beat it in writing. Then you have
+        both quotes and make the call yourself.
+      </p>
       <LeadForm />
     </div>
   </section>
@@ -128,11 +195,42 @@ const schemas = [
 
 <style>
   @reference "../styles/global.css";
-  .spec-card { @apply bg-card p-5 rounded-xl border border-border; }
-  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
-  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
-  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+
+  .hero-gradient {
+    @apply bg-linear-to-br from-background to-card;
+  }
+
+  .accountability-card {
+    @apply bg-card p-6 rounded-xl border border-border;
+  }
+
+  .blue-logic-note {
+    @apply bg-primary/5 border border-primary/20 rounded-lg px-4 py-2;
+  }
+
+  .step-number {
+    @apply w-8 h-8 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center shrink-0 mt-0.5;
+  }
+
+  .spec-card {
+    @apply bg-card p-5 rounded-xl border border-border;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
   .faq-question::-webkit-details-marker { display: none; }
-  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
-  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
 </style>

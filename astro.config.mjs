@@ -19,7 +19,9 @@ export default defineConfig({
       filter: (page) =>
         !page.includes("/book/") &&
         !page.includes("/thank-you/") &&
-        !page.includes("/whole-home-reverse-osmosis/"),
+        !page.includes("/whole-home-reverse-osmosis/") &&
+        !page.includes("/vsl/") &&
+        !page.includes("/privacy/"),
     }),
     react(),
   ],

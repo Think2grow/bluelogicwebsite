@@ -9,20 +9,24 @@ const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "Should I compare Blue Logic and AJ Softeners before deciding?",
-    answer: "Yes — and Blue Logic's price-match guarantee makes it low-risk. If you have a written AJ Softeners quote, bring it to your free Blue Logic water test. Blue Logic will match or beat any written competing quote from a licensed Utah water treatment company.",
+    question: "I mainly want to fix my hard water. Do I need more than a softener?",
+    answer: "It depends on what's in your specific water. If hard water scale is your only concern, a softener may be sufficient. But in many Utah cities — particularly on the Wasatch Front — EWG data shows arsenic, PFAS, and haloacetic acid disinfection byproducts at levels well above health guidelines. A softener doesn't remove those. A free water test will show exactly what's in your water and what treatment it actually requires.",
   },
   {
-    question: "Is there a difference between a water softener company and what Blue Logic does?",
-    answer: "Water softening addresses hardness minerals (calcium and magnesium) only. Blue Logic's whole-home systems include integrated water softening as one of multiple treatment stages — also addressing chlorine, chloramines, iron, manganese, and with the RO upgrade, arsenic and PFAS. Whether you need that broader coverage depends on what's in your specific water. A free water test answers that.",
+    question: "What does a water softener company typically offer vs. what Blue Logic does?",
+    answer: "Softener-focused providers specialize in removing calcium and magnesium — the minerals that cause scale, reduce appliance efficiency, and leave spots on dishes and fixtures. That's a real problem in Utah, where hardness runs 15–25+ grains per gallon on the Wasatch Front. Blue Logic's system includes water softening as the first stage, then adds carbon filtration and an optional RO stage — so you address hardness plus chlorine, arsenic, PFAS, and disinfection byproducts in one integrated system.",
   },
   {
-    question: "How do I verify Blue Logic's system quality?",
-    answer: "Ask for NSF certification documentation on all components at your free water test. Blue Logic uses NSF/ANSI-rated RO membranes and food-grade storage tanks. The 1-year limited warranty covers parts; components are designed for an 8–10 year service life with annual maintenance.",
+    question: "Can Blue Logic match a written AJ Softeners quote?",
+    answer: "Yes. Blue Logic's written price-match guarantee applies to any licensed Utah water treatment company. Bring a written AJ Softeners quote to your free Blue Logic water test and we'll match or beat it.",
   },
   {
-    question: "Does Blue Logic offer financing?",
-    answer: "Yes. In-house financing with half down and flexible repayment terms. No third-party lender required.",
+    question: "How do I know which contaminants are actually in my water?",
+    answer: "A free in-home water test is the most accurate way to know. It measures your home's water at the tap — hardness, total dissolved solids, and key contaminants. City averages from EWG are useful context, but actual levels vary by neighborhood, season, and which water sources are active. Blue Logic's test is no-obligation and takes about an hour.",
+  },
+  {
+    question: "Does Blue Logic require a service contract?",
+    answer: "No. Blue Logic does not require an ongoing service contract. An annual check-up is scheduled at installation. After the first year, service is available per request — no contractual obligation.",
   },
 ];
 
@@ -36,20 +40,22 @@ const schemas = [
 ---
 
 <Layout
-  title="Blue Logic vs. AJ Softeners Utah | Get Both Quotes and Compare"
-  description="Considering AJ Softeners for Utah water treatment? Here's what Blue Logic offers — whole-home filtration and RO with a written price-match guarantee. Free water test."
+  title="Blue Logic vs. AJ Softeners Utah | When a Softener Isn't Enough"
+  description="AJ Softeners handles hard water. But Utah water also has arsenic, PFAS, and disinfection byproducts that softening doesn't touch. See what whole-home filtration adds. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
     <div class="max-w-4xl mx-auto">
-      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">Utah Water Treatment · Comparison Guide</p>
+      <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
+        Utah Water Treatment · Comparison Guide
+      </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        Considering AJ Softeners? Here's What Blue Logic Offers.
+        Softening Fixes the Scale.<br />It Doesn't Fix Everything Else in Utah Water.
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        If AJ Softeners is on your list, getting both quotes before committing is the most
-        informed approach. Blue Logic's written price-match guarantee means there's no financial
-        risk in getting a second opinion.
+        If AJ Softeners is on your list, you're focused on the right problem — Utah has some of
+        the hardest water in the country. But hardness is only part of the picture. Before you
+        decide on softening alone, know what else is in your water.
       </p>
     </div>
   </section>
@@ -57,25 +63,62 @@ const schemas = [
   <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
-        <strong class="text-foreground">What this page covers:</strong> Blue Logic's own verified specs and offers.
-        We make no claims about AJ Softeners' pricing or system terms. Bring any written quote and Blue Logic will match or beat it.
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and the difference between softening and full-spectrum filtration for Utah homeowners.
+        We make no claims about AJ Softeners' pricing or terms. Bring any written quote and Blue Logic will match or beat it.
       </p>
     </div>
   </section>
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
+
+      <div class="mb-12">
+        <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+          The Utah Water Problem Is Bigger Than Hardness
+        </h2>
+        <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+          EWG data on Wasatch Front water systems shows contaminants that a softener was never designed to remove.
+          Here's what's been detected in Utah cities Blue Logic serves:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          {[
+            { city: "Lehi", stat: "484x", label: "EWG arsenic guideline", note: "Lehi's water supply per EWG Tap Water Database" },
+            { city: "Draper", stat: "450x", label: "EWG arsenic guideline", note: "Draper's water supply per EWG Tap Water Database" },
+            { city: "Salt Lake City", stat: "PFAS", label: "detected in 2024 testing", note: "~7.1–7.8 ppt detected per SLCDPU announcement" },
+          ].map((item) => (
+            <div class="stat-card">
+              <div class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">{item.city}</div>
+              <div class="text-3xl font-bold text-destructive mb-1">{item.stat}</div>
+              <div class="text-sm font-medium text-foreground mb-2">{item.label}</div>
+              <p class="text-xs text-muted-foreground">{item.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-card rounded-2xl border border-border p-6">
+          <p class="text-muted-foreground leading-relaxed">
+            Water softening removes calcium and magnesium — the minerals responsible for scale,
+            appliance wear, and hard water deposits. It does not remove arsenic, PFAS,
+            chlorine byproducts, or most other dissolved contaminants. For homeowners in
+            cities with these contamination levels, softening alone addresses the cosmetic
+            problems but not the health concerns.
+          </p>
+        </div>
+      </div>
+
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
+      <p class="text-sm text-muted-foreground text-center mb-8">Ask AJ Softeners the same questions — then compare written answers side by side.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "System price range", value: "$5,995 – $19,999", note: "Confirmed at free water test. No hidden fees." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and food-grade tanks." },
-          { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year lifespan." },
-          { label: "Service contract required", value: "No", note: "Annual check-up included. No contractual obligation." },
-          { label: "Financing", value: "In-house, half down", note: "Flexible terms. No third-party lender." },
-          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote." },
-          { label: "System scope", value: "Softening + filtration + optional RO", note: "Addresses hardness, chlorine, iron, manganese — and arsenic/PFAS with RO upgrade." },
-          { label: "Free water test", value: "Yes — no obligation", note: "Confirms exactly what's in your specific home's water." },
+          { label: "Softening stage included", value: "Yes", note: "First stage of integrated system — addresses scale and hardness." },
+          { label: "Carbon filtration included", value: "Yes", note: "Removes chlorine, chloramines, VOCs from all water in the home." },
+          { label: "RO stage (optional upgrade)", value: "Yes", note: "Removes arsenic, PFAS, heavy metals, disinfection byproducts." },
+          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price confirmed at free water test. No hidden fees." },
+          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and NSF-certified food-grade storage tanks." },
+          { label: "Warranty", value: "1-year limited (parts)", note: "Components designed for 8–10 year service life." },
+          { label: "Service contract required", value: "No", note: "Annual check-up included. No contractual ongoing obligation." },
+          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
         ].map((item) => (
           <div class="spec-card">
             <div class="flex justify-between items-start gap-4 mb-2">
@@ -86,25 +129,19 @@ const schemas = [
           </div>
         ))}
       </div>
-      <div class="bg-card rounded-2xl border-2 border-primary p-6 text-center">
-        <h3 class="text-xl font-semibold text-foreground mb-3">Price-Match Guarantee</h3>
-        <p class="text-muted-foreground mb-4">Bring your written AJ Softeners quote. Blue Logic will match or beat it in writing for a comparable system.</p>
-        <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">Schedule Free Water Test →</a>
-      </div>
     </div>
   </section>
 
   <section class="bg-card py-16 md:py-20 px-4">
-    <div class="max-w-6xl mx-auto"><Reviews max={4} compact={true} /></div>
-  </section>
-
-  <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">Common Questions</h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
           <details class="faq-item group">
-            <summary class="faq-question">{faq.question}<span class="faq-icon group-open:rotate-45 transition-transform">+</span></summary>
+            <summary class="faq-question">
+              {faq.question}
+              <span class="faq-icon group-open:rotate-45 transition-transform">+</span>
+            </summary>
             <div class="faq-answer">{faq.answer}</div>
           </details>
         ))}
@@ -112,21 +149,23 @@ const schemas = [
     </div>
   </section>
 
-  <section class="bg-card py-10 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/blue-logic-vs-culligan-utah/" class="related-link">vs. Culligan</a>
-        <a href="/blue-logic-vs-kinetico-utah/" class="related-link">vs. Kinetico</a>
-        <a href="/water-softener-vs-whole-home-filtration/" class="related-link">Compare All Systems</a>
-        <a href="/free-water-test/" class="related-link">Free Water Test</a>
-      </div>
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <Reviews compact={true} heading="What Utah Homeowners Say About Blue Logic" />
     </div>
   </section>
 
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Get a Second Quote — Free</h2>
-      <p class="text-muted-foreground text-center mb-10">Have a quote from AJ Softeners? Bring it. Blue Logic will match or beat any written offer from a licensed Utah water treatment company.</p>
+      <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
+        Test Your Water Before You Decide
+      </h2>
+      <p class="text-muted-foreground text-center mb-10">
+        A free in-home water test measures exactly what's in your water — hardness, TDS, and
+        key contaminants specific to your address. That tells you whether a softener is enough,
+        or whether you need full filtration. No obligation. If you already have an AJ Softeners
+        quote, bring it — we'll match or beat it in writing.
+      </p>
       <LeadForm />
     </div>
   </section>
@@ -134,11 +173,34 @@ const schemas = [
 
 <style>
   @reference "../styles/global.css";
-  .spec-card { @apply bg-card p-5 rounded-xl border border-border; }
-  .related-link { @apply px-4 py-2 bg-background border border-border rounded-full text-sm text-primary font-medium hover:border-primary transition-colors; }
-  .faq-item { @apply bg-card border border-border rounded-xl overflow-hidden; }
-  .faq-question { @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors; }
+
+  .hero-gradient {
+    @apply bg-linear-to-br from-background to-card;
+  }
+
+  .stat-card {
+    @apply bg-card p-6 rounded-xl border border-border text-center;
+  }
+
+  .spec-card {
+    @apply bg-card p-5 rounded-xl border border-border;
+  }
+
+  .faq-item {
+    @apply bg-card border border-border rounded-xl overflow-hidden;
+  }
+
+  .faq-question {
+    @apply flex justify-between items-center p-6 cursor-pointer font-semibold text-foreground list-none select-none hover:bg-accent/50 transition-colors;
+  }
+
   .faq-question::-webkit-details-marker { display: none; }
-  .faq-icon { @apply text-2xl text-primary font-light leading-none shrink-0; }
-  .faq-answer { @apply px-6 pb-6 text-muted-foreground leading-relaxed; }
+
+  .faq-icon {
+    @apply text-2xl text-primary font-light leading-none shrink-0;
+  }
+
+  .faq-answer {
+    @apply px-6 pb-6 text-muted-foreground leading-relaxed;
+  }
 </style>
