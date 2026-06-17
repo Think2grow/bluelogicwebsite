@@ -67,13 +67,15 @@ interface ProductSchema {
   "@type": string;
   name: string;
   description: string;
+  image: string;
   brand: {
     "@type": string;
     name: string;
   };
   offers: {
     "@type": string;
-    price: string;
+    lowPrice: string;
+    highPrice: string;
     priceCurrency: string;
     availability: string;
     url: string;
@@ -89,8 +91,8 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     "@type": "Organization",
     name: "Blue Logic Water",
     url: url,
-    logo: new URL("3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
-    image: new URL("3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
+    logo: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
+    image: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     description:
       "Professional whole home reverse osmosis water purification systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
     email: "info@bluelogicwater.com",
@@ -155,6 +157,7 @@ export function getProductSchema(url: string): ProductSchema {
     name: "Blue Logic Whole Home Reverse Osmosis System",
     description:
       "Professional whole home reverse osmosis water purification system. NSF-certified components. $5,995–$19,999 installed. Written price-match guarantee on any competing quote. Serving Utah's Wasatch Front.",
+    image: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     brand: {
       "@type": "Brand",
       name: "Blue Logic Water",
@@ -256,17 +259,17 @@ export function getAggregateRatingSchema(
   ratingValue: number = 5.0,
   reviewCount: number = 10,
 ) {
+  const base = getBaseOrganizationSchema(url);
   return {
-    "@context": "https://schema.org",
+    ...base,
     "@type": "LocalBusiness",
-    name: "Blue Logic Water",
-    url: url,
+    priceRange: "$$",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: ratingValue.toFixed(1),
       bestRating: "5",
       worstRating: "1",
-      reviewCount: reviewCount,
+      reviewCount: String(reviewCount),
     },
   };
 }

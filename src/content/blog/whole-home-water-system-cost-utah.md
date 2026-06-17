@@ -1,6 +1,7 @@
 ---
 slug: whole-home-water-system-cost-utah
 title: "How Much Does a Whole-Home Water Treatment System Cost in Utah?"
+seoTitle: "Whole-Home Water System Cost in Utah"
 description: "Whole-home water softeners, filtration systems, and reverse osmosis in Utah range from under $1,000 to $20,000+. Here's what you actually get at each price point — and where dealer markups hide."
 author: "Blue Logic Water"
 date: 2026-06-04

@@ -281,7 +281,7 @@ export default function ProductExplosionReact({
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <motion.a
-            href="/the-system"
+            href="/the-system/"
             className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-3 rounded-full bg-[oklch(0.7_0.1_220)] text-[oklch(0.15_0.02_270)] font-semibold text-lg shadow-[0_12px_30px_oklch(0.7_0.1_220_/_0.3)] border border-white/10 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[oklch(0.7_0.1_220)] md:w-auto md:px-0 md:py-0 md:rounded-none md:bg-transparent md:text-glacier md:shadow-none md:border-0"
             whileHover={{ x: 3 }}
           >

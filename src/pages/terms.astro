@@ -1,0 +1,230 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getBreadcrumbSchema } from "../utils/schema";
+
+const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
+export const prerender = true;
+
+const schemas = [
+  getBreadcrumbSchema(siteUrl, [
+    { name: "Home", url: "/" },
+    { name: "Terms & Conditions", url: "/terms/" },
+  ]),
+];
+---
+
+<Layout
+  title="Terms & Conditions - Blue Logic Water"
+  description="The terms and conditions governing the use of the Blue Logic Water website and our water treatment services in Utah."
+  schema={schemas}
+>
+  <section class="hero-gradient py-20 md:py-24 px-4 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-6xl font-serif mb-4 text-foreground">
+        Terms &amp; Conditions
+      </h1>
+      <p class="text-lg text-muted-foreground">Last Updated: June 17, 2026</p>
+    </div>
+  </section>
+
+  <section class="bg-background py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <div class="prose max-w-none">
+        <p class="text-xl text-foreground leading-relaxed mb-12">
+          These Terms &amp; Conditions ("Terms") govern your use of the Blue
+          Logic Water website and the water treatment products and services we
+          provide. By accessing our website or engaging our services, you agree
+          to these Terms. Please read them carefully.
+        </p>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            1. Acceptance of Terms
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            By using this website, requesting a quote, or purchasing a system or
+            service from Blue Logic Water, you acknowledge that you have read,
+            understood, and agree to be bound by these Terms and by our <a
+              href="/privacy/"
+              class="text-primary hover:underline font-medium">Privacy Policy</a
+            >. If you do not agree, please do not use our website or services.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            2. Our Services
+          </h2>
+          <p class="text-muted-foreground mb-4">
+            Blue Logic Water provides residential water treatment products and
+            services along Utah's Wasatch Front, including:
+          </p>
+          <ul class="list-disc pl-8 text-muted-foreground space-y-3">
+            <li>Whole-home reverse osmosis system installation</li>
+            <li>Whole-home water filtration system installation</li>
+            <li>Water softening solutions</li>
+            <li>In-home water testing and consultations</li>
+          </ul>
+          <p class="text-muted-foreground leading-relaxed mt-4">
+            Service availability depends on your location and home plumbing
+            configuration. We reserve the right to decline service where an
+            installation cannot be performed safely or to manufacturer
+            specifications.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            3. Quotes, Pricing &amp; Price-Match
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            Quotes are based on the information available at the time they are
+            provided and may change if site conditions differ from what was
+            described. Pricing is valid for the period stated on the quote.
+            Any written price-match guarantee applies only to a comparable
+            written quote from a licensed water treatment company for equivalent
+            equipment and scope of work, and is subject to verification.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            4. Scheduling &amp; Installation
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            Installation dates are estimates and may be affected by permitting,
+            product availability, weather, or site conditions. You agree to
+            provide safe and reasonable access to your property and the
+            installation area. You are responsible for disclosing relevant
+            details about your plumbing, electrical, and water supply that may
+            affect the installation.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            5. Warranties
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            Equipment is covered by the applicable manufacturer and
+            workmanship warranties described in your purchase documentation.
+            Warranties do not cover damage resulting from misuse, unauthorized
+            modification, lack of routine maintenance, or conditions outside of
+            normal residential use. Except as expressly stated, services and
+            products are provided without additional warranties of any kind.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            6. Payment
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            Payment terms are stated in your quote or invoice. Payments are
+            processed through trusted third-party providers. Any financing is
+            offered through independent lenders and is subject to their separate
+            terms and approval.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            7. Cancellations &amp; Refunds
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            You may cancel a scheduled installation in accordance with the
+            cancellation terms provided with your agreement. Refund eligibility
+            depends on the stage of fulfillment and any costs already incurred.
+            Contact us as early as possible to discuss changes to your order.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            8. Customer Responsibilities
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            You are responsible for operating and maintaining your system
+            according to the guidance we provide, including routine filter and
+            media maintenance. Failure to maintain your system may affect
+            performance and warranty coverage.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            9. Limitation of Liability
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            To the fullest extent permitted by law, Blue Logic Water is not
+            liable for indirect, incidental, or consequential damages arising
+            from the use of our website, products, or services. Our total
+            liability for any claim is limited to the amount you paid for the
+            product or service giving rise to the claim.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            10. Website Use &amp; Intellectual Property
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            The content on this website, including text, graphics, logos, and
+            images, is the property of Blue Logic Water and is protected by
+            applicable laws. You may not reproduce or distribute our content
+            without permission. Water-quality information presented on this site
+            is for general educational purposes and is not a substitute for an
+            in-home water test.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            11. Governing Law
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            These Terms are governed by the laws of the State of Utah, without
+            regard to its conflict of law provisions. Any disputes will be
+            handled in the courts located in Utah.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">
+            12. Changes to These Terms
+          </h2>
+          <p class="text-muted-foreground leading-relaxed">
+            We may update these Terms from time to time. Changes are effective
+            when posted to this page, and the "Last Updated" date will reflect
+            the most recent revision. Your continued use of our website or
+            services constitutes acceptance of the updated Terms.
+          </p>
+        </div>
+
+        <div class="policy-section">
+          <h2 class="text-2xl font-serif text-primary mb-4">13. Contact Us</h2>
+          <p class="text-muted-foreground mb-4">
+            If you have any questions about these Terms, please contact:
+          </p>
+          <div class="bg-card p-6 rounded-xl">
+            <p class="font-semibold text-foreground mb-2">Blue Logic Water</p>
+            <p class="text-muted-foreground mb-2">
+              Email: <a
+                href="mailto:info@bluelogicwater.com"
+                class="text-primary hover:underline font-medium"
+                >info@bluelogicwater.com</a
+              >
+            </p>
+            <p class="text-muted-foreground">
+              Phone: <a
+                href="tel:+18019802583"
+                class="text-primary hover:underline font-medium"
+                >(801) 980-2583</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

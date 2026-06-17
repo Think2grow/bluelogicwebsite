@@ -1,6 +1,7 @@
 ---
 slug: pfas-utah-water
 title: "PFAS in Utah Water: What Wasatch Front Homeowners Need to Know"
+seoTitle: "PFAS in Utah Water: What Homeowners Should Know"
 description: "PFAS 'forever chemicals' have been detected in Salt Lake City, Park City, and other Utah water supplies. Here's what PFAS are, what the detection means, and what reduces them."
 author: "Blue Logic Water"
 date: 2026-06-04

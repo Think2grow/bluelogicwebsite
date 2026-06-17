@@ -18,7 +18,7 @@ const currentUrl = new URL("/locations", siteUrl).toString();
 const schemas = [
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
-    { name: "Locations", url: "/locations" },
+    { name: "Locations", url: "/locations/" },
   ]),
 ];
 ---
@@ -47,7 +47,7 @@ const schemas = [
           Utah's water challenges vary by location. From Salt Lake City's PFAS
           contamination to Lehi's extreme arsenic levels, each region has unique
           water quality concerns. <a
-            href="/the-system"
+            href="/the-system/"
             class="text-primary hover:underline font-semibold"
             >Blue Logic Water delivers location-specific solutions</a
           > that address your community's exact water profile.
@@ -82,7 +82,7 @@ const schemas = [
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
             Every city faces unique challenges—from PFAS in northern Utah to
             arsenic in the south. <a
-              href="/the-system"
+              href="/the-system/"
               class="text-primary hover:underline font-semibold"
               >That's why Blue Logic designs location-specific solutions</a
             >.
@@ -99,7 +99,7 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
         {
           sortedCities.map((city) => (
-            <a href={`/locations/${city.slug}`} class="location-card">
+            <a href={`/locations/${city.slug}/`} class="location-card">
               <div class="card-header">
                 <h2 class="text-2xl font-serif text-foreground mb-2">
                   {city.name}
@@ -162,7 +162,7 @@ const schemas = [
             Each Utah city draws from different water sources—mountain
             watersheds, valley aquifers, or purchased surface water—each with
             <a
-              href="/the-value"
+              href="/the-value/"
               class="text-primary hover:underline font-semibold"
               >distinct mineral and contaminant profiles</a
             >.
@@ -188,7 +188,7 @@ const schemas = [
           </h3>
           <p class="text-muted-foreground leading-relaxed">
             <a
-              href="/the-system"
+              href="/the-system/"
               class="text-primary hover:underline font-semibold"
               >Blue Logic designs systems specifically for your location's water
               profile</a
@@ -201,7 +201,7 @@ const schemas = [
           <h3 class="text-xl font-serif mb-4 text-foreground">
             Local Expertise
           </h3>
-          <a href="/our-team" class="text-primary hover:underline font-semibold"
+          <a href="/our-team/" class="text-primary hover:underline font-semibold"
             >Our team knows Utah water</a
           >
           <p class="text-muted-foreground leading-relaxed">
@@ -261,7 +261,7 @@ const schemas = [
       <p class="text-lg text-white/90 mb-8">
         Blue Logic Water serves the greater Salt Lake Valley and surrounding
         regions. If your city isn't listed, we likely still serve your area. <a
-          href="/common-questions"
+          href="/common-questions/"
           class="underline hover:no-underline"
           >Check our FAQ for a full service list</a
         > or <a href="/free-water-test/" class="underline hover:no-underline"
