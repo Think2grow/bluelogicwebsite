@@ -17,8 +17,8 @@ export default defineConfig({
   adapter: cloudflare(),
   integrations: [
     sitemap({
-      // Exclude non-canonical pages: paid/campaign landing pages, noindex pages,
-      // and the /salt-lake-city/ route (a 301 redirect to /locations/salt-lake-city/).
+      // Exclude non-canonical pages: noindex pages and 301-redirect routes
+      // (/salt-lake-city/ -> /locations/salt-lake-city/, /water-test/ -> /free-water-test/).
       filter: (page) => {
         const path = new URL(page).pathname;
         const excluded = [
@@ -29,7 +29,6 @@ export default defineConfig({
           "/privacy/",
           "/salt-lake-city/",
           "/water-test/",
-          "/water-is-real/",
         ];
         return !excluded.includes(path);
       },
