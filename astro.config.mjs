@@ -17,12 +17,21 @@ export default defineConfig({
   adapter: cloudflare(),
   integrations: [
     sitemap({
-      filter: (page) =>
-        !page.includes("/book/") &&
-        !page.includes("/thank-you/") &&
-        !page.includes("/whole-home-reverse-osmosis/") &&
-        !page.includes("/vsl/") &&
-        !page.includes("/privacy/"),
+      // Exclude non-canonical pages: noindex pages and 301-redirect routes
+      // (/salt-lake-city/ -> /locations/salt-lake-city/, /water-test/ -> /free-water-test/).
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        const excluded = [
+          "/book/",
+          "/thank-you/",
+          "/whole-home-reverse-osmosis/",
+          "/vsl/",
+          "/privacy/",
+          "/salt-lake-city/",
+          "/water-test/",
+        ];
+        return !excluded.includes(path);
+      },
     }),
     react(),
   ],
