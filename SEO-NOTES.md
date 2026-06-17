@@ -255,13 +255,39 @@ Source: `bluelogicwater.com_mega_export_20260617.csv`. Branch `seo/crawl-fixes-2
 ### Done outside code
 - [x] **HSTS enabled at Cloudflare edge** (SSL/TLS → Edge Certificates → HSTS) — June 17, 2026. Verified on apex: `Strict-Transport-Security: max-age=31536000; includeSubDomains`. This is the authoritative HSTS source and covers the apex redirect the `_headers` file can't reach. `includeSubDomains` is ON — every subdomain must serve HTTPS.
 
-### Post-deploy validation (do after PR #1 merges + deploys)
-- [ ] Google Rich Results Test (https://search.google.com/test/rich-results) — expect 0 errors on: `/`, `/the-system/`, `/free-water-test/`, `/water-softener-utah/`, `/whole-home-reverse-osmosis-utah/`, `/whole-home-water-filtration/`
-- [ ] Cross-check in https://validator.schema.org/ (confirm `Product` has `image`, `LocalBusiness` has `address`)
-- [ ] Rerun Semrush Site Audit; confirm these drop to ~0: broken internal links, temporary redirects, 4xx, structured data errors, title too long, llms.txt formatting
+### Round 1 post-deploy validation — DONE
+- [x] Google Rich Results Test — **0 errors** on all 6 pages (`/`, `/the-system/`, `/free-water-test/`, `/water-softener-utah/`, `/whole-home-reverse-osmosis-utah/`, `/whole-home-water-filtration/`)
+- [x] Deployed via Cloudflare Workers Builds; `/terms/` and `/locations/park-city/` confirmed live (200)
+
+## Round 2 — June 17, 2026 (post-deploy re-crawl)
+
+Source: `bluelogicwater.com_mega_export_20260617_updated.csv`. Branch `seo/crawl-fixes-round2` (PR #2).
+
+Round 1 cleared: broken internal links (61→0), temporary redirects (61→0), 4xx (3→0), title too long (9→0), HSTS (2→0), llms.txt (1→0).
+
+Round 2 fixes (verified clean build + link-graph analysis):
+- [x] Structured data (5 pages): `getServiceSchema` `provider` was a `LocalBusiness` with no `address` (required). Added address/image/email/priceRange. Google RRT ignores `Service` (showed clean); Semrush/schema.org flagged it.
+- [x] "Only one internal link" (12 blog posts): Related Articles switched to a rotating window (next 3 posts by date) so every post gets ≥3 inbound links.
+- [x] "Only one internal link" (`/locations/riverton/`, `/our-team/`): added both to the footer.
+- [x] "Orphaned sitemap pages" (3): `/salt-lake-city/` (301) and `/water-test/` (now 301 → `/free-water-test/`) excluded from sitemap; `/water-is-real/` kept, linked from footer, retained in sitemap. Sitemap filter switched to exact-pathname matching.
+
+## Text-to-HTML ratio — June 17, 2026 (PR #4)
+
+Source: `bluelogicwater.com_text_html_ratio_20260617.csv` (24 pages at 6–10%). Branch `seo/text-html-ratio`.
+
+Root cause was **duplicated markup, not thin content** — inline SVG was ~41% of a location page.
+- [x] `Reviews.astro`: star + Google icons defined once as SVG `<symbol>`, referenced via `<use>` (were repeated 55×/page). ~23 KB saved per page (midvale 85 KB → 62 KB) — real page-weight win.
+- [x] `scopedStyleStrategy: "class"` instead of long `data-astro-cid-*` attributes (same CSS specificity, smaller HTML).
+- [x] Added a "Key Concerns" content block to `midvale` / `riverton` / `taylorsville` (the thinnest pages) — unique, factual local copy.
+- Result: **all 24 pages ≥10%** (min 10.1%).
+- Note: text-to-HTML ratio is a low-severity Semrush *Notice* and **not a Google ranking factor**; shipped for the real wins (lighter pages, more unique content).
+
+## Deploy pipeline (PR #3)
+
+The site deploys via **Cloudflare Workers Builds** (Git integration, on push to `main`). A separate `.github/workflows/deploy-cloudflare.yml` Action failed on every run because the repo has **no `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` secrets** — it never deployed anything; Cloudflare's integration did. Removed it (PR #3) to stop false-alarm failures. To use GitHub Actions for deploys instead, add those two secrets.
 
 ### Known / intentional (not bugs — left as-is)
 - Brochure preview links are direct `.png` links ("resources formatted as page links" notice) — intentional; dedicated Download buttons already exist
 - `/privacy/` "blocked from crawling" — intentional `noindex`
-- Low text-to-HTML ratio (design-heavy pages), "orphaned" / "content not optimized" — content-level, optional
+- Any remaining "content not optimized" / "low semantic HTML" soft notices — content-level, optional
 - Park City water hardness is qualitative ("Hard") — EWG doesn't report GPG; on-page copy directs users to a free test
