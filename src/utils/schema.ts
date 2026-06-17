@@ -232,7 +232,18 @@ export function getServiceSchema(
       "@type": "LocalBusiness",
       name: "Blue Logic Water",
       url: "https://www.bluelogicwater.com",
+      image:
+        "https://www.bluelogicwater.com/3%20Blue%20Logic%20Water%20Logo-13.jpg",
       telephone: "+1-801-980-2583",
+      email: "info@bluelogicwater.com",
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Salt Lake City",
+        addressRegion: "UT",
+        postalCode: "84101",
+        addressCountry: "US",
+      },
     },
     areaServed: {
       "@type": "State",

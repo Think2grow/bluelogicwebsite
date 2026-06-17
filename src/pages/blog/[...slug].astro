@@ -44,12 +44,16 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-// Related posts — most recent other articles, for internal linking
+// Related posts — a rotating window of the next 3 articles so every post
+// receives inbound internal links (not just the newest few).
 const allPosts = await getCollection("blog");
-const relatedPosts = allPosts
-  .filter((p) => p.id !== post.id)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+const sortedPosts = [...allPosts].sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const currentIdx = sortedPosts.findIndex((p) => p.id === post.id);
+const relatedPosts = [1, 2, 3]
+  .map((offset) => sortedPosts[(currentIdx + offset) % sortedPosts.length])
+  .filter((p) => p && p.id !== post.id);
 
 const siteUrl = "https://www.bluelogicwater.com";
 const schemas = [
