@@ -30,7 +30,7 @@ export default function ReviewCarousel() {
 
   const fetchReviews = async () => {
     try {
-      const response = await fetch('/api/reviews');
+      const response = await fetch('/api/reviews/');
       const data = await response.json();
 
       if (data.error) {

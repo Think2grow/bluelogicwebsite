@@ -773,6 +773,36 @@ export const cities: CityData[] = [
       "Remote location means driving for bottled water",
     ],
   },
+  {
+    slug: "park-city",
+    name: "Park City",
+    region: "Summit County",
+    zipCodes: ["84060", "84068", "84098"],
+    ewgTapwaterDatabaseUrl:
+      "https://www.ewg.org/tapwater/system.php?pws=UTAH22137",
+    contaminantsExceedingGuidelines: 13,
+    totalContaminants: 32,
+    topContaminants: [
+      "Arsenic (315x guideline)",
+      "Total trihalomethanes (54x guideline)",
+      "Haloacetic acids/HAA5 (48x guideline)",
+    ],
+    complianceStatus: "Federally compliant but exceeds EWG health guidelines",
+    tdsRange: "200–400 ppm",
+    hardnessLevel: "Hard",
+    population: "9,500",
+    description:
+      "Park City and the Snyderville Basin are served by Mountain Regional Water, where EWG testing flags arsenic at 315x its health guideline alongside elevated disinfection byproducts and detectable PFAS. Hard mountain groundwater adds to the need for treatment.",
+    waterSource:
+      "Mountain Regional Water Special Service District — Snyderville Basin wells and surface water",
+    commonIssues: [
+      "Arsenic detected at 315x the EWG health guideline",
+      "Disinfection byproducts (TTHMs, haloacetic acids) far above EWG guidelines",
+      "PFAS 'forever chemicals' (PFHxS and others) detected above EWG guidelines",
+      "Hard mountain groundwater causing scale on fixtures and appliances",
+      "Radium and nitrate detected above EWG health guidelines",
+    ],
+  },
 ];
 
 /**

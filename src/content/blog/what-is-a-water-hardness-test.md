@@ -1,6 +1,7 @@
 ---
 slug: what-is-a-water-hardness-test
 title: "What Is a Water Hardness Test — and Do You Need One in Utah?"
+seoTitle: "What Is a Water Hardness Test? (Utah Guide)"
 description: "A water hardness test measures how much calcium and magnesium is in your water. For most Utah homes, the answer is 'a lot.' Here's how it works and what you do with the result."
 author: "Blue Logic Water"
 date: 2026-06-05

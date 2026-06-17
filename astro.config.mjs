@@ -13,6 +13,7 @@ export default defineConfig({
       ? "http://localhost:4321"
       : "https://www.bluelogicwater.com",
   output: "server",
+  trailingSlash: "always",
   adapter: cloudflare(),
   integrations: [
     sitemap({

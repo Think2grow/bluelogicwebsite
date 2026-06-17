@@ -1,6 +1,7 @@
 ---
 slug: utah-water-test-results-explained
 title: "You Got a Water Test. Here's What Your Utah Results Actually Mean."
+seoTitle: "Understanding Your Utah Water Test Results"
 description: "Hardness at 21 GPG. TDS at 380. Chlorine at 1.2 ppm. What do these numbers mean for a Utah home — and what should you do next? A practical guide."
 author: "Blue Logic Water"
 date: 2026-06-05

@@ -1,6 +1,7 @@
 ---
 slug: utah-water-infrastructure-explained
 title: "Utah's Water Infrastructure Explained — Where Wasatch Front Water Actually Comes From"
+seoTitle: "Where Wasatch Front Water Comes From"
 description: "Most Utah homeowners don't know which utility serves their home or where their water originates. This guide explains the Wasatch Front water system, from mountain snowpack to your tap."
 author: "Blue Logic Water"
 date: 2026-06-05

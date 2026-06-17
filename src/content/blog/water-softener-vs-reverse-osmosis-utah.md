@@ -1,6 +1,7 @@
 ---
 slug: water-softener-vs-reverse-osmosis-utah
 title: "Water Softener vs. Reverse Osmosis: What Utah Homes Actually Need"
+seoTitle: "Water Softener vs. Reverse Osmosis in Utah"
 description: "Both address water quality concerns — but in fundamentally different ways. Here's how to decide which system is right for your Wasatch Front home based on your actual water."
 author: "Blue Logic Water"
 date: 2026-06-04

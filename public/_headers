@@ -1,0 +1,7 @@
+# Note: HSTS is authoritatively set at the Cloudflare edge (SSL/TLS → Edge
+# Certificates → HSTS), which also covers the apex redirect. This line is a
+# backup for www asset responses; keep the two max-age values roughly in sync.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

@@ -12,6 +12,7 @@ const blog = defineCollection({
           "Slug can only contain letters, numbers, hyphens, and underscores",
       }),
       title: z.string(),
+      seoTitle: z.string().optional(),
       description: z.string().optional(),
       author: z.string(),
       date: z.coerce.date(),

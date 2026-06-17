@@ -24,8 +24,8 @@ const schemas = [
   getLocalBusinessSchema(siteUrl, cityData.name, "UT"),
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
-    { name: "Locations", url: "/locations" },
-    { name: cityData.name, url: `/locations/${cityData.slug}` },
+    { name: "Locations", url: "/locations/" },
+    { name: cityData.name, url: `/locations/${cityData.slug}/` },
   ]),
 ];
 ---

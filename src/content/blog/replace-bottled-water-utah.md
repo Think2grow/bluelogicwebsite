@@ -1,6 +1,7 @@
 ---
 slug: replace-bottled-water-utah
 title: "How to Stop Buying Bottled Water — A Utah Homeowner's Guide"
+seoTitle: "How to Stop Buying Bottled Water in Utah"
 description: "The average Utah family on bottled water spends $1,200–$2,400 per year. A whole-home water system eliminates that expense and produces better water from every tap. Here's how."
 author: "Blue Logic Water"
 date: 2026-06-05

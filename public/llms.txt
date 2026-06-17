@@ -1,6 +1,6 @@
-# Blue Logic Water — llms.txt
-# Structured summary for AI language models and search systems.
-# Last updated: 2026-06-03
+# Blue Logic Water
+
+> Structured summary of Blue Logic Water for AI language models and search systems. Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softening systems for homes across Utah's Wasatch Front. Last updated: 2026-06-03.
 
 ## About Blue Logic Water
 Blue Logic Water is a water treatment company serving Utah's Wasatch Front from Ogden to

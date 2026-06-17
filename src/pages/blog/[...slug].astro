@@ -44,6 +44,13 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
+// Related posts — most recent other articles, for internal linking
+const allPosts = await getCollection("blog");
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
 const siteUrl = "https://www.bluelogicwater.com";
 const schemas = [
   getBreadcrumbSchema(siteUrl, [
@@ -56,7 +63,7 @@ const schemas = [
 ---
 
 <Layout
-  title={`${post.data.title} | Blue Logic Water`}
+  title={post.data.seoTitle ?? `${post.data.title} | Blue Logic Water`}
   description={post.data.description || "Utah water treatment guides and resources from Blue Logic Water."}
   schema={schemas}
 >
@@ -114,6 +121,29 @@ const schemas = [
         Schedule Free Water Test →
       </a>
     </div>
+
+    <!-- Related articles -->
+    {
+      relatedPosts.length > 0 && (
+        <div class="mt-16 pt-10 border-t border-border not-prose">
+          <h2 class="text-2xl font-serif mb-6 text-foreground">Related Articles</h2>
+          <ul class="grid gap-4 sm:grid-cols-3">
+            {relatedPosts.map((p) => (
+              <li>
+                <a
+                  href={`/blog/${p.id}/`}
+                  class="block h-full bg-card border border-border rounded-xl p-5 hover:border-primary transition-colors"
+                >
+                  <span class="font-semibold text-foreground leading-snug">
+                    {p.data.title}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
 
     <!-- Related posts navigation -->
     <div class="mt-8 pt-8 border-t border-border not-prose">

@@ -1,6 +1,7 @@
 ---
 slug: arsenic-utah-drinking-water
 title: "Arsenic in Utah Drinking Water: What Wasatch Front Homeowners Need to Know"
+seoTitle: "Arsenic in Utah Drinking Water: What to Know"
 description: "Arsenic has been detected above EWG health guidelines in multiple Utah cities — including Lehi at 484x and Draper at 450x. Here's what that means and what you can do about it."
 author: "Blue Logic Water"
 date: 2026-06-04
