@@ -234,3 +234,34 @@ Reach out to Utah home improvement blogs, local news outlets covering water qual
 - [ ] GSC: Sitemap submitted and showing expected page count
 - [ ] Internal linking: Blog posts linked from city pages
 - [ ] Internal linking: Comparison pages linked from site nav or footer
+
+---
+
+## Crawl Fixes — June 17, 2026 (Semrush mega export)
+
+Source: `bluelogicwater.com_mega_export_20260617.csv`. Branch `seo/crawl-fixes-2026-06` (PR #1).
+
+### Fixed in code (verified against a clean `npm run build`)
+- [x] Internal links canonicalized to trailing-slash form (nav, footer, body, location cards, breadcrumb JSON-LD, `/api/reviews`) — kills the sitewide "temporary 302 redirects" and "broken internal links" flags
+- [x] `trailingSlash: "always"` in `astro.config.mjs` so stray hits resolve via a single 301
+- [x] Added `/terms/` page (footer linked it on every page but it didn't exist → sitewide broken link + 4xx)
+- [x] Added `/locations/park-city/` page + `cities.ts` entry (homepage linked a 404). Real EWG data: PWS UTAH22137 (Mountain Regional Water) — arsenic 315x, TTHMs 54x, HAA5 48x, PFAS
+- [x] Structured data: `Product` now has required `image`; `getAggregateRatingSchema` emits a full `LocalBusiness` with required `address`; logo URLs origin-absolute
+- [x] Blog: optional `seoTitle` field used for `<title>`; concise titles on the 9 "title too long" posts
+- [x] Blog: "Related Articles" block (adds inbound internal links to fix "only one internal link")
+- [x] `llms.txt`: single H1 + `>` summary blockquote per spec
+- [x] `public/_headers` adds `X-Content-Type-Options` + `Referrer-Policy` (HSTS handled at Cloudflare edge — see below)
+
+### Done outside code
+- [x] **HSTS enabled at Cloudflare edge** (SSL/TLS → Edge Certificates → HSTS) — June 17, 2026. Verified on apex: `Strict-Transport-Security: max-age=31536000; includeSubDomains`. This is the authoritative HSTS source and covers the apex redirect the `_headers` file can't reach. `includeSubDomains` is ON — every subdomain must serve HTTPS.
+
+### Post-deploy validation (do after PR #1 merges + deploys)
+- [ ] Google Rich Results Test (https://search.google.com/test/rich-results) — expect 0 errors on: `/`, `/the-system/`, `/free-water-test/`, `/water-softener-utah/`, `/whole-home-reverse-osmosis-utah/`, `/whole-home-water-filtration/`
+- [ ] Cross-check in https://validator.schema.org/ (confirm `Product` has `image`, `LocalBusiness` has `address`)
+- [ ] Rerun Semrush Site Audit; confirm these drop to ~0: broken internal links, temporary redirects, 4xx, structured data errors, title too long, llms.txt formatting
+
+### Known / intentional (not bugs — left as-is)
+- Brochure preview links are direct `.png` links ("resources formatted as page links" notice) — intentional; dedicated Download buttons already exist
+- `/privacy/` "blocked from crawling" — intentional `noindex`
+- Low text-to-HTML ratio (design-heavy pages), "orphaned" / "content not optimized" — content-level, optional
+- Park City water hardness is qualitative ("Hard") — EWG doesn't report GPG; on-page copy directs users to a free test
