@@ -14,6 +14,9 @@ export default defineConfig({
       : "https://www.bluelogicwater.com",
   output: "server",
   trailingSlash: "always",
+  // Use short scoped-style classes instead of long data-astro-cid-* attributes
+  // (same CSS specificity, smaller HTML payload).
+  scopedStyleStrategy: "class",
   adapter: cloudflare(),
   integrations: [
     sitemap({
