@@ -50,10 +50,8 @@ Each page now has a distinct angle:
 
 ### Priority 1 — Must Do (Cloudflare Dashboard)
 
-**Non-www → www 301 redirect**  
-If `bluelogicwater.com` (without www) is accessible without redirecting to `www.bluelogicwater.com`, Google sees two full copies of the entire site. Every page has a duplicate at the other domain. Even with canonical tags pointing to www, Google has to work harder to consolidate — and sometimes won't.  
-**Fix:** In Cloudflare Pages → your domain settings, add a redirect rule: `bluelogicwater.com/*` → `https://www.bluelogicwater.com/$1` (301).  
-**This is the single highest-impact remaining fix if it isn't already in place.**
+**Non-www → www 301 redirect — ✅ DONE (verified June 17, 2026 via Cloudflare API)**  
+Confirmed already in place and correct: Cloudflare Single Redirect "Redirect from root to WWW" — enabled, 301, preserves query string, matches apex only (no loop). `http://`, `https://`, and `?query` variants all resolve to `https://www.bluelogicwater.com`. No action needed. Any remaining non-www entries in Semrush/GSC are historical index lag and will consolidate on recrawl.
 
 ### Priority 2 — Google Search Console Actions
 
@@ -229,7 +227,7 @@ Reach out to Utah home improvement blogs, local news outlets covering water qual
 - [x] noindex on thank-you, vsl, privacy
 - [x] Sitemap filter excludes noindex and redirect pages
 - [x] Cloudflare Bulk Redirects: 7 old URLs redirected (home, home/, home-7284, coming-soon/, products, contact-us) — June 2026
-- [ ] Non-www → www pattern redirect (Redirect Rules in Cloudflare — pattern-based, covers all paths)
+- [x] Non-www → www pattern redirect (Cloudflare Single Redirect "Redirect from root to WWW" — 301, preserves query string, apex-only; verified via API June 17, 2026)
 - [ ] GSC: Both www and non-www properties verified
 - [ ] GSC: Sitemap submitted and showing expected page count
 - [ ] Internal linking: Blog posts linked from city pages
@@ -290,7 +288,7 @@ First pull from the Semrush **Analytics API** (vs. the prior Site-Audit CSVs). K
 - **Branded-only visibility.** Ranks #1 for "blue logic water" (brand, 30/mo) and essentially nothing else commercial. All other rankings sit at positions 27–93, mostly brand-confusion terms (waterlogic, purologix, "blu v") — not real opportunities.
 - **Prize keyword not ranking.** `water softener utah` (260/mo, $8.49 CPC, KD 48) — dedicated well-optimized page exists but is **not in the top 100**. `water softener salt lake city` (140/mo, $12.77, KD 45) same. On-page is fine; these SERPs are held by national brands at KD 45–48.
 - **Two genuine striking-distance wins (pos 11–20):** `water purification salt lake county` #16 (40/mo, **KD 8** — easiest win) → SLC page; `draper utah water` #15 (50/mo, KD 27) → Draper page.
-- **www / non-www split is LIVE in ranking data** — same content ranks at both `bluelogicwater.com/...` and `www.bluelogicwater.com/...` (e.g. "reverse osmosis system utah" at #27 and #71). Confirms Priority 1 (non-www→www 301, still undone in Cloudflare) is actively costing rankings. **Highest-impact remaining fix.**
+- **www / non-www split appears in ranking data** — same content shows at both `bluelogicwater.com/...` and `www.bluelogicwater.com/...` (e.g. "reverse osmosis system utah" at #27 and #71). **CORRECTION (verified June 17 via Cloudflare API):** the non-www→www 301 is **already in place and correct** — enabled, 301, preserves query string, apex-only match (no loop). `http://`, `https://`, and query-string variants all resolve to `https://www`. The duplicate SERP entries are **historical index lag**, not a live redirect gap. Action is "wait for recrawl + Request Indexing in GSC," not an infra change.
 - **Small market.** Commercial terms are 30–260/mo at $5–13 CPC. Low volume, high value, winnable.
 - **Backlink profile is junk.** Authority Score 12, 185 backlinks / 120 ref. domains — but ~95% are spam directories/classified farms/junk TLDs that appeared in one burst in early 2026 (blasted/bought, not earned). Competitors are also low-authority (AS 5–16), so **link gap is NOT the bottleneck** — Blue Logic is mid-pack. A few *genuine* local links (GBP, BBB, real Utah directories, local news) would pull ahead of the pack.
 - The Semrush "top competitor" waterpro.net (1,259 traffic) is a **municipal water utility**, not a treatment competitor — its traffic is branded + "water outage"/"eye on water login." Real treatment competitors (purologix, sharpwater, healthywaterandair, wasatchwaterspecialist) all have thin traffic.
@@ -301,9 +299,9 @@ First pull from the Semrush **Analytics API** (vs. the prior Site-Audit CSVs). K
 - [x] `/locations/salt-lake-city/`: added "Can you drink the tap water in Salt Lake City?" FAQ (targets `can you drink tap water in salt lake city` / `salt lake city tap water`); added `water purification across Salt Lake County` phrasing to reinforce the KD-8 #16 term; linked the PFAS and "Is SLC water safe?" blog posts.
 
 ### Still not code (owner/marketing actions, in priority order)
-1. **Cloudflare non-www→www 301** — the single highest-impact fix; now proven to be splitting rankings.
-2. **Earn 5–10 real local links** — GBP fully populated, BBB, Angi/HomeAdvisor, Utah business directories (real ones), a local-news water-quality mention. This is the actual growth lever, not more pages.
-3. After deploy: GSC URL-inspect → Request Indexing for the Draper and SLC pages.
+1. ~~Cloudflare non-www→www 301~~ — **DONE / verified already in place** (Cloudflare API, June 17). No action needed.
+2. **Earn 5–10 real local links** — GBP fully populated, BBB, Angi/HomeAdvisor, Utah business directories (real ones), a local-news water-quality mention. This is now the #1 growth lever, not more pages.
+3. After deploy: GSC URL-inspect → Request Indexing for the Draper and SLC pages (also nudges Google to consolidate the lingering non-www duplicates onto www).
 
 ## Deploy pipeline (PR #3)
 
