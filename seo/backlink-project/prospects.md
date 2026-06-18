@@ -25,7 +25,7 @@ Doyle's as a partner-listing backup.
 | Business | URL | AS | Organic traffic/mo | Blog/Resources? | Contact | Asset to pitch | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
 | Fieldstone Homes | fieldstonehomes.com | **26** | 3,552 (3,963 kw) | ✅ /blog/ + /trade-partners/ + /realtor-toolbox/ | form /contact/ · 801.438.6631 | #5 + #1 | ✅ Vetted | **Highest DA + traffic.** Trade-partners page = natural link slot; blog = guest-post option. |
-| Nilson Homes | nilsonhomes.com | **24** | 1,403 (1,110 kw) | ✅ /partners-contractors (actively recruiting trade partners) | form /contact-us · (385) 402-7862 / (801) 392-8100 · S. Ogden | #5 + #1 | ✅ Vetted | They *explicitly* want trade partners — strongest "yes" odds. Partner page currently thin = easy add. |
+| Nilson Homes | nilsonhomes.com | **24** | 1,403 (1,110 kw) | ✅ /partners-contractors (actively recruiting trade partners) | **TEXT** (385) 402-7862 & (801) 392-8100 (form has NO message field) · S. Ogden | #5 + #1 | ✅ Texted 6/18 | Contacted via SMS to both numbers. They explicitly want trade partners = strongest "yes" odds. Awaiting reply. |
 | Henry Walker Homes | henrywalkerhomes.com | **22** | 871 (1,056 kw) | ✅ blog "The HWH Edit" /news-center/ + /contractor-inquiry/ | form /contact/ · 801-845-0444 | #5 + #1 | ✅ Vetted | Blog + dedicated contractor-inquiry path. Pitch guest piece or partner listing. |
 | Roots Builders | roots-builders.com | 11 | 90 (362 kw) | ✅ active blog (10+ Utah custom-home articles) | "Schedule a Consultation" form only (no public email/phone; /contact/ 404s) | #5 + #1 | ◐ Backup | Very blog-friendly + topical = good guest-post target. No direct contact found; use consult form or LinkedIn/Facebook. |
 
@@ -35,7 +35,7 @@ offer a guest piece to Henry Walker / Roots blogs. Link target = #5 (cost guide)
 ## Niche 3 — Well drilling & septic  (researched 2026-06-17)
 | Business | URL | AS | Organic traffic/mo | Blog/Resources? | Contact | Asset to pitch | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
-| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | ~~info@wasatchdrilling.com~~ HARD-BOUNCED · use (435) 257-2369 / form /contact-us/ | #4 + #1 | ⚠️ Bounced 6/18 → retry via form/phone | Email invalid (550 address not found). Still best well prospect; recover via their contact form or phone. Message in outreach-queue.md. |
+| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | ~~info@wasatchdrilling.com~~ (bounced) · form /contact-us/ · (435) 257-2369 | #4 + #1 | ✅ Submitted via form 6/18 | Email hard-bounced; recovered via contact form. Best well prospect. Awaiting reply. |
 | Armstrong Drilling | armstrongwelldrilling.com | 7 | 63 (45 kw) | ✅ blog (posts 2016–2024) | contact page /contact/ (email not public) | #4 + #1 | ✅ Vetted | Summit/Wasatch Back, 24/7. Has blog. Find email via contact page. |
 | Legend Drilling | legenddrillingllc.com | 6 | 7 | — | — | — | ❌ Pass | Too little traffic. Revisit if it grows. |
 

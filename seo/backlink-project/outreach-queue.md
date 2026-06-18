@@ -43,8 +43,8 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 > https://www.bluelogicwater.com/blog/whole-home-water-system-cost-utah/
 > Happy to send details or samples. Reply here or call/text me at 801-980-2583. Thanks!
 
-### Nilson Homes (AS 24) — ⬜  ← best odds (actively recruiting trade partners)
-- **Channel:** contact form at https://nilsonhomes.com/contact-us · or call/text (385) 402-7862
+### Nilson Homes (AS 24) — ✅ TEXTED 6/18 (to (385) 402-7862 & (801) 392-8100)
+- **Channel:** TEXT only — their form has NO message field. Awaiting reply.
 - **Message:**
 > Subject: Trade partner inquiry, water treatment
 >
