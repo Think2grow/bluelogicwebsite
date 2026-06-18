@@ -1,12 +1,11 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT → Phase 3 (draft outreach emails).** DONE: all 5 content assets (PR #7
-> merged/live; PR #8 awaiting merge), email-auth (SPF/DKIM/DMARC all green), Gmail connected
-> (info@bluelogicwater.com — DRAFT-ONLY connector, no send), prospect research across all 4
-> niches (`prospects.md`). BLOCKED ON: (a) user merges PR #8 so #3/#4 go live; (b) user's
-> signature block (name/title/phone/booking link) in `access-and-setup.md`. THEN: write
-> personalized drafts into the info@ Drafts folder, drip ≤5/day (warm-up), user clicks Send.
-> Lead with home-builder niche (highest DA). Loose ends in Phase 2.4.
+> **⏯ RESUME POINT → Phase 3.2 (USER sends outreach).** DONE: all 5 assets live, email-auth
+> green, Gmail connected, prospect research (4 niches), signature set, 2 Gmail drafts created,
+> full `outreach-queue.md` written (email + form/phone messages, builders prioritized).
+> NEXT = USER ACTION: send the 2 drafts + submit the builder contact forms (Nilson/Fieldstone/
+> Henry Walker) from `outreach-queue.md`, ≤5/day. Then I do follow-ups, deliver guest content,
+> confirm links, and tidy loose ends (Roots/OnSite/Hidden Valley contacts).
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
@@ -35,12 +34,15 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - **KEY FINDING:** home builders = the high-DA niche (Fieldstone AS 26, Nilson 24, Henry
   Walker 22), each with a trade-partners page or blog. Lead outreach there.
 
-## Phase 3 — Outreach (first niche)
-- [ ] 3.1 Personalize template per vetted prospect
-- [ ] 3.2 Send (per chosen workflow) — log in `prospects.md`
+## Phase 3 — Outreach
+- [x] 3.1 Personalized messages written for all prospects → `outreach-queue.md`
+- [x] 3.1a 2 Gmail DRAFTS created (Wasatch Drilling, Doyle's) — in info@ Drafts, awaiting Scott's send
+- [ ] 3.2 ⬅️ **USER ACTION:** send the 2 drafts; submit builder forms from `outreach-queue.md`
+      (lead: Nilson, Fieldstone, Henry Walker). Pace ≤5/day. Log in `prospects.md`.
 - [ ] 3.3 Follow-up sequence (+4d, +10d), stop after 3 touches
 - [ ] 3.4 Deliver promised value (guest post / feature / resource listing)
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
+- [ ] 3.6 Loose ends: contact pages for Roots Builders + OnSite (chooseonsite.com) + Hidden Valley
 
 ## Phase 4 — Scale
 - [x] 4.1 Build assets #3 (water heater) + #4 (well water). #2 + #5 = existing posts reused (no dupes).

@@ -31,9 +31,10 @@
 >
 > Either way it's value for your audience first. Open to it?
 >
-> [Sender name]
-> [Title] · Blue Logic Water
-> [phone] · [reply email] · [booking link]
+> Scott Watson
+> Owner · Blue Logic Water
+> Reply here, or call/text me at 801-980-2583 · info@bluelogicwater.com
+> https://www.bluelogicwater.com
 
 ---
 
