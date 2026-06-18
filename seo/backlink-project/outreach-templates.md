@@ -1,9 +1,14 @@
 # Outreach Templates
 
 > **Style rules (Scott's preference, 2026-06-17):** NO em dashes (use periods/commas);
-> clean direct URLs only (no redirect/tracking/shortened links, they feel spammy); no heavy
-> signature block in the body (Gmail auto-signature handles the sign-off; put the phone in the
-> text). Plain, human, value-first.
+> clean direct URLs only (no redirect/tracking/shortened links, they feel spammy). Plain,
+> human, value-first. **Bake the signature into the body** — Gmail's auto-signature does NOT
+> apply to API-created drafts. Use exactly:
+> ```
+> Scott Watson, Owner
+> P: (801) 980-2583
+> https://www.bluelogicwater.com
+> ```
 >
 > Fill the **sender identity block** in `access-and-setup.md` first; these templates pull
 > from it. Keep every email short, specific, and value-first. One ask per email.
