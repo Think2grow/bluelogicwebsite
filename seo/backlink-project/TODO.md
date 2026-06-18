@@ -42,7 +42,8 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - [ ] 3.3 Follow-up sequence (+4d, +10d), stop after 3 touches
 - [ ] 3.4 Deliver promised value (guest post / feature / resource listing)
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
-- [ ] 3.6 Loose ends: contact pages for Roots Builders + OnSite (chooseonsite.com) + Hidden Valley
+- [x] 3.6 Loose ends done: Hidden Valley (hvpinspector@gmail.com → drafted); OnSite re-vetted
+      (AS 2 now, low priority); Roots = consultation-form only (message written)
 
 ## Phase 4 — Scale
 - [x] 4.1 Build assets #3 (water heater) + #4 (well water). #2 + #5 = existing posts reused (no dupes).

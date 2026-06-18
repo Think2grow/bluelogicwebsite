@@ -18,6 +18,7 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 ## ✅ Drafted as Gmail emails (review + send)
 1. **Wasatch Drilling** — info@wasatchdrilling.com — well niche, links asset #4. ⬜
 2. **Doyle's Appliance** — doylesappliance@icloud.com — appliance niche, links asset #1. ⬜
+3. **Hidden Valley Property Inspection** — hvpinspector@gmail.com — inspector niche, links asset #2. ⬜
 
 ---
 
@@ -69,10 +70,16 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 > map: https://www.bluelogicwater.com/blog/utah-water-hardness-by-city/
 > Reply here or call/text me at 801-980-2583. Thanks!
 
-### Roots Builders (AS 11 · active blog) — ⬜ (find contact page first)
-- **Channel:** needs a contact page/email (only newsletter found). Try https://roots-builders.com/contact/
-- **Angle:** offer a guest post for their custom-home blog on planning water treatment into a
-  new build; link asset #5 (cost) and #1 (hardness map).
+### Roots Builders (AS 11 · active blog) — ⬜
+- **Channel:** no public email/phone. Only a "Schedule a Consultation" form on the site
+  (/contact/ 404s). Use that form, or find a contact via LinkedIn/Facebook.
+- **Message (consultation form / note):**
+> Hi, I'm Scott Watson, owner of Blue Logic Water (whole-home water treatment in Utah). Not a
+> build inquiry — I read your custom-home blog and think your readers would value a short
+> guest piece on planning water treatment into a new build (Utah's hard water makes it worth
+> doing up front). Happy to write it for your audience, no sales pitch. Example of my work:
+> https://www.bluelogicwater.com/blog/whole-home-water-system-cost-utah/
+> Open to it? Reply or call/text me at 801-980-2583.
 
 ---
 
@@ -107,8 +114,21 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 
 ## Inspectors / realtors
 ### A1 Utah Home Inspector (AS 8 · best inspector traffic) — ⬜
-- **Channel:** form https://a1utahhomeinspector.com/contact/ · phone 435-757-3363
-- **Angle:** buyers love a water resource. Offer the "Moving to Utah water checklist" (#2) and
-  hardness map (#1) as a link for their buyer materials.
-- **Also re-vet:** OnSite Home Inspections (moved to chooseonsite.com, has a blog) and
-  Hidden Valley Property Inspection. Get contacts before pitching.
+- **Channel:** form https://a1utahhomeinspector.com/contact/ · phone 435-757-3363 (no public email)
+- **Message (form):**
+> Subject: A buyer water resource for your clients
+>
+> Hi, I'm Scott Watson, owner of Blue Logic Water (whole-home water treatment in Utah). We're
+> not competitors, but we serve the same Wasatch Front home buyers you do. Water is one thing
+> buyers rarely check until after they move in, so I wrote a plain-English piece on what to
+> look at: https://www.bluelogicwater.com/blog/moving-to-new-home-utah-water-test/
+> You're welcome to link it for your buyers, and I'd gladly send our mid-purchase customers
+> your way for inspections. Open to it? Reply or call/text me at 801-980-2583.
+
+### OnSite Home Inspections (chooseonsite.com) — ⬜ LOW PRIORITY
+- **Channel:** brian@chooseonsite.com · (801) 770-2301
+- **Note:** domain move reset authority to **AS 2** (was 8), no blog. Low SEO value — only
+  pitch if you have spare capacity. Same angle/message as A1 if so.
+
+### Hidden Valley Property Inspection (AS 8 · has buyer-resource pages) — ✉️ DRAFTED
+- Gmail draft created (hvpinspector@gmail.com) — links asset #2. Review + send.
