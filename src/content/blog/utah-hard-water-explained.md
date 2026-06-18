@@ -92,6 +92,8 @@ Hardness varies across the Wasatch Front based on water source and utility blend
 
 *Sources: Utility consumer confidence reports and third-party water quality aggregators. Hardness can vary by neighborhood, season, and active source blend. An in-home water test gives you the actual reading for your specific tap.*
 
+For the full city-by-city lookup — including the contaminants flagged in each community — see the [Utah Water Hardness by City map](/blog/utah-water-hardness-by-city/).
+
 ## What Actually Fixes Hard Water
 
 There are three approaches, each with different scope:
