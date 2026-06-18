@@ -282,6 +282,29 @@ Root cause was **duplicated markup, not thin content** — inline SVG was ~41% o
 - Result: **all 24 pages ≥10%** (min 10.1%).
 - Note: text-to-HTML ratio is a low-severity Semrush *Notice* and **not a Google ranking factor**; shipped for the real wins (lighter pages, more unique content).
 
+## Semrush API audit — June 17, 2026 (rankings + backlinks)
+
+First pull from the Semrush **Analytics API** (vs. the prior Site-Audit CSVs). Key (US database) at `.env` → `SEMRUSH_API_KEY`. ~50k units available; this audit used a few hundred.
+
+### Findings
+- **Branded-only visibility.** Ranks #1 for "blue logic water" (brand, 30/mo) and essentially nothing else commercial. All other rankings sit at positions 27–93, mostly brand-confusion terms (waterlogic, purologix, "blu v") — not real opportunities.
+- **Prize keyword not ranking.** `water softener utah` (260/mo, $8.49 CPC, KD 48) — dedicated well-optimized page exists but is **not in the top 100**. `water softener salt lake city` (140/mo, $12.77, KD 45) same. On-page is fine; these SERPs are held by national brands at KD 45–48.
+- **Two genuine striking-distance wins (pos 11–20):** `water purification salt lake county` #16 (40/mo, **KD 8** — easiest win) → SLC page; `draper utah water` #15 (50/mo, KD 27) → Draper page.
+- **www / non-www split is LIVE in ranking data** — same content ranks at both `bluelogicwater.com/...` and `www.bluelogicwater.com/...` (e.g. "reverse osmosis system utah" at #27 and #71). Confirms Priority 1 (non-www→www 301, still undone in Cloudflare) is actively costing rankings. **Highest-impact remaining fix.**
+- **Small market.** Commercial terms are 30–260/mo at $5–13 CPC. Low volume, high value, winnable.
+- **Backlink profile is junk.** Authority Score 12, 185 backlinks / 120 ref. domains — but ~95% are spam directories/classified farms/junk TLDs that appeared in one burst in early 2026 (blasted/bought, not earned). Competitors are also low-authority (AS 5–16), so **link gap is NOT the bottleneck** — Blue Logic is mid-pack. A few *genuine* local links (GBP, BBB, real Utah directories, local news) would pull ahead of the pack.
+- The Semrush "top competitor" waterpro.net (1,259 traffic) is a **municipal water utility**, not a treatment competitor — its traffic is branded + "water outage"/"eye on water login." Real treatment competitors (purologix, sharpwater, healthywaterandair, wasatchwaterspecialist) all have thin traffic.
+
+### Done in code (verified clean `npm run build`)
+- [x] `seo/disavow-bluelogicwater.txt` — GSC-format disavow for the 115 spam domains (5 plausibly-legit kept out). **Optional** — upload only on a manual action or if spam keeps growing.
+- [x] `/locations/draper/`: added "Is Draper, Utah tap water safe to drink?" FAQ (targets `draper utah water` / `draper water contamination`) + inline link to the arsenic blog post (Priority 3 blog→city linking).
+- [x] `/locations/salt-lake-city/`: added "Can you drink the tap water in Salt Lake City?" FAQ (targets `can you drink tap water in salt lake city` / `salt lake city tap water`); added `water purification across Salt Lake County` phrasing to reinforce the KD-8 #16 term; linked the PFAS and "Is SLC water safe?" blog posts.
+
+### Still not code (owner/marketing actions, in priority order)
+1. **Cloudflare non-www→www 301** — the single highest-impact fix; now proven to be splitting rankings.
+2. **Earn 5–10 real local links** — GBP fully populated, BBB, Angi/HomeAdvisor, Utah business directories (real ones), a local-news water-quality mention. This is the actual growth lever, not more pages.
+3. After deploy: GSC URL-inspect → Request Indexing for the Draper and SLC pages.
+
 ## Deploy pipeline (PR #3)
 
 The site deploys via **Cloudflare Workers Builds** (Git integration, on push to `main`). A separate `.github/workflows/deploy-cloudflare.yml` Action failed on every run because the repo has **no `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID` secrets** — it never deployed anything; Cloudflare's integration did. Removed it (PR #3) to stop false-alarm failures. To use GitHub Actions for deploys instead, add those two secrets.
