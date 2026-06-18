@@ -12,7 +12,7 @@ Status legend: 🔍 Found · ✅ Vetted (passes bar) · ✉️ Pitched · 💬 R
 |---|---|---|---|---|---|---|---|---|
 | The Appliance Mechanic | utahappliancemechanic.com | 10 | 441 (209 kw) | ✅ /blog + /property-management | (385) 881-7772 · no public email (contact form) | #3 + #1 | ✅ Vetted | **Strongest.** Has a real blog → guest-post target. Family-owned, est. 2020, SLC/West Valley. Need an email (try GBP/Facebook) or use form. |
 | Wasatch Water Heaters | wasatchwaterheaters.com | 9 | 260 (88 kw) | FAQ only, no blog | mailto on site · 801-893-0005 | #3 + #1 | ✅ Vetted | Strong topical fit (water heaters = asset #3). No blog → pitch a resources/FAQ link or co-content. 6 counties. |
-| Doyle's Appliance Service Group | doylesapplianceutah.com | 7 | 80 (320 kw) | None | doylesappliance@icloud.com · 801-266-8816 | #1 | ◐ Backup | Est. 1961, trusted, owner Doyle Anderson. No blog + low organic → best as a "trusted partner" listing rather than guest post. |
+| Doyle's Appliance Service Group | doylesapplianceutah.com | 7 | 80 (320 kw) | None | doylesappliance@icloud.com · 801-266-8816 | #1 | 📅 Scheduled Thu 6/18 11:50am | Est. 1961, trusted, owner Doyle Anderson. Best as a "trusted partner" listing/link. |
 | Salt Lake to Santaquin Appliance Repair | saltlaketosantaquinappliancerepair.com | 6 | 11 | None | contact form only | — | ❌ Pass | Too little traffic + no blog/email. Revisit only if it grows. |
 
 **Niche-1 outreach plan:** lead with The Appliance Mechanic (guest post on "why hard water
@@ -27,7 +27,7 @@ Doyle's as a partner-listing backup.
 | Fieldstone Homes | fieldstonehomes.com | **26** | 3,552 (3,963 kw) | ✅ /blog/ + /trade-partners/ + /realtor-toolbox/ | form /contact/ · 801.438.6631 | #5 + #1 | ✅ Vetted | **Highest DA + traffic.** Trade-partners page = natural link slot; blog = guest-post option. |
 | Nilson Homes | nilsonhomes.com | **24** | 1,403 (1,110 kw) | ✅ /partners-contractors (actively recruiting trade partners) | form /contact-us · (385) 402-7862 / (801) 392-8100 · S. Ogden | #5 + #1 | ✅ Vetted | They *explicitly* want trade partners — strongest "yes" odds. Partner page currently thin = easy add. |
 | Henry Walker Homes | henrywalkerhomes.com | **22** | 871 (1,056 kw) | ✅ blog "The HWH Edit" /news-center/ + /contractor-inquiry/ | form /contact/ · 801-845-0444 | #5 + #1 | ✅ Vetted | Blog + dedicated contractor-inquiry path. Pitch guest piece or partner listing. |
-| Roots Builders | roots-builders.com | 11 | 90 (362 kw) | ✅ active blog (10+ Utah custom-home articles) | newsletter only; need contact page | #5 + #1 | ◐ Backup | Lower DA but very blog-friendly + topical. Good guest-post target; find a contact email. |
+| Roots Builders | roots-builders.com | 11 | 90 (362 kw) | ✅ active blog (10+ Utah custom-home articles) | "Schedule a Consultation" form only (no public email/phone; /contact/ 404s) | #5 + #1 | ◐ Backup | Very blog-friendly + topical = good guest-post target. No direct contact found; use consult form or LinkedIn/Facebook. |
 
 **Niche-2 plan:** lead with Nilson (wants partners) + Fieldstone (trade-partners page, highest DA);
 offer a guest piece to Henry Walker / Roots blogs. Link target = #5 (cost guide) + #1 (hardness map).
@@ -35,7 +35,7 @@ offer a guest piece to Henry Walker / Roots blogs. Link target = #5 (cost guide)
 ## Niche 3 — Well drilling & septic  (researched 2026-06-17)
 | Business | URL | AS | Organic traffic/mo | Blog/Resources? | Contact | Asset to pitch | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
-| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | **info@wasatchdrilling.com** · (435) 257-2369 · form /contact-us/ | #4 + #1 | ✅ Vetted | **Best of niche** — real email + blog. 50-yr business, residential/irrigation. Perfect for guest piece on well-water treatment. |
+| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | **info@wasatchdrilling.com** · (435) 257-2369 · form /contact-us/ | #4 + #1 | 📅 Scheduled Thu 6/18 9:40am | **Best of niche** — real email + blog. 50-yr business. Links asset #4. |
 | Armstrong Drilling | armstrongwelldrilling.com | 7 | 63 (45 kw) | ✅ blog (posts 2016–2024) | contact page /contact/ (email not public) | #4 + #1 | ✅ Vetted | Summit/Wasatch Back, 24/7. Has blog. Find email via contact page. |
 | Legend Drilling | legenddrillingllc.com | 6 | 7 | — | — | — | ❌ Pass | Too little traffic. Revisit if it grows. |
 
@@ -46,8 +46,8 @@ resource link: "Well Water Treatment Guide for Rural Utah" (#4) + hardness map (
 | Business | URL | AS | Organic traffic/mo | Blog/Resources? | Contact | Asset to pitch | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
 | A1 Utah Home Inspector | a1utahhomeinspector.com | 8 | 161 (80 kw) | FAQ, no blog | form /contact/ · 435-757-3363 | #2 + #1 | ✅ Vetted | Best inspector traffic. No blog → pitch a buyer-resource link to #2. Serves whole Wasatch Front + Park City. |
-| OnSite Home Inspections | chooseonsite.com (was utahhomeinspectionhq.com, 301) | 8* | ~27* | ✅ blog | TBD on chooseonsite.com | #2 + #1 | 🔍 Re-check | *Semrush data is on old domain; site moved to chooseonsite.com — re-vet the new domain + get contact. Has a blog = guest target. |
-| Hidden Valley Property Inspection | hiddenvalleypropertyinspection.com | 8 | 46 | TBD | TBD | #2 + #1 | ◐ Backup | Since 2008, serves Wasatch Front incl. agents. Fetch contact + blog status before pitching. |
+| OnSite Home Inspections | chooseonsite.com (was utahhomeinspectionhq.com, 301) | **2** | 31 | None | brian@chooseonsite.com · (801) 770-2301 | #2 + #1 | ❌ Low priority | Domain move RESET authority to AS 2 (was 8 on old domain) + no blog. Has a real email but little SEO value. Pitch only with spare capacity. |
+| Hidden Valley Property Inspection | hiddenvalleypropertyinspection.com | 8 | 46 | Buyer-resource pages (Safe Home Book, sample report, glossary, FAQ) | **hvpinspector@gmail.com** · 801-913-7183 | #2 + #1 | 📅 Scheduled Thu 6/18 1:40pm | Real email + buyer-resources section = ideal slot for the moving checklist. |
 
 **Niche-4 plan:** inspectors/realtors love a buyer resource. Pitch the "Moving to Utah water
 checklist" (#2) + hardness map (#1) as a link or guest piece. Re-vet OnSite's new domain.

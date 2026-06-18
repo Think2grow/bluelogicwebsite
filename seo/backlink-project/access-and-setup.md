@@ -26,12 +26,13 @@
 - **DMARC:** ✅ `v=DMARC1; p=none; rua=mailto:info@bluelogicwater.com; fo=1` — verified resolving.
 - Future hardening: after a few weeks at p=none, tighten DMARC to `p=quarantine`.
 
-## Sender identity block  (FILL THIS IN — templates depend on it)
-- Sender name: _______________  (git author = "Scott Watson")
-- Title: _______________
-- Send-from / reply email: _______________  (a @bluelogicwater.com address)
-- Business phone: _______________
-- Booking / contact link: _______________
+## Sender identity block  ✅ (provided 2026-06-17)
+- Sender name: **Scott Watson**
+- Title: **Owner**
+- Send-from / reply email: **info@bluelogicwater.com**
+- Business phone: **801-980-2583** (call or text)
+- Preferred contact line in emails: "reply here, or call/text me at 801-980-2583"
+- Booking / contact link: none provided (use phone + email)
 - Business name: Blue Logic Water
 - Website: https://www.bluelogicwater.com
 

@@ -1,8 +1,20 @@
 # Outreach Templates
 
+> **Style rules (Scott's preference, 2026-06-17):** NO em dashes (use periods/commas);
+> clean direct URLs only (no redirect/tracking/shortened links, they feel spammy). Plain,
+> human, value-first. **Bake the signature into the body** — Gmail's auto-signature does NOT
+> apply to API-created drafts. Use exactly:
+> ```
+> Scott Watson, Owner
+> P: (801) 980-2583
+> https://www.bluelogicwater.com
+> ```
+> **Always create drafts with `htmlBody` + real `<a href>` anchors** (href = clean direct URL).
+> A plain-text URL gets wrapped in an ugly `google.com/url?q=...` redirect, which Scott dislikes.
+>
 > Fill the **sender identity block** in `access-and-setup.md` first; these templates pull
 > from it. Keep every email short, specific, and value-first. One ask per email.
-> Personalize the bracketed bits per prospect — never send the raw template.
+> Personalize the bracketed bits per prospect; never send the raw template.
 
 ## Subject lines (A/B)
 - "Quick collaboration idea for [Their Business]'s readers"
@@ -31,9 +43,10 @@
 >
 > Either way it's value for your audience first. Open to it?
 >
-> [Sender name]
-> [Title] · Blue Logic Water
-> [phone] · [reply email] · [booking link]
+> Scott Watson
+> Owner · Blue Logic Water
+> Reply here, or call/text me at 801-980-2583 · info@bluelogicwater.com
+> https://www.bluelogicwater.com
 
 ---
 

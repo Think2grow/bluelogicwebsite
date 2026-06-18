@@ -1,12 +1,16 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT → Phase 3 (draft outreach emails).** DONE: all 5 content assets (PR #7
-> merged/live; PR #8 awaiting merge), email-auth (SPF/DKIM/DMARC all green), Gmail connected
-> (info@bluelogicwater.com — DRAFT-ONLY connector, no send), prospect research across all 4
-> niches (`prospects.md`). BLOCKED ON: (a) user merges PR #8 so #3/#4 go live; (b) user's
-> signature block (name/title/phone/booking link) in `access-and-setup.md`. THEN: write
-> personalized drafts into the info@ Drafts folder, drip ≤5/day (warm-up), user clicks Send.
-> Lead with home-builder niche (highest DA). Loose ends in Phase 2.4.
+> **⏯ RESUME POINT (next session, ~2026-06-18) → RUN THE SWEEP.** The 3 outreach emails are
+> SCHEDULED to send Thu 2026-06-18 (Wasatch Drilling 9:40am, Doyle's 11:50am, Hidden Valley
+> 1:40pm MT) via Gmail Schedule Send. First action on resume:
+> 1) Recreate the weekday sweep cron (it was session-only and died overnight).
+> 2) Run the sweep: check Gmail for replies, apply the "Backlink Outreach" label (Label_1) to
+>    the sent threads, draft threaded follow-ups only for non-repliers (+4 biz days ≈ Wed 6/24,
+>    then +10; stop after 3 touches) for Scott to schedule-send, prep the deliverable for any
+>    "yes", update prospects.md + campaign-log.md.
+> 3) Nudge Scott on the builder forms (Nilson + Fieldstone first) if not yet submitted.
+> Everything else DONE: 5 assets live, email-auth green, prospect research (4 niches),
+> `outreach-queue.md` loaded, trackers in place. The connector CANNOT send — only draft.
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
@@ -35,12 +39,16 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - **KEY FINDING:** home builders = the high-DA niche (Fieldstone AS 26, Nilson 24, Henry
   Walker 22), each with a trade-partners page or blog. Lead outreach there.
 
-## Phase 3 — Outreach (first niche)
-- [ ] 3.1 Personalize template per vetted prospect
-- [ ] 3.2 Send (per chosen workflow) — log in `prospects.md`
+## Phase 3 — Outreach
+- [x] 3.1 Personalized messages written for all prospects → `outreach-queue.md`
+- [x] 3.1a 2 Gmail DRAFTS created (Wasatch Drilling, Doyle's) — in info@ Drafts, awaiting Scott's send
+- [x] 3.2 Emails SCHEDULED via Gmail Schedule Send for Thu 6/18 (Wasatch Drilling, Doyle's, Hidden Valley)
+- [ ] 3.2b ⬅️ **USER ACTION pending:** submit builder forms from `outreach-queue.md` (Nilson, Fieldstone first)
 - [ ] 3.3 Follow-up sequence (+4d, +10d), stop after 3 touches
 - [ ] 3.4 Deliver promised value (guest post / feature / resource listing)
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
+- [x] 3.6 Loose ends done: Hidden Valley (hvpinspector@gmail.com → drafted); OnSite re-vetted
+      (AS 2 now, low priority); Roots = consultation-form only (message written)
 
 ## Phase 4 — Scale
 - [x] 4.1 Build assets #3 (water heater) + #4 (well water). #2 + #5 = existing posts reused (no dupes).
