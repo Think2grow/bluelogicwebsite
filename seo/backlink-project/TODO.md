@@ -1,13 +1,16 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT → campaign live; on each session run the weekday SWEEP.** DONE: all 5 assets
-> live, email-auth green, prospect research (4 niches), 3 Gmail drafts (Wasatch Drilling, Doyle's,
-> Hidden Valley) ready, full `outreach-queue.md`, Gmail label "Backlink Outreach" (Label_1),
-> campaign-log.md. SENDING = Gmail Schedule Send (user-operated, server-side, reliable).
-> AUTOMATION = weekday-morning cron BUT it's session-only (dies when Claude Code closes; 7-day
-> expiry) — so when resuming, just run the sweep: check replies via Gmail, draft threaded
-> follow-ups (+4/+10 biz days, <3 touches) for the user to schedule-send, prep deliverables for
-> any "yes", update prospects.md + campaign-log.md. Recreate the cron if it's gone.
+> **⏯ RESUME POINT (next session, ~2026-06-18) → RUN THE SWEEP.** The 3 outreach emails are
+> SCHEDULED to send Thu 2026-06-18 (Wasatch Drilling 9:40am, Doyle's 11:50am, Hidden Valley
+> 1:40pm MT) via Gmail Schedule Send. First action on resume:
+> 1) Recreate the weekday sweep cron (it was session-only and died overnight).
+> 2) Run the sweep: check Gmail for replies, apply the "Backlink Outreach" label (Label_1) to
+>    the sent threads, draft threaded follow-ups only for non-repliers (+4 biz days ≈ Wed 6/24,
+>    then +10; stop after 3 touches) for Scott to schedule-send, prep the deliverable for any
+>    "yes", update prospects.md + campaign-log.md.
+> 3) Nudge Scott on the builder forms (Nilson + Fieldstone first) if not yet submitted.
+> Everything else DONE: 5 assets live, email-auth green, prospect research (4 niches),
+> `outreach-queue.md` loaded, trackers in place. The connector CANNOT send — only draft.
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
@@ -39,8 +42,8 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 ## Phase 3 — Outreach
 - [x] 3.1 Personalized messages written for all prospects → `outreach-queue.md`
 - [x] 3.1a 2 Gmail DRAFTS created (Wasatch Drilling, Doyle's) — in info@ Drafts, awaiting Scott's send
-- [ ] 3.2 ⬅️ **USER ACTION:** send the 2 drafts; submit builder forms from `outreach-queue.md`
-      (lead: Nilson, Fieldstone, Henry Walker). Pace ≤5/day. Log in `prospects.md`.
+- [x] 3.2 Emails SCHEDULED via Gmail Schedule Send for Thu 6/18 (Wasatch Drilling, Doyle's, Hidden Valley)
+- [ ] 3.2b ⬅️ **USER ACTION pending:** submit builder forms from `outreach-queue.md` (Nilson, Fieldstone first)
 - [ ] 3.3 Follow-up sequence (+4d, +10d), stop after 3 touches
 - [ ] 3.4 Deliver promised value (guest post / feature / resource listing)
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
