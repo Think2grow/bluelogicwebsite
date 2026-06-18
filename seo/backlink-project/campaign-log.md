@@ -13,6 +13,12 @@ touches, draft a brief follow-up reply for Scott to schedule-send. Stop after 3 
 
 ---
 
+## 2026-06-18 (manual outreach by Scott)
+- **Wasatch Drilling** — submitted via contact form (after the email bounce). Awaiting reply.
+- **Nilson Homes** — TEXTED to both numbers (385) 402-7862 & (801) 392-8100; their form has no
+  message field. Awaiting reply. Note for future builder outreach: Nilson = text channel.
+- Next builder: Fieldstone (form has a message field). Then Henry Walker + remaining niches.
+
 ## 2026-06-18 (sweep done)
 - All 3 scheduled emails SENT on time (15:40 / 17:50 / 19:40 UTC = 9:40 / 11:50 / 1:40 MT).
 - **Doyle's Appliance** — delivered, no reply yet.
