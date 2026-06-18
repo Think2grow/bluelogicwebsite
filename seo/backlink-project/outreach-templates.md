@@ -1,8 +1,13 @@
 # Outreach Templates
 
+> **Style rules (Scott's preference, 2026-06-17):** NO em dashes (use periods/commas);
+> clean direct URLs only (no redirect/tracking/shortened links, they feel spammy); no heavy
+> signature block in the body (Gmail auto-signature handles the sign-off; put the phone in the
+> text). Plain, human, value-first.
+>
 > Fill the **sender identity block** in `access-and-setup.md` first; these templates pull
 > from it. Keep every email short, specific, and value-first. One ask per email.
-> Personalize the bracketed bits per prospect — never send the raw template.
+> Personalize the bracketed bits per prospect; never send the raw template.
 
 ## Subject lines (A/B)
 - "Quick collaboration idea for [Their Business]'s readers"
