@@ -1,16 +1,21 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT (next session, ~2026-06-18) → RUN THE SWEEP.** The 3 outreach emails are
-> SCHEDULED to send Thu 2026-06-18 (Wasatch Drilling 9:40am, Doyle's 11:50am, Hidden Valley
-> 1:40pm MT) via Gmail Schedule Send. First action on resume:
-> 1) Recreate the weekday sweep cron (it was session-only and died overnight).
-> 2) Run the sweep: check Gmail for replies, apply the "Backlink Outreach" label (Label_1) to
->    the sent threads, draft threaded follow-ups only for non-repliers (+4 biz days ≈ Wed 6/24,
->    then +10; stop after 3 touches) for Scott to schedule-send, prep the deliverable for any
->    "yes", update prospects.md + campaign-log.md.
-> 3) Nudge Scott on the builder forms (Nilson + Fieldstone first) if not yet submitted.
-> Everything else DONE: 5 assets live, email-auth green, prospect research (4 niches),
-> `outreach-queue.md` loaded, trackers in place. The connector CANNOT send — only draft.
+> **⏯ RESUME POINT (next session, ~2026-06-19) → RUN THE SWEEP + continue outreach.**
+> Day 1 (6/18) DONE: 5 prospects contacted — Doyle's + Hidden Valley (email, delivered),
+> Wasatch (form, after email bounce), Fieldstone (form), Nilson (text both numbers). No replies
+> yet; follow-up window opens ~Wed 6/24.
+> On resume:
+> 1) Recreate the weekday sweep cron if gone (session-only).
+> 2) SWEEP: check Gmail for replies to Doyle's/Hidden Valley (and any new), label threads
+>    (Label_1), draft threaded follow-ups only for non-repliers (+4 biz days ≈ 6/24, then +10;
+>    stop after 3 touches) for Scott to schedule-send, prep deliverable for any "yes", update
+>    prospects.md + campaign-log.md. (Form/text prospects: replies come by phone/their email, so
+>    ask Scott if any came in.)
+> 3) Offer Scott the NEXT outreach batch (all messages ready in outreach-queue.md):
+>    Henry Walker (contractor-inquiry form), The Appliance Mechanic, Wasatch Water Heaters,
+>    Armstrong Drilling, A1 Inspector, Roots Builders.
+> Everything else DONE: 5 assets live, email-auth green, prospect research, trackers in place.
+> The Gmail connector CANNOT send — only draft (Scott schedule-sends).
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
