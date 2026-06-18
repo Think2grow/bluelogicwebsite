@@ -38,8 +38,8 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
 
 ## Phase 4 — Scale
-- [ ] 4.1 Build assets #3, #4 (then #2, #5)
-- [ ] 4.2 Build the "Trusted Utah Home Pros" reciprocal resources page
+- [x] 4.1 Build assets #3 (water heater) + #4 (well water). #2 + #5 = existing posts reused (no dupes).
+- [ ] 4.2 Build the "Trusted Utah Home Pros" reciprocal resources page (deferred until partners agree)
 - [ ] 4.3 Repeat Phase 2–3 for remaining niches
 
 ## Phase 5 — Track & iterate (monthly)

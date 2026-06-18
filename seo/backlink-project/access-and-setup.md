@@ -7,15 +7,24 @@
 | Website files | ✅ Have | this repo; blog posts in `src/content/blog/`, pages in `src/pages/`. |
 | Cloudflare API | ⚠️ Token expires 2026-06-26 | not needed for this project; can delete. |
 | Google Search Console | 🙋 Manual (user) | for monitoring earned links + indexing new assets. |
-| Gmail / email sending | ⏳ PENDING DECISION | see below. |
+| Gmail (info@bluelogicwater.com) | ✅ Connected | connector = DRAFT + read/label only, **no send tool**. |
 
 ## Decisions (made 2026-06-17)
-1. **Email workflow:** ✅ **Fully autonomous send** by Claude, governed by the Deliverability
-   Protocol below (throttled, unique copy, verified contacts, circuit-breaker).
+1. **Email workflow:** Claude writes each fully-personalized email into the info@ **Drafts**
+   folder (Gmail connector has create_draft only — NO send). User clicks Send per the drip
+   schedule. Governed by the Deliverability Protocol below. (= "near-autonomous": Claude does
+   all work, user does the final send click — a built-in human-in-the-loop + pacing control.)
 2. **Niches:** ✅ **All four in parallel**, throttled to one shared daily send cap.
-3. **Send-from:** ✅ **A @bluelogicwater.com address** (brand-matched, best deliverability).
-   - ⏳ Need exact address from user. Gmail OAuth MUST be authorized with THAT account.
-   - ⏳ Verify SPF/DKIM/DMARC before first send.
+3. **Send-from:** ✅ **info@bluelogicwater.com** (Google Workspace — MX = aspmx.l.google.com).
+   - Gmail OAuth MUST be authorized while logged into info@bluelogicwater.com.
+   - Note: `info@` is a role address; a named sender (e.g. scott@) usually gets higher cold
+     reply rates, but info@ is acceptable. Signature should still name a real person.
+
+### Email-auth status — ALL GREEN (verified live 2026-06-17 via public resolvers)
+- **SPF:** ✅ `v=spf1 include:_spf.google.com -all`
+- **DKIM:** ✅ enabled in Workspace (`google._domainkey`, 2048-bit) — verified resolving.
+- **DMARC:** ✅ `v=DMARC1; p=none; rua=mailto:info@bluelogicwater.com; fo=1` — verified resolving.
+- Future hardening: after a few weeks at p=none, tighten DMARC to `p=quarantine`.
 
 ## Sender identity block  (FILL THIS IN — templates depend on it)
 - Sender name: _______________  (git author = "Scott Watson")

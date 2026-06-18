@@ -29,7 +29,8 @@ All keyword data = Semrush US, pulled 2026-06-17. Target file location for blog 
 - **Page contents:** first-30-days water checklist, what to test, city-by-city "what's in
   your water," renter vs owner options.
 - **Reuses:** `moving-to-new-home-utah-water-test.md`.
-- **Status:** ⬜
+- **Status:** 🟩 ALREADY COVERED by existing live post `/blog/moving-to-new-home-utah-water-test/`.
+  Use it as the realtor/inspector link target — building a new one would be duplicate content.
 
 ## #3 — Water-Heater Lifespan & Hard Water
 - **Working title:** "How Long Does a Water Heater Last in Utah? (And Why Hard Water Cuts It Short)"
@@ -39,7 +40,9 @@ All keyword data = Semrush US, pulled 2026-06-17. Target file location for blog 
 - **Partner niche:** Appliance dealers, water-heater installers, home-warranty/HVAC
 - **Page contents:** lifespan-by-water-type, scale-buildup mechanism, "is hard water
   killing your appliances" self-check.
-- **Status:** ⬜
+- **Built file:** `src/content/blog/water-heater-lifespan-utah-hard-water.md` →
+  `/blog/water-heater-lifespan-utah-hard-water/`
+- **Status:** 🟨 Built, clean build, in sitemap. Awaiting PR merge + deploy.
 
 ## #4 — Rural Utah Well Water Treatment Guide
 - **Working title:** "Well Water Treatment Guide for Rural Utah Homes"
@@ -49,7 +52,9 @@ All keyword data = Semrush US, pulled 2026-06-17. Target file location for blog 
 - **Partner niche:** Well drillers & septic services (non-competing, refer treatment out)
 - **Page contents:** Utah well contaminants, testing steps, treatment-by-problem
   (hardness / iron / bacteria / arsenic), maintenance.
-- **Status:** ⬜
+- **Built file:** `src/content/blog/utah-well-water-treatment-guide.md` →
+  `/blog/utah-well-water-treatment-guide/`
+- **Status:** 🟨 Built, clean build, in sitemap. Awaiting PR merge + deploy.
 
 ## #5 — Whole-Home Water Treatment Cost Guide
 - **Working title:** "What Whole-Home Water Treatment Really Costs in Utah"
@@ -59,7 +64,8 @@ All keyword data = Semrush US, pulled 2026-06-17. Target file location for blog 
 - **Partner niche:** Custom home builders & remodelers
 - **Page contents:** cost ranges by system type, what drives price, softener vs RO vs
   whole-home, financing. Transparent pricing = rare & link-worthy.
-- **Status:** ⬜
+- **Status:** 🟩 ALREADY COVERED by existing live post `/blog/whole-home-water-system-cost-utah/`.
+  Use it as the builder/remodeler link target — building a new one would be duplicate content.
 
 ---
 
