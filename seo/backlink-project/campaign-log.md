@@ -13,6 +13,18 @@ touches, draft a brief follow-up reply for Scott to schedule-send. Stop after 3 
 
 ---
 
+## 2026-06-18 (sweep done)
+- All 3 scheduled emails SENT on time (15:40 / 17:50 / 19:40 UTC = 9:40 / 11:50 / 1:40 MT).
+- **Doyle's Appliance** — delivered, no reply yet.
+- **Hidden Valley Inspection** — delivered, no reply yet.
+- **Wasatch Drilling** — ⚠️ HARD BOUNCE: info@wasatchdrilling.com is invalid (550 address not
+  found). Do not re-email it. Recovery message added to outreach-queue.md → submit via their
+  contact form (https://wasatchdrilling.com/contact-us/) or call (435) 257-2369.
+- All 3 threads labeled "Backlink Outreach". No follow-ups due yet (sent today; window ~6/24).
+- Deliverability note: 1 hard bounce out of 3. Isolated (bad published address), not a pattern.
+  Domain reputation fine; just avoid that address.
+- **Scott's actions:** (a) submit Wasatch via form/phone, (b) builder forms (Nilson, Fieldstone).
+
 ## 2026-06-18 (sends fire) — first sweep due
 - Scheduled sends fire today (MT): Wasatch Drilling 9:40am, Doyle's 11:50am, Hidden Valley 1:40pm.
 - **Resume action:** run the sweep. Note these went out today, so the +4-business-day follow-up

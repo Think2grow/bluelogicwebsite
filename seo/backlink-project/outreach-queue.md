@@ -15,10 +15,11 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 
 ---
 
-## ✅ Drafted as Gmail emails (review + send)
-1. **Wasatch Drilling** — info@wasatchdrilling.com — well niche, links asset #4. ⬜
-2. **Doyle's Appliance** — doylesappliance@icloud.com — appliance niche, links asset #1. ⬜
-3. **Hidden Valley Property Inspection** — hvpinspector@gmail.com — inspector niche, links asset #2. ⬜
+## Gmail emails (sent 2026-06-18)
+1. **Doyle's Appliance** — doylesappliance@icloud.com — ✅ Sent 6/18, delivered. Awaiting reply.
+2. **Hidden Valley Property Inspection** — hvpinspector@gmail.com — ✅ Sent 6/18, delivered. Awaiting reply.
+3. **Wasatch Drilling** — ⚠️ HARD-BOUNCED 6/18 (info@wasatchdrilling.com invalid, 550). Recover via
+   their contact form / phone — see the Well & septic section below.
 
 ---
 
@@ -105,6 +106,20 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 ---
 
 ## Well & septic
+### Wasatch Drilling (AS 8 · has blog) — ⚠️ email bounced, RECOVER via form/phone
+- **Channel:** contact form https://wasatchdrilling.com/contact-us/ · phone (435) 257-2369
+  (the published info@ address bounced, so do NOT email it again)
+- **Message (form):**
+> Subject: A well-water resource for your customers
+>
+> Hi, I'm Scott Watson, owner of Blue Logic Water (whole-home water treatment in Utah). I tried
+> emailing but it bounced, so I'm using your form. We don't drill or service wells, so we're not
+> competing, we're the step after you. A lot of your private-well customers ask "is my water
+> safe, why is it staining, can I soften it?" I wrote a plain-English guide for exactly that:
+> https://www.bluelogicwater.com/blog/utah-well-water-treatment-guide/
+> You're welcome to link it or hand it to customers, and I'd gladly recommend Wasatch Drilling
+> as our go-to well partner. Open to it? Reply or call/text me at 801-980-2583.
+
 ### Armstrong Drilling (AS 7 · has blog) — ⬜
 - **Channel:** form https://www.armstrongwelldrilling.com/contact/ · phone (435) 640-0626 · Kamas
 - **Angle:** same as the Wasatch Drilling email. Offer the well-water treatment guide (#4) as a

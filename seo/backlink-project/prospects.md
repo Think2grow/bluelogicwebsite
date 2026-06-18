@@ -12,7 +12,7 @@ Status legend: 🔍 Found · ✅ Vetted (passes bar) · ✉️ Pitched · 💬 R
 |---|---|---|---|---|---|---|---|---|
 | The Appliance Mechanic | utahappliancemechanic.com | 10 | 441 (209 kw) | ✅ /blog + /property-management | (385) 881-7772 · no public email (contact form) | #3 + #1 | ✅ Vetted | **Strongest.** Has a real blog → guest-post target. Family-owned, est. 2020, SLC/West Valley. Need an email (try GBP/Facebook) or use form. |
 | Wasatch Water Heaters | wasatchwaterheaters.com | 9 | 260 (88 kw) | FAQ only, no blog | mailto on site · 801-893-0005 | #3 + #1 | ✅ Vetted | Strong topical fit (water heaters = asset #3). No blog → pitch a resources/FAQ link or co-content. 6 counties. |
-| Doyle's Appliance Service Group | doylesapplianceutah.com | 7 | 80 (320 kw) | None | doylesappliance@icloud.com · 801-266-8816 | #1 | 📅 Scheduled Thu 6/18 11:50am | Est. 1961, trusted, owner Doyle Anderson. Best as a "trusted partner" listing/link. |
+| Doyle's Appliance Service Group | doylesapplianceutah.com | 7 | 80 (320 kw) | None | doylesappliance@icloud.com · 801-266-8816 | #1 | ✅ Sent 6/18, awaiting reply | Delivered (no bounce). Follow-up window opens ~Wed 6/24 if no reply. |
 | Salt Lake to Santaquin Appliance Repair | saltlaketosantaquinappliancerepair.com | 6 | 11 | None | contact form only | — | ❌ Pass | Too little traffic + no blog/email. Revisit only if it grows. |
 
 **Niche-1 outreach plan:** lead with The Appliance Mechanic (guest post on "why hard water
@@ -35,7 +35,7 @@ offer a guest piece to Henry Walker / Roots blogs. Link target = #5 (cost guide)
 ## Niche 3 — Well drilling & septic  (researched 2026-06-17)
 | Business | URL | AS | Organic traffic/mo | Blog/Resources? | Contact | Asset to pitch | Status | Notes |
 |---|---|---|---|---|---|---|---|---|
-| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | **info@wasatchdrilling.com** · (435) 257-2369 · form /contact-us/ | #4 + #1 | 📅 Scheduled Thu 6/18 9:40am | **Best of niche** — real email + blog. 50-yr business. Links asset #4. |
+| Wasatch Drilling & Pump Service | wasatchdrilling.com | 8 | 48 (291 kw) | ✅ /blog/ | ~~info@wasatchdrilling.com~~ HARD-BOUNCED · use (435) 257-2369 / form /contact-us/ | #4 + #1 | ⚠️ Bounced 6/18 → retry via form/phone | Email invalid (550 address not found). Still best well prospect; recover via their contact form or phone. Message in outreach-queue.md. |
 | Armstrong Drilling | armstrongwelldrilling.com | 7 | 63 (45 kw) | ✅ blog (posts 2016–2024) | contact page /contact/ (email not public) | #4 + #1 | ✅ Vetted | Summit/Wasatch Back, 24/7. Has blog. Find email via contact page. |
 | Legend Drilling | legenddrillingllc.com | 6 | 7 | — | — | — | ❌ Pass | Too little traffic. Revisit if it grows. |
 
@@ -47,7 +47,7 @@ resource link: "Well Water Treatment Guide for Rural Utah" (#4) + hardness map (
 |---|---|---|---|---|---|---|---|---|
 | A1 Utah Home Inspector | a1utahhomeinspector.com | 8 | 161 (80 kw) | FAQ, no blog | form /contact/ · 435-757-3363 | #2 + #1 | ✅ Vetted | Best inspector traffic. No blog → pitch a buyer-resource link to #2. Serves whole Wasatch Front + Park City. |
 | OnSite Home Inspections | chooseonsite.com (was utahhomeinspectionhq.com, 301) | **2** | 31 | None | brian@chooseonsite.com · (801) 770-2301 | #2 + #1 | ❌ Low priority | Domain move RESET authority to AS 2 (was 8 on old domain) + no blog. Has a real email but little SEO value. Pitch only with spare capacity. |
-| Hidden Valley Property Inspection | hiddenvalleypropertyinspection.com | 8 | 46 | Buyer-resource pages (Safe Home Book, sample report, glossary, FAQ) | **hvpinspector@gmail.com** · 801-913-7183 | #2 + #1 | 📅 Scheduled Thu 6/18 1:40pm | Real email + buyer-resources section = ideal slot for the moving checklist. |
+| Hidden Valley Property Inspection | hiddenvalleypropertyinspection.com | 8 | 46 | Buyer-resource pages (Safe Home Book, sample report, glossary, FAQ) | **hvpinspector@gmail.com** · 801-913-7183 | #2 + #1 | ✅ Sent 6/18, awaiting reply | Delivered (no bounce). Follow-up window opens ~Wed 6/24 if no reply. |
 
 **Niche-4 plan:** inspectors/realtors love a buyer resource. Pitch the "Moving to Utah water
 checklist" (#2) + hardness map (#1) as a link or guest piece. Re-vet OnSite's new domain.
