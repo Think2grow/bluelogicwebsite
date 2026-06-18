@@ -9,6 +9,8 @@
 > P: (801) 980-2583
 > https://www.bluelogicwater.com
 > ```
+> **Always create drafts with `htmlBody` + real `<a href>` anchors** (href = clean direct URL).
+> A plain-text URL gets wrapped in an ugly `google.com/url?q=...` redirect, which Scott dislikes.
 >
 > Fill the **sender identity block** in `access-and-setup.md` first; these templates pull
 > from it. Keep every email short, specific, and value-first. One ask per email.
