@@ -27,7 +27,7 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 > Builders install water systems in new homes, so this is a *trade-partner* pitch, not just a
 > link ask, which is a bigger opportunity than SEO alone. Lead here.
 
-### Fieldstone Homes (AS 26) — ⬜
+### Fieldstone Homes (AS 26) — ✅ Submitted via form 6/18 (awaiting reply)
 - **Channel:** contact form at https://www.fieldstonehomes.com/contact/ (also has /trade-partners/)
 - **Phone:** 801.438.6631 · Draper HQ
 - **Message:**
