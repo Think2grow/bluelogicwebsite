@@ -1,11 +1,12 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT → Phase 1 (building flagship asset #1) + awaiting user's send-from
-> address & signature block.** Decisions made: autonomous send · all 4 niches in parallel ·
-> send from a @bluelogicwater.com address. Deliverability Protocol set in `access-and-setup.md`.
-> Next: finish flagship page, then build the 4 niche pages, then prospect research (can run
-> in parallel — doesn't need live pages). No emails until pages are live + Gmail authorized
-> with the bluelogicwater.com account.
+> **⏯ RESUME POINT → Phase 3 (draft outreach emails).** DONE: all 5 content assets (PR #7
+> merged/live; PR #8 awaiting merge), email-auth (SPF/DKIM/DMARC all green), Gmail connected
+> (info@bluelogicwater.com — DRAFT-ONLY connector, no send), prospect research across all 4
+> niches (`prospects.md`). BLOCKED ON: (a) user merges PR #8 so #3/#4 go live; (b) user's
+> signature block (name/title/phone/booking link) in `access-and-setup.md`. THEN: write
+> personalized drafts into the info@ Drafts folder, drip ≤5/day (warm-up), user clicks Send.
+> Lead with home-builder niche (highest DA). Loose ends in Phase 2.4.
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
@@ -25,10 +26,14 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - [ ] 1.5 After user merges + deploys: Request Indexing in GSC
 - [ ] 1.6 (Later) upgrade to interactive sortable / ZIP-lookup version
 
-## Phase 2 — Prospect research & vetting (first niche)
-- [ ] 2.1 Google + Semrush to find 15–20 prospects in the chosen niche
-- [ ] 2.2 Vet each in Semrush (Authority Score, traffic stability, blog/resources page)
-- [ ] 2.3 Record the passers in `prospects.md` with contact + asset-to-pitch
+## Phase 2 — Prospect research & vetting (ALL 4 niches done 2026-06-17)
+- [x] 2.1 Web search + Semrush across all 4 niches
+- [x] 2.2 Vet in Semrush (AS + traffic + blog/resources page) — see `prospects.md`
+- [x] 2.3 Recorded passers with contacts + asset-to-pitch
+- [ ] 2.4 Loose ends: get email for Armstrong Drilling + Roots Builders; re-vet OnSite's new
+      domain (chooseonsite.com); fetch Hidden Valley contact/blog
+- **KEY FINDING:** home builders = the high-DA niche (Fieldstone AS 26, Nilson 24, Henry
+  Walker 22), each with a trade-partners page or blog. Lead outreach there.
 
 ## Phase 3 — Outreach (first niche)
 - [ ] 3.1 Personalize template per vetted prospect
@@ -38,8 +43,8 @@ Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 - [ ] 3.5 Confirm link live → mark 🔗 in `prospects.md`
 
 ## Phase 4 — Scale
-- [ ] 4.1 Build assets #3, #4 (then #2, #5)
-- [ ] 4.2 Build the "Trusted Utah Home Pros" reciprocal resources page
+- [x] 4.1 Build assets #3 (water heater) + #4 (well water). #2 + #5 = existing posts reused (no dupes).
+- [ ] 4.2 Build the "Trusted Utah Home Pros" reciprocal resources page (deferred until partners agree)
 - [ ] 4.3 Repeat Phase 2–3 for remaining niches
 
 ## Phase 5 — Track & iterate (monthly)

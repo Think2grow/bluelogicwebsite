@@ -37,7 +37,7 @@ Most of the Wasatch Front lands in "hard" to "very hard." Here's what that means
 
 When hard water is heated, the dissolved calcium and magnesium precipitate out as scale — the chalky white deposits you see on showerheads and faucets. Inside a water heater tank, that scale forms on the heating element, insulating it from the water it's supposed to heat. The heater has to run harder and longer to produce the same hot water.
 
-The Water Quality Association has documented water heater efficiency losses of 24–48% in hard water areas versus soft water. In Utah's hardest communities, a tank water heater operating on untreated water may be running at 50–75% efficiency within a few years of installation — and failing years before its rated lifespan.
+The Water Quality Association has documented water heater efficiency losses of 24–48% in hard water areas versus soft water. In Utah's hardest communities, a tank water heater operating on untreated water may be running at 50–75% efficiency within a few years of installation — and failing years before its rated lifespan. (More on this: [how long a water heater lasts in Utah, and why hard water cuts it short](/blog/water-heater-lifespan-utah-hard-water/).)
 
 Dishwashers, washing machines, ice makers, and any appliance that processes or heats water face the same attrition. Scale accumulates. Components wear. Replacement comes early.
 
