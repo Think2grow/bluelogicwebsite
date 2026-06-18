@@ -1,11 +1,13 @@
 # TODO — Backlink Partnership Project
 
-> **⏯ RESUME POINT → Phase 3.2 (USER sends outreach).** DONE: all 5 assets live, email-auth
-> green, Gmail connected, prospect research (4 niches), signature set, 2 Gmail drafts created,
-> full `outreach-queue.md` written (email + form/phone messages, builders prioritized).
-> NEXT = USER ACTION: send the 2 drafts + submit the builder contact forms (Nilson/Fieldstone/
-> Henry Walker) from `outreach-queue.md`, ≤5/day. Then I do follow-ups, deliver guest content,
-> confirm links, and tidy loose ends (Roots/OnSite/Hidden Valley contacts).
+> **⏯ RESUME POINT → campaign live; on each session run the weekday SWEEP.** DONE: all 5 assets
+> live, email-auth green, prospect research (4 niches), 3 Gmail drafts (Wasatch Drilling, Doyle's,
+> Hidden Valley) ready, full `outreach-queue.md`, Gmail label "Backlink Outreach" (Label_1),
+> campaign-log.md. SENDING = Gmail Schedule Send (user-operated, server-side, reliable).
+> AUTOMATION = weekday-morning cron BUT it's session-only (dies when Claude Code closes; 7-day
+> expiry) — so when resuming, just run the sweep: check replies via Gmail, draft threaded
+> follow-ups (+4/+10 biz days, <3 touches) for the user to schedule-send, prep deliverables for
+> any "yes", update prospects.md + campaign-log.md. Recreate the cron if it's gone.
 
 Legend: `[x]` done · `[ ]` todo · `[~]` in progress/blocked.
 
