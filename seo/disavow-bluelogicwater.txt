@@ -1,0 +1,138 @@
+# Google Search Console disavow file — bluelogicwater.com
+# Generated 2026-06-17 from Semrush backlinks_refdomains export.
+#
+# WHY: ~95% of the domain's 120 referring domains are junk directories,
+# classified-ad farms, coupon sites, and spam TLDs that appeared in a single
+# burst in early 2026 (a blasted/bought link profile, not earned links).
+# Authority Score is 12 despite 120 ref. domains — these add no value.
+#
+# HOW TO USE: Search Console > Disavow links tool
+#   https://search.google.com/search-console/disavow-links
+#   Select the bluelogicwater.com property, upload this file.
+#   `domain:` disavows every link from that whole domain.
+#
+# WHEN TO USE: This is OPTIONAL. Google largely ignores spam links, and at
+# AS 12 with mostly follow links there is no evidence of an active penalty.
+# Upload this only if (a) you get a manual action in GSC, or (b) the spam
+# link count keeps climbing. Otherwise keep it on hand.
+#
+# REVIEWED & KEPT (NOT disavowed — verify before adding): timpanogostech.com
+# (likely the local web dev), storeboard.com, stylevore.com, wholives.org,
+# energyhealingconference.com.
+# ---------------------------------------------------------------------------
+
+domain:2021directory.com
+domain:adddirectoryurl.com
+domain:adsghar.com
+domain:ajax-directory.com
+domain:analyticshaven.top
+domain:arcade-directory.com
+domain:atomizelink.icu
+domain:bailoutdirectory.com
+domain:bamboo-directory.com
+domain:bigboxdirectory.com
+domain:bizlinkdirectory.com
+domain:bomadirectory.com
+domain:buynow-us.com
+domain:bye.fyi
+domain:card-directory.com
+domain:classified4free.net
+domain:couponler.com
+domain:creativeposts.top
+domain:cutewebdirectory.com
+domain:directory-2020.com
+domain:directory-blu.com
+domain:directory-boom.com
+domain:directory-fast.com
+domain:directory-nation.com
+domain:directory9.net
+domain:directoryalbum.com
+domain:directorydepo.com
+domain:directoryecho.com
+domain:directoryhere.com
+domain:directoryholiday.com
+domain:directoryio.com
+domain:directorylandia.com
+domain:directoryrec.com
+domain:directoryrelt.com
+domain:drjack.world
+domain:ebiz-directory.com
+domain:emeralddirectory.com
+domain:eonlineads.com
+domain:exceeddirectory.com
+domain:ezclassifiedads.com
+domain:fdlclassifieds.com
+domain:findit.co.in
+domain:fiverr-affordable-seo-services.site
+domain:freead1.com
+domain:freeads1.com
+domain:freeadsonline.biz
+domain:freelistingusa.com
+domain:freewebads.biz
+domain:fwebdirectory.com
+domain:gettydirectory.com
+domain:golinkdirectory.com
+domain:greatclassified.com
+domain:hotbizdirectory.com
+domain:iformative.com
+domain:immensedirectory.com
+domain:legit-directory.com
+domain:limawebdirectory.com
+domain:linkdirectory101.com
+domain:listedirectory.com
+domain:local-biz.directory
+domain:lovelydirectory.com
+domain:metriteweb.com
+domain:morningdirectory.com
+domain:mpowerdirectory.com
+domain:myindexdirectory.com
+domain:needinstall.com
+domain:nivira.shop
+domain:ohyesdirectory.com
+domain:omg-directory.com
+domain:one-directory.com
+domain:onebuysales.com
+domain:optimizeflow.top
+domain:pclassified.com
+domain:pdfwiztools.com
+domain:postezad.com
+domain:postezads.com
+domain:preniumdirectory.com
+domain:princedirectory.com
+domain:production-couponler.herokuapp.com
+domain:quero.party
+domain:ready.pro
+domain:reclassifed.com
+domain:reclassifeds.com
+domain:reports.webredirect.org
+domain:robustdirectory.com
+domain:selfbizdirectory.com
+domain:seo-a1directory.com
+domain:seogeko.shop
+domain:sites.loseyourip.com
+domain:sjbdirectory.com
+domain:slimdirectory.com
+domain:smartadposting.com
+domain:smartfreeads.com
+domain:smiling.dev
+domain:snoopydirectory.com
+domain:socdirectory.com
+domain:sparedirectory.com
+domain:swiss-directory.com
+domain:tintindirectory.com
+domain:totalclassifieds.com
+domain:touchafro.com
+domain:urls-shortener.eu
+domain:uycart.com
+domain:victordirectory.com
+domain:victorydirectory.com
+domain:webdirectory11.com
+domain:webdirectorytalk.com
+domain:whatisadirectory.com
+domain:wodirectory.com
+domain:worlds-directory.com
+domain:wow-directory.com
+domain:wwndirectory.com
+domain:yellow411.org
+domain:your-directory.com
+domain:zopedirectory.com
