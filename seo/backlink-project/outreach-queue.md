@@ -57,7 +57,7 @@ Status: ⬜ not sent · ✅ sent · 💬 replied · 🔗 link live.
 > https://www.bluelogicwater.com/blog/utah-water-hardness-by-city/
 > Could we set up a quick call? Reply here or call/text me at 801-980-2583.
 
-### Henry Walker Homes (AS 22) — ⬜
+### Henry Walker Homes (AS 22) — ✅ Submitted 6/19 (awaiting reply)
 - **Channel:** contractor inquiry at https://henrywalkerhomes.com/contractor-inquiry/ (blog: "The HWH Edit" /news-center/)
 - **Phone:** 801-845-0444
 - **Message:**
