@@ -13,6 +13,11 @@ touches, draft a brief follow-up reply for Scott to schedule-send. Stop after 3 
 
 ---
 
+## 2026-06-19 (manual outreach by Scott)
+- **Henry Walker Homes** — submitted via contractor-inquiry form. Awaiting reply. All 3 top
+  builders now contacted (Fieldstone, Nilson, Henry Walker). 6 prospects contacted total.
+- Remaining queue: The Appliance Mechanic, Wasatch Water Heaters, Armstrong Drilling, A1 Inspector, Roots.
+
 ## 2026-06-19 (sweep)
 - No replies yet from any of the 5 contacted prospects (sent/submitted 6/18). Nothing due.
 - Follow-up window for the 2 emailed prospects (Doyle's, Hidden Valley) opens ~Wed 6/24.
