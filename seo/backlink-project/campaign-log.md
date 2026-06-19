@@ -13,6 +13,11 @@ touches, draft a brief follow-up reply for Scott to schedule-send. Stop after 3 
 
 ---
 
+## 2026-06-19 (sweep)
+- No replies yet from any of the 5 contacted prospects (sent/submitted 6/18). Nothing due.
+- Follow-up window for the 2 emailed prospects (Doyle's, Hidden Valley) opens ~Wed 6/24.
+- Cron alive; no new threads to label. Remaining outreach batch still queued (Henry Walker, etc.).
+
 ## 2026-06-18 (manual outreach by Scott)
 - **Wasatch Drilling** — submitted via contact form (after the email bounce). Awaiting reply.
 - **Nilson Homes** — TEXTED to both numbers (385) 402-7862 & (801) 392-8100; their form has no
