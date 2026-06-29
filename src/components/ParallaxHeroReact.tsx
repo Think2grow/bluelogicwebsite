@@ -75,7 +75,7 @@ export default function ParallaxHeroReact({
           src={imageSrc}
           alt=""
           className="w-full h-[120%] object-cover object-center absolute top-[-10%]"
-          loading="eager"
+          loading="lazy"
           fetchPriority="high"
         />
         {/* Premium gradient overlay */}

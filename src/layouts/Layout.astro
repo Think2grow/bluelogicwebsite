@@ -98,30 +98,58 @@ const allSchemas = schema
       ))
     }
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCNVMD4Z7R"></script>
+    <!-- Analytics & tracking (gtag / Meta Pixel / ContentDSP) -->
+    <!-- Stubs queue events immediately; real scripts load off the critical
+         path (first interaction or after 4s) to protect FCP/LCP on mobile. -->
     <script is:inline>
+      // gtag stub
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-GCNVMD4Z7R');
-    </script>
 
-    <!-- ContentDSP Tracking -->
-    <script is:inline>!function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://contentdsp.com/events.js');saq('ts', 'pTI-0oKJkHPME2lozyEL0Q');</script>
-
-    <!-- Meta Pixel Code -->
-    <script is:inline>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      // Meta Pixel stub
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
       fbq('init', '1641361533784272');
       fbq('track', 'PageView');
+
+      // ContentDSP stub
+      !function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[]}(window,document);
+      saq('ts', 'pTI-0oKJkHPME2lozyEL0Q');
+
+      // Loader for the real scripts.
+      (function () {
+        var loaded = false;
+        var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+        function load() {
+          if (loaded) return;
+          loaded = true;
+          events.forEach(function (ev) {
+            window.removeEventListener(ev, load, { passive: true });
+          });
+          [
+            'https://www.googletagmanager.com/gtag/js?id=G-GCNVMD4Z7R',
+            'https://connect.facebook.net/en_US/fbevents.js',
+            'https://contentdsp.com/events.js'
+          ].forEach(function (src) {
+            var s = document.createElement('script');
+            s.src = src;
+            s.async = true;
+            document.head.appendChild(s);
+          });
+        }
+        // Desktop: load immediately (unchanged behavior).
+        // Mobile: defer off the critical path — load on first interaction or after 4s.
+        if (window.matchMedia('(min-width: 768px)').matches) {
+          load();
+        } else {
+          events.forEach(function (ev) {
+            window.addEventListener(ev, load, { passive: true });
+          });
+          setTimeout(load, 4000);
+        }
+      })();
     </script>
 
     <!-- astro view transitions -->

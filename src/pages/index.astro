@@ -2,15 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import ParallaxHero from "../components/ParallaxHero.astro";
+import ParallaxHeroReact from "../components/ParallaxHeroReact";
 import ProductExplosion from "../components/ProductExplosion.astro";
 import Reviews from "../components/Reviews.astro";
 import { getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
 import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
+import heroImageSrc from "../assets/water_art/AdobeStock_689029947_toddler_with_water.jpeg";
 import BrochureDownload from "../components/BrochureDownload.astro";
 
 export const prerender = true;
+
+// Full-size hero image for the desktop (React/Framer) hero only.
+const desktopHeroImage = await getImage({
+  src: heroImageSrc,
+  width: 1920,
+  quality: 50,
+  format: "avif",
+});
 
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
@@ -27,13 +37,29 @@ const schemas = [
   schema={schemas}
 >
   <!-- Localized Parallax Hero (Task 3.2) -->
-  <ParallaxHero
-    title="Your Family, Unfiltered."
-    subtitle="Whole home reverse osmosis systems for the health-conscious home"
-    tagline="Half the cost. Half the footprint. 10x quieter."
-    ctaText="Schedule Free Water Test"
-    ctaHref="/free-water-test/"
-  />
+  <!-- Mobile: static, fully optimized hero — no JS in the critical path. -->
+  <div class="md:hidden">
+    <ParallaxHero
+      title="Your Family, Unfiltered."
+      subtitle="Whole home reverse osmosis systems for the health-conscious home"
+      tagline="Half the cost. Half the footprint. 10x quieter."
+      ctaText="Schedule Free Water Test"
+      ctaHref="/free-water-test/"
+    />
+  </div>
+
+  <!-- Desktop: original React + Framer Motion parallax hero, hydrated on desktop only. -->
+  <div class="hidden md:block">
+    <ParallaxHeroReact
+      client:media="(min-width: 768px)"
+      title="Your Family, Unfiltered."
+      subtitle="Whole home reverse osmosis systems for the health-conscious home"
+      tagline="Half the cost. Half the footprint. 10x quieter."
+      ctaText="Schedule Free Water Test"
+      ctaHref="/free-water-test/"
+      imageSrc={desktopHeroImage.src}
+    />
+  </div>
 
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto text-center">
