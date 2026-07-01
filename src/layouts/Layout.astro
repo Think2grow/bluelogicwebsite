@@ -20,6 +20,7 @@ interface Props {
   schema?: any | any[]; // Allow pages to pass additional schema
   og?: Partial<OpenGraphMetadata>; // Allow pages to customize Open Graph metadata
   noindex?: boolean;
+  bare?: boolean; // Hide site Header/Footer for standalone funnel/landing pages
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   schema = null,
   og = {},
   noindex = false,
+  bare = false,
 } = Astro.props;
 
 // Normalize site URL — always use www canonical
@@ -168,13 +170,13 @@ const allSchemas = schema
       />
     </noscript>
 
-    <Header />
+    {!bare && <Header />}
 
     <main class="flex-1">
       <slot />
     </main>
 
-    <Footer />
+    {!bare && <Footer />}
 
     <!-- LeadConnector chat widget — deferred to end of body to protect LCP -->
     <script

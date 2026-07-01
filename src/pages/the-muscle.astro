@@ -1,0 +1,429 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ReviewCarousel from "../components/ReviewCarousel.tsx";
+import logo from "../assets/Blue Logic Logo FINAL-03.png";
+import { Image } from "astro:assets";
+
+export const prerender = true;
+
+// GoHighLevel / LeadConnector webhook for the Keaton "The Muscle" Hoskins funnel.
+const WEBHOOK_URL =
+  "https://services.leadconnectorhq.com/hooks/Nd8el709gXwDJdVuixdV/webhook-trigger/dab39534-a42c-4190-8f08-7d0f4a2aa485";
+---
+
+<Layout
+  title="The Muscle Trusts Blue Logic Water | Free Water Test"
+  description="Keaton 'The Muscle' Hoskins put his name on Blue Logic Water for one reason: it works. Claim your FREE in-home water test and see what's really coming out of your tap."
+  noindex={true}
+  bare={true}
+>
+  <!-- Minimal top bar (logo only, keeps followers focused on the offer) -->
+  <div class="w-full bg-white border-b border-border">
+    <div
+      class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between"
+    >
+      <Image
+        src={logo}
+        alt="Blue Logic Water"
+        class="h-8 w-auto"
+        quality={80}
+        loading="eager"
+      />
+      <a
+        href="tel:+18019802583"
+        class="text-sm font-semibold text-obsidian/70 hover:text-obsidian transition-colors"
+      >
+        (801) 980-2583
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section
+    class="relative w-full bg-obsidian overflow-hidden px-4 pt-14 pb-20 md:pt-20 md:pb-28"
+  >
+    <!-- Ambient glow -->
+    <div
+      class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-glacier/20 blur-[120px]"
+    >
+    </div>
+
+    <div class="relative max-w-4xl mx-auto text-center">
+      <p
+        class="inline-block mb-6 rounded-full border border-glacier/40 bg-glacier/10 px-4 py-1.5 text-xs md:text-sm font-mono uppercase tracking-[0.2em] text-glacier-light"
+      >
+        A message from Keaton "The Muscle" Hoskins
+      </p>
+
+      <h1
+        class="font-serif text-white text-[2.6rem] leading-[1.05] md:text-6xl lg:text-7xl mb-6"
+      >
+        I Don't Put My Name<br class="hidden md:block" /> On
+        <span class="text-glacier-light">Junk.</span>
+      </h1>
+
+      <p
+        class="text-lg md:text-2xl text-quartz/85 max-w-2xl mx-auto leading-relaxed mb-4"
+      >
+        You follow me because I keep it real. So here it is: I got sick of not
+        knowing what my family was drinking. Blue Logic tested it, showed me the
+        truth, and fixed it. Now it's your turn.
+      </p>
+
+      <p class="text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-10">
+        Get a <span class="font-semibold text-white"
+          >FREE in-home water test</span
+        > and finally see what's actually coming out of your tap. No pressure. No BS.
+      </p>
+
+      <a
+        href="#claim"
+        class="inline-block bg-glacier text-obsidian px-10 py-5 rounded-full text-lg md:text-xl font-bold hover:bg-glacier-light transition-all duration-300 transform hover:scale-105 shadow-[0_10px_40px_-8px_var(--color-glacier)]"
+      >
+        Claim My Free Water Test →
+      </a>
+      <p class="text-white/40 mt-4 text-sm font-mono">
+        Utah homeowners only • Limited spots each week
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== KEATON'S WORD ===================== -->
+  <section class="bg-background py-16 md:py-24 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="text-5xl text-glacier leading-none">“</span>
+      <blockquote
+        class="font-serif text-2xl md:text-3xl text-foreground leading-snug -mt-4 mb-6"
+      >
+        I put my name on things I actually believe in. Blue Logic is one of
+        them. If you live in Utah and you've never had your water tested, you
+        need to do this today.
+      </blockquote>
+      <p class="font-mono uppercase tracking-widest text-sm text-muted-foreground">
+        — Keaton "The Muscle" Hoskins
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== THE PROBLEM ===================== -->
+  <section class="bg-obsidian py-16 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2
+        class="text-3xl md:text-5xl font-serif text-white text-center mb-4"
+      >
+        Utah Water Is <span class="text-glacier-light">Hard, Loaded, and Lying to You</span>
+      </h2>
+      <p class="text-center text-quartz/70 text-lg max-w-2xl mx-auto mb-12">
+        It looks clean. That doesn't mean it is. Here's what's usually hiding in
+        a Wasatch Front tap.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-7">
+          <div class="text-4xl mb-4">🪨</div>
+          <h3 class="text-xl font-semibold text-white mb-2">Brutal Hardness</h3>
+          <p class="text-quartz/70 leading-relaxed">
+            Scale that wrecks water heaters, clogs fixtures, and leaves your
+            skin dry and your hair flat.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-7">
+          <div class="text-4xl mb-4">🧪</div>
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Chlorine &amp; Metals
+          </h3>
+          <p class="text-quartz/70 leading-relaxed">
+            Chlorine, heavy metals, and contaminants you can't see, taste, or
+            smell until it's a problem.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-7">
+          <div class="text-4xl mb-4">💸</div>
+          <h3 class="text-xl font-semibold text-white mb-2">
+            Money Down The Drain
+          </h3>
+          <p class="text-quartz/70 leading-relaxed">
+            Bottled water, ruined appliances, and repairs — bad water costs you
+            every single month.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE SYSTEM (excite) ===================== -->
+  <section class="bg-background py-16 md:py-24 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-14">
+        <p
+          class="font-mono uppercase tracking-[0.2em] text-sm text-glacier mb-3"
+        >
+          The Blue Logic System
+        </p>
+        <h2 class="text-3xl md:text-5xl font-serif text-foreground mb-4">
+          Engineered To Fix It — For Good
+        </h2>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Half the cost, half the footprint, and 10x quieter than the old
+          clunkers. Clean, healthy water from every tap in your house.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-card p-8 rounded-2xl border-l-4 border-glacier">
+          <div class="text-4xl mb-4">💧</div>
+          <h3 class="text-xl font-semibold mb-3 text-foreground">
+            Pure Water, Every Tap
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Whole-home filtration means the shower, the kitchen sink, and the
+            fridge all pour water you'd actually want to drink.
+          </p>
+        </div>
+        <div class="bg-card p-8 rounded-2xl border-l-4 border-glacier">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-xl font-semibold mb-3 text-foreground">
+            Protects Your Home
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            Kill the scale, save your appliances and plumbing, and stop paying
+            to replace things hard water destroys.
+          </p>
+        </div>
+        <div class="bg-card p-8 rounded-2xl border-l-4 border-glacier">
+          <div class="text-4xl mb-4">👊</div>
+          <h3 class="text-xl font-semibold mb-3 text-foreground">
+            Built Tough, Backed Local
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+            A Utah, family-owned crew that installs it right and stands behind
+            it with lifetime support.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="bg-card py-16 md:py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2
+        class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground"
+      >
+        Utah Families Already Made The Switch
+      </h2>
+      <p class="text-center text-muted-foreground mb-12 text-lg">
+        Real reviews from real Wasatch Front homeowners
+      </p>
+      <ReviewCarousel client:load />
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA + FORM ===================== -->
+  <section id="claim" class="bg-obsidian py-16 md:py-24 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl md:text-5xl font-serif text-white mb-4">
+          Claim Your Free Water Test
+        </h2>
+        <p class="text-quartz/80 text-lg">
+          Drop your info below. We'll reach out to schedule your free in-home
+          water test and show you exactly what's in your water — zero
+          obligation.
+        </p>
+      </div>
+
+      <form
+        id="leadForm"
+        class="space-y-5 bg-card p-6 md:p-8 rounded-3xl shadow-2xl"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label
+              for="firstName"
+              class="block text-sm font-medium text-foreground mb-2"
+              >First Name *</label
+            >
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              class="input-field w-full"
+              placeholder="Keaton"
+            />
+          </div>
+          <div>
+            <label
+              for="lastName"
+              class="block text-sm font-medium text-foreground mb-2"
+              >Last Name *</label
+            >
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              class="input-field w-full"
+              placeholder="Hoskins"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-medium text-foreground mb-2"
+            >Email Address *</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="input-field w-full"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label
+            for="phone"
+            class="block text-sm font-medium text-foreground mb-2"
+            >Phone Number *</label
+          >
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            class="input-field w-full"
+            placeholder="(801) 555-1234"
+          />
+        </div>
+
+        <div>
+          <label
+            for="zipCode"
+            class="block text-sm font-medium text-foreground mb-2"
+            >Zip Code *</label
+          >
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            required
+            inputmode="numeric"
+            pattern="[0-9]{5}"
+            class="input-field w-full"
+            placeholder="84101"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-glacier text-obsidian px-8 py-4 rounded-full text-lg font-bold hover:bg-glacier-light transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.99]"
+        >
+          Claim My Free Water Test →
+        </button>
+
+        <p class="text-xs text-muted-foreground text-center">
+          By submitting, you agree to receive communications from Blue Logic
+          Water. We respect your privacy and never sell your info.
+        </p>
+
+        <div id="formStatus" class="form-status"></div>
+      </form>
+
+      <p class="text-center text-white/60 mt-6 text-sm">
+        Prefer to talk now? Call or text
+        <a
+          href="tel:+18019802583"
+          class="font-semibold text-glacier-light hover:text-white transition-colors"
+          >(801) 980-2583</a
+        >
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @reference "../styles/global.css";
+  html {
+    scroll-behavior: smooth;
+  }
+  .input-field {
+    @apply px-4 py-3 border-2 border-border rounded-lg text-base font-sans bg-background transition-colors focus:outline-none focus:border-ring;
+  }
+  .form-status {
+    @apply text-center p-4 rounded-lg hidden;
+  }
+  .form-status.error {
+    @apply block bg-error-light text-error;
+  }
+</style>
+
+<script>
+  const WEBHOOK_URL =
+    "https://services.leadconnectorhq.com/hooks/Nd8el709gXwDJdVuixdV/webhook-trigger/dab39534-a42c-4190-8f08-7d0f4a2aa485";
+
+  const form = document.getElementById("leadForm") as HTMLFormElement;
+  const status = document.getElementById("formStatus") as HTMLDivElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const submitButton = form.querySelector(
+      'button[type="submit"]',
+    ) as HTMLButtonElement;
+    const originalLabel = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
+    status.className = "form-status";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    // Tag the lead source so it's clear in the CRM where it came from.
+    (data as Record<string, string>).source = "the-muscle-landing";
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok || response.status === 200) {
+        if (typeof (window as any).gtag !== "undefined") {
+          (window as any).gtag("event", "generate_lead", {
+            currency: "USD",
+            value: 0,
+          });
+        }
+        if (typeof (window as any).fbq !== "undefined") {
+          (window as any).fbq("track", "Lead");
+        }
+        window.location.href = "/thank-you";
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      status.className = "form-status error";
+      status.textContent =
+        "Something went wrong. Please try again or call us at (801) 980-2583.";
+      console.error("Form submission error:", error);
+      submitButton.disabled = false;
+      submitButton.textContent = originalLabel;
+    }
+  });
+
+  // Smooth scroll for the hero CTA anchor.
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
+      const target = href ? document.querySelector(href) : null;
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+</script>
