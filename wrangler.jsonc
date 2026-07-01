@@ -1,6 +1,7 @@
 {
   "main": "dist/_worker.js/index.js",
   "name": "blue-logic-water-website",
+  "account_id": "79926259d706f73a6825446ac2597726",
   "compatibility_date": "2025-12-28",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
