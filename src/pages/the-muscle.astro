@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ReviewCarousel from "../components/ReviewCarousel.tsx";
 import logo from "../assets/Blue Logic Logo FINAL-03.png";
 import keatonDesk from "../assets/keaton/keaton_at_desk.jpg";
 import keatonTruck from "../assets/keaton/keaton_truck.jpg";
@@ -92,7 +91,7 @@ const WEBHOOK_URL =
           Claim My Free Water Test →
         </a>
         <p class="text-white/40 mt-4 text-sm font-mono">
-          Utah homeowners only • Limited spots each week
+          Limited spots each week
         </p>
       </div>
 
@@ -266,21 +265,6 @@ const WEBHOOK_URL =
           </p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===================== REVIEWS ===================== -->
-  <section class="bg-card py-16 md:py-24 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2
-        class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground"
-      >
-        Utah Families Already Made The Switch
-      </h2>
-      <p class="text-center text-muted-foreground mb-12 text-lg">
-        Real reviews from real Wasatch Front homeowners
-      </p>
-      <ReviewCarousel client:load />
     </div>
   </section>
 
