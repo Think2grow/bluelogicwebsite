@@ -9,6 +9,8 @@
  *   compact  — if true, 2-column layout instead of 3
  */
 
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "../data/google-reviews";
+
 interface Props {
   heading?: string;
   max?: number;
@@ -124,8 +126,8 @@ const shown = reviews.slice(0, max);
         <svg class="w-5 h-5 text-yellow-400 fill-current"><use href="#bl-star"/></svg>
       ))}
     </div>
-    <span class="font-semibold text-foreground">5.0</span>
-    <span class="text-muted-foreground text-sm">· {shown.length} reviews · Google</span>
+    <span class="font-semibold text-foreground">{GOOGLE_RATING.toFixed(1)}</span>
+    <span class="text-muted-foreground text-sm">· {GOOGLE_REVIEW_COUNT} Google reviews</span>
   </div>
 
   <div class:list={[

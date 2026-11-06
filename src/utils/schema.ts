@@ -1,3 +1,5 @@
+import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "../data/google-reviews";
+
 /**
  * Base JSON-LD schema definitions for Blue Logic Water
  * Uses schema.org types for SEO and structured data
@@ -139,10 +141,10 @@ export function getLocalBusinessSchema(
     areaServed: cities.map((c) => ({ "@type": "City", name: c })),
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
+      ratingValue: GOOGLE_RATING.toFixed(1),
       bestRating: "5",
       worstRating: "1",
-      reviewCount: "10",
+      reviewCount: String(GOOGLE_REVIEW_COUNT),
     },
   } as LocalBusinessSchema;
 }
@@ -267,8 +269,8 @@ export function getServiceSchema(
  */
 export function getAggregateRatingSchema(
   url: string,
-  ratingValue: number = 5.0,
-  reviewCount: number = 10,
+  ratingValue: number = GOOGLE_RATING,
+  reviewCount: number = GOOGLE_REVIEW_COUNT,
 ) {
   const base = getBaseOrganizationSchema(url);
   return {

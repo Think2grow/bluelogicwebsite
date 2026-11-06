@@ -39,7 +39,7 @@ A [standard water softener](/water-softener-utah/) addresses hardness only. A [w
 - **Half the physical footprint** — fits in standard Utah utility rooms
 - **10x quieter** than traditional whole-home RO units
 - **NSF-certified components** throughout
-- **1-year limited warranty** — components designed for 8–10 year lifespan
+- **5-year system warranty and 12-month installation warranty**, with components designed for 8–10 year lifespan
 - **In-house financing** — half down, flexible repayment terms
 - **Price-match guarantee** — written commitment to match any competing licensed quote
 

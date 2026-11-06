@@ -27,7 +27,7 @@ const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 
 const schemas = [
   getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }]),
-  getAggregateRatingSchema(`${siteUrl}/`, 5.0, 10),
+  getAggregateRatingSchema(`${siteUrl}/`),
 ];
 ---
 

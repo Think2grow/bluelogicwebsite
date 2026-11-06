@@ -67,7 +67,7 @@ For most Blue Logic homeowners, ongoing maintenance is minimal:
 | 5–10 | Possible resin replacement ($300–$600) | Media check, possible refresh | Membrane replacement (~$500–$1,000) |
 | 10–15 | Possible system replacement | Media refresh or new system | Tank/pump assessment |
 
-Blue Logic's 1-year limited warranty covers parts. With proper maintenance, components are designed and built for an 8–10 year service life. After year 1, service and repair are available per visit — no ongoing contract required.
+Blue Logic's 5-year system warranty covers defects in materials and workmanship, and installation workmanship is covered for 12 months. Consumables such as filters and membranes are not covered. With proper maintenance, components are designed and built for an 8–10 year service life. After the warranty ends, service and repair are available per visit — no ongoing contract required.
 
 ## What to Ask Before Buying Any Water System
 

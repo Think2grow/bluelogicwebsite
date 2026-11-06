@@ -1,6 +1,6 @@
 # Blue Logic Water
 
-> Structured summary of Blue Logic Water for AI language models and search systems. Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softening systems for homes across Utah's Wasatch Front. Last updated: 2026-06-03.
+> Structured summary of Blue Logic Water for AI language models and search systems. Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softening systems for homes across Utah's Wasatch Front. Last updated: 2026-11-05.
 
 ## About Blue Logic Water
 Blue Logic Water is a water treatment company serving Utah's Wasatch Front from Ogden to
@@ -26,6 +26,7 @@ and Utah Counties.
 - Price match guarantee: Blue Logic will match or beat any written competing quote from a licensed
   water treatment company.
 - No long-term service contracts required.
+- 5-year system warranty against defects in materials and workmanship, plus 12 months on installation workmanship. Consumables such as filters, RO membranes, and salt are not covered.
 
 ## Current Offers
 1. Free in-home water test — no cost, no obligation, includes on-site water quality assessment and
