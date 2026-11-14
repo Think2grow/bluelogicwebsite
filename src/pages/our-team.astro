@@ -4,8 +4,9 @@ import ProcessStepper from "../components/ProcessStepper.astro";
 import Reviews from "../components/Reviews.astro";
 import { getLocalBusinessSchema, getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
-import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_showing_off_sink.jpeg";
+import jaredOnSiteImg from "../assets/real/jared-on-site.jpg";
+import installInProgressImg from "../assets/real/installs/purification-install-in-progress.jpg";
+import jaredImg from "../assets/staff/jared-co-owner.png";
 
 export const prerender = true;
 
@@ -20,8 +21,8 @@ const schemas = [
 ---
 
 <Layout
-  title="Our Team | Blue Logic Water — Utah Water Treatment Specialists"
-  description="Meet the Blue Logic Water team — local Utah water treatment specialists serving the Wasatch Front. Jared leads installations with meticulous, same-day service."
+  title="Our Team | Blue Logic Water, Utah Water Treatment Specialists"
+  description="Meet the Blue Logic Water team: a family-owned Utah water treatment company based in Murray, serving the Wasatch Front. Co-owner Jared oversees every installation."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -43,9 +44,9 @@ const schemas = [
             The Wasatch-Born Story
           </h2>
           <p class="text-lg leading-relaxed text-muted-foreground mb-6">
-            Blue Logic Water was founded by a team of engineers and water
-            quality specialists who grew up in the Salt Lake Valley. We
-            experienced firsthand the challenges of <a
+            Blue Logic Water is a family-owned Utah company, run by owners
+            Jared and Scott from our warehouse in Murray. We know firsthand the
+            challenges of <a
               href="/the-value/"
               class="text-primary hover:underline font-semibold"
               >Utah's hard water</a
@@ -58,28 +59,29 @@ const schemas = [
               class="text-primary hover:underline font-semibold"
               >commercial-grade reverse osmosis technology</a
             >
-            to homes at a fair price. No marketing gimmicks, no unnecessary upsells—just
+            to homes at a fair price. No marketing gimmicks, no unnecessary upsells, just
             pure water and honest service.
           </p>
         </div>
         <div>
           <Image
-            src={handInWaterImg}
-            alt="Hand gently touching crystal clear purified water, feeling its purity"
+            src={jaredOnSiteImg}
+            alt="Jared, co-owner of Blue Logic Water, on site in a home under construction"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={60}
+            loading="lazy"
           />
           <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            Feel the difference of truly pure water
+            Co-owner Jared, on site
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Jared — named installer -->
+  <!-- Jared, co-owner -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
@@ -87,32 +89,37 @@ const schemas = [
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-12">
         Blue Logic is a local Utah team. When you schedule a water test or an installation,
-        you're working with people who live and work on the Wasatch Front — not a national
+        you're working with people who live and work on the Wasatch Front, not a national
         call center.
       </p>
 
       <!-- Jared -->
       <div class="jared-card mb-8">
-        <div class="jared-avatar">J</div>
+        <Image
+          src={jaredImg}
+          alt="Jared, co-owner of Blue Logic Water"
+          class="jared-avatar object-cover"
+          widths={[64, 128]}
+          sizes="64px"
+        />
         <div>
           <div class="flex items-center gap-3 flex-wrap mb-1">
             <h3 class="text-2xl font-semibold text-foreground">Jared</h3>
-            <span class="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Lead Installation Technician</span>
+            <span class="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">Co-Owner</span>
           </div>
           <p class="text-sm text-muted-foreground mb-4">Wasatch Front · Blue Logic Water</p>
           <p class="text-muted-foreground leading-relaxed mb-4">
-            Jared leads installations for Blue Logic Water across the Wasatch Front. He
-            performs on-site water assessments, installs whole-home RO and filtration systems,
-            services existing systems, and trains homeowners on how their system works and what
+            Jared co-owns Blue Logic Water and oversees installations across the Wasatch Front.
+            He performs on-site water assessments, designs whole-home RO, filtration and softening
+            systems for each home, and makes sure homeowners know how their system works and what
             maintenance to expect.
           </p>
           <p class="text-muted-foreground leading-relaxed mb-4">
-            What homeowners consistently say about Jared: he comes in, does exactly what he says
-            he'll do, and leaves the space cleaner than he found it. He schedules annual check-up
-            calls proactively so homeowners don't have to remember to do it themselves.
+            Blue Logic is a company of its word: we do what we say we will do, and we leave the
+            space clean. Annual maintenance is scheduled for you, so you don't have to remember
+            to do it yourself.
           </p>
           <div class="flex flex-wrap gap-3 mt-4">
-            <span class="credential-tag">NSF-Certified System Installation</span>
             <span class="credential-tag">Whole-Home RO Specialist</span>
             <span class="credential-tag">Water Quality Assessment</span>
             <span class="credential-tag">System Service & Maintenance</span>
@@ -126,10 +133,10 @@ const schemas = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           {[
             { step: "Site Assessment", detail: "Jared evaluates your utility room, existing plumbing, and water supply before recommending a system configuration." },
-            { step: "On-Site Water Testing", detail: "Tests your home's water for hardness and chlorine on the spot. Walks you through the results in plain English before any work begins." },
-            { step: "Professional Installation", detail: "Most whole-home systems are installed in a single day — 4 to 8 hours depending on home layout. NSF-certified components throughout." },
-            { step: "System Walkthrough", detail: "Before leaving, Jared walks you through how your system works, what maintenance it needs, and how to read the indicators." },
-            { step: "Annual Check-Up", detail: "Jared proactively schedules a one-year follow-up to inspect the system, check performance, and handle any maintenance — so you don't have to remember." },
+            { step: "On-Site Water Testing", detail: "Your home's water is tested for hardness and chlorine on the spot, and the results are explained in plain English before any work begins." },
+            { step: "Professional Installation", detail: "Installed by our professional installation partner, with standard installation included in your price and the timeline confirmed before work begins." },
+            { step: "System Walkthrough", detail: "Before we leave, we walk you through how your system works and what maintenance it needs, including keeping the salt topped up." },
+            { step: "Annual Maintenance", detail: "Annual maintenance covers filter changes and a general system check, and we schedule it for you so you don't have to remember." },
             { step: "Ongoing Support", detail: "Blue Logic is a local Utah company. If something comes up after installation, you're calling a real person, not a national service queue." },
           ].map((item) => (
             <div class="flex gap-3">
@@ -153,7 +160,7 @@ const schemas = [
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground"
       >
-        The Purity Guarantee
+        Our Code of Conduct
       </h2>
       <p class="text-lg text-center text-muted-foreground mb-12">
         When we enter your home, we follow the Blue Logic code of conduct:
@@ -165,7 +172,7 @@ const schemas = [
             Professional Excellence
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Our certified installation partners perform every installation to commercial standards with
+            Our professional installation partners perform every installation with
             meticulous attention to detail.
           </p>
         </div>
@@ -175,7 +182,7 @@ const schemas = [
             Respect Your Home
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            We treat your home as our own—clean workspace, protective equipment,
+            We treat your home as our own: clean workspace, protective equipment,
             and thorough cleanup.
           </p>
         </div>
@@ -195,8 +202,9 @@ const schemas = [
             Local Accountability
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            We're your neighbors. Our reputation is built on trust and we stand
-            behind every system we provide.
+            We're your neighbors. Our reputation is built on trust, and every
+            system carries a 5-year warranty against defects in materials and
+            workmanship.
           </p>
         </div>
 
@@ -237,14 +245,14 @@ const schemas = [
         Serving Utah's Wasatch Front
       </h2>
       <p class="text-muted-foreground mb-6 max-w-2xl mx-auto">
-        Blue Logic is a Utah company. We serve the Wasatch Front from Ogden to Springville —
-        <a href="/locations/" class="text-primary hover:underline font-semibold">every major community</a>
-        across Weber, Davis, Salt Lake, and Utah Counties.
+        Blue Logic is a Utah company. We serve
+        <a href="/locations/" class="text-primary hover:underline font-semibold">communities across the Wasatch Front</a>,
+        including Salt Lake, Davis and Utah Counties, the Tooele Valley, and the Ogden and Weber metro.
       </p>
       <div class="flex flex-wrap justify-center gap-2">
         {["Salt Lake City", "Provo", "Orem", "Lehi", "Sandy", "Draper", "Ogden", "Layton",
           "Bountiful", "American Fork", "Spanish Fork", "Springville",
-          "West Jordan", "South Jordan", "Cottonwood Heights"].map((city) => (
+          "West Jordan", "South Jordan", "Cottonwood Heights", "Tooele"].map((city) => (
           <span class="px-3 py-1.5 bg-card border border-border rounded-full text-sm text-muted-foreground">{city}</span>
         ))}
       </div>
@@ -260,8 +268,8 @@ const schemas = [
             Professional Installation, Premium Results
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            Every Blue Logic system is installed by our certified partner technicians
-            who treat your home with respect. Clean workspace, careful
+            Every Blue Logic system is installed by our professional installation
+            partner, whose technicians treat your home with respect. Clean workspace, careful
             craftsmanship, and meticulous attention to detail.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -279,14 +287,20 @@ const schemas = [
           </a>
         </div>
         <div class="order-1 lg:order-2">
-          <Image
-            src={realtorSinkImg}
-            alt="Professional showing a modern kitchen with premium water fixtures and purification system"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
-          />
+          <div class="max-w-md mx-auto">
+            <Image
+              src={installInProgressImg}
+              alt="Installer setting the reverse osmosis unit of a Blue Logic Purification System beside its stainless pretreatment tank during an install"
+              class="rounded-2xl shadow-2xl w-full object-cover object-[center_35%] aspect-4/5"
+              widths={[400, 610]}
+              sizes="(max-width: 1024px) 100vw, 448px"
+              quality={70}
+              loading="lazy"
+            />
+            <p class="text-sm text-muted-foreground text-center mt-4 italic">
+              Setting a Purification System during an install
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -313,7 +327,7 @@ const schemas = [
   }
 
   .jared-avatar {
-    @apply w-16 h-16 shrink-0 rounded-full bg-primary text-primary-foreground font-bold text-2xl flex items-center justify-center;
+    @apply w-16 h-16 shrink-0 rounded-full;
   }
 
   .credential-tag {

@@ -2,8 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import cleanWaterSinkImg from "../assets/water_art/AdobeStock_706544309_clean_water_in_sink.jpeg";
-import toddlerWaterImg from "../assets/water_art/AdobeStock_689029947_toddler_with_water.jpeg";
+import utilityRoomStorageImg from "../assets/real/utility-room-storage-tank.jpg";
+import OfferBanner from "../components/OfferBanner.astro";
+import {
+  PRICES,
+  PRICE_NOTE,
+  offerActive,
+  usd,
+} from "../data/offer";
 
 export const prerender = true;
 
@@ -12,67 +18,70 @@ interface FAQ {
   answer: string;
 }
 
+const L = "class='text-primary hover:underline font-semibold'";
+const showOffer = offerActive();
+
+const financingAnswer =
+  "Yes. Financing is available through Pinnacle Finance for qualifying homeowners, subject to credit approval. Checking your eligibility is a soft credit inquiry that does not affect your credit score." +
+  (showOffer ? " See the current offer on this page for this year's financing promotion." : "") +
+  " Your specialist can walk you through the options at your free water test.";
+
 const faqs: FAQ[] = [
   {
     question:
-      "How is the Blue Logic Whole-Home Purification System different from a regular filter or softener?",
+      "How is the Blue Logic Purification System different from a regular filter or softener?",
     answer:
-      "Most systems filter some contaminants - but Blue Logic purifies at the molecular level. Our <a href='/the-system/' class='text-primary hover:underline font-semibold'>Whole-Home Purification System</a> combines advanced pretreatment with reverse osmosis technology to remove up to 99% of contaminants at every tap, not just one faucet.",
+      `A softener treats hardness, and a filter treats what it was built to catch. The <a href='/the-system/' ${L}>Blue Logic Purification System</a> treats the whole home: Blue Logic Filtration in front softens and filters the water, reverse osmosis then purifies it, a 165-gallon food-grade storage tank holds it, and a Grundfos SCALA2 constant-pressure pump delivers it, so every tap in the home runs purified water at normal pressure, not just one faucet.`,
   },
   {
-    question: "What does the Whole-Home Filtration System actually remove?",
+    question: "What does Blue Logic Filtration actually do?",
     answer:
-      "Our 7-layer filtration media targets chlorine, chloramines, PFAS, pesticides, pharmaceuticals, heavy metals, and hard water minerals. It's a full-spectrum reduction system - designed to make your home's water cleaner, healthier, and better-tasting. <a href='/the-system/' class='text-primary hover:underline font-semibold'>Learn how it works</a>.",
+      `Blue Logic Filtration softens and filters your water in one self-cleaning tank. You get soft water that ends scale and spots, chlorine and chloramine taste and odor gone at every tap, sediment and rust filtered out, protection for your plumbing, fixtures and appliances, and water that is gentler on skin and hair. It also helps reduce contaminants such as VOCs, pesticides, pharmaceuticals, microplastics and PFAS. Every Filtration system includes an under-sink reverse osmosis system for purified drinking water at the kitchen tap. <a href='/the-system/' ${L}>Learn how it works</a>.`,
   },
   {
     question: "Will this replace my water softener?",
     answer:
-      "Yes. Blue Logic Filtration softens and conditions water naturally without the slick, slimy feel or added salt from traditional softeners. You’ll still get that clean, soft-water experience - but without the maintenance headaches.",
+      "Yes. Blue Logic Filtration softens your water and filters it in the same tank, so it replaces a softener rather than sitting beside one. Like a softener, it uses salt to regenerate, so you'll keep the salt topped up. If hardness is your only concern, the Blue Logic Softener is our softening-only option.",
   },
   {
     question: "What kind of maintenance is required?",
     answer:
-      "Minimal ongoing maintenance. You'll need to periodically refill salt for the water softener component (both systems include water softening as part of the pre-treatment process). Additionally, media and filters are serviced once per year during your annual check-up. Salt usage varies by household but typically requires refilling every few months.",
+      "Minimal. You keep salt in the brine tank, and salt is available at large local retailers such as Costco and Walmart. Annual maintenance is standard and covers filter changes (for the under-sink RO and the Purification System) and a general system check. RO membranes are replaced periodically as part of that maintenance.",
   },
   {
-    question: "How much does a Blue Logic RO system cost?",
+    question: "How much does a Blue Logic system cost?",
     answer:
-      "Blue Logic whole-home systems are priced at $5,995–$19,999 depending on your home's size, layout, and the system selected — confirmed at your free water test with no hidden fees. We also offer a written price-match guarantee on any competing quote from a licensed Utah water treatment company. <a href='/free-water-test/' class='text-primary hover:underline font-semibold'>Schedule your free water test for a transparent quote</a>.",
+      `Blue Logic systems range from ${usd(PRICES.softener)} to $19,999 depending on your home and the outcome you want. The Blue Logic Softener is ${usd(PRICES.softener)}, Blue Logic Filtration (with under-sink RO) is ${usd(PRICES.filtration)}, and the Blue Logic Purification System is ${usd(PRICES.purification)}. ${PRICE_NOTE} Any non-standard work, such as long plumbing runs or significant drywall work, is discussed with you before any work is done. <a href='/free-water-test/' ${L}>Schedule your free water test for a transparent quote</a>.`,
   },
   {
     question: "How long does installation take?",
     answer:
-      "Most installations are completed in one day (4-8 hours depending on your home's layout). Our certified installation partners work efficiently while maintaining meticulous attention to detail. We'll provide a specific timeline during your consultation.",
+      "It depends on the system and your home's layout, and we confirm the timeline with you before work begins. Systems are typically installed in the utility room, close to where the water main enters the home. Our professional installation partner handles the work with meticulous attention to detail.",
   },
   {
     question: "How much water is wasted during the RO process?",
     answer:
-      "Modern RO systems are far more efficient than older models. Our systems produce approximately 3 gallons of purified water for every 1 gallon of waste water (75% efficiency). This is significantly better than older systems which could waste 8-10 gallons per gallon of purified water produced, and ensures optimal purification performance.",
+      "Blue Logic reverse osmosis runs at about 3 gallons of purified water for every 1 gallon sent to drain (up to 75% recovery). Blue Logic Filtration in front of the membrane is what makes that efficiency safe, because it softens and filters the water before it reaches the RO.",
   },
   {
     question: "Will this remove the minerals from my water?",
     answer:
-      "Yes, reverse osmosis removes up to 99% of all dissolved solids, including minerals. This is precisely why RO is so effective—it removes both harmful contaminants and hardness-causing minerals, giving you pure water that's healthier for drinking and better for your home. Note: Remineralization options are available upon request.",
+      "Yes. Reverse osmosis removes dissolved solids, including the calcium and magnesium that cause hardness. That will not cause a nutritional deficiency: the vast majority of the calcium and magnesium your body needs comes from food, not water, and low-mineral water does not leach existing nutrients from the body.",
   },
   {
     question: "Do you serve my area?",
     answer:
-      "Blue Logic serves Utah's Wasatch Front from Ogden to Springville — <a href='/locations/' class='text-primary hover:underline font-semibold'>including Salt Lake City, Provo, Orem, Lehi, Sandy, Draper, Ogden, Layton, Bountiful, American Fork, Spanish Fork, Springville, and surrounding communities</a> across Weber, Davis, Salt Lake, and Utah Counties.",
+      `Blue Logic serves Utah's Wasatch Front, <a href='/locations/' ${L}>including Salt Lake, Davis and Utah Counties, the Tooele Valley, and the Ogden and Weber metro</a>: Salt Lake City, Provo, Orem, Lehi, Sandy, Draper, Ogden, Layton, Bountiful, American Fork, Tooele, and surrounding communities. Enter your zip code when you schedule and we'll confirm the details for your address.`,
   },
   {
     question: "What contaminants does RO remove?",
     answer:
-      "Reverse osmosis works at the molecular level, addressing a broad range of dissolved inorganic contaminants including heavy metals (lead, arsenic, uranium), chlorine, fluoride, PFAS ('forever chemicals'), pharmaceutical residues, and dissolved solids. It is the most comprehensive residential water purification technology available. For specific contaminant concerns, your free water test and your city's EWG data are the best starting points.",
-  },
-  {
-    question: "Why is your system quieter than others?",
-    answer:
-      "We use state-of-the-art premium components designed for quiet operation. While traditional systems can be quite noisy during cycling, our system operates at approximately 1/10th the noise level—quiet enough that you'll barely notice it's running.",
+      "Reverse osmosis removes or reduces total dissolved solids, hardness, heavy metals including lead and arsenic, fluoride, nitrates, PFAS, pharmaceuticals, pesticides, microplastics, bacteria and viruses. For specific contaminant concerns, your free water test and your city's EWG data are the best starting points.",
   },
   {
     question: "How does Utah's hard water affect RO systems?",
     answer:
-      "Utah has some of the hardest water in the country — most Wasatch Front communities deliver water in the 10–25 grains-per-gallon range. This is where Blue Logic's integrated pre-filtration stage is critical: it removes hardness minerals before they reach the RO membrane, protecting the membrane and extending its service life. Without proper pre-treatment, hard water would scale and degrade an RO membrane rapidly. <a href='/utah-hard-water/' class='text-primary hover:underline font-semibold'>Learn more about Utah hard water</a>.",
+      `Utah has some of the hardest water in the country, and most Wasatch Front communities deliver water in the 10 to 25 grains-per-gallon range. That is why every Blue Logic Purification System puts Blue Logic Filtration in front of the RO: it removes hardness minerals before they reach the membrane, protecting it from scale. Without proper pre-treatment, hard water would scale and degrade an RO membrane quickly. <a href='/utah-hard-water/' ${L}>Learn more about Utah hard water</a>.`,
   },
   {
     question: "What warranty do you offer?",
@@ -82,59 +91,58 @@ const faqs: FAQ[] = [
   {
     question: "Can I install this myself to save money?",
     answer:
-      "While technically possible, we strongly recommend professional installation. RO systems require precise plumbing connections, pressure adjustments, and proper drainage setup. Improper installation can lead to leaks, poor performance, or system damage. Our installation is included in the price and ensures everything works perfectly from day one.",
+      "We strongly recommend professional installation. These systems require precise plumbing connections, pressure settings, and proper drain setup, and improper installation can lead to leaks, poor performance, or system damage that the warranty does not cover. Standard installation is included in the price.",
   },
 
   // Utah-specific and buyer-decision FAQs
   {
     question: "Do you offer financing?",
-    answer:
-      "Yes. Blue Logic offers in-house financing with half down at the time of installation. Repayment terms are flexible and arranged directly with Blue Logic — no third-party lender or credit check required. Specific terms are discussed at your free water test appointment based on the system you choose.",
+    answer: financingAnswer,
   },
   {
     question: "Do you work on well water systems?",
     answer:
-      "Blue Logic's primary focus is municipal water treatment for single-family homes on city water supplies. Well water typically requires additional pre-treatment (iron removal, pH adjustment, bacterial testing) before an RO system can be installed. If you're on well water, mention it when you schedule your free water test — our specialist will assess whether your well water is a good fit and what pre-treatment may be needed.",
+      "Blue Logic's primary focus is homes on city water. Well water often needs additional pre-treatment (for example iron removal, pH adjustment, or bacterial testing) before a system can be designed. If you're on well water, mention it when you schedule your free water test, and your specialist will assess what your well needs.",
   },
   {
     question: "What is remineralization and do I need it?",
     answer:
-      "Reverse osmosis removes virtually all dissolved minerals from water, including calcium and magnesium. Some people prefer to add trace minerals back for taste or health reasons — this is called remineralization. Blue Logic can discuss remineralization options at your water test appointment. It is not required for the system to function correctly, and many homeowners find they prefer the clean, neutral taste of RO water without added minerals.",
+      "Reverse osmosis removes dissolved minerals, including calcium and magnesium. Some people like to add trace minerals back for taste; this is called remineralization. It is not required for the system to work, and it is not needed for health, because most of the minerals your body uses come from food. Your specialist can discuss it at your water test if it matters to you.",
   },
   {
     question: "Can I start with filtration and add RO purification later?",
     answer:
-      "Yes. Blue Logic's systems are designed in stages. The whole-home filtration system (Stages 1–2) operates as a complete standalone system. The RO purification upgrade (Stages 3–4: RO membrane, pressurized storage tank, and delivery pump) can be added later without replacing the filtration foundation. Your specialist will explain the upgrade path and cost difference at your water test.",
+      "Yes. Blue Logic systems are modular. Blue Logic Filtration works as a complete system on its own, and the reverse osmosis unit, 165-gallon storage tank, and constant-pressure pump can be added later without replacing it, because the Purification System uses the same Filtration tank in front of the RO. Your specialist will explain the upgrade path and cost difference at your water test.",
   },
   {
     question: "What happens if my system needs a repair after the warranty ends?",
     answer:
-      "Blue Logic is a local Utah company, and we're not going anywhere. After the 5-year system warranty ends, service and repairs are available on a per-visit basis. During the warranty, covered parts are replaced at no charge, and visits outside scheduled maintenance carry the standard $129 service call fee. System components are designed for an 8–10 year lifespan with proper maintenance. Annual check-ups (scheduled by Jared at the time of installation) catch most issues before they become problems. Parts for Blue Logic systems are commercially sourced and not proprietary, so you're never locked into a single-source service arrangement.",
+      "Blue Logic is a local Utah company, and we're not going anywhere. After the 5-year warranty ends, service and repairs are available on a per-visit basis. During the warranty, covered parts are replaced at no charge, and visits outside scheduled maintenance carry the standard $129 service call fee. Annual maintenance catches most issues before they become problems, and if something seems off, call us first: we'll try to solve it by phone and send a technician if needed.",
   },
   {
     question: "Does installing a whole-home system require a permit in Utah?",
     answer:
-      "In most cases, a whole-home water treatment system installation in Utah does not require a separate permit if it connects to existing plumbing without significant modifications. Requirements vary by city and installation specifics. Your Blue Logic specialist will confirm permit requirements during the free water test site assessment. We handle or advise on any permit requirements as part of the installation process.",
+      "Requirements vary by city and by the scope of the installation. Your Blue Logic specialist will confirm permit requirements during the free water test site assessment, and we handle or advise on any permit requirements as part of the installation process.",
   },
   {
     question: "Will my water pressure drop after the RO system is installed?",
     answer:
-      "No — and this is one of the most common concerns. Blue Logic's whole-home purification system includes a dedicated delivery pump that restores your home's water pressure after the RO stage. The pressurized 165-gallon (or 250-gallon) storage tank ensures purified water is always available on demand. Most homeowners report no noticeable change in household water pressure.",
+      "No. The Blue Logic Purification System includes a Grundfos SCALA2 constant-pressure pump that delivers purified water to the home at normal pressure after the RO stage. Purified water is held in a 165-gallon food-grade storage tank, and homes that need more storage get additional 165-gallon tanks added as modules.",
   },
   {
     question: "What is the annual maintenance cost after installation?",
     answer:
-      "The primary ongoing cost is salt for the water softening stage — typically one to two bags every 2–3 months for a typical Utah household (roughly $40–$80 per year, significantly less than a traditional softener). The annual service check-up is scheduled by your technician and covers system inspection and filter media review. Salt is available at most home improvement stores.",
+      "The ongoing costs are salt, which you buy at large local retailers such as Costco or Walmart, and annual maintenance, which covers filter changes and a general system check. RO membranes are replaced periodically. Your specialist will give you the maintenance schedule and pricing for your system.",
   },
   {
     question: "How do I know if the system is working properly?",
     answer:
-      "Blue Logic walks you through the system indicators at installation. For most homeowners, the clearest sign is immediate: water tastes and smells different, scale stops forming on fixtures, and soap lathers more easily. Your specialist shows you what to look for and schedules an annual check-up to verify performance. If something seems off between check-ups, you can call or text Blue Logic directly — we're a local team, not a call center.",
+      "Blue Logic walks you through your system at installation. For most homeowners, the clearest signs are immediate: water tastes and smells different, scale stops forming on fixtures, and soap lathers more easily. Annual maintenance includes a general system check, and if something seems off in between, you can call or text Blue Logic directly. We're a local team, not a call center.",
   },
   {
     question: "What's the difference between Blue Logic and a Berkey or countertop gravity filter?",
     answer:
-      "Countertop gravity filters like Berkey treat water at a single point — typically your kitchen — at a very slow flow rate. They require manual refilling and don't treat shower water, bath water, laundry water, or the water going into your appliances. Blue Logic's whole-home system treats every tap and fixture in your house simultaneously at full household flow rate. For whole-home protection against hard water, chlorine, and contaminants, there is no comparison to a point-of-use gravity filter.",
+      "Countertop gravity filters like Berkey treat water at a single point, typically your kitchen, at a very slow flow rate. They require manual refilling and don't treat shower water, bath water, laundry water, or the water going into your appliances. Blue Logic's whole-home systems treat every tap and fixture in your house at full household flow. For whole-home protection against hard water, chlorine, and contaminants, a point-of-use gravity filter is not a substitute.",
   },
 ];
 
@@ -150,7 +158,7 @@ const schemas = [
 ---
 
 <Layout
-  title="Water Treatment FAQs | Blue Logic Water — Utah"
+  title="Water Treatment FAQs | Blue Logic Water, Utah"
   description="Answers to the most common questions Utah homeowners ask about whole-home reverse osmosis, water softeners, filtration systems, cost, installation, and maintenance."
   schema={schemas}
 >
@@ -168,17 +176,7 @@ const schemas = [
   <!-- Trust-building Image Section -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <Image
-            src={cleanWaterSinkImg}
-            alt="Crystal clear purified water flowing into a modern kitchen sink"
-            class="rounded-2xl shadow-xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
-          />
-        </div>
+      <div class="max-w-3xl mx-auto text-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
             Your Questions, Answered
@@ -190,7 +188,7 @@ const schemas = [
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
             Still have questions? Our team of local water experts is here to
-            help—with honest answers, not sales pressure.
+            help, with honest answers, not sales pressure.
           </p>
         </div>
       </div>
@@ -236,6 +234,8 @@ const schemas = [
     </div>
   </section>
 
+  <OfferBanner variant="full" />
+
   <!-- Family Safety Image Section -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
@@ -246,8 +246,8 @@ const schemas = [
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
             From a baby's first sip to daily hydration, your family's water
-            matters at every age. Our whole-home systems ensure every drop is
-            pure—whether it's for drinking, cooking, or bathing.
+            matters at every age. The Blue Logic Purification System delivers
+            purified water to every tap, whether it's for drinking, cooking, or bathing.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
             That's the Blue Logic difference: complete peace of mind, not just
@@ -256,12 +256,13 @@ const schemas = [
         </div>
         <div class="order-1 lg:order-2">
           <Image
-            src={toddlerWaterImg}
-            alt="Happy toddler safely drinking pure filtered water"
-            class="rounded-2xl shadow-xl w-full object-cover aspect-4/3"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            src={utilityRoomStorageImg}
+            alt="Blue Logic Purification System installed in a Utah home's utility room, with its food-grade storage tank, reverse osmosis unit and filtration tank"
+            class="rounded-2xl shadow-xl w-full object-cover object-top aspect-video"
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={60}
+            loading="lazy"
           />
         </div>
       </div>

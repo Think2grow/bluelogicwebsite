@@ -2,10 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import Reviews from "../components/Reviews.astro";
+import OfferBanner from "../components/OfferBanner.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
-import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
+import purificationStorageImg from "../assets/real/installs/purification-system-with-storage.jpg";
+import purificationSystemImg from "../assets/real/installs/purification-system-front.jpg";
+import { PRICES, PRICE_NOTE, WARRANTY, usd } from "../data/offer";
 
 export const prerender = true;
 
@@ -14,43 +16,43 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "How long does a whole-home RO installation take in a Utah home?",
-    answer: "Most installations are completed in a single day — typically 4 to 8 hours depending on your home's layout and the system selected. Your specialist will assess your utility room or installation space during the free water test appointment and give you a specific timeline before you commit.",
+    answer: "It depends on your home's layout. Systems are usually installed in the utility room, and we need access to the water main inside the home. Your specialist looks at the installation space during the free water test and gives you a specific timeline before you commit.",
   },
   {
     question: "Does a whole-home reverse osmosis system work with Utah's hard water?",
-    answer: "Yes — and this is where whole-home RO excels. Utah has some of the hardest water in the US, with many Wasatch Front utilities delivering water at 15–25+ grains per gallon. Blue Logic's system includes a pre-filtration and water softening stage specifically designed to protect the RO membrane from Utah's high mineral content and extend its service life.",
+    answer: "Yes. Many Wasatch Front homes have water in the 10 to 25+ grains per gallon range. Every Blue Logic Purification System puts Blue Logic Filtration in front of the reverse osmosis: it softens the water and takes out chlorine, chloramine and sediment, then a sediment pre-filter catches fine particles. That pre-treatment protects the RO membrane and is what lets the system run at about 3 gallons of purified water for every 1 gallon sent to drain.",
   },
   {
     question: "Will the RO system reduce my home's water pressure?",
-    answer: "No. Blue Logic's system includes a dedicated delivery pump that restores and often improves your home's water pressure after purification. The 165-gallon (or optional 250-gallon) pressurized storage tank ensures purified water is always available on demand, even during peak household usage.",
+    answer: "No. Purified water is held in a 165-gallon food-grade storage tank, and a Grundfos SCALA2 constant-pressure pump sends it to every tap at steady household pressure. Homes that use more water add a second 165-gallon tank, or more, as a module.",
   },
   {
-    question: "How does Blue Logic's pricing compare to Culligan or Kinetico in Utah?",
-    answer: "Blue Logic's whole-home RO systems are priced at $5,995–$19,999 using commercial-grade, NSF-certified components. We also offer a written price-match guarantee: bring any competing quote from a licensed Utah water treatment company and we'll match or beat it.",
+    question: "How much does a Blue Logic Purification System cost?",
+    answer: `The Blue Logic Purification System is ${usd(PRICES.purification)} out the door, with standard installation and tax included. Homes that need more storage add 165-gallon tank modules, and any non-standard work (such as long runs or significant drywall work) is discussed and priced at your consult before any work is done.`,
   },
   {
     question: "How much water does the system waste?",
-    answer: "Blue Logic's system is designed for efficiency. The pre-filtration stage significantly reduces the mineral load entering the RO membrane, improving the system's recovery ratio. In practice, the system produces approximately 3 gallons of purified water for every 1 gallon sent to drain — a significant improvement over older residential RO systems that can waste 8–10 gallons per gallon purified.",
+    answer: "Blue Logic's system produces about 3 gallons of purified water for every 1 gallon sent to drain (up to 75% recovery). The Filtration in front is what makes that ratio safe for the RO membrane.",
   },
   {
     question: "What maintenance does a whole-home RO system require?",
-    answer: "The primary ongoing maintenance is periodic salt refills for the water softener component (approximately every 2–3 months for a typical Utah family). Annual service includes a filter media check and system inspection. Blue Logic provides a 5-year warranty against system defects, a 12-month installation workmanship warranty, and is available for ongoing support.",
+    answer: `You keep salt in the Filtration brine tank (available at stores like Costco and Walmart). Annual maintenance covers filter changes and a general system check, and RO membranes are replaced on a regular schedule. ${WARRANTY}`,
   },
   {
-    question: "Are the system components NSF-certified?",
-    answer: "Blue Logic uses NSF/ANSI-rated RO membranes and food-grade storage tank materials. Ask your specialist for component documentation at your free water test appointment.",
+    question: "Are the system components certified?",
+    answer: "The purified-water storage tank is BPA-free and built from NSF/ANSI and FDA compliant materials. Ask your specialist for component documentation at your free water test appointment.",
   },
   {
     question: "Can I start with filtration and add RO later?",
-    answer: "Yes. Blue Logic's systems are designed in stages. The whole-home filtration system (Stages 1–2) can operate standalone, and the RO purification upgrade (Stages 3–4: RO unit, storage tank, delivery pump) can be added later. Your specialist will explain both options and their price difference at your water test.",
+    answer: "Yes. Blue Logic systems are modular. Many homes start with Blue Logic Filtration (whole-home softening and filtration in one tank, plus an under-sink RO at the kitchen tap) and add the reverse osmosis, storage tank and constant-pressure pump later. The Filtration you already own becomes the pre-treatment. Your specialist will explain both options at your water test.",
   },
 ];
 
 const schemas = [
   getServiceSchema(
     `${siteUrl}/whole-home-reverse-osmosis-utah/`,
-    "Whole-Home Reverse Osmosis System Installation — Utah",
-    "Professional whole-home reverse osmosis system installation across Utah's Wasatch Front. 4-stage purification including pre-filtration, water softening, commercial-grade RO membrane, 165-gallon storage tank, and delivery pump. NSF-certified. Written price-match guarantee on any competing quote.",
+    "Whole-Home Reverse Osmosis System Installation, Utah",
+    `Whole-home reverse osmosis installation across Utah's Wasatch Front. The Blue Logic Purification System puts Blue Logic Filtration in front, then a sediment pre-filter, reverse osmosis, 165-gallon food-grade storage and a Grundfos SCALA2 constant-pressure pump, for purified water at every tap. ${usd(PRICES.purification)} out the door, installation and tax included.`,
   ),
   getFAQSchema(faqs),
   getBreadcrumbSchema(siteUrl, [
@@ -63,22 +65,21 @@ const schemas = [
 
 <Layout
   title="Whole Home Reverse Osmosis Utah | Blue Logic Water"
-  description="Whole-home RO systems for Utah's Wasatch Front. $5,995–$19,999, NSF-certified components, written price-match guarantee. Free in-home water test. Book today."
+  description={`Whole-home reverse osmosis for Utah's Wasatch Front: purified water at every tap at normal pressure, about 3 gallons purified per 1 to drain. ${usd(PRICES.purification)} out the door. Free in-home water test.`}
   schema={schemas}
 >
   <!-- Hero -->
   <section class="hero-gradient py-20 md:py-28 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
-        Wasatch Front · Weber · Davis · Salt Lake · Utah Counties
+        Wasatch Front · Weber · Davis · Salt Lake · Utah · Tooele Counties
       </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
         Whole-Home Reverse Osmosis Systems for Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-        Blue Logic installs whole-home RO systems priced at $5,995–$19,999 using
-        commercial-grade, NSF-certified components — with a written price-match guarantee
-        on any competing quote from a licensed Utah water treatment company.
+        The Blue Logic Purification System puts purified reverse osmosis water at every tap in
+        your home, at normal water pressure. {usd(PRICES.purification)} out the door. {PRICE_NOTE}
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -98,14 +99,7 @@ const schemas = [
   </section>
 
   <!-- Offer Banner -->
-  <section class="bg-primary/10 border-y border-primary/20 py-6 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="font-semibold text-foreground">
-        Current offer: <span class="text-primary">Free upgrade to 250-gallon storage tank</span> with whole-home purification purchase ·
-        <a href="/free-water-test/" class="text-primary underline hover:no-underline">Schedule your free water test to claim</a>
-      </p>
-    </div>
-  </section>
+  <OfferBanner />
 
   <!-- Why Utah Needs Whole-Home RO -->
   <section class="bg-background py-16 md:py-20 px-4">
@@ -117,19 +111,20 @@ const schemas = [
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
             Utah has some of the hardest water in the United States. The carbonate rock geology across
-            the Wasatch Front produces groundwater heavily laden with calcium and magnesium — producing
-            water hardness typically in the range of 15–25+ grains per gallon across Salt Lake, Utah,
-            Davis, and Weber Counties.
+            the Wasatch Front produces water heavily laden with calcium and magnesium, with hardness
+            commonly in the 10 to 25+ grains per gallon range across Salt Lake, Utah, Davis, and
+            Weber Counties.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
-            A traditional water softener addresses hardness minerals — but leaves chlorine, chloramine
-            byproducts, dissolved solids, and other contaminants untouched. Whole-home reverse osmosis
-            works at the molecular level, pushing water through a membrane with pores so small
-            (0.0001 micron) that only water molecules pass through.
+            A traditional water softener addresses hardness minerals, but leaves chlorine, chloramine,
+            dissolved solids, and other contaminants untouched. Whole-home reverse osmosis pushes
+            water through a semi-permeable membrane that removes contaminants larger than about
+            0.0001 micron.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            The result: water with near-zero total dissolved solids (TDS) at every tap in your home —
-            kitchen, bathrooms, laundry, and appliances — not just at a single under-sink faucet.
+            The result: purified water with far lower total dissolved solids (TDS) at every tap in
+            your home (kitchen, bathrooms, laundry, and appliances), not just at a single under-sink
+            faucet.
           </p>
           <a href="/utah-water-quality/" class="text-primary font-semibold hover:opacity-80 transition-opacity">
             Learn more about Utah water quality →
@@ -137,13 +132,17 @@ const schemas = [
         </div>
         <div>
           <Image
-            src={dirtyCleanGlassesImg}
-            alt="Side-by-side comparison of unfiltered Utah tap water versus Blue Logic purified water"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            src={purificationStorageImg}
+            alt="Blue Logic Purification System installed in a Utah home's basement: purified-water storage tank, pre-filter housings, constant-pressure pump, reverse osmosis unit and stainless pretreatment tank"
+            class="rounded-2xl shadow-2xl w-full object-cover object-center aspect-4/5"
+            widths={[400, 600, 800, 1200]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={70}
+            loading="lazy"
           />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            A Blue Logic Purification System built to one home's needs
+          </p>
         </div>
       </div>
     </div>
@@ -153,122 +152,132 @@ const schemas = [
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
-        How Blue Logic's Whole-Home RO System Works
+        How the Blue Logic Purification System Works
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-        Four integrated stages work together. Stages 1–2 (filtration) can operate standalone.
-        Stages 3–4 (purification upgrade) add RO-level purity to every tap.
+        Five stages work together. Stage 1 is Blue Logic Filtration, which also works on its own
+        as a whole-home system. Stages 2 to 5 add reverse osmosis purity to every tap.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
         <div class="stage-card">
           <div class="stage-number">1</div>
-          <h3 class="text-lg font-semibold mb-3 text-foreground">Pre-Filtration & Softening</h3>
-          <span class="stage-badge">Filtration System</span>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">Softening &amp; Filtration</h3>
+          <span class="stage-badge">Blue Logic Filtration</span>
           <p class="text-sm text-muted-foreground mt-3 leading-relaxed">
-            The 7-layer media system — including sediment filtration, catalytic carbon, and EvoResin
-            softening — removes chlorine, chloramines, iron, manganese, and hardness minerals.
-            Protects the RO membrane and serves as a standalone whole-home filtration option.
+            One self-cleaning tank softens the water and takes out chlorine, chloramine, sediment,
+            and rust before it reaches the RO. It protects the membrane and also works on its own
+            as Blue Logic Filtration.
           </p>
         </div>
 
         <div class="stage-card">
           <div class="stage-number">2</div>
-          <h3 class="text-lg font-semibold mb-3 text-foreground">Commercial-Grade RO Membrane</h3>
-          <span class="stage-badge stage-badge-purification">Purification Upgrade</span>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">Sediment Pre-Filter</h3>
+          <span class="stage-badge stage-badge-purification">Purification</span>
           <p class="text-sm text-muted-foreground mt-3 leading-relaxed">
-            A 0.0001-micron semi-permeable membrane removes dissolved solids, heavy metals, and
-            contaminants that pass through conventional filters. Reduces TDS to near-zero.
-            Designed for continuous whole-home flow capacity.
+            A 5-micron sediment filter in a full-flow housing catches fine particles, so the RO
+            membrane only sees clean, conditioned water.
           </p>
         </div>
 
         <div class="stage-card">
           <div class="stage-number">3</div>
-          <h3 class="text-lg font-semibold mb-3 text-foreground">165-Gallon Storage Tank</h3>
-          <span class="stage-badge stage-badge-purification">Purification Upgrade</span>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">Reverse Osmosis</h3>
+          <span class="stage-badge stage-badge-purification">Purification</span>
           <p class="text-sm text-muted-foreground mt-3 leading-relaxed">
-            NSF-certified food-grade storage ensures purified water is always available on demand.
-            Eliminates pressure drops during peak household usage. Upgradeable to 250 gallons —
-            included free with current whole-home purification purchase.
+            A semi-permeable membrane reduces dissolved solids, heavy metals including lead and
+            arsenic, fluoride, nitrates, and PFAS. It makes about 3 gallons of purified water for
+            every 1 gallon sent to drain.
           </p>
         </div>
 
         <div class="stage-card">
           <div class="stage-number">4</div>
-          <h3 class="text-lg font-semibold mb-3 text-foreground">Delivery Pump</h3>
-          <span class="stage-badge stage-badge-purification">Purification Upgrade</span>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">165-Gallon Storage</h3>
+          <span class="stage-badge stage-badge-purification">Purification</span>
           <p class="text-sm text-muted-foreground mt-3 leading-relaxed">
-            Restores — and often improves — your home's water pressure after the RO stage.
-            Whisper-quiet operation with automatic pressure regulation. Delivers purified water
-            to every fixture at normal household pressure.
+            Purified water waits in a food-grade, BPA-free tank built from NSF/ANSI and FDA
+            compliant materials. Homes that use more water add a second tank, or more, as a module.
+          </p>
+        </div>
+
+        <div class="stage-card">
+          <div class="stage-number">5</div>
+          <h3 class="text-lg font-semibold mb-3 text-foreground">Constant Pressure</h3>
+          <span class="stage-badge stage-badge-purification">Purification</span>
+          <p class="text-sm text-muted-foreground mt-3 leading-relaxed">
+            A Grundfos SCALA2 variable-speed pump regulates pressure automatically and sends
+            purified water to every fixture at steady household pressure.
           </p>
         </div>
       </div>
 
       <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 text-center max-w-3xl mx-auto">
         <p class="font-semibold text-foreground">
-          The pre-filtration stage isn't optional — it protects the RO membrane from Utah's
-          hard water and extends its service life. This is why Blue Logic's systems are built
-          as an integrated stack, not bolt-on components.
+          The Filtration in front isn't optional. It protects the RO membrane from Utah's hard
+          water, and it is what makes running at about 3 gallons purified for every 1 to drain
+          safe for the membrane. That's why every Blue Logic Purification System starts with
+          Blue Logic Filtration.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Blue Logic vs Competitors -->
+  <!-- What's Included -->
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
-        Blue Logic — What We Offer and How the Price-Match Works
+        What You Get With Blue Logic Purification
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        Blue Logic's written price-match guarantee means you can compare any competing quote directly. Here's what we bring to that comparison.
+        Use these details to compare against any written quote you receive from other Utah water
+        treatment companies.
       </p>
 
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
             <tr class="border-b-2 border-primary">
-              <th class="text-left py-3 px-4 text-foreground font-semibold">Blue Logic Specification</th>
-              <th class="py-3 px-4 text-primary font-semibold text-center">Our Verified Offer</th>
+              <th class="text-left py-3 px-4 text-foreground font-semibold">Blue Logic Purification System</th>
+              <th class="py-3 px-4 text-primary font-semibold text-center">What's Included</th>
             </tr>
           </thead>
           <tbody>
             <tr class="border-b border-border">
-              <td class="py-3 px-4 text-foreground font-medium">System price range</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">$5,995 – $19,999 installed</td>
+              <td class="py-3 px-4 text-foreground font-medium">Price</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">{usd(PRICES.purification)} out the door, installation and tax included</td>
             </tr>
             <tr class="border-b border-border bg-card">
-              <td class="py-3 px-4 text-foreground font-medium">NSF-certified components</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">Yes — documentation at water test</td>
+              <td class="py-3 px-4 text-foreground font-medium">Equipment</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">Blue Logic Filtration, sediment pre-filter, RO, 165-gallon storage, Grundfos SCALA2 pump</td>
             </tr>
             <tr class="border-b border-border">
-              <td class="py-3 px-4 text-foreground font-medium">Price match</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">Written guarantee on any competing quote</td>
+              <td class="py-3 px-4 text-foreground font-medium">Water efficiency</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">About 3 gallons purified for every 1 to drain</td>
             </tr>
             <tr class="border-b border-border bg-card">
-              <td class="py-3 px-4 text-foreground font-medium">Long-term service contract</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">Not required</td>
+              <td class="py-3 px-4 text-foreground font-medium">Storage</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">165-gallon tanks, more added as modules when needed</td>
             </tr>
             <tr class="border-b border-border">
               <td class="py-3 px-4 text-foreground font-medium">Warranty</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">5-year system; 12-month installation; 8–10 yr component lifespan</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">5 years on defects in materials and workmanship; 12 months on installation workmanship</td>
             </tr>
             <tr class="border-b border-border bg-card">
               <td class="py-3 px-4 text-foreground font-medium">Financing</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">In-house, half down, flexible terms</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">Pinnacle Finance, approved credit; checking eligibility is a soft credit inquiry</td>
             </tr>
             <tr>
               <td class="py-3 px-4 text-foreground font-medium">Free in-home water test</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">Yes — no cost, no obligation</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">Yes, no cost and no obligation</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p class="text-sm text-muted-foreground text-center mt-4 italic">
-        Use these specs to compare against any written quote you receive from other Utah water treatment companies.
-        Blue Logic's price-match guarantee applies to any written competing quote from a licensed provider.
+        Consumables such as filters, RO membranes and salt are not covered by the warranty. Any
+        non-standard installation work is discussed and priced at your consult before work begins.
       </p>
 
       <div class="text-center mt-8">
@@ -305,7 +314,7 @@ const schemas = [
             <li class="flex gap-2"><span class="text-muted-foreground">·</span> Multi-family buildings or commercial properties</li>
             <li class="flex gap-2"><span class="text-muted-foreground">·</span> Homes with non-standard plumbing configurations</li>
           </ul>
-          <p class="text-xs text-muted-foreground mt-4 italic">Your free water test includes a site assessment — we'll tell you exactly what works for your home.</p>
+          <p class="text-xs text-muted-foreground mt-4 italic">Your free water test includes a site assessment, and we'll tell you exactly what works for your home.</p>
         </div>
       </div>
     </div>
@@ -317,60 +326,62 @@ const schemas = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <Image
-            src={filtersInHandsImg}
-            alt="Blue Logic water filtration components — commercial-grade media and RO membranes"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-3/4"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            src={purificationSystemImg}
+            alt="Front view of a Blue Logic Purification System: pre-filter housings, constant-pressure pump, reverse osmosis unit and the stainless pretreatment tank that protects the membrane"
+            class="rounded-2xl shadow-2xl w-full object-cover object-center aspect-4/5"
+            widths={[400, 600, 800, 1200]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={70}
+            loading="lazy"
           />
         </div>
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
-            Built Different, Not Just Smaller
+            Modular, Sized to Your Home
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            The footprint difference isn't from cheaper components — it's from better engineering.
-            Blue Logic's system integrates the pre-filtration and RO stages in a more compact
-            form factor while using the same commercial-grade membrane technology found in
-            larger whole-home systems.
+            Blue Logic equipment is modular and installed on site, usually in the utility room.
+            The standard build uses a 165-gallon storage tank and a Grundfos SCALA2
+            constant-pressure pump, and a home that needs more purified-water storage simply adds
+            another 165-gallon tank. Because we build to the home, tank size and components can be
+            customized when you want something different.
           </p>
           <div class="space-y-4">
             <div class="spec-row">
-              <span class="font-semibold text-foreground">Membrane pore size</span>
-              <span class="text-primary font-semibold">0.0001 micron</span>
+              <span class="font-semibold text-foreground">Pre-treatment</span>
+              <span class="text-primary font-semibold text-right">Blue Logic Filtration + 5-micron sediment pre-filter</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">Storage capacity (standard)</span>
-              <span class="text-primary font-semibold">165 gallons</span>
+              <span class="font-semibold text-foreground">Membrane</span>
+              <span class="text-primary font-semibold text-right">Removes contaminants larger than about 0.0001 micron</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">Free upgrade with purchase</span>
-              <span class="text-primary font-semibold">250-gallon tank</span>
+              <span class="font-semibold text-foreground">Water efficiency</span>
+              <span class="text-primary font-semibold text-right">About 3 gallons purified per 1 to drain (up to 75% recovery)</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">Salt reduction vs. traditional softener</span>
-              <span class="text-primary font-semibold">~75% less salt usage</span>
+              <span class="font-semibold text-foreground">Storage</span>
+              <span class="text-primary font-semibold text-right">165 gallons per tank (standard), more tanks added as modules</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">NSF-certified components</span>
-              <span class="text-primary font-semibold">Yes</span>
+              <span class="font-semibold text-foreground">Tank materials</span>
+              <span class="text-primary font-semibold text-right">BPA-free, NSF/ANSI and FDA compliant materials</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">Installation time</span>
-              <span class="text-primary font-semibold">4–8 hours (one day)</span>
+              <span class="font-semibold text-foreground">Pressure</span>
+              <span class="text-primary font-semibold text-right">Grundfos SCALA2 constant-pressure pump (standard)</span>
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Warranty</span>
-              <span class="text-primary font-semibold">5-year system; 12-month installation</span>
+              <span class="text-primary font-semibold text-right">5-year system; 12-month installation</span>
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Financing</span>
-              <span class="text-primary font-semibold">In-house, half down</span>
+              <span class="text-primary font-semibold text-right">Pinnacle Finance, approved credit</span>
             </div>
             <div class="spec-row">
-              <span class="font-semibold text-foreground">System price range</span>
-              <span class="text-primary font-semibold">$5,995 – $19,999</span>
+              <span class="font-semibold text-foreground">Price</span>
+              <span class="text-primary font-semibold text-right">{usd(PRICES.purification)} out the door</span>
             </div>
           </div>
         </div>
@@ -424,7 +435,7 @@ const schemas = [
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-2xl font-serif mb-4 text-foreground">Serving the Wasatch Front</h2>
       <p class="text-muted-foreground mb-6">
-        Blue Logic installs whole-home reverse osmosis systems across Utah's Wasatch Front —
+        Blue Logic installs whole-home reverse osmosis systems across Utah's Wasatch Front,
         from Ogden to Springville and everywhere in between.
       </p>
       <div class="flex flex-wrap justify-center gap-2 mb-8">
@@ -448,7 +459,7 @@ const schemas = [
       </h2>
       <p class="text-lg text-muted-foreground text-center mb-10">
         Schedule your free in-home water test. A Blue Logic specialist will test your water
-        on-site and show you exactly what's in it — no cost, no obligation.
+        on-site and show you exactly what's in it. No cost, no obligation.
       </p>
       <LeadForm />
     </div>
@@ -475,7 +486,7 @@ const schemas = [
   }
 
   .spec-row {
-    @apply flex justify-between items-center py-3 border-b border-border text-sm;
+    @apply flex justify-between items-center gap-4 py-3 border-b border-border text-sm;
   }
 
   .related-link {

@@ -1,0 +1,153 @@
+---
+/**
+ * OfferBanner: the current Blue Logic offer, read entirely from src/data/offer.ts.
+ *
+ * Renders OFFER_HEADLINE, OFFER_SUBHEAD, a call to action and OFFER_DISCLOSURE.
+ * The disclosure is always rendered with the headline, because "$0 down" and
+ * "no payments for 90 days" are Regulation Z trigger terms that require it on
+ * the same page. Renders nothing once offerActive() is false at build time, and
+ * a small client script also removes it after the offer ends, so a static page
+ * that has not been rebuilt since December 31 stops showing it.
+ *
+ * Props:
+ *   variant  "compact" (default): a full-width strip, for under a hero or between sections.
+ *            "full": a centered card section with a larger headline and a button.
+ *   tone     "light" (default) for the standard site theme, "dark" for obsidian
+ *            landing pages (the-muscle, vsl).
+ *   ctaText  Button/link label. Default "Schedule Free Water Test".
+ *   ctaHref  Link target. Default "/free-water-test/".
+ *   class    Extra classes on the outer element.
+ *
+ * Usage:
+ *   <OfferBanner />
+ *   <OfferBanner variant="full" />
+ *   <OfferBanner variant="compact" tone="dark" ctaHref="#claim" ctaText="Claim My Free Water Test" />
+ */
+import {
+  OFFER_HEADLINE,
+  OFFER_SUBHEAD,
+  OFFER_DISCLOSURE,
+  offerActive,
+} from "../data/offer";
+
+interface Props {
+  variant?: "compact" | "full";
+  tone?: "light" | "dark";
+  ctaText?: string;
+  ctaHref?: string;
+  class?: string;
+}
+
+const {
+  variant = "compact",
+  tone = "light",
+  ctaText = "Schedule Free Water Test",
+  ctaHref = "/free-water-test/",
+  class: className = "",
+} = Astro.props;
+
+const show = offerActive();
+const dark = tone === "dark";
+---
+
+{show && variant === "compact" && (
+  <section
+    data-offer-banner
+    aria-label="Current offer"
+    class:list={[
+      "border-y py-6 px-4",
+      dark ? "bg-obsidian border-glacier/25" : "bg-primary/10 border-primary/20",
+      className,
+    ]}
+  >
+    <div class="max-w-5xl mx-auto text-center">
+      <p class:list={["font-semibold text-lg", dark ? "text-white" : "text-foreground"]}>
+        <span class={dark ? "text-glacier-light" : "text-primary"}>{OFFER_HEADLINE}</span>
+      </p>
+      <p class:list={["mt-1", dark ? "text-quartz/80" : "text-muted-foreground"]}>
+        {OFFER_SUBHEAD}{" "}
+        <a
+          href={ctaHref}
+          class:list={[
+            "font-semibold underline hover:no-underline",
+            dark ? "text-glacier-light" : "text-primary",
+          ]}
+        >
+          {ctaText}
+        </a>
+      </p>
+      <p
+        class:list={[
+          "mt-3 text-xs leading-relaxed max-w-4xl mx-auto",
+          dark ? "text-white/55" : "text-muted-foreground",
+        ]}
+      >
+        {OFFER_DISCLOSURE}
+      </p>
+    </div>
+  </section>
+)}
+
+{show && variant === "full" && (
+  <section
+    data-offer-banner
+    aria-label="Current offer"
+    class:list={["py-12 md:py-16 px-4", dark ? "bg-obsidian" : "bg-background", className]}
+  >
+    <div
+      class:list={[
+        "max-w-3xl mx-auto text-center rounded-2xl border p-6 md:p-10",
+        dark ? "bg-white/5 border-glacier/30" : "bg-primary/5 border-primary/20",
+      ]}
+    >
+      <p
+        class:list={[
+          "text-xs font-semibold uppercase tracking-widest mb-3",
+          dark ? "text-glacier-light" : "text-primary",
+        ]}
+      >
+        Current offer
+      </p>
+      <p
+        class:list={[
+          "text-2xl md:text-4xl font-serif leading-tight mb-3",
+          dark ? "text-white" : "text-foreground",
+        ]}
+      >
+        {OFFER_HEADLINE}
+      </p>
+      <p class:list={["text-lg mb-6", dark ? "text-quartz/80" : "text-muted-foreground"]}>
+        {OFFER_SUBHEAD}
+      </p>
+      <a
+        href={ctaHref}
+        class:list={[
+          "inline-block font-semibold text-lg px-8 py-4 rounded-full shadow transition-all",
+          dark
+            ? "bg-glacier text-obsidian hover:bg-glacier-light"
+            : "bg-primary text-primary-foreground hover:bg-primary/90",
+        ]}
+      >
+        {ctaText}
+      </a>
+      <p
+        class:list={[
+          "mt-6 text-xs leading-relaxed text-left md:text-center",
+          dark ? "text-white/55" : "text-muted-foreground",
+        ]}
+      >
+        {OFFER_DISCLOSURE}
+      </p>
+    </div>
+  </section>
+)}
+
+<script>
+  import { offerActive } from "../data/offer";
+
+  // Static pages keep their HTML until the next build, so remove the banner in
+  // the browser once the offer has ended.
+  if (!offerActive()) {
+    document.querySelectorAll("[data-offer-banner]").forEach((el) => el.remove());
+  }
+</script>

@@ -1,0 +1,62 @@
+---
+// Home page hero: Jared's owner video beside the three steps to get started.
+// Replaces the stock-photo parallax hero (Scott, 2026-11-13: "I like the meet
+// jared video more than the hero section"). The H1 carries the search keywords;
+// the brand line sits above it. Mobile order: headline, video, steps, buttons.
+import VslPlayer from "./VslPlayer.astro";
+import { VSL, VSL_TRANSCRIPT } from "../data/vsl";
+
+const steps = [
+  { title: "Watch Jared's intro", body: `${VSL.durationLabel} on how we work and why education comes first.` },
+  { title: "Book your free water test", body: "A Blue Logic specialist tests your water at your kitchen sink. No cost, no obligation." },
+  { title: "Get a clear recommendation", body: "A system matched to your water and your home, with an out-the-door price." },
+];
+---
+
+<section class="vsl-hero relative overflow-hidden bg-gradient-to-br from-quartz via-background to-glacier-light/40 px-4 md:px-8 pt-10 pb-14 md:pt-14 md:pb-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-8 md:mb-10">
+      <p class="text-sm font-semibold uppercase tracking-wider text-primary mb-3">Your Family, Unfiltered.</p>
+      <h1 class="text-3xl md:text-5xl font-serif text-foreground leading-tight mb-4">
+        Water Softeners, Filtration and Whole-Home Reverse Osmosis for Utah Homes
+      </h1>
+      <p class="text-lg text-muted-foreground">Locally owned, built in Utah and installed by a local team. Hear it from one of our owners.</p>
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:items-center">
+      <div>
+        <VslPlayer priority />
+        <details class="mt-4 rounded-xl border border-border bg-card/80 p-4">
+          <summary class="cursor-pointer text-sm font-semibold text-foreground">Read the video transcript</summary>
+          <div class="mt-3 space-y-3 text-sm text-muted-foreground leading-relaxed">
+            {VSL_TRANSCRIPT.map((p) => <p>{p}</p>)}
+          </div>
+        </details>
+      </div>
+
+      <div class="rounded-2xl border border-border bg-card/90 p-6 md:p-8 shadow-sm">
+        <h2 class="text-2xl font-serif text-foreground mb-5">How to Get Started</h2>
+        <ol class="space-y-5 mb-7">
+          {steps.map((s, i) => (
+            <li class="flex gap-4">
+              <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">{i + 1}</span>
+              <div>
+                <p class="font-semibold text-foreground">{s.title}</p>
+                <p class="text-sm text-muted-foreground">{s.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <div class="flex flex-col gap-3">
+          <a href="/free-water-test/" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lg transition hover:opacity-90">
+            Book Your Free Water Test
+          </a>
+          <a href="tel:+18019802583" class="inline-flex items-center justify-center rounded-full border border-primary px-7 py-4 font-semibold text-primary transition hover:bg-primary/10">
+            Call (801) 980-2583
+          </a>
+        </div>
+        <p class="mt-4 text-xs text-muted-foreground text-center">Serving Salt Lake, Davis and Utah Counties, the Tooele Valley and the Ogden area.</p>
+      </div>
+    </div>
+  </div>
+</section>

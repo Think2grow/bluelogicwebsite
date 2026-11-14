@@ -342,7 +342,7 @@ export const cities: CityData[] = [
     population: "87,321",
     description:
       "Weber County's largest city draws from multiple sources including artesian wells, creating highly variable hardness levels and notable manganese and arsenic concerns.",
-    waterSource: "Ogden City Public Utilities — surface water and groundwater blend",
+    waterSource: "Ogden City Public Utilities: surface water and groundwater blend",
     commonIssues: [
       "Highly variable hardness (10–28 GPG) depending on active sources",
       "Iron and manganese staining on fixtures",
@@ -370,7 +370,7 @@ export const cities: CityData[] = [
     population: "82,000",
     description:
       "Davis County city near Hill Air Force Base with very hard water (~21 GPG) and disinfection byproducts from surface water treatment.",
-    waterSource: "Davis County/North Davis water system — purchased surface water",
+    waterSource: "Davis County/North Davis water system: purchased surface water",
     commonIssues: [
       "Very hard water (~21 GPG) causing rapid scale buildup",
       "Disinfection byproducts from chlorine treatment",
@@ -397,8 +397,8 @@ export const cities: CityData[] = [
     hardnessLevel: "Very Hard",
     population: "45,000",
     description:
-      "Davis County community with some of the most variable water hardness on the Wasatch Front — ranging from 18 to 38 GPG depending on active sources.",
-    waterSource: "Bountiful City water system — blend of surface water and wells",
+      "Davis County community with some of the most variable water hardness on the Wasatch Front, ranging from 18 to 38 GPG depending on active sources.",
+    waterSource: "Bountiful City water system: blend of surface water and wells",
     commonIssues: [
       "Extremely variable hardness (18–38 GPG) from mixed sources",
       "Severe scale buildup on fixtures, showerheads, and appliances",
@@ -454,7 +454,7 @@ export const cities: CityData[] = [
     population: "43,000",
     description:
       "South Utah County community with very hard water (~25 GPG) and agricultural water history that influences mineral and nitrate concentrations.",
-    waterSource: "Spanish Fork City water — surface water and local well sources",
+    waterSource: "Spanish Fork City water: surface water and local well sources",
     commonIssues: [
       "Very hard water (~25 GPG) causing severe scale",
       "Arsenic detected above EWG guidelines",
@@ -481,8 +481,8 @@ export const cities: CityData[] = [
     hardnessLevel: "Very Hard",
     population: "35,000",
     description:
-      "Art City — southernmost Blue Logic service area — with very hard water (~23 GPG) and arsenic concerns typical of southern Utah County.",
-    waterSource: "Springville City water — purchased surface water and local wells",
+      "Utah County's Art City, with very hard water (~23 GPG) and arsenic concerns typical of southern Utah County.",
+    waterSource: "Springville City water: purchased surface water and local wells",
     commonIssues: [
       "Very hard water (~23 GPG) throughout city",
       "Arsenic detected above EWG health guidelines",
@@ -567,7 +567,7 @@ export const cities: CityData[] = [
     hardnessLevel: "Very Hard",
     population: "65,000",
     description:
-      "Upscale east Salt Lake County city drawing from the SLC water system — with the same PFAS, arsenic, and contaminant profile as Salt Lake City.",
+      "Upscale east Salt Lake County city drawing from the SLC water system, with the same PFAS, arsenic, and contaminant profile as Salt Lake City.",
     waterSource: "Salt Lake City Department of Public Utilities and JVWCD",
     commonIssues: [
       "PFAS detected in water supply",
@@ -707,7 +707,7 @@ export const cities: CityData[] = [
     hardnessLevel: "Very Hard",
     population: "22,000",
     description:
-      "Southernmost Blue Logic service area on the Wasatch Front. Very hard water (20–26 GPG) with arsenic and disinfection byproduct concerns from southern Utah County geology.",
+      "Southern Utah County community with very hard water (20–26 GPG) and arsenic and disinfection byproduct concerns from southern Utah County geology.",
     waterSource: "Local surface water and groundwater sources",
     commonIssues: [
       "Very hard water (20–26 GPG) causing rapid scale",
@@ -735,7 +735,7 @@ export const cities: CityData[] = [
     hardnessLevel: "Very Hard",
     population: "35,000",
     description:
-      "Fast-growing Utah County community on JVWCD water — same arsenic, chromium-6, and hard water profile as Lehi and American Fork.",
+      "Fast-growing Utah County community on JVWCD water, with the same arsenic, chromium-6, and hard water profile as Lehi and American Fork.",
     waterSource: "Jordan Valley Water Conservancy District purchased surface water",
     commonIssues: [
       "Arsenic detected above EWG guidelines",
@@ -794,7 +794,7 @@ export const cities: CityData[] = [
     description:
       "Park City and the Snyderville Basin are served by Mountain Regional Water, where EWG testing flags arsenic at 315x its health guideline alongside elevated disinfection byproducts and detectable PFAS. Hard mountain groundwater adds to the need for treatment.",
     waterSource:
-      "Mountain Regional Water Special Service District — Snyderville Basin wells and surface water",
+      "Mountain Regional Water Special Service District: Snyderville Basin wells and surface water",
     commonIssues: [
       "Arsenic detected at 315x the EWG health guideline",
       "Disinfection byproducts (TTHMs, haloacetic acids) far above EWG guidelines",

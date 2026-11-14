@@ -2,11 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import { getBreadcrumbSchema } from "../utils/schema";
 import LeadForm from "../components/LeadForm.astro";
-import { Image } from "astro:assets";
+import OfferBanner from "../components/OfferBanner.astro";
+import { Image, getImage } from "astro:assets";
 
-import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
+import utilityRoomSystemImg from "../assets/real/utility-room-system-wide.jpg";
 
 export const prerender = true;
+
+// Social share image: a 1200x630 JPEG cut from a real Blue Logic install photo,
+// so the declared OG dimensions match the file.
+const ogImage = await getImage({
+  src: utilityRoomSystemImg,
+  width: 1200,
+  height: 630,
+  fit: "cover",
+  position: "center",
+  format: "jpg",
+  quality: 75,
+});
 
 const siteUrl = "https://www.bluelogicwater.com";
 const schemas = [
@@ -24,9 +37,11 @@ const schemas = [
   og={{
     title: "The Problem In The Water Is Real | Blue Logic Water",
     description:
-      "Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real — and meet the team behind Blue Logic Water.",
-    image: handInWaterImg.src,
-    imageAlt: "Hand touching clean water — purity and transparency",
+      "Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real, and meet the team behind Blue Logic Water.",
+    image: ogImage.src,
+    imageWidth: "1200",
+    imageHeight: "630",
+    imageAlt: "Blue Logic Purification System installed in a Utah home's utility room",
   }}
 >
   <section class="relative bg-linear-to-b from-quartz via-white to-quartz px-4 py-16 md:py-24">
@@ -78,7 +93,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Draper</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic — 450× the health guideline
+                Arsenic: 450× the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -91,7 +106,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Sandy</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                HAA9 — 409× the health guideline
+                HAA5: 306× the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -104,7 +119,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Salt Lake City</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic — 135× the health guideline
+                Arsenic: 135× the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -117,7 +132,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Park City</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic — 343× the health guideline
+                Arsenic: 315× the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -134,7 +149,7 @@ const schemas = [
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
-                <span>Water softeners help with hardness — they don’t address what’s dissolved in the water.</span>
+                <span>Water softeners help with hardness, but they don’t address what’s dissolved in the water.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -148,7 +163,7 @@ const schemas = [
             <ul class="space-y-3 text-obsidian-muted">
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
-                <span><strong class="text-foreground">Up to 99%</strong> contaminant reduction with RO-based purification.</span>
+                <span><strong class="text-foreground">Reverse osmosis</strong> reduces dissolved solids, lead, arsenic, fluoride, nitrates, and PFAS.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -219,7 +234,7 @@ const schemas = [
           <aside class="rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
             <h2 class="font-serif text-2xl text-foreground">What you get (no guesswork)</h2>
             <p class="mt-3 text-obsidian-muted leading-relaxed">
-              Water quality is complicated — we make it simple. You’ll get clear next steps and a solution tailored to your home.
+              Water quality is complicated. We make it simple. You’ll get clear next steps and a solution tailored to your home.
             </p>
             <ul class="mt-5 space-y-3 text-obsidian-muted">
               <li class="flex gap-3">
@@ -247,8 +262,8 @@ const schemas = [
 
           <div class="mt-6 space-y-4 text-obsidian-muted leading-relaxed">
             <p>
-              Blue Logic is a nationwide team of water experts dedicated to solving real water
-              problems, not selling gimmicks. We combine science, experience, and a proven
+              Blue Logic is a family-owned Utah water treatment company, based in Murray, dedicated
+              to solving real water problems, not selling gimmicks. We combine science, experience, and a proven
               process to deliver whole-home purification systems tailored to each customer’s
               needs.
             </p>
@@ -305,10 +320,11 @@ const schemas = [
 
           <div class="mt-8">
             <Image
-              src={handInWaterImg}
-              alt="Hand touching purified water"
+              src={utilityRoomSystemImg}
+              alt="Blue Logic Purification System installed in a Utah home's utility room, beside the water heater and plumbing manifold"
               class="rounded-2xl w-full object-cover aspect-4/3 border border-border"
-              widths={[480, 768]}
+              loading="lazy"
+              widths={[480, 768, 1100]}
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={55}
             />
@@ -326,7 +342,7 @@ const schemas = [
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
                 <div>
                   <div class="font-semibold text-foreground">Real problems, not fear</div>
-                  <div class="text-sm text-obsidian-muted">We use local reports and practical guidance — not hype.</div>
+                  <div class="text-sm text-obsidian-muted">We use local reports and practical guidance, not hype.</div>
                 </div>
               </div>
               <div class="flex items-start gap-3">
@@ -340,7 +356,7 @@ const schemas = [
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
                 <div>
                   <div class="font-semibold text-foreground">Ongoing support</div>
-                  <div class="text-sm text-obsidian-muted">We don’t disappear after install — we stay accountable.</div>
+                  <div class="text-sm text-obsidian-muted">We don’t disappear after install. We stay accountable.</div>
                 </div>
               </div>
             </div>
@@ -349,5 +365,7 @@ const schemas = [
       </div>
     </div>
   </section>
+
+  <OfferBanner />
 
 </Layout>

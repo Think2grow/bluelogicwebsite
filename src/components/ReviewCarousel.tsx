@@ -182,7 +182,11 @@ export default function ReviewCarousel() {
                 {currentReview.profilePhoto && (
                   <img
                     src={currentReview.profilePhoto}
-                    alt={currentReview.author}
+                    alt=""
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
                     className="w-12 h-12 rounded-full object-cover"
                   />
                 )}

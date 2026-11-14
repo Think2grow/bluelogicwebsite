@@ -1,0 +1,51 @@
+---
+// "Meet Jared" owner video. Click-to-load facade: only a local poster image ships
+// with the page; the YouTube iframe is created when the visitor presses play,
+// so the video adds nothing to page weight or LCP. The transcript is real page
+// text (inside <details>) for readers, search engines and AI answer engines.
+// Pair with getVslSchema() from src/data/vsl.ts in the page's schema array.
+import VslPlayer from "./VslPlayer.astro";
+import { VSL, VSL_TRANSCRIPT } from "../data/vsl";
+
+interface Props {
+  heading?: string;
+  intro?: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  showCta?: boolean;
+}
+
+const {
+  heading = "Meet Jared, One of Our Owners",
+  intro = "A two-and-a-half-minute introduction to how we work: education first, a free test of your own water, and a system matched to what your home actually needs.",
+  ctaHref = "/free-water-test/",
+  ctaLabel = "Book Your Free Water Test",
+  showCta = true,
+} = Astro.props;
+---
+
+<section class="vsl-section bg-card py-16 md:py-24 px-4 md:px-8" aria-labelledby="vsl-heading">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 id="vsl-heading" class="text-3xl md:text-4xl font-serif text-foreground mb-3">{heading}</h2>
+      <p class="text-muted-foreground max-w-2xl mx-auto">{intro}</p>
+    </div>
+
+    <VslPlayer />
+
+    <details class="mt-6 rounded-xl border border-border bg-card p-5">
+      <summary class="cursor-pointer font-semibold text-foreground">Read the video transcript</summary>
+      <div class="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
+        {VSL_TRANSCRIPT.map((p) => <p>{p}</p>)}
+      </div>
+    </details>
+
+    {showCta && (
+      <div class="mt-8 text-center">
+        <a href={ctaHref} class="inline-block rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground shadow-lg transition hover:opacity-90">
+          {ctaLabel}
+        </a>
+      </div>
+    )}
+  </div>
+</section>

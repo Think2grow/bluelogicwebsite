@@ -1,220 +1,142 @@
 # Facts List - Blue Logic Water
 
-This is a collection of facts and phrases that have been checked and can be used across the site. Information in the site that conflicts with these facts should be changed.
+Checked facts and phrases that can be used across the site. Site copy that conflicts with these facts should be changed.
 
-> **Source:** Official Blue Logic print brochures (WH-Pure v3.1 and Filtration Brochure v1)
+Updated 2026-11. Sources, in order of authority:
+
+- BlueLogicWebApp `data/blue-logic-knowledge-base.md` (product facts, warranty, how each system is built)
+- BlueLogicWebApp `lib/sale/catalog.ts` (prices and what each system includes)
+- `src/data/offer.ts` in this repo (the current offer, disclosure, prices, add-ons, warranty text). Pages import from it; never retype offer or price text.
+
+The 2025 print brochures (WH-Pure v3.1, Filtration Brochure v1) are out of date: they describe the retired "7 media" blend. Do not quote them.
 
 ---
 
 ## Company Information
 
-| Field            | Value                                          |
-| ---------------- | ---------------------------------------------- |
-| **Company Name** | Blue Logic / Blue Logic Water                  |
-| **Phone**        | (801) 980-2583                                 |
-| **Website**      | bluelogicwater.com                             |
-| **Service Area** | Nationwide, Utah Origin and Focused for Growth |
-| **Tagline**      | "The Logic Behind Purity"                      |
+| Field            | Value                                                                                   |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| **Legal Name**   | Blue Logic LLP                                                                          |
+| **Brand Name**   | Blue Logic Water (also "Blue Logic")                                                    |
+| **Type**         | Family-owned local Utah water treatment company, warehouse in Murray, Utah              |
+| **Owners**       | Jared and Scott                                                                         |
+| **Phone**        | (801) 980-2583                                                                          |
+| **Website**      | bluelogicwater.com                                                                      |
+| **Service Area** | Salt Lake, Davis and Utah Counties, the Tooele valley, and the Ogden/Weber metro        |
+| **Tagline**      | "The Logic Behind Purity"                                                               |
 
-### About Us Statement (Owner-Verified)
-
-> "Blue Logic is a nationwide team of water experts dedicated to solving real water problems, not selling gimmicks. We combine science, experience, and a proven process to deliver whole-home purification systems tailored to each customer's needs. Our mission is simple: protect your health, home, and peace of mind with clean water everywhere it matters."
-
-### Brand Philosophy Quote
-
-> "We are made of water. Somewhere along the way, the world forgot that truth. Blue Logic is more than a filter, it's a movement to bring logic back to what matters most. Because pure water isn't a luxury - it's the foundation of real health." — Blue Logic
+Service area rules: never promise a local tech or an in-home visit outside the service area, and never tell anyone their town is outside the area. Out-of-area inquiries are routed for manual review.
 
 ---
 
-## Products
+## What We Sell
 
-### Product 1: Blue Logic Whole-Home Water Purification System (WH-Pure)
+Prices are out the door: standard installation and tax included. Source: `PRICES` and `ADD_ONS` in `src/data/offer.ts`. General range: $2,999 to $19,999 depending on the home. Do not add prices to pages that do not already show them.
 
-- Reverse osmosis-based whole-home purification system
-- "Better-than-bottled water at every tap"
+| System                             | Price   | What it is                                                                                                                                                                  |
+| ---------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Blue Logic Softener**            | $2,999  | Soft water that ends hard-water scale, spots and dry skin. Treats calcium and magnesium; also handles dissolved iron. Softening only, not filtration.                       |
+| **Blue Logic Filtration**          | $5,999  | Whole-home softening and filtration in ONE self-cleaning tank, plus an under-sink reverse osmosis system with its own tap at the kitchen sink. The most common choice.     |
+| **Blue Logic Purification System** | $15,999 | Whole-home reverse osmosis: Blue Logic Filtration in front, a sediment pre-filter, RO, a 165-gallon food-grade storage tank, and a Grundfos SCALA2 constant-pressure pump. |
 
-### Product 2: Blue Logic Whole-Home Water Filtration System
+| Add-on                           | Price  |
+| -------------------------------- | ------ |
+| Under-Sink RO                    | $999   |
+| UV Purification Add-On           | $799   |
+| Grundfos SCALA2 Pressure Pump    | $1,699 |
 
-- Multi-media filtration system
-- "7 Medias. One System. Pure Logic."
-
----
-
-## Technical Specifications
-
-| Specification                | Value                                                                                                                              |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| **Membrane Filtration**      | 0.0001 microns                                                                                                                     |
-| **Contaminant Removal Rate** | Up to 99%                                                                                                                          |
-| **System Type**              | Commercial Grade Reverse Osmosis Unit                                                                                              |
-| **Media Count (Filtration)** | 7 different media types (zinc-infused carbon, copper-infused carbon, catalytic carbon, evoresin, katalox, aluminosilicate, garnet) |
-
-### WH-Pure System Components
-
-1. **Purification Pretreatment** - Blue Logic Filtration Mix (multi-stage blend)
-2. **Commercial Grade Reverse Osmosis Unit** - 0.0001 micron membranes
-3. **Water Storage Tank & Sending Pump** - High-capacity tank with pressurized sending pump
-
-### Filtration Media Types
-
-- Zinc-infused media
-- Catalytic layers
-- Carbon layers
-- Multiple precision media layers
-- Oxidation technology components
+Systems are modular: a client can buy Filtration and add RO later, or start with a Softener and upgrade.
 
 ---
 
-## How Whole-Home RO Works (Step-by-Step)
+## Blue Logic Filtration: Sell the Outcome
 
-1. **Water Inlet** - Water comes in from the water main
-2. **Water Softening** - Water goes into a water softener. The water softener tank and salt brine tub work together to remove various minerals from the water. Waste brine water is drained.
-3. **Multi-Stage Filtration** - Softened water goes through 3 stages of filtration material and media to remove contaminants. Steps 2 and 3 are referred to as "Purification Pretreatment".
-4. **Reverse Osmosis** - Filtered and softened water goes into the RO system for particulate and chemical filtering. The RO system drains some waste water. Pure water is sent into a holding tank.
-5. **On-Demand Delivery** - On demand, water goes from the holding tank through a high-quality, reliable, and quiet pump into the water main to supply the entire house
-6. **Bypass Valve** - Normal operation leaves a bypass valve between the water inlet and the water filtration system closed, but it can be opened for maintenance or emergencies
+Never name the media inside the tank, never count layers or stages, and never describe Filtration as filter cartridges. It is one self-cleaning tank that regenerates automatically based on water use (meter-initiated), with a brine tank alongside.
 
----
+What the homeowner gets:
 
-## Verified Claims & Statistics
+- Soft water: no new scale on fixtures, glass or inside appliances
+- Chlorine and chloramine taste and odor gone at every tap, including showers and baths
+- Sediment and rust filtered out: visibly clear water, easier on plumbing and clothing
+- Appliances and fixtures protected
+- Softer skin and hair
+- Purified drinking and cooking water at the kitchen tap (the included under-sink RO)
 
-| Claim                                                                        | Context                |
-| ---------------------------------------------------------------------------- | ---------------------- |
-| Removes up to **99% of contaminants**                                        | RO unit specification  |
-| Filters to **0.0001 microns** of purity                                      | Membrane specification |
-| Only **two processes truly purify water** - distillation and reverse osmosis | Scientific statement   |
-| Water contains **hundreds of contaminants** your eyes can't see              | Problem statement      |
-| Delivers **"better-than-bottled water"** at every tap                        | Product claim          |
-| **Rivals bottled quality** straight from every tap                           | Product claim          |
+Owner upkeep: keep salt in the brine tank (Costco, Walmart and similar stores). Blue Logic does annual maintenance, including the under-sink RO filters and a system check.
 
----
+### Under-Sink RO (included with Filtration, $999 on its own)
 
-## Contaminants Addressed (Verified List)
-
-### Metals & Minerals
-
-- Iron
-- Manganese
-- Lead
-- Arsenic
-- Copper
-- Chromium
-
-### Chemical Contaminants
-
-- Chlorine
-- Chloramines
-- PFAS (forever chemicals)
-- Pesticides
-- Pharmaceutical residue/traces
-- Chemical by-products
-
-### Other Contaminants
-
-- Microplastics
-- Salts
-- Hydrogen sulfide (rotten-egg smell)
-- Bacteria
-- Viruses
-- Biofilm
-- Sediment (sand, rust, particles)
-- Hardness minerals (calcium, magnesium)
-- Tannins
+- Dedicated tap at the kitchen sink; tankless; internal pump; plugs into a standard outlet
+- Reduces TDS, heavy metals including lead and arsenic, fluoride, nitrates, PFAS, pesticides, pharmaceuticals, microplastics, bacteria, viruses, bad taste and odor (at that one tap)
+- Filters typically last about a year (replaced at annual maintenance)
 
 ---
 
-## Full Spectrum Contaminant Reduction (8 Categories)
+## Blue Logic Purification System (Whole-Home RO)
 
-1. **Metals & Minerals** - Removes iron, manganese, lead, arsenic, copper, chromium
-2. **Gases & Odors** - Neutralizes hydrogen sulfide ("rotten-egg" smell), earthy aftertaste
-3. **Chemical Contaminants** - Captures chlorine, chloramines, by-products, PFAS, pesticides, pharmaceutical traces
-4. **Sediment & Clarity** - Filters fine sand, rust, particles; protects plumbing/appliances/clothing
-5. **Hardness & Scale** - Removes hardness minerals causing white spots and scale
-6. **Microbial Protection** - Targets bacteria, viruses, biofilm without chemicals
-7. **Taste & Odor Improvement** - Removes metallic flavor, chlorine smell, discoloration from minerals/tannins
-8. **Whole-Home Performance Benefits** - Balances water chemistry, protects appliances, extends filter/RO life
+1. **Blue Logic Filtration** (pre-treatment): softens and filters, protects the membrane
+2. **Sediment pre-filter**: full-flow, 5 micron, catches fine particles before the membrane (a pre-filter is fine to mention on Purification pages only)
+3. **Reverse osmosis**: removes contaminants larger than about 0.0001 microns; reduces TDS, hardness, heavy metals including lead and arsenic, fluoride, nitrates, PFAS, pharmaceuticals, pesticides, microplastics, bacteria and viruses
+4. **165-gallon storage tank**: food-grade, BPA-free and phthalate-free polyethylene, NSF/ANSI and FDA compliant materials. Homes that need more add tanks as modules (one, two or more 165-gallon tanks)
+5. **Grundfos SCALA2 constant-pressure pump**: variable speed, automatic pressure regulation, low-flow and dry-run protection, soft start; purified water at normal city pressure
 
----
+RO efficiency: about 3 gallons purified for every 1 sent to drain (up to 75% recovery), made safe by the Filtration in front.
 
-## Features & Benefits
+Never say:
 
-### Core Features
-
-| Feature                 | Description                                                              |
-| ----------------------- | ------------------------------------------------------------------------ |
-| **Molecular Precision** | Reverse osmosis separates contaminants from water at the molecular level |
-| **Smart Efficiency**    | More efficient than distillation - works quietly and continuously        |
-| **Commercial Grade**    | High-capacity RO unit designed for whole-home use                        |
-| **Passthrough Storage** | High-capacity tank with pressurized delivery                             |
-| **Consistent Flow**     | Pressurized sending pump ensures flow and pressure at every tap          |
-
-### Customer Benefits
-
-- **Save Money Every Day** - Eliminate bottled water costs, reduce spending on soaps, cleaners, appliance repairs; "long-term savings that make your system pay for itself"
-- **Pure Flavor, Every Glass & Meal** - Clean, chemical-free water for coffee, recipes, cooking
-- **Healthier Skin & Hair** - Reduces dryness, irritation, and damage from chlorine and hard minerals
+- 1:1 or 50% recovery
+- "2,400 GPD" as real output (it is a nameplate rating, not what a home sees)
+- "Removes up to 99% of contaminants", "50% smaller", "10x quieter", "half the cost" (not in the sources)
+- "NSF-certified system" or "NSF-certified components" (only the storage tank's NSF/ANSI and FDA compliant materials are supported)
 
 ---
 
-## Sales Process (3 Steps)
+## Current Offer
 
-| Step | Name                        | Description                                                                                                                                                                                                                               |
-| ---- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1    | **Free Consultation**       | Meet with a Blue Logic water expert to understand what's really in your water. Walk through local report, answer questions, help make sense of what matters most for home and family.                                                     |
-| 2    | **Video Walkthrough**       | Verify it fits and works for you. Detailed walkthrough ensures system meets needs, fits space, gives plumbers everything needed for smooth install. "Blue Logic 'secret sauce' step that sets us apart from anyone else in the industry." |
-| 3    | **Coordinate Installation** | Coordinate installation from start to finish. Find the right plumber, train them on the system, coordinate every detail. "This is how we ensure your system is installed right the first time."                                           |
+Use `OFFER_HEADLINE`, `OFFER_SUBHEAD` and `OFFER_DISCLOSURE` from `src/data/offer.ts`.
 
-### Service Promises
+- $250 off, OR $0 down and no payments for 90 days, on systems purchased by December 31, 2026. Cannot be combined.
+- Financing: Pinnacle Finance, qualifying homeowners, subject to credit approval. Checking eligibility is a soft credit inquiry.
+- LEGAL: any page that says "$0 down" or "no payments" must also show `OFFER_DISCLOSURE` on that same page (Regulation Z trigger terms).
 
-- **Expert Guidance** - "Our water experts make sure you get the right system for lasting results."
-- **Nationwide Service** - "No matter where you live, we bring our proven process to your doorstep."
-- "Water quality is complicated - we make it simple."
-- Systems are "tailored for proper function, easy fitment, and long-term performance"
-- "We don't take a one-size-fits-all approach"
+Retired, never use: in-house financing, half down, no third-party lender, no credit check, price-match guarantee, "free under-sink RO ($1,000 value)", free 250-gallon tank upgrade, any 250-gallon option, "$5,995 to $19,999".
 
 ---
 
-## Competitive Differentiation
+## Warranty
 
-### vs. Water Softeners
+Source: `WARRANTY` in `src/data/offer.ts`.
 
-> "A water softener only removes hardness minerals like calcium and magnesium. It does nothing for chlorine, metals, chemicals, PFAS, or bacteria that flow through your home every day. The Blue Logic Whole-Home Filtration System goes beyond softening to deliver truly clean, healthy water to every tap."
-
-> "Softeners only swap minerals - they don't remove what's truly harmful."
-
-### vs. Municipal Water Treatment
-
-> "Municipal treatment protects you from bacteria, not chemical byproducts."
-
-### vs. Bottled Water
-
-> "Bottled water creates waste and still carries microplastics."
-
-### vs. Traditional Filters
-
-> "Filtration can only take you so far. Filters remove many impurities, but they can't separate water from the contaminants that dissolve into it."
-
-> "Chemicals traditional filters often miss" (referring to PFAS, pesticides, pharmaceutical traces)
-
-### vs. Distillation
-
-> "Distillation is slow, wasteful, and impractical for everyday use."
-
-> "While distillation wastes time and energy boiling and condensing water, reverse osmosis delivers the same level of purity with far greater efficiency."
+- 5 years against defects in materials and workmanship
+- 12 months on installation workmanship
+- Consumables are not covered: filters, cartridges, RO membranes, salt, antiscalant
+- Original purchaser and installation location; not transferable unless Blue Logic agrees in writing
+- A visit outside scheduled maintenance, including a warranty check, carries a $129 service call fee
 
 ---
 
-## Problem Statement / Market Education
+## Softener vs. Filtration vs. Purification
 
-> "Most people never question what's really in their water. It may look clear but hidden beneath the surface are hundreds of contaminants your eyes can't see and your softener can't stop. From chlorine and chloramines to PFAS, heavy metals, and pharmaceutical residue, our water has quietly become a delivery system for everything modern life leaves behind."
+- A softener is for hardness and scale. Softening is not filtration; it does not remove chlorine, taste and odor, or other contaminants.
+- Many companies sell resin plus carbon as "filtration." Blue Logic's position: that is softening with a taste polish, not true filtration.
+- Filtration: soft, filtered water at every tap, purified RO water at the kitchen tap.
+- Purification: purified water at every tap in the home. The best Blue Logic offering, though not the right fit for every home.
 
-> "What's worse, most of the systems we rely on were never designed to handle it."
+RO and minerals (objection handling): RO water does not cause nutritional deficiencies. Most essential minerals come from food, not water, and low-mineral water does not leach nutrients from the body.
 
 ---
 
-## Mission Statement
+## Sales Process
 
-> "At Blue Logic, we believe you deserve to know the truth. The problems in the water are real - but they're also fixable. With modern filtration designed for modern contaminants, we're putting logic back where it belongs - between your family and your faucet."
+| Step | Name                        | Description                                                                                                                                         |
+| ---- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Free Consultation**       | Meet with a Blue Logic water expert, walk through the local water report, answer questions.                                                         |
+| 2    | **Video Walkthrough**       | Confirm the system meets the home's needs, fits the space, and gives the installer everything needed for a smooth install.                           |
+| 3    | **Coordinate Installation** | Blue Logic coordinates the install from start to finish. Systems usually go in the utility room; a brine tank can go in the garage on a shared wall. |
+| 4    | **Quality Check**           | Check pressure and flow, test the treated water before leaving.                                                                                     |
+| 5    | **Ongoing Support**         | Annual maintenance, filter reminders, and troubleshooting by phone first, then a technician if needed.                                              |
+
+Any non-standard work (long runs, significant drywall, custom scenarios) is discussed during the consult and before work is done.
 
 ---
 
@@ -222,23 +144,18 @@ This is a collection of facts and phrases that have been checked and can be used
 
 - "The Logic Behind Purity"
 - "Pure Logic for Pure Water"
-- "7 Medias. One System. Pure Logic."
-- "Modern engineering meeting nature's design"
-- "Your home deserves true purification"
-- "Clean, consistent, better-than-bottled water"
-- "Better-than-bottled water at every tap"
-- "Rivals bottled quality straight from every tap"
 - "Protect your health, home, and peace of mind"
 - "Clean water everywhere it matters"
-- "Pure water isn't a luxury - it's the foundation of real health"
+- "Rivals bottled quality straight from every tap" (Filtration)
+- "Pure water at every tap" (Purification)
+
+Retired: "7 Medias. One System. Pure Logic." and any phrase that counts media, layers or stages in the Filtration tank.
 
 ---
 
 ## Key Scientific Facts
 
-1. Only **two processes truly purify water**: distillation and reverse osmosis
-2. Reverse osmosis filters to **0.0001 microns** (molecular level)
-3. RO removes up to **99% of contaminants**
-4. Distillation is slow and energy-intensive; RO is efficient and continuous
-5. Traditional filters cannot remove dissolved contaminants
-6. Water softeners only exchange hardness minerals (calcium/magnesium) for sodium - they do not remove contaminants
+1. Reverse osmosis removes contaminants larger than about 0.0001 microns, including what is dissolved in the water, not just what is suspended in it
+2. Filtration traps or binds contaminants; it cannot separate water from everything dissolved in it
+3. Water softeners exchange hardness minerals (calcium, magnesium); they do not filter contaminants
+4. Hot showers expose people to chlorine and disinfection byproducts through breathing and skin contact, which is why Blue Logic treats the whole home, not just drinking water

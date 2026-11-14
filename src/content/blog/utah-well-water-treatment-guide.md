@@ -2,16 +2,16 @@
 slug: utah-well-water-treatment-guide
 title: "Well Water Treatment Guide for Rural Utah Homes"
 seoTitle: "Utah Well Water Treatment Guide (Testing + Filtration) | Blue Logic Water"
-description: "On a private well in rural Utah? No utility tests or treats your water — that's on you. Here's what's commonly in Utah well water, how to test for it, and the right treatment for each problem."
+description: "On a private well in rural Utah? No utility tests or treats your water; that's on you. Here's what's commonly in Utah well water, how to test for it, and the right treatment for each problem."
 author: "Blue Logic Water"
 date: 2026-06-17
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-wide.jpg"
 ---
 
 If your home runs on a private well, here's the part nobody tells you at closing: **no
 utility tests or treats your water.** Municipal customers have a water department and an
 annual quality report. Well owners have neither. Under the federal Safe Drinking Water Act,
-private wells are explicitly *not* regulated — the EPA puts testing and treatment squarely on
+private wells are explicitly *not* regulated; the EPA puts testing and treatment squarely on
 the homeowner.
 
 That's not a reason to worry; it's a reason to know what you have. This guide covers what's
@@ -20,21 +20,21 @@ problem.
 
 ## Why Utah well water needs a closer look
 
-Utah's geology is the same reason its municipal water is so hard and mineral-heavy — except a
+Utah's geology is the same reason its municipal water is so hard and mineral-heavy, except a
 well taps it directly, with no treatment plant in between. Depending on your location and
 depth, a Utah well can carry:
 
-- **Hardness** (calcium/magnesium) — often very high, the same regional pattern shown on the
+- **Hardness** (calcium/magnesium): often very high, the same regional pattern shown on the
   [Utah water hardness by city map](/blog/utah-water-hardness-by-city/).
-- **Iron and manganese** — staining (rusty or black), metallic taste, clogged fixtures.
-- **Arsenic** — naturally occurring in Utah bedrock and a real concern in many wells;
+- **Iron and manganese:** staining (rusty or black), metallic taste, clogged fixtures.
+- **Arsenic:** naturally occurring in Utah bedrock and a real concern in many wells;
   colorless, tasteless, and only found by testing. (More:
   [arsenic in Utah drinking water](/blog/arsenic-utah-drinking-water/).)
-- **Uranium and radium** — naturally occurring radionuclides in some Utah groundwater.
-- **Nitrates** — elevated near agricultural and septic activity; a specific risk for infants.
-- **Coliform bacteria** — from surface intrusion or a compromised well cap or casing.
-- **Hydrogen sulfide** — the "rotten egg" smell.
-- **Sediment / turbidity** — sand and fine particles, common in older or shallow wells.
+- **Uranium and radium:** naturally occurring radionuclides in some Utah groundwater.
+- **Nitrates:** elevated near agricultural and septic activity; a specific risk for infants.
+- **Coliform bacteria:** from surface intrusion or a compromised well cap or casing.
+- **Hydrogen sulfide:** the "rotten egg" smell.
+- **Sediment / turbidity:** sand and fine particles, common in older or shallow wells.
 
 ## Step 1: Test before you treat
 
@@ -46,7 +46,7 @@ color, or after any work on the well.
 
 ## Step 2: Match the treatment to the problem
 
-Well water treatment is not one box — it's the right combination for your specific results.
+Well water treatment is not one box; it's the right combination for your specific results.
 The common building blocks:
 
 | Problem in your well | Typical treatment |
@@ -61,8 +61,8 @@ The common building blocks:
 | Nitrates | Reverse osmosis or anion exchange |
 
 Most rural Utah homes need a **staged system**: a sediment filter first, then treatment for
-hardness and iron, then a final barrier — often [reverse osmosis](/blog/water-softener-vs-reverse-osmosis-utah/)
-— for the contaminants that filtration alone can't fully remove, like arsenic and nitrates.
+hardness and iron, then a final barrier (often [reverse osmosis](/blog/water-softener-vs-reverse-osmosis-utah/))
+for the contaminants that filtration alone can't fully remove, like arsenic and nitrates.
 
 ## Step 3: Maintain it
 
@@ -73,16 +73,18 @@ up as your well changes season to season.
 ## Where a treatment company fits with your well pro
 
 If you drilled or service the well, you handle the water *delivery*. Treatment is a separate
-job — making that water safe and pleasant to use inside the home. The two go hand in hand,
-which is why Blue Logic regularly works alongside well and septic professionals across rural
-Utah. (If you're a well or septic pro and your customers ask about treatment, we're glad to
+job: making that water safe and pleasant to use inside the home. The two go hand in hand,
+which is why Blue Logic works alongside well and septic professionals throughout the
+communities we serve. (If you're a well or septic pro and your customers ask about treatment, we're glad to
 be the resource you point them to.)
 
 ## Start with a test
 
-The fastest way to find out what your well is actually delivering is a **free in-home water
-test** — a Blue Logic specialist measures hardness and chlorine on the spot and walks you
-through which further tests make sense for your well, no cost or obligation.
+The fastest way to find out what your well is actually delivering is a **free water test**.
+For homes in our service area (Salt Lake, Davis and Utah Counties, the Tooele valley and the
+Ogden/Weber metro), a Blue Logic specialist measures hardness and walks you through which further
+lab tests make sense for your well, with no cost or obligation. Elsewhere in Utah, contact us and
+we'll help you plan the right testing.
 
 [Schedule a free water test →](/free-water-test/)
 

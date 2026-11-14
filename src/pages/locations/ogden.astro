@@ -11,15 +11,15 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What makes Ogden's water different from the rest of the Wasatch Front?",
-    answer: "Ogden is served by Ogden City Public Utilities rather than the Jordan Valley Water Conservancy District that serves much of Salt Lake County. Ogden draws from a blend of surface water (the Ogden River and Weber River watersheds) and groundwater sources including artesian wells. This multi-source blend creates high variability in water hardness — Ogden can range from 10 to 28 GPG depending on which sources are active. The groundwater-influenced supply also tends to have elevated manganese and iron compared to purely surface-water communities.",
+    answer: "Ogden is served by Ogden City Public Utilities rather than the Jordan Valley Water Conservancy District that serves much of Salt Lake County. Ogden draws from a blend of surface water (the Ogden River and Weber River watersheds) and groundwater sources including artesian wells. This multi-source blend creates high variability in water hardness: Ogden can range from 10 to 28 GPG depending on which sources are active. The groundwater-influenced supply also tends to have elevated manganese and iron compared to purely surface-water communities.",
   },
   {
     question: "Does Ogden water have a manganese or iron problem?",
-    answer: "Manganese and iron are naturally occurring elements found in Ogden's groundwater sources. The EWG Tap Water Database flags manganese for Ogden above EWG health guidelines. At elevated levels, manganese can cause dark staining on fixtures and laundry, and a metallic taste in water. Blue Logic's 7-layer filtration system includes a Katalox stage specifically designed to reduce iron and manganese. A free water test will confirm whether iron or manganese is a meaningful concern for your specific address.",
+    answer: "Manganese and iron are naturally occurring elements found in Ogden's groundwater sources. The EWG Tap Water Database flags manganese for Ogden above EWG health guidelines. At elevated levels, manganese can cause dark staining on fixtures and laundry, and a metallic taste in water. When a water test shows significant iron or manganese, Blue Logic adds a dedicated iron-reduction tank in front of the Filtration system, sized to your water. A free water test will confirm whether iron or manganese is a meaningful concern for your specific address.",
   },
   {
     question: "How hard is Ogden's water?",
-    answer: "Ogden's water hardness is highly variable — typically in the 10–28 GPG range depending on which sources are active and the time of year. During periods when artesian well sources are heavily used, hardness spikes significantly. During snowmelt season when surface water is dominant, hardness is lower but organic content (and disinfection byproduct potential) increases. This variability makes a whole-home system particularly valuable in Ogden — it handles your water year-round regardless of the active blend.",
+    answer: "Ogden's water hardness is highly variable, typically in the 10–28 GPG range depending on which sources are active and the time of year. During periods when artesian well sources are heavily used, hardness spikes significantly. During snowmelt season when surface water is dominant, hardness is lower but organic content (and disinfection byproduct potential) increases. This variability makes a whole-home system particularly valuable in Ogden: it handles your water year-round regardless of the active blend.",
   },
   {
     question: "Does Blue Logic serve North Ogden, South Ogden, and surrounding Weber County communities?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "What system does Blue Logic recommend for Ogden?",
-    answer: "Given Ogden's variable hardness, manganese and iron concerns, and the elevated arsenic flagged in the EWG database, the whole-home filtration system is a strong fit for most Ogden households. The Katalox stage addresses iron and manganese specifically, and the integrated softening handles the wide hardness range. For homeowners with more specific contaminant concerns, the RO purification upgrade provides the most complete coverage. Your free water test confirms which approach is right for your home.",
+    answer: "Given Ogden's variable hardness, manganese and iron concerns, and the elevated arsenic flagged in the EWG database, the whole-home filtration system is a strong fit for most Ogden households. The integrated softening handles the wide hardness range, and homes with significant iron or manganese get a dedicated iron-reduction tank in front. For homeowners with more specific contaminant concerns, the RO purification upgrade provides the most complete coverage. Your free water test confirms which approach is right for your home.",
   },
 ];
 
@@ -56,7 +56,7 @@ const schemas = [
         Water Treatment for Ogden, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Ogden draws water from a unique blend of river sources and artesian wells — creating
+        Ogden draws water from a unique blend of river sources and artesian wells, creating
         high variability in hardness and elevated manganese and iron concerns. Blue Logic
         installs whole-home filtration and RO systems built for Ogden's specific water profile.
       </p>
@@ -89,12 +89,12 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Variable</div>
           <div class="font-semibold text-foreground mb-1">Manganese &amp; Iron</div>
-          <p class="text-xs text-muted-foreground">From groundwater and artesian well sources — causes staining and metallic taste.</p>
+          <p class="text-xs text-muted-foreground">From groundwater and artesian well sources; causes staining and metallic taste.</p>
         </div>
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">10–28 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness (variable)</div>
-          <p class="text-xs text-muted-foreground">Highly variable by season and active source — among the most variable on the Wasatch Front.</p>
+          <p class="text-xs text-muted-foreground">Highly variable by season and active source, among the most variable on the Wasatch Front.</p>
         </div>
       </div>
 
@@ -107,7 +107,7 @@ const schemas = [
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Manganese</span>
-            <span class="badge badge-alert">Above EWG health guideline — causes staining</span>
+            <span class="badge badge-alert">Above EWG health guideline, causes staining</span>
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Molybdenum</span>
@@ -115,7 +115,7 @@ const schemas = [
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Water hardness (variable)</span>
-            <span class="badge badge-primary">10–28 GPG — Hard to Very Hard</span>
+            <span class="badge badge-primary">10–28 GPG, Hard to Very Hard</span>
           </div>
         </div>
         <div class="mt-5 pt-5 border-t border-border">
@@ -130,7 +130,7 @@ const schemas = [
         <p class="text-sm text-muted-foreground leading-relaxed mb-3">
           Most Wasatch Front communities rely primarily on surface water from the JVWCD system.
           Ogden City Public Utilities operates its own infrastructure drawing from the Ogden River
-          and Weber River watersheds as well as a network of groundwater wells — including artesian
+          and Weber River watersheds as well as a network of groundwater wells, including artesian
           wells that produce naturally mineral-rich water. When artesian or groundwater sources are
           active (typically in late summer and fall), Ogden water hardness and mineral content
           spikes significantly.
@@ -157,9 +157,10 @@ const schemas = [
           <p class="text-sm text-muted-foreground leading-relaxed">
             The iron and manganese in Ogden's groundwater-influenced supply causes orange-brown
             rust staining on toilets, bathtubs, and sinks, and dark staining on laundry. This
-            staining is aesthetic — not a health risk at typical levels — but it's difficult to
-            remove and re-forms continuously in untreated water. Blue Logic's Katalox filtration
-            stage specifically addresses iron and manganese removal.
+            staining is aesthetic (not a health risk at typical levels), but it's difficult to
+            remove and re-forms continuously in untreated water. When your water test shows significant
+            iron or manganese, Blue Logic adds a dedicated iron-reduction tank in front of the
+            Filtration system.
           </p>
         </div>
         <div class="scenario-card">
@@ -175,20 +176,19 @@ const schemas = [
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Older Ogden Home Plumbing</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Ogden's established neighborhoods — many with homes built in the 1940s through 1970s —
+            Ogden's established neighborhoods, many with homes built in the 1940s through 1970s,
             have decades of mineral scale in their plumbing. Older galvanized steel pipes in
             particular accumulate scale and can leach metals into tap water. A whole-home
-            filtration system addresses incoming water quality, while the softening stage helps
+            filtration system addresses incoming water quality, while softening helps
             prevent new scale formation.
           </p>
         </div>
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Weber County Value</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Blue Logic serves Ogden and Weber County at the same pricing as Salt Lake and Utah
-            County — backed by a written price-match guarantee on any competing quote.
-            The price-match guarantee applies to any licensed competitor quote, including Weber
-            County dealers. In-house financing is available with half down and flexible terms.
+            Blue Logic serves the Ogden area at the same out-the-door pricing as Salt Lake and Utah
+            County, with installation and tax included. Financing is available through Pinnacle
+            Finance for qualifying homeowners, on approved credit.
           </p>
         </div>
       </div>
@@ -223,7 +223,7 @@ const schemas = [
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
-        Ogden Water Treatment — Common Questions
+        Ogden Water Treatment: Common Questions
       </h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
@@ -259,7 +259,7 @@ const schemas = [
         Schedule Your Free Ogden Water Test
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        Blue Logic serves Ogden and all of Weber County. A specialist will test your water
+        Blue Logic serves Ogden and the surrounding Weber County metro. A specialist will test your water
         on-site and recommend the right system. No cost, no obligation.
       </p>
       <LeadForm />

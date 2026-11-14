@@ -11,11 +11,11 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "How hard is Layton's water?",
-    answer: "Layton water is very hard — typically around 21 grains per gallon (approximately 352 mg/L). This is in the upper range of 'very hard' by WQA classification. At 21 GPG, scale accumulates rapidly on fixtures, showerheads, and inside hot water systems. Appliances in untreated Layton homes experience measurably faster mineral buildup than average US communities.",
+    answer: "Layton water is very hard, typically around 21 grains per gallon (approximately 352 mg/L). This is in the upper range of 'very hard' by WQA classification. At 21 GPG, scale accumulates rapidly on fixtures, showerheads, and inside hot water systems. Appliances in untreated Layton homes experience measurably faster mineral buildup than average US communities.",
   },
   {
     question: "Does Layton water have arsenic or other contaminant concerns?",
-    answer: "Yes. The EWG Tap Water Database flags approximately 10 contaminants in Layton's water supply above EWG health guidelines, including arsenic, haloacetic acids, and chloroform disinfection byproducts. All levels are within federal legal limits. Layton receives water through the Davis County/North Davis water system, which sources primarily from surface water treated with chlorination — the source of the disinfection byproduct levels.",
+    answer: "Yes. The EWG Tap Water Database flags approximately 10 contaminants in Layton's water supply above EWG health guidelines, including arsenic, haloacetic acids, and chloroform disinfection byproducts. All levels are within federal legal limits. Layton receives water through the Davis County/North Davis water system, which sources primarily from surface water treated with chlorination, the source of the disinfection byproduct levels.",
   },
   {
     question: "Does Blue Logic serve the Hill Air Force Base area and military families in Layton?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "What Blue Logic system is recommended for Layton?",
-    answer: "For most Layton homeowners, the whole-home filtration system is an excellent fit — it handles the 21 GPG hardness through integrated softening and addresses chlorine, chloramines, and the disinfection byproduct precursors through the catalytic carbon stage. For homeowners with additional contaminant concerns (arsenic, PFAS), the whole-home RO upgrade provides the most complete coverage. Your free water test confirms which is right for your home.",
+    answer: "For most Layton homeowners, the whole-home filtration system is an excellent fit: it handles the 21 GPG hardness through integrated softening and reduces chlorine, chloramines, and their disinfection byproducts at every tap. For homeowners with additional contaminant concerns (arsenic, PFAS), the whole-home RO upgrade provides the most complete coverage. Your free water test confirms which is right for your home.",
   },
 ];
 
@@ -85,7 +85,7 @@ const schemas = [
         <div class="stat-box stat-box-primary">
           <div class="text-5xl font-bold text-primary mb-2">~21 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard — rapid scale buildup on fixtures, appliances, and hot water systems.</p>
+          <p class="text-xs text-muted-foreground">Very hard: rapid scale buildup on fixtures, appliances, and hot water systems.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">10</div>
@@ -95,7 +95,7 @@ const schemas = [
         <div class="stat-box">
           <div class="text-4xl font-bold text-foreground mb-2">Davis Co.</div>
           <div class="font-semibold text-foreground mb-1">Water System</div>
-          <p class="text-xs text-muted-foreground">Surface water supply — consistent hardness year-round with disinfection byproduct formation from chlorination.</p>
+          <p class="text-xs text-muted-foreground">Surface water supply: consistent hardness year-round with disinfection byproduct formation from chlorination.</p>
         </div>
       </div>
 
@@ -104,7 +104,7 @@ const schemas = [
         <div class="space-y-3">
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Water hardness</span>
-            <span class="badge badge-primary">~21 GPG — Very Hard</span>
+            <span class="badge badge-primary">~21 GPG, Very Hard</span>
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Arsenic</span>
@@ -146,9 +146,9 @@ const schemas = [
           <h3 class="font-semibold text-foreground mb-2">Chlorine Odor in Hot Showers</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
             Davis County's surface water is chlorinated during treatment. Many Layton homeowners
-            notice the chlorine smell when running hot water — particularly in a hot shower where
-            steam intensifies the chemical odor. Blue Logic's catalytic carbon filtration stage
-            reduces chlorine and chloramine from all water entering the home.
+            notice the chlorine smell when running hot water, particularly in a hot shower where
+            steam intensifies the chemical odor. Blue Logic Filtration reduces chlorine and
+            chloramine in all water entering the home.
           </p>
         </div>
         <div class="scenario-card">
@@ -156,16 +156,16 @@ const schemas = [
           <p class="text-sm text-muted-foreground leading-relaxed">
             The Hill AFB community brings many households who have lived in different water quality
             environments. Families relocating from areas with softer water often notice Layton's
-            hardness immediately. Blue Logic's in-house financing and no-contract model makes sense
-            for homeowners who may eventually relocate — the system adds home value and the
-            financing terms are flexible.
+            hardness immediately. Prices are out the door with installation and tax included, and
+            financing is available through Pinnacle Finance for qualifying homeowners, on approved
+            credit.
           </p>
         </div>
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Newer Construction in East Layton</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
             Layton's eastern bench has seen significant new construction. New homes receive the same
-            municipal water as established neighborhoods — new plumbing doesn't change the hardness
+            municipal water as established neighborhoods; new plumbing doesn't change the hardness
             or contaminant profile. Installing a whole-home system at move-in protects new fixtures
             and appliances from day one rather than treating water damage after it accumulates.
           </p>
@@ -198,7 +198,7 @@ const schemas = [
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
-        Layton Water Treatment — Common Questions
+        Layton Water Treatment: Common Questions
       </h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
@@ -233,7 +233,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves all of Layton and Davis County. A specialist tests your water
-        on-site and recommends the right system — no cost, no obligation.
+        on-site and recommends the right system, at no cost and no obligation.
       </p>
       <LeadForm />
     </div>

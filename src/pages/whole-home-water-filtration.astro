@@ -3,52 +3,56 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
+import filtrationInstallImg from "../assets/real/installs/filtration-beside-water-heater.jpg";
+import underSinkRoImg from "../assets/real/installs/under-sink-ro-install.jpg";
+import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive, WARRANTY, PRICE_NOTE } from "../data/offer";
 
 export const prerender = true;
+
+const showOffer = offerActive();
 
 const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "What does the Blue Logic 7-layer filtration system actually remove?",
-    answer: "The 7-layer media stack is designed to address a broad range of water quality concerns in sequence: chlorine and chloramine removal (zinc-infused and catalytic carbon), antimicrobial protection (copper-infused carbon), hardness minerals (EvoResin ion-exchange), iron and manganese reduction (Katalox), water clarity (aluminosilicate), and final sediment polish (garnet). Each layer targets a specific set of contaminants. Your free water test will identify which concerns are most relevant to your home's water.",
+    question: "What does Blue Logic Filtration actually do?",
+    answer: "Blue Logic Filtration softens and filters all the water coming into your home in one tank. You get soft water that stops scale on fixtures and inside appliances, chlorine and chloramine taste and odor gone at every tap, and sediment and rust filtered out before they reach your plumbing. Every Filtration system also includes an under-sink reverse osmosis system for purified drinking water at the kitchen tap. Your free water test shows which concerns matter most for your home's water.",
   },
   {
-    question: "Is the whole-home filtration system NSF-certified?",
-    answer: "Yes. Blue Logic uses NSF-certified components throughout the filtration system. Ask your specialist for specific certification documentation at your free water test appointment.",
+    question: "Does the Filtration system use filter cartridges?",
+    answer: "No. The whole-home treatment happens inside one self-cleaning tank that regenerates automatically based on how much water your home uses, so there are no whole-home cartridges to swap. The only filters are in the under-sink reverse osmosis system at the kitchen tap, and those are replaced at your annual maintenance visit.",
   },
   {
     question: "How is whole-home filtration different from a regular water softener?",
-    answer: "A traditional water softener addresses only hardness minerals (calcium and magnesium) through salt-based ion exchange. Blue Logic's 7-layer filtration system addresses hardness as one of seven distinct treatment stages — also reducing chlorine, chloramines, iron, manganese, and other contaminants that a softener never touches. You also get meaningfully improved water taste and odor, which a softener does not provide.",
+    answer: "A water softener treats hardness: the calcium and magnesium that cause scale, spots and that chalky feel. It does not filter the water, so chlorine taste and odor and sediment stay. Blue Logic Filtration softens the water and filters it in the same tank, and it adds an under-sink reverse osmosis system at the kitchen tap.",
   },
   {
     question: "How is whole-home filtration different from whole-home reverse osmosis?",
-    answer: "The filtration system (7-layer media) is the foundation — Stages 1 and 2 of Blue Logic's purification architecture. It handles the full spectrum of common water quality concerns and is the right choice for most Utah homes on its own. Whole-home reverse osmosis adds an RO membrane, pressurized storage tank, and delivery pump (Stages 3–4), taking purification to an even higher level — especially for homes with higher-level contamination concerns or those wanting the cleanest water possible from every tap. Both systems include integrated water softening.",
+    answer: "Filtration gives you soft, filtered water at every tap and purified reverse osmosis water at the kitchen tap. The Blue Logic Purification System starts with the same Filtration tank, then adds whole-home reverse osmosis, a 165-gallon food-grade storage tank and a Grundfos SCALA2 constant-pressure pump, so every tap in the home runs purified water. The Filtration in front is what lets the reverse osmosis run at about 3 gallons of purified water for every 1 sent to drain. Our systems are modular, so you can start with Filtration and add reverse osmosis later.",
   },
   {
     question: "What maintenance does the filtration system require?",
-    answer: "The primary ongoing maintenance is periodic salt refills for the softening stage (approximately every 2–3 months for a typical Utah family, using 75% less salt than a traditional softener). Annual service includes a media check and system inspection. With proper maintenance, the media and components are designed to perform reliably for 8–10 years.",
+    answer: "Day to day, you keep salt in the brine tank. Salt is easy to find at large local stores such as Costco and Walmart. Blue Logic handles annual maintenance, which includes new filters for the under-sink reverse osmosis system and a general system check.",
   },
   {
     question: "What is the warranty on the whole-home filtration system?",
-    answer: "Blue Logic offers a 5-year warranty against defects in materials and workmanship, plus 12 months on installation workmanship. Consumables such as filters and salt are not covered. With regular maintenance, system components are designed and built to last 8–10 years. We're a local Utah company, here for the long term, not just the sale.",
+    answer: `${WARRANTY} We're a local Utah company, here for the long term, not just the sale.`,
   },
   {
     question: "Do you offer financing for the filtration system?",
-    answer: "Yes. Blue Logic offers in-house financing with half down at the time of installation. Financing terms vary based on the total amount and your preferred repayment timeline. Ask your specialist about current financing options during your free water test appointment.",
+    answer: "Yes. Financing is provided by Pinnacle Finance to qualifying homeowners, subject to credit approval. Checking your eligibility is a soft credit inquiry that does not affect your credit score. See the current offer on this page for details.",
   },
   {
-    question: "What does the free under-sink RO include with a filtration purchase?",
-    answer: "With any whole-home filtration system purchase, Blue Logic includes a free under-sink reverse osmosis unit for your kitchen sink — a system with a retail value of approximately $1,000. This gives you purified drinking water at the kitchen tap without upgrading to full whole-home RO purification.",
+    question: "Is an under-sink reverse osmosis system included with Filtration?",
+    answer: "Yes. Every Blue Logic Filtration system includes an under-sink reverse osmosis system with its own dedicated tap at the kitchen sink. It gives you purified drinking and cooking water at that tap, reducing contaminants such as lead, arsenic, fluoride, nitrates and PFAS, without upgrading to whole-home reverse osmosis.",
   },
 ];
 
 const schemas = [
   getServiceSchema(
     `${siteUrl}/whole-home-water-filtration/`,
-    "Whole-Home Water Filtration System Installation — Utah",
-    "Blue Logic's 7-layer whole-home water filtration system addresses chlorine, chloramines, iron, manganese, hardness, and a broad spectrum of common Utah water quality concerns — with integrated water softening using 75% less salt than traditional softeners. NSF-certified components. Serving the Wasatch Front.",
+    "Whole-Home Water Filtration System Installation, Utah",
+    "Blue Logic Filtration softens and filters every tap in the home in one self-cleaning tank: soft water, chlorine and chloramine taste and odor gone, sediment and rust filtered out. Includes an under-sink reverse osmosis system at the kitchen tap. Serving the Wasatch Front.",
   ),
   getFAQSchema(faqs),
   getBreadcrumbSchema(siteUrl, [
@@ -61,23 +65,23 @@ const schemas = [
 
 <Layout
   title="Whole Home Water Filtration Utah | Blue Logic Water"
-  description="Blue Logic's 7-layer whole-home filtration removes chlorine, hardness, iron, and more. NSF-certified. Free under-sink RO included with purchase. Free water test — Wasatch Front."
+  description="Blue Logic Filtration: whole-home softening and filtration in one self-cleaning tank, plus an under-sink RO at the kitchen tap. Free water test on the Wasatch Front."
   schema={schemas}
 >
   <!-- Hero -->
   <section class="hero-gradient py-20 md:py-28 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
-        NSF-Certified · Wasatch Front · Includes Free Under-Sink RO
+        Wasatch Front · Under-Sink RO Included
       </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
         Whole-Home Water Filtration for Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-        Blue Logic's 7-layer filtration system addresses the full spectrum of Utah water quality
-        concerns in a single whole-home installation — including chlorine, chloramines, iron,
-        manganese, and hard water minerals. Includes integrated water softening using 75% less
-        salt than a traditional softener.
+        Blue Logic Filtration softens and filters the water for your whole home in one
+        self-cleaning tank. Soft water, no chlorine or chloramine taste or smell, and sediment
+        and rust filtered out at every tap, plus purified reverse osmosis water at the kitchen
+        sink.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -97,168 +101,201 @@ const schemas = [
   </section>
 
   <!-- Offer Banner -->
-  <section class="bg-primary/10 border-y border-primary/20 py-6 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <p class="font-semibold text-foreground">
-        Current offer: <span class="text-primary">Free under-sink reverse osmosis system ($1,000 value)</span> with any whole-home filtration purchase ·
-        <a href="/free-water-test/" class="text-primary underline hover:no-underline">Schedule free water test</a>
-      </p>
-    </div>
-  </section>
+  {showOffer && (
+    <section class="bg-primary/10 border-y border-primary/20 py-6 px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-2">Current Offer</p>
+        <p class="text-xl md:text-2xl font-serif text-foreground mb-1">{OFFER_HEADLINE}</p>
+        <p class="text-muted-foreground mb-3">
+          {OFFER_SUBHEAD}{" "}
+          <a href="/free-water-test/" class="text-primary underline hover:no-underline">Schedule free water test</a>
+        </p>
+        <p class="text-xs text-muted-foreground leading-relaxed">{OFFER_DISCLOSURE}</p>
+      </div>
+    </section>
+  )}
 
-  <!-- 7-Layer System Explained -->
+  <!-- One Tank, Whole Home -->
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
-            Seven Layers. One Installation. Full-Home Coverage.
+            One Tank. One Installation. Every Tap.
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
-            Utah's water presents multiple distinct challenges — hardness, chlorine from municipal
-            treatment, iron and manganese from geology, and sediment. No single filtration medium
-            addresses all of these effectively on its own.
+            Utah's water brings more than one problem: hard water that leaves scale, chlorine
+            and chloramine from municipal treatment, and sediment and rust. A softener alone
+            only handles the first.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
-            Blue Logic's proprietary 7-layer media system stacks complementary filtration
-            technologies in sequence, so each layer targets what the previous one doesn't catch.
-            The result is whole-home coverage — cleaner, better-performing water from every tap,
-            shower, and appliance in your home.
+            Blue Logic Filtration handles all of them in a single tank, installed where your
+            water enters the home. It cleans itself automatically based on how much water you
+            use, so there are no whole-home cartridges to change. The result is softer, cleaner,
+            better-tasting water from every tap, shower and appliance in your home.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            The system is also the pre-treatment foundation for Blue Logic's whole-home purification
-            (reverse osmosis) upgrade — so if you start with filtration and want to add RO later,
-            the foundation is already in place.
+            It is also the foundation of the Blue Logic Purification System, so if you start
+            with Filtration and want whole-home reverse osmosis later, the foundation is
+            already in place.
           </p>
         </div>
-        <div>
+        <div class="max-w-md mx-auto w-full">
           <Image
-            src={filtersInHandsImg}
-            alt="Blue Logic water filtration media components — NSF-certified materials used in the 7-layer system"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-3/4"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            src={filtrationInstallImg}
+            alt="Blue Logic Whole-Home Filtration tank with its digital control valve, installed beside the water heater and brine tank in a Utah home"
+            class="rounded-2xl shadow-2xl w-full object-cover object-top aspect-3/4"
+            widths={[400, 600, 900]}
+            sizes="(max-width: 1024px) 100vw, 448px"
+            quality={70}
           />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            Blue Logic Filtration installed in a customer's home
+          </p>
         </div>
       </div>
 
-      <!-- The 7 Layers -->
-      <h3 class="text-2xl font-serif text-center mb-8 text-foreground">The 7 Filtration Layers</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+      <!-- What Filtration Takes Care Of -->
+      <h3 class="text-2xl font-serif text-center mb-8 text-foreground">What Blue Logic Filtration Takes Care Of</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="layer-card">
           <div class="layer-number">1</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">Zinc-Infused Carbon</h4>
-            <p class="text-sm text-muted-foreground">Targets chlorine and provides broad antimicrobial protection through the zinc's natural properties.</p>
+            <h4 class="font-semibold text-foreground mb-1">Soft Water</h4>
+            <p class="text-sm text-muted-foreground">Removes the hardness minerals behind white spots, scale on fixtures and buildup inside appliances.</p>
           </div>
         </div>
         <div class="layer-card">
           <div class="layer-number">2</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">Copper-Infused Carbon</h4>
-            <p class="text-sm text-muted-foreground">Additional antimicrobial layer working in concert with the zinc-carbon stage for enhanced protection.</p>
+            <h4 class="font-semibold text-foreground mb-1">Chlorine and Chloramine</h4>
+            <p class="text-sm text-muted-foreground">Takes out the chlorine and chloramine taste and odor from city water at every tap, including showers and baths.</p>
           </div>
         </div>
         <div class="layer-card">
           <div class="layer-number">3</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">Catalytic Carbon</h4>
-            <p class="text-sm text-muted-foreground">Specifically engineered to reduce chloramines — the disinfectant compound common in Utah municipal water supplies — and organic compounds that standard carbon misses.</p>
+            <h4 class="font-semibold text-foreground mb-1">Sediment and Rust</h4>
+            <p class="text-sm text-muted-foreground">Filters out fine sand, rust and other particles for visibly clear water that is easier on plumbing and clothing.</p>
           </div>
         </div>
         <div class="layer-card">
           <div class="layer-number">4</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">EvoResin</h4>
-            <p class="text-sm text-muted-foreground">High-efficiency ion-exchange resin that removes calcium and magnesium (the minerals that cause hardness) using approximately 75% less salt than conventional water softener resin.</p>
+            <h4 class="font-semibold text-foreground mb-1">Purified Water at the Kitchen Tap</h4>
+            <p class="text-sm text-muted-foreground">An under-sink reverse osmosis system with its own dedicated tap is included, for purified drinking and cooking water.</p>
           </div>
         </div>
         <div class="layer-card">
           <div class="layer-number">5</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">Katalox</h4>
-            <p class="text-sm text-muted-foreground">Removes iron, manganese, and hydrogen sulfide — the contaminants that cause rust staining, black deposits on fixtures, and "rotten egg" odor in some Utah water supplies.</p>
+            <h4 class="font-semibold text-foreground mb-1">Self-Cleaning Tank</h4>
+            <p class="text-sm text-muted-foreground">The tank regenerates automatically based on your water use. You keep salt in the brine tank; we handle annual maintenance.</p>
           </div>
         </div>
         <div class="layer-card">
           <div class="layer-number">6</div>
           <div>
-            <h4 class="font-semibold text-foreground mb-1">Aluminosilicate</h4>
-            <p class="text-sm text-muted-foreground">Polishes water clarity and removes fine particulates that earlier stages may have loosened from the media bed.</p>
+            <h4 class="font-semibold text-foreground mb-1">Ready to Upgrade</h4>
+            <p class="text-sm text-muted-foreground">Filtration is the first stage of whole-home reverse osmosis, so you can add purification for every tap later.</p>
           </div>
-        </div>
-      </div>
-      <div class="layer-card max-w-sm mx-auto">
-        <div class="layer-number">7</div>
-        <div>
-          <h4 class="font-semibold text-foreground mb-1">Garnet</h4>
-          <p class="text-sm text-muted-foreground">Final sediment filtration stage — captures any remaining fine particulates before water enters your home's distribution system.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What You'll Notice -->
+  <!-- Kitchen Tap RO -->
   <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <Image
+          src={underSinkRoImg}
+          alt="Installer fitting an under-sink reverse osmosis system in a customer's kitchen sink cabinet"
+          class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+          widths={[400, 600, 900]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={70}
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+          Purified Drinking Water, Included
+        </h2>
+        <p class="text-lg text-muted-foreground leading-relaxed mb-4">
+          Every Blue Logic Filtration system comes with an under-sink reverse osmosis system
+          and its own dedicated tap at the kitchen sink. It needs no storage tank and plugs into
+          a standard outlet.
+        </p>
+        <p class="text-lg text-muted-foreground leading-relaxed">
+          Reverse osmosis reduces what filtration alone cannot, including dissolved solids,
+          lead, arsenic, fluoride, nitrates and PFAS, so the water you drink and cook with is
+          purified, not just filtered.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You'll Notice -->
+  <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
         What Utah Homeowners Notice After Installation
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        The changes are practical and immediate — not abstract.
+        The changes are practical and immediate, not abstract.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">No more chlorine smell or taste</h3>
-          <p class="text-sm text-muted-foreground">The catalytic and activated carbon stages remove chlorine and chloramine from all water entering your home — including shower and bath water where you absorb it through your skin.</p>
+          <p class="text-sm text-muted-foreground">Chlorine and chloramine are taken out of all the water entering your home, including the shower and bath water you breathe in and that touches your skin.</p>
         </div>
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">Scale stops building up</h3>
-          <p class="text-sm text-muted-foreground">Softened water means no new mineral deposits on showerheads, faucets, glass shower doors, or inside your appliances. Existing scale on fixtures may gradually dissolve with continued use of softened water.</p>
+          <p class="text-sm text-muted-foreground">Softened water means no new mineral deposits on showerheads, faucets, glass shower doors, or inside your appliances.</p>
         </div>
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">Better-tasting water everywhere</h3>
-          <p class="text-sm text-muted-foreground">Many Utah homeowners notice the taste improvement immediately — water that tastes clean and neutral rather than minerally or chemical. Coffee, tea, and cooking water are all noticeably different.</p>
+          <p class="text-sm text-muted-foreground">Water tastes clean and fresh rather than chlorinated or chalky. At the kitchen tap, reverse osmosis gives you purified water for drinking, coffee, tea and cooking.</p>
         </div>
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">Skin and hair feel different</h3>
-          <p class="text-sm text-muted-foreground">Softened water and reduced chlorine in shower water changes how water interacts with skin and hair. Most people notice their skin feels less dry and their hair more manageable after bathing.</p>
+          <p class="text-sm text-muted-foreground">Soft water without chlorine is easier on skin and hair, so showers leave you feeling clean rather than dry.</p>
         </div>
         <div class="notice-card">
-          <h3 class="font-semibold text-foreground mb-2">Appliances last longer</h3>
-          <p class="text-sm text-muted-foreground">Water heaters, dishwashers, and washing machines all benefit from softened, chlorine-reduced water. Scale buildup inside appliances is one of the primary causes of early failure in Utah homes.</p>
+          <h3 class="font-semibold text-foreground mb-2">Appliances are protected</h3>
+          <p class="text-sm text-muted-foreground">Water heaters, dishwashers and washing machines all run on soft, filtered water, without the scale that builds up inside them on hard water.</p>
         </div>
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">Dishes come out clean</h3>
-          <p class="text-sm text-muted-foreground">Softened water dramatically reduces the white film on dishwasher-cleaned dishes and glassware — and requires less detergent to do it.</p>
+          <p class="text-sm text-muted-foreground">Soft water helps soap and detergent work better and leaves dishes and glassware clean, not chalky.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Pricing and Financing -->
-  <section class="bg-background py-16 md:py-20 px-4">
+  <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
         Transparent Pricing and Financing
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        Blue Logic systems range from $5,995 to $19,999 depending on the system selected and your
-        home's configuration — confirmed at your free water test with no hidden fees.
+        Blue Logic systems range from $2,999 to $19,999 depending on the system selected and your
+        home's configuration. {PRICE_NOTE} Your exact price is confirmed at your free water test.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div class="pricing-card">
           <h3 class="font-semibold text-foreground mb-2">Transparent Quotes</h3>
-          <p class="text-sm text-muted-foreground">Your exact price is confirmed at your free water test — including installation. No surprise fees after the fact.</p>
+          <p class="text-sm text-muted-foreground">Your out-the-door price, installation and tax included, is confirmed at your free water test. Any non-standard work is discussed before it is done.</p>
         </div>
         <div class="pricing-card border-primary bg-primary/5">
-          <h3 class="font-semibold text-foreground mb-2">In-House Financing</h3>
-          <p class="text-sm text-muted-foreground">Half down at installation. Flexible repayment terms based on your preferred timeline. No third-party lender required.</p>
+          <h3 class="font-semibold text-foreground mb-2">Financing Available</h3>
+          <p class="text-sm text-muted-foreground">Financing through Pinnacle Finance for qualifying homeowners, subject to credit approval. Checking eligibility is a soft credit inquiry.</p>
         </div>
         <div class="pricing-card">
-          <h3 class="font-semibold text-foreground mb-2">Price Match Guarantee</h3>
-          <p class="text-sm text-muted-foreground">Show us any written quote from a licensed water treatment company and Blue Logic will match or beat it.</p>
+          <h3 class="font-semibold text-foreground mb-2">5-Year Warranty</h3>
+          <p class="text-sm text-muted-foreground">Covers defects in materials and workmanship for 5 years, plus 12 months on installation workmanship. Consumables such as filters, RO membranes and salt are not covered.</p>
         </div>
       </div>
       <div class="text-center">
@@ -273,7 +310,7 @@ const schemas = [
   </section>
 
   <!-- FAQ -->
-  <section class="bg-card py-16 md:py-20 px-4">
+  <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
         Frequently Asked Questions
@@ -293,7 +330,7 @@ const schemas = [
   </section>
 
   <!-- Related + Service Area -->
-  <section class="bg-background py-12 px-4">
+  <section class="bg-card py-12 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <div class="flex flex-wrap justify-center gap-4 mb-6">
         <a href="/whole-home-reverse-osmosis-utah/" class="related-link">Upgrade to Whole-Home RO</a>
@@ -314,9 +351,9 @@ const schemas = [
         Schedule Your Free Water Test
       </h2>
       <p class="text-lg text-muted-foreground text-center mb-10">
-        A Blue Logic specialist will assess your home's water and walk you through whether the
-        7-layer filtration system, a whole-home purification upgrade, or something else is right
-        for your home. No cost, no obligation.
+        A Blue Logic specialist will assess your home's water and walk you through whether Blue
+        Logic Filtration, whole-home purification, or something else is right for your home.
+        No cost, no obligation.
       </p>
       <LeadForm />
     </div>

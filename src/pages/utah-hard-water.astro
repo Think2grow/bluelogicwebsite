@@ -2,14 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
-import { Image } from "astro:assets";
-import hardWaterBuildup from "../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
 
 export const prerender = true;
 
 const siteUrl = "https://www.bluelogicwater.com";
 
-// Water hardness data by city — sourced from utility consumer confidence reports
+// Water hardness data by city, sourced from utility consumer confidence reports
 // and third-party water quality aggregators. Levels vary by season and neighborhood.
 const cityHardnessData = [
   { city: "Bountiful", gpg: "18–38", mgL: "300–513", note: "Highly variable; well sources can be extremely hard" },
@@ -29,23 +27,23 @@ const cityHardnessData = [
 const faqs = [
   {
     question: "What makes Utah water so hard compared to other states?",
-    answer: "Utah's geology is the primary cause. The Wasatch Range and surrounding basin geology is rich in limestone, dolomite, and other carbonate rock formations. As precipitation and snowmelt moves through these formations toward streams, reservoirs, and aquifers, it dissolves calcium and magnesium — the two minerals that define water hardness. The Great Basin's closed drainage system also means minerals concentrate rather than flowing to the ocean. The result is some of the consistently hardest municipal water in the nation.",
+    answer: "Utah's geology is the primary cause. The Wasatch Range and surrounding basin geology is rich in limestone, dolomite, and other carbonate rock formations. As precipitation and snowmelt moves through these formations toward streams, reservoirs, and aquifers, it dissolves calcium and magnesium, the two minerals that define water hardness. The Great Basin's closed drainage system also means minerals concentrate rather than flowing to the ocean. The result is some of the consistently hardest municipal water in the nation.",
   },
   {
     question: "What hardness level is considered 'hard' or 'very hard'?",
-    answer: "The Water Quality Association classifies water hardness as follows: soft (0–3 GPG / 0–51 mg/L), slightly hard (3–7 GPG / 51–120 mg/L), moderately hard (7–10 GPG / 120–180 mg/L), hard (10–14 GPG / 180–250 mg/L), and very hard (14+ GPG / 250+ mg/L). Most Wasatch Front cities fall in the hard to very hard range, with some communities — particularly Bountiful, Spanish Fork, and Springville — reaching extremely hard levels above 20 GPG.",
+    answer: "The Water Quality Association classifies water hardness as follows: soft (under 1 GPG / under 17.1 mg/L), slightly hard (1 to 3.5 GPG / 17.1 to 60 mg/L), moderately hard (3.5 to 7 GPG / 60 to 120 mg/L), hard (7 to 10.5 GPG / 120 to 180 mg/L), and very hard (over 10.5 GPG / over 180 mg/L). Most Wasatch Front cities fall in the very hard range, with some communities (particularly Bountiful, Spanish Fork, and Springville) reaching extremely hard levels above 20 GPG.",
   },
   {
     question: "Does hard water make you sick?",
-    answer: "Hard water is not a health hazard — calcium and magnesium are essential minerals. The concern isn't hardness itself but the other contaminants that can travel alongside it in Utah water, including arsenic, haloacetic acids, and PFAS. A water softener addresses hardness but not those other contaminants. A whole-home filtration or reverse osmosis system addresses both. If health is a concern, a free in-home water test is the best starting point.",
+    answer: "Hard water is not a health hazard: calcium and magnesium are essential minerals. The concern isn't hardness itself but the other contaminants that can travel alongside it in Utah water, including arsenic, haloacetic acids, and PFAS. A water softener addresses hardness but not those other contaminants. A whole-home filtration or reverse osmosis system addresses both. If health is a concern, a free in-home water test is the best starting point.",
   },
   {
     question: "How does hard water damage appliances?",
-    answer: "When hard water is heated or evaporated, the dissolved calcium and magnesium precipitate out as scale — a hard, chalky deposit. Inside a water heater, scale insulates the heating element from the water, forcing the element to work harder and run hotter to achieve the same temperature. The Water Quality Association has documented efficiency losses of 24–48% in hard water areas compared to soft water, along with significantly shorter appliance lifespans. In Utah's very hard water communities, this effect is accelerated.",
+    answer: "When hard water is heated or evaporated, the dissolved calcium and magnesium precipitate out as scale, a hard, chalky deposit. Inside a water heater, scale insulates the heating element from the water, forcing the element to work harder and run hotter to achieve the same temperature. Over time that wastes energy and shortens the life of water heaters and other appliances. In Utah's very hard water communities, this effect is accelerated.",
   },
   {
     question: "Will a water softener fix all my hard water problems?",
-    answer: "A traditional salt-based softener removes hardness minerals effectively — it will eliminate scale, improve soap lathering, and extend appliance life. But it doesn't improve the taste or odor of your water, and it doesn't address chlorine, PFAS, arsenic, or other contaminants present in many Utah water supplies. Blue Logic's integrated softening is part of a broader filtration system that addresses hardness and a full spectrum of other water quality concerns in one installation.",
+    answer: "A traditional salt-based softener removes hardness minerals effectively: it will eliminate scale, improve soap lathering, and extend appliance life. But it doesn't improve the taste or odor of your water, and it doesn't address chlorine, PFAS, arsenic, or other contaminants present in many Utah water supplies. Blue Logic Filtration softens and filters in one tank, taking chlorine, chloramine, sediment, and rust out of the water at every tap, and it includes an under-sink reverse osmosis system for purified drinking water at the kitchen tap.",
   },
 ];
 
@@ -60,7 +58,7 @@ const schemas = [
 
 <Layout
   title="Utah Hard Water Problems & Solutions | Blue Logic Water"
-  description="Utah has some of the hardest water in the US. Learn what it does to your appliances, skin, and home — and what actually fixes it. City-by-city hardness data included."
+  description="Utah has some of the hardest water in the US. Learn what it does to your appliances, skin, and home, and what actually fixes it. City-by-city hardness data included."
   schema={schemas}
 >
   <!-- Hero -->
@@ -74,7 +72,7 @@ const schemas = [
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
         Utah consistently ranks among the top states for water hardness. Here's what that means
-        for your home, your appliances, your skin, and your water bill — and what actually works to fix it.
+        for your home, your appliances, your skin, and your water bill, and what actually works to fix it.
       </p>
     </div>
   </section>
@@ -82,13 +80,13 @@ const schemas = [
   <!-- Why Utah Water Is Hard -->
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-3xl mx-auto">
         <div>
-          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground text-center">
             Why Is Utah's Water So Hard?
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
-            The Wasatch Front sits above geology that is unusually rich in carbonate rock —
+            The Wasatch Front sits above geology that is unusually rich in carbonate rock:
             limestone, dolomite, and calcium-bearing formations that were deposited over millions
             of years as ancient inland seas. When snowmelt and precipitation filters through these
             formations on the way to the Wasatch watershed, it dissolves calcium and magnesium,
@@ -97,27 +95,14 @@ const schemas = [
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
             The Great Basin's closed drainage system compounds this effect. Unlike rivers that
             drain to the ocean and carry minerals away, Utah's interior basin concentrates dissolved
-            minerals over time. The Great Salt Lake — essentially a giant evaporation pond — is the
+            minerals over time. The Great Salt Lake (essentially a giant evaporation pond) is the
             visible result of this process operating at landscape scale.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
             The result for Wasatch Front homeowners: water that is classified as "hard" to
             "very hard" across virtually all municipal water systems, with some communities
-            — particularly in Davis County and southern Utah County — reaching levels that
+            (particularly in Davis County and southern Utah County) reaching levels that
             are among the highest in the United States.
-          </p>
-        </div>
-        <div>
-          <Image
-            src={hardWaterBuildup}
-            alt="Severe mineral scale and calcium deposits on a showerhead from Utah's hard water"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={65}
-          />
-          <p class="text-sm text-muted-foreground text-center mt-3 italic">
-            Calcium scale deposits on a Utah showerhead — a direct result of hard water mineral buildup.
           </p>
         </div>
       </div>
@@ -143,32 +128,32 @@ const schemas = [
           <tbody>
             <tr class="border-b border-border">
               <td class="py-3 px-4 text-foreground">Soft</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">0–3</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">0–51</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Under 1</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">Under 17.1</td>
               <td class="py-3 px-4 text-muted-foreground">No scale, excellent soap lathering</td>
             </tr>
             <tr class="border-b border-border bg-background">
               <td class="py-3 px-4 text-foreground">Slightly Hard</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">3–7</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">51–120</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">1–3.5</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">17.1–60</td>
               <td class="py-3 px-4 text-muted-foreground">Minor spotting, minimal scale</td>
             </tr>
             <tr class="border-b border-border">
               <td class="py-3 px-4 text-foreground">Moderately Hard</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">7–10</td>
-              <td class="py-3 px-4 text-center text-muted-foreground">120–180</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">3.5–7</td>
+              <td class="py-3 px-4 text-center text-muted-foreground">60–120</td>
               <td class="py-3 px-4 text-muted-foreground">Noticeable scale in hot water systems</td>
             </tr>
             <tr class="border-b border-border bg-background">
               <td class="py-3 px-4 text-foreground font-semibold text-primary">Hard</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">10–14</td>
-              <td class="py-3 px-4 text-center text-primary font-semibold">180–250</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">7–10.5</td>
+              <td class="py-3 px-4 text-center text-primary font-semibold">120–180</td>
               <td class="py-3 px-4 text-muted-foreground">Visible deposits, appliance efficiency loss begins</td>
             </tr>
             <tr class="border-b border-border">
               <td class="py-3 px-4 text-foreground font-semibold text-error">Very Hard</td>
-              <td class="py-3 px-4 text-center text-error font-semibold">14+</td>
-              <td class="py-3 px-4 text-center text-error font-semibold">250+</td>
+              <td class="py-3 px-4 text-center text-error font-semibold">10.5+</td>
+              <td class="py-3 px-4 text-center text-error font-semibold">180+</td>
               <td class="py-3 px-4 text-muted-foreground">Heavy scaling, shortened appliance life, dry skin common</td>
             </tr>
           </tbody>
@@ -228,7 +213,7 @@ const schemas = [
         What Hard Water Actually Does to a Utah Home
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        The effects are visible, measurable, and expensive — but they build gradually enough
+        The effects are visible, measurable, and expensive, but they build gradually enough
         that most homeowners don't realize how much it's costing them.
       </p>
 
@@ -236,11 +221,10 @@ const schemas = [
         <div class="effect-card">
           <h3 class="text-xl font-semibold mb-3 text-foreground">Water Heater Efficiency Loss</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            Hard water scale acts as an insulator inside your water heater tank. The WQA has
-            documented efficiency losses of 24–48% in hard water areas — meaning your heater burns
-            significantly more gas or electricity to produce the same hot water. In Utah's very
-            hard water regions (above 14 GPG), scale accumulation is rapid. Tank water heaters
-            in untreated Wasatch Front homes often fail 5–7 years earlier than their rated lifespan.
+            Hard water scale acts as an insulator inside your water heater tank, so your heater
+            burns more gas or electricity to produce the same hot water. In Utah's very hard water
+            regions (above 14 GPG), scale accumulation is rapid and shortens the heater's working
+            life.
           </p>
         </div>
 
@@ -248,7 +232,7 @@ const schemas = [
           <h3 class="text-xl font-semibold mb-3 text-foreground">Fixture and Faucet Scale</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
             The white, chalky deposits on your faucets, showerheads, and glass shower doors are
-            calcium carbonate — the same substance in limestone. Every time water evaporates
+            calcium carbonate, the same substance in limestone. Every time water evaporates
             from a surface, the dissolved minerals are left behind. In Utah's hardest water
             communities, showerhead flow can be measurably reduced within months of installation.
             These deposits are abrasive and difficult to remove without acid-based cleaners.
@@ -258,7 +242,7 @@ const schemas = [
         <div class="effect-card">
           <h3 class="text-xl font-semibold mb-3 text-foreground">Dishwasher and Appliance Damage</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            Dishwashers expose hard water to high heat repeatedly — ideal conditions for scale
+            Dishwashers expose hard water to high heat repeatedly, ideal conditions for scale
             formation. The spray arms, heating elements, and internal pipes of dishwashers in
             untreated Utah homes accumulate scale that reduces cleaning effectiveness and
             shortens the appliance's life. Similar effects occur in washing machines, ice
@@ -287,7 +271,7 @@ const schemas = [
         What Actually Fixes Hard Water in a Utah Home
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        Three options — each with a different scope, price point, and level of protection.
+        Three options, each with a different scope, price point, and level of protection.
       </p>
 
       <div class="space-y-6">
@@ -327,15 +311,15 @@ const schemas = [
           <div class="solution-header">
             <div class="solution-level solution-level-mid">Option 2</div>
             <h3 class="text-xl font-semibold text-foreground">
-              Blue Logic Whole-Home Filtration <span class="text-primary">(Recommended for most Utah homes)</span>
+              Blue Logic Filtration <span class="text-primary">(Recommended for most Utah homes)</span>
             </h3>
           </div>
           <div class="solution-body">
             <p class="text-muted-foreground text-sm mb-3">
-              Blue Logic's 7-layer media system includes advanced water softening (using
-              approximately 75% less salt than a traditional softener) PLUS filtration for
-              chlorine, chloramines, iron, manganese, and more. Includes a free under-sink
-              RO for kitchen drinking water with purchase.
+              Whole-home softening and filtration in one self-cleaning tank: soft water, plus
+              chlorine and chloramine taste and odor, sediment, and rust filtered out at every
+              tap. Blue Logic Filtration includes an under-sink reverse osmosis system for
+              purified drinking water at the kitchen tap.
             </p>
             <div class="grid grid-cols-2 gap-3 text-sm">
               <div>
@@ -343,17 +327,16 @@ const schemas = [
                 <ul class="space-y-1 text-muted-foreground">
                   <li>✓ Scale and hardness</li>
                   <li>✓ Chlorine and chloramines</li>
-                  <li>✓ Iron and manganese</li>
-                  <li>✓ Arsenic reduction (7-layer media)</li>
-                  <li>✓ Taste and odor</li>
-                  <li>✓ Appliance protection</li>
+                  <li>✓ Sediment and rust</li>
+                  <li>✓ Taste and odor at every tap</li>
+                  <li>✓ Appliance and fixture protection</li>
+                  <li>✓ Purified drinking water at the kitchen tap (under-sink RO included)</li>
                 </ul>
               </div>
               <div>
                 <div class="font-semibold text-foreground mb-2">Limitations:</div>
                 <ul class="space-y-1 text-muted-foreground">
-                  <li>~ Partial PFAS reduction</li>
-                  <li>✗ Full dissolved solids removal</li>
+                  <li>✗ Reverse osmosis water at every tap (kitchen tap only)</li>
                 </ul>
               </div>
             </div>
@@ -363,21 +346,21 @@ const schemas = [
         <div class="solution-card">
           <div class="solution-header">
             <div class="solution-level solution-level-best">Option 3</div>
-            <h3 class="text-xl font-semibold text-foreground">Blue Logic Whole-Home Purification (RO)</h3>
+            <h3 class="text-xl font-semibold text-foreground">Blue Logic Purification System (Whole-Home RO)</h3>
           </div>
           <div class="solution-body">
             <p class="text-muted-foreground text-sm mb-3">
-              Everything in the filtration system plus a commercial-grade reverse osmosis membrane,
-              pressurized storage tank (up to 250 gallons), and delivery pump. RO works at the
-              molecular level — addressing what filtration alone cannot reach, including arsenic
-              and heavy metals at every tap.
+              Blue Logic Filtration in front, then a sediment pre-filter, reverse osmosis, 165-gallon
+              food-grade storage (more tanks added as modules), and a Grundfos SCALA2
+              constant-pressure pump. RO works at the molecular level, addressing what filtration
+              alone cannot reach, including arsenic and heavy metals, at every tap.
             </p>
             <div class="grid grid-cols-2 gap-3 text-sm">
               <div>
                 <div class="font-semibold text-foreground mb-2">What it addresses:</div>
                 <ul class="space-y-1 text-muted-foreground">
                   <li>✓ Everything in filtration</li>
-                  <li>✓ Arsenic (molecular removal)</li>
+                  <li>✓ Arsenic (reduced by the RO membrane)</li>
                   <li>✓ PFAS and heavy metals</li>
                   <li>✓ Pure water at every tap</li>
                 </ul>
@@ -405,7 +388,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground mb-6">
         A Blue Logic specialist comes to your home, tests your hardness and chlorine on the spot,
-        and walks you through your specific options — no cost, no obligation.
+        and walks you through your specific options. No cost, no obligation.
       </p>
       <a
         href="/free-water-test/"
@@ -453,7 +436,7 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        Get Your Water Tested — Free
+        Get Your Water Tested for Free
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic tests your home's hardness on-site and recommends the right solution

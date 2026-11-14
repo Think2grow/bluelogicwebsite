@@ -11,7 +11,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Can you drink the tap water in Salt Lake City?",
-    answer: "Yes — Salt Lake City tap water is legally safe to drink and meets all federal EPA standards. That said, the EWG Tap Water Database flags 16 contaminants in the SLC supply above its health guidelines, including arsenic (135x the EWG guideline), a PFAS compound (404x), and disinfection byproducts (101x), plus PFAS detected at 7.1–7.8 ppt in 2024 city testing. All are within federal legal limits but above the stricter EWG health guidelines. Many Salt Lake City households still choose whole-home filtration or reverse osmosis for water purification that goes beyond what legal compliance requires.",
+    answer: "Yes. Salt Lake City tap water is legally safe to drink and meets all federal EPA standards. That said, the EWG Tap Water Database flags 16 contaminants in the SLC supply above its health guidelines, including arsenic (135x the EWG guideline), a PFAS compound (404x), and disinfection byproducts (101x), plus PFAS detected at 7.1–7.8 ppt in 2024 city testing. All are within federal legal limits but above the stricter EWG health guidelines. Many Salt Lake City households still choose whole-home filtration or reverse osmosis for water purification that goes beyond what legal compliance requires.",
   },
   {
     question: "What is in Salt Lake City's tap water?",
@@ -19,15 +19,15 @@ const faqs = [
   },
   {
     question: "Is Salt Lake City tap water hard?",
-    answer: "Yes. SLC water is classified as hard, typically measuring around 10–12 grains per gallon (approximately 170–210 mg/L) depending on which sources are active and the time of year. This is in the 'hard' category by WQA standards — enough to cause noticeable scale on fixtures, reduce appliance efficiency, and affect the bathing experience. Salt Lake City uses a blend of surface water and purchased water, so hardness can vary more than in single-source communities.",
+    answer: "Yes. SLC water is classified as hard, typically measuring around 10–12 grains per gallon (approximately 170–210 mg/L) depending on which sources are active and the time of year. This is in the 'hard' category by WQA standards, enough to cause noticeable scale on fixtures, reduce appliance efficiency, and affect the bathing experience. Salt Lake City uses a blend of surface water and purchased water, so hardness can vary more than in single-source communities.",
   },
   {
     question: "Does Salt Lake City water have PFAS?",
-    answer: "Yes. The Salt Lake City Department of Public Utilities announced in 2024 that PFAS was detected in its water supply at approximately 7.1–7.8 parts per trillion. This is below the new EPA maximum contaminant level (MCL) finalized in 2024 for some PFAS compounds, but it does represent a detection. The specific compound detected is PFOS/PFOA — two of the most studied PFAS. Reverse osmosis is among the most effective residential technologies for PFAS reduction.",
+    answer: "Yes. The Salt Lake City Department of Public Utilities announced in 2024 that PFAS was detected in its water supply at approximately 7.1–7.8 parts per trillion. This is below the new EPA maximum contaminant level (MCL) finalized in 2024 for some PFAS compounds, but it does represent a detection. The specific compounds detected are PFOS/PFOA, two of the most studied PFAS. Reverse osmosis is among the most effective residential technologies for PFAS reduction.",
   },
   {
     question: "How long does a Blue Logic installation take in a Salt Lake City home?",
-    answer: "Most whole-home system installations in Salt Lake City are completed in a single day — typically 4 to 8 hours depending on your home's layout, utility room access, and the system selected. Blue Logic's compact system design (roughly half the footprint of traditional whole-home RO units) is well-suited to SLC's mix of newer construction and older craftsman-style homes with smaller utility spaces.",
+    answer: "Installation time depends on your home's layout, utility space and the system selected. Your Blue Logic specialist will give you a time estimate at your free water test. Because Blue Logic systems are modular and sized to the home, they work in SLC's mix of newer construction and older craftsman-style homes with smaller utility spaces.",
   },
   {
     question: "What neighborhoods in Salt Lake City does Blue Logic serve?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Do I need a permit to install a water treatment system in Salt Lake City?",
-    answer: "In most cases, a whole-home water treatment system installation in Salt Lake City does not require a separate permit if it connects to your existing plumbing without major modifications. Your Blue Logic specialist will confirm permit requirements during the free water test visit based on your home's specific configuration.",
+    answer: "Permit requirements depend on the scope of the installation and your home's plumbing. Your Blue Logic specialist will confirm permit requirements during the free water test visit based on your home's specific configuration.",
   },
 ];
 
@@ -52,7 +52,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Salt Lake City | Blue Logic Water"
-  description="Blue Logic serves Salt Lake City with whole-home RO and filtration systems. SLC water has PFAS, arsenic, and hard water concerns. Free in-home water test — no obligation."
+  description="Blue Logic serves Salt Lake City with whole-home RO and filtration systems. SLC water has PFAS, arsenic, and hard water concerns. Free in-home water test, no obligation."
   schema={schemas}
 >
   <!-- Hero -->
@@ -65,8 +65,8 @@ const schemas = [
         Water Treatment for Salt Lake City Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Salt Lake City's water contains PFAS, elevated arsenic, and disinfection byproducts
-        — all while being classified as federally compliant. Blue Logic installs whole-home
+        Salt Lake City's water contains PFAS, elevated arsenic, and disinfection byproducts,
+        all while being classified as federally compliant. Blue Logic installs whole-home
         filtration and reverse osmosis systems that address what compliance doesn't.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -106,7 +106,7 @@ const schemas = [
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~12 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Classified as "hard" — causes scale on fixtures, reduces appliance efficiency.</p>
+          <p class="text-xs text-muted-foreground">Classified as "hard": causes scale on fixtures, reduces appliance efficiency.</p>
         </div>
         <div class="stat-box">
           <div class="text-4xl font-bold text-foreground mb-2">PFAS</div>
@@ -132,7 +132,7 @@ const schemas = [
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Water hardness (calcium/magnesium)</span>
-            <span class="badge badge-primary">~10–12 GPG — classified Hard</span>
+            <span class="badge badge-primary">~10–12 GPG (classified Hard)</span>
           </div>
         </div>
         <div class="mt-5 pt-5 border-t border-border">
@@ -140,7 +140,7 @@ const schemas = [
             EWG health guidelines are more stringent than federal legal limits, which have not been comprehensively updated
             since the 1990s. Salt Lake City's water is federally compliant. For the full EWG report:
             <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18026" target="_blank" rel="noopener" class="text-primary underline">
-              EWG Tap Water Database — SLC →
+              EWG Tap Water Database: SLC →
             </a>
           </p>
         </div>
@@ -157,12 +157,12 @@ const schemas = [
         </p>
         <p class="text-muted-foreground text-sm leading-relaxed">
           Mountain surface water is naturally lower in hardness than deep groundwater but carries
-          higher organic content — which produces more disinfection byproducts (like haloacetic acids)
+          higher organic content, which produces more disinfection byproducts (like haloacetic acids)
           during chlorination treatment. The JVWCD water averages around 10–12 GPG hardness.
         </p>
         <p class="text-muted-foreground text-sm leading-relaxed mt-3">
           Because these same sources supply communities throughout the valley, Blue Logic provides
-          whole-home water purification across Salt Lake County — from Salt Lake City proper to Sandy,
+          whole-home water purification across Salt Lake County, from Salt Lake City proper to Sandy,
           Draper, Murray, and the West Jordan and South Jordan suburbs. Related reading:
           <a href="/blog/pfas-utah-water/" class="text-primary underline">PFAS in Utah water</a> and
           <a href="/blog/is-salt-lake-city-water-safe/" class="text-primary underline">Is Salt Lake City water safe?</a>
@@ -207,18 +207,18 @@ const schemas = [
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">The Sugar House Craftsman</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            Older SLC homes — particularly in the Avenues and Sugar House — often have aging
+            Older SLC homes, particularly in the Avenues and Sugar House, often have aging
             copper or galvanized steel plumbing that can interact with the water supply.
             Existing scale from years of hard water in the pipes can flake off during pressure
-            changes. A whole-home filtration system addresses both the incoming mineral load
-            and helps flush legacy scale gently over time.
+            changes. A whole-home filtration system softens the incoming water and filters
+            sediment and rust, so new scale stops forming.
           </p>
         </div>
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">The East Bench New Build</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
             Newer construction in the East Bench and foothill neighborhoods often has premium
-            appliances — tankless water heaters, steam showers, high-efficiency dishwashers —
+            appliances (tankless water heaters, steam showers, high-efficiency dishwashers)
             that are especially vulnerable to scale. Hard water at 10–12 GPG will meaningfully
             shorten the lifespan of a tankless heater without treatment.
           </p>
@@ -227,19 +227,18 @@ const schemas = [
           <h3 class="font-semibold text-foreground mb-2">The Family With Young Children</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
             PFAS detection in SLC's water supply concerns many families with young children.
-            A whole-home RO system addresses PFAS at the molecular level via the RO membrane —
+            A whole-home RO system addresses PFAS at the molecular level via the RO membrane,
             providing purified water at every tap, including bath water where chlorine and other
-            compounds are absorbed through skin. The free under-sink RO included with filtration
-            purchase gives kitchen drinking water coverage without a full RO upgrade.
+            compounds are absorbed through skin. Blue Logic Filtration includes an under-sink RO
+            at the kitchen tap for purified drinking water without a full whole-home RO system.
           </p>
         </div>
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">The Bottled Water Dependent</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            Many SLC households spend $50–$150 per month on bottled water due to taste and
-            quality concerns. A Blue Logic whole-home RO system produces water that is
-            comparable in purity to premium bottled water at a fraction of the ongoing cost —
-            from every tap in the house, not just a filter pitcher.
+            Many SLC households buy bottled water because of taste and quality concerns.
+            A Blue Logic whole-home RO system delivers purified water from every tap in the
+            house, not just a filter pitcher, so the bottled water runs can stop.
           </p>
         </div>
       </div>
@@ -254,19 +253,19 @@ const schemas = [
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
         <div class="p-6">
-          <div class="text-3xl font-bold text-primary mb-2">~Half</div>
-          <div class="font-semibold text-foreground mb-1">The Cost of Competitors</div>
-          <div class="text-sm text-muted-foreground">Written price-match guarantee on any competing quote from a licensed Utah water treatment company.</div>
+          <div class="text-3xl font-bold text-primary mb-2">5 Years</div>
+          <div class="font-semibold text-foreground mb-1">Warranty</div>
+          <div class="text-sm text-muted-foreground">5-year warranty on defects in materials and workmanship, plus 12 months on installation workmanship.</div>
         </div>
         <div class="p-6 border-y md:border-y-0 md:border-x border-border">
-          <div class="text-3xl font-bold text-primary mb-2">1 Day</div>
-          <div class="font-semibold text-foreground mb-1">Installation</div>
-          <div class="text-sm text-muted-foreground">Most SLC installations completed in 4–8 hours. Compact system fits in older utility rooms that traditional systems won't.</div>
+          <div class="text-3xl font-bold text-primary mb-2">Out the Door</div>
+          <div class="font-semibold text-foreground mb-1">Pricing</div>
+          <div class="text-sm text-muted-foreground">Prices include standard installation and tax. Systems are modular and sized to fit your home, including older utility rooms.</div>
         </div>
         <div class="p-6">
-          <div class="text-3xl font-bold text-primary mb-2">Price Match</div>
-          <div class="font-semibold text-foreground mb-1">Guarantee</div>
-          <div class="text-sm text-muted-foreground">Bring any written competing quote from a licensed SLC water treatment company — we'll match or beat it.</div>
+          <div class="text-3xl font-bold text-primary mb-2">Financing</div>
+          <div class="font-semibold text-foreground mb-1">Available</div>
+          <div class="text-sm text-muted-foreground">Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.</div>
         </div>
       </div>
     </div>
@@ -283,7 +282,7 @@ const schemas = [
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
-        Salt Lake City Water Treatment — Common Questions
+        Salt Lake City Water Treatment: Common Questions
       </h2>
       <div class="space-y-4">
         {faqs.map((faq) => (
