@@ -3,7 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import filtrationProductImg from "../assets/WH Filtration Product.png";
+import filtrationInstallImg from "../assets/real/installs/filtration-beside-water-heater.jpg";
+import underSinkRoImg from "../assets/real/installs/under-sink-ro-install.jpg";
 import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive, WARRANTY, PRICE_NOTE } from "../data/offer";
 
 export const prerender = true;
@@ -139,15 +140,18 @@ const schemas = [
             already in place.
           </p>
         </div>
-        <div class="bg-card rounded-2xl p-6">
+        <div class="max-w-md mx-auto w-full">
           <Image
-            src={filtrationProductImg}
-            alt="Blue Logic Whole-Home Filtration tank with its digital control valve, standing beside a matching black brine tank"
-            class="w-full object-contain aspect-3/4"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            src={filtrationInstallImg}
+            alt="Blue Logic Whole-Home Filtration tank with its digital control valve, installed beside the water heater and brine tank in a Utah home"
+            class="rounded-2xl shadow-2xl w-full object-cover object-top aspect-3/4"
+            widths={[400, 600, 900]}
+            sizes="(max-width: 1024px) 100vw, 448px"
             quality={70}
           />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            Blue Logic Filtration installed in a customer's home
+          </p>
         </div>
       </div>
 
@@ -202,7 +206,18 @@ const schemas = [
 
   <!-- Kitchen Tap RO -->
   <section class="bg-card py-16 md:py-20 px-4">
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <Image
+          src={underSinkRoImg}
+          alt="Installer fitting an under-sink reverse osmosis system in a customer's kitchen sink cabinet"
+          class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+          widths={[400, 600, 900]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={70}
+          loading="lazy"
+        />
+      </div>
       <div>
         <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
           Purified Drinking Water, Included

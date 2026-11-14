@@ -56,7 +56,7 @@ export const SYSTEMS = [
     name: "Blue Logic Purification System",
     price: PRICES.purification,
     summary:
-      "Whole-home reverse osmosis: Blue Logic Filtration in front, reverse osmosis, a 165-gallon food-grade storage tank, and a Grundfos SCALA2 constant-pressure pump, so every tap in the home runs purified water at normal pressure.",
+      "Whole-home reverse osmosis: Blue Logic Filtration in front, reverse osmosis, a 165-gallon food-grade storage tank, and a Grundfos SCALA2 constant-pressure pump, so every tap in the home runs purified water at normal pressure. Built to the home, so tank size and components can be customized.",
   },
 ] as const;
 

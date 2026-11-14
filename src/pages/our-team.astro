@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import { getLocalBusinessSchema, getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import jaredOnSiteImg from "../assets/real/jared-on-site.jpg";
-import valveManifoldImg from "../assets/real/valve-and-manifold.jpg";
+import installInProgressImg from "../assets/real/installs/purification-install-in-progress.jpg";
 import jaredImg from "../assets/staff/jared-co-owner.png";
 
 export const prerender = true;
@@ -287,15 +287,20 @@ const schemas = [
           </a>
         </div>
         <div class="order-1 lg:order-2">
-          <Image
-            src={valveManifoldImg}
-            alt="Neatly run water lines and the digital control valve of a Blue Logic tank in a Utah home's utility room"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800, 1100]}
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={60}
-            loading="lazy"
-          />
+          <div class="max-w-md mx-auto">
+            <Image
+              src={installInProgressImg}
+              alt="Installer setting the reverse osmosis unit of a Blue Logic Purification System beside its stainless pretreatment tank during an install"
+              class="rounded-2xl shadow-2xl w-full object-cover object-[center_35%] aspect-4/5"
+              widths={[400, 610]}
+              sizes="(max-width: 1024px) 100vw, 448px"
+              quality={70}
+              loading="lazy"
+            />
+            <p class="text-sm text-muted-foreground text-center mt-4 italic">
+              Setting a Purification System during an install
+            </p>
+          </div>
         </div>
       </div>
     </div>

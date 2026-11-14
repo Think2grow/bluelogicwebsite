@@ -4,8 +4,8 @@ import { getProductSchema, getBreadcrumbSchema, getServiceSchema } from "../util
 import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 import { Image } from "astro:assets";
 import utilityRoomSystemImg from "../assets/real/utility-room-system-full.jpg";
-import purificationComponentsImg from "../assets/water_art/filters_tank_pump_system_product_picture.jpg";
-import filtrationProductImg from "../assets/WH Filtration Product.png";
+import purificationSystemImg from "../assets/real/installs/purification-system-front.jpg";
+import filtrationGarageImg from "../assets/real/installs/filtration-garage-install.jpg";
 import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive } from "../data/offer";
 
 export const prerender = true;
@@ -320,7 +320,10 @@ const schemas = [
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
         The Blue Logic Purification System is built from modular components, each
-        doing one job well, to deliver pure water at every tap in your home.
+        doing one job well, to deliver pure water at every tap in your home. The
+        standard build uses a 165-gallon storage tank and a Grundfos SCALA2
+        constant-pressure pump. Because we build to the home, tank size and
+        components can be customized when you want something different.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -379,15 +382,16 @@ const schemas = [
         </div>
         <div>
           <Image
-            src={purificationComponentsImg}
-            alt="Blue Logic Purification System components: filtration tank and brine tank, pre-filter housing, Grundfos constant-pressure pump, reverse osmosis unit and 165-gallon storage tank"
-            class="rounded-2xl shadow-2xl w-full object-contain bg-white"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={60}
+            src={purificationSystemImg}
+            alt="Blue Logic Purification System installed in a Utah home: pre-filter housings, constant-pressure pump, reverse osmosis unit and stainless Purification Pretreatment tank"
+            class="rounded-2xl shadow-2xl w-full object-cover object-center aspect-4/5"
+            widths={[400, 600, 800, 1200]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={70}
+            loading="lazy"
           />
           <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            Every component of the Blue Logic Purification System
+            A Blue Logic Purification System built to one home's needs
           </p>
         </div>
       </div>
@@ -411,13 +415,17 @@ const schemas = [
 
       <div class="max-w-xs mx-auto mb-12">
         <Image
-          src={filtrationProductImg}
-          alt="Blue Logic Whole-Home Filtration tank with its digital control valve, standing beside a matching black brine tank"
-          class="w-full object-contain"
-          widths={[300, 500]}
+          src={filtrationGarageImg}
+          alt="Blue Logic Whole-Home Filtration tank and brine tank installed in a Utah garage"
+          class="rounded-2xl shadow-2xl w-full object-cover object-[center_55%] aspect-3/5"
+          widths={[320, 560]}
           sizes="320px"
           quality={70}
+          loading="lazy"
         />
+        <p class="text-sm text-muted-foreground text-center mt-4 italic">
+          Blue Logic Filtration in a customer's garage
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

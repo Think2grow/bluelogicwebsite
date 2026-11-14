@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { getFAQSchema, getBreadcrumbSchema, getBreadcrumbSchema as getSchema } from "../utils/schema";
 import { PRICES, PRICE_NOTE, usd } from "../data/offer";
+import { Image } from "astro:assets";
+import filtrationClosetImg from "../assets/real/installs/filtration-utility-closet.jpg";
+import purificationStorageImg from "../assets/real/installs/purification-system-with-storage.jpg";
 
 export const prerender = true;
 
@@ -78,6 +81,50 @@ const schemas = [
           <div class="font-bold text-foreground mb-2">Whole-Home RO</div>
           <div class="text-muted-foreground">Everything filtration does, plus reverse osmosis at every tap to reduce PFAS, arsenic, heavy metals, and dissolved solids. Pure water everywhere.</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installed in Utah Homes -->
+  <section class="bg-card py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
+        What Filtration and Purification Look Like Installed
+      </h2>
+      <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+        Real Blue Logic installs in customers' homes.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <figure>
+          <Image
+            src={filtrationClosetImg}
+            alt="Blue Logic Whole-Home Filtration tank with its digital control valve, installed in a Utah home's utility closet"
+            class="rounded-2xl shadow-xl w-full object-cover object-top aspect-3/5"
+            widths={[400]}
+            sizes="(max-width: 640px) 100vw, 420px"
+            quality={75}
+            loading="lazy"
+          />
+          <figcaption class="text-sm text-muted-foreground text-center mt-4">
+            <strong class="text-foreground">Blue Logic Filtration:</strong> one self-cleaning tank
+            and its brine tank, softening and filtering the whole home
+          </figcaption>
+        </figure>
+        <figure>
+          <Image
+            src={purificationStorageImg}
+            alt="Blue Logic Purification System installed in a Utah home: storage tank, pre-filter housings, constant-pressure pump, reverse osmosis unit and pretreatment tank"
+            class="rounded-2xl shadow-xl w-full object-cover object-center aspect-3/5"
+            widths={[400, 800]}
+            sizes="(max-width: 640px) 100vw, 420px"
+            quality={70}
+            loading="lazy"
+          />
+          <figcaption class="text-sm text-muted-foreground text-center mt-4">
+            <strong class="text-foreground">Blue Logic Purification System:</strong> Filtration in
+            front, then reverse osmosis, storage and constant pressure
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>

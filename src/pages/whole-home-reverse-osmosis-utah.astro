@@ -5,8 +5,8 @@ import Reviews from "../components/Reviews.astro";
 import OfferBanner from "../components/OfferBanner.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import utilityRoomStorageImg from "../assets/real/utility-room-storage-tank-2.jpg";
-import filtrationTankImg from "../assets/WH Filtration Product.png";
+import purificationStorageImg from "../assets/real/installs/purification-system-with-storage.jpg";
+import purificationSystemImg from "../assets/real/installs/purification-system-front.jpg";
 import { PRICES, PRICE_NOTE, WARRANTY, usd } from "../data/offer";
 
 export const prerender = true;
@@ -132,14 +132,17 @@ const schemas = [
         </div>
         <div>
           <Image
-            src={utilityRoomStorageImg}
-            alt="Whole-home reverse osmosis installed in a Utah home's utility room: food-grade storage tank, constant-pressure pump, reverse osmosis unit and filtration tank"
-            class="rounded-2xl shadow-2xl w-full object-cover object-top aspect-video"
-            widths={[400, 600, 800, 1100]}
+            src={purificationStorageImg}
+            alt="Blue Logic Purification System installed in a Utah home's basement: purified-water storage tank, pre-filter housings, constant-pressure pump, reverse osmosis unit and stainless pretreatment tank"
+            class="rounded-2xl shadow-2xl w-full object-cover object-center aspect-4/5"
+            widths={[400, 600, 800, 1200]}
             sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={60}
+            quality={70}
             loading="lazy"
           />
+          <p class="text-sm text-muted-foreground text-center mt-4 italic">
+            A Blue Logic Purification System built to one home's needs
+          </p>
         </div>
       </div>
     </div>
@@ -323,12 +326,13 @@ const schemas = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <Image
-            src={filtrationTankImg}
-            alt="Blue Logic Whole-Home Filtration tank and brine tank, the pre-treatment that sits in front of the reverse osmosis"
-            class="w-full object-contain aspect-3/4"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            src={purificationSystemImg}
+            alt="Front view of a Blue Logic Purification System: pre-filter housings, constant-pressure pump, reverse osmosis unit and the stainless pretreatment tank that protects the membrane"
+            class="rounded-2xl shadow-2xl w-full object-cover object-center aspect-4/5"
+            widths={[400, 600, 800, 1200]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             quality={70}
+            loading="lazy"
           />
         </div>
         <div>
@@ -337,8 +341,10 @@ const schemas = [
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
             Blue Logic equipment is modular and installed on site, usually in the utility room.
-            We size every system to the home, and a home that needs more purified-water storage
-            simply adds another 165-gallon tank.
+            The standard build uses a 165-gallon storage tank and a Grundfos SCALA2
+            constant-pressure pump, and a home that needs more purified-water storage simply adds
+            another 165-gallon tank. Because we build to the home, tank size and components can be
+            customized when you want something different.
           </p>
           <div class="space-y-4">
             <div class="spec-row">
@@ -355,7 +361,7 @@ const schemas = [
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Storage</span>
-              <span class="text-primary font-semibold text-right">165 gallons per tank, more tanks added as modules</span>
+              <span class="text-primary font-semibold text-right">165 gallons per tank (standard), more tanks added as modules</span>
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Tank materials</span>
@@ -363,7 +369,7 @@ const schemas = [
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Pressure</span>
-              <span class="text-primary font-semibold text-right">Grundfos SCALA2 constant-pressure pump</span>
+              <span class="text-primary font-semibold text-right">Grundfos SCALA2 constant-pressure pump (standard)</span>
             </div>
             <div class="spec-row">
               <span class="font-semibold text-foreground">Warranty</span>
