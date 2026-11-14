@@ -11,7 +11,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Can you drink the tap water in Salt Lake City?",
-    answer: "Yes. Salt Lake City tap water is legally safe to drink and meets all federal EPA standards. That said, the EWG Tap Water Database flags 16 contaminants in the SLC supply above its health guidelines, including arsenic (135x the EWG guideline), a PFAS compound (404x), and disinfection byproducts (101x), plus PFAS detected at 7.1–7.8 ppt in 2024 city testing. All are within federal legal limits but above the stricter EWG health guidelines. Many Salt Lake City households still choose whole-home filtration or reverse osmosis for water purification that goes beyond what legal compliance requires.",
+    answer: "Yes. Salt Lake City tap water is legally safe to drink and meets all federal EPA standards. That said, the EWG Tap Water Database flags 16 contaminants in the SLC supply above its health guidelines, including arsenic (135x the EWG guideline), a PFAS compound (404x), and disinfection byproducts (101x), plus PFAS detected at 7.1–7.8 ppt in 2024 city testing. All are within federal legal limits but above the stricter EWG health guidelines. For households that want to go further, the Blue Logic Purification System (whole-home reverse osmosis) reduces arsenic and PFAS at every tap, and Blue Logic Filtration includes an under-sink RO for drinking water at the kitchen tap.",
   },
   {
     question: "What is in Salt Lake City's tap water?",
@@ -65,9 +65,9 @@ const schemas = [
         Water Treatment for Salt Lake City Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Salt Lake City's water contains PFAS, elevated arsenic, and disinfection byproducts,
-        all while being classified as federally compliant. Blue Logic installs whole-home
-        filtration and reverse osmosis systems that address what compliance doesn't.
+        Salt Lake City's water meets federal standards, and the EWG database still flags PFAS,
+        arsenic and disinfection byproducts above its stricter health guidelines. Blue Logic
+        tests your water at the kitchen sink and recommends a system based on what it finds.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -137,8 +137,8 @@ const schemas = [
         </div>
         <div class="mt-5 pt-5 border-t border-border">
           <p class="text-xs text-muted-foreground leading-relaxed">
-            EWG health guidelines are more stringent than federal legal limits, which have not been comprehensively updated
-            since the 1990s. Salt Lake City's water is federally compliant. For the full EWG report:
+            EWG health guidelines are much stricter than federal legal limits, so a large multiple can reflect a very
+            small amount. Salt Lake City's water is federally compliant. For the full EWG report:
             <a href="https://www.ewg.org/tapwater/system.php?pws=UTAH18026" target="_blank" rel="noopener" class="text-primary underline">
               EWG Tap Water Database: SLC →
             </a>
@@ -161,9 +161,9 @@ const schemas = [
           during chlorination treatment. The JVWCD water averages around 10–12 GPG hardness.
         </p>
         <p class="text-muted-foreground text-sm leading-relaxed mt-3">
-          Because these same sources supply communities throughout the valley, Blue Logic provides
-          whole-home water purification across Salt Lake County, from Salt Lake City proper to Sandy,
-          Draper, Murray, and the West Jordan and South Jordan suburbs. Related reading:
+          These same sources supply communities throughout the valley, and Blue Logic serves homes
+          across Salt Lake County, from Salt Lake City proper to Sandy, Draper, Murray, West Jordan
+          and South Jordan. Related reading:
           <a href="/blog/pfas-utah-water/" class="text-primary underline">PFAS in Utah water</a> and
           <a href="/blog/is-salt-lake-city-water-safe/" class="text-primary underline">Is Salt Lake City water safe?</a>
         </p>
@@ -190,7 +190,7 @@ const schemas = [
         ))}
       </div>
       <p class="text-sm text-muted-foreground text-center mt-4">
-        Also serving Sandy · Draper · West Jordan · South Jordan · Cottonwood Heights · Holladay and surrounding Salt Lake County communities.
+        Also serving Sandy · Draper · West Jordan · South Jordan and surrounding Salt Lake County communities.
         <a href="/locations/" class="text-primary font-medium ml-1">View all service areas →</a>
       </p>
     </div>
@@ -210,7 +210,7 @@ const schemas = [
             Older SLC homes, particularly in the Avenues and Sugar House, often have aging
             copper or galvanized steel plumbing that can interact with the water supply.
             Existing scale from years of hard water in the pipes can flake off during pressure
-            changes. A whole-home filtration system softens the incoming water and filters
+            changes. Blue Logic Filtration softens the incoming water and filters
             sediment and rust, so new scale stops forming.
           </p>
         </div>
@@ -224,20 +224,19 @@ const schemas = [
           </p>
         </div>
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">The Family With Young Children</h3>
+          <h3 class="font-semibold text-foreground mb-2">Families Asking About PFAS</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            PFAS detection in SLC's water supply concerns many families with young children.
-            A whole-home RO system addresses PFAS at the molecular level via the RO membrane,
-            providing purified water at every tap, including bath water where chlorine and other
-            compounds are absorbed through skin. Blue Logic Filtration includes an under-sink RO
-            at the kitchen tap for purified drinking water without a full whole-home RO system.
+            Many SLC families ask us about the PFAS detection. Reverse osmosis is among the most
+            effective home technologies for PFAS. The Blue Logic Purification System puts RO water
+            at every tap in the house, baths and showers included. Blue Logic Filtration includes an
+            under-sink RO at the kitchen tap for purified drinking water without whole-home RO.
           </p>
         </div>
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">The Bottled Water Dependent</h3>
+          <h3 class="font-semibold text-foreground mb-2">The Bottled Water Household</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
             Many SLC households buy bottled water because of taste and quality concerns.
-            A Blue Logic whole-home RO system delivers purified water from every tap in the
+            The Blue Logic Purification System delivers purified water from every tap in the
             house, not just a filter pitcher, so the bottled water runs can stop.
           </p>
         </div>
@@ -255,7 +254,7 @@ const schemas = [
         <div class="p-6">
           <div class="text-3xl font-bold text-primary mb-2">5 Years</div>
           <div class="font-semibold text-foreground mb-1">Warranty</div>
-          <div class="text-sm text-muted-foreground">5-year warranty on defects in materials and workmanship, plus 12 months on installation workmanship.</div>
+          <div class="text-sm text-muted-foreground">5-year warranty on defects in materials and workmanship, 10 years on the media inside the treatment tank, plus 12 months on installation workmanship.</div>
         </div>
         <div class="p-6 border-y md:border-y-0 md:border-x border-border">
           <div class="text-3xl font-bold text-primary mb-2">Out the Door</div>
@@ -324,8 +323,8 @@ const schemas = [
         Schedule Your Free Salt Lake City Water Test
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        A Blue Logic specialist will come to your SLC home, test your water on-site,
-        and recommend the right system based on what they find. No cost, no obligation.
+        A Blue Logic specialist will come to your SLC home, test your water at the kitchen
+        sink, and recommend the right system based on what they find. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

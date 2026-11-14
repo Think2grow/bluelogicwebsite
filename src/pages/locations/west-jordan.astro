@@ -15,19 +15,19 @@ const faqs = [
   },
   {
     question: "What is hexavalent chromium and why is it in West Jordan's water?",
-    answer: "Hexavalent chromium (chromium-6) is a form of the element chromium associated with industrial and natural geological sources. West Jordan's chromium-6 at 93x the EWG health guideline is one of the highest readings in the Salt Lake Valley. It is primarily naturally occurring in Utah's source water geology. The EPA regulates total chromium but does not yet have a specific hexavalent chromium standard. EWG's research suggests the current federal total chromium limit is insufficient for the more toxic hexavalent form. Reverse osmosis is among the most effective residential technologies for chromium-6 reduction.",
+    answer: "Hexavalent chromium (chromium-6) is a form of the element chromium associated with industrial and natural geological sources. EWG reports West Jordan's chromium-6 at 93x its health guideline, within the federal limit. It is primarily naturally occurring in Utah's source water geology. The EPA regulates total chromium but does not yet have a specific hexavalent chromium standard, and EWG's guideline for the hexavalent form is far stricter than the federal total chromium limit. Reverse osmosis is among the most effective residential technologies for chromium-6 reduction.",
   },
   {
     question: "How does West Jordan's water compare to neighboring South Jordan and Sandy?",
-    answer: "All three cities receive primarily JVWCD-sourced water and face similar disinfection byproduct and hard water challenges. West Jordan is distinguished by its notably high chromium-6 levels (93x EWG guideline) and arsenic (275x EWG guideline). South Jordan has the highest HAA9 disinfection byproducts in the valley. Sandy has elevated HAA5 levels. All three are well above EWG thresholds for multiple contaminants while meeting federal legal standards.",
+    answer: "All three cities receive primarily JVWCD-sourced water and face similar disinfection byproduct and hard water challenges. West Jordan's main EWG flags are chromium-6 (93x EWG guideline) and arsenic (275x EWG guideline). South Jordan's is HAA9 disinfection byproducts, and Sandy's is HAA5. All three meet federal legal standards, with several results above EWG's stricter guidelines.",
   },
   {
     question: "What Blue Logic system is recommended for West Jordan?",
-    answer: "Given West Jordan's chromium-6, arsenic, and chloroform concerns alongside very hard water (~18 GPG), whole-home reverse osmosis provides the most complete coverage. The RO membrane addresses chromium-6, arsenic, and chloroform at the molecular level, contaminants that standard filtration and softening alone don't fully reach. The whole-home filtration system is also a meaningful upgrade, particularly for homeowners focused primarily on hardness, chlorine taste/odor, and HAA reduction.",
+    answer: "For homeowners who want chromium-6 and arsenic reduced at every tap, the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option: its Filtration stage softens the ~18 GPG water and reduces chlorine and its byproducts, and the RO membrane reduces chromium-6 and arsenic, which softening and filtration alone don't fully reach. Blue Logic Filtration is a solid choice for homeowners focused on hardness, chlorine taste and odor, and disinfection byproducts, and its under-sink RO covers drinking water at the kitchen tap.",
   },
   {
     question: "Does Blue Logic offer financing for West Jordan homeowners?",
-    answer: "Yes. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit. Blue Logic systems run $2,999 to $19,999 out the door (installation and tax included), depending on what your home needs, and every system carries a 5-year warranty on defects in materials and workmanship. Your free water test ends with a written recommendation and price, so you can compare it side by side with any other quote.",
+    answer: "Yes. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit. Blue Logic solutions start at about $1,000 out the door (installation and tax included) and are customized to what your home needs. Every system carries a 5-year warranty on defects in materials and workmanship, plus 10 years on the media inside the treatment tank. Your free water test ends with a written recommendation and price, so you can compare it side by side with any other quote.",
   },
 ];
 
@@ -44,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment West Jordan Utah | Blue Logic Water"
-  description="West Jordan water has chromium-6 at 93x and arsenic at 275x the EWG health guideline. Blue Logic installs whole-home RO and filtration in West Jordan. Free water test."
+  description="West Jordan water meets federal standards, but EWG flags chromium-6 (93x its guideline) and arsenic (275x). Blue Logic installs whole-home filtration and RO in West Jordan. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -56,9 +56,9 @@ const schemas = [
         Water Treatment for West Jordan, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        West Jordan's water supply contains chromium-6 at 93 times the EWG health guideline
-        and arsenic at 275 times, among the highest combined contaminant levels in Salt Lake County.
-        Blue Logic serves West Jordan with whole-home filtration and RO systems.
+        West Jordan's water meets federal standards. The EWG database flags chromium-6, arsenic
+        and chloroform above its stricter health guidelines, and the water is very hard. Blue Logic
+        serves West Jordan with whole-home filtration and RO systems.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
@@ -85,12 +85,12 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">93x</div>
           <div class="font-semibold text-foreground mb-1">Chromium-6 vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">One of the highest chromium-6 levels in Salt Lake County. Federally compliant; EWG guideline is far stricter.</p>
+          <p class="text-xs text-muted-foreground">Naturally occurring. Federally compliant; EWG guideline is far stricter.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">275x</div>
           <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Naturally occurring; among the highest arsenic levels in Salt Lake County.</p>
+          <p class="text-xs text-muted-foreground">Naturally occurring. EWG guideline is 0.004 ppb vs. EPA legal limit of 10 ppb.</p>
         </div>
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
@@ -140,8 +140,8 @@ const schemas = [
           <p class="text-sm text-muted-foreground leading-relaxed">
             West Jordan's older neighborhoods have accumulated years of hard water mineral buildup
             in plumbing, water heaters, and appliances. Homes on untreated water for many years
-            often have scaled water heaters and fixtures operating at reduced efficiency. A whole-home system stops future accumulation and
-            reduces the mineral load on aging infrastructure.
+            often have scaled water heaters and fixtures operating at reduced efficiency. A whole-home
+            system stops future accumulation and reduces the mineral load on aging plumbing.
           </p>
         </div>
         <div class="scenario-card">
@@ -154,19 +154,18 @@ const schemas = [
           </p>
         </div>
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">Families Concerned About Chromium-6</h3>
+          <h3 class="font-semibold text-foreground mb-2">Chromium-6 at Every Tap</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            West Jordan's chromium-6 at 93x the EWG health guideline is a concern for many
-            families with young children. The whole-home RO system addresses chromium-6 at the
-            molecular level through the RO membrane, providing purified water at every tap,
-            including bath and shower water.
+            Many West Jordan families ask about the chromium-6 result. The Blue Logic
+            Purification System reduces chromium-6 through its RO membrane, providing purified
+            water at every tap, including bath and shower water.
           </p>
         </div>
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Price Comparison</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
             West Jordan has several water treatment dealers competing for business. Blue Logic
-            systems run $2,999 to $19,999 out the door (installation and tax included), and your
+            solutions start at about $1,000 out the door (installation and tax included), and your
             free water test ends with a written recommendation and price you can compare with any
             other quote. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.
           </p>
@@ -234,8 +233,8 @@ const schemas = [
         Schedule Your Free West Jordan Water Test
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        A Blue Logic specialist will come to your West Jordan home, test your water on-site,
-        and recommend the right system. No cost, no obligation.
+        A Blue Logic specialist will come to your West Jordan home, test your water at the kitchen
+        sink, and recommend the right system. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

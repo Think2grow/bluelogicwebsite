@@ -4,7 +4,7 @@ import LeadForm from "../components/LeadForm.astro";
 import { getFAQSchema, getBreadcrumbSchema, getBreadcrumbSchema as getSchema } from "../utils/schema";
 import { PRICES, PRICE_NOTE, usd } from "../data/offer";
 import { Image } from "astro:assets";
-import filtrationClosetImg from "../assets/real/installs/filtration-utility-closet.jpg";
+import filtrationClosetImg from "../assets/real/installs/filtration-laundry-corner.jpg";
 import purificationStorageImg from "../assets/real/installs/purification-system-with-storage.jpg";
 
 export const prerender = true;
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Which system is right for a new construction home in Lehi or Saratoga Springs?",
-    answer: "New construction homes in fast-growing Utah County communities often have fresh plumbing but are still fed by municipal water with Utah's characteristic hardness, chlorine treatment, and in some areas, arsenic or PFAS concerns. Many new homeowners choose whole-home filtration, or the full purification system, to address everything at once rather than adding a softener now and upgrading later.",
+    answer: "New construction homes in fast-growing Utah County communities often have fresh plumbing but are still fed by municipal water with Utah's characteristic hardness, chlorine treatment, and in some areas, arsenic or PFAS concerns. Many new homeowners start with Blue Logic Filtration for hardness, chlorine and sediment, and choose the Blue Logic Purification System when their water test or city report points to arsenic or PFAS. Either way, it is simpler to do it once than to add a softener now and upgrade later.",
   },
   {
     question: "I already have a water softener. Do I still need a filtration system?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "What is the difference in cost between a softener, filtration system, and RO system?",
-    answer: "Blue Logic systems range from $2,999 to $19,999 depending on the system and your home's configuration, with standard installation and tax included. The Blue Logic Softener is $2,999, Blue Logic Filtration (including an under-sink reverse osmosis system) is $5,999, and the Blue Logic Purification System is $15,999. The value comparison changes when you account for what's actually left in your water after each option. Your free water test includes a transparent, no-obligation quote.",
+    answer: "Blue Logic solutions start at about $1,000 and go up from there, customized to your home, with standard installation and tax included. The Blue Logic Softener is $2,999, Blue Logic Filtration (including an under-sink reverse osmosis system) is $5,999, and the Blue Logic Purification System is $15,999. The value comparison changes when you account for what's actually left in your water after each option. Your free water test includes a transparent, no-obligation quote.",
   },
   {
     question: "Which option removes the most contaminants?",
@@ -71,15 +71,15 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
         <div class="bg-background rounded-xl p-5 border border-border text-center">
           <div class="font-bold text-foreground mb-2">Water Softener</div>
-          <div class="text-muted-foreground">Fixes scale, spots, and appliance damage. Does not improve drinking water or address chlorine, PFAS, arsenic, or other contaminants.</div>
+          <div class="text-muted-foreground">Stops scale, spots, and appliance wear. Does not improve drinking water or address chlorine, PFAS, arsenic, or other contaminants.</div>
         </div>
         <div class="bg-background rounded-xl p-5 border border-primary text-center">
           <div class="font-bold text-primary mb-2">Whole-Home Filtration</div>
-          <div class="text-muted-foreground">Fixes scale AND removes chlorine and chloramine taste and odor, sediment and rust at every tap, plus purified RO water at the kitchen tap.</div>
+          <div class="text-muted-foreground">Stops scale and removes chlorine and chloramine taste and odor, sediment and rust at every tap, plus purified RO water at the kitchen tap.</div>
         </div>
         <div class="bg-background rounded-xl p-5 border border-border text-center">
           <div class="font-bold text-foreground mb-2">Whole-Home RO</div>
-          <div class="text-muted-foreground">Everything filtration does, plus reverse osmosis at every tap to reduce PFAS, arsenic, heavy metals, and dissolved solids. Pure water everywhere.</div>
+          <div class="text-muted-foreground">Everything filtration does, plus reverse osmosis at every tap to reduce PFAS, arsenic, heavy metals, and dissolved solids. Purified water everywhere.</div>
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ const schemas = [
         <figure>
           <Image
             src={filtrationClosetImg}
-            alt="Blue Logic Whole-Home Filtration tank with its digital control valve, installed in a Utah home's utility closet"
+            alt="Blue Logic Filtration tank with its digital control valve and brine tank, installed beside the water heater in a Utah home"
             class="rounded-2xl shadow-xl w-full object-cover object-top aspect-3/5"
             widths={[400]}
             sizes="(max-width: 640px) 100vw, 420px"
@@ -253,17 +253,16 @@ const schemas = [
           <div class="scenario-header">
             <div class="scenario-icon">👨‍👩‍👧</div>
             <h3 class="text-xl font-semibold text-foreground">
-              "I have young kids. I want better water throughout the whole house."
+              "We have a family. I want better water throughout the whole house."
             </h3>
           </div>
           <div class="scenario-body">
             <p class="text-muted-foreground mb-3">
-              Families with young children often want to address both what's in the bath water and
-              the drinking water. Whole-home filtration removes chlorine (which reaches you through
-              skin and steam during bathing), softens the water, and improves taste at every tap,
-              with purified reverse osmosis water at the kitchen sink.
-              If your city's water has elevated contaminant concerns per EWG data, the RO upgrade
-              provides the most complete protection.
+              Families often want better water in the bath as well as in the glass. Blue Logic
+              Filtration softens the water and removes chlorine and chloramine at every tap,
+              including the shower and bath, with purified reverse osmosis water at the kitchen sink.
+              If EWG data for your city shows elevated contaminants, the Purification System brings
+              reverse osmosis to every tap.
             </p>
             <p class="font-semibold text-primary">
               Recommended: Blue Logic Filtration (under-sink RO included), or the Blue Logic Purification System
@@ -353,8 +352,8 @@ const schemas = [
         The Best Way to Decide Is a Free Water Test
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-        Every comparison chart in the world can't tell you what's actually in your water.
-        A Blue Logic specialist will test your water on-site (hardness, chlorine, and your
+        No comparison chart can tell you what's actually in your water. A Blue Logic
+        specialist will test your water at your kitchen sink (hardness, chlorine, and your
         city's specific contaminant context) and give you a transparent, no-pressure recommendation
         based on what they find.
       </p>

@@ -7,7 +7,7 @@ date: 2026-06-04
 image: "../../assets/real/valve-and-manifold.jpg"
 ---
 
-Moving into a new home is one of the best opportunities to set your household up correctly from the start: before scale accumulates in your appliances, before your shower doors start clouding, and before your family has been drinking untreated water for a year while you got around to looking into it.
+Moving into a new home is one of the best opportunities to set your household up correctly from the start: before scale accumulates in your appliances, before your shower doors start clouding, and before a year of hard water has gone through your new plumbing while you got around to looking into it.
 
 If you're moving to Utah's Wasatch Front, water quality is one of the first things worth understanding about your new home. Here's why, and what to actually do about it.
 
@@ -29,12 +29,12 @@ If you're choosing between neighborhoods in different Wasatch Front cities, wate
 |---|---|---|
 | Lehi | Arsenic 484x EWG guideline | 11–16 GPG |
 | Draper | Arsenic 450x · HAA9 802x | ~21 GPG |
-| South Jordan | HAA9 525x (highest in valley) | ~18 GPG |
+| South Jordan | HAA9 525x | ~18 GPG |
 | West Jordan | Chromium-6 93x · Arsenic 275x | ~18 GPG |
 | Orem | Chromium-6 36x · Arsenic 131x | ~18 GPG |
 | Sandy | HAA5 306x | ~18 GPG |
 | Salt Lake City | PFAS detected · Arsenic 135x | ~12 GPG |
-| Bountiful | Radium · Arsenic · 18–38 GPG | Highly variable |
+| Bountiful | Radium · Arsenic | 18–38 GPG (highly variable) |
 
 These aren't hidden or controversial facts; they're from official utility testing data as reported to the EPA and compiled by the Environmental Working Group. What they mean in practice: if you're choosing between a home in Lehi and a home in Salt Lake City, the water quality profiles are meaningfully different and worth factoring in.
 
@@ -63,7 +63,7 @@ A home water treatment system can replace that expense, with purified drinking w
 Search "[your city] water quality report [current year]" for your utility's annual Consumer Confidence Report. Also check the EWG Tap Water Database at ewg.org/tapwater; it compares your utility's detected contaminants against EWG's stricter health guidelines.
 
 **Step 2: Schedule a free in-home water test**  
-Blue Logic's free water test sends a specialist to your new home, tests hardness and chlorine on-site, walks you through your city's water profile, and gives you a transparent recommendation. No cost, no obligation. This is the fastest way to go from "I should look into this" to "I know exactly what's in my water and what to do about it."
+Blue Logic's free water test sends a specialist to your new home, tests TDS, hardness and chlorine at the kitchen sink, walks you through your city's water profile, and gives you a transparent recommendation. No cost, no obligation. This is the fastest way to go from "I should look into this" to "I know what my water needs."
 
 **Step 3: Choose the right system for your home and concerns**
 

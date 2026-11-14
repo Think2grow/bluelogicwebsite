@@ -2,21 +2,21 @@
 slug: pfas-utah-water
 title: "PFAS in Utah Water: What Wasatch Front Homeowners Need to Know"
 seoTitle: "PFAS in Utah Water: What Homeowners Should Know"
-description: "PFAS 'forever chemicals' have been detected in Salt Lake City, Park City, and other Utah water supplies. Here's what PFAS are, what the detection means, and what reduces them."
+description: "PFAS 'forever chemicals' have been detected in Salt Lake City and other Utah water supplies. Here's what PFAS are, what the detection means, and what reduces them."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "../../assets/real/utility-room-system-full.jpg"
+image: "../../assets/real/installs/filtration-basement.jpg"
 ---
 
 In March 2024, the Salt Lake City Department of Public Utilities announced what many Utah homeowners hadn't expected: PFAS (per- and polyfluoroalkyl substances) had been detected in the city's water supply at approximately 7.1 to 7.8 parts per trillion.
 
-Park City's water supply showed PFOA and PFOS, two of the most studied PFAS compounds, in earlier testing. And with the EPA finalizing its first-ever federal PFAS limits in April 2024, the question of what's in Wasatch Front water became impossible to ignore.
+Park City's water supply showed PFOA and PFOS, two of the most studied PFAS compounds, in earlier testing. And with the EPA finalizing its first-ever federal PFAS limits in April 2024, more Utah homeowners started asking what's in their water.
 
 Here's what you actually need to know.
 
 ## What Are PFAS?
 
-PFAS (per- and polyfluoroalkyl substances) is an umbrella term for a family of thousands of synthetic chemicals that share one key property: the carbon-fluorine bond. That bond is one of the strongest in chemistry. It doesn't break down in the environment, in water, or in the human body. That's where the nickname "forever chemicals" comes from.
+PFAS (per- and polyfluoroalkyl substances) is an umbrella term for a family of thousands of synthetic chemicals that share one key property: the carbon-fluorine bond. That bond is one of the strongest in chemistry, so PFAS break down extremely slowly in the environment, in water, and in the human body. That's where the nickname "forever chemicals" comes from.
 
 PFAS were developed starting in the 1940s and have been used in an enormous range of industrial and consumer products: non-stick cookware coatings, stain-resistant fabric treatments, food packaging, firefighting foam (AFFF, used heavily at military bases and airports), and industrial processes. For decades, PFAS were considered safe and their environmental persistence wasn't fully understood.
 
@@ -66,7 +66,7 @@ The conservative position, which EWG and the EPA's new standards reflect, is tha
 | Community | Status | Notes |
 |---|---|---|
 | Salt Lake City | Detected (~7 ppt) | Announced 2024; type is PFHxS |
-| Park City | Detected (PFOA, PFOS) | Flagged in EWG database; summit county source water |
+| Park City | Detected (PFOA, PFOS) | Flagged in EWG database; Summit County source water |
 | Hill AFB area communities | Under monitoring | AFFF use at base; Davis County communities near base being tested |
 
 Testing is ongoing across Utah. The EPA's new standards have prompted utilities statewide to test more comprehensively. More detections are expected as testing expands.
@@ -83,7 +83,7 @@ Not all filtration approaches address PFAS. Here's the evidence:
 
 **Under-sink RO:** An under-sink reverse osmosis system at your kitchen tap is a cost-effective approach if your primary concern is PFAS in drinking and cooking water. Blue Logic Filtration [includes an under-sink RO system](/whole-home-water-filtration/) at the kitchen tap.
 
-**Whole-home RO:** For families who want whole-home PFAS reduction, including in bathing water (PFAS can be absorbed through skin and inhaled from steam), Blue Logic's [whole-home reverse osmosis system](/whole-home-reverse-osmosis-utah/) is the most complete residential approach available.
+**Whole-home RO:** For families who want whole-home PFAS reduction, including bathing water, Blue Logic's [whole-home reverse osmosis system](/whole-home-reverse-osmosis-utah/) is the most complete residential approach available.
 
 ## What to Do Next
 
@@ -103,4 +103,4 @@ The PFAS situation in Utah water is real, but it's also manageable with the righ
 
 *PFAS data sourced from the EWG Tap Water Database, Salt Lake City Department of Public Utilities announcements, and the EPA's 2024 PFAS rulemaking. PFAS research is ongoing and evolving; consult a healthcare provider for personalized health guidance. Blue Logic makes no specific health claims about PFAS exposure. All Wasatch Front utilities provide water that meets applicable federal standards.*
 
-*[Learn more about Utah water quality →](/utah-water-quality/) · [Salt Lake City water →](/locations/salt-lake-city/) · [Park City water →](/locations/park-city/) · [Whole-home RO systems →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/)*
+*[Learn more about Utah water quality →](/utah-water-quality/) · [Salt Lake City water →](/locations/salt-lake-city/) · [Layton water →](/locations/layton/) · [Whole-home RO systems →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/)*

@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "What is the best system for Midvale's water?",
-    answer: "Midvale's combination of 18 GPG hardness, HAA disinfection byproducts, and arsenic concerns is well-addressed by the whole-home filtration system (hardness, chlorine and disinfection byproducts) or the whole-home RO upgrade (which also addresses arsenic at the molecular level). Your free in-home water test confirms which is right for your home.",
+    answer: "Blue Logic Filtration handles Midvale's 18 GPG hardness, chlorine, and HAA disinfection byproducts. Upgrading to the Blue Logic Purification System (whole-home reverse osmosis) also reduces arsenic at every tap. Your free in-home water test confirms which is right for your home.",
   },
 ];
 
@@ -111,6 +111,7 @@ const schemas = [
 
   <section class="bg-card py-10 px-4">
     <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
       <div class="flex flex-wrap justify-center gap-3">
         {[{name:"Sandy",slug:"sandy"},{name:"Taylorsville",slug:"taylorsville"},{name:"Murray",slug:"murray"},{name:"Draper",slug:"draper"}].map((c) => (
           <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
@@ -123,7 +124,7 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test: Midvale</h2>
-      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Midvale and all of Salt Lake County. No cost, no obligation.</p>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Midvale and all of Salt Lake County. A specialist tests your water at the kitchen sink, at no cost and no obligation.</p>
       <LeadForm />
     </div>
   </section>

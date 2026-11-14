@@ -158,7 +158,7 @@ export function getProductSchema(url: string): ProductSchema {
     "@type": "Product",
     name: "Blue Logic Water Treatment Systems",
     description:
-      "Blue Logic water treatment systems: Softener, Filtration with an under-sink RO, and the whole-home Purification System. $2,999 to $19,999 out the door, installation and tax included. 5-year warranty. Serving the Wasatch Front.",
+      "Blue Logic water treatment systems: Softener, Filtration with an under-sink RO, and the whole-home Purification System. From about $1,000 out the door, customized to the home, installation and tax included. 5-year warranty, 10 years on tank media. Serving the Wasatch Front.",
     image: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     brand: {
       "@type": "Brand",

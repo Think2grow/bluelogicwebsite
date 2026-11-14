@@ -4,7 +4,7 @@ import LeadForm from "../components/LeadForm.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import filtrationInstallImg from "../assets/real/installs/filtration-beside-water-heater.jpg";
-import underSinkRoImg from "../assets/real/installs/under-sink-ro-install.jpg";
+import underSinkRoImg from "../assets/real/installs/under-sink-ro-white-cabinet.jpg";
 import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive, WARRANTY, PRICE_NOTE } from "../data/offer";
 
 export const prerender = true;
@@ -64,7 +64,7 @@ const schemas = [
 ---
 
 <Layout
-  title="Whole Home Water Filtration Utah | Blue Logic Water"
+  title="Whole-Home Water Filtration Utah | Blue Logic Water"
   description="Blue Logic Filtration: whole-home softening and filtration in one self-cleaning tank, plus an under-sink RO at the kitchen tap. Free water test on the Wasatch Front."
   schema={schemas}
 >
@@ -210,7 +210,7 @@ const schemas = [
       <div>
         <Image
           src={underSinkRoImg}
-          alt="Installer fitting an under-sink reverse osmosis system in a customer's kitchen sink cabinet"
+          alt="Blue Logic under-sink reverse osmosis system installed in a Utah kitchen sink cabinet"
           class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
           widths={[400, 600, 900]}
           sizes="(max-width: 1024px) 100vw, 50vw"
@@ -248,7 +248,7 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">No more chlorine smell or taste</h3>
-          <p class="text-sm text-muted-foreground">Chlorine and chloramine are taken out of all the water entering your home, including the shower and bath water you breathe in and that touches your skin.</p>
+          <p class="text-sm text-muted-foreground">Chlorine and chloramine are taken out of all the water entering your home, including the water in your shower and bath.</p>
         </div>
         <div class="notice-card">
           <h3 class="font-semibold text-foreground mb-2">Scale stops building up</h3>
@@ -281,8 +281,8 @@ const schemas = [
         Transparent Pricing and Financing
       </h2>
       <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        Blue Logic systems range from $2,999 to $19,999 depending on the system selected and your
-        home's configuration. {PRICE_NOTE} Your exact price is confirmed at your free water test.
+        Blue Logic solutions start at about $1,000 and go up from there, and every system is
+        customized to your water and your home. {PRICE_NOTE} Your exact price is confirmed at your free water test.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div class="pricing-card">
@@ -303,7 +303,7 @@ const schemas = [
           href="/free-water-test/"
           class="inline-block bg-primary text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all"
         >
-          Get Your Free Quote →
+          Schedule Your Free Water Test →
         </a>
       </div>
     </div>
@@ -351,9 +351,9 @@ const schemas = [
         Schedule Your Free Water Test
       </h2>
       <p class="text-lg text-muted-foreground text-center mb-10">
-        A Blue Logic specialist will assess your home's water and walk you through whether Blue
-        Logic Filtration, whole-home purification, or something else is right for your home.
-        No cost, no obligation.
+        A Blue Logic specialist will test your water at your kitchen sink and walk you through
+        whether the Blue Logic Softener, Blue Logic Filtration or the Blue Logic Purification
+        System is right for your home. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

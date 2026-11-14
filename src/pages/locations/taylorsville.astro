@@ -11,7 +11,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What is in Taylorsville's water?",
-    answer: "Taylorsville receives water from the Jordan Valley Water Conservancy District, the same supply as neighboring Sandy and Murray. The water has very hard water at approximately 18 GPG and elevated haloacetic acid disinfection byproducts above EWG health guidelines (dichloroacetic acid at 104x EWG guideline, HAA5 at 306x). All levels are within federal legal limits.",
+    answer: "Taylorsville receives water from the Jordan Valley Water Conservancy District, the same supply as neighboring Sandy and Murray. The water is very hard, at approximately 18 GPG, and has haloacetic acid disinfection byproducts above EWG health guidelines (dichloroacetic acid at 104x EWG guideline, HAA5 at 306x). All levels are within federal legal limits.",
   },
   {
     question: "How hard is Taylorsville water?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "What Blue Logic system is recommended for Taylorsville?",
-    answer: "Given Taylorsville's elevated HAA disinfection byproducts and 18 GPG hardness, Blue Logic Filtration addresses both concerns in one tank: softening for scale, plus reduction of chlorine, chloramines and their byproducts. For homeowners who also want to address arsenic, the whole-home RO upgrade provides the most complete coverage. Your free water test confirms which is right for your home.",
+    answer: "Given Taylorsville's elevated HAA disinfection byproducts and 18 GPG hardness, Blue Logic Filtration addresses both concerns in one tank: softening for scale, plus reduction of chlorine, chloramines and their byproducts. For homeowners who also want purified water at every tap, upgrading to the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option. Your free water test confirms which is right for your home.",
   },
 ];
 
@@ -40,7 +40,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Taylorsville Utah | Blue Logic Water"
-  description="Taylorsville water has HAA disinfection byproducts at 306x EWG guideline and 18 GPG hardness. Blue Logic serves Taylorsville with whole-home filtration and RO. Free water test."
+  description="Taylorsville water meets federal standards, but EWG flags HAA disinfection byproducts at 306x its guideline, and the water is 18 GPG hard. Blue Logic serves Taylorsville with whole-home filtration and RO. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -52,8 +52,8 @@ const schemas = [
         Water Treatment for Taylorsville Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Taylorsville receives JVWCD surface water with haloacetic acid disinfection byproducts
-        at 306x the EWG health guideline and very hard water at 18 GPG.
+        Taylorsville's JVWCD water meets federal standards. It is very hard, at about 18 GPG, and
+        the EWG database flags haloacetic acid disinfection byproducts above its stricter guidelines.
         Blue Logic installs whole-home filtration and RO systems throughout Taylorsville.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -88,9 +88,9 @@ const schemas = [
         <h3 class="text-lg font-semibold mb-3 text-foreground">Key Concerns for Taylorsville Homeowners</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
           <div><strong class="text-foreground">Hard water scale:</strong> At roughly 18 grains per gallon, Taylorsville's Jordan Valley water leaves rapid scale on fixtures, glassware, and inside appliances. Softening slows that buildup and restores soap, detergent, and water-heater efficiency.</div>
-          <div><strong class="text-foreground">Haloacetic acids (HAA5):</strong> Chlorinating JVWCD mountain surface water produces disinfection byproducts, including dichloroacetic acid, that the EWG database flags well above its health guidelines. Whole-home filtration reduces chlorine, chloramines and their byproducts.</div>
-          <div><strong class="text-foreground">Chlorine taste and odor:</strong> The same surface-water treatment that creates byproducts also leaves a noticeable chlorine taste and smell. Whole-home filtration removes chlorine taste and odor at every tap, not just one faucet.</div>
-          <div><strong class="text-foreground">Shared Sandy profile:</strong> Taylorsville sits on the same Jordan Valley supply as neighboring Sandy and Murray, so it shares their hardness and disinfection-byproduct profile. A free in-home test confirms the exact readings for your home.</div>
+          <div><strong class="text-foreground">Haloacetic acids (HAA5):</strong> Chlorinating JVWCD mountain surface water produces disinfection byproducts, including dichloroacetic acid, that the EWG database flags above its health guidelines. Blue Logic Filtration reduces chlorine, chloramines and their byproducts.</div>
+          <div><strong class="text-foreground">Chlorine taste and odor:</strong> The same surface-water treatment that creates byproducts also leaves a noticeable chlorine taste and smell. Blue Logic Filtration removes chlorine taste and odor at every tap, not just one faucet.</div>
+          <div><strong class="text-foreground">Same supply as Sandy and Murray:</strong> Taylorsville sits on the same Jordan Valley supply as neighboring Sandy and Murray, so it shares their hardness and disinfection-byproduct profile. A free in-home test confirms the exact readings for your home.</div>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@ const schemas = [
 
   <section class="bg-card py-10 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby:</p>
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
       <div class="flex flex-wrap justify-center gap-3">
         {[{name:"Sandy",slug:"sandy"},{name:"Murray",slug:"murray"},{name:"Midvale",slug:"midvale"},{name:"Salt Lake City",slug:"salt-lake-city"}].map((c) => (
           <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
@@ -131,7 +131,7 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Taylorsville Water Test</h2>
-      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Taylorsville and all of Salt Lake County. No cost, no obligation.</p>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Taylorsville and all of Salt Lake County. A specialist tests your water at the kitchen sink, at no cost and no obligation.</p>
       <LeadForm />
     </div>
   </section>

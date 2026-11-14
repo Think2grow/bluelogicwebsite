@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { PRICES, usd } from "../data/offer";
 
-const priceRange = `${usd(PRICES.softener)} to $19,999`;
+const priceRange = "From about $1,000, customized to your home";
 
 export const prerender = true;
 const siteUrl = "https://www.bluelogicwater.com";
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: "How do I know which contaminants are actually in my water?",
-    answer: "A free in-home water test is the best place to start. It measures your home's water at the tap for hardness and total dissolved solids, and your specialist walks you through contaminant data for your city's water source. City data from EWG is useful context, but actual levels vary by neighborhood, season, and which water sources are active. Blue Logic's test is no-obligation and takes about an hour.",
+    answer: "A free in-home water test is the best place to start. Your specialist measures total dissolved solids (TDS), hardness and chlorine at your kitchen sink, then walks you through contaminant data for your city's water source. City data from EWG is useful context, but actual levels vary by neighborhood, season, and which water sources are active. Blue Logic's test is no-obligation and takes 45 to 60 minutes.",
   },
   {
     question: "Does Blue Logic require a service contract?",
@@ -66,7 +66,7 @@ const schemas = [
   <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
-        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and the difference between softening and full-spectrum filtration for Utah homeowners.
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and the difference between softening alone and fuller treatment for Utah homeowners.
         We make no claims about AJ Softeners' products, pricing or terms. Bring any written quote to your free water test and we'll compare it with ours.
       </p>
     </div>
@@ -103,9 +103,9 @@ const schemas = [
           <p class="text-muted-foreground leading-relaxed">
             Water softening removes calcium and magnesium, the minerals responsible for scale,
             appliance wear, and hard water deposits. It does not remove arsenic, PFAS,
-            chlorine byproducts, or most other dissolved contaminants. For homeowners in
-            cities with these contamination levels, softening alone addresses the cosmetic
-            problems but not the health concerns.
+            chlorine byproducts, or most other dissolved contaminants. In cities where EWG
+            flags these, softening alone takes care of the scale but leaves the rest of the
+            water unchanged.
           </p>
         </div>
       </div>
@@ -117,7 +117,7 @@ const schemas = [
           { label: "Softening", value: "Yes", note: "Blue Logic Filtration softens and filters in one tank, ending scale and hard water spots." },
           { label: "Filtration", value: "Yes", note: "Chlorine and chloramine taste and odor gone at every tap; sediment and rust filtered out." },
           { label: "Reverse osmosis", value: "Included or whole-home", note: "Under-sink RO comes with Filtration; the Purification System adds whole-home RO for arsenic, PFAS, lead and more." },
-          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "System pricing", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
           { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
           { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
           { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
@@ -164,9 +164,9 @@ const schemas = [
         Test Your Water Before You Decide
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        A free in-home water test measures your water's hardness and TDS, and walks you through
-        the contaminants reported for your city's water. That tells you whether a softener is
-        enough, or whether you need full filtration. No obligation. If you already have an AJ
+        A free in-home water test measures your water's TDS, hardness and chlorine at the kitchen
+        sink, and walks you through the contaminants reported for your city's water. That tells
+        you whether a softener is enough, or whether your water needs more. No obligation. If you already have an AJ
         Softeners quote, bring it and we'll compare the two with you.
       </p>
       <LeadForm />

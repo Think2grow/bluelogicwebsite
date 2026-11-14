@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { PRICES, usd } from "../data/offer";
 
-const priceRange = `${usd(PRICES.softener)} to $19,999`;
+const priceRange = "From about $1,000, customized to your home";
 
 export const prerender = true;
 const siteUrl = "https://www.bluelogicwater.com";
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "What NSF certifications should I ask any water treatment company about?",
-    answer: "Ask which standard each claim refers to and which specific parts it covers. For reverse osmosis, NSF/ANSI 58 covers RO system performance and materials, and NSF/ANSI 61 covers materials that contact drinking water. Ask to see the documentation for the actual components going in your home, not just a general claim. The Blue Logic Purification System's storage tank is built from NSF/ANSI and FDA compliant materials.",
+    answer: "Ask which standard each claim refers to and which specific parts it covers. For reverse osmosis, NSF/ANSI 58 covers point-of-use (under-sink) RO system performance and materials, and NSF/ANSI 61 covers materials that contact drinking water. Ask to see the documentation for the actual components going in your home, not just a general claim. The Blue Logic Purification System's storage tank is built from NSF/ANSI and FDA compliant materials.",
   },
   {
     question: "Does Blue Logic require a service contract?",
@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     question: "What does Blue Logic's free water test actually measure?",
-    answer: "A Blue Logic water test measures hardness (grains per gallon), total dissolved solids (TDS in ppm), and chlorine, and your specialist walks you through contaminant data for your city's water source. Results are shared on the spot. The test is the basis for which system Blue Logic recommends; we don't sell a one-size-fits-all solution. It's no-obligation and takes about an hour at your home.",
+    answer: "A Blue Logic water test measures hardness (grains per gallon), total dissolved solids (TDS in ppm), and chlorine at your kitchen sink, and your specialist walks you through contaminant data for your city's water source. Results are shared on the spot. The test is the basis for which system Blue Logic recommends; we don't sell a one-size-fits-all solution. It's no-obligation and takes 45 to 60 minutes at your home.",
   },
 ];
 
@@ -85,7 +85,7 @@ const schemas = [
               number: "1",
               question: "What does the system actually treat, and how efficient is the RO?",
               why: "Ask which contaminants each part of the system addresses, and how much water the RO sends to drain for every gallon it purifies. Older RO designs can send several gallons to drain per gallon purified.",
-              blueLogic: "Filtration softens and filters in one tank. Blue Logic RO runs about 3 gallons purified per 1 to drain (up to 75% recovery), made safe by the Filtration in front.",
+              blueLogic: "Filtration softens and filters in one tank. Blue Logic RO runs about 3 gallons purified per 1 to drain (up to 75% recovery), which the Filtration in front makes possible by protecting the membrane.",
             },
             {
               number: "2",
@@ -97,7 +97,7 @@ const schemas = [
               number: "3",
               question: "What is the full installed price in writing, including all components and labor?",
               why: "Some quotes separate equipment cost from installation cost, or exclude components like the delivery pump, storage tank, or under-sink RO. Always compare total installed cost.",
-              blueLogic: `${priceRange} out the door, with standard installation and tax included, confirmed in writing at your free water test. No hidden fees.`,
+              blueLogic: `From about $1,000 out the door, customized to your home, with standard installation and tax included, confirmed in writing at your free water test. No hidden fees.`,
             },
             {
               number: "4",
@@ -132,7 +132,7 @@ const schemas = [
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "System pricing", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
           { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
           { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
           { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },

@@ -10,8 +10,8 @@ const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "What are haloacetic acids and why are they so high in Sandy's water?",
-    answer: "Haloacetic acids (HAAs) are disinfection byproducts: they form when chlorine used to treat drinking water reacts with naturally occurring organic compounds in the source water. Sandy receives treated surface water purchased from the Jordan Valley Water Conservancy District (JVWCD), which sources water from mountain watersheds. That mountain snowmelt carries organic material that reacts with chlorination, producing haloacetic acid compounds. Sandy's HAA5 level at 306x the EWG health guideline places it among the highest disinfection byproduct concentrations on the Wasatch Front. The water is federally compliant; EWG's guideline is stricter than current federal law.",
+    question: "What are haloacetic acids, and why does EWG flag them in Sandy?",
+    answer: "Haloacetic acids (HAAs) are disinfection byproducts: they form when chlorine used to treat drinking water reacts with naturally occurring organic compounds in the source water. Sandy receives treated surface water purchased from the Jordan Valley Water Conservancy District (JVWCD), which sources water from mountain watersheds. That mountain snowmelt carries organic material that reacts with chlorination, producing haloacetic acid compounds. EWG reports Sandy's HAA5 at 306x its health guideline. The water is federally compliant; EWG's guideline is stricter than current federal law.",
   },
   {
     question: "Is Sandy water hard?",
@@ -23,15 +23,15 @@ const faqs = [
   },
   {
     question: "How does Blue Logic's system address Sandy's HAA levels?",
-    answer: "Blue Logic Filtration reduces chlorine, chloramines and their byproducts at every tap in the home, so it addresses HAAs meaningfully. For the most complete HAA reduction, the whole-home RO system's membrane provides an additional molecular-level barrier. Your free water test will help determine which system is right for your home.",
+    answer: "Blue Logic Filtration reduces chlorine, chloramines and their byproducts, HAAs included, at every tap in the home. For the most complete reduction, the Blue Logic Purification System adds a reverse osmosis membrane after the Filtration, for purified water at every tap. Your free water test will help determine which system is right for your home.",
   },
   {
     question: "What neighborhoods in Sandy does Blue Logic serve?",
-    answer: "Blue Logic serves all of Sandy including Alta Canyon, Crescent Park, Hidden Valley, Dimple Dell, Bell Canyon, Dimple Dell Regional Park area, the South Jordan border communities, and all Sandy zip codes. We also serve surrounding communities including Draper, South Jordan, and Cottonwood Heights.",
+    answer: "Blue Logic serves all of Sandy including Alta Canyon, Crescent Park, Hidden Valley, Dimple Dell, Bell Canyon, the South Jordan border communities, and all Sandy zip codes. We also serve surrounding communities including Draper, South Jordan, and Cottonwood Heights.",
   },
   {
     question: "How does Blue Logic compare to other water treatment companies in Sandy?",
-    answer: "Blue Logic systems run $2,999 to $19,999 out the door (installation and tax included), depending on what your home needs, and every system carries a 5-year warranty on defects in materials and workmanship. Your free water test ends with a written recommendation and price, so you can compare it side by side with any other quote. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.",
+    answer: "Blue Logic solutions start at about $1,000 out the door (installation and tax included) and are customized to what your home needs. Every system carries a 5-year warranty on defects in materials and workmanship, plus 10 years on the media inside the treatment tank. Your free water test ends with a written recommendation and price, so you can compare it side by side with any other quote. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.",
   },
 ];
 
@@ -48,7 +48,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Sandy Utah | Blue Logic Water"
-  description="Sandy water has haloacetic acids at 306x the EWG health guideline, among the highest disinfection byproduct levels in the Salt Lake Valley. Blue Logic serves Sandy with whole-home RO and filtration. Free water test."
+  description="Sandy water meets federal standards, but EWG flags haloacetic acids at 306x its health guideline, and the water is very hard. Blue Logic serves Sandy with whole-home filtration and RO. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -60,9 +60,9 @@ const schemas = [
         Water Treatment for Sandy, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Sandy's water supply contains haloacetic acid disinfection byproducts at 306 times the EWG
-        health guideline, among the highest levels in the Salt Lake Valley. Blue Logic installs
-        whole-home filtration and reverse osmosis systems that address what compliance doesn't.
+        Sandy's water meets federal standards, and the EWG database flags haloacetic acid
+        disinfection byproducts above its stricter health guidelines. The water is also very
+        hard. Blue Logic tests your water and recommends a system based on what it finds.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
@@ -89,7 +89,7 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">306x</div>
           <div class="font-semibold text-foreground mb-1">HAA5 vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Haloacetic acid disinfection byproducts, among the highest in Salt Lake Valley.</p>
+          <p class="text-xs text-muted-foreground">Haloacetic acid disinfection byproducts. Within the federal legal limit.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">14</div>
@@ -99,7 +99,7 @@ const schemas = [
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard: rapid scale on fixtures, appliance efficiency loss, dry skin from bathing.</p>
+          <p class="text-xs text-muted-foreground">Very hard: rapid scale on fixtures, appliance efficiency loss, a chalky feel after bathing.</p>
         </div>
       </div>
 
@@ -158,8 +158,8 @@ const schemas = [
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Chlorine Taste and Odor</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Sandy's high HAA levels are the downstream result of aggressive chlorination of
-            organic-rich source water. That chlorination is also what Sandy homeowners often
+            Sandy's HAA levels are the downstream result of chlorinating organic-rich
+            source water. That chlorination is also what Sandy homeowners often
             notice as a strong chlorine smell, particularly when running a hot shower or
             filling a bathtub. Blue Logic Filtration removes chlorine
             and chloramine taste and odor at every tap in the home.
@@ -175,13 +175,12 @@ const schemas = [
           </p>
         </div>
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">Alta Canyon and Hidden Valley Premium Homes</h3>
+          <h3 class="font-semibold text-foreground mb-2">High-End Finishes on the Upper Bench</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Sandy's upper bench neighborhoods are home to larger, premium properties with
-            high-end finishes that are particularly visible victims of hard water: glass
-            shower enclosures, stainless fixtures, and natural stone counters all show
-            mineral deposits quickly. These homeowners also tend to prioritize the most
-            complete water quality solution.
+            Sandy's upper bench neighborhoods, like Alta Canyon and Hidden Valley, have many
+            larger homes with high-end finishes that show hard water quickly: glass shower
+            enclosures, stainless fixtures, and natural stone counters all collect mineral
+            deposits.
           </p>
         </div>
         <div class="scenario-card">
@@ -189,8 +188,8 @@ const schemas = [
           <p class="text-sm text-muted-foreground leading-relaxed">
             Sandy's combination of hard water minerals and elevated chlorine residual
             affects the bathing experience in two ways: hardness minerals leave a coating
-            on skin and hair, and chlorine is absorbed through skin during bathing. A
-            whole-home system addresses both from every shower and faucet in the house.
+            on skin and hair, and chlorine is easy to smell in a hot shower. Blue Logic
+            Filtration softens the water and reduces chlorine at every shower and faucet.
           </p>
         </div>
       </div>
@@ -261,7 +260,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves all of Sandy and surrounding Salt Lake County communities.
-        A specialist will test your water on-site and recommend the right system.
+        A specialist will test your water at the kitchen sink and recommend the right system.
         No cost, no obligation.
       </p>
       <LeadForm />

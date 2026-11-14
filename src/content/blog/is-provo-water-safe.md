@@ -4,7 +4,7 @@ title: "Is Provo Water Safe to Drink?"
 description: "Provo water meets all federal EPA standards, but the EWG database flags 12 contaminants above their health guidelines, including arsenic at 100x. Here's the complete picture."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "../../assets/real/utility-room-system-wide.jpg"
+image: "../../assets/real/installs/purification-system-branded.webp"
 ---
 
 Provo's tap water is legally safe. It meets every federal EPA maximum contaminant level and the Provo City Water Services department publishes an annual Consumer Confidence Report confirming compliance.
@@ -33,16 +33,15 @@ Provo also has seasonal water quality variation: spring snowmelt brings softer, 
 Provo water is not immediately dangerous. People have been drinking it for generations without obvious mass health consequences.
 
 What the EWG data represents is a more cautious view of long-term, cumulative risk, particularly relevant for:
-- Families with young children who will drink the water for years
-- Pregnant women
+- Households with young children who will drink the water for years
 - Households replacing bottled water who want to know if tap water is a viable alternative
-- Anyone with specific health concerns related to arsenic or disinfection byproduct exposure
+- Anyone who wants to reduce long-term exposure to arsenic or disinfection byproducts
 
 Federal compliance tells you the minimum legal standard was met. It doesn't mean more cautious exposure reduction isn't reasonable.
 
 ## Water Hardness
 
-Beyond contaminants, Provo water is moderately hard, typically 9–15 GPG depending on the active source blend and season. This is lower than many Wasatch Front communities but still enough to cause scale on fixtures, reduce appliance efficiency, and affect the bathing experience, particularly during fall when groundwater sources raise the hardness.
+Beyond contaminants, Provo water is hard to very hard, typically 9–15 GPG depending on the active source blend and season. This is lower than many Wasatch Front communities but still enough to cause scale on fixtures, reduce appliance efficiency, and affect the bathing experience, particularly during fall when groundwater sources raise the hardness.
 
 ## What You Can Do
 
@@ -52,9 +51,9 @@ Beyond contaminants, Provo water is moderately hard, typically 9–15 GPG depend
 
 **Option 3: Whole-home filtration.** Blue Logic Filtration softens and filters the whole home in one tank: soft water, chlorine and chloramine taste and odor gone at every tap, and sediment and rust filtered out. For arsenic in drinking water, the included under-sink RO at the kitchen tap is the targeted answer.
 
-**Option 4: Whole-home reverse osmosis.** The most complete option: the Blue Logic Purification System addresses arsenic, HAAs, and all other concerns at every tap in the home, including bathing water.
+**Option 4: Whole-home reverse osmosis.** The most complete option: the Blue Logic Purification System addresses arsenic, HAAs, and the other contaminants above at every tap in the home, including bathing water.
 
-**Option 5: Free water test first.** A [free in-home water test](/free-water-test/) from Blue Logic gives you the actual hardness and chlorine reading for your specific tap in Provo, along with a specialist walkthrough of the EWG data for your neighborhood. No cost, no obligation.
+**Option 5: Free water test first.** A [free in-home water test](/free-water-test/) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink in Provo, along with a specialist walkthrough of the EWG data for your utility. No cost, no obligation.
 
 [Learn more about Provo's water →](/locations/provo/)  
 [Schedule a free water test →](/free-water-test/)  

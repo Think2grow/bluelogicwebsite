@@ -5,7 +5,7 @@ import LeadForm from "../components/LeadForm.astro";
 import OfferBanner from "../components/OfferBanner.astro";
 import { Image, getImage } from "astro:assets";
 
-import utilityRoomSystemImg from "../assets/real/utility-room-system-wide.jpg";
+import utilityRoomSystemImg from "../assets/real/installs/purification-system-branded.webp";
 
 export const prerender = true;
 
@@ -25,17 +25,17 @@ const siteUrl = "https://www.bluelogicwater.com";
 const schemas = [
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
-    { name: "The Problem In The Water Is Real", url: "/water-is-real/" },
+    { name: "The Problem in the Water Is Real", url: "/water-is-real/" },
   ]),
 ];
 ---
 
 <Layout
-  title="The Problem In The Water Is Real | Blue Logic Water"
-  description="Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real, and meet the team that helps families solve it with modern purification."
+  title="The Problem in the Water Is Real | Blue Logic Water"
+  description="Utah water can look clear while carrying contaminants you can’t taste or smell. See what local reports show, and meet the family-owned team that tests it at your kitchen sink."
   schema={schemas}
   og={{
-    title: "The Problem In The Water Is Real | Blue Logic Water",
+    title: "The Problem in the Water Is Real | Blue Logic Water",
     description:
       "Utah water can look clear while carrying contaminants you can’t taste or smell. See why the problem is real, and meet the team behind Blue Logic Water.",
     image: ogImage.src,
@@ -53,8 +53,8 @@ const schemas = [
         </p>
 
         <h1 class="mt-5 font-serif text-4xl md:text-6xl font-bold text-obsidian leading-[1.05] tracking-tight">
-          The problem in the water
-          <span class="text-glacier"> is real</span>.
+          The Problem in the Water
+          <span class="text-glacier"> Is Real</span>.
         </h1>
 
         <p class="mt-6 text-lg md:text-xl text-obsidian-muted leading-relaxed mx-auto max-w-2xl">
@@ -67,7 +67,7 @@ const schemas = [
             href="#contact"
             class="inline-flex justify-center rounded-full bg-glacier text-white px-6 py-3 font-semibold shadow-md hover:bg-glacier/90 transition-colors"
           >
-            Schedule a free consultation
+            Book a free water test
           </a>
           <a
             href="tel:+18019802583"
@@ -93,7 +93,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Draper</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic: 450× the health guideline
+                Arsenic: 450 times the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -106,7 +106,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Sandy</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                HAA5: 306× the health guideline
+                Haloacetic acids (HAA5): 306 times the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -119,7 +119,7 @@ const schemas = [
             >
               <div class="text-sm text-obsidian-muted">Salt Lake City</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic: 135× the health guideline
+                Arsenic: 135 times the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
@@ -127,25 +127,28 @@ const schemas = [
             </a>
 
             <a
-              href="/locations/park-city/"
+              href="/locations/cottonwood-heights/"
               class="group rounded-2xl border border-border bg-white/70 p-5 transition-all hover:shadow-md hover:border-primary/30"
             >
-              <div class="text-sm text-obsidian-muted">Park City</div>
+              <div class="text-sm text-obsidian-muted">Cottonwood Heights</div>
               <div class="mt-2 font-semibold text-obsidian group-hover:text-primary transition-colors">
-                Arsenic: 315× the health guideline
+                PFAS: 404 times the health guideline
               </div>
               <div class="mt-3 text-sm text-obsidian-muted">
                 View the local report →
               </div>
             </a>
           </div>
+          <p class="-mt-4 text-sm text-obsidian-muted">
+            These utilities meet federal limits. The figures compare their own test results with the stricter health guidelines published by the Environmental Working Group.
+          </p>
 
           <div class="rounded-2xl border border-border bg-card p-6">
-            <h2 class="font-serif text-2xl text-foreground mb-3">What this means for your family</h2>
+            <h2 class="font-serif text-2xl text-foreground mb-3">What This Means for Your Home</h2>
             <ul class="space-y-3 text-obsidian-muted">
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
-                <span>Most municipal treatment focuses on microbes, not modern chemical byproducts.</span>
+                <span>Meeting federal limits is not the same as meeting health guidelines.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -153,13 +156,13 @@ const schemas = [
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
-                <span>Reverse osmosis is one of the only processes that truly purifies water at the molecular level.</span>
+                <span>Reverse osmosis is what reduces the dissolved contaminants, and whole-home RO does it at every tap.</span>
               </li>
             </ul>
           </div>
 
           <div class="rounded-2xl border border-border bg-card p-6">
-            <h2 class="font-serif text-2xl text-foreground mb-3">Proof you can understand</h2>
+            <h2 class="font-serif text-2xl text-foreground mb-3">What Reverse Osmosis Does</h2>
             <ul class="space-y-3 text-obsidian-muted">
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -177,13 +180,13 @@ const schemas = [
           </div>
 
           <div class="rounded-2xl border border-border bg-card p-6">
-            <h2 class="font-serif text-2xl text-foreground mb-4">Our process (simple + proven)</h2>
+            <h2 class="font-serif text-2xl text-foreground mb-4">Our Process</h2>
             <div class="grid grid-cols-1 gap-4">
               <div class="rounded-2xl bg-white border border-border p-5">
                 <div class="text-sm font-semibold text-primary">Step 1</div>
-                <div class="mt-1 font-semibold text-foreground">Free consultation</div>
+                <div class="mt-1 font-semibold text-foreground">Free water test</div>
                 <p class="mt-2 text-sm text-obsidian-muted leading-relaxed">
-                  We help you understand what’s in your water and what matters most for your home.
+                  We test your water at your kitchen sink and explain what matters most for your home.
                 </p>
               </div>
               <div class="rounded-2xl bg-white border border-border p-5">
@@ -204,11 +207,11 @@ const schemas = [
           </div>
 
           <div class="mt-auto rounded-2xl border border-border bg-card p-6">
-            <h2 class="font-serif text-2xl text-foreground mb-3">Common questions (fast answers)</h2>
+            <h2 class="font-serif text-2xl text-foreground mb-3">Common Questions</h2>
             <ul class="space-y-3 text-obsidian-muted">
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
-                <span><strong class="text-foreground">"Is my water safe?"</strong> It can meet regulations and still contain byproducts and trace contaminants.</span>
+                <span><strong class="text-foreground">"Is my water safe?"</strong> It can meet regulations and still contain byproducts and trace contaminants. A water test shows what is in yours.</span>
               </li>
               <li class="flex gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -232,7 +235,7 @@ const schemas = [
         <!-- Right: Trust / About -->
         <div class="flex flex-col gap-6 order-3 self-stretch lg:col-span-4">
           <aside class="rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
-            <h2 class="font-serif text-2xl text-foreground">What you get (no guesswork)</h2>
+            <h2 class="font-serif text-2xl text-foreground">What You Get</h2>
             <p class="mt-3 text-obsidian-muted leading-relaxed">
               Water quality is complicated. We make it simple. You’ll get clear next steps and a solution tailored to your home.
             </p>
@@ -262,14 +265,12 @@ const schemas = [
 
           <div class="mt-6 space-y-4 text-obsidian-muted leading-relaxed">
             <p>
-              Blue Logic is a family-owned Utah water treatment company, based in Murray, dedicated
-              to solving real water problems, not selling gimmicks. We combine science, experience, and a proven
-              process to deliver whole-home purification systems tailored to each customer’s
-              needs.
+              Blue Logic is a family-owned Utah water treatment company based in Murray. We test
+              your water first, then recommend the system your home actually needs, from a softener
+              to whole-home reverse osmosis, with an honest out-the-door price.
             </p>
             <p>
-              Our mission is simple: protect your health, home, and peace of mind with clean water
-              everywhere it matters.
+              Our goal is simple: clean, great-tasting water everywhere it matters in your home.
             </p>
           </div>
 
@@ -292,7 +293,7 @@ const schemas = [
               <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
               <div>
                 <div class="font-semibold text-foreground">A proven 3-step process</div>
-                <div class="text-sm text-obsidian-muted">Consultation → walkthrough → coordinated installation.</div>
+                <div class="text-sm text-obsidian-muted">Water test → walkthrough → coordinated installation.</div>
               </div>
             </div>
           </div>
@@ -300,20 +301,20 @@ const schemas = [
           <div class="mt-8 rounded-2xl border border-border bg-white p-5">
             <div class="font-semibold text-foreground">Prefer to learn first?</div>
             <p class="mt-1 text-sm text-obsidian-muted">
-              See how whole-home reverse osmosis works, what it removes, and what it costs.
+              See how each system works, what it removes, and what it costs.
             </p>
             <div class="mt-4 flex flex-col sm:flex-row gap-3">
               <a
                 href="/the-system/"
                 class="inline-flex justify-center rounded-full bg-obsidian text-white px-5 py-2.5 font-semibold hover:bg-obsidian/90 transition-colors"
               >
-                The system
+                Our systems
               </a>
               <a
                 href="/the-value/"
                 class="inline-flex justify-center rounded-full border border-border bg-quartz px-5 py-2.5 font-semibold text-obsidian hover:bg-quartz/70 transition-colors"
               >
-                The value
+                Pricing and value
               </a>
             </div>
           </div>
@@ -321,8 +322,8 @@ const schemas = [
           <div class="mt-8">
             <Image
               src={utilityRoomSystemImg}
-              alt="Blue Logic Purification System installed in a Utah home's utility room, beside the water heater and plumbing manifold"
-              class="rounded-2xl w-full object-cover aspect-4/3 border border-border"
+              alt="Blue Logic whole-home Purification System in a Utah basement: the Filtration pretreatment tank, RO unit, pre-filters, constant-pressure pump and purified water storage tank"
+              class="rounded-2xl w-full object-cover aspect-4/5 border border-border"
               loading="lazy"
               widths={[480, 768, 1100]}
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -336,7 +337,7 @@ const schemas = [
           </aside>
 
           <aside class="mt-auto rounded-3xl border border-border bg-card p-7 md:p-8 shadow-sm">
-            <h2 class="font-serif text-2xl text-foreground">Trust signals that matter</h2>
+            <h2 class="font-serif text-2xl text-foreground">How We Work</h2>
             <div class="mt-4 grid gap-3">
               <div class="flex items-start gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
@@ -348,8 +349,8 @@ const schemas = [
               <div class="flex items-start gap-3">
                 <span class="mt-1 h-5 w-5 rounded-full bg-glacier/15 text-glacier flex items-center justify-center font-bold">✓</span>
                 <div>
-                  <div class="font-semibold text-foreground">Commercial-grade purification</div>
-                  <div class="text-sm text-obsidian-muted">Engineered to perform across the whole home, not just a single faucet.</div>
+                  <div class="font-semibold text-foreground">Whole-home treatment</div>
+                  <div class="text-sm text-obsidian-muted">Built to treat every tap in the home, not just a single faucet.</div>
                 </div>
               </div>
               <div class="flex items-start gap-3">

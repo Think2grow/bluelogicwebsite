@@ -10,11 +10,11 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Is Utah tap water safe to drink?",
-    answer: "Wasatch Front utilities provide water that meets all federal EPA drinking water standards; it is legally safe. However, federal maximum contaminant levels (MCLs) haven't been comprehensively updated in nearly two decades. The Environmental Working Group (EWG) applies stricter health guidelines based on more recent research, and many Utah utilities detect contaminants, including arsenic, haloacetic acids, and PFAS, at levels above those EWG thresholds. Whether that's acceptable is a personal decision. A free water test is the most practical starting point.",
+    answer: "Wasatch Front utilities provide water that meets all federal EPA drinking water standards; it is legally safe. However, most federal maximum contaminant levels (MCLs) were set decades ago; the 2024 PFAS limits are a recent exception. The Environmental Working Group (EWG) applies stricter health guidelines based on more recent research, and many Utah utilities detect contaminants, including arsenic, haloacetic acids, and PFAS, at levels above those EWG thresholds. Whether that's acceptable is a personal decision. A free water test is the most practical starting point.",
   },
   {
     question: "What is arsenic doing in Utah water?",
-    answer: "Arsenic is a naturally occurring element in Utah's geology. It leaches into groundwater and surface water as water moves through arsenic-bearing rock formations, a natural process accelerated in Utah by the state's volcanic geology and the historically high use of groundwater from arsenic-rich aquifers. Utah has some of the highest naturally occurring arsenic levels in the western US. The EPA's legal limit for arsenic is 10 parts per billion (ppb). EWG's health guideline is 0.004 ppb, reflecting research suggesting long-term exposure risk at lower levels than the current legal threshold.",
+    answer: "Arsenic is a naturally occurring element in Utah's geology. It dissolves into groundwater and surface water as water moves through arsenic-bearing rock formations, including the volcanic and mineral-rich rock common in Utah. Utah has some of the highest naturally occurring arsenic levels in the western US. The EPA's legal limit for arsenic is 10 parts per billion (ppb). EWG's health guideline is 0.004 ppb, reflecting research suggesting long-term exposure risk at lower levels than the current legal threshold.",
   },
   {
     question: "What are haloacetic acids (HAAs) and why are they in Utah water?",
@@ -33,7 +33,7 @@ const faqs = [
 const cityContaminants = [
   {
     city: "Lehi",
-    concern: "Highest arsenic in the region",
+    concern: "Arsenic (highest ratio of the cities listed here)",
     stat: "Arsenic detected at 484x EWG health guideline",
     context: "Lehi's fast-growing residential areas draw water from sources with naturally elevated arsenic. New construction doesn't change the source water.",
     ewgUrl: "https://www.ewg.org/tapwater/system.php?pws=UTAH25015",
@@ -42,7 +42,7 @@ const cityContaminants = [
     city: "Draper",
     concern: "Arsenic + HAA disinfection byproducts",
     stat: "Arsenic 450x EWG guideline · HAA9 802x EWG guideline",
-    context: "Draper ranks among the most concerning water profiles on the Wasatch Front, with both arsenic and disinfection byproduct levels significantly above EWG thresholds.",
+    context: "Draper's EWG report shows both arsenic and disinfection byproducts well above EWG thresholds.",
     ewgUrl: "https://www.ewg.org/tapwater/system.php?pws=UTAH18006",
   },
   {
@@ -99,9 +99,9 @@ const schemas = [
         Utah Water Quality: What's in Wasatch Front Tap Water
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Utah's tap water meets federal standards, but federal limits haven't been meaningfully
-        updated in nearly 20 years. Here's what the EWG data shows for your city, what the
-        contaminants actually are, and what you can do about them.
+        Utah's tap water meets federal standards, but most federal limits were set decades ago,
+        and EWG applies stricter health guidelines. Here's what the EWG data shows for your city,
+        what the contaminants actually are, and what you can do about them.
       </p>
     </div>
   </section>
@@ -178,7 +178,7 @@ const schemas = [
           <p class="text-muted-foreground text-sm leading-relaxed mb-3">
             The EPA's legal limit is 10 parts per billion (ppb). EWG's health guideline is 0.004 ppb
             (2,500 times stricter), based on research suggesting cumulative long-term exposure risks at
-            lower concentrations than the 1975-era federal standard. Multiple Wasatch Front utilities
+            lower concentrations than the federal standard, which was last updated in 2001. Multiple Wasatch Front utilities
             detect arsenic at levels between 1 and 5 ppb: legal, but well above EWG's threshold.
           </p>
           <p class="text-xs text-muted-foreground italic">
@@ -193,8 +193,8 @@ const schemas = [
           <p class="text-muted-foreground text-sm leading-relaxed mb-3">
             Haloacetic acids are disinfection byproducts: they're created when chlorine or chloramine
             (used to disinfect municipal water) reacts with naturally occurring organic material in source water.
-            Utah's mountain surface water carries high levels of organic compounds from snowmelt and watershed runoff,
-            making it particularly prone to HAA formation during treatment.
+            Utah's mountain surface water picks up organic material from snowmelt and watershed runoff,
+            and that material reacts with disinfectant during treatment to form HAAs.
           </p>
           <p class="text-muted-foreground text-sm leading-relaxed">
             HAA5 and HAA9 are two regulatory groupings for different haloacetic acid compounds. The EPA has legal limits
@@ -208,7 +208,7 @@ const schemas = [
           <p class="text-muted-foreground text-sm leading-relaxed mb-3">
             PFAS are a family of thousands of synthetic chemicals used in industrial processes and consumer products,
             from non-stick cookware coatings to firefighting foam. They are called "forever chemicals" because they
-            don't break down in the environment or the human body, accumulating over time.
+            break down extremely slowly, so they persist in the environment and the human body for years.
           </p>
           <p class="text-muted-foreground text-sm leading-relaxed mb-3">
             Salt Lake City's Department of Public Utilities announced PFAS detection in its water supply in 2024,
@@ -242,9 +242,10 @@ const schemas = [
         What You Can Do About It
       </h2>
       <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-        The most practical first step is knowing what's actually in your specific home's water,
-        not your city's utility average. Blue Logic's free in-home water test gives you that.
-        From there, a specialist recommends the right system based on what they find.
+        The most practical first step is a reading from your own tap, not just your city's
+        utility average. Blue Logic's free in-home water test measures TDS, hardness and chlorine
+        at your kitchen sink and walks you through your city's EWG data. From there, a specialist
+        recommends the right system based on what they find.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         <div class="action-card">
@@ -259,7 +260,7 @@ const schemas = [
         </div>
         <div class="action-card">
           <div class="text-2xl mb-3">🗄️</div>
-          <h3 class="font-semibold text-foreground mb-2">Check EWG Database</h3>
+          <h3 class="font-semibold text-foreground mb-2">Check the EWG Database</h3>
           <p class="text-sm text-muted-foreground">The EWG Tap Water Database at ewg.org/tapwater shows your utility's detected contaminants vs. health guidelines.</p>
         </div>
       </div>
@@ -309,11 +310,12 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        Know What's In Your Water
+        Know What's in Your Water
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        Blue Logic's free in-home water test tells you exactly what's in your home's water,
-        not the city average, your specific tap. No cost, no obligation.
+        Blue Logic's free in-home water test measures your own tap, not the city average:
+        TDS, hardness and chlorine at your kitchen sink, plus a walkthrough of your city's
+        EWG data. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

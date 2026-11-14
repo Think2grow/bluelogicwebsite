@@ -49,8 +49,8 @@ Most Wasatch Front cities deliver water in the 10–25+ GPG range: mostly very h
 | Under 3.5 GPG | Soft to slightly hard: minimal scale concern | No softening needed |
 | 3.5–7 GPG | Moderately hard: some scale risk | Softening beneficial |
 | 7–10.5 GPG | Hard: active scale damage | Softening recommended |
-| 10.5–18 GPG | Very hard: rapid damage | Treatment strongly recommended |
-| 18+ GPG | Extremely hard | Treatment essential; appliances at serious risk |
+| 10.5–18 GPG | Very hard: rapid scale buildup | Treatment strongly recommended |
+| 18+ GPG | Extremely hard | Treatment strongly recommended; scale builds fast in heaters and appliances |
 
 If you're in Sandy (~18 GPG), Draper (~21 GPG), Layton (~21 GPG), Bountiful (18–38 GPG), or Spanish Fork (~25 GPG), you're in the upper range where a whole-home system is not a luxury; it's a meaningful financial decision about appliance protection.
 
@@ -68,7 +68,7 @@ A hardness test is the starting point, not the complete picture.
 
 ## Blue Logic's Free In-Home Test
 
-Blue Logic's [free in-home water test](/free-water-test/) measures hardness and chlorine directly from your tap, with results explained in plain English. It's the fastest way to know exactly where your water stands without guessing from a test strip.
+Blue Logic's [free in-home water test](/free-water-test/) measures TDS, hardness and chlorine at your kitchen sink, with results explained in plain English. It's the fastest way to know where your water stands without guessing from a test strip.
 
 After the test, your specialist walks you through the EWG data for your specific city, so you understand not just what the hardness reading means, but what else may be in your water that the field test didn't cover.
 

@@ -11,7 +11,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What's in Saratoga Springs' tap water?",
-    answer: "Saratoga Springs receives treated water from the Jordan Valley Water Conservancy District (JVWCD), the same supply system as Lehi, American Fork, and much of Utah County. The water profile includes arsenic above EWG health guidelines, hexavalent chromium, and haloacetic acid disinfection byproducts, the same contaminant concerns as neighboring Lehi, which has the highest arsenic levels on the Wasatch Front. Water is very hard at approximately 14–18 GPG. All levels are within federal legal limits.",
+    answer: "Saratoga Springs receives treated water from the Jordan Valley Water Conservancy District (JVWCD), the same supply system as Lehi, American Fork, and much of Utah County. The water profile includes arsenic above EWG health guidelines, hexavalent chromium, and haloacetic acid disinfection byproducts, the same contaminant concerns as neighboring Lehi. Water is very hard at approximately 14–18 GPG. All levels are within federal legal limits.",
   },
   {
     question: "Is Saratoga Springs water the same as Lehi's?",
@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     question: "I just bought a new home in Saratoga Springs. Is the water fine?",
-    answer: "New construction doesn't change the source water. Saratoga Springs is one of Utah's fastest-growing cities precisely because of its new housing stock, but every home, new or old, connects to the same JVWCD municipal supply. New plumbing is an advantage (no legacy scale buildup), but the arsenic and hardness profile is the same as an older home on the same system. Installing a water system at move-in protects your new appliances and fixtures from day one.",
+    answer: "New construction doesn't change the source water. Saratoga Springs is one of Utah's fastest-growing cities, but every home, new or old, connects to the same JVWCD municipal supply. New plumbing is an advantage (no legacy scale buildup), but the arsenic and hardness profile is the same as an older home on the same system. Installing a water system at move-in protects your new appliances and fixtures from day one.",
   },
   {
     question: "What system does Blue Logic recommend for Saratoga Springs?",
-    answer: "Given the arsenic and chromium-6 profile shared with Lehi and the very hard water, whole-home reverse osmosis is the most complete option: the RO membrane addresses arsenic and chromium-6 at the molecular level, which filtration alone does not reach. The whole-home filtration system is also a meaningful upgrade for homeowners focused on hardness, chlorine, and taste. Your free water test confirms which configuration is right.",
+    answer: "For homeowners who want the arsenic and chromium-6 shared with Lehi reduced at every tap, the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option: the RO membrane reduces arsenic and chromium-6, which filtration alone does not fully reach. Blue Logic Filtration is a solid choice for homeowners focused on hardness, chlorine, and taste, and its under-sink RO covers drinking water at the kitchen tap. Your free water test confirms which configuration is right.",
   },
 ];
 
@@ -52,8 +52,8 @@ const schemas = [
         Water Treatment for Saratoga Springs Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Saratoga Springs receives JVWCD water with the same arsenic, chromium-6, and hard water
-        profile as neighboring Lehi, one of the highest contaminant levels on the Wasatch Front.
+        Saratoga Springs' JVWCD water meets federal standards and shares neighboring Lehi's profile:
+        very hard, with arsenic and chromium-6 above EWG's stricter health guidelines.
         Blue Logic serves Saratoga Springs with whole-home softening, filtration and RO systems.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -77,28 +77,27 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
           <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Same JVWCD Utah County source as Lehi (484x EWG). Naturally occurring.</p>
+          <p class="text-xs text-muted-foreground">Same JVWCD Utah County source as Lehi. Naturally occurring; federally compliant.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Chromium-6</div>
           <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Hexavalent chromium detected. Same concern as Orem and West Jordan.</p>
+          <p class="text-xs text-muted-foreground">Hexavalent chromium detected, as in Lehi and Orem.</p>
         </div>
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">14–18 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard. Rapid scale on new construction fixtures and appliances.</p>
+          <p class="text-xs text-muted-foreground">Very hard. Scale builds quickly on new fixtures and appliances.</p>
         </div>
       </div>
 
       <div class="bg-card rounded-xl border border-border p-6">
-        <h3 class="text-lg font-semibold mb-3 text-foreground">Why New Construction Here Needs Water Treatment</h3>
+        <h3 class="text-lg font-semibold mb-3 text-foreground">New Homes, Same Water</h3>
         <p class="text-sm text-muted-foreground leading-relaxed">
-          Saratoga Springs has exploded with new residential development: beautiful homes with premium finishes
-          connecting directly to JVWCD municipal water with the same contaminant profile as every other home on
-          the system. New plumbing is the one advantage: no legacy scale accumulation. Installing a Blue Logic
-          system at move-in preserves that advantage, protecting new fixtures, new appliances, and
-          your family's water quality from the first day you turn on the tap.
+          Saratoga Springs has seen a wave of new residential development, and every new home connects
+          to the same JVWCD municipal water as the rest of the system. New plumbing does start with one
+          advantage: no scale yet. Installing a Blue Logic system at move-in keeps it that way, protecting
+          new fixtures and appliances from the first day you turn on the tap.
         </p>
       </div>
     </div>
@@ -145,7 +144,8 @@ const schemas = [
         Free Saratoga Springs Water Test
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        Blue Logic serves Saratoga Springs and all of Utah County. No cost, no obligation.
+        Blue Logic serves Saratoga Springs and all of Utah County. A specialist tests your water at
+        the kitchen sink, at no cost and no obligation.
       </p>
       <LeadForm />
     </div>

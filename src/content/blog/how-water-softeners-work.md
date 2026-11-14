@@ -49,7 +49,7 @@ However, for people on medically restricted sodium diets, this addition may be a
 
 ## Utah's Water: Why a Softener Often Isn't Enough
 
-Utah's Wasatch Front has the hardest water in the country, which makes softeners genuinely useful. The scale damage from 15–25 GPG water is real and measurable.
+Utah's Wasatch Front has some of the hardest water in the country, which makes softeners genuinely useful. The scale damage from 15–25 GPG water is real and measurable.
 
 But Utah's water also has a broader set of concerns that a softener doesn't reach:
 

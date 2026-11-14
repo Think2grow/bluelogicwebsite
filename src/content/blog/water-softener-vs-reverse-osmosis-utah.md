@@ -5,7 +5,7 @@ seoTitle: "Water Softener vs. Reverse Osmosis in Utah"
 description: "Both address water quality concerns, but in fundamentally different ways. Here's how to decide which system is right for your Wasatch Front home based on your actual water."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "../../assets/real/utility-room-system-full.jpg"
+image: "../../assets/real/installs/filtration-beside-gas-water-heater.jpg"
 ---
 
 Utah homeowners asking about water treatment almost always encounter two options: water softeners and reverse osmosis systems. They're often presented as competing solutions. In practice, the choice depends almost entirely on what you're trying to solve.
@@ -23,7 +23,8 @@ The result: hardness minerals are removed. The water is "soft."
 - Appliance damage from hard water (water heaters, dishwashers, washing machines)
 - Reduced soap and detergent effectiveness from hard water
 - Spotty dishes and cloudy glassware
-- The "slippery" or "slimy" feel of very soft water is a side effect of the sodium exchange; water with almost no minerals lathers soap differently
+
+One side effect worth knowing: softened water can feel "slippery" in the shower, because soap rinses differently once the hardness minerals are gone.
 
 **What softening does NOT address:**
 - Chlorine, chloramine, or their taste and odor in water
@@ -33,20 +34,20 @@ The result: hardness minerals are removed. The water is "soft."
 - Pharmaceuticals or pesticide residues
 - Anything that isn't a hardness mineral
 
-This limitation matters enormously in Utah's context. Most Wasatch Front cities have water with elevated contaminant concerns: arsenic in Lehi, Draper, West Jordan, and Orem; haloacetic acid disinfection byproducts in Sandy and South Jordan; PFAS in Salt Lake City and Park City; chromium-6 in West Jordan and Orem. A water softener removes none of these.
+This limitation matters in Utah. Many Wasatch Front cities have contaminants flagged by EWG: arsenic in Lehi, Draper, West Jordan, and Orem; haloacetic acid disinfection byproducts in Sandy and South Jordan; PFAS in Salt Lake City; chromium-6 in West Jordan and Orem. A water softener removes none of these.
 
 ## What Reverse Osmosis Actually Does
 
-Reverse osmosis pushes water through a semi-permeable membrane under pressure. The membrane has pores at 0.0001 micron, small enough to block virtually all dissolved contaminants while allowing water molecules through. What comes out the other side is water that's had the vast majority of its dissolved content removed.
+Reverse osmosis pushes water through a semi-permeable membrane under pressure. The membrane has pores at 0.0001 micron, small enough to block most dissolved contaminants while allowing water molecules through. What comes out the other side is water that's had the vast majority of its dissolved content removed.
 
 **What RO addresses:**
 - All hardness minerals (calcium, magnesium, and others)
-- Chlorine and chloramine (absorbed in pre-filtration stages before the membrane)
+- Chlorine and chloramine (removed by the pre-treatment ahead of the membrane)
 - Arsenic, lead, chromium-6, and heavy metals
 - PFAS compounds
-- Disinfection byproducts (haloacetic acids, chloroform, trihalomethanes)
+- Disinfection byproducts such as haloacetic acids
 - Dissolved pharmaceutical residues
-- Essentially any dissolved inorganic contaminant
+- Most other dissolved inorganic contaminants
 
 **The limitation:** RO is a slow, pressure-driven process. A membrane produces water at a rate measured in gallons per day, not gallons per minute, so an under-sink unit serves one drinking-water tap. Whole-home RO solves this with storage: Blue Logic's system fills a 165-gallon food-grade storage tank (more 165-gallon tanks can be added when a home needs more) and uses a constant-pressure pump to deliver that water to every tap at normal household pressure.
 
@@ -81,9 +82,9 @@ The honest answer to "softener vs. RO" is: **test your water first.**
 
 Hard water data for your city tells you how severe the scale risk is. Your city's EWG profile tells you whether there are contaminants beyond hardness that a softener won't address. Your household's priorities (whether you're replacing bottled water, concerned about specific contaminants, protecting premium appliances, or all three) tell you how comprehensive a solution makes sense.
 
-Blue Logic's [free in-home water test](/free-water-test/) does this on-site. A specialist comes to your home, tests hardness and chlorine directly from your tap, reviews your city's water profile based on EWG data, and gives you a transparent recommendation. No pressure. No obligation.
+Blue Logic's [free in-home water test](/free-water-test/) does this on-site. A specialist comes to your home, tests TDS, hardness and chlorine at your kitchen sink, reviews your city's water profile based on EWG data, and gives you a transparent recommendation. No pressure. No obligation.
 
-If the data says a softener is sufficient for your situation, that's what we'll tell you. If the data shows contaminant concerns that go beyond hardness (which is the case for most communities with elevated arsenic, chromium-6, or PFAS), we'll explain why a filtration or RO system is a more complete solution and show you the specific numbers.
+If the data says a softener is sufficient for your situation, that's what we'll tell you. If the data shows concerns beyond hardness, we'll show you the specific numbers and explain which fits: Blue Logic Filtration for chlorine taste and odor, sediment and rust (with RO at the kitchen tap), or the Purification System for arsenic, chromium-6 or PFAS at every tap.
 
 ## Total Cost Comparison
 

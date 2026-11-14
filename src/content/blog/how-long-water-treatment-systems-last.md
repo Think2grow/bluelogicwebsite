@@ -40,7 +40,7 @@ A whole-home RO system has several distinct components, and each one wears diffe
 
 **Water hardness:** The harder the water, the more demand on softening media and RO membranes. Utah County and Davis County communities with 18–25 GPG will see faster media consumption than lower-hardness areas.
 
-**Proper pre-treatment:** For RO systems specifically, chlorine and hardness minerals destroy membranes. The filtration pre-treatment stage is not optional: it's what protects the RO membrane and allows it to reach its designed lifespan.
+**Proper pre-treatment:** For RO systems specifically, chlorine and hardness minerals damage membranes. The filtration pre-treatment stage is not optional: it's what protects the RO membrane and allows it to reach its designed lifespan.
 
 **Annual service:** Water treatment systems are not set-and-forget. Annual service catches media degradation, salt bridges, pressure issues, and membrane performance decline before they become expensive problems. Annual maintenance is standard with every Blue Logic system.
 

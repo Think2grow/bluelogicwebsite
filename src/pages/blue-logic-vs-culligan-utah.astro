@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { PRICES, usd } from "../data/offer";
 
-const priceRange = `${usd(PRICES.softener)} to $19,999`;
+const priceRange = "From about $1,000, customized to your home";
 
 export const prerender = true;
 
@@ -14,7 +14,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Culligan offered me a rental or lease program. Is that a good deal?",
-    answer: "It depends on the total cost. Before signing any rental or lease, ask for the total cost of the agreement over its full term, what happens at the end of the term, who owns the equipment, and what it costs to cancel or move. Then compare that to buying. Blue Logic systems are purchased, not rented, and range from $2,999 to $19,999 out the door. You own the system from day one, and financing is available through Pinnacle Finance for qualifying homeowners.",
+    answer: "It depends on the total cost. Before signing any rental or lease, ask for the total cost of the agreement over its full term, what happens at the end of the term, who owns the equipment, and what it costs to cancel or move. Then compare that to buying. Blue Logic systems are purchased, not rented, and start at about $1,000 out the door, customized to what your home needs. You own the system from day one, and financing is available through Pinnacle Finance for qualifying homeowners.",
   },
   {
     question: "Culligan is a big national brand. Doesn't that mean better quality?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "How is Blue Logic's sales process different?",
-    answer: "Blue Logic's free water test is built around information, not a same-day close. We test your water, show you what's in it based on real measurements, give you a transparent written quote, and you take it home to decide at your own pace.",
+    answer: "Blue Logic's free water test is built around information, not a same-day close. We measure your water's TDS, hardness and chlorine at the kitchen sink, walk you through the contaminant data for your city, give you a transparent written quote, and you take it home to decide at your own pace.",
   },
   {
     question: "Can I bring a Culligan quote to compare?",
@@ -107,7 +107,7 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
           { label: "Ownership model", value: "You own it", note: "Purchased, not rented or leased. Yours from day one." },
-          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "System pricing", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
           { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
           { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
           { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
@@ -175,8 +175,8 @@ const schemas = [
         Get a Second Opinion, No Pressure
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        Blue Logic's free water test measures exactly what's in your water and gives you a
-        transparent written quote. If you already have a Culligan quote, bring it and we'll compare
+        Blue Logic's free water test measures your water's TDS, hardness and chlorine at the
+        kitchen sink and gives you a transparent written quote. If you already have a Culligan quote, bring it and we'll compare
         the two with you. You leave with both quotes and make the call at your own pace.
       </p>
       <LeadForm />

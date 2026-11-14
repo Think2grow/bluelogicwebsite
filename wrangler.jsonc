@@ -8,9 +8,6 @@
     "binding": "ASSETS",
     "directory": "./dist"
   },
-  "kv_namespaces": [
-    { "binding": "PHOTO_PICKS", "id": "297c264c434040bf8f8242d4e248b3ff" }
-  ],
   "observability": {
     "enabled": true
   },

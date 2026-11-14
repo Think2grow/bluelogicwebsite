@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /photos/
 
 Sitemap: https://www.bluelogicwater.com/sitemap-index.xml

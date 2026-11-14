@@ -15,15 +15,15 @@ const faqs = [
   },
   {
     question: "Does Bountiful have arsenic or radium in the water?",
-    answer: "Yes. The EWG Tap Water Database identifies both arsenic and radium above EWG health guidelines in Bountiful's water supply. Radium is a naturally occurring radioactive element found in some Utah groundwater sources. It's more common in well-influenced supplies, which aligns with Bountiful's blended source model. Both arsenic and radium are colorless, odorless, and undetectable without testing. Reverse osmosis is effective at addressing both.",
+    answer: "Yes. The EWG Tap Water Database identifies both arsenic and radium above EWG health guidelines in Bountiful's water supply. Radium is a naturally occurring radioactive element found in some Utah groundwater sources. It's more common in well-influenced supplies, which aligns with Bountiful's blended source model. Neither has a taste, color or odor, so a water test is the only way to see them. Reverse osmosis is effective at reducing both.",
   },
   {
     question: "What does 38 GPG water hardness actually mean for my home?",
-    answer: "38 GPG is among the hardest water found anywhere in the US. For context, water above about 10.5 GPG is classified 'very hard.' At 38 GPG, scale accumulates at an accelerated rate: showerheads can lose significant flow within months, tankless water heaters are at serious risk of scale damage, and dishwashers leave heavy mineral film on every load. Even a brief period at 38 GPG hardness causes more scale damage than months at typical US hardness levels.",
+    answer: "38 GPG is extremely hard water. For context, water above about 10.5 GPG is classified 'very hard.' At 38 GPG, scale accumulates at an accelerated rate: showerheads can lose significant flow within months, tankless water heaters are especially vulnerable to scale, and dishwashers leave heavy mineral film on every load.",
   },
   {
-    question: "Is a whole-home filtration system enough for Bountiful, or do I need RO?",
-    answer: "Given Bountiful's arsenic and radium concerns alongside its extreme hardness, whole-home RO is the most complete solution for homeowners who want comprehensive protection. The filtration system addresses hardness, chlorine, and taste, but arsenic and radium require the RO membrane for effective reduction. Your free water test will measure your current hardness and give your specialist context on which contaminants are most relevant to your specific address.",
+    question: "Is Blue Logic Filtration enough for Bountiful, or do I need RO?",
+    answer: "It depends on your goals. Blue Logic Filtration handles hardness, chlorine, and taste, and its under-sink RO covers drinking water at the kitchen tap. Reducing arsenic and radium at every tap takes a reverse osmosis membrane, so for that the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option. Your free water test will measure your current hardness and give your specialist context on which contaminants are most relevant to your specific address.",
   },
   {
     question: "How does Blue Logic handle Bountiful's extreme hardness variability?",
@@ -44,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Bountiful Utah | Blue Logic Water"
-  description="Bountiful water hardness ranges from 18–38 GPG, the most variable on the Wasatch Front, with arsenic and radium above EWG guidelines. Free in-home water test. Blue Logic."
+  description="Bountiful water hardness ranges from 18 to 38 GPG depending on the source, with arsenic and radium above EWG guidelines. Free in-home water test. Blue Logic."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -56,9 +56,9 @@ const schemas = [
         Water Treatment for Bountiful, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Bountiful's water hardness swings from 18 to 38 GPG (the most extreme variability
-        on the Wasatch Front), with arsenic and radium detected above EWG health guidelines.
-        Blue Logic installs systems built for Bountiful's unique water challenge.
+        Bountiful's water hardness swings from 18 to 38 GPG depending on which sources are
+        active, and the EWG database flags arsenic and radium above its stricter health
+        guidelines. Blue Logic sizes softening for the hard end of that range.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
@@ -85,12 +85,12 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">18–38 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness (variable)</div>
-          <p class="text-xs text-muted-foreground">Most variable hardness on the Wasatch Front: surface water vs. well water swings dramatically by season.</p>
+          <p class="text-xs text-muted-foreground">Surface water and well water blend differently by season, so hardness swings widely.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Arsenic + Radium</div>
           <div class="font-semibold text-foreground mb-1">Above EWG Guidelines</div>
-          <p class="text-xs text-muted-foreground">Both detected in Bountiful's well-influenced supply. Colorless, odorless, and undetectable without testing.</p>
+          <p class="text-xs text-muted-foreground">Both naturally occurring in Bountiful's well-influenced supply. Neither has a taste or odor; a test shows them.</p>
         </div>
         <div class="stat-box">
           <div class="text-4xl font-bold text-foreground mb-2">8</div>
@@ -104,7 +104,7 @@ const schemas = [
         <div class="space-y-3">
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Water hardness (variable)</span>
-            <span class="badge badge-alert">18–38 GPG, most extreme range on Wasatch Front</span>
+            <span class="badge badge-alert">18–38 GPG, widely variable</span>
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Arsenic</span>
@@ -132,7 +132,7 @@ const schemas = [
           Bountiful City blends two fundamentally different water sources. Surface water from mountain
           watersheds arrives relatively soft (14–18 GPG) with higher organic content and lower mineral
           concentration. Groundwater from wells tapping into deep calcium-rich aquifers can measure
-          30–38 GPG, among the hardest found anywhere on the Wasatch Front.
+          30–38 GPG.
         </p>
         <p class="text-sm text-muted-foreground leading-relaxed">
           The utility adjusts this blend based on availability and seasonal demand. When summer heat
@@ -188,7 +188,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves Bountiful and all of Davis County. A specialist will test your water
-        on-site and give you the exact hardness reading for your home. No cost, no obligation.
+        at the kitchen sink and give you the exact hardness reading for your home. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

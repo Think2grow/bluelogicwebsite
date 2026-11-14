@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { getProductSchema, getBreadcrumbSchema, getServiceSchema } from "../utils/schema";
 import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 import { Image } from "astro:assets";
-import utilityRoomSystemImg from "../assets/real/utility-room-system-full.jpg";
+import utilityRoomSystemImg from "../assets/real/installs/purification-system-branded.webp";
 import purificationSystemImg from "../assets/real/installs/purification-system-front.jpg";
-import filtrationGarageImg from "../assets/real/installs/filtration-garage-install.jpg";
+import filtrationGarageImg from "../assets/real/installs/filtration-finished-room.jpg";
 import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive } from "../data/offer";
 
 export const prerender = true;
@@ -22,7 +22,7 @@ const schemas = [
   {
     ...productSchema,
     description:
-      "Whole-home reverse osmosis from Blue Logic Water: Blue Logic Filtration in front, then reverse osmosis, a 165-gallon food-grade storage tank and a Grundfos SCALA2 constant-pressure pump, so every tap runs purified water. Systems from $2,999 to $19,999, installation and tax included. Serving Utah's Wasatch Front.",
+      "Whole-home reverse osmosis from Blue Logic Water: Blue Logic Filtration in front, then reverse osmosis, a 165-gallon food-grade storage tank and a Grundfos SCALA2 constant-pressure pump, so every tap runs purified water. Solutions from about $1,000, customized to the home, installation and tax included. Serving Utah's Wasatch Front.",
     offers: { ...productSchema.offers, lowPrice: "2999", highPrice: "19999" },
   },
   getServiceSchema(
@@ -61,15 +61,15 @@ const schemas = [
     )}
   </section>
 
-  <!-- Visual Impact: Before/After -->
+  <!-- Intro: what is in Utah water -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <Image
             src={utilityRoomSystemImg}
-            alt="Blue Logic Purification System installed in a Utah home's utility room: reverse osmosis unit, filtration tank with digital control valve, pre-filter housing and brine tank"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+            alt="Blue Logic whole-home Purification System in a Utah basement: Filtration pretreatment tank, RO unit, pre-filters, constant-pressure pump and purified water storage tank"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/5"
             widths={[400, 600, 800, 1100]}
             sizes="(max-width: 1024px) 100vw, 50vw"
             quality={60}
@@ -90,8 +90,8 @@ const schemas = [
             appliances.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            Our systems turn municipal water into clear, great-tasting water, and with
-            whole-home reverse osmosis, purified water at every tap in your home.
+            Our systems soften and filter that water for the whole home. With
+            whole-home reverse osmosis, every tap runs purified water.
           </p>
         </div>
       </div>
@@ -108,8 +108,8 @@ const schemas = [
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
-        Not all water treatment is created equal. Here's how softening,
-        filtration, and purification compare.
+        Softening, filtration and purification solve different problems. Here's
+        how they compare.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -155,7 +155,7 @@ const schemas = [
             odor, or other contaminants.
           </div>
           <a href="/water-softener-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
-            Water Softener Utah →
+            Water Softener Details →
           </a>
         </div>
 
@@ -169,7 +169,7 @@ const schemas = [
             </p>
           </div>
           <p class="text-lg font-semibold mb-4 text-foreground/80">
-            Real Protection for Your Home
+            Soft, Filtered Water Throughout the Home
           </p>
           <p class="text-muted-foreground leading-relaxed mb-6">
             Whole-home softening and filtration in one self-cleaning tank, plus an
@@ -216,7 +216,7 @@ const schemas = [
             </p>
           </div>
           <p class="text-lg font-semibold mb-4 text-foreground/80">
-            The Ultimate in Clean Water
+            Whole-Home Reverse Osmosis
           </p>
           <p class="text-muted-foreground leading-relaxed mb-6">
             Blue Logic Filtration in front, then whole-home reverse osmosis,
@@ -245,8 +245,8 @@ const schemas = [
             </ul>
           </div>
           <div class="pt-4 border-t border-border text-sm text-muted-foreground">
-            <strong class="text-foreground">Verdict:</strong> Our best system: pure,
-            balanced water at every tap in the home.
+            <strong class="text-foreground">Verdict:</strong> Our most complete
+            system: purified water at every tap in the home.
           </div>
           <a href="/whole-home-reverse-osmosis-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
             Whole-Home RO Details →
@@ -263,8 +263,8 @@ const schemas = [
           Two Whole-Home Systems, One Expert Team
         </h3>
         <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
-          Blue Logic offers two comprehensive whole-home water solutions
-          tailored to your needs and budget:
+          Beyond softening, Blue Logic offers two whole-home systems. Your water
+          test shows which one your home needs:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div class="bg-card p-6 rounded-xl">
@@ -286,9 +286,8 @@ const schemas = [
               Blue Logic Purification System
             </h4>
             <p class="text-muted-foreground mb-4">
-              Everything Filtration does to the whole home, PLUS reverse osmosis
-              purification and storage for the ultimate in water purity at every
-              tap.
+              Everything Filtration does for the whole home, plus reverse osmosis,
+              storage and constant pressure, so every tap runs purified water.
             </p>
             <p class="text-sm font-semibold text-foreground">
               Includes: Blue Logic Filtration + sediment pre-filter + reverse
@@ -314,13 +313,13 @@ const schemas = [
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
       >
-        Whole Home Reverse Osmosis Purification
+        Whole-Home Reverse Osmosis Purification
       </h2>
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
         The Blue Logic Purification System is built from modular components, each
-        doing one job well, to deliver pure water at every tap in your home. The
+        doing one job well, to deliver purified water at every tap in your home. The
         standard build uses a 165-gallon storage tank and a Grundfos SCALA2
         constant-pressure pump. Because we build to the home, tank size and
         components can be customized when you want something different.
@@ -416,7 +415,7 @@ const schemas = [
       <div class="max-w-xs mx-auto mb-12">
         <Image
           src={filtrationGarageImg}
-          alt="Blue Logic Whole-Home Filtration tank and brine tank installed in a Utah garage"
+          alt="Blue Logic Filtration tank and brine tank installed in a finished Utah home"
           class="rounded-2xl shadow-2xl w-full object-cover object-[center_55%] aspect-3/5"
           widths={[320, 560]}
           sizes="320px"
@@ -472,8 +471,8 @@ const schemas = [
             🏡 Whole-Home Coverage
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Clean, soft water flows to every tap, shower, and appliance.
-            Protects your investment and your family at the same time.
+            Soft, filtered water reaches every tap, shower and appliance, which
+            protects your fixtures and appliances from scale.
           </p>
         </div>
 
@@ -633,12 +632,12 @@ const schemas = [
   <section class="bg-background py-16 md:py-20 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
-        Ready to Experience the Difference?
+        Ready to See What's in Your Water?
       </h2>
       <p class="text-xl text-muted-foreground mb-6">
-        Schedule a free water quality assessment
+        Book a free water test at your kitchen sink
       </p>
-      <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Get Started</a>
+      <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Book My Free Water Test</a>
       <p class="text-muted-foreground mt-8">
         Want to understand the cost benefits? See <a
           href="/the-value/"

@@ -2,13 +2,13 @@
 slug: replace-bottled-water-utah
 title: "How to Stop Buying Bottled Water: A Utah Homeowner's Guide"
 seoTitle: "How to Stop Buying Bottled Water in Utah"
-description: "The average Utah family on bottled water spends $1,200–$2,400 per year. A home water system can replace that expense with purified water from your own taps. Here's how."
+description: "A Utah family that relies on bottled water can easily spend $1,200 or more a year. A home water system can replace that expense with purified water from your own taps. Here's how."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "../../assets/real/installs/under-sink-ro-install.jpg"
+image: "../../assets/real/installs/under-sink-ro-white-cabinet.jpg"
 ---
 
-Bottled water is one of the biggest household expenses most people don't think of as an expense. It shows up as $8 at Costco, $5 at the gas station, $30 in the subscription box, and by the end of the year it adds up to somewhere between $1,200 and $2,400 for a family of four in a typical Utah home.
+Bottled water is one of the biggest household expenses most people don't think of as an expense. It shows up as $8 at Costco, $5 at the gas station, $30 in the subscription box, and by the end of the year it can easily add up to $1,200 or more for a family of four.
 
 That math changes completely with the right home water system.
 
@@ -24,7 +24,7 @@ Utah's Wasatch Front has genuine water quality concerns that make this pattern u
 - Sandy: HAA5 306x
 - Orem: Chromium-6 36x, arsenic 131x
 
-Bottled water feels like a solution. But it's an expensive, inconvenient, and environmentally costly one, and it only covers drinking water. It doesn't address the hard water destroying your appliances, the chlorine in your shower, or the scale on your fixtures.
+Bottled water feels like a solution. But it's an expensive, inconvenient, and environmentally costly one, and it only covers drinking water. It doesn't address the hard water wearing on your appliances, the chlorine in your shower, or the scale on your fixtures.
 
 ## The Real Cost of Bottled Water in Utah
 
@@ -34,17 +34,17 @@ Let's be specific. A family of four that relies primarily on bottled water typic
 - **Or a home delivery service:** $40–$80/month = $480–$960/year
 - **Or a subscription:** $30–$60/month = $360–$720/year
 
-Across 10 years of homeownership, even the cheapest bottled water habit costs $3,600–$18,000. And it only addresses one faucet.
+Across 10 years of homeownership, that is roughly $3,600 to $18,000. And it only covers drinking water.
 
 ## What a Whole-Home System Actually Replaces
 
-A **whole-home reverse osmosis system** from Blue Logic produces water that is comparable in purity to premium bottled brands, from every tap in your home, not just the kitchen sink.
+A **whole-home reverse osmosis system** from Blue Logic (the Blue Logic Purification System) delivers purified water at every tap in your home, not just the kitchen sink.
 
-- Kitchen faucet: pure water for drinking and cooking
-- Bathroom faucet: pure water for brushing teeth
-- Showerhead: chlorine-reduced water absorbed through skin
+- Kitchen faucet: purified water for drinking and cooking
+- Bathroom faucet: purified water for brushing teeth
+- Showerhead: soft water without the chlorine smell
 - Refrigerator water dispenser: purified water without relying on the fridge filter
-- Ice maker: pure ice that doesn't taste like the freezer
+- Ice maker: ice made from purified water
 - Every appliance: softened, filtered water that doesn't scale
 
 **Blue Logic Filtration** (one tier below full RO) includes an under-sink RO system, giving you purified drinking water at the kitchen tap specifically, while one tank softens and filters the water throughout the house: soft water, chlorine and chloramine taste and odor gone, and sediment and rust filtered out.
@@ -63,7 +63,7 @@ System prices are out the door, with standard installation and tax included; sal
 
 ## What to Do Next
 
-**Step 1:** [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water on-site, explain what's actually in it based on your city's EWG profile, and show you which system addresses what bottled water was covering, plus what bottled water wasn't.
+**Step 1:** [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water's TDS, hardness and chlorine at the kitchen sink, walk you through your city's EWG profile, and show you which system addresses what bottled water was covering, plus what bottled water wasn't.
 
 **Step 2:** Compare the systems. The [whole-home filtration system](/whole-home-water-filtration/), with its included under-sink RO, is the most common bottled-water replacement solution. The [whole-home RO system](/whole-home-reverse-osmosis-utah/) is for families who want the full picture: purified water from every tap in the house.
 

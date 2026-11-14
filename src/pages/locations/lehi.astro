@@ -10,12 +10,12 @@ const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "Why does Lehi have the highest arsenic levels on the Wasatch Front?",
-    answer: "Lehi's water supply draws from sources influenced by Utah County's natural geology: volcanic and mineral-rich formations that have elevated naturally occurring arsenic levels. Lehi's EWG data shows arsenic at 484 times EWG's health guideline, making it one of the highest arsenic levels detected in the region. The arsenic is naturally occurring, not industrial contamination, and Lehi's water meets all federal legal standards. EWG's guideline is far stricter than the EPA's legal limit.",
+    question: "Why does EWG flag arsenic in Lehi's water?",
+    answer: "Lehi's water supply draws from sources shaped by Utah County's mineral-rich geology, which carries naturally occurring arsenic. EWG reports Lehi's arsenic at 484 times its health guideline. The arsenic is naturally occurring, not industrial contamination, and Lehi's water meets all federal legal standards. EWG's guideline (0.004 ppb) is far stricter than the EPA's legal limit (10 ppb), so a large multiple can reflect a low absolute level.",
   },
   {
     question: "I just moved into a new Lehi home. Should I test the water?",
-    answer: "Yes, and the sooner the better. New construction doesn't change the municipal water source, and new plumbing can actually introduce additional variables during the first year. Lehi's fast growth has brought thousands of new homes online in areas including the Silicon Slopes corridor, nearby Saratoga Springs, and the city's eastern developments. Your Blue Logic water test is free and shows what's in your home's specific tap water, not just the city average.",
+    answer: "It's a good idea. New construction doesn't change the municipal water source, so a new home gets the same water as the rest of the city. Lehi's fast growth has brought thousands of new homes online in areas including the Silicon Slopes corridor, nearby Saratoga Springs, and the city's eastern developments. Your Blue Logic water test is free and shows what's in your home's specific tap water, not just the city average.",
   },
   {
     question: "Does Blue Logic serve Lehi and surrounding communities like Saratoga Springs and Eagle Mountain?",
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     question: "What system does Blue Logic recommend for Lehi's water?",
-    answer: "Given Lehi's arsenic levels and the presence of hexavalent chromium and haloacetic acids, whole-home reverse osmosis is the most comprehensive solution. The RO membrane works at the molecular level to address contaminants that standard filtration doesn't fully reach. That said, the recommendation is always based on your specific water test results, and some Lehi homes may be better served by the whole-home filtration system depending on which contaminants are most relevant to their specific source.",
+    answer: "For homeowners who want arsenic and hexavalent chromium reduced at every tap, the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option: the RO membrane reduces dissolved contaminants that softening and filtration don't fully reach. The recommendation always follows your water test, and many Lehi homes are well served by Blue Logic Filtration, which softens the water, reduces chlorine taste and odor, and includes an under-sink RO for drinking water at the kitchen tap.",
   },
   {
     question: "How much does a whole-home water system cost in Lehi?",
-    answer: "Blue Logic systems run $2,999 to $19,999 out the door (installation and tax included), depending on the system selected and your home's configuration. Lehi's newer homes are generally well-suited for installation: utility rooms are typically appropriately sized and plumbing is modern. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.",
+    answer: "Blue Logic solutions start at about $1,000 out the door (installation and tax included) and are customized to your home. Lehi's newer homes are generally well-suited for installation: utility rooms are typically appropriately sized and plumbing is modern. Financing is available through Pinnacle Finance for qualifying homeowners, on approved credit.",
   },
 ];
 
@@ -44,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Lehi Utah | Blue Logic Water"
-  description="Lehi has the highest arsenic levels on the Wasatch Front, 484x the EWG health guideline. Blue Logic installs whole-home RO and filtration in Lehi and Silicon Slopes. Free water test."
+  description="Lehi water meets federal standards, but EWG flags arsenic at 484x its stricter health guideline. Blue Logic installs whole-home filtration and RO in Lehi and Silicon Slopes. Free water test."
   schema={schemas}
 >
   <!-- Hero -->
@@ -57,9 +57,9 @@ const schemas = [
         Water Treatment for Lehi, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Lehi's water supply has the highest arsenic levels detected on the Wasatch Front,
-        484 times EWG's health guideline, while remaining federally compliant.
-        If you've moved into a new home or are planning to, this is the first thing to know.
+        Lehi's water meets federal standards, and the EWG database flags arsenic and chromium-6
+        above its much stricter health guidelines. If you've moved into a new home, a free water
+        test is the simplest way to see what's in yours.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -93,7 +93,7 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">484x</div>
           <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Highest arsenic level on the Wasatch Front. Naturally occurring; federally compliant.</p>
+          <p class="text-xs text-muted-foreground">Naturally occurring. EWG guideline is 0.004 ppb vs. EPA legal limit of 10 ppb.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">12</div>
@@ -141,8 +141,8 @@ const schemas = [
           which sources water from mountain watersheds including the Provo River system, Utah Lake, and the
           Central Utah Project. The arsenic and chromium-6 levels are characteristic of Utah County's
           geological baseline: naturally occurring minerals in the source geology, not industrial contamination.
-          Lehi's rapid growth (from roughly 30,000 to 80,000+ residents in two decades) has placed this water
-          quality issue in front of tens of thousands of new homeowners.
+          Lehi's rapid growth (from roughly 30,000 to 80,000+ residents in two decades) means many of its homes
+          are new, and all of them are on the same supply.
         </p>
       </div>
     </div>
@@ -157,8 +157,8 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <p class="text-muted-foreground leading-relaxed mb-4">
-            Lehi and its neighboring Silicon Slopes communities have grown faster than almost any
-            market in the western US. New construction doesn't mean new water. Homes built last
+            Lehi and its neighboring Silicon Slopes communities have grown quickly, but new
+            construction doesn't mean new water. Homes built last
             year in Saratoga Springs receive the same municipal water supply as homes built a
             decade ago. The arsenic and contaminant profile doesn't change with the home's age.
           </p>
@@ -192,16 +192,17 @@ const schemas = [
       <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 md:p-8 mb-6">
         <p class="text-muted-foreground leading-relaxed mb-4">
           Lehi's arsenic and chromium-6 levels are the key distinction. A standard water softener
-          addresses hardness only; it does not meaningfully reduce arsenic or chromium-6. A
-          whole-home filtration system softens the water and reduces chlorine, chloramines,
-          sediment and rust, but does not fully address arsenic or chromium-6 on its own.
+          addresses hardness only; it does not meaningfully reduce arsenic or chromium-6. Blue
+          Logic Filtration softens the water and reduces chlorine, chloramines, sediment and rust,
+          and its under-sink RO covers drinking water at the kitchen tap, but the whole-home tank
+          does not fully address arsenic or chromium-6 on its own.
         </p>
         <p class="text-muted-foreground leading-relaxed">
           Reverse osmosis works at the molecular level. The 0.0001-micron RO membrane is
           specifically designed to address dissolved inorganic contaminants like arsenic and
           chromium-6, the contaminants that Lehi's water profile shows at elevated levels.
-          This is why whole-home RO is the most complete solution for most Lehi households
-          concerned about their water quality.
+          That is why the Blue Logic Purification System (whole-home RO) is the most complete
+          option for Lehi households that want those reduced at every tap.
         </p>
       </div>
       <div class="text-center">
@@ -269,7 +270,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves Lehi and all of Silicon Slopes. A specialist will test your water
-        on-site and recommend the right system for your home. No cost, no obligation.
+        at the kitchen sink and recommend the right system for your home. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

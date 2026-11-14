@@ -5,14 +5,14 @@ import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { PRICES, usd } from "../data/offer";
 
-const priceRange = `${usd(PRICES.softener)} to $19,999`;
+const priceRange = "From about $1,000, customized to your home";
 
 export const prerender = true;
 const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "Alta Water is also a local Utah company. What makes Blue Logic different?",
+    question: "I'm comparing Alta Water and Blue Logic. What makes Blue Logic different?",
     answer: "Compare any two local companies on the same terms: who designs and who physically performs your installation, the full installed cost in writing, whether a service contract is required, what the warranty covers, and what documentation backs any certification claim. Blue Logic is family-owned: co-owner Jared designs your system and oversees installation by our professional installation partner, and you call Blue Logic directly for support.",
   },
   {
@@ -44,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Blue Logic vs. Alta Water Utah | Who Does the Work Matters"
-  description="Both Blue Logic and Alta Water serve Utah homeowners. Here's what to ask about who installs your system, who services it long-term, and what you actually own. Free water test."
+  description="Both Blue Logic and Alta Water serve Utah homeowners. Here's what to ask about who installs your system, who services it long-term, and what the warranty covers in writing. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -99,7 +99,7 @@ const schemas = [
             {
               q: "What is the installed price in writing, all-in?",
               context: "Quotes sometimes separate equipment from labor or exclude components like tanks and pumps. Always ask for a total installed price, in writing, before comparing.",
-              blueLogic: `${priceRange} out the door, with standard installation and tax included. Confirmed in writing at the water test.`,
+              blueLogic: `From about $1,000 out the door, customized to your home, with standard installation and tax included. Confirmed in writing at the water test.`,
             },
           ].map((item) => (
             <div class="accountability-card">
@@ -118,7 +118,7 @@ const schemas = [
         <h2 class="text-2xl font-serif mb-6 text-foreground">How Blue Logic Works, From First Call to Long-Term Service</h2>
         <div class="space-y-4">
           {[
-            { step: "1", title: "Free in-home water test", desc: "A Blue Logic specialist visits your home, tests your water for hardness and TDS, walks you through the contaminant data for your city, and shows you the results on the spot." },
+            { step: "1", title: "Free in-home water test", desc: "A Blue Logic specialist visits your home, tests your water's TDS, hardness and chlorine at the kitchen sink, walks you through the contaminant data for your city, and shows you the results on the spot." },
             { step: "2", title: "Custom system recommendation", desc: "Based on your specific water profile and home layout, we recommend the right system, not a one-size-fits-all package." },
             { step: "3", title: "Written quote", desc: "You receive a full written quote covering all components and labor. Take it home and compare it to any other quote you have." },
             { step: "4", title: "Installation day", desc: "Our professional installation partner installs your system, overseen by Blue Logic, on a timeline confirmed with you in advance." },
@@ -139,7 +139,7 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
           { label: "Who is accountable", value: "Owner-led", note: "Co-owner Jared designs your system and oversees installation by our professional installation partner." },
-          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "System pricing", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
           { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
           { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
           { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
@@ -183,13 +183,13 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        Get a Quote. Compare.
+        Get a Written Quote, Then Compare
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic's free water test is how the process starts: we visit your home, test
         your water on-site, and give you a transparent written quote. If you have an Alta
-        Water quote, bring it and we'll compare the two with you. Then you have both quotes
-        and make the call yourself.
+        Water quote, bring it and we'll compare the two with you. Then you make the call
+        yourself, with both quotes in hand.
       </p>
       <LeadForm />
     </div>

@@ -10,19 +10,19 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What water hardness level requires treatment?",
-    answer: "Any water above 7 GPG (120 mg/L) is considered moderately hard and can benefit from softening. Most Wasatch Front cities deliver water in the 10–25 GPG range, firmly in the 'hard' to 'very hard' category. At these levels, scale accumulation in appliances and pipes is measurable and ongoing. Treatment is advisable above 10 GPG; at 18–25 GPG (common in Sandy, Orem, Draper, Layton), it is strongly recommended.",
+    answer: "Water above 7 GPG (120 mg/L) is classified as hard and can benefit from softening. Most Wasatch Front cities deliver water in the 10–25 GPG range, firmly in the 'hard' to 'very hard' category. At these levels, scale accumulation in appliances and pipes is measurable and ongoing. Treatment is advisable above 10 GPG; at 18–25 GPG (common in Sandy, Orem, Draper, Layton), it is strongly recommended.",
   },
   {
     question: "My water test shows high TDS. Does that mean my water is bad?",
-    answer: "Not necessarily. Total Dissolved Solids measures the combined weight of all dissolved particles in water, including benign minerals like calcium and magnesium as well as potentially harmful contaminants. High TDS from calcium in Utah water is common and is the cause of scale and hard water, but is not itself a health hazard. High TDS does indicate that your water has significant dissolved mineral content that a filtration or RO system would address. The more important question is what the specific dissolved solids are, which a comprehensive water test or your utility's consumer confidence report can tell you.",
+    answer: "Not necessarily. Total Dissolved Solids measures the combined weight of all dissolved particles in water, including benign minerals like calcium and magnesium as well as potentially harmful contaminants. High TDS from calcium in Utah water is common and is the cause of scale and hard water, but is not itself a health hazard. High TDS does indicate significant dissolved mineral content, which reverse osmosis reduces. The more important question is what the specific dissolved solids are, which a certified lab test or your utility's consumer confidence report can tell you.",
   },
   {
     question: "What does a free Blue Logic water test measure vs. a comprehensive lab test?",
-    answer: "Blue Logic's free in-home water test measures hardness (GPG), chlorine/chloramine residual, and general water quality indicators on-site using calibrated field meters. This identifies your home's hardness level and disinfectant residual accurately and immediately. A certified lab test (sent to an accredited laboratory) can test for specific contaminants including arsenic, lead, PFAS, nitrates, bacteria, and hundreds of other parameters. The in-home test is the right starting point for most Utah homeowners, it confirms whether hard water and chlorine are issues, and your specialist will discuss whether a lab test is warranted based on your city's EWG profile.",
+    answer: "Blue Logic's free in-home water test measures hardness (GPG), total dissolved solids (TDS) and chlorine/chloramine residual at your kitchen sink using calibrated field meters, with results on the spot. A certified lab test (sent to an accredited laboratory) can test for specific contaminants including arsenic, lead, PFAS, nitrates, bacteria, and hundreds of other parameters. The in-home test is the right starting point for most Utah homeowners: it confirms whether hard water and chlorine are issues, and your specialist will discuss whether a lab test is warranted based on your city's EWG profile.",
   },
   {
     question: "Can I trust my utility's water quality report?",
-    answer: "Yes. Utilities are legally required to report accurate data. Consumer confidence reports reflect real utility testing data. However, there are important caveats: the report represents the utility's supply at the point of treatment, not at your tap. Old pipes, local distribution infrastructure, and seasonal blending can affect what actually comes out of your faucet. The EWG Tap Water Database processes this utility data but applies stricter health guidelines, which is why EWG numbers can look alarming compared to the utility's self-reported compliance status.",
+    answer: "Yes. Utilities are legally required to report accurate data. Consumer confidence reports reflect real utility testing data. However, there are important caveats: the report represents the utility's supply at the point of treatment, not at your tap. Old pipes, local distribution infrastructure, and seasonal blending can affect what actually comes out of your faucet. The EWG Tap Water Database processes this utility data but applies stricter health guidelines, which is why EWG numbers can look much higher than the utility's compliance status suggests.",
   },
 ];
 
@@ -48,7 +48,7 @@ const parameters = [
     name: "Water Hardness",
     unit: "GPG or mg/L",
     whatItMeasures: "Concentration of calcium and magnesium, the minerals that cause scale and interfere with soap lathering",
-    goodRange: "0–7 GPG (soft to slightly hard)",
+    goodRange: "0–7 GPG (soft to moderately hard)",
     typicalUtah: "10–25+ GPG depending on city",
     whatHighMeans: "Scale on fixtures and appliances, dry skin, hard-to-lather soap, spotty dishes. Addressed by softening.",
     concern: "Hardness is not a health concern; it is a water quality and home protection concern.",
@@ -59,8 +59,8 @@ const parameters = [
     whatItMeasures: "Disinfectant residual added by the utility to prevent bacterial regrowth in distribution pipes",
     goodRange: "EPA allows up to 4 ppm; most utilities target 0.2–1.0 ppm at the tap",
     typicalUtah: "0.5–2.0 ppm typical at the tap",
-    whatHighMeans: "Chlorine taste and odor, chlorine absorbed through skin during bathing, contributes to HAA formation",
-    concern: "Chlorine itself is not typically a health concern at normal tap levels. Chloramine (used in many Utah utilities) can irritate sensitive populations and is harder to remove than chlorine.",
+    whatHighMeans: "Stronger chlorine taste and odor at the tap and in the shower; chlorine also reacts with organic material to form HAAs",
+    concern: "Chlorine itself is not typically a health concern at normal tap levels. Chloramine (used by many Utah utilities) is harder to remove than chlorine.",
   },
   {
     name: "pH",
@@ -212,8 +212,8 @@ const parameters = [
           <div>
             <h3 class="text-xl font-semibold text-foreground mb-2">Free Blue Logic In-Home Water Test</h3>
             <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              A Blue Logic specialist comes to your home and tests hardness and chlorine on the spot
-              using calibrated field meters. Results are immediate. You get a plain-English explanation
+              A Blue Logic specialist comes to your home and tests TDS, hardness and chlorine at the
+              kitchen sink using calibrated field meters. Results are immediate. You get a plain-English explanation
               of what they mean for your specific home and a transparent system recommendation, all
               at no cost and with no obligation.
             </p>
@@ -250,8 +250,8 @@ const parameters = [
               For specific contaminant concerns (arsenic, lead, PFAS, bacteria, nitrates), a certified
               lab test is the most comprehensive option. You collect a water sample from your tap and
               mail it to an accredited laboratory. Results take 1–2 weeks and cost $100–$500+
-              depending on the scope of testing. Utah's Division of Water Quality maintains a list of
-              certified labs.
+              depending on the scope of testing. Ask the lab whether it is certified by the State of Utah
+              for drinking water testing.
             </p>
             <p class="text-xs text-muted-foreground italic">
               Best for: Confirming specific contaminant concerns, especially in homes with older plumbing,
@@ -293,11 +293,11 @@ const parameters = [
           },
           {
             myth: "If it passes federal standards, it's completely safe",
-            reality: "Federal maximum contaminant levels haven't been comprehensively updated in nearly 20 years. The EWG applies stricter guidelines based on more recent research. Federally compliant does not mean risk-free by more current standards.",
+            reality: "Most federal maximum contaminant levels were set decades ago (the 2024 PFAS limits are a recent exception). The EWG applies stricter guidelines based on more recent research. Federally compliant does not mean risk-free by more current standards.",
           },
           {
             myth: "A water softener makes my water safe to drink",
-            reality: "A softener removes hardness minerals only. It does not reduce arsenic, PFAS, haloacetic acids, chlorine byproducts, or other contaminants. A water softener improves water performance; it does not improve water safety.",
+            reality: "A softener removes hardness minerals only. It does not reduce arsenic, PFAS, haloacetic acids, chlorine byproducts, or other contaminants. A softener protects your home from scale; it does not change what else is in your water.",
           },
           {
             myth: "My water looks and tastes fine, so it's fine",

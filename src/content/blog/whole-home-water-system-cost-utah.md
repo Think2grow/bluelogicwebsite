@@ -2,10 +2,10 @@
 slug: whole-home-water-system-cost-utah
 title: "How Much Does a Whole-Home Water Treatment System Cost in Utah?"
 seoTitle: "Whole-Home Water System Cost in Utah"
-description: "Whole-home water softeners, filtration systems, and reverse osmosis in Utah range from under $1,000 to $20,000+. Blue Logic systems run $2,999 to $19,999 out the door. Here's what you actually get at each price point."
+description: "Whole-home water softeners, filtration systems, and reverse osmosis in Utah range from under $1,000 to $20,000+. Blue Logic solutions start at about $1,000 out the door. Here's what you actually get at each price point."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "../../assets/real/utility-room-system-wide.jpg"
+image: "../../assets/real/installs/purification-system-branded.webp"
 ---
 
 The most common question Blue Logic gets before a free water test is some version of: "How much does this cost?"
@@ -25,7 +25,7 @@ Treat water at a single faucet. Effective for improving drinking water quality a
 Treat the entire home for hardness only. Address scale and appliance damage. Do not improve drinking water safety, reduce chlorine, or address PFAS, arsenic, or other contaminants.
 
 **3. Whole-home filtration systems**  
-Treat all water entering the home. Address hardness, chlorine, chloramines, sediment, rust, taste, and odor, with softening built into the same system.
+Treat all water entering the home. Address hardness, chlorine and chloramine taste and odor, sediment, and rust, with softening built into the same system.
 
 **4. Whole-home reverse osmosis**  
 Treat all water entering the home at the molecular level. Everything a filtration system does, plus RO purification that removes dissolved solids and contaminants such as arsenic, nitrates, fluoride, and PFAS at every tap.
@@ -44,7 +44,7 @@ Every Blue Logic price below is out the door: standard installation and tax are 
 
 **Add-ons:** Under-Sink RO $999 · UV Purification Add-On $799 · Grundfos SCALA2 Pressure Pump $1,699.
 
-Depending on the home and what it needs, Blue Logic systems range from $2,999 to $19,999. Homes that need more purified water on hand add storage in 165-gallon modules (one, two, or more tanks).
+Blue Logic solutions start at about $1,000 and go up from there, and every system is customized to what the home needs. Homes that need more purified water on hand add storage in 165-gallon modules (one, two, or more tanks).
 
 **Current offer:** $250 off any new Blue Logic Softener, Filtration, or Purification system purchased by December 31, 2026.
 
@@ -96,14 +96,14 @@ Sticker price is only part of the comparison. Total cost over 10 years includes:
 
 | Cost Category | Standalone Softener | Blue Logic Filtration | Blue Logic Purification (RO) |
 |---|---|---|---|
-| System + installation | $1,500 to $4,000 | $5,999 | $15,999 |
+| System + installation | $800 to $4,000 | $5,999 | $15,999 |
 | Salt | Ongoing | Ongoing | Ongoing |
 | Maintenance | Varies by provider | Annual filters and system check | Annual filters and system check; RO membranes on a bi-annual rule |
 | Appliance protection | Scale only | Scale, chlorine, sediment | Scale, chlorine, sediment, dissolved solids |
 | Bottled water replacement | None | Partial (under-sink RO at the kitchen tap) | Full (every tap) |
 | 10-year bottled water cost | $5,000 to $15,000 | $0 to $3,000 | $0 |
 
-For Utah County families currently spending $80 to $150 a month on bottled water (a common scenario in Lehi, Draper, and Orem, where arsenic and contaminant concerns are highest), a system that ends that expense can offset much of its cost over a 10-year period relative to the softener-plus-bottled-water baseline.
+For families currently spending $80 to $150 a month on bottled water (a common scenario in cities like Lehi, Draper, and Orem, where EWG flags arsenic), a system that ends that expense can offset much of its cost over a 10-year period relative to the softener-plus-bottled-water baseline.
 
 ## What to Ask Before Signing
 
@@ -118,7 +118,7 @@ Whether you're evaluating Blue Logic or any other Utah water treatment company:
 
 ## Getting a Transparent Quote
 
-The most important step before any comparison is a free water test. A Blue Logic specialist tests your hardness and chlorine, explains what your city's water profile looks like based on EWG data, and gives you a transparent, out-the-door quote for the right system, with no pressure and no obligation.
+The most important step before any comparison is a free water test. A Blue Logic specialist tests your water's TDS, hardness and chlorine at the kitchen sink, explains what your city's water profile looks like based on EWG data, and gives you a transparent, out-the-door quote for the right system, with no pressure and no obligation.
 
 [Schedule your free water test →](/free-water-test/)
 

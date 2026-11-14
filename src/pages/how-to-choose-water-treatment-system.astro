@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "What is the difference between filtration and purification?",
-    answer: "Filtration traps or binds contaminants as water passes through: Blue Logic Filtration softens the water and removes chlorine, chloramine, sediment and rust for the whole home. Purification goes further: reverse osmosis pushes water through a membrane that removes contaminants larger than about 0.0001 microns, addressing dissolved contaminants that filtration alone cannot reach, including arsenic, heavy metals, and PFAS.",
+    answer: "Filtration traps or binds contaminants as water passes through: Blue Logic Filtration softens the water and removes chlorine and chloramine taste and odor, sediment and rust for the whole home. Purification goes further: reverse osmosis pushes water through a membrane that removes contaminants larger than about 0.0001 microns, addressing dissolved contaminants that filtration alone cannot reach, including arsenic, heavy metals, and PFAS.",
   },
 ];
 
@@ -30,19 +30,19 @@ const steps = [
   {
     number: "01",
     title: "Know what's in your water",
-    description: "The starting point for any water treatment decision is understanding your specific water. Check your utility's annual Consumer Confidence Report (search '[your city] water quality report'), review the EWG Tap Water Database at ewg.org/tapwater, or schedule a free Blue Logic in-home water test that measures hardness and chlorine on the spot.",
+    description: "The starting point for any water treatment decision is understanding your specific water. Check your utility's annual Consumer Confidence Report (search '[your city] water quality report'), review the EWG Tap Water Database at ewg.org/tapwater, or schedule a free Blue Logic in-home water test that measures TDS, hardness and chlorine at your kitchen sink.",
     tip: "EWG health guidelines are stricter than federal legal limits. Contaminants above EWG guidelines are not necessarily illegal; they're detected above EWG's recommended protective thresholds.",
   },
   {
     number: "02",
     title: "Identify your primary concerns",
     description: "Most Utah homeowners are dealing with a combination of concerns: scale and mineral buildup (hard water), taste and odor (chlorine/chloramines), and in some communities, specific contaminant concerns like arsenic or PFAS. Ranking these helps match the right system to the right problem.",
-    tip: "Hard water problems (scale, spots, dry skin, appliance damage) call for softening. Chemical or contaminant concerns call for filtration or RO. Both? Blue Logic Filtration softens and filters in one tank.",
+    tip: "Hard water problems (scale, spots, dry skin, appliance damage) call for softening. Chlorine taste and odor call for filtration. Arsenic, PFAS and other dissolved contaminants call for RO. Hardness and chlorine together? Blue Logic Filtration softens and filters in one tank.",
   },
   {
     number: "03",
     title: "Match the system to the problem",
-    description: "Water softener: addresses hardness only. Whole-home filtration: addresses hardness, chlorine and chloramine taste and odor, sediment and rust. Whole-home RO: addresses all of filtration plus arsenic, heavy metals, PFAS, and other dissolved contaminants at every tap. Your city's water profile is a strong guide: Lehi, Draper, and Orem homeowners concerned about arsenic benefit most from the RO upgrade; Sandy homeowners concerned about disinfection byproducts benefit from whole-home filtration.",
+    description: "Water softener: addresses hardness only. Whole-home filtration: addresses hardness, chlorine and chloramine taste and odor, sediment and rust. Whole-home RO: addresses all of filtration plus arsenic, heavy metals, PFAS, and other dissolved contaminants at every tap. Your city's water profile is a strong guide: Lehi, Draper, and Orem homeowners concerned about arsenic are the clearest case for the RO upgrade.",
     tip: "Not sure? Start with a free water test. The specialist's recommendation is based on your specific water, not a sales script.",
   },
   {
@@ -54,7 +54,7 @@ const steps = [
   {
     number: "05",
     title: "Evaluate cost honestly",
-    description: "Water treatment system costs vary widely. Blue Logic systems range from $2,999 to $19,999 depending on the system and home configuration, with standard installation and tax included. Ask any provider for a transparent written quote with no hidden fees after the installation.",
+    description: "Water treatment system costs vary widely. Blue Logic solutions start at about $1,000 and go up from there, customized to the home, with standard installation and tax included. Ask any provider for a transparent written quote, with no fees added after installation.",
     tip: "Factor in the ongoing cost: salt for any softening system, annual service, and replacement filters for any reverse osmosis system, not just the upfront installation.",
   },
   {
@@ -179,7 +179,7 @@ const schemas = [
 
         <div class="decision-row">
           <div class="decision-concern">
-            <div class="font-semibold text-foreground">New home, young children, want the most complete protection</div>
+            <div class="font-semibold text-foreground">Want the most complete treatment at every tap</div>
             <div class="text-sm text-muted-foreground">Comprehensive concern across all water uses</div>
           </div>
           <div class="decision-arrow">→</div>
@@ -270,7 +270,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         The fastest path to the right system is a free in-home water test.
-        Blue Logic tests your water on-site and gives you a transparent recommendation.
+        Blue Logic tests your water at the kitchen sink and gives you a transparent recommendation.
         No pressure, no obligation.
       </p>
       <LeadForm />
