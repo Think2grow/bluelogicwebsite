@@ -4,7 +4,7 @@ title: "Is Provo Water Safe to Drink?"
 description: "Provo water meets all federal EPA standards, but the EWG database flags 12 contaminants above their health guidelines, including arsenic at 100x. Here's the complete picture."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-wide.jpg"
 ---
 
 Provo's tap water is legally safe. It meets every federal EPA maximum contaminant level and the Provo City Water Services department publishes an annual Consumer Confidence Report confirming compliance.

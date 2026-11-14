@@ -3,8 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { cities } from "../../data/cities";
 import { getBreadcrumbSchema } from "../../utils/schema";
 import { Image } from "astro:assets";
-import hardWaterBuildup from "../../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
-import showerImg from "../../assets/water_art/AdobeStock_43574394_woman_showering.jpeg";
+import utilityRoomSystemImg from "../../assets/real/utility-room-system-full.jpg";
 
 export const prerender = true;
 
@@ -55,20 +54,7 @@ const schemas = [
       </div>
 
       <!-- The Problem: Hard Water Visual -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-        <div>
-          <Image
-            src={hardWaterBuildup}
-            alt="Severe mineral and scale buildup on a showerhead caused by Utah's hard water"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
-          />
-          <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            Hard water damage: A common sight in Utah homes
-          </p>
-        </div>
+      <div class="max-w-3xl mx-auto text-center mb-16">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
             Utah's Water Challenge
@@ -241,12 +227,13 @@ const schemas = [
         </div>
         <div class="order-1 lg:order-2">
           <Image
-            src={showerImg}
-            alt="Woman rinsing her hair in the shower"
+            src={utilityRoomSystemImg}
+            alt="Blue Logic Purification System installed in a Utah home's utility room: reverse osmosis unit, filtration tank, pre-filter housing and brine tank"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={60}
+            loading="lazy"
           />
         </div>
       </div>

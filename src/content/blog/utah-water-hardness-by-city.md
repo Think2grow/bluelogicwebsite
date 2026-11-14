@@ -5,7 +5,7 @@ seoTitle: "Utah Water Hardness by City (GPG Lookup Map) | Blue Logic Water"
 description: "Look up your Utah city's water hardness in grains per gallon (GPG), what it means for your home, and which contaminants the EWG flags locally. A sourced, plain-English reference for Wasatch Front homeowners."
 author: "Blue Logic Water"
 date: 2026-06-17
-image: "./water_swirl.png"
+image: "../../assets/real/filtration-valve-head-2.jpg"
 ---
 
 Utah has some of the hardest water in the country. If you've ever wondered why your

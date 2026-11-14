@@ -4,7 +4,7 @@ title: "Moving to a New Home in Utah? Test Your Water First"
 description: "Whether you're buying in Lehi, Draper, South Jordan, or anywhere on the Wasatch Front, your home's water quality is one of the first things worth knowing. Here's why, and what to do."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "./water_swirl.png"
+image: "../../assets/real/valve-and-manifold.jpg"
 ---
 
 Moving into a new home is one of the best opportunities to set your household up correctly from the start: before scale accumulates in your appliances, before your shower doors start clouding, and before your family has been drinking untreated water for a year while you got around to looking into it.

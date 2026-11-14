@@ -5,7 +5,7 @@ seoTitle: "How to Stop Buying Bottled Water in Utah"
 description: "The average Utah family on bottled water spends $1,200–$2,400 per year. A home water system can replace that expense with purified water from your own taps. Here's how."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-storage-tank.jpg"
 ---
 
 Bottled water is one of the biggest household expenses most people don't think of as an expense. It shows up as $8 at Costco, $5 at the gas station, $30 in the subscription box, and by the end of the year it adds up to somewhere between $1,200 and $2,400 for a family of four in a typical Utah home.

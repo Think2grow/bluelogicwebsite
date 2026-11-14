@@ -5,7 +5,7 @@ seoTitle: "PFAS in Utah Water: What Homeowners Should Know"
 description: "PFAS 'forever chemicals' have been detected in Salt Lake City, Park City, and other Utah water supplies. Here's what PFAS are, what the detection means, and what reduces them."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-full.jpg"
 ---
 
 In March 2024, the Salt Lake City Department of Public Utilities announced what many Utah homeowners hadn't expected: PFAS (per- and polyfluoroalkyl substances) had been detected in the city's water supply at approximately 7.1 to 7.8 parts per trillion.

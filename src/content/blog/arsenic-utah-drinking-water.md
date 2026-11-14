@@ -5,7 +5,7 @@ seoTitle: "Arsenic in Utah Drinking Water: What to Know"
 description: "Arsenic has been detected above EWG health guidelines in multiple Utah cities, including Lehi at 484x and Draper at 450x. Here's what that means and what you can do about it."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-storage-tank.jpg"
 ---
 
 Arsenic doesn't taste like anything. It doesn't smell. It doesn't make your water look different. And yet it has been detected in the tap water of multiple Wasatch Front communities at levels that exceed the Environmental Working Group's health guidelines by hundreds of times.

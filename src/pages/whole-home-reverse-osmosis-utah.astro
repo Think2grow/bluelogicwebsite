@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import OfferBanner from "../components/OfferBanner.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
+import utilityRoomStorageImg from "../assets/real/utility-room-storage-tank-2.jpg";
 import filtrationTankImg from "../assets/WH Filtration Product.png";
 import { PRICES, PRICE_NOTE, WARRANTY, usd } from "../data/offer";
 
@@ -132,12 +132,13 @@ const schemas = [
         </div>
         <div>
           <Image
-            src={dirtyCleanGlassesImg}
-            alt="A glass of cloudy, sediment-filled water beside a glass of clear water"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            src={utilityRoomStorageImg}
+            alt="Whole-home reverse osmosis installed in a Utah home's utility room: food-grade storage tank, constant-pressure pump, reverse osmosis unit and filtration tank"
+            class="rounded-2xl shadow-2xl w-full object-cover object-top aspect-video"
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             quality={60}
+            loading="lazy"
           />
         </div>
       </div>

@@ -4,7 +4,7 @@ title: "How Long Do Whole-Home Water Treatment Systems Last?"
 description: "Industry guidance puts a well-maintained whole-home softener or RO system at roughly 8 to 15 years. Here's what determines lifespan, what maintenance actually looks like, and what to ask before buying."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/filtration-valve-head.jpg"
 ---
 
 One of the most common questions Utah homeowners ask before committing to a whole-home water treatment system is: how long will this actually last?

@@ -2,8 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
-import { Image } from "astro:assets";
-import hardWaterBuildup from "../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
 
 export const prerender = true;
 
@@ -82,9 +80,9 @@ const schemas = [
   <!-- Why Utah Water Is Hard -->
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-3xl mx-auto">
         <div>
-          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
+          <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground text-center">
             Why Is Utah's Water So Hard?
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-4">
@@ -105,19 +103,6 @@ const schemas = [
             "very hard" across virtually all municipal water systems, with some communities
             (particularly in Davis County and southern Utah County) reaching levels that
             are among the highest in the United States.
-          </p>
-        </div>
-        <div>
-          <Image
-            src={hardWaterBuildup}
-            alt="Severe mineral scale and calcium deposits clogging the nozzles of a showerhead"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={65}
-          />
-          <p class="text-sm text-muted-foreground text-center mt-3 italic">
-            Calcium scale on a showerhead, the direct result of hard water mineral buildup.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ seoTitle: "Where Wasatch Front Water Comes From"
 description: "Most Utah homeowners don't know which utility serves their home or where their water originates. This guide explains the Wasatch Front water system, from mountain snowpack to your tap."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/pex-manifold-closeup.jpg"
 ---
 
 When you turn on a tap in Salt Lake City, Sandy, Lehi, or Ogden, the water has traveled a long way to reach you, and through multiple infrastructure layers you've probably never thought about. Understanding where your water comes from helps explain why it has the characteristics it does, including why it's hard, why certain contaminants appear, and why quality can vary between neighborhoods.

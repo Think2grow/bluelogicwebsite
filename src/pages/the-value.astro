@@ -1,9 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getBreadcrumbSchema } from "../utils/schema";
-import { Image } from "astro:assets";
-import boyExaminesGlassImg from "../assets/water_art/AdobeStock_549367021_boy_examines_glass.jpeg";
-import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_shower.jpeg";
 import OfferBanner from "../components/OfferBanner.astro";
 import { PRICES, usd } from "../data/offer";
 
@@ -174,22 +171,8 @@ const schemas = [
         your peace of mind.
       </p>
 
-      <!-- Image + Content Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-12">
-        <div class="lg:col-span-2">
-          <Image
-            src={boyExaminesGlassImg}
-            alt="Young boy studying a glass of water through a magnifying glass"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4] sticky top-8"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 40vw"
-            quality={50}
-          />
-          <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            What's really in your family's water?
-          </p>
-        </div>
-        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="max-w-5xl mx-auto mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="threat-card">
             <div class="text-4xl mb-4">⚗️</div>
             <h3 class="text-xl font-bold mb-4 text-foreground">
@@ -266,7 +249,7 @@ const schemas = [
   <!-- Premium Lifestyle Section -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="max-w-3xl mx-auto text-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
             Experience the Premium Difference
@@ -286,16 +269,6 @@ const schemas = [
           >
             Have Questions? Check Our FAQs →
           </a>
-        </div>
-        <div>
-          <Image
-            src={fancyShowerImg}
-            alt="Modern rain shower running in a dark tiled bathroom"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
-          />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ title: "Why Utah Homes Have Some of the Hardest Water in the US"
 description: "Utah's geology produces water that is among the hardest in the nation. Here's why it happens, what it costs homeowners every year, and what actually fixes it."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "./water_swirl.png"
+image: "../../assets/real/filtration-valve-side.jpg"
 ---
 
 Utah consistently ranks among the top states for residential water hardness, and it's not close. While the average US household deals with water in the 7–10 grains-per-gallon (GPG) range, most Wasatch Front communities deliver water at 10–25 GPG or higher. Bountiful, one of the harder-hit Davis County communities, can swing between 18 and 38 GPG depending on which water sources are active.

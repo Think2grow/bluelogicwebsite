@@ -5,7 +5,7 @@ seoTitle: "Utah Well Water Treatment Guide (Testing + Filtration) | Blue Logic W
 description: "On a private well in rural Utah? No utility tests or treats your water; that's on you. Here's what's commonly in Utah well water, how to test for it, and the right treatment for each problem."
 author: "Blue Logic Water"
 date: 2026-06-17
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-wide.jpg"
 ---
 
 If your home runs on a private well, here's the part nobody tells you at closing: **no

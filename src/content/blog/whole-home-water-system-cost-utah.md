@@ -5,7 +5,7 @@ seoTitle: "Whole-Home Water System Cost in Utah"
 description: "Whole-home water softeners, filtration systems, and reverse osmosis in Utah range from under $1,000 to $20,000+. Blue Logic systems run $2,999 to $19,999 out the door. Here's what you actually get at each price point."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-wide.jpg"
 ---
 
 The most common question Blue Logic gets before a free water test is some version of: "How much does this cost?"

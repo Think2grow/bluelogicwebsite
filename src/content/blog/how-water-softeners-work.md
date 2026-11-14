@@ -4,7 +4,7 @@ title: "How Water Softeners Work, and What They Don't Do"
 description: "Water softeners remove hardness minerals through ion exchange. They're effective for scale and appliance protection. But there's a clear limit to what they address, especially in Utah."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/filtration-valve-head-2.jpg"
 ---
 
 A water softener is one of the most common home water treatment products in Utah. It's also one of the most misunderstood, particularly in terms of what it actually does versus what people assume it does.

@@ -7,8 +7,7 @@ import OfferBanner from "../components/OfferBanner.astro";
 import { SYSTEMS } from "../data/offer";
 import { getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image, getImage } from "astro:assets";
-import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
-import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
+import utilityRoomSystemImg from "../assets/real/utility-room-system-wide.jpg";
 import VslHero from "../components/VslHero.astro";
 import vslPoster from "../assets/vsl/jared-owner-intro.jpg";
 import { getVslSchema } from "../data/vsl";
@@ -125,12 +124,13 @@ const schemas = [
         <div class="order-1 lg:order-2">
           <div class="relative">
             <Image
-              src={fatherDaughterImg}
-              alt="Father and daughter laughing as they play in running water at a bathtub faucet"
+              src={utilityRoomSystemImg}
+              alt="Blue Logic Purification System installed in a Utah home's utility room, beside the water heater and plumbing manifold"
               class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-              widths={[400, 600, 800]}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={50}
+              widths={[400, 600, 800, 1100]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={60}
+              loading="lazy"
             />
             <div
               class="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold shadow-lg"
@@ -192,17 +192,7 @@ const schemas = [
   <!-- Social Proof Section -->
   <section class="bg-background py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-        <div>
-          <Image
-            src={babyBathImg}
-            alt="Laughing baby in a bubble bath, with bubbles floating in the air"
-            class="rounded-2xl shadow-xl w-full object-cover aspect-square"
-            widths={[400, 600]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
-          />
-        </div>
+      <div class="max-w-2xl mx-auto text-center mb-16">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
             Safe from the First Bath

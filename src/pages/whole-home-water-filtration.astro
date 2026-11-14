@@ -4,7 +4,6 @@ import LeadForm from "../components/LeadForm.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import filtrationProductImg from "../assets/WH Filtration Product.png";
-import kitchenTapImg from "../assets/water_art/AdobeStock_706544309_clean_water_in_sink.jpeg";
 import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive, WARRANTY, PRICE_NOTE } from "../data/offer";
 
 export const prerender = true;
@@ -203,17 +202,7 @@ const schemas = [
 
   <!-- Kitchen Tap RO -->
   <section class="bg-card py-16 md:py-20 px-4">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <Image
-          src={kitchenTapImg}
-          alt="Clear water pouring from a chrome kitchen faucet into a drinking glass"
-          class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-          widths={[400, 600, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          quality={60}
-        />
-      </div>
+    <div class="max-w-3xl mx-auto text-center">
       <div>
         <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
           Purified Drinking Water, Included

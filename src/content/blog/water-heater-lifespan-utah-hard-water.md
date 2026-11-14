@@ -5,7 +5,7 @@ seoTitle: "Water Heater Lifespan in Utah & Hard Water | Blue Logic Water"
 description: "Water heaters last 8–12 years on average, but Utah's hard water can shave years off that. Here's how scale shortens heater life, the warning signs, and how to protect your investment."
 author: "Blue Logic Water"
 date: 2026-06-17
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-storage-tank-2.jpg"
 ---
 
 A storage-tank water heater is supposed to last **8 to 12 years**. A tankless unit, **15 to

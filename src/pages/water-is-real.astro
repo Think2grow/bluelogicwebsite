@@ -5,14 +5,14 @@ import LeadForm from "../components/LeadForm.astro";
 import OfferBanner from "../components/OfferBanner.astro";
 import { Image, getImage } from "astro:assets";
 
-import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
+import utilityRoomSystemImg from "../assets/real/utility-room-system-wide.jpg";
 
 export const prerender = true;
 
-// Social share image: a 1200x630 JPEG cut from the portrait source, instead of
-// the 2944x5248 original (which did not match the declared OG dimensions).
+// Social share image: a 1200x630 JPEG cut from a real Blue Logic install photo,
+// so the declared OG dimensions match the file.
 const ogImage = await getImage({
-  src: handInWaterImg,
+  src: utilityRoomSystemImg,
   width: 1200,
   height: 630,
   fit: "cover",
@@ -41,7 +41,7 @@ const schemas = [
     image: ogImage.src,
     imageWidth: "1200",
     imageHeight: "630",
-    imageAlt: "A hand reaching through a splash of clear water",
+    imageAlt: "Blue Logic Purification System installed in a Utah home's utility room",
   }}
 >
   <section class="relative bg-linear-to-b from-quartz via-white to-quartz px-4 py-16 md:py-24">
@@ -320,10 +320,11 @@ const schemas = [
 
           <div class="mt-8">
             <Image
-              src={handInWaterImg}
-              alt="A hand reaching through a splash of clear water"
+              src={utilityRoomSystemImg}
+              alt="Blue Logic Purification System installed in a Utah home's utility room, beside the water heater and plumbing manifold"
               class="rounded-2xl w-full object-cover aspect-4/3 border border-border"
-              widths={[480, 768]}
+              loading="lazy"
+              widths={[480, 768, 1100]}
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={55}
             />

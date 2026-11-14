@@ -4,7 +4,7 @@ import LeadForm from "../components/LeadForm.astro";
 import Reviews from "../components/Reviews.astro";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import hardWaterBuildup from "../assets/water_art/AdobeStock_684626411_hard_water_buildup_showerhead.jpeg";
+import valveHeadImg from "../assets/real/filtration-valve-head-2.jpg";
 
 export const prerender = true;
 
@@ -94,15 +94,16 @@ const schemas = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <Image
-            src={hardWaterBuildup}
-            alt="Close-up of a showerhead with heavy white mineral scale buildup around its nozzles"
+            src={valveHeadImg}
+            alt="Digital control valve and bypass on a Blue Logic tank, plumbed into a Utah home's water line"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             quality={60}
+            loading="lazy"
           />
           <p class="text-sm text-muted-foreground text-center mt-3 italic">
-            Mineral scale buildup from hard water, a common sight on showerheads and fixtures.
+            A Blue Logic tank's digital control valve, installed in a Utah home.
           </p>
         </div>
         <div>

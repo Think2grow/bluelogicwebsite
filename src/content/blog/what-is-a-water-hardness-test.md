@@ -5,7 +5,7 @@ seoTitle: "What Is a Water Hardness Test? (Utah Guide)"
 description: "A water hardness test measures how much calcium and magnesium is in your water. For most Utah homes, the answer is 'a lot.' Here's how it works and what you do with the result."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/filtration-valve-side.jpg"
 ---
 
 A water hardness test measures the concentration of calcium and magnesium dissolved in your water. These two minerals are what cause scale: the chalky white buildup on showerheads, faucets, inside water heaters, and on dishwasher-cleaned glassware.

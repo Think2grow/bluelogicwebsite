@@ -4,7 +4,7 @@ title: "Is Salt Lake City Water Safe to Drink?"
 description: "The short answer: it meets all federal standards. The longer answer involves PFAS, arsenic, haloacetic acids, and EWG health guidelines that are stricter than federal law. Here's the full picture."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-storage-tank-2.jpg"
 ---
 
 Salt Lake City's tap water is legal. It meets every federal EPA maximum contaminant level. The Salt Lake City Department of Public Utilities publishes an annual Consumer Confidence Report showing compliance across all regulated parameters.

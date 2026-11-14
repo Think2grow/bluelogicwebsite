@@ -4,8 +4,8 @@ import ProcessStepper from "../components/ProcessStepper.astro";
 import Reviews from "../components/Reviews.astro";
 import { getLocalBusinessSchema, getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
-import handInWaterImg from "../assets/water_art/AdobeStock_1028297772_hand_in_clean_water.jpeg";
-import realtorSinkImg from "../assets/water_art/AdobeStock_720169525_realtor_showing_off_sink.jpeg";
+import jaredOnSiteImg from "../assets/real/jared-on-site.jpg";
+import valveManifoldImg from "../assets/real/valve-and-manifold.jpg";
 import jaredImg from "../assets/staff/jared-co-owner.png";
 
 export const prerender = true;
@@ -65,15 +65,16 @@ const schemas = [
         </div>
         <div>
           <Image
-            src={handInWaterImg}
-            alt="Hand splashing through clear, clean water"
+            src={jaredOnSiteImg}
+            alt="Jared, co-owner of Blue Logic Water, on site in a home under construction"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={60}
+            loading="lazy"
           />
           <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            Feel the difference of truly pure water
+            Co-owner Jared, on site
           </p>
         </div>
       </div>
@@ -287,12 +288,13 @@ const schemas = [
         </div>
         <div class="order-1 lg:order-2">
           <Image
-            src={realtorSinkImg}
-            alt="Smiling couple in a modern kitchen watching clear water run from the faucet"
+            src={valveManifoldImg}
+            alt="Neatly run water lines and the digital control valve of a Blue Logic tank in a Utah home's utility room"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-            widths={[400, 600, 800]}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            widths={[400, 600, 800, 1100]}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            quality={60}
+            loading="lazy"
           />
         </div>
       </div>

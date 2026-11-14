@@ -4,7 +4,7 @@ title: "What Is Hexavalent Chromium and Is It in Utah Water?"
 description: "Chromium-6, the Erin Brockovich contaminant, has been detected in Orem and West Jordan water at levels 36x and 93x the EWG health guideline. Here's what it is and what reduces it."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-full.jpg"
 ---
 
 Hexavalent chromium (chromium-6) became a household name through the Erin Brockovich case, which documented contamination in Hinkley, California. Less well-known is that it has been detected in Utah's Wasatch Front water supplies at levels that significantly exceed EWG health guidelines, including in two of the region's larger communities.

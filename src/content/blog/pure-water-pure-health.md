@@ -5,7 +5,7 @@ seoTitle: "Reverse Osmosis Explained for Utah Homes"
 description: "Learn how reverse osmosis works, why it's the most complete water purification technology for Utah homes, and how whole-home RO compares to standard filtration and softeners."
 author: "Blue Logic Water"
 date: 2025-08-12
-image: "./water_swirl.png"
+image: "../../assets/real/utility-room-system-wide.jpg"
 ---
 
 ## What Is Reverse Osmosis?
