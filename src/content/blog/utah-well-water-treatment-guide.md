@@ -86,7 +86,7 @@ Ogden/Weber metro), a Blue Logic specialist measures TDS and hardness at your ki
 lab tests make sense for your well, with no cost or obligation. Elsewhere in Utah, contact us and
 we'll help you plan the right testing.
 
-[Schedule a free water test →](/free-water-test/)
+[Schedule a free water test →](/free-water-test/#schedule)
 
 ---
 

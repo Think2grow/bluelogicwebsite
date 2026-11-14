@@ -87,6 +87,6 @@ A Blue Logic system installed correctly, serviced annually, and fed quality salt
 
 The best way to ensure longevity: start with an accurate water test, choose the right system for your water's specific demands, and keep up with annual maintenance.
 
-[Schedule a free in-home water test →](/free-water-test/)  
+[Schedule a free in-home water test →](/free-water-test/#schedule)  
 [See our system specs →](/whole-home-reverse-osmosis-utah/)  
 [Compare all water treatment options →](/water-softener-vs-whole-home-filtration/)

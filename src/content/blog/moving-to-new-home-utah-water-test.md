@@ -96,7 +96,7 @@ One practical note: Utah homeowners who install a water treatment system at move
 
 The water is the same whether you've been in the house for a week or five years. But the cost of not treating it compounds.
 
-[Schedule a free in-home water test →](/free-water-test/)
+[Schedule a free in-home water test →](/free-water-test/#schedule)
 
 ---
 

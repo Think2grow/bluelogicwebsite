@@ -42,6 +42,6 @@ A [standard water softener](/water-softener-utah/) addresses hardness only. A [w
 - **5-year warranty** against defects in materials and workmanship, plus 12 months on installation workmanship (consumables such as filters, RO membranes and salt are not covered)
 - **Financing** is available through Pinnacle Finance for qualifying homeowners, on approved credit.
 
-The [free in-home water test](/free-water-test/) is the right starting point. A Blue Logic specialist tests your home's water on-site, explains what it means in plain English, and gives you a transparent quote for the right system, with no pressure and no obligation.
+The [free in-home water test](/free-water-test/#schedule) is the right starting point. A Blue Logic specialist tests your home's water on-site, explains what it means in plain English, and gives you a transparent quote for the right system, with no pressure and no obligation.
 
-[Schedule your free water test →](/free-water-test/)
+[Schedule your free water test →](/free-water-test/#schedule)

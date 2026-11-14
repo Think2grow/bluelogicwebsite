@@ -82,7 +82,7 @@ The honest answer to "softener vs. RO" is: **test your water first.**
 
 Hard water data for your city tells you how severe the scale risk is. Your city's EWG profile tells you whether there are contaminants beyond hardness that a softener won't address. Your household's priorities (whether you're replacing bottled water, concerned about specific contaminants, protecting premium appliances, or all three) tell you how comprehensive a solution makes sense.
 
-Blue Logic's [free in-home water test](/free-water-test/) does this on-site. A specialist comes to your home, tests TDS, hardness and chlorine at your kitchen sink, reviews your city's water profile based on EWG data, and gives you a transparent recommendation. No pressure. No obligation.
+Blue Logic's [free in-home water test](/free-water-test/#schedule) does this on-site. A specialist comes to your home, tests TDS, hardness and chlorine at your kitchen sink, reviews your city's water profile based on EWG data, and gives you a transparent recommendation. No pressure. No obligation.
 
 If the data says a softener is sufficient for your situation, that's what we'll tell you. If the data shows concerns beyond hardness, we'll show you the specific numbers and explain which fits: Blue Logic Filtration for chlorine taste and odor, sediment and rust (with RO at the kitchen tap), or the Purification System for arsenic, chromium-6 or PFAS at every tap.
 
@@ -106,6 +106,6 @@ For most Utah homeowners on Wasatch Front municipal water, where arsenic, haloac
 
 The right system for your home depends on your water. Start there.
 
-[Free in-home water test →](/free-water-test/)  
+[Free in-home water test →](/free-water-test/#schedule)  
 [Full comparison: softener vs. filtration vs. RO →](/water-softener-vs-whole-home-filtration/)  
 [See systems →](/the-system/)

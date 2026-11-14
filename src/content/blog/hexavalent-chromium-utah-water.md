@@ -57,13 +57,13 @@ That's a personal decision. What we can offer is clarity on what actually reduce
 
 If you live in Orem or West Jordan and are concerned about chromium-6:
 
-1. A [free in-home water test](/free-water-test/) gives you a starting point and a conversation with a Blue Logic specialist about your city's specific water profile.
+1. A [free in-home water test](/free-water-test/#schedule) gives you a starting point and a conversation with a Blue Logic specialist about your city's specific water profile.
 2. Blue Logic Filtration (whole-home softening and filtration in one tank) addresses hardness, chlorine and chloramine taste and odor, sediment and rust, but is not the targeted answer for chromium-6.
 3. The Blue Logic Purification System (Filtration in front, then reverse osmosis, food-grade storage and a constant-pressure pump) addresses chromium-6 at the molecular level, the most complete residential option for Orem and West Jordan homeowners with this specific concern.
 
 The water is federally legal. The concern is long-term cumulative exposure based on EWG's research-based guidelines. What you decide to do with that information is yours to determine, starting with knowing what's actually in your home's water.
 
-[Schedule a free in-home water test →](/free-water-test/)  
+[Schedule a free in-home water test →](/free-water-test/#schedule)  
 [Learn about Orem's water →](/locations/orem/)  
 [Learn about West Jordan's water →](/locations/west-jordan/)  
 [Whole-home RO systems →](/whole-home-reverse-osmosis-utah/)

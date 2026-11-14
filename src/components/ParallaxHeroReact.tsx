@@ -20,7 +20,7 @@ export default function ParallaxHeroReact({
   subtitle = "Water softeners, filtration and whole-home reverse osmosis, installed by a local team",
   tagline = "Softening, filtration and whole-home purification, installed by a local Utah team.",
   ctaText = "Schedule Free Water Test",
-  ctaHref = "/free-water-test/",
+  ctaHref = "/free-water-test/#schedule",
   imageSrc,
 }: ParallaxHeroProps) {
   const containerRef = useRef<HTMLElement>(null);

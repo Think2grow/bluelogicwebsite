@@ -56,7 +56,7 @@ An under-sink reverse osmosis system addresses arsenic, PFAS, and haloacetic aci
 For families who want comprehensive coverage, including bathing water, a whole-home RO system such as the Blue Logic Purification System addresses arsenic, PFAS, and disinfection byproducts at every tap. It also handles SLC's hard water (~12 GPG) and chlorine taste and odor at the same time.
 
 **Option 4: Get your water tested first.**  
-SLC's water quality varies somewhat by neighborhood based on the active blend of sources. A [free in-home water test](/free-water-test/) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink, and your specialist will walk you through the EWG data for your area.
+SLC's water quality varies somewhat by neighborhood based on the active blend of sources. A [free in-home water test](/free-water-test/#schedule) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink, and your specialist will walk you through the EWG data for your area.
 
 ## The Bottom Line
 
@@ -66,7 +66,7 @@ It also contains PFAS, arsenic above EWG health guidelines, and haloacetic acids
 
 Whether that's acceptable for your household is yours to determine. What Blue Logic offers is the clearest possible starting point: a free water test, a plain-English explanation of what's in your water, and a transparent recommendation, with no pressure and no obligation.
 
-[Schedule a free in-home water test →](/free-water-test/)  
+[Schedule a free in-home water test →](/free-water-test/#schedule)  
 [Learn more about Salt Lake City's water →](/locations/salt-lake-city/)  
 [Utah water quality overview →](/utah-water-quality/)
 

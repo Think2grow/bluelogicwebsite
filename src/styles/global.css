@@ -365,3 +365,7 @@
 body.sidebar-open {
   overflow: hidden;
 }
+
+/* Booking anchors land below the sticky header (Scott, 2026-11-13: every
+   schedule/contact button must open the form directly). */
+#contact, #schedule, #claim { scroll-margin-top: 6rem; }
