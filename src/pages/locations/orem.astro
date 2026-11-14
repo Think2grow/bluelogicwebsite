@@ -11,19 +11,19 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What is hexavalent chromium and why is it in Orem's water?",
-    answer: "Hexavalent chromium (chromium-6) is a form of the element chromium that is a known carcinogen at high exposures. It occurs both naturally in geology and as a result of industrial activity. In Orem's case, it is primarily naturally occurring — present in the source water at levels that exceed EWG's health guideline (36x). The EPA regulates total chromium but does not yet have a specific standard for the hexavalent form. EWG's guideline for chromium-6 specifically is far stricter than the federal total chromium limit. Reverse osmosis is effective at reducing chromium-6.",
+    answer: "Hexavalent chromium (chromium-6) is a form of the element chromium that is a known carcinogen at high exposures. It occurs both naturally in geology and as a result of industrial activity. In Orem's case, it is primarily naturally occurring, present in the source water at levels that exceed EWG's health guideline (36x). The EPA regulates total chromium but does not yet have a specific standard for the hexavalent form. EWG's guideline for chromium-6 specifically is far stricter than the federal total chromium limit. Reverse osmosis is effective at reducing chromium-6.",
   },
   {
     question: "How hard is Orem's water?",
-    answer: "Orem water is very hard — typically around 18 grains per gallon (approximately 301 mg/L). This places it in the 'very hard' category per WQA standards. At 18 GPG, scale builds up rapidly on showerheads, faucet aerators, and inside appliances. Water heater efficiency is meaningfully reduced. Orem homeowners on untreated water often notice white mineral deposits within weeks of moving in.",
+    answer: "Orem water is very hard, typically around 18 grains per gallon (approximately 301 mg/L). This places it in the 'very hard' category per WQA standards. At 18 GPG, scale builds up rapidly on showerheads, faucet aerators, and inside appliances. Water heater efficiency is meaningfully reduced. Orem homeowners on untreated water often notice white mineral deposits within weeks of moving in.",
   },
   {
     question: "Is Orem's water the same as Provo's?",
-    answer: "Orem and Provo are adjacent cities but draw water from partially different sources through the Central Utah Water Conservancy District and JVWCD systems. Orem's water has distinct contaminant levels from Provo's — notably, Orem has higher hexavalent chromium and higher HAA9 levels per EWG data. Your specific water profile depends on your neighborhood and utility blend. A free in-home water test gives you the actual picture for your home.",
+    answer: "Orem and Provo are adjacent cities but draw water from partially different sources through the Central Utah Water Conservancy District and JVWCD systems. Orem's water has distinct contaminant levels from Provo's; notably, Orem has higher hexavalent chromium and higher HAA9 levels per EWG data. Your specific water profile depends on your neighborhood and utility blend. A free in-home water test gives you the actual picture for your home.",
   },
   {
     question: "Which Blue Logic system is recommended for Orem?",
-    answer: "Given Orem's combination of chromium-6, arsenic, high HAA9 disinfection byproducts, and very hard water (18 GPG), whole-home reverse osmosis is the most comprehensive solution. The RO membrane addresses chromium-6, arsenic, and HAA compounds at the molecular level — contaminants that standard filtration and softening alone don't fully reach. The recommendation is always confirmed by your free in-home water test results.",
+    answer: "Given Orem's combination of chromium-6, arsenic, high HAA9 disinfection byproducts, and very hard water (18 GPG), whole-home reverse osmosis is the most comprehensive solution. The RO membrane addresses chromium-6, arsenic, and HAA compounds at the molecular level, contaminants that standard filtration and softening alone don't fully reach. The recommendation is always confirmed by your free in-home water test results.",
   },
   {
     question: "Does Blue Logic serve all of Orem, including Sharon area and Vineyard?",
@@ -57,7 +57,7 @@ const schemas = [
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
         Orem's water supply contains hexavalent chromium (chromium-6) at 36 times the EWG health
-        guideline, arsenic at 131 times, and haloacetic acid disinfection byproducts at 272 times —
+        guideline, arsenic at 131 times, and haloacetic acid disinfection byproducts at 272 times,
         all while remaining federally compliant. Blue Logic addresses all three.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -85,7 +85,7 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">36x</div>
           <div class="font-semibold text-foreground mb-1">Chromium-6 vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Hexavalent chromium — naturally occurring. Not currently regulated separately by EPA.</p>
+          <p class="text-xs text-muted-foreground">Hexavalent chromium, naturally occurring. Not currently regulated separately by EPA.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">272x</div>
@@ -95,7 +95,7 @@ const schemas = [
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard — causes rapid scale, appliance damage, and dry skin from bathing.</p>
+          <p class="text-xs text-muted-foreground">Very hard: causes rapid scale, appliance damage, and dry skin from bathing.</p>
         </div>
       </div>
 
@@ -116,7 +116,7 @@ const schemas = [
           </div>
           <div class="contaminant-row">
             <span class="font-medium text-foreground">Water hardness</span>
-            <span class="badge badge-primary">~18 GPG — Very Hard</span>
+            <span class="badge badge-primary">~18 GPG (Very Hard)</span>
           </div>
         </div>
         <div class="mt-5 pt-5 border-t border-border flex items-center justify-between flex-wrap gap-3">
@@ -134,12 +134,12 @@ const schemas = [
           system, primarily from mountain surface water sources processed through the regional treatment
           infrastructure. Orem is served by the same broader JVWCD supply chain as many Salt Lake County
           communities, but its specific blend, local storage, and distribution infrastructure produce a
-          distinct contaminant profile — particularly the elevated chromium-6 and arsenic levels that
+          distinct contaminant profile, particularly the elevated chromium-6 and arsenic levels that
           differentiate Orem from its neighbors.
         </p>
         <p class="text-sm text-muted-foreground leading-relaxed">
           The haloacetic acid levels reflect the chlorination of surface water with naturally high
-          organic content — a characteristic of Utah mountain watershed water that produces disinfection
+          organic content, a characteristic of Utah mountain watershed water that produces disinfection
           byproducts during treatment.
         </p>
       </div>
@@ -168,7 +168,7 @@ const schemas = [
             Orem is a family-oriented community with a high proportion of households with children.
             For families concerned about chromium-6, arsenic, and HAA compounds in water used for
             drinking, cooking, and bathing, whole-home reverse osmosis provides coverage at every
-            tap — not just at the kitchen sink.
+            tap, not just at the kitchen sink.
           </p>
         </div>
         <div class="scenario-card">
@@ -176,7 +176,7 @@ const schemas = [
           <p class="text-sm text-muted-foreground leading-relaxed">
             At 18 GPG, Orem's water is in the very hard category. Fixtures, showerheads, and
             glass shower doors in untreated Orem homes show visible calcium deposits within weeks
-            of installation. Tankless water heaters — increasingly common in Orem new builds —
+            of installation. Tankless water heaters, increasingly common in Orem new builds,
             are especially vulnerable to scale damage at these hardness levels.
           </p>
         </div>
@@ -218,7 +218,7 @@ const schemas = [
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-10 text-foreground">
-        Orem Water Treatment — Common Questions
+        Orem Water Treatment: Common Questions
       </h2>
       <div class="space-y-4">
         {faqs.map((faq) => (

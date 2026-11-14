@@ -25,14 +25,14 @@ interface Props {
 
 const {
   title = "Blue Logic Water - Professional RO Systems",
-  description = "Premium reverse osmosis water filtration systems for Salt Lake City homes. Half the cost, half the footprint, 10x quieter.",
+  description = "Water softening, whole-home filtration and whole-home reverse osmosis for Utah homes, from a local, family-owned team.",
   schema = null,
   og = {},
   noindex = false,
   bare = false,
 } = Astro.props;
 
-// Normalize site URL — always use www canonical
+// Normalize site URL, always use www canonical
 const siteUrl = "https://www.bluelogicwater.com";
 const currentUrl = new URL(Astro.url.pathname, siteUrl).toString();
 
@@ -142,7 +142,7 @@ const allSchemas = schema
           });
         }
         // Desktop: load immediately (unchanged behavior).
-        // Mobile: defer off the critical path — load on first interaction or after 4s.
+        // Mobile: defer off the critical path; load on first interaction or after 4s.
         if (window.matchMedia('(min-width: 768px)').matches) {
           load();
         } else {
@@ -178,7 +178,7 @@ const allSchemas = schema
 
     {!bare && <Footer />}
 
-    <!-- LeadConnector chat widget — deferred to end of body to protect LCP -->
+    <!-- LeadConnector chat widget, deferred to end of body to protect LCP -->
     <script
       is:inline
       src="https://widgets.leadconnectorhq.com/loader.js"

@@ -18,7 +18,7 @@ interface ParallaxHeroProps {
 export default function ParallaxHeroReact({
   title = "Your Family, Unfiltered.",
   subtitle = "Professional reverse osmosis systems for the health-conscious home",
-  tagline = "Half the cost. Half the footprint. 10x quieter.",
+  tagline = "Softening, filtration and whole-home purification, installed by a local Utah team.",
   ctaText = "Schedule Free Water Test",
   ctaHref = "/free-water-test/",
   imageSrc,
@@ -75,7 +75,7 @@ export default function ParallaxHeroReact({
           src={imageSrc}
           alt=""
           className="w-full h-[120%] object-cover object-center absolute top-[-10%]"
-          loading="lazy"
+          loading="eager"
           fetchPriority="high"
         />
         {/* Premium gradient overlay */}

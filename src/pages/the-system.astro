@@ -4,19 +4,31 @@ import { getProductSchema, getBreadcrumbSchema, getServiceSchema } from "../util
 import FilterFlowParallax from "../components/FilterFlowParallax.astro";
 import { Image } from "astro:assets";
 import dirtyCleanGlassesImg from "../assets/water_art/AdobeStock_259519171_dirty_water_clean_water_glasses.jpeg";
-import filtersInHandsImg from "../assets/water_art/AdobeStock_479744195_filters_in_tech_hands.jpeg";
-import BrochureDownload from "../components/BrochureDownload.astro";
+import purificationComponentsImg from "../assets/water_art/filters_tank_pump_system_product_picture.jpg";
+import filtrationProductImg from "../assets/WH Filtration Product.png";
+import { OFFER_HEADLINE, OFFER_SUBHEAD, OFFER_DISCLOSURE, offerActive } from "../data/offer";
 
 export const prerender = true;
 
+const showOffer = offerActive();
+
 const siteUrl = "https://www.bluelogicwater.com";
 
+// This page overrides the shared product schema description and price range
+// with Purification-specific copy and the current out-the-door range.
+const productSchema = getProductSchema(`${siteUrl}/the-system/`);
+
 const schemas = [
-  getProductSchema(`${siteUrl}/the-system/`),
+  {
+    ...productSchema,
+    description:
+      "Whole-home reverse osmosis from Blue Logic Water: Blue Logic Filtration in front, then reverse osmosis, a 165-gallon food-grade storage tank and a Grundfos SCALA2 constant-pressure pump, so every tap runs purified water. Systems from $2,999 to $19,999, installation and tax included. Serving Utah's Wasatch Front.",
+    offers: { ...productSchema.offers, lowPrice: "2999", highPrice: "19999" },
+  },
   getServiceSchema(
     `${siteUrl}/the-system/`,
-    "Blue Logic Water Treatment Systems — Utah",
-    "Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softener systems across Utah's Wasatch Front. NSF-certified components. Written price-match guarantee on any competing quote.",
+    "Blue Logic Water Treatment Systems, Utah",
+    "Blue Logic installs whole-home reverse osmosis, whole-home filtration and water softener systems across Utah's Wasatch Front. Filtration softens and filters every tap in one self-cleaning tank and includes an under-sink reverse osmosis system at the kitchen tap.",
   ),
   getBreadcrumbSchema(siteUrl, [
     { name: "Home", url: "/" },
@@ -27,7 +39,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Systems Utah | Blue Logic Water"
-  description="Blue Logic installs whole-home reverse osmosis, whole-home filtration, and water softeners across Utah's Wasatch Front. NSF-certified. Written price-match guarantee. Free water test."
+  description="Blue Logic installs whole-home reverse osmosis, whole-home filtration and water softeners across Utah's Wasatch Front. Filtration includes an under-sink RO. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -39,6 +51,14 @@ const schemas = [
         Whole-home reverse osmosis, filtration, and water softening for Utah homes
       </p>
     </div>
+    {showOffer && (
+      <div class="max-w-3xl mx-auto mt-8 text-center">
+        <p class="text-sm font-semibold uppercase tracking-widest text-primary mb-2">Current Offer</p>
+        <p class="text-xl md:text-2xl font-serif text-foreground mb-1">{OFFER_HEADLINE}</p>
+        <p class="text-muted-foreground mb-3">{OFFER_SUBHEAD}</p>
+        <p class="text-xs text-muted-foreground leading-relaxed">{OFFER_DISCLOSURE}</p>
+      </div>
+    )}
   </section>
 
   <!-- Visual Impact: Before/After -->
@@ -48,7 +68,7 @@ const schemas = [
         <div>
           <Image
             src={dirtyCleanGlassesImg}
-            alt="Comparison of contaminated water versus pure filtered water in glasses"
+            alt="A glass of cloudy, sediment-filled water beside a glass of clear water"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -63,14 +83,14 @@ const schemas = [
             <a
               href="/the-value/"
               class="text-primary hover:underline font-semibold"
-              >Utah's water carries invisible contaminants</a
-            >—heavy metals, PFAS, chlorine byproducts, and dissolved solids that
-            affect taste, health, and your home's infrastructure.
+              >Utah's water carries more than you can see</a
+            >: hardness minerals, chlorine and chloramine, sediment, and dissolved
+            contaminants that affect taste, health, and your home's plumbing and
+            appliances.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed">
-            Our systems transform municipal water into crystal-clear,
-            great-tasting water that's purer than bottled—at every tap in your
-            home.
+            Our systems turn municipal water into clear, great-tasting water, and with
+            whole-home reverse osmosis, purified water at every tap in your home.
           </p>
         </div>
       </div>
@@ -87,29 +107,28 @@ const schemas = [
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
-        Not all water treatment is created equal. Here's how softeners,
-        filtration, and purification stack up.
+        Not all water treatment is created equal. Here's how softening,
+        filtration, and purification compare.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="approach-card approach-basic">
           <div class="mb-4">
             <h3 class="text-2xl font-semibold mb-2 text-foreground">
-              Water Softener
+              Blue Logic Softener
             </h3>
             <p
               class="text-sm font-bold uppercase tracking-wider text-muted-foreground"
             >
-              ≈30% Solution
+              Hardness Only
             </p>
           </div>
           <p class="text-lg font-semibold mb-4 text-foreground/80">
-            The Illusion of Clean Water
+            Protects Your Home From Hard Water
           </p>
           <p class="text-muted-foreground leading-relaxed mb-6">
-            Softeners remove calcium and magnesium to prevent scale buildup and
-            extend appliance life. They make water feel better—but don't improve
-            safety or purity.
+            A softener removes the calcium and magnesium that cause scale. It
+            protects pipes and appliances, but softening is not filtration.
           </p>
           <div class="mb-6">
             <h4
@@ -130,8 +149,9 @@ const schemas = [
             </ul>
           </div>
           <div class="pt-4 border-t border-border text-sm text-muted-foreground">
-            <strong class="text-foreground">Verdict:</strong> Does not remove chemicals,
-            toxins, or contaminants. Does not improve taste, odor, or drinking safety.
+            <strong class="text-foreground">Verdict:</strong> The right fit when your
+            concern is scale and appliances. It does not remove chlorine, taste and
+            odor, or other contaminants.
           </div>
           <a href="/water-softener-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
             Water Softener Utah →
@@ -141,19 +161,19 @@ const schemas = [
         <div class="approach-card approach-better">
           <div class="mb-4">
             <h3 class="text-2xl font-semibold mb-2 text-foreground">
-              Whole-Home Filtration
+              Blue Logic Filtration
             </h3>
             <p class="text-sm font-bold uppercase tracking-wider text-primary">
-              ≈85% Solution
+              Most Common
             </p>
           </div>
           <p class="text-lg font-semibold mb-4 text-foreground/80">
             Real Protection for Your Home
           </p>
           <p class="text-muted-foreground leading-relaxed mb-6">
-            Blue Logic's proprietary 7-layer media system targets the full
-            spectrum of contaminants—from chlorine and PFAS to heavy metals and
-            hardness minerals.
+            Whole-home softening and filtration in one self-cleaning tank, plus an
+            under-sink reverse osmosis system for purified drinking water at the
+            kitchen tap.
           </p>
           <div class="mb-6">
             <h4
@@ -163,22 +183,22 @@ const schemas = [
             </h4>
             <ul class="space-y-2">
               <li class="approach-list-item">
-                Full-spectrum contaminant reduction
+                Soft water: scale and appliance protection
               </li>
               <li class="approach-list-item">
-                Softened water using 75% less salt than standard softeners
+                Chlorine and chloramine taste and odor removed home-wide
               </li>
               <li class="approach-list-item">
-                Cleaner, fresher taste at every tap
+                Fine sand, rust and sediment filtered out
               </li>
               <li class="approach-list-item">
-                Low maintenance and long lifespan
+                Purified drinking water at the kitchen tap
               </li>
             </ul>
           </div>
           <div class="pt-4 border-t border-border text-sm text-muted-foreground">
-            <strong class="text-foreground">Verdict:</strong> The best whole-home
-            filtration on the market—smart, balanced, and built to last.
+            <strong class="text-foreground">Verdict:</strong> Soft, filtered water at
+            every tap and purified water where you drink and cook.
           </div>
           <a href="/whole-home-water-filtration/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
             Whole-Home Filtration Details →
@@ -188,19 +208,19 @@ const schemas = [
         <div class="approach-card approach-best">
           <div class="mb-4">
             <h3 class="text-2xl font-semibold mb-2 text-foreground">
-              Whole-Home Purification
+              Blue Logic Purification System
             </h3>
             <p class="text-sm font-bold uppercase tracking-wider text-success">
-              ≈99% Solution
+              Purified at Every Tap
             </p>
           </div>
           <p class="text-lg font-semibold mb-4 text-foreground/80">
             The Ultimate in Clean Water
           </p>
           <p class="text-muted-foreground leading-relaxed mb-6">
-            Our reverse osmosis system removes contaminants at the molecular
-            level—delivering better-than-bottled water quality from every tap in
-            your home.
+            Blue Logic Filtration in front, then whole-home reverse osmosis,
+            storage and constant pressure, so every tap in your home runs purified
+            water.
           </p>
           <div class="mb-6">
             <h4
@@ -210,22 +230,22 @@ const schemas = [
             </h4>
             <ul class="space-y-2">
               <li class="approach-list-item">
-                Removes up to 99% of contaminants
+                Everything Filtration does, then purifies the whole home
               </li>
               <li class="approach-list-item">
-                Eliminates PFAS, arsenic, pharmaceuticals, microplastics
+                Reduces lead, arsenic, fluoride, nitrates, PFAS, pharmaceuticals and microplastics
               </li>
               <li class="approach-list-item">
-                Pure water for every sink, shower, and appliance
+                Purified water for every sink, shower, and appliance
               </li>
               <li class="approach-list-item">
-                Engineered for reliability and simplicity
+                165-gallon purified storage and constant pressure
               </li>
             </ul>
           </div>
           <div class="pt-4 border-t border-border text-sm text-muted-foreground">
-            <strong class="text-foreground">Verdict:</strong> The only true purification
-            solution—better than bottled water at every tap.
+            <strong class="text-foreground">Verdict:</strong> Our best system: pure,
+            balanced water at every tap in the home.
           </div>
           <a href="/whole-home-reverse-osmosis-utah/" class="inline-block mt-4 text-sm text-primary font-semibold hover:opacity-80 transition-opacity">
             Whole-Home RO Details →
@@ -239,7 +259,7 @@ const schemas = [
         <h3
           class="text-2xl md:text-3xl font-serif mb-6 text-center text-foreground"
         >
-          Two Complete Systems, One Expert Team
+          Two Whole-Home Systems, One Expert Team
         </h3>
         <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
           Blue Logic offers two comprehensive whole-home water solutions
@@ -248,35 +268,38 @@ const schemas = [
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div class="bg-card p-6 rounded-xl">
             <h4 class="text-xl font-semibold mb-3 text-primary">
-              Whole-Home Filtration
+              Blue Logic Filtration
             </h4>
             <p class="text-muted-foreground mb-4">
-              Our standalone 7-layer filtration system with integrated water
-              softening. Perfect for comprehensive contaminant reduction and
-              softened water throughout your home.
+              Softening and filtration for the whole home in one self-cleaning
+              tank. Soft, filtered water throughout your home, with purified
+              drinking water at the kitchen sink.
             </p>
             <p class="text-sm font-semibold text-foreground">
-              Includes: Water Softener + 7-Layer Media Filtration
+              Includes: Whole-home softening and filtration tank + under-sink
+              reverse osmosis at the kitchen tap
             </p>
           </div>
           <div class="bg-card p-6 rounded-xl border-2 border-primary">
             <h4 class="text-xl font-semibold mb-3 text-primary">
-              Whole-Home Purification
+              Blue Logic Purification System
             </h4>
             <p class="text-muted-foreground mb-4">
-              Everything from our filtration system PLUS reverse osmosis
+              Everything Filtration does to the whole home, PLUS reverse osmosis
               purification and storage for the ultimate in water purity at every
               tap.
             </p>
             <p class="text-sm font-semibold text-foreground">
-              Includes: Filtration System + Commercial RO Unit + 165-Gallon Tank
-              + Delivery Pump
+              Includes: Blue Logic Filtration + sediment pre-filter + reverse
+              osmosis + 165-gallon storage tank + Grundfos SCALA2 constant-pressure
+              pump
             </p>
           </div>
         </div>
         <p class="text-center text-muted-foreground italic">
-          Our purification system builds on our proven filtration foundation—the
-          softener and filters protect the RO membranes and extend system life.
+          Our purification system builds on our filtration foundation: the
+          Filtration in front protects the RO membrane, so the RO can run at about
+          3 gallons of purified water for every 1 sent to drain.
         </p>
       </div>
     </div>
@@ -295,76 +318,75 @@ const schemas = [
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
-        Our whole home reverse osmosis system isn't just smaller and quieter—it's
-        fundamentally better engineered. Removes up to 99% of contaminants to
-        deliver pure water at every tap in your home.
+        The Blue Logic Purification System is built from modular components, each
+        doing one job well, to deliver pure water at every tap in your home.
       </p>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="p-8 bg-card rounded-2xl">
             <h3 class="text-xl font-semibold mb-4 text-primary">
-              Molecular-Level Purification
+              Purification at Every Tap
             </h3>
             <p class="font-semibold mb-2 text-foreground">
-              Removes up to 99% of contaminants
+              Down to about 0.0001 microns
             </p>
             <p class="text-muted-foreground leading-relaxed">
-              Removes dissolved solids, heavy metals, PFAS, pharmaceuticals, and
-              microplastics at the molecular level.
+              Reduces dissolved solids, heavy metals, PFAS, pharmaceuticals, and
+              microplastics throughout the home.
             </p>
           </div>
 
           <div class="p-8 bg-card rounded-2xl">
             <h3 class="text-xl font-semibold mb-4 text-primary">
-              Compact Design
+              Efficient by Design
             </h3>
             <p class="font-semibold mb-2 text-foreground">
-              50% smaller than traditional RO systems
+              About 3 gallons purified for every 1 to drain
             </p>
             <p class="text-muted-foreground leading-relaxed">
-              Fits seamlessly in modern utility spaces without the massive
-              footprint of competitor systems.
+              Up to 75% recovery, made possible by the Filtration in front that
+              protects the RO membrane.
             </p>
           </div>
 
           <div class="p-8 bg-card rounded-2xl">
             <h3 class="text-xl font-semibold mb-4 text-primary">
-              Silent Operation
+              Normal Pressure Everywhere
             </h3>
             <p class="font-semibold mb-2 text-foreground">
-              10x quieter than standard units
+              Grundfos SCALA2 constant-pressure pump
             </p>
             <p class="text-muted-foreground leading-relaxed">
-              Advanced sound-dampening technology means you'll forget it's even
-              running.
+              A variable-speed pump regulates pressure automatically, so purified
+              water feels like normal city pressure.
             </p>
           </div>
 
           <div class="p-8 bg-card rounded-2xl">
             <h3 class="text-xl font-semibold mb-4 text-primary">
-              Premium Build Quality
+              Storage That Fits Your Home
             </h3>
             <p class="font-semibold mb-2 text-foreground">
-              Commercial-grade components
+              165-gallon food-grade tank
             </p>
             <p class="text-muted-foreground leading-relaxed">
-              Engineered for long-term reliability with NSF-certified materials
-              throughout.
+              BPA-free, built with NSF/ANSI and FDA compliant materials. Homes that
+              need more add a second 165-gallon tank.
             </p>
           </div>
         </div>
         <div>
           <Image
-            src={filtersInHandsImg}
-            alt="Professional technician carefully handling precision water filtration components"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-3/4"
-            widths={[400, 600]}
+            src={purificationComponentsImg}
+            alt="Blue Logic Purification System components: filtration tank and brine tank, pre-filter housing, Grundfos constant-pressure pump, reverse osmosis unit and 165-gallon storage tank"
+            class="rounded-2xl shadow-2xl w-full object-contain bg-white"
+            widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={50}
+            quality={60}
           />
           <p class="text-sm text-muted-foreground text-center mt-4 italic">
-            Precision engineering in every component
+            Every component of the Blue Logic Purification System
           </p>
         </div>
       </div>
@@ -376,65 +398,63 @@ const schemas = [
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-6 text-foreground"
       >
-        7-Layer Whole-Home Filtration
+        Blue Logic Filtration
       </h2>
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
-        For those seeking advanced filtration without full purification, our
-        proprietary 7-layer system delivers exceptional protection and softened
-        water throughout your home.
+        For those who want soft, filtered water throughout the home without full
+        purification, Blue Logic Filtration does it all in one tank, with
+        purified drinking water at the kitchen tap.
       </p>
+
+      <div class="max-w-xs mx-auto mb-12">
+        <Image
+          src={filtrationProductImg}
+          alt="Blue Logic Whole-Home Filtration tank with its digital control valve, standing beside a matching black brine tank"
+          class="w-full object-contain"
+          widths={[300, 500]}
+          sizes="320px"
+          quality={70}
+        />
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="filtration-card">
           <h3 class="text-xl font-semibold mb-4 text-foreground">
-            🧪 Advanced Multi-Media Technology
+            🧪 One Tank, Soft and Filtered
           </h3>
           <p class="text-muted-foreground leading-relaxed mb-4">
-            Seven distinct filtration layers work in concert to target
-            everything from heavy metals and chlorine to microplastics and
-            hardness minerals.
+            Softening and filtration happen together in one self-cleaning tank, so
+            the whole home gets:
           </p>
           <ul class="space-y-3">
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Zinc-Infused Carbon</strong> — Reduces
-              bacteria and removes chlorine
+              <strong class="text-foreground">Soft water</strong>: no new scale on
+              fixtures or inside appliances
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Copper-Infused Carbon</strong> — Additional
-              antimicrobial protection
+              <strong class="text-foreground">No chlorine or chloramine</strong>: the
+              taste and odor are gone at every tap
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Catalytic Carbon</strong> — Eliminates
-              chloramines and organic compounds
+              <strong class="text-foreground">Clear water</strong>: sediment and rust
+              filtered out
             </li>
             <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">EvoResin</strong> — Targets hardness
-              minerals efficiently
-            </li>
-            <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Katalox</strong> — Removes iron, manganese,
-              and hydrogen sulfide
-            </li>
-            <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Aluminosilicate</strong> — Polishes
-              water clarity
-            </li>
-            <li class="text-muted-foreground text-sm leading-relaxed">
-              <strong class="text-foreground">Garnet</strong> — Final sediment filtration
+              <strong class="text-foreground">Softer skin and hair</strong>: showers
+              without chlorine or hard water
             </li>
           </ul>
         </div>
 
         <div class="filtration-card">
           <h3 class="text-xl font-semibold mb-4 text-foreground">
-            💧 Softened Without the Slick
+            💧 Purified Water at the Kitchen Tap
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Enjoy water that feels smooth and fresh without the slippery residue
-            of traditional salt-based softeners. Uses 75% less salt while
-            delivering superior results.
+            Every Filtration system includes an under-sink reverse osmosis system
+            with its own dedicated tap, for purified drinking and cooking water.
           </p>
         </div>
 
@@ -443,18 +463,19 @@ const schemas = [
             🏡 Whole-Home Coverage
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Clean, healthy water flows to every tap, shower, and appliance.
-            Protects your investment and your family simultaneously.
+            Clean, soft water flows to every tap, shower, and appliance.
+            Protects your investment and your family at the same time.
           </p>
         </div>
 
         <div class="filtration-card">
           <h3 class="text-xl font-semibold mb-4 text-foreground">
-            ⚙️ Built to Last
+            ⚙️ Low Maintenance
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Designed for high-flow homes with minimal maintenance requirements.
-            Engineered for longevity, not planned obsolescence.
+            The tank regenerates automatically based on your water use. You keep
+            salt in the brine tank, we handle annual maintenance, and the system is
+            covered by a 5-year warranty against defects.
           </p>
         </div>
       </div>
@@ -471,46 +492,44 @@ const schemas = [
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-8"
       >
-        Our purification system combines filtration and reverse osmosis in four
-        integrated stages. Stages 1-2 (the filtration system) can operate
-        standalone, or pair with stages 3-4 for complete purification.
+        Our purification system builds on Blue Logic Filtration. Stage 1 (Blue
+        Logic Filtration) works on its own, or pairs with the sediment
+        pre-filter, reverse osmosis, storage and constant-pressure pump for
+        whole-home purification.
       </p>
       <div
         class="text-center mb-12 bg-accent/50 py-4 px-6 rounded-xl max-w-2xl mx-auto"
       >
         <p class="text-foreground font-semibold">
-          💡 The filtration pretreatment isn't optional—it protects the RO
-          membranes and ensures optimal purification performance.
+          💡 The filtration in front isn't optional: it protects the RO membrane
+          and is what lets the RO run efficiently.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="step-card">
           <div class="step-number">1</div>
           <h3 class="text-lg font-semibold mb-3 text-foreground">
-            Softening + Pretreatment
+            Softening + Filtration
           </h3>
           <p class="text-sm text-muted-foreground mb-2">
             <span
               class="inline-block bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded mb-2"
-              >FILTRATION SYSTEM</span
+              >BLUE LOGIC FILTRATION</span
             >
           </p>
           <p class="text-sm text-muted-foreground mb-4">
-            Water softener and multi-layer filtration prepare water for
-            purification or serve as standalone filtration
+            Prepares water for purification, or serves as standalone whole-home
+            filtration
           </p>
           <ul class="space-y-2 text-left">
             <li class="text-sm text-muted-foreground">
-              <strong class="text-foreground">Sediment Filter</strong> — Removes particles
-              and debris
+              Softens and filters in one self-cleaning tank
             </li>
             <li class="text-sm text-muted-foreground">
-              <strong class="text-foreground">Carbon Block Filter</strong> — Eliminates
-              chlorine and organics
+              Removes chlorine, chloramine, sediment and rust
             </li>
             <li class="text-sm text-muted-foreground">
-              <strong class="text-foreground">Phosphate Additive</strong> — Protects
-              the RO membrane from scale buildup
+              Protects the RO membrane in the Purification System
             </li>
           </ul>
         </div>
@@ -523,22 +542,24 @@ const schemas = [
           <p class="text-sm text-muted-foreground mb-2">
             <span
               class="inline-block bg-success/10 text-success text-xs font-bold px-2 py-1 rounded mb-2"
-              >PURIFICATION UPGRADE</span
+              >PURIFICATION SYSTEM</span
             >
           </p>
           <p class="text-sm text-muted-foreground mb-4">
-            Commercial-grade RO removes contaminants at molecular level
+            Removes what filtration cannot: the contaminants dissolved in the water
           </p>
           <ul class="space-y-2 text-left">
             <li class="text-sm text-muted-foreground">
-              0.0001 micron membrane filtration
+              A sediment pre-filter guards the membrane
             </li>
             <li class="text-sm text-muted-foreground">
-              Removes up to 99% of contaminants including heavy metals, PFAS,
-              and dissolved solids
+              Removes contaminants larger than about 0.0001 microns
             </li>
             <li class="text-sm text-muted-foreground">
-              Designed for continuous whole-home capacity
+              Reduces dissolved solids, heavy metals, PFAS and more
+            </li>
+            <li class="text-sm text-muted-foreground">
+              About 3 gallons purified for every 1 sent to drain
             </li>
           </ul>
         </div>
@@ -546,26 +567,26 @@ const schemas = [
         <div class="step-card">
           <div class="step-number">3</div>
           <h3 class="text-lg font-semibold mb-3 text-foreground">
-            165-Gallon Holding Tank
+            165-Gallon Storage Tank
           </h3>
           <p class="text-sm text-muted-foreground mb-2">
             <span
               class="inline-block bg-success/10 text-success text-xs font-bold px-2 py-1 rounded mb-2"
-              >PURIFICATION UPGRADE</span
+              >PURIFICATION SYSTEM</span
             >
           </p>
           <p class="text-sm text-muted-foreground mb-4">
-            High-capacity storage maintains consistent flow throughout your home
+            Keeps purified water on hand for the whole home
           </p>
           <ul class="space-y-2 text-left">
             <li class="text-sm text-muted-foreground">
-              Ensures purified water is always ready on demand
+              Purified water ready on demand
             </li>
             <li class="text-sm text-muted-foreground">
-              Prevents pressure drops during peak usage
+              Food-grade, BPA-free, NSF/ANSI and FDA compliant materials
             </li>
             <li class="text-sm text-muted-foreground">
-              NSF-certified food-grade materials
+              Add a second 165-gallon tank when your home needs more
             </li>
           </ul>
         </div>
@@ -573,26 +594,26 @@ const schemas = [
         <div class="step-card">
           <div class="step-number">4</div>
           <h3 class="text-lg font-semibold mb-3 text-foreground">
-            Delivery Pump
+            Constant-Pressure Pump
           </h3>
           <p class="text-sm text-muted-foreground mb-2">
             <span
               class="inline-block bg-success/10 text-success text-xs font-bold px-2 py-1 rounded mb-2"
-              >PURIFICATION UPGRADE</span
+              >PURIFICATION SYSTEM</span
             >
           </p>
           <p class="text-sm text-muted-foreground mb-4">
-            Restores—and often improves—your home's water pressure
+            A Grundfos SCALA2 delivers purified water at normal pressure
           </p>
           <ul class="space-y-2 text-left">
             <li class="text-sm text-muted-foreground">
-              Maintains optimal pressure to every fixture
-            </li>
-            <li class="text-sm text-muted-foreground">
-              Quiet, efficient operation
-            </li>
-            <li class="text-sm text-muted-foreground">
               Automatic pressure regulation
+            </li>
+            <li class="text-sm text-muted-foreground">
+              Variable speed with soft start
+            </li>
+            <li class="text-sm text-muted-foreground">
+              Dry-run and low-flow protection
             </li>
           </ul>
         </div>
@@ -609,12 +630,11 @@ const schemas = [
         Schedule a free water quality assessment
       </p>
       <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Get Started</a>
-      <BrochureDownload />
       <p class="text-muted-foreground mt-8">
         Want to understand the cost benefits? See <a
           href="/the-value/"
           class="text-primary hover:underline font-semibold"
-          >why our systems cost half the industry standard</a
+          >the long-term value of a Blue Logic system</a
         >.
       </p>
     </div>

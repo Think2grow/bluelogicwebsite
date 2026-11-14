@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+import { PRICES, usd } from "../data/offer";
+
+const priceRange = `${usd(PRICES.softener)} to $19,999`;
 
 export const prerender = true;
 const siteUrl = "https://www.bluelogicwater.com";
@@ -10,23 +13,23 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "How do I fairly compare Blue Logic and Element Water?",
-    answer: "Get written quotes from both, then compare them on the same terms: total installed cost including all components and labor, component NSF certification documentation (ask for specific standard numbers and which parts are certified), warranty terms and what's actually covered, service contract requirements and annual costs, and who physically performs the installation. Blue Logic will provide all of this at your free water test, in writing.",
+    answer: "Get written quotes from both, then compare them on the same terms: total installed cost including all components and labor, certification documentation (ask for specific standard numbers and which parts they cover), warranty terms and what's actually covered, service contract requirements and annual costs, and who physically performs the installation. Blue Logic will provide all of this at your free water test, in writing.",
   },
   {
     question: "What NSF certifications should I ask any water treatment company about?",
-    answer: "For a whole-home RO system, the most important certifications are NSF/ANSI 58 (for the RO membrane — tests for contaminant reduction and materials safety) and NSF/ANSI 61 (for the storage tank — ensures it's food-grade safe). Ask the company to show you the specific certification documentation for the actual components going in your home, not just a general claim. Blue Logic uses NSF/ANSI-rated membranes and NSF food-grade storage tanks.",
+    answer: "Ask which standard each claim refers to and which specific parts it covers. For reverse osmosis, NSF/ANSI 58 covers RO system performance and materials, and NSF/ANSI 61 covers materials that contact drinking water. Ask to see the documentation for the actual components going in your home, not just a general claim. The Blue Logic Purification System's storage tank is built from NSF/ANSI and FDA compliant materials.",
   },
   {
     question: "Does Blue Logic require a service contract?",
-    answer: "No. Blue Logic does not require an ongoing service contract. An annual check-up is scheduled at installation. After the first year, service visits are available per request — no contractual obligation. Ask any local provider what their ongoing service terms look like, including what triggers mandatory service calls.",
+    answer: "No. Blue Logic does not require an ongoing service contract. Annual maintenance, which covers filter changes and a general system check, is standard and scheduled for you. Visits outside scheduled maintenance carry a $129 service call fee. Ask any provider what their ongoing service terms look like.",
   },
   {
-    question: "Can Blue Logic match a written Element Water quote?",
-    answer: "Yes. Blue Logic's written price-match guarantee applies to any licensed Utah water treatment company. Bring a written Element Water quote to your free Blue Logic water test and we'll match or beat it.",
+    question: "Can I bring an Element Water quote to compare?",
+    answer: "Yes. Bring any written quote to your free Blue Logic water test and we'll compare it with ours line by line: what each system treats, the full installed price, the warranty, and what ongoing service costs.",
   },
   {
     question: "What does Blue Logic's free water test actually measure?",
-    answer: "A Blue Logic water test measures hardness (grains per gallon), total dissolved solids (TDS in ppm), and key contaminants relevant to your city's water source. Results are shared on the spot. The test is the basis for which system Blue Logic recommends — we don't sell a one-size-fits-all solution. It's no-obligation and takes about an hour at your home.",
+    answer: "A Blue Logic water test measures hardness (grains per gallon), total dissolved solids (TDS in ppm), and chlorine, and your specialist walks you through contaminant data for your city's water source. Results are shared on the spot. The test is the basis for which system Blue Logic recommends; we don't sell a one-size-fits-all solution. It's no-obligation and takes about an hour at your home.",
   },
 ];
 
@@ -41,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Blue Logic vs. Element Water Utah | 5 Questions to Ask Before You Sign"
-  description="Comparing local Utah water treatment companies? Here are the questions that separate transparent providers from ones who make it hard to compare. Free water test. Written price-match guarantee."
+  description="Comparing local Utah water treatment companies? Here are the questions that separate transparent providers from ones who make it hard to compare. Free water test, written quote."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -64,7 +67,7 @@ const schemas = [
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
         <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and the specific questions to ask any local water treatment company before committing.
-        We make no claims about Element Water's pricing or terms. Bring any written quote and Blue Logic will match or beat it.
+        We make no claims about Element Water's pricing or terms. Bring any written quote to your free water test and we'll compare it with ours.
       </p>
     </div>
   </section>
@@ -80,33 +83,33 @@ const schemas = [
           {[
             {
               number: "1",
-              question: "Are your RO membranes NSF-certified, and to which standard?",
-              why: "NSF/ANSI 58 is the specific standard for RO membrane performance and materials safety. A general claim of 'NSF certified' without a standard number is hard to verify. Ask for the documentation.",
-              blueLogic: "NSF/ANSI-rated RO membranes. Documentation available at your free water test.",
+              question: "What does the system actually treat, and how efficient is the RO?",
+              why: "Ask which contaminants each part of the system addresses, and how much water the RO sends to drain for every gallon it purifies. Older RO designs can send several gallons to drain per gallon purified.",
+              blueLogic: "Filtration softens and filters in one tank. Blue Logic RO runs about 3 gallons purified per 1 to drain (up to 75% recovery), made safe by the Filtration in front.",
             },
             {
               number: "2",
-              question: "Is the storage tank NSF food-grade certified?",
-              why: "Your purified water sits in the storage tank. NSF/ANSI 61 certification confirms the tank materials won't leach contaminants into your water. This is the detail most homeowners don't think to ask.",
-              blueLogic: "NSF food-grade certified storage tanks. 165-gallon or optional 250-gallon capacity.",
+              question: "What is the storage tank made of?",
+              why: "With whole-home RO, your purified water sits in a storage tank, so ask what the tank is made of and what standards its materials meet. This is the detail most homeowners don't think to ask.",
+              blueLogic: "165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials. Homes that need more storage get additional 165-gallon tanks added as modules.",
             },
             {
               number: "3",
               question: "What is the full installed price in writing, including all components and labor?",
               why: "Some quotes separate equipment cost from installation cost, or exclude components like the delivery pump, storage tank, or under-sink RO. Always compare total installed cost.",
-              blueLogic: "$5,995–$19,999 full installed price, confirmed in writing at your free water test. No hidden fees.",
+              blueLogic: `${priceRange} out the door, with standard installation and tax included, confirmed in writing at your free water test. No hidden fees.`,
             },
             {
               number: "4",
               question: "Is a service contract required, and what does it cost per year?",
               why: "Mandatory service contracts add to the true cost of ownership. Ask what's required, what's included, and what happens if you miss a scheduled service.",
-              blueLogic: "No service contract required. Annual check-up scheduled at installation. Service after year one is per request.",
+              blueLogic: "No service contract required. Annual maintenance is standard and scheduled for you; visits outside scheduled maintenance are $129.",
             },
             {
               number: "5",
-              question: "Who physically performs the installation — an employee or a subcontractor?",
-              why: "Accountability for the installation quality depends on who's actually doing the work. A company that subcontracts installations has less direct control over the outcome.",
-              blueLogic: "Jared leads installations personally. Owner-operated — no subcontractors.",
+              question: "Who physically performs the installation, and who is accountable for it?",
+              why: "Accountability for installation quality depends on who's doing the work and who stands behind it. Ask who installs, and who you call if something isn't right.",
+              blueLogic: "Co-owner Jared designs your system and oversees installation by our professional installation partner. Installation workmanship is covered for 12 months.",
             },
           ].map((item) => (
             <div class="question-card">
@@ -129,12 +132,12 @@ const schemas = [
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price confirmed at free water test." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and food-grade storage tanks." },
-          { label: "Warranty", value: "5-year system; 12-month installation", note: "Components designed for 8–10 year lifespan." },
-          { label: "Service contract", value: "Not required", note: "Annual check-up included. No ongoing obligation." },
-          { label: "Financing", value: "In-house, half down", note: "Flexible repayment. No third-party lender." },
-          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
+          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
+          { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
+          { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
+          { label: "Financing", value: "Pinnacle Finance", note: "For qualifying homeowners, subject to credit approval. Checking eligibility is a soft credit inquiry." },
+          { label: "Who is accountable", value: "Owner-led", note: "Co-owner Jared designs your system and oversees installation by our professional installation partner." },
         ].map((item) => (
           <div class="spec-card">
             <div class="flex justify-between items-start gap-4 mb-2">
@@ -178,8 +181,8 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic's free water test gives you real measurements of your water and a written
-        quote with full component details. If you have an Element Water quote, bring it —
-        we'll match or beat it in writing. Take both quotes home and make the call yourself.
+        quote with full component details. If you have an Element Water quote, bring it and
+        we'll compare the two with you. Take both quotes home and make the call yourself.
       </p>
       <LeadForm />
     </div>

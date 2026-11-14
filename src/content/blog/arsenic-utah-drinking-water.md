@@ -2,7 +2,7 @@
 slug: arsenic-utah-drinking-water
 title: "Arsenic in Utah Drinking Water: What Wasatch Front Homeowners Need to Know"
 seoTitle: "Arsenic in Utah Drinking Water: What to Know"
-description: "Arsenic has been detected above EWG health guidelines in multiple Utah cities — including Lehi at 484x and Draper at 450x. Here's what that means and what you can do about it."
+description: "Arsenic has been detected above EWG health guidelines in multiple Utah cities, including Lehi at 484x and Draper at 450x. Here's what that means and what you can do about it."
 author: "Blue Logic Water"
 date: 2026-06-04
 image: "./water_swirl.png"
@@ -15,17 +15,17 @@ Draper: 450 times.
 West Jordan: 275 times.  
 Salt Lake City: 135 times.
 
-If you haven't heard about this, you're not alone. Arsenic in Utah water isn't a headline — it's a slow background fact that most homeowners don't know about because their water utility's annual report says the water is "in compliance."
+If you haven't heard about this, you're not alone. Arsenic in Utah water isn't a headline; it's a slow background fact that most homeowners don't know about because their water utility's annual report says the water is "in compliance."
 
 Here's the full picture.
 
 ## What Is Arsenic and Where Does It Come From in Utah?
 
-Arsenic is a naturally occurring metalloid element found throughout the earth's crust. In Utah, it's particularly concentrated in areas with volcanic and mineral-rich geology — and the Wasatch Front sits above a great deal of it.
+Arsenic is a naturally occurring metalloid element found throughout the earth's crust. In Utah, it's particularly concentrated in areas with volcanic and mineral-rich geology, and the Wasatch Front sits above a great deal of it.
 
 As groundwater and surface water move through arsenic-bearing rock formations on their way to aquifers and reservoirs, they dissolve arsenic. By the time the water is treated and delivered to your home, it arrives with a measurable arsenic concentration that reflects the geology it traveled through.
 
-This is not industrial contamination. There are no factories dumping arsenic into Utah's water supply. It is naturally occurring — which is precisely why it's so widespread and so difficult to fully address at the utility level.
+This is not industrial contamination. There are no factories dumping arsenic into Utah's water supply. It is naturally occurring, which is precisely why it's so widespread and so difficult to fully address at the utility level.
 
 ## The Gap Between Federal Law and EWG Health Guidelines
 
@@ -33,11 +33,11 @@ This is where the confusion begins.
 
 The EPA's legal maximum contaminant level (MCL) for arsenic in drinking water is **10 parts per billion (ppb)**.
 
-The EWG's health guideline for arsenic is **0.004 parts per billion** — roughly 2,500 times stricter.
+The EWG's health guideline for arsenic is **0.004 parts per billion**, roughly 2,500 times stricter.
 
 How can there be such a gap? The EPA's 10 ppb standard was set based on a balance between public health protection and the cost and feasibility of water treatment at scale. It was also established using older risk assessment methodology. The EWG applies more current research on cumulative long-term exposure risk, which suggests that lower concentrations over a lifetime of drinking water carry meaningful health risks that the 10 ppb standard was not designed to address.
 
-When you see "Arsenic detected at 135x the EWG health guideline" in Salt Lake City, that means the detected level is 135 times higher than what EWG considers a protective threshold — but it may still be below the EPA's legal limit of 10 ppb. The water is legal. The EWG guideline is stricter.
+When you see "Arsenic detected at 135x the EWG health guideline" in Salt Lake City, that means the detected level is 135 times higher than what EWG considers a protective threshold, but it may still be below the EPA's legal limit of 10 ppb. The water is legal. The EWG guideline is stricter.
 
 This doesn't mean the water is immediately dangerous. It means long-term exposure research suggests lower thresholds than what federal law currently requires.
 
@@ -67,14 +67,14 @@ Research published in peer-reviewed journals has associated long-term arsenic ex
 - Diabetes associations in some population studies
 - Developmental effects in children at higher exposure levels
 
-It's important to contextualize this: **these findings relate to chronic, long-term exposure, not immediate risk.** Drinking a glass of Salt Lake City tap water today is not the same as drinking uranium-contaminated water from a superfund site. But the question for Utah homeowners is what the cumulative effect of decades of exposure at these levels represents — a question that EWG's health guidelines are designed to address more conservatively than the 1975-era federal standard.
+It's important to contextualize this: **these findings relate to chronic, long-term exposure, not immediate risk.** Drinking a glass of Salt Lake City tap water today is not the same as drinking uranium-contaminated water from a superfund site. But the question for Utah homeowners is what the cumulative effect of decades of exposure at these levels represents, a question that EWG's health guidelines are designed to address more conservatively than the current federal standard.
 
 ## How to Know If Arsenic Is a Concern in Your Home
 
 Three steps:
 
 **1. Check the EWG Tap Water Database**  
-Visit [ewg.org/tapwater](https://www.ewg.org/tapwater) and search for your city's water utility. The database shows which contaminants have been detected in your utility's supply and how they compare to EWG health guidelines. This is based on official utility testing data — not EWG's own testing.
+Visit [ewg.org/tapwater](https://www.ewg.org/tapwater) and search for your city's water utility. The database shows which contaminants have been detected in your utility's supply and how they compare to EWG health guidelines. This is based on official utility testing data, not EWG's own testing.
 
 **2. Read your utility's Consumer Confidence Report**  
 Every Utah water utility publishes an annual Consumer Confidence Report (CCR) showing detected contaminants and their levels versus federal legal limits. Search "[your city] water quality report [current year]." The CCR is required by law to be accurate and is typically available on your utility's website.
@@ -86,23 +86,23 @@ Blue Logic's free in-home water test measures hardness and chlorine on the spot.
 
 Not all filtration approaches are effective for arsenic. Here's what works and what doesn't:
 
-**Reverse osmosis (RO):** Highly effective at reducing arsenic. The semi-permeable RO membrane operates at 0.0001 micron — small enough to exclude dissolved inorganic contaminants including arsenic. This is why whole-home RO is the recommended approach for Utah homeowners in high-arsenic communities like Lehi, Draper, West Jordan, Orem, and Salt Lake City.
+**Reverse osmosis (RO):** Highly effective at reducing arsenic. The semi-permeable RO membrane operates at 0.0001 micron, small enough to exclude dissolved inorganic contaminants including arsenic. This is why whole-home RO is the recommended approach for Utah homeowners in high-arsenic communities like Lehi, Draper, West Jordan, Orem, and Salt Lake City.
 
 **Activated carbon filtration:** Standard activated carbon is not effective for inorganic arsenic. While carbon filters excel at reducing chlorine, organic compounds, and taste/odor issues, they do not meaningfully address dissolved metal ions like arsenic.
 
-**Water softeners:** Standard ion-exchange water softeners do not remove arsenic. They exchange hardness minerals (calcium and magnesium) for sodium — but arsenic passes through unchanged.
+**Water softeners:** Standard ion-exchange water softeners do not remove arsenic. They exchange hardness minerals (calcium and magnesium) for sodium, but arsenic passes through unchanged.
 
-**Under-sink RO:** An under-sink reverse osmosis filter at your kitchen faucet addresses arsenic in your drinking and cooking water specifically. Blue Logic includes a free under-sink RO system (valued at $1,000) with every whole-home filtration system purchase — giving you arsenic-reduced drinking water without upgrading to full whole-home RO.
+**Under-sink RO:** An under-sink reverse osmosis system at your kitchen faucet addresses arsenic in your drinking and cooking water specifically. Blue Logic Filtration includes an under-sink RO system at the kitchen tap, giving you arsenic-reduced drinking water without upgrading to full whole-home RO.
 
-**Whole-home RO:** The most complete residential approach. Every tap in your home — kitchen, bathrooms, laundry, showers — receives RO-purified water. For families in high-arsenic communities who want whole-home protection including bathing water, this is the most comprehensive option.
+**Whole-home RO:** The most complete residential approach. Every tap in your home (kitchen, bathrooms, laundry, showers) receives RO-purified water. For families in high-arsenic communities who want whole-home protection including bathing water, this is the most comprehensive option.
 
 ## The Honest Framing
 
-Arsenic in Utah water is a real issue. The EWG data is based on real utility testing. The gap between EWG's health guidelines and federal legal limits reflects a genuine scientific disagreement about what "safe" means over a lifetime of exposure — not a conspiracy or a scare campaign.
+Arsenic in Utah water is a real issue. The EWG data is based on real utility testing. The gap between EWG's health guidelines and federal legal limits reflects a genuine scientific disagreement about what "safe" means over a lifetime of exposure, not a conspiracy or a scare campaign.
 
 At the same time: people have been drinking water from Lehi, Draper, and Salt Lake City utilities for decades without obvious mass health consequences. The risk from arsenic at these concentrations is probabilistic and long-term, not acute.
 
-What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation — whether that's a whole-home filtration system, a whole-home RO upgrade, or just the information to make your own decision.
+What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation, whether that's a whole-home filtration system, a whole-home RO upgrade, or just the information to make your own decision.
 
 There's no pressure. There's no obligation. And now you know what's in the water.
 

@@ -5,12 +5,16 @@ import ParallaxHero from "../components/ParallaxHero.astro";
 import ParallaxHeroReact from "../components/ParallaxHeroReact";
 import ProductExplosion from "../components/ProductExplosion.astro";
 import Reviews from "../components/Reviews.astro";
+import OfferBanner from "../components/OfferBanner.astro";
+import { SYSTEMS } from "../data/offer";
 import { getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image, getImage } from "astro:assets";
 import fatherDaughterImg from "../assets/water_art/AdobeStock_302662231_father_daughter_faucet.jpeg";
 import babyBathImg from "../assets/water_art/AdobeStock_600699653_baby_in_bubble_bath.jpeg";
 import heroImageSrc from "../assets/water_art/AdobeStock_689029947_toddler_with_water.jpeg";
-import BrochureDownload from "../components/BrochureDownload.astro";
+import VslSection from "../components/VslSection.astro";
+import vslPoster from "../assets/vsl/jared-owner-intro.jpg";
+import { getVslSchema } from "../data/vsl";
 
 export const prerender = true;
 
@@ -25,24 +29,30 @@ const desktopHeroImage = await getImage({
 // Generate homepage-specific schema
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
 
+const [softener, filtration] = SYSTEMS;
+
+const vslThumb = await getImage({ src: vslPoster, width: 1280, format: "jpg" });
+const vslThumbUrl = new URL(vslThumb.src, siteUrl).toString();
+
 const schemas = [
   getBreadcrumbSchema(siteUrl, [{ name: "Home", url: "/" }]),
   getAggregateRatingSchema(`${siteUrl}/`),
+  getVslSchema(new URL("/", siteUrl).toString(), vslThumbUrl),
 ];
 ---
 
 <Layout
-  title="Water Treatment Utah | Blue Logic Water — Wasatch Front"
-  description="Whole-home reverse osmosis and filtration systems for Utah's Wasatch Front. Competitively priced with a written price-match guarantee. Free in-home water test. Serving Ogden to Springville."
+  title="Water Treatment Utah | Blue Logic Water | Wasatch Front"
+  description="Whole-home reverse osmosis, filtration and water softeners for Utah's Wasatch Front. Out-the-door pricing with installation and tax included. Free in-home water test. Serving Ogden to Springville."
   schema={schemas}
 >
   <!-- Localized Parallax Hero (Task 3.2) -->
-  <!-- Mobile: static, fully optimized hero — no JS in the critical path. -->
+  <!-- Mobile: static, fully optimized hero, no JS in the critical path. -->
   <div class="md:hidden">
     <ParallaxHero
       title="Your Family, Unfiltered."
       subtitle="Whole home reverse osmosis systems for the health-conscious home"
-      tagline="Half the cost. Half the footprint. 10x quieter."
+      tagline="Softening, filtration and whole-home purification, installed by a local Utah team."
       ctaText="Schedule Free Water Test"
       ctaHref="/free-water-test/"
     />
@@ -54,7 +64,7 @@ const schemas = [
       client:media="(min-width: 768px)"
       title="Your Family, Unfiltered."
       subtitle="Whole home reverse osmosis systems for the health-conscious home"
-      tagline="Half the cost. Half the footprint. 10x quieter."
+      tagline="Softening, filtration and whole-home purification, installed by a local Utah team."
       ctaText="Schedule Free Water Test"
       ctaHref="/free-water-test/"
       imageSrc={desktopHeroImage.src}
@@ -67,13 +77,19 @@ const schemas = [
         Purity Without the Premium
       </h2>
       <p class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto">
-        Blue Logic installs professional-grade <a href="/whole-home-reverse-osmosis-utah/" class="text-primary hover:underline font-semibold">whole-home reverse osmosis systems</a>, <a href="/whole-home-water-filtration/" class="text-primary hover:underline font-semibold">whole-home filtration</a>, and <a href="/water-softener-utah/" class="text-primary hover:underline font-semibold">water softeners</a> across Utah's Wasatch Front — backed by a written price-match guarantee on any competing quote.
+        Blue Logic installs professional-grade <a href="/whole-home-reverse-osmosis-utah/" class="text-primary hover:underline font-semibold">whole-home reverse osmosis systems</a>, <a href="/whole-home-water-filtration/" class="text-primary hover:underline font-semibold">whole-home filtration</a>, and <a href="/water-softener-utah/" class="text-primary hover:underline font-semibold">water softeners</a> across Utah's Wasatch Front, with out-the-door pricing that includes standard installation and tax.
       </p>
       <p class="text-lg leading-relaxed text-muted-foreground max-w-3xl mx-auto">
         Every system starts with a <a href="/free-water-test/" class="text-primary hover:underline font-semibold">free in-home water test</a>. We serve <a href="/locations/salt-lake-city/" class="text-primary hover:underline font-semibold">Salt Lake City</a>, <a href="/locations/provo/" class="text-primary hover:underline font-semibold">Provo</a>, <a href="/locations/lehi/" class="text-primary hover:underline font-semibold">Lehi</a>, <a href="/locations/draper/" class="text-primary hover:underline font-semibold">Draper</a>, and the full Wasatch Front.
       </p>
     </div>
   </section>
+
+  <!-- Owner video: click-to-load, transcript on the page -->
+  <VslSection />
+
+  <!-- Current offer -->
+  <OfferBanner variant="full" />
 
   <!-- Services Hub -->
   <section class="bg-card py-16 md:py-20 px-4">
@@ -82,26 +98,26 @@ const schemas = [
         Water Treatment Systems for Utah Homes
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-        Three levels of water treatment — each starting with an integrated water softener and building from there.
+        Three levels of water treatment, each built on Blue Logic softening and adding more from there.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <a href="/water-softener-utah/" class="service-card group">
           <div class="service-icon">💧</div>
-          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Water Softener</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Addresses hard water, scale, and appliance damage. Integrated softening using 75% less salt than traditional units.</p>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Blue Logic Softener</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">{softener.summary} Protects your water heater, appliances, and plumbing.</p>
           <span class="text-primary text-sm font-semibold">Learn more →</span>
         </a>
         <a href="/whole-home-water-filtration/" class="service-card group border-primary/30">
           <div class="service-icon">🔵</div>
-          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Whole-Home Filtration</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Softening plus 7-layer media filtration for chlorine, chloramines, iron, manganese, and taste. Includes free under-sink RO.</p>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Blue Logic Filtration</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">{filtration.summary} Chlorine and chloramine taste and odor gone at every tap.</p>
           <span class="text-primary text-sm font-semibold">Learn more →</span>
         </a>
         <a href="/whole-home-reverse-osmosis-utah/" class="service-card group bg-primary/5 border-primary/40">
           <div class="service-icon">✨</div>
           <div class="text-xs font-bold uppercase tracking-wide text-primary mb-2">Most Complete</div>
-          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Whole-Home RO</h3>
-          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Everything in filtration plus a commercial-grade RO membrane. Pure water at every tap. Addresses arsenic, PFAS, and heavy metals.</p>
+          <h3 class="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">Blue Logic Purification</h3>
+          <p class="text-sm text-muted-foreground leading-relaxed mb-4">Whole-home reverse osmosis: Blue Logic Filtration in front, then RO, 165-gallon storage, and constant pressure. Purified water at every tap, reducing arsenic, PFAS, and heavy metals.</p>
           <span class="text-primary text-sm font-semibold">Learn more →</span>
         </a>
       </div>
@@ -122,9 +138,9 @@ const schemas = [
             Pure Water for Your Family
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            Every glass, every bath, every meal—your family deserves water you
-            can trust completely. Our whole-home systems ensure pure water flows
-            from every tap.
+            Every glass, every bath, every meal: your family deserves water you
+            can trust completely. The Blue Logic Purification System delivers purified water
+            at every tap.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
             No more worrying about what's in your water. From your newborn's
@@ -132,7 +148,7 @@ const schemas = [
             comes with <a
               href="/the-system/"
               class="text-primary hover:underline font-semibold"
-              >up to 99% contaminant removal</a
+              >purified water at every tap</a
             >.
           </p>
           <a
@@ -146,7 +162,7 @@ const schemas = [
           <div class="relative">
             <Image
               src={fatherDaughterImg}
-              alt="Father and daughter enjoying pure water together at the kitchen sink"
+              alt="Father and daughter laughing as they play in running water at a bathtub faucet"
               class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
               widths={[400, 600, 800]}
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -173,24 +189,24 @@ const schemas = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <div class="text-center p-8 bg-background rounded-2xl">
           <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
-            1/2 the Cost
+            Out-the-Door Pricing
           </h3>
-          <p class="text-muted-foreground">Half the price of competitors</p>
+          <p class="text-muted-foreground">Standard installation and tax included in every price</p>
         </div>
         <div class="text-center p-8 bg-background rounded-2xl">
           <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
-            1/2 the Footprint
+            Modular by Design
           </h3>
           <p class="text-muted-foreground">
-            Sleek, compact design for modern homes
+            Start with softening or Filtration and add reverse osmosis later
           </p>
         </div>
         <div class="text-center p-8 bg-background rounded-2xl">
           <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-primary">
-            10x Quieter
+            5-Year Warranty
           </h3>
           <p class="text-muted-foreground">
-            Advanced sound-dampening technology
+            On defects in materials and workmanship, from a family-owned Utah company
           </p>
         </div>
       </div>
@@ -216,7 +232,7 @@ const schemas = [
         <div>
           <Image
             src={babyBathImg}
-            alt="Happy baby enjoying a gentle bubble bath in pure, filtered water"
+            alt="Laughing baby in a bubble bath, with bubbles floating in the air"
             class="rounded-2xl shadow-xl w-full object-cover aspect-square"
             widths={[400, 600]}
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -229,7 +245,7 @@ const schemas = [
           </h2>
           <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
             A baby's skin absorbs what's in the water. Our whole-home systems
-            remove chlorine, PFAS, and contaminants from every faucet so bath
+            reduce chlorine, PFAS, and other contaminants at every faucet so bath
             time is pure, gentle, and worry-free.
           </p>
           <p class="text-muted-foreground leading-relaxed">
@@ -244,7 +260,8 @@ const schemas = [
           Protection That Starts Before You Can See the Threat
         </h2>
         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-          From Park City to Draper and everywhere in between, our whole-home reverse osmosis systems are designed to protect your home, your family, and your life, even when contaminants move through the pipes unnoticed.        </p>
+          From Ogden to Springville and everywhere in between, our whole-home reverse osmosis systems are designed to protect your home, your family, and your life, even when contaminants move through the pipes unnoticed.
+        </p>
       </div>
 
       <!-- Location Trust Grid -->
@@ -279,7 +296,7 @@ const schemas = [
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Arsenic - 343 times the health guideline.
+            Arsenic - 315 times the health guideline.
           </div>
         </a>
         <a
@@ -290,7 +307,7 @@ const schemas = [
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Haloacetic acids (HAA9) - 409 times the health guideline.
+            Haloacetic acids (HAA5) - 306 times the health guideline.
           </div>
         </a>
       </div>
@@ -322,10 +339,6 @@ const schemas = [
         </a>
       </div>
     </div>
-  </section>
-
-  <section class="bg-card justify-center py-16 md:py-20 px-4">
-    <BrochureDownload />
   </section>
 
   <LeadForm />

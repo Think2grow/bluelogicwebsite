@@ -3,7 +3,7 @@
  * ParallaxHero Component (static, performance-optimized)
  *
  * Renders fully in server HTML so the LCP hero image + heading paint
- * immediately — no React/Framer Motion hydration in the critical path.
+ * immediately, no React/Framer Motion hydration in the critical path.
  * Entrance animations are CSS-only and respect prefers-reduced-motion.
  */
 import { getImage } from "astro:assets";
@@ -20,7 +20,7 @@ interface Props {
 const {
   title = "Your Family, Unfiltered.",
   subtitle = "Professional reverse osmosis systems for the health-conscious home",
-  tagline = "Half the cost. Half the footprint. 10x quieter.",
+  tagline = "Softening, filtration and whole-home purification, installed by a local Utah team.",
   ctaText = "Schedule Free Water Test",
   ctaHref = "/free-water-test/",
 } = Astro.props;
@@ -41,7 +41,7 @@ const fallbackSrc = images[images.length - 1].src;
 <section
   class="relative overflow-hidden min-h-[90vh] md:min-h-screen flex items-center justify-center"
 >
-  <!-- Background Layer (LCP element — eager + high priority) -->
+  <!-- Background Layer (LCP element, eager + high priority) -->
   <div class="absolute inset-0 z-0" aria-hidden="true">
     <img
       src={fallbackSrc}
@@ -194,7 +194,7 @@ const fallbackSrc = images[images.length - 1].src;
 </section>
 
 <style>
-  /* CSS-only staggered entrance — runs without JS so content paints immediately. */
+  /* CSS-only staggered entrance, runs without JS so content paints immediately. */
   .fade-up {
     opacity: 0;
     transform: translateY(30px);

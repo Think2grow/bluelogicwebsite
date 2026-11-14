@@ -13,92 +13,86 @@ interface FilterStage {
   description: string;
   icon: string;
   removal: string;
-  purity: number;
+  level: string;
 }
 
+// Qualitative comparison only: no percentages, because none of these numbers
+// come from a test. Copy follows the Blue Logic knowledge base.
 const stages: FilterStage[] = [
   {
-  id: "standard-filter",
-  name: "Standard Store-Bought Filter",
-  description: "Basic off-the-shelf filter commonly found at local retailers. Reduces only the largest visible particles and offers minimal overall purification.",
-  icon: "🧻",
-  removal: "Large Sediment ~19.6%",
-  purity: 19.6,
-},
-{
-  id: "water-softener",
-  name: "Water Softener",
-  description: "Targets hardness minerals like calcium and magnesium to reduce scale buildup, but does not remove most contaminants.",
-  icon: "🧂",
-  removal: "Hardness Minerals ~29.7%",
-  purity: 29.7,
-},
-{
-  id: "carbon-filter",
-  name: "Carbon Filter",
-  description: "Improves taste and odor by reducing chlorine and some organic compounds. A common mid-level filtration step.",
-  icon: "🧱",
-  removal: "Chlorine & VOCs ~41.2%",
-  purity: 41.2,
-},
-{
-  id: "bl-filtration",
-  name: "Blue Logic Whole Home Filtration System",
-  description: "Advanced multi-stage filtration designed to protect the entire home by removing a broad range of contaminants before water reaches any tap.",
-  icon: "🏠",
-  removal: "Broad-Spectrum Contaminants ~85.7%",
-  purity: 85.7,
-},
-{
-  id: "bl-ro",
-  name: "Blue Logic Whole Home Purification RO System",
-  description: "Medical-grade reverse osmosis purification operating at the molecular level to remove nearly all remaining contaminants.",
-  icon: "🔬",
-  removal: "99.8% of Contaminants ~99.8%",
-  purity: 99.8,
-},
+    id: "standard-filter",
+    name: "Pitcher or Fridge Filter",
+    description:
+      "Improves the taste of drinking water at a single spot. Showers, laundry, dishes and appliances still get untreated water.",
+    icon: "🧻",
+    removal: "One tap, taste only",
+    level: "One tap",
+  },
+  {
+    id: "water-softener",
+    name: "Water Softener",
+    description:
+      "Removes the hardness minerals that cause scale, spots and dry skin. Softening is not filtration: chlorine taste and odor stay.",
+    icon: "🧂",
+    removal: "Hardness only",
+    level: "Softened",
+  },
+  {
+    id: "carbon-filter",
+    name: "Softener Plus Carbon",
+    description:
+      "What many companies sell as filtration. It softens and polishes taste, but softening with a taste polish is not true whole-home filtration.",
+    icon: "🧱",
+    removal: "Hardness and some taste",
+    level: "Polished",
+  },
+  {
+    id: "bl-filtration",
+    name: "Blue Logic Filtration",
+    description:
+      "Whole-home softening and filtration in one self-cleaning tank, plus an under-sink reverse osmosis system at the kitchen tap. Chlorine and chloramine taste and odor gone at every tap, sediment and rust filtered out, appliances and fixtures protected.",
+    icon: "🏠",
+    removal: "Soft, filtered water at every tap",
+    level: "Filtered",
+  },
+  {
+    id: "bl-ro",
+    name: "Blue Logic Purification System",
+    description:
+      "Blue Logic Filtration in front, then reverse osmosis, 165-gallon food-grade storage and a constant-pressure pump, so every tap in the home runs purified water at normal pressure.",
+    icon: "🔬",
+    removal: "Purified water at every tap",
+    level: "Purified",
+  },
 ];
 
 export default function FilterFlowReact() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeStage, setActiveStage] = useState(-1);
-  const [purityDisplay, setPurityDisplay] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Transform scroll progress to purity percentage
-  // The scroll positions below should correspond to the center of each card
-  // and the purity values should match the 'purity' field of each stage
-  const purity = useTransform(
-    scrollYProgress,
-    [0, 0.22, 0.36, 0.51, 0.66, 0.81],
-    [0, 19.6, 29.7, 41.2, 85.7, 99.8],
-  );
-
-  // Update displayed purity value and active stage on scroll
+  // Update the active stage on scroll
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    // Align activeStage with the center points of each card (same as purity transform)
+    // Align activeStage with the center points of each card
     if (latest < 0.16) {
       setActiveStage(-1); // No stage active yet
     } else if (latest < 0.29) {
-      setActiveStage(0); // Standard Filter
+      setActiveStage(0); // Pitcher or fridge filter
     } else if (latest < 0.435) {
       setActiveStage(1); // Water Softener
     } else if (latest < 0.585) {
-      setActiveStage(2); // Carbon Filter
+      setActiveStage(2); // Softener plus carbon
     } else if (latest < 0.735) {
-      setActiveStage(3); // Blue Logic Whole Home Filtration System
+      setActiveStage(3); // Blue Logic Filtration
     } else {
-      setActiveStage(4); // Blue Logic RO
+      setActiveStage(4); // Blue Logic Purification System
     }
   });
 
-  useMotionValueEvent(purity, "change", (latest) => {
-    setPurityDisplay(latest);
-  });
 
   // Droplet position: centered (0%) -> left (20-85%) -> centered (90%+)
   const dropletX = useTransform(
@@ -167,7 +161,7 @@ export default function FilterFlowReact() {
             Every Drop, Transformed
           </h2>
           <p className="text-lg text-white/60 max-w-xl mx-auto">
-            Watch your water travel through four stages of purification
+            See how each approach to water treatment compares, from a single tap to every tap
           </p>
         </motion.div>
 
@@ -221,14 +215,11 @@ export default function FilterFlowReact() {
               />
             </svg>
 
-            {/* Purity indicator */}
+            {/* Stage indicator */}
             <motion.div className="absolute -bottom-14 left-1/2 -translate-x-1/2 text-center whitespace-nowrap">
               <motion.div className="text-xl md:text-2xl font-bold text-glacier">
-                {purityDisplay.toFixed(1)}%
+                {activeStage < 0 ? "Tap water" : stages[activeStage].level}
               </motion.div>
-              <div className="text-xs text-white/50 uppercase tracking-wider">
-                Pure
-              </div>
             </motion.div>
           </div>
         </motion.div>

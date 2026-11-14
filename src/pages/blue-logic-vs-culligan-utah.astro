@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+import { PRICES, usd } from "../data/offer";
+
+const priceRange = `${usd(PRICES.softener)} to $19,999`;
 
 export const prerender = true;
 
@@ -11,23 +14,23 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Culligan offered me a rental or lease program. Is that a good deal?",
-    answer: "Rental and lease programs mean you pay monthly indefinitely rather than building equity in a system you own. Over 7–10 years, those payments often exceed the outright purchase price of a comparable system several times over. Before signing, ask Culligan for the total cost of the agreement over 10 years, what happens at the end of the term, and what it costs to cancel. Then compare that to Blue Logic's outright purchase range of $5,995–$19,999. You own the Blue Logic system from day one.",
+    answer: "It depends on the total cost. Before signing any rental or lease, ask for the total cost of the agreement over its full term, what happens at the end of the term, who owns the equipment, and what it costs to cancel or move. Then compare that to buying. Blue Logic systems are purchased, not rented, and range from $2,999 to $19,999 out the door. You own the system from day one, and financing is available through Pinnacle Finance for qualifying homeowners.",
   },
   {
     question: "Culligan is a big national brand. Doesn't that mean better quality?",
-    answer: "Brand recognition and installation quality are different things. Culligan operates through independently owned and operated dealerships — the Utah dealer is a local franchisee, not a Culligan corporate employee. Quality can vary significantly by franchise location. Blue Logic is owner-operated: Jared conducts the water test, designs your system, leads the installation, and handles annual check-ups personally. There's direct accountability at every step.",
+    answer: "Brand recognition and installation quality are different things, so judge any quote on the system, the installation and the service behind it. Ask who owns and operates the local office you are dealing with and who will install your system. Blue Logic is a family-owned Utah company: co-owner Jared designs your system and oversees the installation, and you call Blue Logic directly for support.",
   },
   {
-    question: "Culligan requires a service contract. Does Blue Logic?",
-    answer: "No. Blue Logic does not require an ongoing service contract. An annual check-up is included and scheduled at the time of installation, but there is no contractual ongoing obligation. After the first year, service visits are available per request at your discretion.",
+    question: "Does Blue Logic require a service contract?",
+    answer: "No. Blue Logic does not require an ongoing service contract. Annual maintenance, which covers filter changes and a general system check, is standard and scheduled for you. Visits outside scheduled maintenance carry a $129 service call fee.",
   },
   {
-    question: "A Culligan rep came to my door. Should I trust that sales process?",
-    answer: "Door-to-door water treatment sales are a well-known high-pressure environment — the goal of an in-home visit is often to close the sale that day. Blue Logic's free water test is different: we test your water, show you exactly what's in it based on real measurements, give you a transparent written quote, and you take it home to decide at your own pace. No same-day pressure.",
+    question: "How is Blue Logic's sales process different?",
+    answer: "Blue Logic's free water test is built around information, not a same-day close. We test your water, show you what's in it based on real measurements, give you a transparent written quote, and you take it home to decide at your own pace.",
   },
   {
-    question: "Can Blue Logic match a written Culligan quote?",
-    answer: "Yes. Blue Logic offers a written price-match guarantee on any competing quote from a licensed Utah water treatment company. Bring your written Culligan quote to your free Blue Logic water test and we'll match or beat it.",
+    question: "Can I bring a Culligan quote to compare?",
+    answer: "Yes. Bring any written quote to your free Blue Logic water test and we'll compare it with ours line by line: what each system treats, the full installed price, the warranty, and what ongoing service costs.",
   },
 ];
 
@@ -42,7 +45,7 @@ const schemas = [
 
 <Layout
   title="Blue Logic vs. Culligan Utah | Before You Sign, Read This"
-  description="Got a Culligan quote for Utah water treatment? Understand their rental model, franchise structure, and service contracts before signing. Blue Logic offers a written price-match guarantee. Free water test."
+  description="Got a Culligan quote for Utah water treatment? Know what to ask about rentals, leases, service terms and who installs before signing. Compare it with a Blue Logic quote at a free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -51,12 +54,11 @@ const schemas = [
         Utah Water Treatment · Comparison Guide
       </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        Before You Sign With Culligan — Read This First
+        Before You Sign With Culligan, Read This First
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        Culligan is one of the most aggressively marketed water treatment brands in Utah. If you've
-        received a flyer, a door knock, or a call — or if you're already holding a quote — here's
-        what to understand before you commit.
+        If you're considering Culligan, or you're already holding a Culligan quote, here's what
+        to ask before you commit, and how Blue Logic answers the same questions.
       </p>
     </div>
   </section>
@@ -65,7 +67,7 @@ const schemas = [
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
         <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and what to ask Culligan before signing.
-        We make no claims about Culligan's pricing — those vary by franchise location. Bring any written quote and Blue Logic will match or beat it.
+        We make no claims about Culligan's pricing or terms. Bring any written quote to your free water test and we'll compare it with ours.
       </p>
     </div>
   </section>
@@ -74,30 +76,29 @@ const schemas = [
     <div class="max-w-5xl mx-auto">
 
       <div class="callout-box mb-12">
-        <h2 class="text-2xl font-serif mb-4 text-foreground">The Rental Model: What It Really Costs</h2>
+        <h2 class="text-2xl font-serif mb-4 text-foreground">Rent, Lease or Buy: Know the Total Cost</h2>
         <p class="text-muted-foreground leading-relaxed mb-4">
-          Culligan frequently markets water treatment through rental and lease agreements. Monthly
-          payments sound manageable — but over 7–10 years, those payments typically exceed the
-          outright purchase price of a comparable system, sometimes by a wide margin. And at the
-          end of the term, you may not own the equipment.
+          If a quote is a rental or lease, the monthly payment is only part of the picture. Ask for
+          the total cost over the full term, who owns the equipment at the end, and what happens if
+          you move or cancel.
         </p>
         <p class="text-muted-foreground leading-relaxed">
-          Blue Logic sells systems outright. You own it from the day it's installed. There's no
-          monthly payment, no lease term, no question about what happens if you move or cancel.
+          Blue Logic sells systems outright, so you own yours from the day it's installed. Pay up
+          front, or finance through Pinnacle Finance if you qualify. There's no lease term and no
+          question about what happens if you move.
         </p>
       </div>
 
       <div class="callout-box mb-12">
-        <h2 class="text-2xl font-serif mb-4 text-foreground">Franchise vs. Owner-Operated: Who's Actually Installing Your System</h2>
+        <h2 class="text-2xl font-serif mb-4 text-foreground">Who Is Accountable for Your System</h2>
         <p class="text-muted-foreground leading-relaxed mb-4">
-          Culligan operates through independently owned and operated franchises. The local Utah
-          Culligan dealer is a franchisee — not a Culligan corporate employee. Franchise quality,
-          staffing, and pricing vary significantly by location.
+          With any national brand, ask who owns and operates the local office you're dealing with,
+          who will physically install your system, and who you call for service years from now.
         </p>
         <p class="text-muted-foreground leading-relaxed">
-          Blue Logic is owner-operated. Jared conducts the free water test, designs the system
-          for your home's specific water profile, leads the installation, and handles annual
-          check-ups personally. The same person is accountable from first call through long-term service.
+          Blue Logic is a family-owned Utah company. Co-owner Jared designs the system for your
+          home's specific water profile and oversees the installation, which our professional
+          installation partner performs. When you need support, you call Blue Logic directly.
         </p>
       </div>
 
@@ -105,14 +106,14 @@ const schemas = [
       <p class="text-sm text-muted-foreground text-center mb-8">Ask Culligan the same questions and compare the written answers side by side.</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "Ownership model", value: "Own outright", note: "No rental, no lease, no monthly payments. Yours from day one." },
-          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price confirmed at free water test. No hidden fees." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated RO membranes and NSF food-grade storage tanks." },
-          { label: "Warranty", value: "5-year system; 12-month installation", note: "Components designed for 8–10 year service life with annual maintenance." },
-          { label: "Service contract required", value: "No", note: "Annual check-up included. No ongoing contractual obligation." },
-          { label: "Financing", value: "In-house, half down", note: "Flexible repayment terms. No third-party lender required." },
-          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
-          { label: "Who installs", value: "Jared directly", note: "Owner-operated. No subcontractors, no franchise variability." },
+          { label: "Ownership model", value: "You own it", note: "Purchased, not rented or leased. Yours from day one." },
+          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
+          { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
+          { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
+          { label: "Financing", value: "Pinnacle Finance", note: "For qualifying homeowners, subject to credit approval. Checking eligibility is a soft credit inquiry." },
+          { label: "Under-sink RO", value: "Included with Filtration", note: "Every Blue Logic Filtration system includes an under-sink reverse osmosis system at the kitchen tap." },
+          { label: "Who is accountable", value: "Owner-led", note: "Co-owner Jared designs your system and oversees installation by our professional installation partner." },
         ].map((item) => (
           <div class="spec-card">
             <div class="flex justify-between items-start gap-4 mb-2">
@@ -131,8 +132,8 @@ const schemas = [
             "Is this a purchase, a rental, or a lease? What is the total cost over 10 years?",
             "If I sell my home or move, what happens to the system and the contract?",
             "What does the service contract require, and what does it cost annually?",
-            "Are all components NSF-certified? Which specific standards and which parts?",
-            "Who physically performs the installation — a company employee or a subcontractor?",
+            "Which components carry NSF/ANSI certification or compliance, to which standard, and can I see the documentation?",
+            "Who physically performs the installation, and who do I call for service?",
             "What is the full installed price in writing, including all components and labor?",
           ].map((q) => (
             <li class="flex gap-3">
@@ -171,12 +172,12 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        Get a Second Opinion — No Pressure
+        Get a Second Opinion, No Pressure
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic's free water test measures exactly what's in your water and gives you a
-        transparent written quote. If you already have a Culligan quote, bring it — we'll match
-        or beat it in writing. You leave with both quotes and make the call at your own pace.
+        transparent written quote. If you already have a Culligan quote, bring it and we'll compare
+        the two with you. You leave with both quotes and make the call at your own pace.
       </p>
       <LeadForm />
     </div>

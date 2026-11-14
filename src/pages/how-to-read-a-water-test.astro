@@ -10,19 +10,19 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What water hardness level requires treatment?",
-    answer: "Any water above 7 GPG (120 mg/L) is considered moderately hard and can benefit from softening. Most Wasatch Front cities deliver water in the 10–25 GPG range — firmly in the 'hard' to 'very hard' category. At these levels, scale accumulation in appliances and pipes is measurable and ongoing. Treatment is advisable above 10 GPG; at 18–25 GPG (common in Sandy, Orem, Draper, Layton), it is strongly recommended.",
+    answer: "Any water above 7 GPG (120 mg/L) is considered moderately hard and can benefit from softening. Most Wasatch Front cities deliver water in the 10–25 GPG range, firmly in the 'hard' to 'very hard' category. At these levels, scale accumulation in appliances and pipes is measurable and ongoing. Treatment is advisable above 10 GPG; at 18–25 GPG (common in Sandy, Orem, Draper, Layton), it is strongly recommended.",
   },
   {
     question: "My water test shows high TDS. Does that mean my water is bad?",
-    answer: "Not necessarily. Total Dissolved Solids measures the combined weight of all dissolved particles in water — including benign minerals like calcium and magnesium as well as potentially harmful contaminants. High TDS from calcium in Utah water is common and is the cause of scale and hard water, but is not itself a health hazard. High TDS does indicate that your water has significant dissolved mineral content that a filtration or RO system would address. The more important question is what the specific dissolved solids are — which a comprehensive water test or your utility's consumer confidence report can tell you.",
+    answer: "Not necessarily. Total Dissolved Solids measures the combined weight of all dissolved particles in water, including benign minerals like calcium and magnesium as well as potentially harmful contaminants. High TDS from calcium in Utah water is common and is the cause of scale and hard water, but is not itself a health hazard. High TDS does indicate that your water has significant dissolved mineral content that a filtration or RO system would address. The more important question is what the specific dissolved solids are, which a comprehensive water test or your utility's consumer confidence report can tell you.",
   },
   {
     question: "What does a free Blue Logic water test measure vs. a comprehensive lab test?",
-    answer: "Blue Logic's free in-home water test measures hardness (GPG), chlorine/chloramine residual, and general water quality indicators on-site using calibrated field meters. This identifies your home's hardness level and disinfectant residual accurately and immediately. A certified lab test (sent to an accredited laboratory) can test for specific contaminants including arsenic, lead, PFAS, nitrates, bacteria, and hundreds of other parameters. The in-home test is the right starting point for most Utah homeowners — it confirms whether hard water and chlorine are issues, and your specialist will discuss whether a lab test is warranted based on your city's EWG profile.",
+    answer: "Blue Logic's free in-home water test measures hardness (GPG), chlorine/chloramine residual, and general water quality indicators on-site using calibrated field meters. This identifies your home's hardness level and disinfectant residual accurately and immediately. A certified lab test (sent to an accredited laboratory) can test for specific contaminants including arsenic, lead, PFAS, nitrates, bacteria, and hundreds of other parameters. The in-home test is the right starting point for most Utah homeowners, it confirms whether hard water and chlorine are issues, and your specialist will discuss whether a lab test is warranted based on your city's EWG profile.",
   },
   {
     question: "Can I trust my utility's water quality report?",
-    answer: "Yes — utilities are legally required to report accurate data. Consumer confidence reports reflect real utility testing data. However, there are important caveats: the report represents the utility's supply at the point of treatment, not at your tap. Old pipes, local distribution infrastructure, and seasonal blending can affect what actually comes out of your faucet. The EWG Tap Water Database processes this utility data but applies stricter health guidelines — which is why EWG numbers can look alarming compared to the utility's self-reported compliance status.",
+    answer: "Yes. Utilities are legally required to report accurate data. Consumer confidence reports reflect real utility testing data. However, there are important caveats: the report represents the utility's supply at the point of treatment, not at your tap. Old pipes, local distribution infrastructure, and seasonal blending can affect what actually comes out of your faucet. The EWG Tap Water Database processes this utility data but applies stricter health guidelines, which is why EWG numbers can look alarming compared to the utility's self-reported compliance status.",
   },
 ];
 
@@ -36,22 +36,22 @@ const schemas = [
 
 // Water hardness classification table data
 const hardnessLevels = [
-  { classification: "Soft", gpg: "0–3", mgL: "0–51", what: "Ideal — no treatment needed for scale", utah: "Rare on Wasatch Front" },
-  { classification: "Slightly Hard", gpg: "3–7", mgL: "51–120", what: "Minor spotting; most people prefer softening above 5 GPG", utah: "Below average for Utah" },
-  { classification: "Moderately Hard", gpg: "7–10", mgL: "120–180", what: "Noticeable scale in hot water systems; softening recommended", utah: "Lower end of Utah range" },
-  { classification: "Hard", gpg: "10–14", mgL: "180–250", what: "Visible deposits; appliance efficiency loss begins", utah: "Salt Lake City, Provo (seasonal)" },
-  { classification: "Very Hard", gpg: "14+", mgL: "250+", what: "Heavy scale; shortened appliance life; dry skin from bathing", utah: "Sandy, Orem, Draper, Layton, Bountiful, Spanish Fork, Springville" },
+  { classification: "Soft", gpg: "Under 1", mgL: "Under 17.1", what: "Ideal: no treatment needed for scale", utah: "Rare on Wasatch Front" },
+  { classification: "Slightly Hard", gpg: "1–3.5", mgL: "17.1–60", what: "Minor spotting", utah: "Rare on Wasatch Front" },
+  { classification: "Moderately Hard", gpg: "3.5–7", mgL: "60–120", what: "Noticeable scale in hot water systems; softening recommended", utah: "Below average for Utah" },
+  { classification: "Hard", gpg: "7–10.5", mgL: "120–180", what: "Visible deposits; appliance efficiency loss begins", utah: "Lower end of Utah range" },
+  { classification: "Very Hard", gpg: "10.5+", mgL: "180+", what: "Heavy scale; shortened appliance life; dry skin from bathing", utah: "Most Wasatch Front cities, including Salt Lake City, Sandy, Orem, Draper, Layton, Bountiful, Spanish Fork and Springville" },
 ];
 
 const parameters = [
   {
     name: "Water Hardness",
     unit: "GPG or mg/L",
-    whatItMeasures: "Concentration of calcium and magnesium — the minerals that cause scale and interfere with soap lathering",
+    whatItMeasures: "Concentration of calcium and magnesium, the minerals that cause scale and interfere with soap lathering",
     goodRange: "0–7 GPG (soft to slightly hard)",
     typicalUtah: "10–25+ GPG depending on city",
     whatHighMeans: "Scale on fixtures and appliances, dry skin, hard-to-lather soap, spotty dishes. Addressed by softening.",
-    concern: "Hardness is not a health concern — it is a water quality and home protection concern.",
+    concern: "Hardness is not a health concern; it is a water quality and home protection concern.",
   },
   {
     name: "Chlorine / Chloramine",
@@ -67,34 +67,34 @@ const parameters = [
     unit: "pH scale (0–14)",
     whatItMeasures: "Acidity or alkalinity of the water. 7 is neutral; below 7 is acidic; above 7 is alkaline",
     goodRange: "6.5–8.5 (EPA secondary standard)",
-    typicalUtah: "7.5–8.2 (slightly alkaline — common with hard water)",
+    typicalUtah: "7.5–8.2 (slightly alkaline, common with hard water)",
     whatHighMeans: "High pH can accelerate scale formation; low pH can corrode pipes and leach metals",
     concern: "Slightly alkaline water (common in Utah) is not a health concern but can contribute to scale.",
   },
   {
     name: "Total Dissolved Solids (TDS)",
     unit: "ppm (mg/L)",
-    whatItMeasures: "Combined weight of all dissolved particles — minerals, salts, metals, organic compounds. Includes both benign and concerning substances.",
+    whatItMeasures: "Combined weight of all dissolved particles: minerals, salts, metals, organic compounds. Includes both benign and concerning substances.",
     goodRange: "0–500 ppm (EPA secondary standard); most prefer under 300 ppm for taste",
     typicalUtah: "200–500+ ppm depending on city and season",
-    whatHighMeans: "High TDS often correlates with hardness in Utah. TDS alone does not indicate safety — the composition matters more than the total number.",
+    whatHighMeans: "High TDS often correlates with hardness in Utah. TDS alone does not indicate safety; the composition matters more than the total number.",
     concern: "Do not use TDS as a standalone safety indicator. A water softener adds sodium (raising TDS slightly). RO reduces TDS significantly. What matters is what the dissolved solids are, not just how many there are.",
   },
   {
     name: "Iron / Manganese",
     unit: "ppm (mg/L)",
-    whatItMeasures: "Dissolved iron and manganese — naturally occurring metals common in Utah groundwater",
+    whatItMeasures: "Dissolved iron and manganese, naturally occurring metals common in Utah groundwater",
     goodRange: "Iron: under 0.3 ppm · Manganese: under 0.05 ppm (EPA secondary standards)",
-    typicalUtah: "Variable — more common in Ogden and Weber County groundwater-influenced supplies",
+    typicalUtah: "Variable; more common in Ogden and Weber County groundwater-influenced supplies",
     whatHighMeans: "Rust-colored staining on fixtures and laundry; metallic taste; clogged aerators",
-    concern: "Iron and manganese at typical tap levels are primarily an aesthetic concern, not a health risk. Addressed by the Katalox stage in Blue Logic's filtration system.",
+    concern: "Iron and manganese at typical tap levels are primarily an aesthetic concern, not a health risk. Blue Logic Filtration filters out sediment and rust; homes with significant iron or manganese get an additional treatment tank in front, sized at the water test.",
   },
 ];
 ---
 
 <Layout
   title="How to Read a Water Test | Utah Homeowner's Guide | Blue Logic"
-  description="What do water hardness, TDS, chlorine, and contaminant levels actually mean? A plain-English guide to understanding your Utah water test results — and what to do next."
+  description="What do water hardness, TDS, chlorine, and contaminant levels actually mean? A plain-English guide to understanding your Utah water test results, and what to do next."
   schema={schemas}
 >
   <!-- Hero -->
@@ -104,11 +104,11 @@ const parameters = [
         Educational Guide · Utah Homeowners
       </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        How to Read a Water Test — A Plain-English Guide
+        How to Read a Water Test: A Plain-English Guide
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
         Water test results are full of numbers, units, and abbreviations that mean nothing
-        without context. Here's what the key measurements actually mean for a Utah home —
+        without context. Here's what the key measurements actually mean for a Utah home,
         and when they cross into territory worth acting on.
       </p>
     </div>
@@ -118,7 +118,7 @@ const parameters = [
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif text-center mb-4 text-foreground">
-        The Key Parameters — What They Measure and What They Mean
+        The Key Parameters: What They Measure and What They Mean
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
         Most basic in-home water tests cover hardness and chlorine. Comprehensive lab tests
@@ -165,7 +165,7 @@ const parameters = [
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        The Hardness Scale — Where Utah Cities Land
+        The Hardness Scale: Where Utah Cities Land
       </h2>
       <p class="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
         If your water test shows a hardness number, here is what it means in context.
@@ -214,7 +214,7 @@ const parameters = [
             <p class="text-muted-foreground text-sm leading-relaxed mb-3">
               A Blue Logic specialist comes to your home and tests hardness and chlorine on the spot
               using calibrated field meters. Results are immediate. You get a plain-English explanation
-              of what they mean for your specific home and a transparent system recommendation — all
+              of what they mean for your specific home and a transparent system recommendation, all
               at no cost and with no obligation.
             </p>
             <p class="text-xs text-muted-foreground italic">
@@ -229,14 +229,14 @@ const parameters = [
           <div>
             <h3 class="text-xl font-semibold text-foreground mb-2">Your Utility's Consumer Confidence Report (CCR)</h3>
             <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              Every Utah water utility is required to publish an annual Consumer Confidence Report — a
+              Every Utah water utility is required to publish an annual Consumer Confidence Report, a
               document listing all detected contaminants, their levels, and how they compare to federal
               limits. Search "[your city] water quality report [current year]" or check your utility's
               website. Also available at the EWG Tap Water Database (ewg.org/tapwater) where utility
               data is displayed against EWG's stricter health guidelines.
             </p>
             <p class="text-xs text-muted-foreground italic">
-              Best for: Understanding your city's overall water profile. Reflects utility supply — not
+              Best for: Understanding your city's overall water profile. Reflects utility supply, not
               necessarily what comes out of your specific tap.
             </p>
           </div>
@@ -247,7 +247,7 @@ const parameters = [
           <div>
             <h3 class="text-xl font-semibold text-foreground mb-2">Certified Laboratory Water Test</h3>
             <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-              For specific contaminant concerns — arsenic, lead, PFAS, bacteria, nitrates — a certified
+              For specific contaminant concerns (arsenic, lead, PFAS, bacteria, nitrates), a certified
               lab test is the most comprehensive option. You collect a water sample from your tap and
               mail it to an accredited laboratory. Results take 1–2 weeks and cost $100–$500+
               depending on the scope of testing. Utah's Division of Water Quality maintains a list of
@@ -267,7 +267,7 @@ const parameters = [
   <section class="bg-primary/5 border-y border-primary/20 py-12 px-4">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-2xl font-serif mb-4 text-foreground">
-        Skip the Research — Let Your Water Tell You
+        Skip the Research: Let Your Water Tell You
       </h2>
       <p class="text-muted-foreground mb-6">
         The fastest way to understand your Utah home's water is a free in-home test.
@@ -289,7 +289,7 @@ const parameters = [
         {[
           {
             myth: "High TDS means dangerous water",
-            reality: "TDS measures all dissolved particles — including benign calcium and magnesium that make Utah water hard. High TDS from hard water minerals is common and is not a health risk by itself. What matters is what the dissolved solids are, not just the total.",
+            reality: "TDS measures all dissolved particles, including benign calcium and magnesium that make Utah water hard. High TDS from hard water minerals is common and is not a health risk by itself. What matters is what the dissolved solids are, not just the total.",
           },
           {
             myth: "If it passes federal standards, it's completely safe",
@@ -301,7 +301,7 @@ const parameters = [
           },
           {
             myth: "My water looks and tastes fine, so it's fine",
-            reality: "Arsenic has no taste, smell, or color at the levels found in Utah water. PFAS is similarly invisible. The contaminants of greatest concern in Utah water are not detectable by the senses — only by testing.",
+            reality: "Arsenic has no taste, smell, or color at the levels found in Utah water. PFAS is similarly invisible. The contaminants of greatest concern in Utah water are not detectable by the senses, only by testing.",
           },
         ].map((item) => (
           <div class="bg-card p-5 rounded-xl border border-border">

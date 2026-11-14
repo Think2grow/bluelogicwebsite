@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-// Related posts — a rotating window of the next 3 articles so every post
+// Related posts, a rotating window of the next 3 articles so every post
 // receives inbound internal links (not just the newest few).
 const allPosts = await getCollection("blog");
 const sortedPosts = [...allPosts].sort(
@@ -101,9 +101,10 @@ const schemas = [
         post.data.image && (
           <Image
             src={post.data.image}
-            alt={`Cover image for ${post.data.title}`}
+            alt=""
             class="w-full h-auto rounded-md mb-8"
-            widths={[600, 900, 1200]}
+            widths={[600, 900, 1024]}
+            loading="eager"
             sizes="(max-width: 768px) 100vw, 75vw"
             quality={80}
           />
@@ -119,7 +120,7 @@ const schemas = [
     <div class="mt-16 bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center not-prose">
       <h2 class="text-2xl font-serif mb-3 text-foreground">Ready to Test Your Water?</h2>
       <p class="text-muted-foreground mb-6">
-        Blue Logic offers a free in-home water test for Wasatch Front homeowners — hardness and chlorine tested on-site, results explained in plain English. No cost, no obligation.
+        Blue Logic offers a free in-home water test for Wasatch Front homeowners: hardness and chlorine tested on-site, results explained in plain English. No cost, no obligation.
       </p>
       <a href="/free-water-test/" class="inline-block bg-primary text-primary-foreground font-semibold px-8 py-4 rounded-full shadow hover:bg-primary/90 transition-all">
         Schedule Free Water Test →

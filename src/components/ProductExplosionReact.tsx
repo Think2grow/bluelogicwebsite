@@ -12,7 +12,6 @@ import {
 interface ProductExplosionProps {
   title?: string;
   subtitle?: string;
-  imageSrc: string;
 }
 
 interface DescriptionBlock {
@@ -32,44 +31,44 @@ const stages: ComponentStage[] = [
   {
     id: "sediment",
     number: 1,
-    name: "Pre-Treatment (7-Layer Media System with Brine Backwash)",
+    name: "Blue Logic Filtration (Pre-Treatment)",
     description: [
       { type: "highlight", text: "Purpose:" },
       {
         type: "text",
         text:
-          " This stage prepares your water before it ever reaches the RO membrane. Using a proprietary 7-layer filtration media stack with an automated brine backwash, this system removes sediment, heavy metals, iron, sulfur, chlorine, organics, and other damaging contaminants.",
+          " Before water ever reaches the RO membrane, it passes through Blue Logic Filtration: softening and filtration in one self-cleaning tank. Hardness, chlorine, chloramine, sediment and rust are taken out first.",
       },
       { type: "highlight", text: "Why it matters:" },
       {
         type: "text",
         text:
-          " RO membranes are extremely effective but sensitive. Pre-treatment dramatically extends membrane life, improves performance, and prevents premature failure due to fouling or scaling.",
+          " RO membranes are extremely effective but sensitive to scale and chlorine. Treating the water first protects the membrane and lets the RO run efficiently, at about 3 gallons of purified water for every 1 sent to drain.",
       },
       {
         type: "highlight",
-        text: "Think of this as the armor protecting the heart of your system.",
+        text: "This is the foundation the rest of the system is built on.",
       },
     ],
   },
   {
     id: "carbon",
     number: 2,
-    name: "Sediment and Carbon Block Buffer",
+    name: "Sediment Pre-Filter",
     description: [
       { type: "highlight", text: "Purpose:" },
       {
         type: "text",
         text:
-          " This stage acts as a final safety net before the RO membrane. It captures any remaining particulate matter, chlorine, or organics that may have bypassed the pre-treatment stage.",
+          " A full-flow sediment filter catches fine particles right before the RO membrane.",
       },
       { type: "highlight", text: "Why it matters:" },
       {
         type: "text",
         text:
-          " Even trace chlorine or fine sediment can degrade an RO membrane. This buffer stage ensures the membrane only sees properly conditioned water.",
+          " Fine sediment can foul an RO membrane. This stage makes sure the membrane only sees clean, conditioned water.",
       },
-      { type: "highlight", text: "This is your membrane’s last line of defense." },
+      { type: "highlight", text: "This is your membrane's last line of defense." },
     ],
   },
   {
@@ -81,17 +80,17 @@ const stages: ComponentStage[] = [
       {
         type: "text",
         text:
-          " This is the core purification engine of the system. The RO membrane uses semi-permeable membrane technology to remove up to 99 percent of dissolved solids, heavy metals, nitrates, arsenic, fluoride, PFAS, pharmaceutical residues, microplastics, and other dissolved contaminants.",
+          " This is the core purification engine of the system. The RO membrane reduces total dissolved solids, heavy metals including lead and arsenic, fluoride, nitrates, PFAS, pharmaceuticals, pesticides, microplastics, bacteria and viruses.",
       },
       {
         type: "text",
-        text: " It operates at the molecular level, filtering down to approximately 0.0001 microns.",
+        text: " It removes contaminants larger than approximately 0.0001 microns.",
       },
       { type: "highlight", text: "Why it matters:" },
       {
         type: "text",
         text:
-          " Traditional filters can only remove what they can physically trap or chemically bind. RO removes what is dissolved in the water, not just what is suspended in it.",
+          " Filtration can only remove what it can physically trap or chemically bind. RO removes what is dissolved in the water, not just what is suspended in it.",
       },
       { type: "highlight", text: "This is what turns treated water into truly purified water." },
     ],
@@ -99,61 +98,61 @@ const stages: ComponentStage[] = [
   {
     id: "polishing",
     number: 4,
-    name: "Storage System (165-Gallon Passthrough Tank, Resin-Safe Design)",
+    name: "Storage (165-Gallon Food-Grade Tank)",
     description: [
       { type: "highlight", text: "Purpose:" },
       {
         type: "text",
         text:
-          " This stage stores purified RO water so it is always available on demand. Blue Logic systems use large-capacity passthrough tanks designed for continuous household use.",
+          " Purified water is stored in a 165-gallon food-grade tank so it is always ready on demand.",
       },
       {
         type: "features",
         items: [
-          "Resin-safe internal design",
-          "Premium safety construction",
-          "Multiple sizes and styles available for different household demands",
-          "Maintains water integrity without stagnation",
+          "BPA-free, phthalate-free polyethylene",
+          "NSF/ANSI and FDA compliant materials",
+          "Sealed lid and drain outlet",
+          "Homes that need more add a second 165-gallon tank",
         ],
       },
       { type: "highlight", text: "Why it matters:" },
       {
         type: "text",
-        text: " Whole-home RO requires volume. This ensures your home never outruns the system.",
+        text: " Whole-home RO needs volume on hand, so purified water is ready when your home needs it.",
       },
-      { type: "highlight", text: "This is what keeps your purified water fresh and ready, 24/7." },
+      { type: "highlight", text: "This is what keeps purified water ready around the clock." },
     ],
   },
   {
     id: "remineralize",
     number: 5,
-    name: "Continuous Pressure Delivery (Grundfos Pump System)",
+    name: "Constant Pressure Delivery (Grundfos SCALA2)",
     description: [
       { type: "highlight", text: "Purpose:" },
       {
         type: "text",
         text:
-          " This final stage delivers purified water to every faucet, shower, appliance, and hose bib in your home at consistent pressure.",
+          " This final stage delivers purified water to every faucet, shower and appliance in your home.",
       },
       {
         type: "text",
         text:
-          " Using a Grundfos continuous pressure pump, the system maintains steady water pressure regardless of demand.",
+          " A Grundfos SCALA2 variable-speed pump regulates pressure automatically as demand changes.",
       },
       {
         type: "features",
         items: [
-          "User-adjustable pressure settings",
-          "No pressure drop during multi-fixture use",
-          "Commercial-grade reliability",
-          "Silent, energy-efficient operation",
+          "Automatic pressure regulation",
+          "Steady pressure when several fixtures run at once",
+          "Dry-run and low-flow protection",
+          "Soft start",
         ],
       },
       { type: "highlight", text: "Why it matters:" },
       {
         type: "text",
         text:
-          " Most whole-home RO systems fail here. Without a pressure system, water flow is weak or inconsistent. This ensures RO water feels like normal city pressure.",
+          " Water sitting in a storage tank has no pressure of its own. The pump is what makes purified water feel like normal city pressure.",
       },
       { type: "highlight", text: "This is what makes pure water feel effortless at every tap." },
     ],
@@ -161,16 +160,15 @@ const stages: ComponentStage[] = [
 ];
 
 const stats = [
-  { value: "5", label: "Filtration Stages" },
-  { value: "99%", label: "Contaminant Removal" },
-  { value: "10x", label: "Quieter Operation" },
-  { value: "50%", label: "Smaller Footprint" },
+  { value: "5", label: "Treatment Stages" },
+  { value: "165 gal", label: "Purified Storage" },
+  { value: "About 3:1", label: "Purified to Drain" },
+  { value: "5 yr", label: "Warranty on Defects" },
 ];
 
 export default function ProductExplosionReact({
   title = "Engineering Excellence",
   subtitle = "Premium components working in perfect harmony",
-  imageSrc,
 }: ProductExplosionProps) {
   const containerRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);

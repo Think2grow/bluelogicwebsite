@@ -3,6 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import LeadForm from "../components/LeadForm.astro";
 import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
+import { PRICES, usd } from "../data/offer";
+
+const priceRange = `${usd(PRICES.softener)} to $19,999`;
 
 export const prerender = true;
 const siteUrl = "https://www.bluelogicwater.com";
@@ -10,23 +13,23 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Alta Water is also a local Utah company. What makes Blue Logic different?",
-    answer: "Both being local Utah companies is a real advantage over national franchises. The key differences to compare are: Who physically performs your installation — an owner, an employee, or a subcontractor? What is the full installed cost in writing? Are service contracts required? What are the NSF certification details on specific components? Blue Logic is owner-operated — Jared conducts your water test, designs your system, leads the installation, and handles annual check-ups personally.",
+    answer: "Compare any two local companies on the same terms: who designs and who physically performs your installation, the full installed cost in writing, whether a service contract is required, what the warranty covers, and what documentation backs any certification claim. Blue Logic is family-owned: co-owner Jared designs your system and oversees installation by our professional installation partner, and you call Blue Logic directly for support.",
   },
   {
     question: "Who do I call if something needs service three years after installation?",
-    answer: "With Blue Logic, you call Jared directly — the same person who installed your system. There's no call center, no dispatch to an unknown technician, no franchise structure. Blue Logic is small enough that you have direct accountability. Ask any local water treatment provider: who do you call for service after the first year, and is it the same person who did the installation?",
+    answer: "With Blue Logic, you call Blue Logic directly. We try to solve the issue by phone first, and if we can't, we send a technician. Ask any provider the same question: who do you call for service after the first year, and how is it handled?",
   },
   {
-    question: "How do I verify the quality of Blue Logic's installation?",
-    answer: "Ask for NSF certification documentation on all components at your free water test — Blue Logic uses NSF/ANSI-rated RO membranes and NSF food-grade storage tanks. Check Blue Logic's Google Business Profile reviews, which are publicly visible and include verified customers. The installation itself is performed by Jared directly, not subcontracted.",
+    question: "How do I verify the quality of a Blue Logic system?",
+    answer: "Ask for the details in writing at your free water test: what each system treats, the warranty terms, and component documentation. The Purification System's storage tank is built from NSF/ANSI and FDA compliant materials. You can also read Blue Logic's Google Business Profile reviews, which are publicly visible.",
   },
   {
-    question: "Can Blue Logic match a written Alta Water quote?",
-    answer: "Yes. Blue Logic's written price-match guarantee applies to any licensed Utah water treatment company. Bring a written Alta Water quote to your free Blue Logic water test and we'll match or beat it.",
+    question: "Can I bring an Alta Water quote to compare?",
+    answer: "Yes. Bring any written quote to your free Blue Logic water test and we'll compare it with ours line by line: what each system treats, the full installed price, the warranty, and what ongoing service costs.",
   },
   {
     question: "Does Blue Logic offer financing?",
-    answer: "Yes. Blue Logic offers in-house financing with half down at installation. Repayment terms are flexible and arranged directly — no third-party lender required. Ask about current financing options at your free water test.",
+    answer: "Yes. Financing is available through Pinnacle Finance for qualifying homeowners, subject to credit approval. Checking your eligibility is a soft credit inquiry that does not affect your credit score. Ask about current financing options at your free water test.",
   },
 ];
 
@@ -41,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Blue Logic vs. Alta Water Utah | Who Does the Work Matters"
-  description="Both Blue Logic and Alta Water serve Utah homeowners. Here's what to ask about who installs your system, who services it long-term, and what you actually own. Free water test. Written price-match."
+  description="Both Blue Logic and Alta Water serve Utah homeowners. Here's what to ask about who installs your system, who services it long-term, and what you actually own. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -53,9 +56,9 @@ const schemas = [
         The Company Behind the Quote Matters as Much as the Quote Itself
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        When comparing Alta Water and Blue Logic, both are Utah-based alternatives to national
-        franchises. The comparison comes down to who physically does the work, what they stand
-        behind, and who you call when you need them three years from now.
+        If you're comparing Alta Water and Blue Logic, compare more than the price: who designs
+        and installs the system, what the company stands behind in writing, and who you call when
+        you need them three years from now.
       </p>
     </div>
   </section>
@@ -64,7 +67,7 @@ const schemas = [
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
         <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and what to ask any local provider about accountability, installation, and long-term service.
-        We make no claims about Alta Water's pricing or terms. Bring any written quote and Blue Logic will match or beat it.
+        We make no claims about Alta Water's pricing or terms. Bring any written quote to your free water test and we'll compare it with ours.
       </p>
     </div>
   </section>
@@ -80,23 +83,23 @@ const schemas = [
           {[
             {
               q: "Who physically installs your system?",
-              context: "Some companies use subcontractors for installations. The person who sold you the system and the person who installs it may be different. Ask directly.",
-              blueLogic: "Jared leads all installations personally.",
+              context: "The person who sells you a system and the people who install it may be different. Ask who does the work and who is accountable for it.",
+              blueLogic: "Co-owner Jared designs your system and oversees installation by our professional installation partner.",
             },
             {
               q: "Who do you call for service after year one?",
-              context: "Small companies sometimes change staffing, or the original installer may no longer be available. Know your service chain before you need it.",
-              blueLogic: "Jared directly. Same person from water test through long-term service.",
+              context: "Know your service chain before you need it: who answers, how issues are handled, and what a service visit costs.",
+              blueLogic: "Call Blue Logic directly. We troubleshoot by phone first and send a technician if needed.",
             },
             {
-              q: "Is the company licensed in Utah for water treatment?",
-              context: "Utah requires licensing for water treatment system installation. Verify any provider is properly licensed — this is a baseline, not a differentiator.",
-              blueLogic: "Yes. Licensed Utah water treatment company.",
+              q: "What does the warranty cover, in writing?",
+              context: "Warranty length matters less than what it covers. Ask what is covered, what counts as a consumable, and how long installation workmanship is covered.",
+              blueLogic: "5 years on defects in materials and workmanship; consumables such as filters, RO membranes and salt excluded; 12 months on installation workmanship.",
             },
             {
               q: "What is the installed price in writing, all-in?",
               context: "Quotes sometimes separate equipment from labor or exclude components like tanks and pumps. Always ask for a total installed price, in writing, before comparing.",
-              blueLogic: "$5,995–$19,999 total installed. Confirmed in writing at the water test.",
+              blueLogic: `${priceRange} out the door, with standard installation and tax included. Confirmed in writing at the water test.`,
             },
           ].map((item) => (
             <div class="accountability-card">
@@ -112,14 +115,14 @@ const schemas = [
       </div>
 
       <div class="how-it-works bg-card rounded-2xl border border-border p-6 md:p-8 mb-12">
-        <h2 class="text-2xl font-serif mb-6 text-foreground">How Blue Logic Works — From First Call to Long-Term Service</h2>
+        <h2 class="text-2xl font-serif mb-6 text-foreground">How Blue Logic Works, From First Call to Long-Term Service</h2>
         <div class="space-y-4">
           {[
-            { step: "1", title: "Free in-home water test", desc: "Jared visits your home, tests your water for hardness, TDS, and key contaminants, and shows you the results on the spot." },
-            { step: "2", title: "Custom system recommendation", desc: "Based on your specific water profile and home layout, Jared recommends the right system — not a one-size-fits-all package." },
+            { step: "1", title: "Free in-home water test", desc: "A Blue Logic specialist visits your home, tests your water for hardness and TDS, walks you through the contaminant data for your city, and shows you the results on the spot." },
+            { step: "2", title: "Custom system recommendation", desc: "Based on your specific water profile and home layout, we recommend the right system, not a one-size-fits-all package." },
             { step: "3", title: "Written quote", desc: "You receive a full written quote covering all components and labor. Take it home and compare it to any other quote you have." },
-            { step: "4", title: "Installation day", desc: "Jared leads the installation personally. Most installs complete in 4–8 hours." },
-            { step: "5", title: "Annual check-up", desc: "Scheduled at installation. Jared returns to inspect the system, replace pre-filters as needed, and confirm everything is performing." },
+            { step: "4", title: "Installation day", desc: "Our professional installation partner installs your system, overseen by Blue Logic, on a timeline confirmed with you in advance." },
+            { step: "5", title: "Annual maintenance", desc: "Scheduled for you. Annual maintenance covers filter changes and a general system check to confirm everything is performing." },
           ].map((item) => (
             <div class="flex gap-4">
               <span class="step-number">{item.step}</span>
@@ -135,12 +138,12 @@ const schemas = [
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Blue Logic's Verified System Specs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
         {[
-          { label: "Who installs", value: "Jared directly", note: "Owner-operated. No subcontractors." },
-          { label: "System price range", value: "$5,995 – $19,999", note: "Full installed price in writing. No hidden fees." },
-          { label: "NSF-certified components", value: "Yes", note: "NSF/ANSI-rated membranes and NSF food-grade storage tanks." },
-          { label: "Warranty", value: "5-year system; 12-month installation", note: "Components designed for 8–10 year lifespan." },
-          { label: "Service contract required", value: "No", note: "Annual check-up included. No contractual ongoing obligation." },
-          { label: "Price match", value: "Written guarantee", note: "Match or beat any written competing quote from a licensed Utah provider." },
+          { label: "Who is accountable", value: "Owner-led", note: "Co-owner Jared designs your system and oversees installation by our professional installation partner." },
+          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
+          { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
+          { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
+          { label: "Financing", value: "Pinnacle Finance", note: "For qualifying homeowners, subject to credit approval. Checking eligibility is a soft credit inquiry." },
         ].map((item) => (
           <div class="spec-card">
             <div class="flex justify-between items-start gap-4 mb-2">
@@ -180,13 +183,13 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">
-        Meet Jared. Get a Quote. Compare.
+        Get a Quote. Compare.
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        Blue Logic's free water test is how the process starts — Jared visits your home,
-        tests your water on-site, and gives you a transparent written quote. If you have
-        an Alta Water quote, bring it. We'll match or beat it in writing. Then you have
-        both quotes and make the call yourself.
+        Blue Logic's free water test is how the process starts: we visit your home, test
+        your water on-site, and give you a transparent written quote. If you have an Alta
+        Water quote, bring it and we'll compare the two with you. Then you have both quotes
+        and make the call yourself.
       </p>
       <LeadForm />
     </div>

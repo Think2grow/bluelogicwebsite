@@ -26,11 +26,11 @@ export interface OpenGraphMetadata {
 export const DEFAULT_OG_METADATA: OpenGraphMetadata = {
   title: "Blue Logic Water - Professional RO Systems",
   description:
-    "Premium reverse osmosis water filtration systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+    "Water softening, whole-home filtration and whole-home reverse osmosis for Utah homes, installed by a local, family-owned team.",
   image: "/3%20Blue%20Logic%20Water%20Logo-13.jpg",
-  imageWidth: "1200",
-  imageHeight: "630",
-  imageAlt: "Blue Logic Water — Whole-Home Reverse Osmosis Systems",
+  imageWidth: "1501",
+  imageHeight: "1501",
+  imageAlt: "Blue Logic logo, Whole Home Reverse Osmosis",
   imageType: "image/jpeg",
   type: "website",
 };
@@ -96,7 +96,7 @@ export function getBaseOrganizationSchema(url: string): BaseOrganizationSchema {
     logo: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     image: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     description:
-      "Professional whole home reverse osmosis water purification systems for Utah homes. Half the cost, half the footprint, 10x quieter than traditional systems.",
+      "Whole-home reverse osmosis, filtration and softening systems for Utah homes, built in house and installed by a local team.",
     email: "info@bluelogicwater.com",
     telephone: "+1-801-980-2583",
     address: {
@@ -118,7 +118,7 @@ const WASATCH_FRONT_CITIES = [
   "Ogden", "Layton", "Bountiful", "American Fork", "Spanish Fork",
   "Springville", "Murray", "Millcreek", "Cottonwood Heights", "Holladay",
   "West Jordan", "South Jordan", "Herriman", "Saratoga Springs",
-  "Eagle Mountain", "Pleasant Grove", "Lindon", "Payson", "Park City",
+  "Eagle Mountain", "Pleasant Grove", "Lindon", "Payson", "Tooele",
 ];
 
 /**
@@ -156,9 +156,9 @@ export function getProductSchema(url: string): ProductSchema {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Blue Logic Whole Home Reverse Osmosis System",
+    name: "Blue Logic Water Treatment Systems",
     description:
-      "Professional whole home reverse osmosis water purification system. NSF-certified components. $5,995–$19,999 installed. Written price-match guarantee on any competing quote. Serving Utah's Wasatch Front.",
+      "Blue Logic water treatment systems: Softener, Filtration with an under-sink RO, and the whole-home Purification System. $2,999 to $19,999 out the door, installation and tax included. 5-year warranty. Serving the Wasatch Front.",
     image: new URL("/3%20Blue%20Logic%20Water%20Logo-13.jpg", url).toString(),
     brand: {
       "@type": "Brand",
@@ -166,7 +166,7 @@ export function getProductSchema(url: string): ProductSchema {
     },
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: "5995",
+      lowPrice: "2999",
       highPrice: "19999",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
@@ -247,10 +247,13 @@ export function getServiceSchema(
         addressCountry: "US",
       },
     },
-    areaServed: {
-      "@type": "State",
-      name: "Utah",
-    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Salt Lake County, Utah" },
+      { "@type": "AdministrativeArea", name: "Davis County, Utah" },
+      { "@type": "AdministrativeArea", name: "Utah County, Utah" },
+      { "@type": "AdministrativeArea", name: "Weber County, Utah" },
+      { "@type": "AdministrativeArea", name: "Tooele Valley, Utah" },
+    ],
     serviceType: "Water Treatment",
     offers: {
       "@type": "Offer",
@@ -264,7 +267,7 @@ export function getServiceSchema(
 }
 
 /**
- * AggregateRating schema — only use on pages where reviews are visibly displayed.
+ * AggregateRating schema, only use on pages where reviews are visibly displayed.
  * reviewCount and ratingValue must match what is actually shown on the page.
  */
 export function getAggregateRatingSchema(

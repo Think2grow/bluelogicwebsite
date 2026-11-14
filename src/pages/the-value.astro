@@ -4,7 +4,8 @@ import { getBreadcrumbSchema } from "../utils/schema";
 import { Image } from "astro:assets";
 import boyExaminesGlassImg from "../assets/water_art/AdobeStock_549367021_boy_examines_glass.jpeg";
 import fancyShowerImg from "../assets/water_art/AdobeStock_1404179907_fancy_shower.jpeg";
-import BrochureDownload from "../components/BrochureDownload.astro";
+import OfferBanner from "../components/OfferBanner.astro";
+import { PRICES, usd } from "../data/offer";
 
 export const prerender = true;
 
@@ -18,8 +19,8 @@ const schemas = [
 ---
 
 <Layout
-  title="Why Choose Blue Logic | Water Treatment Utah — Half the Cost"
-  description="Blue Logic whole-home water systems start at $5,995, use NSF-certified components, and come with a written price-match guarantee on any competing quote. Wasatch Front."
+  title="Why Choose Blue Logic | Water Treatment Utah | Out-the-Door Pricing"
+  description={`Blue Logic water systems run ${usd(PRICES.softener)} to $19,999 out the door, with installation and tax included and a 5-year warranty. Free in-home water test on the Wasatch Front.`}
   schema={schemas}
 >
   <section class="hero-gradient py-20 md:py-24 px-4 text-center">
@@ -28,7 +29,7 @@ const schemas = [
         Why Choose Blue Logic for Utah Whole-Home Water Treatment
       </h1>
       <p class="text-xl md:text-2xl text-muted-foreground">
-        Premium health for your family—without the premium price
+        Premium water for your family, with honest out-the-door pricing
       </p>
     </div>
   </section>
@@ -43,9 +44,9 @@ const schemas = [
       <p
         class="text-lg text-center text-muted-foreground max-w-3xl mx-auto mb-12"
       >
-        We deliver the same professional-grade components and certified installation
-        quality as competitors charging $30,000+. Here's how we do it—and why
-        you shouldn't pay more. Learn more about <a
+        Every Blue Logic price is out the door, with standard installation and tax included.
+        Here's what you get, and the questions worth asking about any other quote. Learn more
+        about <a
           href="/the-system/"
           class="text-primary hover:underline font-semibold"
           >how our system works</a
@@ -58,43 +59,43 @@ const schemas = [
         >
           <div>Feature</div>
           <div class="text-center">Blue Logic</div>
-          <div class="text-center">Competitors</div>
+          <div class="text-center">Ask Any Other Quote</div>
         </div>
 
         <div class="comparison-row">
           <div class="font-semibold">Price</div>
-          <div class="text-center text-primary font-bold">~50% Less</div>
-          <div class="text-center">$30,000+</div>
+          <div class="text-center text-primary font-bold">{usd(PRICES.softener)} to $19,999 out the door</div>
+          <div class="text-center text-sm">Are installation and tax included?</div>
         </div>
 
         <div class="comparison-row">
-          <div class="font-semibold">Commercial-Grade Components</div>
-          <div class="text-center">✓ Yes</div>
-          <div class="text-center">✓ Yes</div>
+          <div class="font-semibold">Whole-Home RO</div>
+          <div class="text-center">Filtration in front, RO, 165-gallon storage, constant pressure</div>
+          <div class="text-center text-sm">Is pre-treatment included in front of the RO?</div>
         </div>
 
         <div class="comparison-row">
-          <div class="font-semibold">Compact Footprint</div>
-          <div class="text-center text-primary font-bold">50% smaller</div>
-          <div class="text-center">Standard bulk</div>
+          <div class="font-semibold">Water Efficiency</div>
+          <div class="text-center text-primary font-bold">About 3 gallons purified per 1 to drain</div>
+          <div class="text-center text-sm">How much water goes to drain?</div>
         </div>
 
         <div class="comparison-row">
-          <div class="font-semibold">Noise Level</div>
-          <div class="text-center text-primary font-bold">10x quieter</div>
-          <div class="text-center">Standard</div>
+          <div class="font-semibold">Upgrade Path</div>
+          <div class="text-center">Modular: add reverse osmosis later</div>
+          <div class="text-center text-sm">Can you upgrade without replacing equipment?</div>
         </div>
 
         <div class="comparison-row">
-          <div class="font-semibold">Marketing & Overhead</div>
-          <div class="text-center text-primary font-bold">Minimal</div>
-          <div class="text-center">Heavy markup</div>
+          <div class="font-semibold">Warranty</div>
+          <div class="text-center">5 years on defects; 12 months on installation</div>
+          <div class="text-center text-sm">What is covered, and for how long?</div>
         </div>
 
         <div class="comparison-row">
           <div class="font-semibold">Local Service</div>
-          <div class="text-center">✓ Wasatch Front</div>
-          <div class="text-center">✓ Various</div>
+          <div class="text-center">✓ Family-owned, Murray, Utah</div>
+          <div class="text-center text-sm">Who answers when something goes wrong?</div>
         </div>
       </div>
     </div>
@@ -105,32 +106,32 @@ const schemas = [
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
       >
-        Why We Can Offer It at Half the Cost
+        How We Keep Pricing Fair
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="p-8 bg-background rounded-2xl">
           <h3 class="text-xl font-semibold mb-4 text-primary">
-            Direct Business Model
+            Our Own Equipment
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            We cut out the middlemen and excessive marketing spend. No celebrity
-            endorsements, no massive ad campaigns—just word of mouth and
-            exceptional service.
+            Blue Logic builds its own softening and filtration units and supplies them from our
+            Murray, Utah warehouse, so you deal directly with the people who stand behind your
+            system.
           </p>
         </div>
 
         <div class="p-8 bg-background rounded-2xl">
           <h3 class="text-xl font-semibold mb-4 text-primary">
-            Efficient Engineering
+            Modular Engineering
           </h3>
           <p class="text-muted-foreground leading-relaxed">
             Our <a
               href="/the-system/"
               class="text-primary hover:underline font-semibold"
-              >compact design uses advanced engineering</a
-            > to reduce material costs and installation time without sacrificing quality
-            or performance.
+              >systems are modular</a
+            > and sized to your home, so you pay for what your water needs, and you can add
+            reverse osmosis later without starting over.
           </p>
         </div>
 
@@ -141,17 +142,17 @@ const schemas = [
               href="/locations/"
               class="text-primary hover:underline font-semibold"
               >Wasatch Front</a
-            > and beyond, we optimize logistics, control overhead, and cultivate lasting relationships with the partners and homeowners we serve. 
+            >, we optimize logistics, control overhead, and cultivate lasting relationships with the partners and homeowners we serve.
           </p>
         </div>
 
         <div class="p-8 bg-background rounded-2xl">
           <h3 class="text-xl font-semibold mb-4 text-primary">
-            Fair Pricing Philosophy
+            Out-the-Door Pricing
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            We believe premium water shouldn't require premium income. Our
-            pricing reflects our actual costs plus a fair margin—nothing more.
+            Standard installation and tax are included in every price. Any non-standard work is
+            discussed and priced at your consult, before any work is done.
           </p>
         </div>
       </div>
@@ -178,7 +179,7 @@ const schemas = [
         <div class="lg:col-span-2">
           <Image
             src={boyExaminesGlassImg}
-            alt="Young boy thoughtfully examining a glass of water, curious about what's inside"
+            alt="Young boy studying a glass of water through a magnifying glass"
             class="rounded-2xl shadow-2xl w-full object-cover aspect-[3/4] sticky top-8"
             widths={[400, 600]}
             sizes="(max-width: 768px) 100vw, 40vw"
@@ -197,7 +198,7 @@ const schemas = [
             <p class="text-muted-foreground text-sm leading-relaxed">
               Industrial chemicals that persist in the environment and
               accumulate in your body. Linked to cancer, hormone disruption, and
-              immune system damage—found in water supplies across Utah.
+              immune system damage, and found in water supplies across Utah.
             </p>
           </div>
 
@@ -221,7 +222,7 @@ const schemas = [
             <p class="text-muted-foreground text-sm leading-relaxed">
               Toxins don't just enter through drinking. During showers and
               baths, your skin absorbs chemicals, and your lungs inhale
-              vaporized contaminants—whole-home filtration stops them at every
+              vaporized contaminants. Whole-home filtration reduces them at every
               tap.
             </p>
           </div>
@@ -255,7 +256,7 @@ const schemas = [
       <p
         class="text-lg text-center text-foreground font-medium max-w-3xl mx-auto p-8 bg-accent rounded-2xl"
       >
-        Our whole-home RO system addresses all five of these threats—not just at
+        Our whole-home RO system addresses all five of these threats, not just at
         your kitchen sink, but at every faucet, shower, and appliance in your
         home.
       </p>
@@ -272,7 +273,7 @@ const schemas = [
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
             Pure water transforms your daily rituals. Softer skin, shinier hair,
-            and that spa-like feeling—every single day. No more mineral buildup
+            and that spa-like feeling, every single day. No more mineral buildup
             on fixtures or spots on glassware.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -286,16 +287,16 @@ const schemas = [
             Have Questions? Check Our FAQs →
           </a>
         </div>
-      </div>
-      <div>
-        <Image
-          src={fancyShowerImg}
-          alt="Modern luxury shower with pristine water flowing through premium fixtures"
-          class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
-          widths={[400, 600, 800]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          quality={50}
-        />
+        <div>
+          <Image
+            src={fancyShowerImg}
+            alt="Modern rain shower running in a dark tiled bathroom"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={50}
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -308,23 +309,23 @@ const schemas = [
       <p
         class="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
       >
-        We use the exact same commercial-grade components as competitors. We
-        partner with certified installers who provide the same professional installation quality. We offer the same
-        comprehensive warranties. The only difference? We don't believe in
-        charging twice what's fair.
+        Every system is installed by our licensed installation partner, Pure Logic Solutions,
+        and backed in writing: 5 years on defects in materials and workmanship, plus 12 months
+        on installation workmanship. Standard installation and tax are always included in the
+        price.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         <div class="p-8 bg-card rounded-2xl">
           <strong class="block text-lg mb-2 text-foreground"
             >Professional Installation</strong
           >
-          <p class="text-muted-foreground">Certified partner technicians</p>
+          <p class="text-muted-foreground">Licensed installation partner</p>
         </div>
         <div class="p-8 bg-card rounded-2xl">
           <strong class="block text-lg mb-2 text-foreground"
-            >Grade-A Components</strong
+            >Out-the-Door Pricing</strong
           >
-          <p class="text-muted-foreground">Commercial-quality materials</p>
+          <p class="text-muted-foreground">Installation and tax included</p>
         </div>
         <div class="p-8 bg-card rounded-2xl">
           <strong class="block text-lg mb-2 text-foreground"
@@ -336,6 +337,8 @@ const schemas = [
     </div>
   </section>
 
+  <OfferBanner />
+
   <section class="bg-card py-16 md:py-20 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
@@ -345,7 +348,6 @@ const schemas = [
         Get a free consultation and water quality assessment
       </p>
       <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Schedule Free Water Test</a>
-      <BrochureDownload />
     </div>
   </section>
 

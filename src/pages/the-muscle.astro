@@ -1,9 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import logo from "../assets/Blue Logic Logo FINAL-03.png";
-import keatonDesk from "../assets/keaton/keaton_at_desk.jpg";
+// Pre-cropped square from keaton_at_desk.jpg. The full photo has items on the
+// desk (lower quarter) that must never appear; the crop is baked into the file
+// so no CSS change can expose them. Do not import keaton_at_desk.jpg directly.
+import keatonDesk from "../assets/keaton/keaton_at_desk_portrait.jpg";
 import keatonTruck from "../assets/keaton/keaton_truck.jpg";
 import { Image } from "astro:assets";
+import OfferBanner from "../components/OfferBanner.astro";
 
 export const prerender = true;
 
@@ -91,7 +95,7 @@ const WEBHOOK_URL =
           Claim My Free Water Test →
         </a>
         <p class="text-white/40 mt-4 text-sm font-mono">
-          Limited spots each week
+          No cost. No obligation.
         </p>
       </div>
 
@@ -109,7 +113,7 @@ const WEBHOOK_URL =
         >
           <Image
             src={keatonDesk}
-            alt="Keaton 'The Muscle' Hoskins at his desk with a glass of clean water"
+            alt="Keaton 'The Muscle' Hoskins on the phone at his desk, with a glass jar of water in front of him"
             widths={[400, 640, 900]}
             sizes="(min-width: 1024px) 40vw, 90vw"
             class="h-full w-full object-cover object-top"
@@ -140,7 +144,7 @@ const WEBHOOK_URL =
         >
           <Image
             src={keatonTruck}
-            alt="Keaton's lifted Ford truck at his Utah home"
+            alt="Keaton's lifted white Ford truck"
             widths={[220, 440]}
             sizes="(min-width: 1024px) 18vw, 46vw"
             class="h-full w-full object-cover object-center"
@@ -164,7 +168,7 @@ const WEBHOOK_URL =
         need to do this today.
       </blockquote>
       <p class="font-mono uppercase tracking-widest text-sm text-muted-foreground">
-        — Keaton "The Muscle" Hoskins
+        Keaton "The Muscle" Hoskins
       </p>
     </div>
   </section>
@@ -207,7 +211,7 @@ const WEBHOOK_URL =
             Money Down The Drain
           </h3>
           <p class="text-quartz/70 leading-relaxed">
-            Bottled water, ruined appliances, and repairs — bad water costs you
+            Bottled water, ruined appliances, and repairs. Bad water costs you
             every single month.
           </p>
         </div>
@@ -225,11 +229,11 @@ const WEBHOOK_URL =
           The Blue Logic System
         </p>
         <h2 class="text-3xl md:text-5xl font-serif text-foreground mb-4">
-          Engineered To Fix It — For Good
+          Engineered To Fix It, For Good
         </h2>
         <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Half the cost, half the footprint, and 10x quieter than the old
-          clunkers. Clean, healthy water from every tap in your house.
+          Softening, whole-home filtration and whole-home reverse osmosis, sized
+          to your home. Clean, healthy water from every tap in your house.
         </p>
       </div>
 
@@ -237,7 +241,7 @@ const WEBHOOK_URL =
         <div class="bg-card p-8 rounded-2xl border-l-4 border-glacier">
           <div class="text-4xl mb-4">💧</div>
           <h3 class="text-xl font-semibold mb-3 text-foreground">
-            Pure Water, Every Tap
+            Clean Water, Every Tap
           </h3>
           <p class="text-muted-foreground leading-relaxed">
             Whole-home filtration means the shower, the kitchen sink, and the
@@ -261,12 +265,19 @@ const WEBHOOK_URL =
           </h3>
           <p class="text-muted-foreground leading-relaxed">
             A Utah, family-owned crew that installs it right and stands behind
-            it with lifetime support.
+            it with a 5-year warranty.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===================== CURRENT OFFER ===================== -->
+  <OfferBanner
+    tone="dark"
+    ctaHref="#claim"
+    ctaText="Claim My Free Water Test"
+  />
 
   <!-- ===================== FINAL CTA + FORM ===================== -->
   <section id="claim" class="bg-obsidian py-16 md:py-24 px-4">
@@ -277,7 +288,7 @@ const WEBHOOK_URL =
         </h2>
         <p class="text-quartz/80 text-lg">
           Drop your info below. We'll reach out to schedule your free in-home
-          water test and show you exactly what's in your water — zero
+          water test and show you exactly what's in your water. Zero
           obligation.
         </p>
       </div>

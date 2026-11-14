@@ -15,12 +15,12 @@ dishwasher cloudy, the number on this page is usually the reason.
 This is a plain-English lookup: find your city, see its typical **water hardness in grains
 per gallon (GPG)**, learn what that number actually means for your home, and see which
 contaminants the EWG Tap Water Database flags locally. Every figure here is drawn from
-utility consumer confidence reports and third-party water-quality databases — and every
+utility consumer confidence reports and third-party water-quality databases, and every
 city links to a fuller local breakdown.
 
 > **One-line version:** Most of the Wasatch Front runs from *hard* to *very hard* (10–25+
 > GPG), several times the national average. It is the single most practically significant
-> water-quality fact for a Utah homeowner — and it's fully fixable.
+> water-quality fact for a Utah homeowner, and it's fully fixable.
 
 ## How water hardness is measured
 
@@ -29,21 +29,21 @@ Hardness is the amount of dissolved calcium and magnesium in your water, measure
 
 | Classification | Hardness (GPG) |
 |---|---|
-| Soft | 0–3 |
-| Slightly hard | 3–7 |
-| Moderately hard | 7–10 |
-| Hard | 10–14 |
-| Very hard | 14+ |
+| Soft | Under 1 |
+| Slightly hard | 1–3.5 |
+| Moderately hard | 3.5–7 |
+| Hard | 7–10.5 |
+| Very hard | Over 10.5 |
 
 For context, the typical US household sees 7–10 GPG. Most Wasatch Front communities deliver
-**10–25 GPG or higher** — squarely in "hard" to "very hard," and in a few places among the
+**10–25 GPG or higher**: squarely in "hard" to "very hard," and in a few places among the
 hardest residential water found anywhere in the United States.
 
 ## Utah water hardness by city
 
 Hardness varies by water source, season, and utility blending, so these are **typical
 ranges**, not a single fixed reading for your exact address. The only way to know your
-tap's real number is a quick in-home test — but this gets you close.
+tap's real number is a quick in-home test, but this gets you close.
 
 | City | Typical hardness (GPG) | Class | Also flagged locally (EWG) | Local detail |
 |---|---|---|---|---|
@@ -61,39 +61,39 @@ tap's real number is a quick in-home test — but this gets you close.
 | Provo | 9–15 (seasonal) | Moderately–very hard | Arsenic, chromium-6 | [Provo water](/locations/provo/) |
 
 *Sources: municipal consumer confidence reports and the EWG Tap Water Database. All listed
-utilities provide water that meets federal legal standards — EWG health guidelines are
+utilities provide water that meets federal legal standards; EWG health guidelines are
 stricter than federal law, so an "above EWG guideline" flag does not mean the water is
 illegal or unsafe to drink. Hardness can vary by neighborhood, season, and active source
 blend.*
 
 Don't see your city, or want your exact reading? Blue Logic serves the whole Wasatch Front
-and tests hardness on the spot — see the full list of [areas we serve](/locations/).
+and tests hardness on the spot; see the full list of [areas we serve](/locations/).
 
 ## What your number actually means at home
 
-- **10–14 GPG (hard):** Steady scale on fixtures and inside hot-water systems. Appliances
+- **7–10.5 GPG (hard):** Steady scale on fixtures and inside hot-water systems. Appliances
   lose efficiency gradually; you use more soap and detergent than you'd think.
-- **14–25 GPG (very hard):** Visible scale within weeks of cleaning, cloudy glassware,
+- **10.5–25 GPG (very hard):** Visible scale within weeks of cleaning, cloudy glassware,
   water heaters working harder and failing years early, tankless units at real risk.
-- **25+ GPG (extreme — parts of Bountiful, Ogden):** Showerheads can lose noticeable flow
+- **25+ GPG (extreme: parts of Bountiful, Ogden):** Showerheads can lose noticeable flow
   in *months*. A short stretch at this hardness causes more scale damage than months at the
   national average.
 
 The Water Quality Association has documented **water-heater efficiency losses of 24–48%** in
 hard-water areas versus soft. In Utah's hardest communities, an untreated tank heater can be
-running at 50–75% efficiency within a few years — and failing well before its rated lifespan.
+running at 50–75% efficiency within a few years, and failing well before its rated lifespan.
 
 ## Hardness isn't the only thing in Utah water
 
 Hardness is a nuisance-and-cost problem, not a health one. But the same geology that makes
 Utah water hard also introduces contaminants that the EWG flags above its health guidelines
-in many communities — arsenic, hexavalent chromium (chromium-6), radium, and chlorination
+in many communities: arsenic, hexavalent chromium (chromium-6), radium, and chlorination
 byproducts among them. A salt-based softener fixes scale but does **not** reduce those.
 Which is why the right fix depends on what's actually in *your* water:
 
-- **Softener only** — solves scale; ignores arsenic, chromium-6, chlorine, PFAS.
-- **Whole-home filtration** — scale plus chlorine, chloramines, iron, manganese, taste/odor.
-- **Whole-home reverse osmosis** — the most complete option; the RO membrane is what
+- **Softener only:** solves scale; ignores arsenic, chromium-6, chlorine, PFAS.
+- **Whole-home filtration:** scale plus chlorine, chloramines, iron, manganese, taste/odor.
+- **Whole-home reverse osmosis:** the most complete option; the RO membrane is what
   actually reduces arsenic and PFAS that filtration alone can't fully reach.
 
 Want the deeper version of why this happens? Read
@@ -101,7 +101,7 @@ Want the deeper version of why this happens? Read
 
 ## How to find your exact number
 
-City averages are a starting point — your street, your home's age, and the season all move
+City averages are a starting point: your street, your home's age, and the season all move
 the needle. The fastest way to know your real hardness (and what else is in your water) is a
 **free in-home test**: a Blue Logic specialist measures hardness and chlorine on the spot,
 explains the result in plain English, and there's no cost or obligation.
