@@ -4,7 +4,7 @@ title: "What Is Hexavalent Chromium and Is It in Utah Water?"
 description: "Chromium-6, the Erin Brockovich contaminant, has been detected in Orem and West Jordan water at levels 36x and 93x the EWG health guideline. Here's what it is and what reduces it."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "../../assets/real/utility-room-system-full.jpg"
+image: "../../assets/real/installs/filtration-utility-room.jpg"
 ---
 
 Hexavalent chromium (chromium-6) became a household name through the Erin Brockovich case, which documented contamination in Hinkley, California. Less well-known is that it has been detected in Utah's Wasatch Front water supplies at levels that significantly exceed EWG health guidelines, including in two of the region's larger communities.
@@ -26,10 +26,10 @@ EWG's health guideline for chromium-6 is **0.02 ppb**, based on research suggest
 
 | City | Chromium-6 vs. EWG Guideline | Notes |
 |---|---|---|
-| West Jordan | **93x** | Among the highest in Salt Lake County |
-| Orem | **36x** | Second-highest detected level in the valley |
+| West Jordan | **93x** | Salt Lake County |
+| Orem | **36x** | Utah County |
 
-Both cities receive water primarily from the Jordan Valley Water Conservancy District. The chromium-6 in these supplies is believed to be largely naturally occurring (from the geological formations the source water moves through) rather than industrial contamination.
+The chromium-6 in these supplies is believed to be largely naturally occurring (from the geological formations the source water moves through) rather than industrial contamination.
 
 All detected levels are within the EPA's current federal total chromium standard of 100 ppb.
 
@@ -58,7 +58,7 @@ That's a personal decision. What we can offer is clarity on what actually reduce
 If you live in Orem or West Jordan and are concerned about chromium-6:
 
 1. A [free in-home water test](/free-water-test/) gives you a starting point and a conversation with a Blue Logic specialist about your city's specific water profile.
-2. Blue Logic Filtration (whole-home softening and filtration in one tank) addresses hardness, chlorine, sediment and rust, but is not the targeted answer for chromium-6.
+2. Blue Logic Filtration (whole-home softening and filtration in one tank) addresses hardness, chlorine and chloramine taste and odor, sediment and rust, but is not the targeted answer for chromium-6.
 3. The Blue Logic Purification System (Filtration in front, then reverse osmosis, food-grade storage and a constant-pressure pump) addresses chromium-6 at the molecular level, the most complete residential option for Orem and West Jordan homeowners with this specific concern.
 
 The water is federally legal. The concern is long-term cumulative exposure based on EWG's research-based guidelines. What you decide to do with that information is yours to determine, starting with knowing what's actually in your home's water.

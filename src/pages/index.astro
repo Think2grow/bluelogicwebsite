@@ -7,7 +7,7 @@ import OfferBanner from "../components/OfferBanner.astro";
 import { SYSTEMS } from "../data/offer";
 import { getBreadcrumbSchema, getAggregateRatingSchema } from "../utils/schema";
 import { Image, getImage } from "astro:assets";
-import utilityRoomSystemImg from "../assets/real/utility-room-system-wide.jpg";
+import utilityRoomSystemImg from "../assets/real/installs/purification-system-branded.webp";
 import VslHero from "../components/VslHero.astro";
 import vslPoster from "../assets/vsl/jared-owner-intro.jpg";
 import { getVslSchema } from "../data/vsl";
@@ -40,7 +40,7 @@ const schemas = [
   <section class="bg-background py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-serif mb-8 text-foreground">
-        Purity Without the Premium
+        Local Water Treatment, Priced Honestly
       </h2>
       <p class="text-lg leading-relaxed text-muted-foreground mb-6 max-w-3xl mx-auto">
         Blue Logic installs professional-grade <a href="/whole-home-reverse-osmosis-utah/" class="text-primary hover:underline font-semibold">whole-home reverse osmosis systems</a>, <a href="/whole-home-water-filtration/" class="text-primary hover:underline font-semibold">whole-home filtration</a>, and <a href="/water-softener-utah/" class="text-primary hover:underline font-semibold">water softeners</a> across Utah's Wasatch Front, with out-the-door pricing that includes standard installation and tax.
@@ -98,20 +98,20 @@ const schemas = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1">
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
-            Pure Water for Your Family
+            Purified Water at Every Tap
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            Every glass, every bath, every meal: your family deserves water you
-            can trust completely. The Blue Logic Purification System delivers purified water
-            at every tap.
+            The Blue Logic Purification System treats all of the water entering your
+            home, not just the kitchen faucet. Drinking, cooking, showers and baths
+            all get the same purified water.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
-            No more worrying about what's in your water. From your newborn's
-            first bath to your morning coffee, experience the peace of mind that
-            comes with <a
+            It starts with Blue Logic Filtration, then reverse osmosis, 165-gallon
+            storage and a constant-pressure pump, so every faucet gets
+            <a
               href="/the-system/"
               class="text-primary hover:underline font-semibold"
-              >purified water at every tap</a
+              >purified water at steady pressure</a
             >.
           </p>
           <a
@@ -125,8 +125,8 @@ const schemas = [
           <div class="relative">
             <Image
               src={utilityRoomSystemImg}
-              alt="Blue Logic Purification System installed in a Utah home's utility room, beside the water heater and plumbing manifold"
-              class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+              alt="Blue Logic whole-home Purification System in a Utah basement: the Filtration pretreatment tank, RO unit, pre-filters, constant-pressure pump and purified water storage tank"
+              class="rounded-2xl shadow-2xl w-full object-cover aspect-4/5"
               widths={[400, 600, 800, 1100]}
               sizes="(max-width: 1024px) 100vw, 50vw"
               quality={60}
@@ -170,7 +170,7 @@ const schemas = [
             5-Year Warranty
           </h3>
           <p class="text-muted-foreground">
-            On defects in materials and workmanship, from a family-owned Utah company
+            On defects in materials and workmanship, plus 10 years on the media inside the treatment tank
           </p>
         </div>
       </div>
@@ -178,43 +178,43 @@ const schemas = [
         href="/the-system/"
         class="inline-flex w-full justify-center px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-lg shadow-md border border-primary/30 transition-all md:w-auto md:bg-transparent md:text-primary md:shadow-none md:border-0 md:px-0 md:py-0 md:hover:opacity-80 md:transition-opacity"
       >
-        Explore The System →
+        Explore the System →
       </a>
     </div>
   </section>
 
   <!-- Product Explosion Animation (Task 3.1) -->
   <ProductExplosion
-    title="Engineering Excellence"
-    subtitle="Premium components working in perfect harmony to deliver the purest water for your family"
+    title="Inside the Purification System"
+    subtitle="Five stages, from Blue Logic Filtration to constant pressure, and what each one does"
   />
 
-  <!-- Social Proof Section -->
+  <!-- Whole-home + local water data -->
   <section class="bg-background py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="max-w-2xl mx-auto text-center mb-16">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
-            Safe from the First Bath
+            Why the Whole Home Matters
           </h2>
           <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
-            A baby's skin absorbs what's in the water. Our whole-home systems
-            reduce chlorine, PFAS, and other contaminants at every faucet so bath
-            time is pure, gentle, and worry-free.
+            Showers, baths and laundry use far more water than the kitchen tap.
+            An under-sink system covers what you drink; whole-home treatment
+            covers everything else too.
           </p>
           <p class="text-muted-foreground leading-relaxed">
-            Because protecting your family means pure water everywhere, not just
-            at the kitchen sink.
+            That is why every Blue Logic system treats your water where it enters
+            the house.
           </p>
         </div>
       </div>
 
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-serif mb-4 text-foreground">
-          Protection That Starts Before You Can See the Threat
+          What's in the Water Where You Live
         </h2>
         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-          From Ogden to Springville and everywhere in between, our whole-home reverse osmosis systems are designed to protect your home, your family, and your life, even when contaminants move through the pipes unnoticed.
+          Utah utilities meet federal limits, but their own test results show several contaminants well above the health guidelines published by the Environmental Working Group. A few examples from communities we serve:
         </p>
       </div>
 
@@ -228,7 +228,7 @@ const schemas = [
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Arsenic - 135 times the health guideline.
+            Arsenic: 135 times the health guideline
           </div>
         </a>
         <a
@@ -239,18 +239,18 @@ const schemas = [
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Arsenic - 450 times the health guideline.
+            Arsenic: 450 times the health guideline
           </div>
         </a>
         <a
-          href="/locations/park-city/"
+          href="/locations/cottonwood-heights/"
           class="group p-4 md:p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all hover:shadow-md"
         >
-          <div class="text-sm text-muted-foreground mb-1">Park City</div>
+          <div class="text-sm text-muted-foreground mb-1">Cottonwood Heights</div>
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Arsenic - 315 times the health guideline.
+            PFAS: 404 times the health guideline
           </div>
         </a>
         <a
@@ -261,7 +261,7 @@ const schemas = [
           <div
             class="text-lg font-semibold text-foreground group-hover:text-primary transition-colors"
           >
-            Haloacetic acids (HAA5) - 306 times the health guideline.
+            Haloacetic acids (HAA5): 306 times the health guideline
           </div>
         </a>
       </div>

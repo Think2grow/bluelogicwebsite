@@ -5,7 +5,7 @@ seoTitle: "Arsenic in Utah Drinking Water: What to Know"
 description: "Arsenic has been detected above EWG health guidelines in multiple Utah cities, including Lehi at 484x and Draper at 450x. Here's what that means and what you can do about it."
 author: "Blue Logic Water"
 date: 2026-06-04
-image: "../../assets/real/utility-room-storage-tank.jpg"
+image: "../../assets/real/installs/purification-room-storage-tanks.jpg"
 ---
 
 Arsenic doesn't taste like anything. It doesn't smell. It doesn't make your water look different. And yet it has been detected in the tap water of multiple Wasatch Front communities at levels that exceed the Environmental Working Group's health guidelines by hundreds of times.
@@ -47,7 +47,7 @@ Here's the picture for major communities, based on EWG Tap Water Database data:
 
 | City | Arsenic vs. EWG Health Guideline | Notes |
 |---|---|---|
-| Lehi | **484x** | Highest in the region; naturally occurring from Utah County geology |
+| Lehi | **484x** | Highest on this list; naturally occurring from Utah County geology |
 | Draper | **450x** | Also has HAA9 at 802x and uranium detected |
 | West Jordan | **275x** | Also has chromium-6 at 93x |
 | Orem | **131x** | Also has chromium-6 at 36x and HAA9 at 272x |
@@ -67,7 +67,7 @@ Research published in peer-reviewed journals has associated long-term arsenic ex
 - Diabetes associations in some population studies
 - Developmental effects in children at higher exposure levels
 
-It's important to contextualize this: **these findings relate to chronic, long-term exposure, not immediate risk.** Drinking a glass of Salt Lake City tap water today is not the same as drinking uranium-contaminated water from a superfund site. But the question for Utah homeowners is what the cumulative effect of decades of exposure at these levels represents, a question that EWG's health guidelines are designed to address more conservatively than the current federal standard.
+It's important to contextualize this: **these findings relate to chronic, long-term exposure, not immediate risk.** A glass of Salt Lake City tap water today is not an immediate health risk. The question for Utah homeowners is what the cumulative effect of decades of exposure at these levels represents, a question that EWG's health guidelines are designed to address more conservatively than the current federal standard.
 
 ## How to Know If Arsenic Is a Concern in Your Home
 
@@ -80,7 +80,7 @@ Visit [ewg.org/tapwater](https://www.ewg.org/tapwater) and search for your city'
 Every Utah water utility publishes an annual Consumer Confidence Report (CCR) showing detected contaminants and their levels versus federal legal limits. Search "[your city] water quality report [current year]." The CCR is required by law to be accurate and is typically available on your utility's website.
 
 **3. Get a free in-home water test**  
-Blue Logic's free in-home water test measures hardness and chlorine on the spot. For specific contaminant concerns like arsenic, your specialist will discuss the EWG data for your city and recommend whether a certified laboratory test for arsenic is warranted.
+Blue Logic's free in-home water test measures TDS, hardness and chlorine at your kitchen sink. For specific contaminant concerns like arsenic, your specialist will discuss the EWG data for your city and recommend whether a certified laboratory test for arsenic is warranted.
 
 ## What Reduces Arsenic in Residential Water?
 
@@ -102,9 +102,9 @@ Arsenic in Utah water is a real issue. The EWG data is based on real utility tes
 
 At the same time: people have been drinking water from Lehi, Draper, and Salt Lake City utilities for decades without obvious mass health consequences. The risk from arsenic at these concentrations is probabilistic and long-term, not acute.
 
-What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation, whether that's a whole-home filtration system, a whole-home RO upgrade, or just the information to make your own decision.
+What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation, whether that's Blue Logic Filtration with its under-sink RO, the Blue Logic Purification System (whole-home RO), or just the information to make your own decision.
 
-There's no pressure. There's no obligation. And now you know what's in the water.
+There's no pressure and no obligation. And now you know what the data shows.
 
 ---
 

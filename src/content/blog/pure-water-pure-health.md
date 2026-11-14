@@ -1,16 +1,16 @@
 ---
 slug: pure-water-pure-health-understanding-reverse-osmosis
-title: "Pure Water, Pure Health: Understanding Reverse Osmosis for Utah Homes"
+title: "Understanding Reverse Osmosis for Utah Homes"
 seoTitle: "Reverse Osmosis Explained for Utah Homes"
 description: "Learn how reverse osmosis works, why it's the most complete water purification technology for Utah homes, and how whole-home RO compares to standard filtration and softeners."
 author: "Blue Logic Water"
 date: 2025-08-12
-image: "../../assets/real/utility-room-system-wide.jpg"
+image: "../../assets/real/installs/under-sink-ro-cabinet.jpg"
 ---
 
 ## What Is Reverse Osmosis?
 
-Reverse osmosis (RO) is a water purification process that uses pressure to force water through a semi-permeable membrane with pores so small (0.0001 micron) that only water molecules pass through. Dissolved contaminants, minerals, and other impurities are left behind and flushed to drain.
+Reverse osmosis (RO) is a water purification process that uses pressure to force water through a semi-permeable membrane with pores so small (0.0001 micron) that water molecules pass through while most dissolved substances do not. Dissolved contaminants, minerals, and other impurities are left behind and flushed to drain.
 
 ### How It Works
 
@@ -19,9 +19,9 @@ Water is pushed through the RO membrane under pressure. The membrane allows wate
 - **Dissolved minerals:** calcium, magnesium, and other hardness compounds
 - **Heavy metals:** including arsenic, lead, and chromium-6
 - **Dissolved organic contaminants:** including PFAS compounds
-- **Disinfection byproducts:** haloacetic acids and trihalomethanes
+- **Disinfection byproducts:** including haloacetic acids
 
-The result is water that has had the vast majority of its dissolved content removed: purer, better-tasting, and free from the contaminants that standard filtration and softening leave behind.
+The result is water that has had the vast majority of its dissolved content removed: cleaner-tasting, and far lower in the dissolved contaminants that standard filtration and softening leave behind.
 
 ### Whole-Home RO vs. Point-of-Use RO
 

@@ -67,7 +67,12 @@ export const ADD_ONS = [
 ] as const;
 
 export const WARRANTY =
-  "5-year warranty against defects in materials and workmanship. Consumables such as filters, RO membranes and salt are not covered. Installation workmanship is warranted for 12 months.";
+  "5-year warranty against defects in materials and workmanship, and a 10-year warranty on the media inside the treatment tank. Consumables such as filters, RO membranes and salt are not covered. Installation workmanship is warranted for 12 months.";
+
+// Price range (Scott, 2026-11-13): solutions start around $1,000 and go up from there;
+// every system is customized to the home, so there is no published ceiling.
+export const PRICE_RANGE =
+  "Blue Logic solutions start at about $1,000 and go up from there, and every system is customized to what your water and home need.";
 
 export function usd(n: number): string {
   return "$" + n.toLocaleString("en-US");

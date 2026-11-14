@@ -38,11 +38,11 @@ const schemas = [
   <section class="hero-gradient-dark py-20 md:py-24 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl md:text-6xl font-serif mb-4 text-white">
-        Water Purification for {cityData.name}
+        Water Treatment for {cityData.name} Homes
       </h1>
       <p class="text-xl md:text-2xl text-white/90">
-        Professional RO systems designed for {cityData.region}'s unique water
-        challenges
+        Softening, filtration and reverse osmosis, matched to what your water
+        test shows
       </p>
     </div>
   </section>
@@ -74,9 +74,9 @@ const schemas = [
             Water Hardness Rating
           </div>
           <p class="text-muted-foreground">
-            {cityData.name} consistently experiences {
+            {cityData.name} water is rated {
               cityData.hardnessLevel.toLowerCase()
-            } water conditions.
+            }, which shows up as scale on fixtures and in appliances.
           </p>
         </div>
 
@@ -87,11 +87,10 @@ const schemas = [
                 {cityData.population}
               </div>
               <div class="text-lg font-semibold mb-4 text-foreground">
-                Residents Served
+                Population
               </div>
               <p class="text-muted-foreground">
-                Serving the {cityData.name} community with professional water
-                solutions.
+                Blue Logic serves homes across {cityData.name}.
               </p>
             </div>
           )
@@ -103,8 +102,7 @@ const schemas = [
           Water Source: {cityData.waterSource}
         </h3>
         <p class="text-muted-foreground mb-4">
-          {cityData.name}'s water supply presents unique challenges for
-          homeowners:
+          Common water concerns in {cityData.name}:
         </p>
         <ul class="list-disc pl-6 text-muted-foreground space-y-3">
           {cityData.commonIssues.map((issue) => <li>{issue}</li>)}
@@ -153,7 +151,7 @@ const schemas = [
             {cityData.topContaminants && (
               <div class="top-contaminants">
                 <h4 class="text-xl font-serif text-foreground mb-4">
-                  Most Concerning Contaminants in {cityData.name}:
+                  Top EWG Results for {cityData.name}
                 </h4>
                 <div class="space-y-3">
                   {cityData.topContaminants.map((contaminant) => (
@@ -170,12 +168,12 @@ const schemas = [
 
             <div class="ewg-note">
               <p>
-                <strong>What This Means:</strong> While {cityData.name}'s water
-                meets federal drinking water standards, it contains contaminants
-                at levels that exceed EWG's stricter health guidelines. Federal
-                limits haven't been updated in nearly 20 years. Reverse osmosis
-                reduces most of these contaminants, providing an extra layer of
-                protection for your family.
+                <strong>What This Means:</strong> {cityData.name}'s water meets
+                federal drinking water standards. EWG's health guidelines are much
+                stricter than federal limits, so a large multiple can come from a
+                very small amount. If you want to go beyond what the law requires,
+                the Blue Logic Purification System (whole-home reverse osmosis)
+                reduces most of these at every tap.
               </p>
             </div>
 
@@ -201,7 +199,7 @@ const schemas = [
       <h2
         class="text-3xl md:text-4xl font-serif text-center mb-12 text-foreground"
       >
-        Why Reverse Osmosis for {cityData.name} Homes?
+        How Blue Logic Helps {cityData.name} Homes
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -228,11 +226,11 @@ const schemas = [
 
         <div class="reason-card">
           <h3 class="text-xl font-serif mb-4 text-foreground">
-            Better for Your Health
+            Purified Water at Every Tap
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            Purified water at every tap means less chlorine on your skin and hair,
-            and peace of mind knowing what's NOT in your water.
+            With the Purification System, every faucet and shower runs on RO water,
+            with no chlorine smell in the shower or bath.
           </p>
         </div>
 
@@ -292,7 +290,7 @@ const schemas = [
             Local Expertise
           </h3>
           <p class="text-muted-foreground text-sm">
-            Built for Utah water, by Utah professionals
+            Family-owned and locally owned in Utah
           </p>
         </div>
       </div>
@@ -302,12 +300,12 @@ const schemas = [
   <section class="bg-obsidian py-20 px-4 text-center">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-serif mb-4 text-white">
-        Ready for Pure Water in {cityData.name}?
+        Ready to Test Your {cityData.name} Water?
       </h2>
       <p class="text-xl text-white/90 mb-8">
-        Schedule your free consultation today
+        Book a free water test at your kitchen sink. No cost, no obligation.
       </p>
-      <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Get Started</a>
+      <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto">Schedule Free Water Test</a>
     </div>
   </section>
 </Layout>

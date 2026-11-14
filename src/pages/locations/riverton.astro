@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Riverton is growing fast with lots of new construction. Does that affect the water?",
-    answer: "New construction doesn't change the source water. Riverton's rapid growth brings new homes with pristine plumbing connecting to the same JVWCD municipal supply as every other home in the city. The hardness and contaminant profile is the same regardless of when your home was built, so installing at move-in protects new fixtures and appliances from day one.",
+    answer: "New construction doesn't change the source water. Riverton's new homes connect to the same JVWCD municipal supply as every other home in the city. The hardness and contaminant profile is the same regardless of when your home was built, so installing at move-in protects new fixtures and appliances from day one.",
   },
   {
     question: "Does Blue Logic serve Riverton and the South Jordan border area?",
@@ -35,7 +35,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Riverton Utah | Blue Logic Water"
-  description="Riverton water is very hard at 18 GPG with haloacetic acids and arsenic above EWG guidelines. Blue Logic serves fast-growing Riverton. Free in-home water test."
+  description="Riverton water is very hard at 18 GPG with haloacetic acids and arsenic above EWG guidelines. Blue Logic serves Riverton homes. Free in-home water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -47,9 +47,9 @@ const schemas = [
         Water Treatment for Riverton Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Riverton receives hard JVWCD water with the same haloacetic acid and arsenic concerns
-        as neighboring South Jordan, Herriman, and West Jordan. Blue Logic serves Riverton's
-        growing community with whole-home softening, filtration and RO systems.
+        Riverton's JVWCD water is very hard, and like neighboring South Jordan, Herriman and West
+        Jordan, the EWG database flags haloacetic acids and arsenic above its stricter health
+        guidelines. Blue Logic serves Riverton with whole-home softening, filtration and RO systems.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">Schedule Free Water Test →</a>
@@ -69,12 +69,12 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Arsenic</div>
           <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Naturally occurring. Not removed by softeners; reduction requires an RO membrane.</p>
+          <p class="text-xs text-muted-foreground">Naturally occurring. Not removed by softeners; reducing it takes an RO membrane.</p>
         </div>
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard. New construction in Riverton benefits most from move-in installation.</p>
+          <p class="text-xs text-muted-foreground">Very hard. Installing at move-in keeps scale out of new fixtures and appliances.</p>
         </div>
       </div>
 
@@ -82,9 +82,9 @@ const schemas = [
         <h3 class="text-lg font-semibold mb-3 text-foreground">Key Concerns for Riverton Homeowners</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
           <div><strong class="text-foreground">Hard water scale:</strong> At roughly 18 grains per gallon, Riverton's Jordan Valley water drives scale on fixtures, showerheads, and inside hot water systems. In newer homes, untreated hard water shortens the life of dishwashers, water heaters, and plumbing fixtures.</div>
-          <div><strong class="text-foreground">Disinfection byproducts:</strong> Riverton draws the same JVWCD supply as South Jordan and Herriman, where haloacetic acids run far above EWG health guidelines from chlorinating mountain surface water. Whole-home filtration reduces chlorine, chloramines and their byproducts.</div>
+          <div><strong class="text-foreground">Disinfection byproducts:</strong> Riverton draws the same JVWCD supply as South Jordan and Herriman, where EWG flags haloacetic acids above its health guidelines, a result of chlorinating mountain surface water. Blue Logic Filtration reduces chlorine, chloramines and their byproducts.</div>
           <div><strong class="text-foreground">Arsenic:</strong> Detected above EWG health guidelines and naturally occurring in the south valley's geology. It is not reduced by softeners or basic filters; a reverse osmosis membrane is the most effective residential method.</div>
-          <div><strong class="text-foreground">Fast-growing community:</strong> Many Riverton homeowners are new to Utah water. Installing whole-home treatment at move-in protects brand-new fixtures and appliances from day one. A free in-home test confirms your exact readings.</div>
+          <div><strong class="text-foreground">New construction:</strong> Riverton has many newer homes. Installing whole-home treatment at move-in protects new fixtures and appliances from day one. A free in-home test confirms your exact readings.</div>
         </div>
       </div>
     </div>
@@ -112,6 +112,7 @@ const schemas = [
 
   <section class="bg-card py-10 px-4">
     <div class="max-w-4xl mx-auto text-center">
+      <p class="text-sm font-semibold text-foreground mb-4">Also serving nearby communities:</p>
       <div class="flex flex-wrap justify-center gap-3">
         {[{name:"South Jordan",slug:"south-jordan"},{name:"Herriman",slug:"herriman"},{name:"West Jordan",slug:"west-jordan"},{name:"Draper",slug:"draper"}].map((c) => (
           <a href={`/locations/${c.slug}/`} class="related-link">{c.name}</a>
@@ -124,7 +125,7 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Riverton Water Test</h2>
-      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Riverton and all of Salt Lake County. No cost, no obligation.</p>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves Riverton and all of Salt Lake County. A specialist tests your water at the kitchen sink, at no cost and no obligation.</p>
       <LeadForm />
     </div>
   </section>

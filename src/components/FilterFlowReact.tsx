@@ -155,10 +155,10 @@ export default function FilterFlowReact() {
           }}
         >
           <span className="inline-block text-glacier text-sm font-semibold tracking-wider uppercase mb-2">
-            The Purification Journey
+            Compare Your Options
           </span>
           <h2 className="text-3xl md:text-5xl font-serif text-white mb-3">
-            Every Drop, Transformed
+            From One Tap to Every Tap
           </h2>
           <p className="text-lg text-white/60 max-w-xl mx-auto">
             See how each approach to water treatment compares, from a single tap to every tap
@@ -264,9 +264,8 @@ export default function FilterFlowReact() {
             y: useTransform(scrollYProgress, [0.88, 0.95], [20, 0]),
           }}
         >
-          <div className="text-4xl mb-2">✨</div>
-          <div className="text-lg font-semibold text-white">
-            Purification Complete
+                    <div className="text-lg font-semibold text-white">
+            Purified Water at Every Tap
           </div>
         </motion.div>
       </div>

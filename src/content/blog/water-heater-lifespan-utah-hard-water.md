@@ -5,18 +5,18 @@ seoTitle: "Water Heater Lifespan in Utah & Hard Water | Blue Logic Water"
 description: "Water heaters last 8–12 years on average, but Utah's hard water can shave years off that. Here's how scale shortens heater life, the warning signs, and how to protect your investment."
 author: "Blue Logic Water"
 date: 2026-06-17
-image: "../../assets/real/utility-room-storage-tank-2.jpg"
+image: "../../assets/real/installs/filtration-beside-tankless-heater.jpg"
 ---
 
 A storage-tank water heater is supposed to last **8 to 12 years**. A tankless unit, **15 to
 20**. But "supposed to" assumes average water. Utah doesn't have average water; it has some
-of the hardest in the country, and that single fact quietly shortens the life of nearly
-every water heater on the Wasatch Front.
+of the hardest in the country, and that single fact quietly shortens the life of many
+water heaters on the Wasatch Front.
 
 If your heater failed at year six, or your second heater is already showing the same symptoms
 as the first, hardness is the usual suspect. Here's exactly how it happens and what to do.
 
-## The short answer
+## The Short Answer
 
 | Heater type | Typical lifespan (avg US) | On untreated Utah hard water |
 |---|---|---|
@@ -28,7 +28,7 @@ form scale inside a hot tank. The harder your water, the faster it happens. And 
 the Wasatch Front, water runs from *hard* to *very hard*: see the
 [Utah water hardness by city map](/blog/utah-water-hardness-by-city/) for your area's number.
 
-## Why hard water kills water heaters early
+## Why Hard Water Shortens Water Heater Life
 
 When hard water is heated, dissolved calcium and magnesium drop out of solution and
 precipitate as **scale**, the chalky deposit you see on showerheads. Inside your heater,
@@ -45,10 +45,10 @@ that scale goes where you can't see it:
   faster in mineral-heavy water, leaving the tank exposed sooner.
 
 Tankless units are even more sensitive: their narrow heat-exchanger passages scale up
-quickly, which is why most tankless manufacturers *require* softened water to keep the
-warranty valid.
+quickly, which is why many tankless manufacturers set water hardness limits for warranty
+coverage.
 
-## Warning signs your heater is scaling up
+## Warning Signs Your Heater Is Scaling Up
 
 - Rumbling, popping, or crackling sounds when it heats (sediment boiling underneath)
 - Running out of hot water faster than it used to
@@ -56,20 +56,21 @@ warranty valid.
 - Cloudy or sandy-looking hot water, or reduced hot-water pressure
 - Visible scale/rust around fittings, or the unit is simply past 8 years
 
-## A 30-second self-check
+## A 30-Second Self-Check
 
 Ask yourself three things: **How old is the heater? Do you have hard water? Has it ever been
 flushed?** If it's 6+ years old, you're in a hard-water city, and it's never been drained
 and flushed, it's almost certainly carrying scale and running below its rated efficiency
 right now.
 
-## How to actually extend its life
+## How to Actually Extend Its Life
 
 1. **Treat the water before it reaches the heater.** This is the real fix. Removing or
    reducing hardness stops scale at the source, which protects not just the water heater but
    every appliance downstream: dishwasher, washing machine, faucets, and fixtures. A
    [water softener uses ion exchange](/blog/how-water-softeners-work/) to do exactly this;
-   whole-home filtration does it while also reducing chlorine and other contaminants.
+   whole-home filtration does it while also removing chlorine and chloramine taste and odor,
+   sediment and rust.
 2. **Flush the tank annually.** Draining sediment once a year slows buildup, though on very
    hard water it's a holding action, not a cure.
 3. **Check the anode rod** every few years and replace it before it's fully consumed.
@@ -78,13 +79,13 @@ If you're weighing options, this breakdown of
 [how long water treatment systems last](/blog/how-long-water-treatment-systems-last/) and
 [softener vs. reverse osmosis](/blog/water-softener-vs-reverse-osmosis-utah/) will help.
 
-## The bottom line for Utah homeowners
+## The Bottom Line for Utah Homeowners
 
 A water heater is one of the most expensive appliances in your home, and Utah's water is
 actively working against it. The cheapest way to protect it is to stop feeding it scale. The
 fastest way to know what your water is doing is a **free water test**. A Blue Logic
-specialist measures your hardness and explains what it means for your appliances, with
-no cost or obligation.
+specialist measures your water's TDS, hardness and chlorine at the kitchen sink and explains
+what it means for your appliances, with no cost or obligation.
 
 [Schedule a free water test →](/free-water-test/)
 

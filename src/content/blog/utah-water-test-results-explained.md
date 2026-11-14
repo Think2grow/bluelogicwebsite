@@ -40,7 +40,7 @@ Your utility adds chlorine or chloramine as a disinfectant. The residual at your
 | 0–0.2 ppm | Very low residual. Tap is far from treatment plant or residual dissipated. |
 | 0.2–1.0 ppm | Normal range for most Wasatch Front taps. |
 | 1.0–2.0 ppm | Higher residual. Noticeable taste/odor in many people. Common closer to treatment facilities. |
-| 2.0–4.0 ppm | EPA maximum. Strong chemical taste/odor. |
+| 2.0–4.0 ppm | Approaching the EPA maximum of 4 ppm. Strong chemical taste/odor. |
 
 **What to do:**  
 Above 1.0 ppm, most people notice chlorine taste and odor in drinking water and from hot showers. Blue Logic Filtration takes chlorine and chloramine taste and odor out of the water throughout the entire home, not just at the kitchen tap.
@@ -82,7 +82,7 @@ If you see staining, mention it at your water test. Blue Logic checks for iron a
 
 ## What Your Results Don't Tell You
 
-A basic in-home test (hardness, chlorine, pH) measures what it measures, and nothing else. It does **not** tell you about:
+A basic in-home test (hardness, chlorine, TDS, pH) measures what it measures, and nothing else. It does **not** tell you about:
 
 - Arsenic (requires lab testing or EWG database lookup for your utility)
 - PFAS (requires certified lab test or utility monitoring data)
@@ -96,7 +96,7 @@ For the full picture on your city's water, check the [EWG Tap Water Database](ht
 ## Next Steps Based on Your Results
 
 **If hardness is above 14 GPG:**  
-→ Whole-home filtration or RO with integrated softening is warranted. Scale is actively damaging appliances.
+→ Whole-home filtration or RO with integrated softening is warranted. At that level, scale builds quickly in water heaters and appliances.
 
 **If chlorine is above 1.0 ppm:**  
 → Whole-home filtration addresses this at every tap and shower, not just at the kitchen sink.
@@ -108,7 +108,7 @@ For the full picture on your city's water, check the [EWG Tap Water Database](ht
 → These require EWG database lookup or certified lab testing. Your Blue Logic specialist can walk you through your city's EWG profile at the free water test.
 
 **If you're not sure what to do:**  
-→ [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water on-site and explain exactly what your numbers mean for your home, with no cost and no obligation.
+→ [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water at the kitchen sink and explain what your numbers mean for your home, with no cost and no obligation.
 
 [Schedule your free water test →](/free-water-test/)  
 [How to read a water test (full guide) →](/how-to-read-a-water-test/)  

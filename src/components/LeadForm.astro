@@ -32,10 +32,10 @@ const { compact = false, variant = "default" } = Astro.props;
 
   <div class={variant === "premium" ? "relative" : undefined}>
   <h2 class="text-3xl font-serif text-center mb-2">
-    Know Your Water. Protect Your Home.
+    Book Your Free Water Test
   </h2>
   <p class="text-center text-muted-foreground mb-8">
-    Schedule a consultation with our team
+    A Blue Logic specialist tests your water at your kitchen sink and explains the results. No cost, no obligation.
   </p>
   <p class="text-center text-sm text-muted-foreground mb-8">
     Prefer to talk now?
@@ -119,7 +119,7 @@ const { compact = false, variant = "default" } = Astro.props;
           : "rounded-lg bg-glacier hover:bg-glacier/90 text-white transition-colors duration-200",
       ]}
     >
-      Schedule Audit
+      Book My Free Water Test
     </button>
 
     <div id="formStatus" class="form-status"></div>
@@ -192,7 +192,7 @@ const { compact = false, variant = "default" } = Astro.props;
       console.error("Form submission error:", error);
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = "Schedule Audit";
+      submitButton.textContent = "Book My Free Water Test";
     }
   });
 </script>

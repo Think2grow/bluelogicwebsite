@@ -12,7 +12,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What does the free water test actually measure?",
-    answer: "Your Blue Logic specialist will test your water on-site for total dissolved solids (TDS), water hardness, and chlorine levels using professional-grade meters. These three measurements reveal the core water quality concerns most relevant to Utah homes. For additional contaminant concerns, such as arsenic, PFAS, or lead, we can recommend a certified lab test.",
+    answer: "Your Blue Logic specialist will test your water at your kitchen sink for total dissolved solids (TDS), water hardness, and chlorine levels using professional-grade meters. These three measurements reveal the core water quality concerns most relevant to Utah homes. For additional contaminant concerns, such as arsenic, PFAS, or lead, we can recommend a certified lab test.",
   },
   {
     question: "Is there any obligation to purchase after the water test?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Do I need to do anything to prepare for the appointment?",
-    answer: "No preparation is needed. Just make sure someone 18 or older is home during the appointment. We'll need access to a water faucet (typically in the kitchen or utility room) and ideally to the location where a system would be installed (usually the utility room, garage, or basement).",
+    answer: "No preparation is needed. Just make sure someone 18 or older is home during the appointment. We'll need access to your kitchen sink, where we run the test, and ideally to the location where a system would be installed (usually the utility room, garage, or basement).",
   },
   {
     question: "What happens if I decide to move forward with a system?",
@@ -40,7 +40,7 @@ const schemas = [
   getServiceSchema(
     `${siteUrl}/free-water-test/`,
     "Free In-Home Water Test | Blue Logic Water",
-    "A Blue Logic water treatment specialist visits your home, tests your water on-site for hardness and chlorine, and recommends the right system for your specific water profile. No cost, no obligation.",
+    "A Blue Logic water treatment specialist visits your home, tests your water at your kitchen sink for hardness and chlorine, and recommends the right system for your specific water profile. No cost, no obligation.",
     "Free In-Home Water Test"
   ),
   getFAQSchema(faqs),
@@ -54,7 +54,7 @@ const schemas = [
 
 <Layout
   title="Free In-Home Water Test Utah | Blue Logic Water"
-  description="Schedule a free in-home water test with Blue Logic. A specialist visits your Utah home, tests your water on-site, and recommends the right system, with no cost and no obligation."
+  description="Schedule a free in-home water test with Blue Logic. A specialist visits your Utah home, tests your water at your kitchen sink, and recommends the right system, with no cost and no obligation."
   schema={schemas}
 >
   <!-- Hero -->
@@ -67,7 +67,7 @@ const schemas = [
         Free In-Home Water Test for Utah Homeowners
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-        A Blue Logic specialist comes to your home, tests your water on-site, and walks you through
+        A Blue Logic specialist comes to your home, tests your water at your kitchen sink, and walks you through
         exactly what's in it, then recommends the right system for your home, at no cost and with
         zero pressure.
       </p>
@@ -86,7 +86,7 @@ const schemas = [
       <div class="p-4">
         <div class="text-2xl font-bold text-primary mb-1">Free</div>
         <div class="font-semibold text-foreground mb-1">In-Home Water Test</div>
-        <div class="text-sm text-muted-foreground">On-site TDS, hardness, and chlorine testing. No cost, no obligation.</div>
+        <div class="text-sm text-muted-foreground">TDS, hardness, and chlorine, tested at your kitchen sink. No cost, no obligation.</div>
       </div>
       <div class="p-4 border-y md:border-y-0 md:border-x border-primary/20">
         <div class="text-2xl font-bold text-primary mb-1">Included</div>
@@ -139,13 +139,13 @@ const schemas = [
         <div class="flex gap-6 items-start bg-card p-6 md:p-8 rounded-2xl border border-border">
           <div class="step-number shrink-0">3</div>
           <div>
-            <h3 class="text-xl font-semibold mb-2 text-foreground">On-Site Water Testing</h3>
+            <h3 class="text-xl font-semibold mb-2 text-foreground">Testing at Your Kitchen Sink</h3>
             <p class="text-muted-foreground leading-relaxed">
-              We test your home's water directly from your tap using calibrated meters and field-testing equipment. The on-site test focuses on the concerns most relevant to Utah homes:
+              We test your home's water directly from your kitchen tap using calibrated meters and field-testing equipment. The on-site test focuses on the concerns most relevant to Utah homes:
             </p>
             <ul class="mt-3 space-y-2 text-muted-foreground">
-              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Water Hardness</strong>: measures calcium and magnesium concentration in grains per gallon. Most Wasatch Front cities have very hard water (15–25+ GPG), which causes scale, appliance damage, and dry skin.</span></li>
-              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Chlorine and Chloramine</strong>: measures the disinfectant residual from your municipal utility. High levels affect taste, odor, and are absorbed through skin during bathing.</span></li>
+              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Water Hardness</strong>: measures calcium and magnesium concentration in grains per gallon. Most Wasatch Front cities have very hard water (15 to 25+ GPG), which causes scale, appliance damage, and dry skin.</span></li>
+              <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Chlorine and Chloramine</strong>: measures the disinfectant residual from your municipal utility. It affects taste and odor, and you are exposed to it through your skin and the steam when you shower or bathe.</span></li>
               <li class="flex items-start gap-2"><span class="text-primary font-bold mt-0.5">·</span> <span><strong class="text-foreground">Contaminant context for your area</strong>: your specialist will walk you through EWG data specific to your city's utility, including arsenic, haloacetic acids, and PFAS where relevant to your area.</span></li>
             </ul>
           </div>
@@ -168,9 +168,9 @@ const schemas = [
           <div>
             <h3 class="text-xl font-semibold mb-2 text-foreground">System Recommendation, No Pressure</h3>
             <p class="text-muted-foreground leading-relaxed">
-              Based on your water profile and your home, we'll recommend the best system, whether
-              that's a whole-home filtration system, a full reverse osmosis purification system, or
-              something in between. You decide what happens next. There is no high-pressure sales
+              Based on your water profile and your home, we'll recommend the right system, whether
+              that's the Blue Logic Softener, Blue Logic Filtration, or the Blue Logic Purification
+              System. You decide what happens next. There is no high-pressure sales
               process and no obligation to purchase.
             </p>
           </div>
@@ -192,10 +192,10 @@ const schemas = [
         <div class="bg-background rounded-2xl p-6 border border-border">
           <h3 class="font-semibold text-lg mb-3 text-foreground">Mail-In Water Test</h3>
           <ul class="space-y-2 text-muted-foreground text-sm">
-            <li class="flex gap-2"><span class="text-error">✗</span> Results in 1–2 weeks</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> Results in 1 to 2 weeks</li>
             <li class="flex gap-2"><span class="text-error">✗</span> No context for what the numbers mean</li>
             <li class="flex gap-2"><span class="text-error">✗</span> Doesn't account for your home's plumbing</li>
-            <li class="flex gap-2"><span class="text-error">✗</span> Costs $30–$150 depending on scope</li>
+            <li class="flex gap-2"><span class="text-error">✗</span> Costs $30 to $150 depending on scope</li>
             <li class="flex gap-2"><span class="text-error">✗</span> Can't show you where to install a system</li>
           </ul>
         </div>

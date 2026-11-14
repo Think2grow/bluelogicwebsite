@@ -4,7 +4,7 @@ title: "Is Salt Lake City Water Safe to Drink?"
 description: "The short answer: it meets all federal standards. The longer answer involves PFAS, arsenic, haloacetic acids, and EWG health guidelines that are stricter than federal law. Here's the full picture."
 author: "Blue Logic Water"
 date: 2026-06-05
-image: "../../assets/real/utility-room-storage-tank-2.jpg"
+image: "../../assets/real/installs/filtration-closet.jpg"
 ---
 
 Salt Lake City's tap water is legal. It meets every federal EPA maximum contaminant level. The Salt Lake City Department of Public Utilities publishes an annual Consumer Confidence Report showing compliance across all regulated parameters.
@@ -15,7 +15,7 @@ That question is more complicated than a compliance certificate suggests. Here's
 
 ## What "Safe" Means Under Federal Law
 
-The EPA sets maximum contaminant levels (MCLs) for drinking water. Water that meets these standards is considered safe for public consumption. The key context: most of these limits were established in the 1990s and haven't been comprehensively updated since. They're based on the risk-assessment science available at the time and reflect a balance between health protection and the cost and feasibility of utility-scale treatment.
+The EPA sets maximum contaminant levels (MCLs) for drinking water. Water that meets these standards is considered safe for public consumption. The key context: most of these limits were established decades ago, and few have been updated since (the 2024 PFAS limits are a recent exception). They're based on the risk-assessment science available at the time and reflect a balance between health protection and the cost and feasibility of utility-scale treatment.
 
 SLC's water meets federal standards. That is a meaningful statement. It means the water has been treated and tested against legally established thresholds. It is not raw river water.
 
@@ -39,7 +39,6 @@ A disinfection byproduct formed when chlorine reacts with organic material in th
 SLC water is not immediately dangerous. People have been drinking it for generations without obvious mass health consequences from contaminant exposure at these levels.
 
 What the EWG data represents is a more cautious view of long-term, cumulative risk, particularly for:
-- **Pregnant women and infants**, who are more sensitive to some contaminants
 - **Families with young children** who will drink the water for years
 - **Health-conscious households** who want to minimize exposure to PFAS and arsenic as a precaution
 
@@ -48,16 +47,16 @@ The question of whether these levels are "safe enough" is a personal risk tolera
 ## What You Can Do
 
 **Option 1: Nothing different.**  
-If you're comfortable with federal compliance levels and not in a higher-sensitivity household, that's a reasonable position. SLC water is legally safe.
+If you're comfortable with federal compliance levels, that's a reasonable position. SLC water is legally safe.
 
 **Option 2: Under-sink RO at the kitchen tap.**  
 An under-sink reverse osmosis system addresses arsenic, PFAS, and haloacetic acids at the kitchen faucet specifically, for drinking and cooking water. Blue Logic Filtration includes an under-sink RO system at the kitchen tap.
 
 **Option 3: Whole-home reverse osmosis.**  
-For families who want comprehensive coverage, including in bathing water (PFAS can be absorbed through skin and inhaled from steam), a whole-home RO system such as the Blue Logic Purification System addresses arsenic, PFAS, and disinfection byproducts at every tap. Also solves SLC's hard water (~12 GPG) and chlorine taste/odor simultaneously.
+For families who want comprehensive coverage, including bathing water, a whole-home RO system such as the Blue Logic Purification System addresses arsenic, PFAS, and disinfection byproducts at every tap. It also handles SLC's hard water (~12 GPG) and chlorine taste and odor at the same time.
 
 **Option 4: Get your water tested first.**  
-SLC's water quality varies somewhat by neighborhood based on the active blend of sources. A [free in-home water test](/free-water-test/) from Blue Logic gives you the actual hardness and chlorine reading for your specific tap, and your specialist will walk you through the EWG data for your area.
+SLC's water quality varies somewhat by neighborhood based on the active blend of sources. A [free in-home water test](/free-water-test/) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink, and your specialist will walk you through the EWG data for your area.
 
 ## The Bottom Line
 

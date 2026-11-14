@@ -11,7 +11,7 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "What is hexavalent chromium and why is it in Orem's water?",
-    answer: "Hexavalent chromium (chromium-6) is a form of the element chromium that is a known carcinogen at high exposures. It occurs both naturally in geology and as a result of industrial activity. In Orem's case, it is primarily naturally occurring, present in the source water at levels that exceed EWG's health guideline (36x). The EPA regulates total chromium but does not yet have a specific standard for the hexavalent form. EWG's guideline for chromium-6 specifically is far stricter than the federal total chromium limit. Reverse osmosis is effective at reducing chromium-6.",
+    answer: "Hexavalent chromium (chromium-6) is one form of the element chromium. It occurs both naturally in geology and as a result of industrial activity. In Orem's case, it is primarily naturally occurring, present in the source water at levels that exceed EWG's health guideline (36x). The EPA regulates total chromium but does not yet have a specific standard for the hexavalent form. EWG's guideline for chromium-6 specifically is far stricter than the federal total chromium limit. Reverse osmosis is effective at reducing chromium-6.",
   },
   {
     question: "How hard is Orem's water?",
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     question: "Which Blue Logic system is recommended for Orem?",
-    answer: "Given Orem's combination of chromium-6, arsenic, high HAA9 disinfection byproducts, and very hard water (18 GPG), whole-home reverse osmosis is the most comprehensive solution. The RO membrane addresses chromium-6, arsenic, and HAA compounds at the molecular level, contaminants that standard filtration and softening alone don't fully reach. The recommendation is always confirmed by your free in-home water test results.",
+    answer: "For homeowners who want chromium-6 and arsenic reduced at every tap, the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option. Its Filtration stage softens the 18 GPG water and reduces chlorine and its byproducts, and the RO membrane then reduces chromium-6 and arsenic, which softening and filtration alone don't fully reach. Blue Logic Filtration on its own, with its under-sink RO at the kitchen tap, suits homes focused on scale and drinking water. The recommendation is always confirmed by your free in-home water test results.",
   },
   {
-    question: "Does Blue Logic serve all of Orem, including Sharon area and Vineyard?",
-    answer: "Yes. Blue Logic serves all of Orem including the Sharon area, Vineyard, and the newer developments along the Vineyard/Lindon corridor. We also serve American Fork, Pleasant Grove, and all surrounding Utah County communities from the same service area.",
+    question: "Does Blue Logic serve all of Orem, including the Sharon area and nearby Vineyard?",
+    answer: "Yes. Blue Logic serves all of Orem including the Sharon area, plus neighboring Vineyard and the newer developments along the Vineyard/Lindon corridor. We also serve American Fork, Pleasant Grove, and all surrounding Utah County communities from the same service area.",
   },
 ];
 
@@ -44,7 +44,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Orem Utah | Blue Logic Water"
-  description="Orem water has chromium-6 at 36x, arsenic at 131x, and HAA9 at 272x the EWG health guideline. Blue Logic installs whole-home RO and filtration in Orem. Free water test."
+  description="Orem water meets federal standards, but EWG flags chromium-6 (36x its guideline), arsenic (131x) and HAA9 (272x). Blue Logic installs whole-home filtration and RO in Orem. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -56,9 +56,9 @@ const schemas = [
         Water Treatment for Orem, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Orem's water supply contains hexavalent chromium (chromium-6) at 36 times the EWG health
-        guideline, arsenic at 131 times, and haloacetic acid disinfection byproducts at 272 times,
-        all while remaining federally compliant. Blue Logic addresses all three.
+        Orem's water meets federal standards. The EWG database flags hexavalent chromium
+        (chromium-6), arsenic and haloacetic acids above its stricter health guidelines, and the
+        water is very hard. Blue Logic tests your water and recommends a system based on what it finds.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
@@ -95,7 +95,7 @@ const schemas = [
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~18 GPG</div>
           <div class="font-semibold text-foreground mb-1">Water Hardness</div>
-          <p class="text-xs text-muted-foreground">Very hard: causes rapid scale, appliance damage, and dry skin from bathing.</p>
+          <p class="text-xs text-muted-foreground">Very hard: causes rapid scale, appliance wear, and a chalky feel after bathing.</p>
         </div>
       </div>
 
@@ -153,22 +153,21 @@ const schemas = [
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">The Chromium-6 Concern</h3>
+          <h3 class="font-semibold text-foreground mb-2">Chromium-6 and Federal Rules</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Hexavalent chromium became widely known through the Erin Brockovich case and subsequent
-            research linking long-term exposure to adverse health outcomes. The EPA regulates total
-            chromium but does not yet have a specific limit for the hexavalent form. EWG's research
-            suggests the current federal limit is insufficient for the hexavalent form specifically.
-            Reverse osmosis is one of the most effective residential technologies for chromium-6 reduction.
+            The EPA regulates total chromium but does not yet have a specific limit for the
+            hexavalent form, and EWG's guideline for chromium-6 is far stricter than the federal
+            total chromium limit. Orem's water meets the federal standard. Reverse osmosis is one of
+            the most effective residential technologies for chromium-6 reduction.
           </p>
         </div>
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">Families with Young Children</h3>
+          <h3 class="font-semibold text-foreground mb-2">Kitchen Tap or Every Tap</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            Orem is a family-oriented community with a high proportion of households with children.
-            For families concerned about chromium-6, arsenic, and HAA compounds in water used for
-            drinking, cooking, and bathing, whole-home reverse osmosis provides coverage at every
-            tap, not just at the kitchen sink.
+            If drinking and cooking water is the main goal, the under-sink RO included with Blue
+            Logic Filtration covers the kitchen tap. For families who want chromium-6, arsenic and
+            HAA compounds reduced in every shower and faucet too, the Blue Logic Purification System
+            puts RO water at every tap.
           </p>
         </div>
         <div class="scenario-card">
@@ -183,10 +182,9 @@ const schemas = [
         <div class="scenario-card">
           <h3 class="font-semibold text-foreground mb-2">Vineyard and New Construction</h3>
           <p class="text-sm text-muted-foreground leading-relaxed">
-            The Vineyard area on the west side of Orem near Utah Lake is one of the fastest-growing
-            communities in Utah County. New construction here receives the same regional water supply
-            as established Orem neighborhoods. New homeowners in Vineyard face the same water quality
-            profile as long-time Orem residents.
+            Vineyard, just west of Orem near Utah Lake, is one of the fastest-growing communities in
+            Utah County. New construction doesn't change the source water, so a new home there gets
+            the same regional supply as the established neighborhoods around it.
           </p>
         </div>
       </div>
@@ -253,7 +251,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves all of Orem and Utah County. A specialist will test your water
-        on-site and recommend the right system. No cost, no obligation.
+        at the kitchen sink and recommend the right system. No cost, no obligation.
       </p>
       <LeadForm />
     </div>

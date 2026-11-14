@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     question: "How does American Fork's water compare to neighboring Lehi?",
-    answer: "Both cities draw from overlapping Utah County source water systems and share similar contaminant profiles: arsenic and chromium-6 are concerns in both. Lehi's arsenic levels are significantly higher (484x EWG guideline), but American Fork homeowners face the same core contaminant categories. A free in-home water test gives you the exact reading for your specific address.",
+    answer: "Both cities draw from overlapping Utah County source water systems and share similar contaminant profiles: arsenic and chromium-6 are concerns in both. Lehi's arsenic reading is higher (484x EWG guideline), but EWG flags the same contaminants in American Fork's water. A free in-home water test gives you the exact reading for your specific address.",
   },
   {
     question: "Does Blue Logic serve American Fork and nearby Pleasant Grove and Lindon?",
-    answer: "Yes. Blue Logic serves American Fork, Pleasant Grove, Lindon, and all of northern Utah County. The CUWCD and JVWCD water profile is common across these communities, making them natural fits for Blue Logic's integrated filtration and RO systems.",
+    answer: "Yes. Blue Logic serves American Fork, Pleasant Grove, Lindon, and all of northern Utah County. The CUWCD and JVWCD water profile is common across these communities.",
   },
 ];
 
@@ -40,7 +40,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment American Fork Utah | Blue Logic Water"
-  description="American Fork water has arsenic, and chromium-6 above EWG guidelines, plus 15 GPG hard water. Blue Logic serves American Fork and northern Utah County. Free water test."
+  description="American Fork water has arsenic and chromium-6 above EWG guidelines, plus 15 GPG hard water. Blue Logic serves American Fork and northern Utah County. Free water test."
   schema={schemas}
 >
   <section class="hero-gradient-dark py-20 md:py-28 px-4 text-center">
@@ -52,9 +52,9 @@ const schemas = [
         Water Treatment for American Fork Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        American Fork receives water with arsenic, chromium-6, and haloacetic acids above EWG
-        health guidelines, alongside 15 GPG hard water. Blue Logic serves American Fork and
-        surrounding northern Utah County communities.
+        American Fork's water meets federal standards, and the EWG database flags arsenic,
+        chromium-6 and haloacetic acids above its stricter health guidelines. The water is hard,
+        at about 15 GPG. Blue Logic serves American Fork and northern Utah County.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/free-water-test/" class="inline-block bg-white text-primary font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:bg-white/90 transition-all">
@@ -79,7 +79,7 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-4xl font-bold text-destructive mb-2">Chromium-6</div>
           <div class="font-semibold text-foreground mb-1">Above EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Same concern as neighboring Orem and West Jordan. RO membrane addresses it.</p>
+          <p class="text-xs text-muted-foreground">Also flagged in neighboring Orem and Lehi. An RO membrane reduces it.</p>
         </div>
         <div class="stat-box stat-box-primary">
           <div class="text-4xl font-bold text-primary mb-2">~15 GPG</div>
@@ -92,7 +92,7 @@ const schemas = [
         <h3 class="text-lg font-semibold mb-3 text-foreground">Key Concerns for American Fork Homeowners</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-muted-foreground">
           <div><strong class="text-foreground">Hard water scale:</strong> 15 GPG causes steady scale accumulation in hot water systems and on fixtures. Appliance efficiency decreases without softening.</div>
-          <div><strong class="text-foreground">Arsenic:</strong> Detected above EWG health guidelines via Utah County geology. Standard softeners and basic filtration do not reduce arsenic.</div>
+          <div><strong class="text-foreground">Arsenic:</strong> Detected above EWG health guidelines, naturally occurring from Utah County geology. Standard softeners and basic filtration do not reduce arsenic.</div>
           <div><strong class="text-foreground">Chromium-6:</strong> Flagged above EWG guidelines, the same concern as neighboring Orem. RO membrane is the most effective residential approach.</div>
           <div><strong class="text-foreground">Chlorine / HAA:</strong> Surface water chlorination produces disinfection byproducts above EWG thresholds. Blue Logic Filtration reduces chlorine and its byproducts at every tap.</div>
         </div>
@@ -138,7 +138,7 @@ const schemas = [
   <section class="bg-primary/5 py-16 md:py-20 px-4">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-serif text-center mb-4 text-foreground">Free Water Test: American Fork</h2>
-      <p class="text-muted-foreground text-center mb-10">Blue Logic serves American Fork and northern Utah County. No cost, no obligation.</p>
+      <p class="text-muted-foreground text-center mb-10">Blue Logic serves American Fork and northern Utah County. A specialist tests your water at the kitchen sink, at no cost and no obligation.</p>
       <LeadForm />
     </div>
   </section>

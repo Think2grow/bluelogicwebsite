@@ -5,7 +5,7 @@ import Reviews from "../components/Reviews.astro";
 import { getFAQSchema, getBreadcrumbSchema } from "../utils/schema";
 import { PRICES, usd } from "../data/offer";
 
-const priceRange = `${usd(PRICES.softener)} to $19,999`;
+const priceRange = "From about $1,000, customized to your home";
 
 export const prerender = true;
 
@@ -13,16 +13,16 @@ const siteUrl = "https://www.bluelogicwater.com";
 
 const faqs = [
   {
-    question: "Kinetico is known for softening. Does Blue Logic do softening too?",
+    question: "Kinetico is well known for its softeners. Does Blue Logic do softening too?",
     answer: "Yes. Blue Logic Filtration softens and filters your water in one tank. You get soft water that ends scale and spots, plus chlorine and chloramine taste and odor gone at every tap and sediment and rust filtered out. Every Filtration system includes an under-sink reverse osmosis system at the kitchen tap, and the Blue Logic Purification System adds whole-home reverse osmosis, which removes or reduces lead, arsenic, PFAS, nitrates and fluoride at every tap. If hardness is your only concern, the Blue Logic Softener is our softening-only option.",
   },
   {
     question: "Does it matter how a softener regenerates?",
-    answer: "How a system regenerates is worth understanding, and Blue Logic systems regenerate on a water meter rather than a timer, so they recharge based on how much water you actually use. But for most Utah homeowners the more important question is what the system removes from your water. Softening on its own, however it regenerates, does not address arsenic, PFAS or disinfection byproducts.",
+    answer: "How a system regenerates is worth understanding. Blue Logic systems regenerate on a water meter rather than a timer, so they recharge based on how much water you actually use. For most Utah homeowners, though, the more important question is what the system removes from your water. Softening on its own, however it regenerates, does not address arsenic, PFAS or disinfection byproducts.",
   },
   {
     question: "How do I know if I need RO or if a softener is enough?",
-    answer: "A free in-home water test answers this directly. It measures your water's hardness and TDS, and your specialist walks you through contaminant data for your city's water source. If your city's water shows arsenic or PFAS in the EWG Tap Water Database (for example, Lehi at 484x and Draper at 450x the EWG arsenic guideline), softening alone won't address those. The test removes the guesswork.",
+    answer: "A free in-home water test answers this directly. It measures your water's TDS, hardness and chlorine at the kitchen sink, and your specialist walks you through contaminant data for your city's water source. If your city's water shows arsenic or PFAS in the EWG Tap Water Database (for example, Lehi at 484x and Draper at 450x the EWG arsenic guideline), softening alone won't address those. The test removes the guesswork.",
   },
   {
     question: "Can I bring a Kinetico quote to compare?",
@@ -54,13 +54,13 @@ const schemas = [
         Utah Water Treatment · Comparison Guide
       </p>
       <h1 class="text-4xl md:text-5xl font-serif mb-6 text-foreground leading-tight">
-        Kinetico Is Great at Softening.<br />But Utah Water Needs More.
+        Comparing a Kinetico Softener?<br />Know What Softening Leaves Behind.
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-        If Kinetico is on your list, you're probably focused on water softening, and if your only
-        concern is scale and hardness, a softener may be enough. But if your water has arsenic,
-        PFAS, or disinfection byproducts, and many Utah cities' water does, softening alone won't
-        address those contaminants.
+        If you're looking at a Kinetico softener, you're focused on a real problem, and if your
+        only concern is scale and hardness, a softener may be enough. But if your water has arsenic,
+        PFAS, or disinfection byproducts, as EWG data shows for several Utah cities, softening
+        alone won't address those contaminants.
       </p>
     </div>
   </section>
@@ -68,7 +68,7 @@ const schemas = [
   <section class="bg-primary/5 border-y border-primary/20 py-6 px-4">
     <div class="max-w-4xl mx-auto">
       <p class="text-sm text-muted-foreground text-center">
-        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and how softening compares to whole-home filtration for Utah's specific water problems.
+        <strong class="text-foreground">What this page covers:</strong> Blue Logic's verified specs and how softening alone compares to filtration and reverse osmosis for Utah's specific water problems.
         We make no claims about Kinetico's products, pricing or terms. Bring any written quote to your free water test and we'll compare it with ours.
       </p>
     </div>
@@ -91,7 +91,7 @@ const schemas = [
               <tr class="bg-card border-b border-border">
                 <th class="text-left p-4 font-semibold text-foreground">Water Problem in Utah</th>
                 <th class="p-4 font-semibold text-foreground text-center">Softener Only</th>
-                <th class="p-4 font-semibold text-primary text-center">Whole-Home Filtration + RO</th>
+                <th class="p-4 font-semibold text-primary text-center">Blue Logic Filtration + RO</th>
               </tr>
             </thead>
             <tbody>
@@ -113,7 +113,8 @@ const schemas = [
           </table>
         </div>
         <p class="text-xs text-muted-foreground text-center mt-4">
-          Arsenic and PFAS data from the EWG Tap Water Database.
+          Arsenic and PFAS data from the EWG Tap Water Database. RO reduction is at the kitchen tap
+          with Filtration's included under-sink RO, or at every tap with the Purification System.
         </p>
       </div>
 
@@ -124,7 +125,7 @@ const schemas = [
           { label: "Softening", value: "Yes", note: "Blue Logic Filtration softens and filters in one tank, regenerating on a water meter." },
           { label: "Filtration", value: "Yes", note: "Chlorine and chloramine taste and odor gone at every tap; sediment and rust filtered out." },
           { label: "Reverse osmosis", value: "Included or whole-home", note: "Under-sink RO comes with Filtration; the Purification System adds whole-home RO for lead, arsenic, PFAS and more." },
-          { label: "System price range", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
+          { label: "System pricing", value: priceRange, note: "Out the door: standard installation and tax included, confirmed in writing at your free water test." },
           { label: "Storage tank materials", value: "NSF/ANSI and FDA compliant", note: "The Purification System stores purified water in a 165-gallon food-grade tank built from NSF/ANSI and FDA compliant materials." },
           { label: "Warranty", value: "5 years on defects", note: "Covers defects in materials and workmanship; consumables such as filters, RO membranes and salt are excluded. Installation workmanship is covered for 12 months." },
           { label: "Service contract required", value: "No", note: "Annual maintenance (filter changes and a system check) is standard and scheduled for you. No ongoing service contract." },
@@ -171,9 +172,10 @@ const schemas = [
         Find Out What's Actually in Your Water
       </h2>
       <p class="text-muted-foreground text-center mb-10">
-        A free in-home water test measures your home's specific water profile: hardness, TDS,
-        and key contaminants. That determines whether softening alone is enough, or whether you
-        need filtration and RO. No obligation, no pressure.
+        A free in-home water test measures your water's TDS, hardness and chlorine at the kitchen
+        sink, and your specialist walks you through the contaminant data for your city. That
+        shows whether softening alone is enough, or whether you need filtration and RO. No
+        obligation, no pressure.
       </p>
       <LeadForm />
     </div>

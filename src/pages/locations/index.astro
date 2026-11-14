@@ -3,12 +3,15 @@ import Layout from "../../layouts/Layout.astro";
 import { cities } from "../../data/cities";
 import { getBreadcrumbSchema } from "../../utils/schema";
 import { Image } from "astro:assets";
-import utilityRoomSystemImg from "../../assets/real/utility-room-system-full.jpg";
+import utilityRoomSystemImg from "../../assets/real/installs/purification-room-storage-tanks.jpg";
 
 export const prerender = true;
 
-// Sort cities alphabetically
-const sortedCities = [...cities].sort((a, b) => a.name.localeCompare(b.name));
+// Sort cities alphabetically. Cities flagged outsideServiceArea keep their
+// pages but are left out of this grid.
+const sortedCities = cities
+  .filter((city) => !city.outsideServiceArea)
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 // Generate page-specific JSON-LD schemas
 const siteUrl = Astro.site?.toString() || "https://bluelogicwater.com";
@@ -33,8 +36,8 @@ const schemas = [
         Utah Water Solutions by Location
       </h1>
       <p class="text-xl md:text-2xl text-white/90">
-        Professional reverse osmosis systems serving Utah's most demanding
-        neighborhoods
+        See what is in your city's water, then test your own at the kitchen
+        sink
       </p>
     </div>
   </section>
@@ -43,17 +46,17 @@ const schemas = [
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <p class="text-lg leading-relaxed text-muted-foreground">
-          Utah's water challenges vary by location. From Salt Lake City's PFAS
-          contamination to Lehi's extreme arsenic levels, each region has unique
-          water quality concerns. <a
+          Utah's water varies from city to city. Salt Lake City's supply shows
+          PFAS, Lehi's shows arsenic above EWG's stricter guidelines, and much
+          of the valley is very hard. <a
             href="/the-system/"
             class="text-primary hover:underline font-semibold"
-            >Blue Logic Water delivers location-specific solutions</a
-          > that address your community's exact water profile.
+            >Blue Logic tests your water first</a
+          > and recommends the system your home actually needs.
         </p>
       </div>
 
-      <!-- The Problem: Hard Water Visual -->
+      <!-- Utah's Water Challenge -->
       <div class="max-w-3xl mx-auto text-center mb-16">
         <div>
           <h2 class="text-3xl md:text-4xl font-serif mb-6 text-foreground">
@@ -62,22 +65,22 @@ const schemas = [
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
             Utah has some of the hardest water in the nation. The minerals that
             make our mountains beautiful also leave scale buildup on your
-            fixtures, shorten appliance lifespans, and affect your family's
-            health.
+            fixtures, shorten appliance lifespans, and leave a chalky film on
+            dishes and glass.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
-            Every city faces unique challenges, from PFAS in northern Utah to
-            arsenic in the south. <a
+            Pick your city below to see its hardness, its water source and what
+            the EWG database reports. <a
               href="/the-system/"
               class="text-primary hover:underline font-semibold"
-              >That's why Blue Logic designs location-specific solutions</a
+              >See how a Blue Logic system is built</a
             >.
           </p>
           <a
             href="/free-water-test/"
             class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
           >
-            Schedule Your Local Water Audit →
+            Schedule Your Free Water Test →
           </a>
         </div>
       </div>
@@ -108,7 +111,7 @@ const schemas = [
 
                 {city.contaminantsExceedingGuidelines && (
                   <div class="stat-row-alert">
-                    <span class="stat-label">EWG Concerns:</span>
+                    <span class="stat-label">Above EWG Guidelines:</span>
                     <span class="text-destructive font-bold">
                       {city.contaminantsExceedingGuidelines} contaminants
                     </span>
@@ -158,12 +161,12 @@ const schemas = [
         <div class="reason-card">
           <div class="text-5xl mb-4">⚡</div>
           <h3 class="text-xl font-serif mb-4 text-foreground">
-            Unique Contaminants
+            Different Contaminants
           </h3>
           <p class="text-muted-foreground leading-relaxed">
-            From arsenic in southern valleys to PFAS in northern supplies, your
-            location determines which contaminants pose the greatest health
-            risk.
+            Arsenic, PFAS, chromium-6 and disinfection byproducts show up at
+            different levels from city to city, which is why we test before we
+            recommend anything.
           </p>
         </div>
 
@@ -176,9 +179,8 @@ const schemas = [
             <a
               href="/the-system/"
               class="text-primary hover:underline font-semibold"
-              >Blue Logic designs systems specifically for your location's water
-              profile</a
-            >, ensuring maximum contaminant removal without overengineering.
+              >Blue Logic matches the system to your water test</a
+            >, so your home gets what it needs and nothing it doesn't.
           </p>
         </div>
 
@@ -187,20 +189,19 @@ const schemas = [
           <h3 class="text-xl font-serif mb-4 text-foreground">
             Local Expertise
           </h3>
-          <a href="/our-team/" class="text-primary hover:underline font-semibold"
-            >Our team knows Utah water</a
-          >
           <p class="text-muted-foreground leading-relaxed">
-            Our team knows Utah water. We understand the seasonal variations,
-            the infrastructure quirks, and the exact challenges your
-            neighborhood faces.
+            Blue Logic is family-owned and locally owned. We know how source
+            water shifts with the seasons and what each city's supply looks
+            like. <a href="/our-team/" class="text-primary hover:underline font-semibold"
+              >Meet our team</a
+            >.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- The Solution: Premium Results -->
+  <!-- The Blue Logic Difference -->
   <section class="bg-card py-16 md:py-20 px-4">
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -209,27 +210,26 @@ const schemas = [
             The Blue Logic Difference
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-            Experience what pure water feels like. Softer skin, shinier hair,
-            and that spa-like feel, every single day. No more worrying about
-            what's in your water.
+            Soft water that feels better on skin and hair, no chlorine smell in
+            the shower, and with the Blue Logic Purification System, purified
+            water at every tap.
           </p>
           <p class="text-lg text-muted-foreground leading-relaxed mb-8">
-            Our whole-home systems are engineered specifically for Utah's unique
-            water challenges, delivering premium results regardless of your
-            location.
+            Every system is sized to your home and your water test, and prices
+            are out the door, with installation and tax included.
           </p>
           <a
             href="/free-water-test/"
             class="text-primary font-semibold text-lg hover:opacity-80 transition-opacity"
           >
-            Find Your Location's Solution →
+            Book Your Free Water Test →
           </a>
         </div>
         <div class="order-1 lg:order-2">
           <Image
             src={utilityRoomSystemImg}
-            alt="Blue Logic Purification System installed in a Utah home's utility room: reverse osmosis unit, filtration tank, pre-filter housing and brine tank"
-            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/3"
+            alt="Blue Logic Purification System in a Utah home's mechanical room: purified water storage tanks, Filtration pretreatment tank, reverse osmosis unit and brine tank"
+            class="rounded-2xl shadow-2xl w-full object-cover aspect-4/5"
             widths={[400, 600, 800, 1100]}
             sizes="(max-width: 1024px) 100vw, 50vw"
             quality={60}
@@ -248,16 +248,16 @@ const schemas = [
       <p class="text-lg text-white/90 mb-8">
         Blue Logic Water serves homes across Salt Lake County, Davis County,
         Utah County, the Tooele valley and the Ogden/Weber area. If your city
-        isn't listed, reach out and we'll let you know how we can help. <a
+        isn't listed, <a href="/free-water-test/" class="underline hover:no-underline"
+          >reach out</a
+        > and we'll let you know how we can help, or <a
           href="/common-questions/"
           class="underline hover:no-underline"
-          >Check our FAQ for a full service list</a
-        > or <a href="/free-water-test/" class="underline hover:no-underline"
-          >reach out directly</a
+          >check our FAQ for the full service list</a
         >.
       </p>
       <a href="/free-water-test/" class="btn btn-primary btn-lg w-full md:w-auto"
-        >Contact Us to Serve Your Area</a
+        >Contact Us About Your Area</a
       >
     </div>
   </section>

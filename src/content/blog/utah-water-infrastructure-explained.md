@@ -21,7 +21,7 @@ Key mountain watersheds that feed Wasatch Front water:
 - **Weber River / Ogden River:** primary source for Ogden City Public Utilities
 - **Utah Lake inflows:** supplemental source for some Utah County systems
 
-This mountain surface water is relatively soft (low in calcium and magnesium) as it falls as snow and initially collects. The hardness and mineral content builds as water contacts the carbonate rock geology (limestone and dolomite) on its way down the mountain and through the valley.
+This mountain surface water is relatively soft (low in calcium and magnesium) when it falls as snow and first collects. Hardness and mineral content build as the water contacts the carbonate rock geology (limestone and dolomite) on its way down the mountain and through the valley.
 
 ## The Major Regional Distributors
 
@@ -78,9 +78,9 @@ Understanding the infrastructure explains why certain water quality patterns exi
 - Communities on JVWCD surface water (Sandy, Draper, South Jordan) have elevated disinfection byproducts from mountain watershed organic material reacting with chlorination
 - Communities in Utah County (Lehi, Orem, American Fork) have elevated arsenic from Utah County geology
 - Ogden's hardness variability comes from its artesian well component
-- Salt Lake City's PFAS detection relates to its watershed catchment areas and potential industrial/military source proximity
+- Salt Lake City's PFAS detection came from the city utility's own 2024 testing
 
-Your home's specific water depends on which utility serves you, which sources that utility is currently drawing from, and what's in your local distribution infrastructure. A [free in-home water test](/free-water-test/) measures what's actually at your tap, not a city-wide average.
+Your home's specific water depends on which utility serves you, which sources that utility is currently drawing from, and what's in your local distribution infrastructure. A [free in-home water test](/free-water-test/) measures TDS, hardness and chlorine at your own kitchen sink, not a city-wide average.
 
 [Schedule a free water test →](/free-water-test/)  
 [Utah water quality by city →](/utah-water-quality/)  

@@ -11,19 +11,19 @@ const siteUrl = "https://www.bluelogicwater.com";
 const faqs = [
   {
     question: "Is Draper, Utah tap water safe to drink?",
-    answer: "Draper's tap water is legally safe: it meets every federal EPA drinking water standard. But \"federally compliant\" and \"low in contaminants\" are not the same thing. Draper, Utah water carries arsenic at roughly 450x the EWG health guideline, HAA9 disinfection byproducts at 802x, and detected uranium, levels that are within federal law but well above the stricter, more recently researched EWG health guidelines. Whether that is acceptable for your household is a personal decision; many Draper families choose whole-home reverse osmosis to reduce these contaminants regardless of legal compliance. A free in-home water test shows exactly what is in your specific Draper water before you decide.",
+    answer: "Draper's tap water is legally safe: it meets every federal EPA drinking water standard. The EWG Tap Water Database, which uses much stricter health guidelines, flags arsenic at roughly 450x its guideline, HAA9 disinfection byproducts at 802x, and uranium at 26x. EWG's arsenic guideline is 0.004 ppb against the EPA's 10 ppb legal limit, so a large multiple can reflect a low absolute level. Whether to treat beyond federal standards is your decision. A free water test at your kitchen sink shows what is in your own Draper water before you decide.",
   },
   {
-    question: "Why does Draper water have such high arsenic levels?",
-    answer: "Draper's arsenic stems from multiple factors: the natural geology of Salt Lake County's southern valley, the blend of water sources used by the local utility (including well sources with naturally elevated arsenic), and the characteristics of water purchased from JVWCD. At 450x the EWG health guideline, Draper's arsenic is among the highest on the Wasatch Front. The water meets all federal legal standards. The EPA's legal limit is 10 ppb, and EWG's guideline is 0.004 ppb, making the multiplier large even when absolute levels are low.",
+    question: "Why does EWG flag arsenic in Draper's water?",
+    answer: "Arsenic in Draper's water is naturally occurring. It comes from the geology of Salt Lake County's southern valley and the blend of sources the local utility uses, including well sources and water purchased from JVWCD. The water meets all federal legal standards. The EPA's legal limit is 10 ppb, and EWG's guideline is 0.004 ppb, making the multiplier large even when absolute levels are low.",
   },
   {
-    question: "What are haloacetic acids and why is Draper's level so high?",
-    answer: "Haloacetic acids (HAAs) form when chlorine used to disinfect water reacts with naturally occurring organic material in the source water. Draper's water supply (a blend of mountain surface water and JVWCD-purchased water) contains organic compounds that react with disinfection treatment to produce HAAs at levels significantly above EWG's health guidelines. Draper's HAA9 reading of 802x the EWG guideline places it among the most elevated disinfection byproduct levels on the Wasatch Front.",
+    question: "What are haloacetic acids, and why does EWG flag them in Draper?",
+    answer: "Haloacetic acids (HAAs) form when chlorine used to disinfect water reacts with naturally occurring organic material in the source water. Draper's water supply (a blend of mountain surface water and JVWCD-purchased water) contains organic compounds that react with disinfection treatment to produce HAAs. Draper's HAA9 reading is 802x the EWG guideline and within the federal legal limit.",
   },
   {
     question: "Does Draper's water have uranium?",
-    answer: "Yes, uranium has been detected in Draper's water at levels that exceed EWG's health guideline, at 26x the EWG threshold per database records. Uranium in drinking water is primarily a concern from long-term kidney health research. Like arsenic, uranium in Utah water is naturally occurring, a result of the region's geological mineral content. Reverse osmosis is effective at reducing uranium alongside arsenic and other dissolved inorganic contaminants.",
+    answer: "Yes, uranium has been detected in Draper's water at levels that exceed EWG's health guideline, at 26x the EWG threshold per database records, and within the federal legal limit. Like arsenic, uranium in Utah water is naturally occurring, a result of the region's geological mineral content. Reverse osmosis is effective at reducing uranium alongside arsenic and other dissolved inorganic contaminants.",
   },
   {
     question: "Is Draper's water hard?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "What system does Blue Logic recommend for Draper?",
-    answer: "Given Draper's combination of high arsenic, HAA disinfection byproducts, uranium, and very hard water, whole-home reverse osmosis is the most comprehensive option. The RO membrane addresses all of these at the molecular level. However, the filtration system alone (which addresses hardness, chlorine, and iron) is also a meaningful upgrade over untreated Draper water. Your free water test confirms which configuration is right for your specific home.",
+    answer: "For homeowners who want to address arsenic, uranium and Draper's very hard water together, the Blue Logic Purification System (whole-home reverse osmosis) is the most complete option: the RO membrane reduces arsenic and uranium at every tap, and the Filtration in front of it handles hardness and chlorine. Blue Logic Filtration on its own (softening plus chlorine and chloramine taste and odor reduction, with an under-sink RO at the kitchen tap) is a solid choice for homes focused on scale and drinking water. Your free water test confirms which is right for your home.",
   },
   {
     question: "How does Blue Logic compare to other Draper water treatment companies?",
@@ -52,7 +52,7 @@ const schemas = [
 
 <Layout
   title="Water Treatment Draper Utah | Blue Logic Water"
-  description="Draper water has arsenic at 450x the EWG guideline, HAA9 at 802x, and uranium detected. Blue Logic installs whole-home RO systems in Draper. Free in-home water test."
+  description="Draper water meets federal standards, but EWG flags arsenic (450x its guideline), HAA9 (802x) and uranium. Blue Logic installs whole-home filtration and RO in Draper. Free in-home water test."
   schema={schemas}
 >
   <!-- Hero -->
@@ -65,9 +65,9 @@ const schemas = [
         Water Treatment for Draper, Utah Homes
       </h1>
       <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed">
-        Draper's water supply has arsenic at 450x the EWG health guideline, HAA9 disinfection
-        byproducts at 802x, and detected uranium, while remaining federally compliant.
-        Blue Logic installs whole-home RO systems that address all three.
+        Draper's water meets federal standards. The EWG database, with much stricter health
+        guidelines, flags arsenic, HAA9 disinfection byproducts and uranium, and the water is
+        very hard. Blue Logic tests your water and recommends a system based on what it finds.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -101,7 +101,7 @@ const schemas = [
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">450x</div>
           <div class="font-semibold text-foreground mb-1">Arsenic vs. EWG Guideline</div>
-          <p class="text-xs text-muted-foreground">Naturally occurring; among highest on Wasatch Front. Federally compliant.</p>
+          <p class="text-xs text-muted-foreground">Naturally occurring. EWG guideline is 0.004 ppb vs. EPA legal limit of 10 ppb.</p>
         </div>
         <div class="stat-box stat-box-alert">
           <div class="text-5xl font-bold text-destructive mb-2">802x</div>
@@ -143,7 +143,7 @@ const schemas = [
             Full EWG Report for Draper →
           </a>
           <p class="text-xs text-muted-foreground mt-3">
-            More on Draper's biggest concern:
+            More context:
             <a href="/blog/arsenic-utah-drinking-water/" class="text-primary underline">Arsenic in Utah drinking water: what the numbers mean →</a>
           </p>
         </div>
@@ -159,14 +159,12 @@ const schemas = [
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="scenario-card">
-          <h3 class="font-semibold text-foreground mb-2">Premium Homes, Premium Concern</h3>
+          <h3 class="font-semibold text-foreground mb-2">Hard Water and High-End Appliances</h3>
           <p class="text-muted-foreground text-sm leading-relaxed">
-            Draper is one of Salt Lake County's most affluent communities. Suncrest, Corner Canyon,
-            and the south valley foothills are home to high-end construction with premium appliances.
-            Very hard water at 21 GPG is particularly damaging to tankless water heaters, high-end
-            dishwashers, and steam features. And for families that have invested in quality homes,
-            the water quality profile (arsenic, HAAs, uranium) often motivates the most complete
-            solution rather than the minimum.
+            Suncrest, Corner Canyon, and the south valley foothills are home to newer construction
+            with premium appliances. Very hard water at 21 GPG is particularly hard on tankless water
+            heaters, high-end dishwashers, and steam features. Softening at the main line keeps scale
+            from building up in them.
           </p>
         </div>
         <div class="scenario-card">
@@ -250,7 +248,7 @@ const schemas = [
       </h2>
       <p class="text-muted-foreground text-center mb-10">
         Blue Logic serves Draper and all of Salt Lake County. A specialist will test
-        your water on-site and recommend the right system. No cost, no obligation.
+        your water at the kitchen sink and recommend the right system. No cost, no obligation.
       </p>
       <LeadForm />
     </div>
