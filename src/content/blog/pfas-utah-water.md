@@ -91,16 +91,16 @@ Not all filtration approaches address PFAS. Here's the evidence:
 
 2. **Read your utility's most recent Consumer Confidence Report.** Utah utilities are required to report any detected contaminants annually.
 
-3. **Consider a [free in-home water test](/free-water-test/).** Blue Logic's specialist will discuss your city's water quality profile based on EWG data and help you determine whether PFAS is a relevant concern for your specific home and water supply.
+3. **Consider a [free in-home water test](/free-water-test/#schedule).** Blue Logic's specialist will discuss your city's water quality profile based on EWG data and help you determine whether PFAS is a relevant concern for your specific home and water supply.
 
 4. **Choose the right filtration approach.** For PFAS reduction, an under-sink RO addresses drinking water specifically. For whole-home coverage, a whole-home RO system is the most comprehensive option.
 
 The PFAS situation in Utah water is real, but it's also manageable with the right residential approach. The right first step is knowing what's in your water.
 
-[Schedule a free in-home water test →](/free-water-test/)
+[Schedule a free in-home water test →](/free-water-test/#schedule)
 
 ---
 
 *PFAS data sourced from the EWG Tap Water Database, Salt Lake City Department of Public Utilities announcements, and the EPA's 2024 PFAS rulemaking. PFAS research is ongoing and evolving; consult a healthcare provider for personalized health guidance. Blue Logic makes no specific health claims about PFAS exposure. All Wasatch Front utilities provide water that meets applicable federal standards.*
 
-*[Learn more about Utah water quality →](/utah-water-quality/) · [Salt Lake City water →](/locations/salt-lake-city/) · [Layton water →](/locations/layton/) · [Whole-home RO systems →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/)*
+*[Learn more about Utah water quality →](/utah-water-quality/) · [Salt Lake City water →](/locations/salt-lake-city/) · [Layton water →](/locations/layton/) · [Whole-home RO systems →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/#schedule)*

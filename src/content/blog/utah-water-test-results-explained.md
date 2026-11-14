@@ -108,8 +108,8 @@ For the full picture on your city's water, check the [EWG Tap Water Database](ht
 → These require EWG database lookup or certified lab testing. Your Blue Logic specialist can walk you through your city's EWG profile at the free water test.
 
 **If you're not sure what to do:**  
-→ [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water at the kitchen sink and explain what your numbers mean for your home, with no cost and no obligation.
+→ [Schedule a free in-home water test](/free-water-test/#schedule). A Blue Logic specialist will test your water at the kitchen sink and explain what your numbers mean for your home, with no cost and no obligation.
 
-[Schedule your free water test →](/free-water-test/)  
+[Schedule your free water test →](/free-water-test/#schedule)  
 [How to read a water test (full guide) →](/how-to-read-a-water-test/)  
 [Utah water quality overview →](/utah-water-quality/)

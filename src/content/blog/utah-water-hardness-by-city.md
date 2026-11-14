@@ -108,7 +108,7 @@ the needle. The fastest way to know your real hardness is a **free in-home test*
 Logic specialist measures TDS, hardness and chlorine at your kitchen sink,
 explains the result in plain English, and there's no cost or obligation.
 
-[Schedule a free water test →](/free-water-test/)
+[Schedule a free water test →](/free-water-test/#schedule)
 
 ---
 

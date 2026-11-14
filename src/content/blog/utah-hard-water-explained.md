@@ -108,7 +108,7 @@ The fastest way to understand what your specific home is dealing with is a free 
 
 If you're a Utah homeowner who hasn't tested your water, you're likely spending more on energy, appliances, and cleaning products than you need to be.
 
-[Schedule a free water test →](/free-water-test/)
+[Schedule a free water test →](/free-water-test/#schedule)
 
 ---
 

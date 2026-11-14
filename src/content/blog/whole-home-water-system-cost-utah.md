@@ -120,10 +120,10 @@ Whether you're evaluating Blue Logic or any other Utah water treatment company:
 
 The most important step before any comparison is a free water test. A Blue Logic specialist tests your water's TDS, hardness and chlorine at the kitchen sink, explains what your city's water profile looks like based on EWG data, and gives you a transparent, out-the-door quote for the right system, with no pressure and no obligation.
 
-[Schedule your free water test →](/free-water-test/)
+[Schedule your free water test →](/free-water-test/#schedule)
 
 ---
 
 *Blue Logic prices are out the door (standard installation and tax included) as of November 2026. Competitor pricing is based on publicly available information and customer-reported quotes in the Utah market; actual competitor pricing varies by dealer, configuration, and date. The $250-off offer applies to a new Blue Logic Softener, Filtration, or Purification system purchased by December 31, 2026, and cannot be combined with other offers.*
 
-*[Get a free water test and transparent quote →](/free-water-test/) · [Full system comparison →](/water-softener-vs-whole-home-filtration/) · [See what's included →](/whole-home-reverse-osmosis-utah/)*
+*[Get a free water test and transparent quote →](/free-water-test/#schedule) · [Full system comparison →](/water-softener-vs-whole-home-filtration/) · [See what's included →](/whole-home-reverse-osmosis-utah/)*

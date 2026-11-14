@@ -463,7 +463,7 @@ const WEBHOOK_URL =
         if (typeof (window as any).fbq !== "undefined") {
           (window as any).fbq("track", "Lead");
         }
-        window.location.href = "/thank-you";
+        window.location.href = "/thank-you/";
       } else {
         throw new Error("Submission failed");
       }

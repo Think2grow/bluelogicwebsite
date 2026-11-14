@@ -67,8 +67,8 @@ If scale and appliance protection are your only concerns, and you're satisfied w
 
 The honest question to ask before choosing softener-only: do I know what else is in my water? In Utah, the answer is often "no," because EWG contaminant data isn't part of the typical conversation at the point of sale for a basic softener.
 
-A [free in-home water test](/free-water-test/) answers that question directly, on-site, before you commit to anything.
+A [free in-home water test](/free-water-test/#schedule) answers that question directly, on-site, before you commit to anything.
 
-[Schedule a free water test →](/free-water-test/)  
+[Schedule a free water test →](/free-water-test/#schedule)  
 [See how Blue Logic's integrated softening compares →](/water-softener-utah/)  
 [Full system comparison: softener vs. filtration vs. RO →](/water-softener-vs-whole-home-filtration/)

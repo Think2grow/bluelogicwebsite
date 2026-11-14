@@ -80,8 +80,8 @@ Understanding the infrastructure explains why certain water quality patterns exi
 - Ogden's hardness variability comes from its artesian well component
 - Salt Lake City's PFAS detection came from the city utility's own 2024 testing
 
-Your home's specific water depends on which utility serves you, which sources that utility is currently drawing from, and what's in your local distribution infrastructure. A [free in-home water test](/free-water-test/) measures TDS, hardness and chlorine at your own kitchen sink, not a city-wide average.
+Your home's specific water depends on which utility serves you, which sources that utility is currently drawing from, and what's in your local distribution infrastructure. A [free in-home water test](/free-water-test/#schedule) measures TDS, hardness and chlorine at your own kitchen sink, not a city-wide average.
 
-[Schedule a free water test →](/free-water-test/)  
+[Schedule a free water test →](/free-water-test/#schedule)  
 [Utah water quality by city →](/utah-water-quality/)  
 [Utah hard water guide →](/utah-hard-water/)

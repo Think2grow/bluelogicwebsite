@@ -87,7 +87,7 @@ fastest way to know what your water is doing is a **free water test**. A Blue Lo
 specialist measures your water's TDS, hardness and chlorine at the kitchen sink and explains
 what it means for your appliances, with no cost or obligation.
 
-[Schedule a free water test →](/free-water-test/)
+[Schedule a free water test →](/free-water-test/#schedule)
 
 ---
 

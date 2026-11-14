@@ -102,7 +102,7 @@ Arsenic in Utah water is a real issue. The EWG data is based on real utility tes
 
 At the same time: people have been drinking water from Lehi, Draper, and Salt Lake City utilities for decades without obvious mass health consequences. The risk from arsenic at these concentrations is probabilistic and long-term, not acute.
 
-What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation, whether that's Blue Logic Filtration with its under-sink RO, the Blue Logic Purification System (whole-home RO), or just the information to make your own decision.
+What each Utah homeowner decides to do with that information is a personal choice. What Blue Logic offers is the clearest possible starting point: a [free in-home water test](/free-water-test/#schedule) where a specialist tests your water, explains what the EWG data shows for your specific city, and gives you a transparent recommendation, whether that's Blue Logic Filtration with its under-sink RO, the Blue Logic Purification System (whole-home RO), or just the information to make your own decision.
 
 There's no pressure and no obligation. And now you know what the data shows.
 
@@ -110,4 +110,4 @@ There's no pressure and no obligation. And now you know what the data shows.
 
 *Arsenic data sourced from the EWG Tap Water Database, which reflects official utility testing data submitted to regulatory agencies. All Wasatch Front utilities cited provide water that meets federal EPA maximum contaminant levels. EWG health guidelines are more stringent than federal law. Blue Logic makes no specific health claims about arsenic exposure or its effects. Consult a healthcare provider for personalized health guidance.*
 
-*[Utah water quality →](/utah-water-quality/) · [Lehi water (484x arsenic) →](/locations/lehi/) · [Draper water (450x arsenic) →](/locations/draper/) · [West Jordan water (275x arsenic) →](/locations/west-jordan/) · [Whole-home RO →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/)*
+*[Utah water quality →](/utah-water-quality/) · [Lehi water (484x arsenic) →](/locations/lehi/) · [Draper water (450x arsenic) →](/locations/draper/) · [West Jordan water (275x arsenic) →](/locations/west-jordan/) · [Whole-home RO →](/whole-home-reverse-osmosis-utah/) · [Free water test →](/free-water-test/#schedule)*

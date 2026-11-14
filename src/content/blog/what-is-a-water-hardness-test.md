@@ -68,10 +68,10 @@ A hardness test is the starting point, not the complete picture.
 
 ## Blue Logic's Free In-Home Test
 
-Blue Logic's [free in-home water test](/free-water-test/) measures TDS, hardness and chlorine at your kitchen sink, with results explained in plain English. It's the fastest way to know where your water stands without guessing from a test strip.
+Blue Logic's [free in-home water test](/free-water-test/#schedule) measures TDS, hardness and chlorine at your kitchen sink, with results explained in plain English. It's the fastest way to know where your water stands without guessing from a test strip.
 
 After the test, your specialist walks you through the EWG data for your specific city, so you understand not just what the hardness reading means, but what else may be in your water that the field test didn't cover.
 
-[Schedule a free in-home water test →](/free-water-test/)  
+[Schedule a free in-home water test →](/free-water-test/#schedule)  
 [Utah water hardness guide →](/utah-hard-water/)  
 [How to read your water test results →](/how-to-read-a-water-test/)

@@ -53,10 +53,10 @@ Beyond contaminants, Provo water is hard to very hard, typically 9–15 GPG depe
 
 **Option 4: Whole-home reverse osmosis.** The most complete option: the Blue Logic Purification System addresses arsenic, HAAs, and the other contaminants above at every tap in the home, including bathing water.
 
-**Option 5: Free water test first.** A [free in-home water test](/free-water-test/) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink in Provo, along with a specialist walkthrough of the EWG data for your utility. No cost, no obligation.
+**Option 5: Free water test first.** A [free in-home water test](/free-water-test/#schedule) from Blue Logic gives you actual TDS, hardness and chlorine readings at your kitchen sink in Provo, along with a specialist walkthrough of the EWG data for your utility. No cost, no obligation.
 
 [Learn more about Provo's water →](/locations/provo/)  
-[Schedule a free water test →](/free-water-test/)  
+[Schedule a free water test →](/free-water-test/#schedule)  
 [Utah water quality overview →](/utah-water-quality/)
 
 ---

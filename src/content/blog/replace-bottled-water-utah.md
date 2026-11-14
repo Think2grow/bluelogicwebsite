@@ -63,7 +63,7 @@ System prices are out the door, with standard installation and tax included; sal
 
 ## What to Do Next
 
-**Step 1:** [Schedule a free in-home water test](/free-water-test/). A Blue Logic specialist will test your water's TDS, hardness and chlorine at the kitchen sink, walk you through your city's EWG profile, and show you which system addresses what bottled water was covering, plus what bottled water wasn't.
+**Step 1:** [Schedule a free in-home water test](/free-water-test/#schedule). A Blue Logic specialist will test your water's TDS, hardness and chlorine at the kitchen sink, walk you through your city's EWG profile, and show you which system addresses what bottled water was covering, plus what bottled water wasn't.
 
 **Step 2:** Compare the systems. The [whole-home filtration system](/whole-home-water-filtration/), with its included under-sink RO, is the most common bottled-water replacement solution. The [whole-home RO system](/whole-home-reverse-osmosis-utah/) is for families who want the full picture: purified water from every tap in the house.
 
@@ -71,7 +71,7 @@ System prices are out the door, with standard installation and tax included; sal
 
 The first step is knowing what's in your water. That's free.
 
-[Schedule a free in-home water test →](/free-water-test/)
+[Schedule a free in-home water test →](/free-water-test/#schedule)
 
 ---
 *System pricing as of 2026. Bottled water cost estimates based on typical family consumption patterns. Individual results vary. Blue Logic makes no specific health claims about water quality.*
