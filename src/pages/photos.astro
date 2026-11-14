@@ -1,0 +1,146 @@
+---
+// Temporary photo picker for Scott and Jared (2026-11-13). Password gated,
+// noindex, excluded from robots.txt and the sitemap. Delete this page, its
+// manifest (src/data/photo-review.json) and public/review-* once photos are chosen.
+import manifest from "../data/photo-review.json";
+
+export const prerender = false;
+
+const PASSWORD = "bluelogic2026";
+const COOKIE = "bl_photo_review";
+
+Astro.response.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+Astro.response.headers.set("Cache-Control", "no-store");
+
+let wrong = false;
+if (Astro.request.method === "POST") {
+  const form = await Astro.request.formData();
+  if (form.get("password") === PASSWORD) {
+    Astro.cookies.set(COOKIE, "ok", { path: "/", httpOnly: true, secure: import.meta.env.PROD, sameSite: "lax", maxAge: 60 * 60 * 24 * 14 });
+    return Astro.redirect("/photos/", 303);
+  }
+  wrong = true;
+}
+const authed = Astro.cookies.get(COOKIE)?.value === "ok";
+
+const groups: { name: string; items: typeof manifest.items }[] = [];
+for (const it of manifest.items) {
+  let g = groups.find((x) => x.name === it.group);
+  if (!g) groups.push((g = { name: it.group, items: [] }));
+  g.items.push(it);
+}
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <title>Photo Picks</title>
+  <style>
+    :root { --bg:#f6f7f9; --card:#fff; --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --accent:#2f8fae; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+    header { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--line); padding:12px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    header h1 { font-size:18px; margin:0 12px 0 0; }
+    select, button, input { font:inherit; padding:8px 12px; border-radius:8px; border:1px solid var(--line); background:#fff; }
+    button.primary { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+    .count { color:var(--muted); font-size:14px; }
+    main { padding:16px; max-width:1400px; margin:0 auto; }
+    h2 { font-size:17px; margin:28px 0 10px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:12px; }
+    .ph { background:var(--card); border:2px solid var(--line); border-radius:12px; overflow:hidden; cursor:pointer; position:relative; }
+    .ph img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; background:#ddd; }
+    .ph .meta { padding:6px 8px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; gap:6px; }
+    .ph .meta a { color:var(--accent); text-decoration:none; white-space:nowrap; }
+    .ph.picked { border-color:var(--accent); box-shadow:0 0 0 3px rgba(47,143,174,.35); }
+    .ph .badge { display:none; position:absolute; top:8px; right:8px; background:var(--accent); color:#fff; font-size:12px; font-weight:600; padding:4px 8px; border-radius:999px; }
+    .ph.picked .badge { display:block; }
+    .login { max-width:340px; margin:15vh auto; background:#fff; padding:24px; border-radius:12px; border:1px solid var(--line); }
+    .login input { width:100%; margin:12px 0; }
+    .err { color:#b91c1c; font-size:14px; }
+    .note { color:var(--muted); font-size:14px; margin:4px 0 0; }
+    #toast { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); background:#111827; color:#fff; padding:10px 16px; border-radius:8px; display:none; }
+  </style>
+</head>
+<body>
+{!authed ? (
+  <form class="login" method="post">
+    <strong>Blue Logic photo picks</strong>
+    <input type="password" name="password" placeholder="Password" autofocus />
+    {wrong && <p class="err">That password did not match.</p>}
+    <button class="primary" type="submit">Open</button>
+  </form>
+) : (
+  <>
+    <header>
+      <h1>Photo Picks</h1>
+      <label>Picking as
+        <select id="who"><option>Scott</option><option>Jared</option></select>
+      </label>
+      <span class="count" id="count">0 picked</span>
+      <button class="primary" id="copy">Copy my picks</button>
+      <button id="only">Show only my picks</button>
+      <button id="clear">Clear</button>
+    </header>
+    <main>
+      <p class="note">Tap a photo to pick it. "Full" opens the large version. Picks save in this browser. When you are done, press "Copy my picks" and paste the list to Claude.</p>
+      {groups.map((g) => (
+        <section>
+          <h2>{g.name} ({g.items.length})</h2>
+          <div class="grid">
+            {g.items.map((it) => (
+              <div class="ph" data-id={it.id}>
+                <span class="badge">Picked</span>
+                <img src={it.thumb} alt={it.label} loading="lazy" />
+                <div class="meta"><span>{it.id} · {it.label}</span><a href={it.full} target="_blank" rel="noopener">Full</a></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </main>
+    <div id="toast"></div>
+    <script is:inline>
+      (function () {
+        var who = document.getElementById("who");
+        var key = function () { return "bl-picks-" + who.value; };
+        var load = function () { try { return JSON.parse(localStorage.getItem(key()) || "[]"); } catch (e) { return []; } };
+        var save = function (a) { try { localStorage.setItem(key(), JSON.stringify(a)); } catch (e) {} };
+        try { var w = localStorage.getItem("bl-picks-who"); if (w) who.value = w; } catch (e) {}
+        var onlyMine = false;
+        function render() {
+          var picks = load();
+          document.querySelectorAll(".ph").forEach(function (el) {
+            var on = picks.indexOf(el.dataset.id) > -1;
+            el.classList.toggle("picked", on);
+            el.style.display = onlyMine && !on ? "none" : "";
+          });
+          document.getElementById("count").textContent = picks.length + " picked";
+        }
+        document.querySelectorAll(".ph").forEach(function (el) {
+          el.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") return;
+            var a = load(), i = a.indexOf(el.dataset.id);
+            if (i > -1) a.splice(i, 1); else a.push(el.dataset.id);
+            save(a); render();
+          });
+        });
+        who.addEventListener("change", function () { try { localStorage.setItem("bl-picks-who", who.value); } catch (e) {} render(); });
+        document.getElementById("only").addEventListener("click", function () { onlyMine = !onlyMine; this.textContent = onlyMine ? "Show all" : "Show only my picks"; render(); });
+        document.getElementById("clear").addEventListener("click", function () { save([]); render(); });
+        document.getElementById("copy").addEventListener("click", function () {
+          var picks = load().sort();
+          var text = who.value + " photo picks (" + picks.length + "): " + picks.join(", ");
+          var t = document.getElementById("toast");
+          var done = function () { t.textContent = "Copied " + picks.length + " picks"; t.style.display = "block"; setTimeout(function () { t.style.display = "none"; }, 2000); };
+          if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { prompt("Copy this:", text); });
+          else prompt("Copy this:", text);
+        });
+        render();
+      })();
+    </script>
+  </>
+)}
+</body>
+</html>

@@ -33,6 +33,7 @@ export default defineConfig({
           "/salt-lake-city/",
           "/water-test/",
           "/the-muscle/",
+          "/photos/",
         ];
         return !excluded.includes(path);
       },
