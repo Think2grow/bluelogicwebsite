@@ -6,22 +6,51 @@ import manifest from "../data/photo-review.json";
 
 export const prerender = false;
 
-const PASSWORD = "bluelogic2026";
+// Each password identifies one person (Scott, 2026-11-13). Picks are saved
+// per person in the PHOTO_PICKS KV namespace (keys picks:Scott / picks:Jared).
+const PEOPLE: Record<string, { password: string; token: string }> = {
+  Scott: { password: "Scott152", token: "857cbea9ee6ab11e10d1f068f443a3cf" },
+  Jared: { password: "bluelogic2026", token: "b885d1af3b749bbb0b71357d365c06b1" },
+};
 const COOKIE = "bl_photo_review";
 
 Astro.response.headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
 Astro.response.headers.set("Cache-Control", "no-store");
 
+const kv = (Astro.locals as any).runtime?.env?.PHOTO_PICKS as KVNamespace | undefined;
+const tokenOf = Astro.cookies.get(COOKIE)?.value;
+let who = Object.keys(PEOPLE).find((n) => PEOPLE[n].token === tokenOf);
+const readPicks = async (name: string): Promise<string[]> => {
+  try { return JSON.parse((await kv?.get("picks:" + name)) || "[]"); } catch { return []; }
+};
+
 let wrong = false;
 if (Astro.request.method === "POST") {
   const form = await Astro.request.formData();
-  if (form.get("password") === PASSWORD) {
-    Astro.cookies.set(COOKIE, "ok", { path: "/", httpOnly: true, secure: import.meta.env.PROD, sameSite: "lax", maxAge: 60 * 60 * 24 * 14 });
+  if (form.has("password")) {
+    const name = Object.keys(PEOPLE).find((n) => PEOPLE[n].password === form.get("password"));
+    if (name) {
+      Astro.cookies.set(COOKIE, PEOPLE[name].token, { path: "/", httpOnly: true, secure: import.meta.env.PROD, sameSite: "lax", maxAge: 60 * 60 * 24 * 14 });
+      return Astro.redirect("/photos/", 303);
+    }
+    wrong = true;
+  } else if (who && form.has("toggle")) {
+    const id = String(form.get("toggle"));
+    const picks = await readPicks(who);
+    const i = picks.indexOf(id);
+    if (i > -1) picks.splice(i, 1); else if (/^P\d{3}$/.test(id)) picks.push(id);
+    picks.sort();
+    await kv?.put("picks:" + who, JSON.stringify(picks), { metadata: { updated: new Date().toISOString() } });
+    return new Response(JSON.stringify({ picks }), { headers: { "content-type": "application/json", "cache-control": "no-store", "x-robots-tag": "noindex" } });
+  } else if (form.has("logout")) {
+    Astro.cookies.delete(COOKIE, { path: "/" });
     return Astro.redirect("/photos/", 303);
   }
-  wrong = true;
 }
-const authed = Astro.cookies.get(COOKIE)?.value === "ok";
+const authed = !!who;
+const other = who === "Scott" ? "Jared" : "Scott";
+const myPicks = who ? await readPicks(who) : [];
+const otherPicks = who ? await readPicks(other) : [];
 
 const groups: { name: string; items: typeof manifest.items }[] = [];
 for (const it of manifest.items) {
@@ -56,6 +85,7 @@ for (const it of manifest.items) {
     .ph.picked { border-color:var(--accent); box-shadow:0 0 0 3px rgba(47,143,174,.35); }
     .ph .badge { display:none; position:absolute; top:8px; right:8px; background:var(--accent); color:#fff; font-size:12px; font-weight:600; padding:4px 8px; border-radius:999px; }
     .ph.picked .badge { display:block; }
+    .ph .other { position:absolute; top:8px; left:8px; background:rgba(17,24,39,.75); color:#fff; font-size:12px; padding:4px 8px; border-radius:999px; }
     .login { max-width:340px; margin:15vh auto; background:#fff; padding:24px; border-radius:12px; border:1px solid var(--line); }
     .login input { width:100%; margin:12px 0; }
     .err { color:#b91c1c; font-size:14px; }
@@ -75,23 +105,21 @@ for (const it of manifest.items) {
   <>
     <header>
       <h1>Photo Picks</h1>
-      <label>Picking as
-        <select id="who"><option>Scott</option><option>Jared</option></select>
-      </label>
-      <span class="count" id="count">0 picked</span>
-      <button class="primary" id="copy">Copy my picks</button>
+      <span>Picking as <strong>{who}</strong></span>
+      <span class="count" id="count">{myPicks.length} picked</span>
       <button id="only">Show only my picks</button>
-      <button id="clear">Clear</button>
+      <form method="post" style="margin:0"><button name="logout" value="1">Sign out</button></form>
     </header>
     <main>
-      <p class="note">Tap a photo to pick it. "Full" opens the large version. Picks save in this browser. When you are done, press "Copy my picks" and paste the list to Claude.</p>
+      <p class="note">Tap a photo to pick it. "Full" opens the large version. Your picks save automatically, so you can come back any time. A gray tag shows what {other} picked.</p>
       {groups.map((g) => (
         <section>
           <h2>{g.name} ({g.items.length})</h2>
           <div class="grid">
             {g.items.map((it) => (
-              <div class="ph" data-id={it.id}>
+              <div class:list={["ph", myPicks.includes(it.id) && "picked"]} data-id={it.id}>
                 <span class="badge">Picked</span>
+                {otherPicks.includes(it.id) && <span class="other">{other} picked</span>}
                 <img src={it.thumb} alt={it.label} loading="lazy" />
                 <div class="meta"><span>{it.id} · {it.label}</span><a href={it.full} target="_blank" rel="noopener">Full</a></div>
               </div>
@@ -103,41 +131,23 @@ for (const it of manifest.items) {
     <div id="toast"></div>
     <script is:inline>
       (function () {
-        var who = document.getElementById("who");
-        var key = function () { return "bl-picks-" + who.value; };
-        var load = function () { try { return JSON.parse(localStorage.getItem(key()) || "[]"); } catch (e) { return []; } };
-        var save = function (a) { try { localStorage.setItem(key(), JSON.stringify(a)); } catch (e) {} };
-        try { var w = localStorage.getItem("bl-picks-who"); if (w) who.value = w; } catch (e) {}
         var onlyMine = false;
-        function render() {
-          var picks = load();
-          document.querySelectorAll(".ph").forEach(function (el) {
-            var on = picks.indexOf(el.dataset.id) > -1;
-            el.classList.toggle("picked", on);
-            el.style.display = onlyMine && !on ? "none" : "";
-          });
-          document.getElementById("count").textContent = picks.length + " picked";
-        }
+        function count() { document.getElementById("count").textContent = document.querySelectorAll(".ph.picked").length + " picked"; }
+        function filter() { document.querySelectorAll(".ph").forEach(function (el) { el.style.display = onlyMine && !el.classList.contains("picked") ? "none" : ""; }); }
+        var t = document.getElementById("toast");
+        function toast(m) { t.textContent = m; t.style.display = "block"; setTimeout(function () { t.style.display = "none"; }, 2500); }
         document.querySelectorAll(".ph").forEach(function (el) {
           el.addEventListener("click", function (e) {
             if (e.target.tagName === "A") return;
-            var a = load(), i = a.indexOf(el.dataset.id);
-            if (i > -1) a.splice(i, 1); else a.push(el.dataset.id);
-            save(a); render();
+            el.classList.toggle("picked"); count(); filter();
+            var fd = new FormData(); fd.append("toggle", el.dataset.id);
+            fetch("/photos/", { method: "POST", body: fd, credentials: "same-origin" })
+              .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+              .then(function (d) { document.querySelectorAll(".ph").forEach(function (x) { x.classList.toggle("picked", d.picks.indexOf(x.dataset.id) > -1); }); count(); filter(); })
+              .catch(function () { el.classList.toggle("picked"); count(); filter(); toast("Did not save. Check your connection and tap again."); });
           });
         });
-        who.addEventListener("change", function () { try { localStorage.setItem("bl-picks-who", who.value); } catch (e) {} render(); });
-        document.getElementById("only").addEventListener("click", function () { onlyMine = !onlyMine; this.textContent = onlyMine ? "Show all" : "Show only my picks"; render(); });
-        document.getElementById("clear").addEventListener("click", function () { save([]); render(); });
-        document.getElementById("copy").addEventListener("click", function () {
-          var picks = load().sort();
-          var text = who.value + " photo picks (" + picks.length + "): " + picks.join(", ");
-          var t = document.getElementById("toast");
-          var done = function () { t.textContent = "Copied " + picks.length + " picks"; t.style.display = "block"; setTimeout(function () { t.style.display = "none"; }, 2000); };
-          if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () { prompt("Copy this:", text); });
-          else prompt("Copy this:", text);
-        });
-        render();
+        document.getElementById("only").addEventListener("click", function () { onlyMine = !onlyMine; this.textContent = onlyMine ? "Show all" : "Show only my picks"; filter(); });
       })();
     </script>
   </>
